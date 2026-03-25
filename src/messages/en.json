@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "title": "Synaplan — AI under control",
+    "description": "The open-source platform for professional AI management. All models, one platform. Secure, transparent, flexible."
+  },
+  "nav": {
+    "solutions": "Solutions",
+    "features": "Features",
+    "pricing": "Pricing",
+    "about": "About",
+    "blog": "Blog",
+    "forCompanies": "For Companies",
+    "forDevelopers": "For Developers",
+    "chatWidget": "Chat Widget",
+    "multiModel": "Multi-Model Routing",
+    "memories": "Memories & RAG",
+    "auditLogs": "Audit & Compliance",
+    "widget": "Widget Details",
+    "team": "Team",
+    "philosophy": "Philosophy",
+    "partners": "Partners"
+  },
+  "common": {
+    "startForFree": "Start for free",
+    "bookDemo": "Book a demo",
+    "learnMore": "Learn more",
+    "viewOnGithub": "View on GitHub",
+    "madeInGermany": "Made in Germany",
+    "gdprCompliant": "GDPR compliant",
+    "openSource": "100% Open Source",
+    "getStarted": "Get started"
+  },
+  "hero": {
+    "badge": "Open Source AI Platform",
+    "title": "Take control of your AI.",
+    "titleHighlight": "All models. One platform.",
+    "description": "Synaplan connects leading AI systems with professional management — free model choice, cost control, full transparency, and GDPR compliance.",
+    "trustedBy": "Trusted by innovative companies"
+  },
+  "solutions": {
+    "title": "Built for every team",
+    "subtitle": "Whether you're an enterprise, a developer, or a website owner — Synaplan adapts to your needs.",
+    "companies": {
+      "title": "For Companies",
+      "description": "Deploy AI safely and efficiently, with full data control, compliance, and detailed audit logs."
+    },
+    "developers": {
+      "title": "For Developers",
+      "description": "Build on open standards, API-first and open source — flexible and without vendor lock-in."
+    },
+    "widget": {
+      "title": "Chat Widget",
+      "description": "Integrate a KI chatbot into your website in minutes. GDPR-compliant, starting at €19.95/month."
+    }
+  },
+  "features": {
+    "title": "Everything you need for professional AI management",
+    "subtitle": "From model selection and cost control to logging and multilingual capabilities.",
+    "multiModel": {
+      "label": "Multi-Model",
+      "title": "Route to the best model",
+      "description": "Send prompts to OpenAI, Google, Meta, Grok and more. Switch freely, no vendor lock-in."
+    },
+    "documents": {
+      "label": "RAG",
+      "title": "Your knowledge, AI-powered",
+      "description": "Upload documents and get context-aware answers. Your own AI knowledge base."
+    },
+    "audit": {
+      "label": "Compliance",
+      "title": "Every action logged",
+      "description": "Gapless audit trails for all AI activities. Meet GDPR and internal compliance requirements."
+    },
+    "widget": {
+      "label": "Widget",
+      "title": "Live on your website in minutes",
+      "description": "Embed a smart chatbot via WordPress plugin or code snippet. Multilingual, customizable."
+    },
+    "dashboard": {
+      "label": "Analytics",
+      "title": "Full visibility",
+      "description": "Monitor AI and document usage with a real-time dashboard. Track costs, tokens, and performance."
+    },
+    "security": {
+      "label": "Security",
+      "title": "Your data, your rules",
+      "description": "Self-host on your own infrastructure or use our cloud. Full data sovereignty, always."
+    }
+  },
+  "useCases": {
+    "title": "Real results from real companies",
+    "subtitle": "See how organizations use Synaplan to deploy AI securely and efficiently."
+  },
+  "openSource": {
+    "title": "Built in the open",
+    "subtitle": "Synaplan is 100% open source. Inspect the code, contribute, or self-host — you're always in control.",
+    "stars": "GitHub Stars",
+    "forks": "Forks",
+    "license": "License"
+  },
+  "cta": {
+    "title": "Ready to take control of your AI?",
+    "subtitle": "Start for free or book a 30-minute demo to get a clear AI roadmap for your organization.",
+    "immediately": "Immediately available",
+    "gdpr": "GDPR compliant",
+    "germany": "Made in Germany"
+  },
+  "footer": {
+    "platform": "Platform",
+    "resources": "Resources",
+    "company": "Company",
+    "legal": "Legal",
+    "docs": "Documentation",
+    "github": "GitHub Repository",
+    "discord": "Discord",
+    "about": "About Synaplan",
+    "contact": "Contact",
+    "imprint": "Imprint",
+    "privacy": "Privacy Policy",
+    "copyright": "© {year} metadist data management GmbH"
+  }
+}

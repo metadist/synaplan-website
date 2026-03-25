@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "title": "Synaplan — KI unter Kontrolle",
+    "description": "Die Open-Source-Plattform für professionelles KI-Management. Alle Modelle, eine Plattform. Sicher, transparent, flexibel."
+  },
+  "nav": {
+    "solutions": "Lösungen",
+    "features": "Features",
+    "pricing": "Preise",
+    "about": "Über uns",
+    "blog": "Blog",
+    "forCompanies": "Für Unternehmen",
+    "forDevelopers": "Für Entwickler",
+    "chatWidget": "Chat-Widget",
+    "multiModel": "Multi-Model Routing",
+    "memories": "Memories & RAG",
+    "auditLogs": "Audit & Compliance",
+    "widget": "Widget Details",
+    "team": "Team",
+    "philosophy": "Philosophie",
+    "partners": "Partner"
+  },
+  "common": {
+    "startForFree": "Kostenlos starten",
+    "bookDemo": "Demo buchen",
+    "learnMore": "Mehr erfahren",
+    "viewOnGithub": "Auf GitHub ansehen",
+    "madeInGermany": "Made in Germany",
+    "gdprCompliant": "DSGVO-konform",
+    "openSource": "100% Open Source",
+    "getStarted": "Jetzt starten"
+  },
+  "hero": {
+    "badge": "Open-Source KI-Plattform",
+    "title": "KI unter Kontrolle.",
+    "titleHighlight": "Alle Modelle. Eine Plattform.",
+    "description": "Synaplan verbindet führende KI-Systeme mit professionellem Management — freie Modellwahl, Kostenkontrolle, volle Transparenz und DSGVO-Konformität.",
+    "trustedBy": "Vertraut von innovativen Unternehmen"
+  },
+  "solutions": {
+    "title": "Für jedes Team gebaut",
+    "subtitle": "Ob Unternehmen, Entwickler oder Website-Betreiber — Synaplan passt sich Ihren Bedürfnissen an.",
+    "companies": {
+      "title": "Für Unternehmen",
+      "description": "KI sicher und effizient einsetzen — mit voller Datenkontrolle, Compliance und detaillierten Audit-Logs."
+    },
+    "developers": {
+      "title": "Für Entwickler",
+      "description": "Auf offenen Standards aufbauen, API-first und Open Source — flexibel und ohne Vendor Lock-in."
+    },
+    "widget": {
+      "title": "Chat-Widget",
+      "description": "Integrieren Sie einen KI-Chatbot in Ihre Website in Minuten. DSGVO-konform, ab 19,95 €/Monat."
+    }
+  },
+  "features": {
+    "title": "Alles für professionelles KI-Management",
+    "subtitle": "Von Modellauswahl und Kostenkontrolle bis zu Logging und Mehrsprachigkeit.",
+    "multiModel": {
+      "label": "Multi-Model",
+      "title": "Zum besten Modell routen",
+      "description": "Prompts an OpenAI, Google, Meta, Grok und mehr senden. Frei wechseln, kein Vendor Lock-in."
+    },
+    "documents": {
+      "label": "RAG",
+      "title": "Ihr Wissen, KI-gestützt",
+      "description": "Dokumente hochladen und kontextbezogene Antworten erhalten. Ihre eigene KI-Wissensbasis."
+    },
+    "audit": {
+      "label": "Compliance",
+      "title": "Jede Aktion protokolliert",
+      "description": "Lückenlose Audit-Trails für alle KI-Aktivitäten. DSGVO und interne Compliance erfüllen."
+    },
+    "widget": {
+      "label": "Widget",
+      "title": "In Minuten live auf Ihrer Website",
+      "description": "Einen smarten Chatbot per WordPress-Plugin oder Code-Snippet einbinden. Mehrsprachig, anpassbar."
+    },
+    "dashboard": {
+      "label": "Analytics",
+      "title": "Volle Übersicht",
+      "description": "KI- und Dokumentennutzung mit einem Echtzeit-Dashboard überwachen. Kosten, Tokens und Performance tracken."
+    },
+    "security": {
+      "label": "Sicherheit",
+      "title": "Ihre Daten, Ihre Regeln",
+      "description": "Selbst hosten oder unsere Cloud nutzen. Volle Datensouveränität, immer."
+    }
+  },
+  "useCases": {
+    "title": "Echte Ergebnisse von echten Unternehmen",
+    "subtitle": "Sehen Sie, wie Organisationen Synaplan nutzen, um KI sicher und effizient einzusetzen."
+  },
+  "openSource": {
+    "title": "Offen entwickelt",
+    "subtitle": "Synaplan ist 100% Open Source. Code einsehen, beitragen oder selbst hosten — Sie behalten immer die Kontrolle.",
+    "stars": "GitHub Stars",
+    "forks": "Forks",
+    "license": "Lizenz"
+  },
+  "cta": {
+    "title": "Bereit, Ihre KI unter Kontrolle zu bringen?",
+    "subtitle": "Kostenlos starten oder eine 30-Minuten-Demo buchen für eine klare KI-Roadmap für Ihr Unternehmen.",
+    "immediately": "Sofort verfügbar",
+    "gdpr": "DSGVO-konform",
+    "germany": "Made in Germany"
+  },
+  "footer": {
+    "platform": "Plattform",
+    "resources": "Ressourcen",
+    "company": "Unternehmen",
+    "legal": "Rechtliches",
+    "docs": "Dokumentation",
+    "github": "GitHub Repository",
+    "discord": "Discord",
+    "about": "Über Synaplan",
+    "contact": "Kontakt",
+    "imprint": "Impressum",
+    "privacy": "Datenschutz",
+    "copyright": "© {year} metadist data management GmbH"
+  }
+}

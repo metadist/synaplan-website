@@ -1,0 +1,85 @@
+"use client";
+
+import { useTranslations } from "next-intl";
+import { buttonVariants } from "@/components/ui/button";
+import { LINKS } from "@/lib/constants";
+import { ArrowRight, CheckCircle } from "lucide-react";
+import { cn } from "@/lib/utils";
+
+export function CTASection() {
+  const t = useTranslations("cta");
+  const tc = useTranslations("common");
+
+  const badges = [t("immediately"), t("gdpr"), t("germany")];
+
+  return (
+    <section className="py-20 sm:py-28">
+      <div className="container-wide section-padding">
+        <div className="relative overflow-hidden rounded-3xl p-10 text-center sm:p-16">
+          {/* Multi-layer gradient background */}
+          <div className="absolute inset-0 gradient-brand" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,_oklch(0.55_0.19_280_/_0.3),_transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,_white/8,_transparent_40%)]" />
+
+          {/* Animated shimmer */}
+          <div className="absolute inset-0 animate-shimmer" />
+
+          {/* Grid overlay */}
+          <div
+            className="absolute inset-0 opacity-[0.04]"
+            style={{
+              backgroundImage:
+                "linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)",
+              backgroundSize: "40px 40px",
+            }}
+          />
+
+          <div className="relative z-10">
+            <h2 className="mx-auto max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+              {t("title")}
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-lg text-white/80">
+              {t("subtitle")}
+            </p>
+
+            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+              <a
+                href={LINKS.web}
+                className={cn(
+                  buttonVariants({ size: "lg" }),
+                  "gap-2 border-transparent bg-white px-8 text-base font-semibold text-brand-700 shadow-xl shadow-black/10 hover:bg-white/95 hover:shadow-2xl"
+                )}
+              >
+                {tc("startForFree")}
+                <ArrowRight className="size-4" />
+              </a>
+              <a
+                href={LINKS.appointment}
+                className={cn(
+                  buttonVariants({ variant: "outline", size: "lg" }),
+                  "border-white/30 px-8 text-base text-white backdrop-blur-sm hover:bg-white/10"
+                )}
+              >
+                {tc("bookDemo")}
+              </a>
+            </div>
+
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
+              {badges.map((badge) => (
+                <div
+                  key={badge}
+                  className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur-sm"
+                >
+                  <CheckCircle className="size-4 text-white/70" />
+                  <span className="text-sm font-medium text-white/90">
+                    {badge}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
