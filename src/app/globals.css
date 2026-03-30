@@ -282,6 +282,49 @@
     }
   }
 
+  /* Hero — scroll hint (mouse wheel) */
+  .hero-scroll-wheel {
+    animation: hero-scroll-wheel 1.65s ease-in-out infinite;
+  }
+  @keyframes hero-scroll-wheel {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    45% {
+      transform: translateY(0.45rem);
+      opacity: 0.3;
+    }
+    90% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  .hero-scroll-chevron {
+    animation: hero-scroll-chevron 2.1s ease-in-out infinite;
+  }
+  @keyframes hero-scroll-chevron {
+    0%,
+    100% {
+      transform: translateY(0);
+      opacity: 0.45;
+    }
+    50% {
+      transform: translateY(5px);
+      opacity: 1;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-scroll-wheel {
+      animation: none;
+      opacity: 0.85;
+    }
+    .hero-scroll-chevron {
+      animation: none;
+      opacity: 0.75;
+    }
+  }
+
   /* Widget flow — subtle moving dash on neural links */
   .widget-neural-path {
     stroke-dasharray: 6 12;
@@ -420,5 +463,13 @@
   html[data-motion-profile="reduced"] .chat-preview-dot {
     animation: none;
     opacity: 0.65;
+  }
+  html[data-motion-profile="reduced"] .hero-scroll-wheel {
+    animation: none;
+    opacity: 0.85;
+  }
+  html[data-motion-profile="reduced"] .hero-scroll-chevron {
+    animation: none;
+    opacity: 0.75;
   }
 }

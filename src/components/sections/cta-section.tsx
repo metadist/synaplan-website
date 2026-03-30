@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { buttonVariants } from "@/components/ui/button";
 import { LINKS } from "@/lib/constants";
+import { Link } from "@/i18n/navigation";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -57,12 +58,22 @@ export function CTASection() {
                 href={LINKS.appointment}
                 className={cn(
                   buttonVariants({ variant: "outline", size: "lg" }),
-                  "border-white/30 px-8 text-base text-white backdrop-blur-sm hover:bg-white/10"
+                  // outline defaults to bg-background — on gradient-brand that reads as white; force glass + dark text on light pill for contrast
+                  "border-2 border-white/80 bg-white px-8 text-base font-semibold text-brand-700 shadow-md backdrop-blur-sm hover:bg-white/95 hover:text-brand-800",
                 )}
               >
                 {tc("bookDemo")}
               </a>
             </div>
+
+            <p className="mt-6 text-center text-sm text-white/75">
+              <Link
+                href="/try-chat"
+                className="font-medium text-white underline decoration-white/30 underline-offset-4 transition-colors hover:text-white hover:decoration-white/60"
+              >
+                {tc("ctaTryChatTeaser")}
+              </Link>
+            </p>
 
             <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
               {badges.map((badge) => (

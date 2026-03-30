@@ -63,13 +63,21 @@ export function ModelRoutingVisual() {
       {/* Synaplan hub */}
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
         <div className="relative">
-          {allowHeavyEffects && (
-            <div
-              key={pulseKey}
-              className="absolute -inset-3 animate-ping rounded-full bg-brand-500/20"
-              style={{ animationDuration: "2s", animationIterationCount: "1" }}
-            />
-          )}
+          <div
+            key={pulseKey}
+            aria-hidden
+            className={cn(
+              "absolute -inset-3 rounded-full bg-brand-500/20",
+              allowHeavyEffects
+                ? "animate-ping"
+                : "pointer-events-none opacity-0",
+            )}
+            style={
+              allowHeavyEffects
+                ? { animationDuration: "2s", animationIterationCount: "1" }
+                : undefined
+            }
+          />
           <div
             className={cn(
               "flex size-12 items-center justify-center rounded-full border border-brand-500/40 bg-brand-500/20 sm:size-14",

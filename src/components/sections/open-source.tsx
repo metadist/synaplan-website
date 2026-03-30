@@ -1,20 +1,56 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { buttonVariants } from "@/components/ui/button";
-import { LINKS } from "@/lib/constants";
-import { Star, GitFork, Scale } from "lucide-react";
 import { GithubIcon } from "@/components/icons";
+import { LINKS } from "@/lib/constants";
+import {
+  formatGithubRepoStatNumber,
+  type SynaplanGithubRepoStats,
+} from "@/lib/github-synaplan-repo";
 import { cn } from "@/lib/utils";
+import { GitFork, Scale, Star } from "lucide-react";
 
-export function OpenSourceSection() {
+export type OpenSourceSectionProps = {
+  githubRepo?: SynaplanGithubRepoStats | null;
+};
+
+export function OpenSourceSection({
+  githubRepo = null,
+}: OpenSourceSectionProps) {
   const t = useTranslations("openSource");
   const tc = useTranslations("common");
+  const locale = useLocale();
 
-  const stats = [
-    { icon: Star, value: "—", label: t("stars") },
-    { icon: GitFork, value: "—", label: t("forks") },
-    { icon: Scale, value: "AGPL", label: t("license") },
+  const stars = formatGithubRepoStatNumber(githubRepo?.stars, locale);
+  const forks = formatGithubRepoStatNumber(githubRepo?.forks, locale);
+  const license =
+    githubRepo?.licenseLabel?.trim() || "\u2014";
+
+  const stats: {
+    icon: typeof Star;
+    value: string;
+    label: string;
+    href: string;
+  }[] = [
+    {
+      icon: Star,
+      value: stars,
+      label: t("stars"),
+      href: `${LINKS.github}/stargazers`,
+    },
+    {
+      icon: GitFork,
+      value: forks,
+      label: t("forks"),
+      href: `${LINKS.github}/forks`,
+    },
+    {
+      icon: Scale,
+      value: license,
+      label: t("license"),
+      href: `${LINKS.github}/blob/main/LICENSE`,
+    },
   ];
 
   return (
@@ -43,15 +79,21 @@ export function OpenSourceSection() {
 
         <div className="mx-auto mt-14 flex max-w-lg flex-wrap items-center justify-center gap-10">
           {stats.map((stat) => (
-            <div key={stat.label} className="group flex flex-col items-center gap-2">
+            <a
+              key={stat.label}
+              href={stat.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center gap-2 rounded-xl px-2 py-1 outline-none transition-colors hover:bg-white/5 focus-visible:ring-2 focus-visible:ring-brand-400/50"
+            >
               <div className="flex items-center gap-2.5">
                 <stat.icon className="size-5 text-brand-400 transition-transform duration-300 group-hover:scale-110" />
-                <span className="text-3xl font-bold text-white">
+                <span className="text-3xl font-bold tabular-nums text-white">
                   {stat.value}
                 </span>
               </div>
               <span className="text-sm text-white/50">{stat.label}</span>
-            </div>
+            </a>
           ))}
         </div>
 
@@ -62,7 +104,7 @@ export function OpenSourceSection() {
             rel="noopener noreferrer"
             className={cn(
               buttonVariants({ size: "lg" }),
-              "gap-2 border-white/10 bg-white text-zinc-900 shadow-lg shadow-white/5 hover:bg-white/90"
+              "gap-2 border-white/10 bg-white text-zinc-900 shadow-lg shadow-white/5 hover:bg-white/90",
             )}
           >
             <GithubIcon className="size-5" />

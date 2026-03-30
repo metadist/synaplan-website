@@ -3,7 +3,7 @@
 import { useEffect, useState, useRef, useCallback, useLayoutEffect } from "react";
 import { ArrowRight, Send, Bot, User, MoreVertical } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { LINKS } from "@/lib/constants";
+import { Link } from "@/i18n/navigation";
 import { useMotionPerformance } from "@/contexts/motion-performance-context";
 import { cn } from "@/lib/utils";
 
@@ -184,15 +184,13 @@ export function ChatWidgetPreview() {
 
             {isComplete && (
               <div className="flex justify-center pt-1">
-                <a
-                  href={LINKS.web}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-figma-primary inline-flex h-10 items-center justify-center gap-2 rounded-xl border-0 px-5 text-sm font-semibold text-white shadow-[0_10px_28px_-10px_rgb(0_44_146/0.4)]"
+                <Link
+                  href="/try-chat"
+                  className="btn-figma-primary inline-flex h-auto min-h-10 max-w-[95%] items-center justify-center gap-2 rounded-xl border-0 px-4 py-2.5 text-center text-sm font-semibold leading-snug text-white shadow-[0_10px_28px_-10px_rgb(0_44_146/0.4)] sm:px-5"
                 >
-                  {t("ctaStartNow")}
-                  <ArrowRight className="size-4" aria-hidden />
-                </a>
+                  <span className="text-balance">{t("ctaTryChat")}</span>
+                  <ArrowRight className="size-4 shrink-0" aria-hidden />
+                </Link>
               </div>
             )}
           </div>

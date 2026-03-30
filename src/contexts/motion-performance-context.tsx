@@ -16,11 +16,12 @@ export type MotionPerformanceFlags = {
   allowHeavyEffects: boolean;
 };
 
+/** Conservative defaults so SSR + first client paint match; real flags apply after mount. */
 const defaultServerFlags: MotionPerformanceFlags = {
   prefersReducedMotion: false,
   saveData: false,
   likelyLowGpu: false,
-  allowHeavyEffects: true,
+  allowHeavyEffects: false,
 };
 
 function detectLikelyLowGpu(): boolean {

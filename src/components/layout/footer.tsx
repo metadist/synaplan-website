@@ -16,6 +16,7 @@ export function Footer() {
         { label: tn("forCompanies"), href: "/solutions/companies" },
         { label: tn("forDevelopers"), href: "/solutions/developers" },
         { label: tn("chatWidget"), href: "/solutions/chat-widget" },
+        { label: t("tryChat"), href: "/try-chat" },
         { label: t("widgetTrades"), href: "/solutions/chat-widget/trades" },
         { label: t("widgetHospitality"), href: "/solutions/chat-widget/hospitality" },
         { label: t("widgetReferences"), href: "/solutions/chat-widget/customers" },

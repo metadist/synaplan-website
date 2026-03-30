@@ -5,6 +5,8 @@ const SITE = "https://synaplan.com";
 
 const PATHS = [
   "",
+  "/pricing",
+  "/try-chat",
   "/solutions/chat-widget",
   "/solutions/memories",
   "/solutions/chat-widget/trades",

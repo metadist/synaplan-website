@@ -2,6 +2,7 @@ import dynamic from "next/dynamic";
 import { setRequestLocale } from "next-intl/server";
 import { HeroSection } from "@/components/sections/hero";
 import { HomeSectionSkeleton } from "@/components/sections/home-section-skeleton";
+import { getSynaplanGithubRepoStats } from "@/lib/github-synaplan-repo";
 
 const WidgetFlowSection = dynamic(
   () =>
@@ -90,6 +91,8 @@ export default async function HomePage({
   const { locale } = await params;
   setRequestLocale(locale);
 
+  const githubRepo = getSynaplanGithubRepoStats();
+
   return (
     <>
       <HeroSection />
@@ -98,7 +101,7 @@ export default async function HomePage({
       <SolutionsGrid />
       <FeaturesShowcase />
       <UseCasesSection />
-      <OpenSourceSection />
+      <OpenSourceSection githubRepo={githubRepo} />
       <CTASection />
     </>
   );
