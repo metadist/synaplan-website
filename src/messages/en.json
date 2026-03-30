@@ -180,7 +180,7 @@
   "hero": {
     "badge": "Open Source AI Platform",
     "title": "Take control of your AI.",
-    "titleHighlight": "All models. One platform.",
+    "titleHighlight": "All models.\nOne platform.",
     "description": "Synaplan connects leading AI systems with professional management — free model choice, cost control, full transparency, and GDPR compliance.",
     "trustedBy": "Trusted by innovative companies"
   },
@@ -436,8 +436,8 @@
       "docsCtaLabel": "Technical docs & embed guides",
       "pricingHighlight": "Plans from €19.95/mo for website widgets — scale when traffic grows.",
       "demoCaption": "Interactive preview — scripted demo, not live data.",
-      "midCtaTitle": "Run a campaign landing here",
-      "midCtaLead": "Pair this page with Google Ads on “website chatbot”, “GDPR chat widget”, or industry keywords — clear CTAs above the fold and after benefits."
+      "midCtaTitle": "Try it",
+      "midCtaLead": "Start free or book a demo — we cover embed, your knowledge sources, and settings for your website widget."
     },
     "trades": {
       "metaTitle": "Chat widget for trades & crafts — Synaplan",
@@ -449,10 +449,10 @@
       "section1Body": "When can you come out? Do you stock this part? Where is your emergency number? What’s in the warranty PDF? Map each intent to a crawl path, an uploaded document, or a short structured list so answers stay short and factual.",
       "section2Title": "After-hours and peaks",
       "section2Body": "Even when the office is closed, visitors get orientation from your published hours and on-call policy. Escalations still go to your team — the widget reduces noise, not accountability.",
-      "section3Title": "Campaign-ready landing",
-      "section3Body": "Use this URL in Google Ads and local service campaigns: clear headline, live demo, and dual CTAs so you can attribute leads without sending traffic to a generic homepage.",
+      "section3Title": "One clear page for prospects",
+      "section3Body": "Use this URL when you want a concise story: headline, live demo, and dual CTAs so visitors grasp Synaplan at a glance without hunting through a generic homepage.",
       "landingHeroBadge": "Trades & crafts",
-      "landingCtaHint": "Use this page as a Google Ads landing for “emergency plumber chatbot”, “craft business AI”, or local service keywords.",
+      "landingCtaHint": "Helpful context for visitors who care about “emergency plumber chatbot”, “craft business AI”, or local service topics — Synaplan explained in one place.",
       "demoCaption": "Industry demo — scripted messages for trades.",
       "painSectionTitle": "Sound familiar?",
       "pain1Title": "Phone lines jam at 7:01",
@@ -481,10 +481,10 @@
       "section1Body": "Point visitor questions at your rates and policy pages, PDF brochures, and a curated FAQ list for things that change seasonally. For member or loyalty data, use Pro connectors with your CRM rules.",
       "section2Title": "Languages and tone",
       "section2Body": "Align the widget with your brand voice in Synaplan and serve international guests with multilingual models — still grounded in your approved text.",
-      "section3Title": "Built for paid and organic search",
-      "section3Body": "Pair this page with amenity and destination keywords: the copy matches guest intents, and structured data plus FAQ content support visibility in search results.",
+      "section3Title": "Built for guest intents and discovery",
+      "section3Body": "The copy aligns with amenity and destination questions guests actually ask; structured data and FAQ-style content support visibility in search results.",
       "landingHeroBadge": "Hotels & hosts",
-      "landingCtaHint": "Ideal for Ads on “hotel chatbot”, “guest messaging AI”, or destination + amenity keywords.",
+      "landingCtaHint": "Aligns with topics like “hotel chatbot”, guest messaging, or destination and amenity questions — Synaplan in one clear view.",
       "demoCaption": "Hospitality demo — scripted guest conversation.",
       "painSectionTitle": "Where front desks lose time",
       "pain1Title": "Same question, ten channels",
@@ -498,8 +498,8 @@
       "benefit1Desc": "Guests resolve routine questions before they stand in line.",
       "benefit2Title": "Brand-consistent answers",
       "benefit2Desc": "Tone and facts come from your Synaplan configuration, not random web text.",
-      "benefit3Title": "Campaign-ready landing",
-      "benefit3Desc": "Pair this URL with paid search to measure leads from hospitality-specific intents.",
+      "benefit3Title": "One page for your offer",
+      "benefit3Desc": "Link from your site so guests see the story and demo in one flow.",
       "bottomCtaTitle": "Add hospitality AI to your site",
       "bottomCtaLead": "Try Synaplan free, connect your official pages, then scale with Pro connectors when needed."
     },

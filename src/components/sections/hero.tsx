@@ -30,10 +30,12 @@ export function HeroSection() {
               {t("hero.badge")}
             </Badge>
 
-            <h1 className="max-w-3xl text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-[4.25rem] lg:leading-[1.05] lg:tracking-[-0.06em]">
+            <h1 className="max-w-3xl text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-[4.25rem] lg:leading-[1.1] lg:tracking-[-0.045em] [word-spacing:0.04em]">
               {t("hero.title")}
               <br />
-              <span className="text-[#002c92]">{t("hero.titleHighlight")}</span>
+              <span className="mt-3 block whitespace-pre-line text-[#002c92] sm:mt-4 lg:mt-5 lg:leading-[1.18] lg:[word-spacing:0.06em]">
+                {t("hero.titleHighlight")}
+              </span>
             </h1>
 
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground sm:text-xl">

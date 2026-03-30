@@ -180,7 +180,7 @@
   "hero": {
     "badge": "Open-Source KI-Plattform",
     "title": "KI unter Kontrolle.",
-    "titleHighlight": "Alle Modelle. Eine Plattform.",
+    "titleHighlight": "Alle Modelle.\nEine Plattform.",
     "description": "Synaplan verbindet führende KI-Systeme mit professionellem Management — freie Modellwahl, Kostenkontrolle, volle Transparenz und DSGVO-Konformität.",
     "trustedBy": "Vertraut von innovativen Unternehmen"
   },
@@ -436,8 +436,8 @@
       "docsCtaLabel": "Technische Doku & Embed-Guides",
       "pricingHighlight": "Tarife ab 19,95 €/Monat fürs Website-Widget — skalieren wenn Traffic wächst.",
       "demoCaption": "Interaktive Vorschau — Demo-Skript, keine Live-Daten.",
-      "midCtaTitle": "Kampagnen-Landing für Ads",
-      "midCtaLead": "Diese Seite eignet sich für Google Ads zu „Website-Chatbot“, „DSGVO Chat-Widget“ oder Branchen-Keywords — klare CTAs oben und nach den Benefits."
+      "midCtaTitle": "Jetzt ausprobieren",
+      "midCtaLead": "Synaplan kostenlos testen oder eine Demo buchen — Einbindung, Ihre Wissensquellen und die Einstellungen für Ihr Website-Widget."
     },
     "trades": {
       "metaTitle": "Chat-Widget für Handwerk & Gewerbe — Synaplan",
@@ -449,10 +449,10 @@
       "section1Body": "Wann können Sie kommen? Haben Sie dieses Teil? Wo ist die Notfallnummer? Was steht in der Garantie-PDF? Ordnen Sie jeden Intent einem Crawl-Pfad, Dokument oder einer kurzen Liste zu — Antworten bleiben knapp und sachlich.",
       "section2Title": "Außerhalb der Zeiten und bei Peaks",
       "section2Body": "Auch wenn niemand rangeht, bekommen Besucher Orientierung aus veröffentlichten Zeiten und Bereitschaftsregeln. Eskalationen bleiben bei Ihrem Team — das Widget reduziert Lärm, nicht Verantwortung.",
-      "section3Title": "Landing für Kampagnen",
-      "section3Body": "Nutzen Sie die URL in Google Ads und lokalen Service-Kampagnen: klare Headline, Live-Demo und zwei CTAs — Leads lassen sich zuordnen, ohne Traffic auf eine generische Startseite zu schicken.",
+      "section3Title": "Eine klare Seite für Interessenten",
+      "section3Body": "Nutzen Sie die URL, wenn Sie Synaplan kompakt erklären wollen: Headline, Live-Demo und zwei CTAs — ohne Besucher auf eine überladene Startseite zu schicken.",
       "landingHeroBadge": "Handwerk & Gewerbe",
-      "landingCtaHint": "Nutzen Sie die Seite als Google-Ads-Landing für „Notdienst Chatbot“, „Handwerks-KI“ oder lokale Service-Keywords.",
+      "landingCtaHint": "Passt zu Fragestellungen wie „Notdienst-Chatbot“, „Handwerks-KI“ oder lokale Service-Themen — Synaplan in einem Zusammenhang.",
       "demoCaption": "Branchen-Demo — Skript für Handwerk.",
       "painSectionTitle": "Kommt Ihnen das bekannt vor?",
       "pain1Title": "Die Leitung klingelt um 7:01",
@@ -481,10 +481,10 @@
       "section1Body": "Fragen auf Preis- und Policy-Seiten, PDFs und saisonal gepflegte FAQ-Listen lenken. Für Treue- oder Mitgliedsdaten Pro-Connectoren mit CRM-Regeln nutzen.",
       "section2Title": "Sprache und Ton",
       "section2Body": "Stimmen Sie Stimme und Markenauftritt in Synaplan ab und bedienen Sie internationale Gäste mit mehrsprachigen Modellen — weiterhin auf freigegebenen Texten.",
-      "section3Title": "Für bezahlte und organische Suche",
-      "section3Body": "Kombinieren Sie die Seite mit Ausstattungs- und Destination-Keywords: Texte passen zu Gäste-Intents; strukturierte Daten und FAQ-Inhalte unterstützen Sichtbarkeit in den Suchergebnissen.",
+      "section3Title": "Für Gäste-Intents und Auffindbarkeit",
+      "section3Body": "Die Texte passen zu typischen Fragen zu Ausstattung und Destination; strukturierte Daten und FAQ-Inhalte unterstützen Sichtbarkeit in den Suchergebnissen.",
       "landingHeroBadge": "Hotels & Gastgewerbe",
-      "landingCtaHint": "Geeignet für Ads zu „Hotel-Chatbot“, „Gäste-KI“ oder Destination- und Ausstattungs-Keywords.",
+      "landingCtaHint": "Passt zu Themen wie „Hotel-Chatbot“, Gäste-Kommunikation oder Destination und Ausstattung — Synaplan übersichtlich erklärt.",
       "demoCaption": "Hospitality-Demo — Gäste-Gespräch als Skript.",
       "painSectionTitle": "Wo die Rezeption Zeit verliert",
       "pain1Title": "Dieselbe Frage, zehn Kanäle",
@@ -498,8 +498,8 @@
       "benefit1Desc": "Routinefragen klären sich, bevor Gäste anstehen.",
       "benefit2Title": "Markenkonsistente Antworten",
       "benefit2Desc": "Ton und Fakten aus Ihrer Synaplan-Konfiguration — kein Zufallstext aus dem Web.",
-      "benefit3Title": "Landing für Kampagnen",
-      "benefit3Desc": "Diese URL mit Paid Search kombinieren — Intents aus Hotellerie messbar machen.",
+      "benefit3Title": "Ein Angebot auf einer Seite",
+      "benefit3Desc": "Verlinken Sie von Ihrer Website — Gäste sehen Nutzen und Demo in einem Ablauf.",
       "bottomCtaTitle": "Hospitality-KI auf der Website",
       "bottomCtaLead": "Synaplan kostenlos testen, offizielle Seiten anbinden — Pro-Connectoren bei Bedarf nachziehen."
     },
