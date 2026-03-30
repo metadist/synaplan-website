@@ -35,7 +35,7 @@ export function SolutionsGrid() {
   const t = useTranslations("solutions");
 
   return (
-    <section className="py-20 sm:py-28">
+    <section className="surface-rose py-20 sm:py-28">
       <div className="container-wide section-padding">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
@@ -51,7 +51,7 @@ export function SolutionsGrid() {
               href={sol.href}
               className="group block h-full"
             >
-              <Card className="relative h-full overflow-hidden border-border/60 transition-all duration-300 hover:border-brand-300 hover:shadow-lg hover:shadow-brand-500/5">
+              <Card className="relative h-full overflow-hidden rounded-3xl border-[rgb(196_197_215/0.2)] bg-[rgb(255_255_255/0.85)] shadow-sm transition-all duration-300 hover:border-[#002c92]/20 hover:shadow-lg hover:shadow-[#002c92]/5">
                 <div
                   className={`absolute inset-0 bg-gradient-to-br ${sol.gradient} opacity-0 transition-opacity group-hover:opacity-100`}
                 />

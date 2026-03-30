@@ -15,14 +15,14 @@ export function CTASection() {
   return (
     <section className="py-20 sm:py-28">
       <div className="container-wide section-padding">
-        <div className="relative overflow-hidden rounded-3xl p-10 text-center sm:p-16">
+        <div className="relative overflow-hidden rounded-[2.5rem] p-10 text-center sm:p-16 md:rounded-[2.75rem]">
           {/* Multi-layer gradient background */}
           <div className="absolute inset-0 gradient-brand" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,_oklch(0.55_0.19_280_/_0.3),_transparent_50%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,_white/8,_transparent_40%)]" />
 
-          {/* Animated shimmer */}
-          <div className="absolute inset-0 animate-shimmer" />
+          {/* Animated shimmer — disabled via html[data-motion-profile="reduced"] */}
+          <div className="cta-shimmer-layer absolute inset-0 animate-shimmer" />
 
           {/* Grid overlay */}
           <div

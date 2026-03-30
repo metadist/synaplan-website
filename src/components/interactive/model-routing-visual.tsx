@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useMotionPerformance } from "@/contexts/motion-performance-context";
+import { cn } from "@/lib/utils";
 
 const MODELS = [
   { name: "GPT-4o", color: "#10b981", x: 75, y: 15 },
@@ -11,16 +13,18 @@ const MODELS = [
 ];
 
 export function ModelRoutingVisual() {
+  const { allowHeavyEffects } = useMotionPerformance();
   const [activeRoute, setActiveRoute] = useState(0);
   const [pulseKey, setPulseKey] = useState(0);
 
   useEffect(() => {
+    if (!allowHeavyEffects) return;
     const interval = setInterval(() => {
       setActiveRoute((prev) => (prev + 1) % MODELS.length);
       setPulseKey((prev) => prev + 1);
     }, 2000);
     return () => clearInterval(interval);
-  }, []);
+  }, [allowHeavyEffects]);
 
   return (
     <div className="relative h-48 w-full overflow-hidden rounded-2xl bg-zinc-950 p-6 sm:h-56">
@@ -37,7 +41,12 @@ export function ModelRoutingVisual() {
       {/* Source node — "Your App" */}
       <div className="absolute left-6 top-1/2 -translate-y-1/2">
         <div className="relative">
-          <div className="flex size-14 items-center justify-center rounded-xl border border-brand-500/30 bg-brand-500/10 backdrop-blur-sm sm:size-16">
+          <div
+            className={cn(
+              "flex size-14 items-center justify-center rounded-xl border border-brand-500/30 bg-brand-500/10 sm:size-16",
+              allowHeavyEffects && "backdrop-blur-sm",
+            )}
+          >
             <div className="text-center">
               <span className="block text-[10px] font-bold text-brand-400">
                 YOUR
@@ -54,12 +63,19 @@ export function ModelRoutingVisual() {
       {/* Synaplan hub */}
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
         <div className="relative">
+          {allowHeavyEffects && (
+            <div
+              key={pulseKey}
+              className="absolute -inset-3 animate-ping rounded-full bg-brand-500/20"
+              style={{ animationDuration: "2s", animationIterationCount: "1" }}
+            />
+          )}
           <div
-            key={pulseKey}
-            className="absolute -inset-3 animate-ping rounded-full bg-brand-500/20"
-            style={{ animationDuration: "2s", animationIterationCount: "1" }}
-          />
-          <div className="flex size-12 items-center justify-center rounded-full border border-brand-500/40 bg-brand-500/20 backdrop-blur-sm sm:size-14">
+            className={cn(
+              "flex size-12 items-center justify-center rounded-full border border-brand-500/40 bg-brand-500/20 sm:size-14",
+              allowHeavyEffects && "backdrop-blur-sm",
+            )}
+          >
             <span className="text-[9px] font-bold text-brand-300 sm:text-[10px]">
               SYNA
             </span>
@@ -106,11 +122,13 @@ export function ModelRoutingVisual() {
           style={{ left: `${model.x}%`, top: `${model.y}%` }}
         >
           <div
-            className={`flex items-center gap-1.5 rounded-lg border px-2 py-1 backdrop-blur-sm transition-all duration-500 ${
+            className={cn(
+              "flex items-center gap-1.5 rounded-lg border px-2 py-1",
+              allowHeavyEffects && "backdrop-blur-sm transition-all duration-500",
               activeRoute === i
                 ? "scale-110 border-white/20 bg-white/10"
-                : "scale-100 border-white/5 bg-white/5"
-            }`}
+                : "scale-100 border-white/5 bg-white/5",
+            )}
           >
             <div
               className="size-2 rounded-full transition-all duration-500"

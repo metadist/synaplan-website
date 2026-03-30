@@ -11,6 +11,8 @@ import {
   Lock,
 } from "lucide-react";
 import { ModelRoutingVisual } from "@/components/interactive/model-routing-visual";
+import { useMotionPerformance } from "@/contexts/motion-performance-context";
+import { cn } from "@/lib/utils";
 
 const features = [
   {
@@ -28,11 +30,10 @@ const features = [
 
 export function FeaturesShowcase() {
   const t = useTranslations("features");
+  const { allowHeavyEffects } = useMotionPerformance();
 
   return (
-    <section className="relative py-20 sm:py-28">
-      <div className="absolute inset-0 -z-10 bg-muted/30" />
-
+    <section className="surface-rose relative py-20 sm:py-28">
       <div className="container-wide section-padding">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
@@ -45,11 +46,28 @@ export function FeaturesShowcase() {
           {features.map((feat) => (
             <div
               key={feat.key}
-              className={`group relative overflow-hidden rounded-2xl border border-border/60 bg-card transition-all duration-500 hover:border-brand-200 hover:shadow-lg hover:shadow-brand-500/5 ${feat.span}`}
-              style={{ perspective: "800px" }}
+              className={cn(
+                "group relative overflow-hidden rounded-3xl border border-[rgb(196_197_215/0.2)] bg-[rgb(255_255_255/0.9)] shadow-sm",
+                allowHeavyEffects &&
+                  "transition-all duration-500 hover:border-[#002c92]/20 hover:shadow-lg hover:shadow-[#002c92]/5",
+                feat.span,
+              )}
+              style={allowHeavyEffects ? { perspective: "800px" } : undefined}
             >
-              <div className="h-full transition-transform duration-500 group-hover:[transform:rotateX(1deg)_rotateY(-1deg)_scale(1.01)]">
-                <div className="absolute right-0 top-0 h-40 w-40 translate-x-10 -translate-y-10 rounded-full bg-brand-500/[0.04] blur-2xl transition-all duration-500 group-hover:bg-brand-500/[0.08] group-hover:blur-3xl" />
+              <div
+                className={cn(
+                  "h-full",
+                  allowHeavyEffects &&
+                    "transition-transform duration-500 group-hover:[transform:rotateX(1deg)_rotateY(-1deg)_scale(1.01)]",
+                )}
+              >
+                <div
+                  className={cn(
+                    "absolute right-0 top-0 h-40 w-40 translate-x-10 -translate-y-10 rounded-full bg-brand-500/[0.04]",
+                    allowHeavyEffects &&
+                      "blur-2xl transition-all duration-500 group-hover:bg-brand-500/[0.08] group-hover:blur-3xl",
+                  )}
+                />
 
                 <div className="relative p-6">
                   <Badge

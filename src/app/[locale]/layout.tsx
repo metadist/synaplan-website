@@ -6,6 +6,7 @@ import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { MotionPerformanceProvider } from "@/contexts/motion-performance-context";
 import "../globals.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -81,11 +82,16 @@ export default async function LocaleLayout({
       className={`${plusJakartaSans.variable} ${jetbrainsMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="flex min-h-full flex-col bg-background text-foreground">
+      <body
+        className="flex min-h-full flex-col bg-background text-foreground"
+        suppressHydrationWarning
+      >
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
+          <MotionPerformanceProvider>
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </MotionPerformanceProvider>
         </NextIntlClientProvider>
       </body>
     </html>

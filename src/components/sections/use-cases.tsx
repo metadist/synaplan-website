@@ -3,6 +3,8 @@
 import { useTranslations, useLocale } from "next-intl";
 import { Quote, ArrowRight } from "lucide-react";
 import { USE_CASES } from "@/lib/constants";
+import { useMotionPerformance } from "@/contexts/motion-performance-context";
+import { cn } from "@/lib/utils";
 
 const GRADIENTS = [
   "from-brand-500/10 to-brand-600/5",
@@ -14,6 +16,7 @@ const GRADIENTS = [
 export function UseCasesSection() {
   const t = useTranslations("useCases");
   const locale = useLocale();
+  const { allowHeavyEffects } = useMotionPerformance();
 
   return (
     <section className="py-20 sm:py-28">
@@ -29,12 +32,29 @@ export function UseCasesSection() {
           {USE_CASES.map((uc, i) => (
             <div
               key={uc.company}
-              className="group relative overflow-hidden rounded-2xl border border-border/60 bg-card p-6 transition-all duration-500 hover:border-brand-200 hover:shadow-lg"
-              style={{ perspective: "800px" }}
+              className={cn(
+                "group relative overflow-hidden rounded-3xl border border-[rgb(196_197_215/0.25)] bg-[rgb(255_255_255/0.85)] p-6 shadow-sm",
+                allowHeavyEffects &&
+                  "transition-all duration-500 hover:border-[#002c92]/20 hover:shadow-lg",
+              )}
+              style={allowHeavyEffects ? { perspective: "800px" } : undefined}
             >
-              <div className={`absolute inset-0 bg-gradient-to-br ${GRADIENTS[i % GRADIENTS.length]} opacity-0 transition-opacity duration-500 group-hover:opacity-100`} />
+              <div
+                className={cn(
+                  `absolute inset-0 bg-gradient-to-br ${GRADIENTS[i % GRADIENTS.length]}`,
+                  allowHeavyEffects
+                    ? "opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                    : "opacity-0",
+                )}
+              />
 
-              <div className="relative transition-transform duration-500 group-hover:[transform:translateZ(10px)]">
+              <div
+                className={cn(
+                  "relative",
+                  allowHeavyEffects &&
+                    "transition-transform duration-500 group-hover:[transform:translateZ(10px)]",
+                )}
+              >
                 <div className="mb-4 flex items-center justify-between">
                   <Quote className="size-8 text-brand-400/40" />
                   <ArrowRight className="size-4 text-muted-foreground/30 transition-all group-hover:translate-x-1 group-hover:text-brand-500" />

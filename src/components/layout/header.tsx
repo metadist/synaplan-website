@@ -8,11 +8,13 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { LINKS } from "@/lib/constants";
 import { Menu, ChevronDown } from "lucide-react";
 import { GithubIcon } from "@/components/icons";
+import { SynaplanLogo } from "@/components/brand/synaplan-logo";
 import { LanguageSwitcher } from "./language-switcher";
 import { cn } from "@/lib/utils";
 
 export function Header() {
   const t = useTranslations();
+  const tf = useTranslations("footer");
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -20,6 +22,13 @@ export function Header() {
     { href: "/solutions/companies", label: t("nav.forCompanies") },
     { href: "/solutions/developers", label: t("nav.forDevelopers") },
     { href: "/solutions/chat-widget", label: t("nav.chatWidget") },
+    { href: "/solutions/memories", label: t("nav.memories") },
+  ];
+
+  const navWidgetMore = [
+    { href: "/solutions/chat-widget/trades", label: tf("widgetTrades") },
+    { href: "/solutions/chat-widget/hospitality", label: tf("widgetHospitality") },
+    { href: "/solutions/chat-widget/customers", label: tf("widgetReferences") },
   ];
 
   const navItems = [
@@ -28,19 +37,18 @@ export function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 glass">
+    <header className="sticky top-0 z-50 w-full border-b border-[rgb(196_197_215/0.2)] bg-[rgb(255_247_250/0.75)] backdrop-blur-md dark:border-white/10 dark:bg-background/80">
       <div className="container-wide section-padding">
-        <div className="flex h-16 items-center justify-between">
-          <div className="flex items-center gap-8">
-            <Link href="/" className="flex items-center gap-2.5">
-              <div className="flex items-center gap-1 text-xl font-bold tracking-tight text-foreground">
-                <span className="text-brand-500 font-mono text-lg">()</span>
-                <span className="text-brand-500 font-mono text-lg">&gt;</span>
-                <span className="ml-0.5">synaplan</span>
-              </div>
-            </Link>
+        <div className="relative flex h-20 items-center justify-between">
+          <Link
+            href="/"
+            className="relative z-10 flex max-w-[min(100%,10.5rem)] shrink-0 items-center sm:max-w-none"
+            aria-label="Synaplan home"
+          >
+            <SynaplanLogo variant="light" size="compact" className="max-w-full" />
+          </Link>
 
-            <nav className="hidden items-center gap-1 lg:flex">
+          <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 lg:flex">
               <div className="group relative">
                 <button className="flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
                   {t("nav.solutions")}
@@ -57,6 +65,17 @@ export function Header() {
                         {item.label}
                       </Link>
                     ))}
+                    <div className="mt-1 border-t border-border pt-2">
+                      {navWidgetMore.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          className="block rounded-lg px-3 py-2 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -67,7 +86,7 @@ export function Header() {
                   href={item.href}
                   className={`rounded-lg px-3 py-2 text-sm font-medium transition-colors hover:text-foreground ${
                     pathname === item.href
-                      ? "text-foreground"
+                      ? "text-[#002c92]"
                       : "text-muted-foreground"
                   }`}
                 >
@@ -75,9 +94,8 @@ export function Header() {
                 </Link>
               ))}
             </nav>
-          </div>
 
-          <div className="flex items-center gap-3">
+          <div className="relative z-10 flex items-center gap-3">
             <a
               href={LINKS.github}
               target="_blank"
@@ -93,13 +111,16 @@ export function Header() {
             <div className="hidden items-center gap-2 sm:flex">
               <a
                 href={LINKS.appointment}
-                className={cn(buttonVariants({ variant: "ghost", size: "sm" }))}
+                className="rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
               >
                 {t("common.bookDemo")}
               </a>
               <a
                 href={LINKS.web}
-                className={cn(buttonVariants({ size: "sm" }))}
+                className={cn(
+                  buttonVariants({ size: "sm" }),
+                  "btn-figma-primary rounded-lg border-0 px-5 text-white shadow-none hover:opacity-95"
+                )}
               >
                 {t("common.startForFree")}
               </a>
@@ -128,6 +149,18 @@ export function Header() {
                         {item.label}
                       </Link>
                     ))}
+                    <div className="mt-1 border-t border-border pt-2">
+                      {navWidgetMore.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          onClick={() => setMobileOpen(false)}
+                          className="block rounded-lg px-3 py-2 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                   <div className="flex flex-col gap-1">
                     {navItems.map((item) => (
