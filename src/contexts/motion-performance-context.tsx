@@ -4,6 +4,7 @@ import {
   createContext,
   useContext,
   useLayoutEffect,
+  useMemo,
   useState,
   type ReactNode,
 } from "react";
@@ -73,25 +74,36 @@ export function MotionPerformanceProvider({ children }: { children: ReactNode })
   const [flags, setFlags] = useState<MotionPerformanceFlags>(
     defaultServerFlags,
   );
+  /** Avoid hydration mismatch: SSR + first client paint match; real GPU/motion flags apply after mount. */
+  const [hydrated, setHydrated] = useState(false);
 
   useLayoutEffect(() => {
     setFlags(computeFlags());
+    setHydrated(true);
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     const onChange = () => setFlags(computeFlags());
     mq.addEventListener("change", onChange);
     return () => mq.removeEventListener("change", onChange);
   }, []);
 
+  const value = useMemo<MotionPerformanceFlags>(
+    () => ({
+      ...flags,
+      allowHeavyEffects: hydrated && flags.allowHeavyEffects,
+    }),
+    [flags, hydrated],
+  );
+
   useLayoutEffect(() => {
-    if (!flags.allowHeavyEffects) {
+    if (!value.allowHeavyEffects) {
       document.documentElement.setAttribute("data-motion-profile", "reduced");
     } else {
       document.documentElement.removeAttribute("data-motion-profile");
     }
-  }, [flags.allowHeavyEffects]);
+  }, [value.allowHeavyEffects]);
 
   return (
-    <MotionPerformanceContext.Provider value={flags}>
+    <MotionPerformanceContext.Provider value={value}>
       {children}
     </MotionPerformanceContext.Provider>
   );
