@@ -1,8 +1,9 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { useLocale, useTranslations } from "next-intl";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { GithubIcon } from "@/components/icons";
 import { Link } from "@/i18n/navigation";
 import { buttonVariants } from "@/components/ui/button";
@@ -15,22 +16,53 @@ import { cn } from "@/lib/utils";
 import {
   ArrowUpRight,
   BookOpen,
-  Bot,
   ChevronRight,
   Cpu,
   Send,
   Shield,
-  User,
 } from "lucide-react";
+import {
+  TryChatDemoChatCard,
+  type DemoStatusPayload,
+} from "@/components/try-chat/try-chat-demo-chat-card";
+import {
+  TryChatFullscreenDemoToast,
+  TryChatFullscreenModeBar,
+  TryChatFullscreenRail,
+  TryChatFullscreenTopBar,
+} from "@/components/try-chat/try-chat-fullscreen-chrome";
 
 type ChatRow = { role: "user" | "assistant"; content: string };
 
-type StatusPayload = {
-  configured: boolean;
-  max: number;
-  remaining: number;
-  sent: number;
-};
+const DEMO_CHAT_ROWS_STORAGE_KEY = "synaplan-try-chat-rows-v1";
+
+function parseStoredRows(raw: string | null): ChatRow[] | null {
+  if (!raw) return null;
+  try {
+    const parsed = JSON.parse(raw) as unknown;
+    if (!Array.isArray(parsed)) return null;
+    const out: ChatRow[] = [];
+    for (const item of parsed) {
+      if (
+        item &&
+        typeof item === "object" &&
+        "role" in item &&
+        "content" in item &&
+        typeof (item as ChatRow).content === "string"
+      ) {
+        const role = (item as ChatRow).role;
+        if (role === "user" || role === "assistant") {
+          out.push({ role, content: (item as ChatRow).content });
+        }
+      }
+    }
+    return out.length > 0 ? out : null;
+  } catch {
+    return null;
+  }
+}
+
+type StatusPayload = DemoStatusPayload;
 
 export type TryChatExperienceProps = {
   githubRepo?: SynaplanGithubRepoStats | null;
@@ -96,6 +128,7 @@ export function TryChatExperience({
   const locale = useLocale();
   const [status, setStatus] = useState<StatusPayload | null>(null);
   const [rows, setRows] = useState<ChatRow[]>([]);
+  const [storageReady, setStorageReady] = useState(false);
   const [input, setInput] = useState("");
   const [streaming, setStreaming] = useState(false);
   /** API unreachable / 502 — show single CTA to web.synaplan.com */
@@ -103,6 +136,50 @@ export function TryChatExperience({
   const [limitReached, setLimitReached] = useState(false);
   const messagesScrollRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const demoToastTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const [demoToastVisible, setDemoToastVisible] = useState(false);
+  const [portalReady, setPortalReady] = useState(false);
+
+  useEffect(() => {
+    setPortalReady(true);
+  }, []);
+
+  const showDemoToast = useCallback(() => {
+    setDemoToastVisible(true);
+    if (demoToastTimerRef.current) clearTimeout(demoToastTimerRef.current);
+    demoToastTimerRef.current = setTimeout(() => {
+      setDemoToastVisible(false);
+      demoToastTimerRef.current = null;
+    }, 6200);
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (demoToastTimerRef.current) clearTimeout(demoToastTimerRef.current);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isFullscreen) return;
+    const prevBody = document.body.style.overflow;
+    const prevHtml = document.documentElement.style.overflow;
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prevBody;
+      document.documentElement.style.overflow = prevHtml;
+    };
+  }, [isFullscreen]);
+
+  useEffect(() => {
+    if (!isFullscreen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsFullscreen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [isFullscreen]);
 
   const scrollMessagesToBottom = useCallback(() => {
     const el = messagesScrollRef.current;
@@ -133,6 +210,23 @@ export function TryChatExperience({
   }, []);
 
   useEffect(() => {
+    const stored = parseStoredRows(
+      sessionStorage.getItem(DEMO_CHAT_ROWS_STORAGE_KEY),
+    );
+    if (stored) setRows(stored);
+    setStorageReady(true);
+  }, []);
+
+  useEffect(() => {
+    if (!storageReady) return;
+    if (rows.length === 0) {
+      sessionStorage.removeItem(DEMO_CHAT_ROWS_STORAGE_KEY);
+      return;
+    }
+    sessionStorage.setItem(DEMO_CHAT_ROWS_STORAGE_KEY, JSON.stringify(rows));
+  }, [rows, storageReady]);
+
+  useEffect(() => {
     requestAnimationFrame(() => {
       scrollMessagesToBottom();
     });
@@ -140,6 +234,7 @@ export function TryChatExperience({
 
   useEffect(() => {
     if (!status?.configured) return;
+    if (!storageReady) return;
     if (status.remaining <= 0) {
       setLimitReached(true);
       setRows((r) =>
@@ -152,7 +247,7 @@ export function TryChatExperience({
     setRows((r) =>
       r.length === 0 ? [{ role: "assistant", content: t("welcome") }] : r,
     );
-  }, [status, t]);
+  }, [status, t, storageReady]);
 
   const send = async () => {
     const text = input.trim();
@@ -179,7 +274,18 @@ export function TryChatExperience({
 
       if (res.status === 429) {
         setLimitReached(true);
-        setRows((r) => r.slice(0, -2));
+        setRows((r) => {
+          const next = [...r];
+          const last = next[next.length - 1];
+          if (last?.role === "assistant") {
+            next[next.length - 1] = {
+              role: "assistant",
+              content:
+                last.content.trim().length > 0 ? last.content : t("limitInline"),
+            };
+          }
+          return next;
+        });
         setStatus((s) => (s ? { ...s, remaining: 0 } : s));
         return;
       }
@@ -187,7 +293,20 @@ export function TryChatExperience({
       if (!res.ok || !ct.includes("event-stream") || !res.body) {
         await res.json().catch(() => null);
         setApiUnavailable(true);
-        setRows((r) => r.slice(0, -2));
+        setRows((r) => {
+          const next = [...r];
+          const last = next[next.length - 1];
+          if (last?.role === "assistant") {
+            next[next.length - 1] = {
+              role: "assistant",
+              content:
+                last.content.trim().length > 0
+                  ? last.content
+                  : t("unavailableInline"),
+            };
+          }
+          return next;
+        });
         return;
       }
 
@@ -214,7 +333,20 @@ export function TryChatExperience({
       setStatus(j);
     } catch {
       setApiUnavailable(true);
-      setRows((r) => r.slice(0, -2));
+      setRows((r) => {
+        const next = [...r];
+        const last = next[next.length - 1];
+        if (last?.role === "assistant") {
+          next[next.length - 1] = {
+            role: "assistant",
+            content:
+              last.content.trim().length > 0
+                ? last.content
+                : t("unavailableInline"),
+          };
+        }
+        return next;
+      });
     } finally {
       setStreaming(false);
     }
@@ -275,6 +407,7 @@ export function TryChatExperience({
       />
 
       <div className="container-wide section-padding relative z-10 pb-20 pt-10 md:pb-28 md:pt-14">
+        {!isFullscreen && (
         <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:gap-16 lg:items-start">
           {/* Left — hero copy (Figma: Live preview + headline stack) */}
           <motion.div
@@ -316,7 +449,7 @@ export function TryChatExperience({
             </div>
           </motion.div>
 
-          {/* Right — glass chat (Figma: main demo card) */}
+          {/* Right — glass chat */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -327,225 +460,30 @@ export function TryChatExperience({
               aria-hidden
               className="pointer-events-none absolute -right-10 -top-10 z-0 hidden size-24 rotate-12 rounded-2xl border border-white/50 bg-gradient-to-br from-white to-[#f6e3f3] shadow-xl sm:block"
             />
-            <div
-              className={cn(
-                "relative z-10 flex max-h-[min(640px,78vh)] flex-col overflow-hidden rounded-[2rem] border border-white/40 bg-white/70 shadow-[0_25px_50px_-12px_rgba(0,44,146,0.08)] backdrop-blur-[10px]",
-              )}
-            >
-              {/* Header */}
-              <div className="border-b border-[rgb(196_197_215/0.1)] bg-white/40 px-5 py-5 sm:px-6">
-                <div className="flex items-center justify-between gap-3">
-                  <div className="flex min-w-0 items-center gap-3">
-                    <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#002c92] to-[#003fc7] shadow-sm">
-                      <Bot className="size-5 text-white" aria-hidden />
-                    </div>
-                    <div className="min-w-0">
-                      <p className="truncate text-sm font-bold tracking-tight text-[#221823]">
-                        {t("panelLabel")}
-                      </p>
-                      <div className="mt-0.5 flex items-center gap-1.5">
-                        <span
-                          className="size-1.5 shrink-0 rounded-full bg-emerald-500"
-                          aria-hidden
-                        />
-                        <span className="text-[10px] font-medium uppercase tracking-[0.12em] text-[#434654]">
-                          {t("systemOnline")}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  {status && (
-                    <span
-                      className={cn(
-                        "shrink-0 rounded-full px-3 py-1 text-xs font-medium",
-                        status.configured && !limitReached
-                          ? "bg-[#dce1ff] text-[#001551]"
-                          : "bg-amber-100 text-amber-900",
-                      )}
-                    >
-                      {t("messagesLeft", { count: status.remaining })}
-                    </span>
-                  )}
-                </div>
-              </div>
-
-              {!status?.configured && (
-                <div className="border-b border-amber-200/60 bg-amber-50 px-4 py-3 text-center text-sm text-amber-950">
-                  {t("notConfigured")}
-                </div>
-              )}
-
-              {/* Messages — scroll contained here so the page doesn’t jump */}
-              <div
-                ref={messagesScrollRef}
-                className="min-h-0 flex-1 overflow-y-auto overscroll-y-contain bg-gradient-to-b from-white/40 to-[#fff7fa]/30 px-4 py-5 sm:px-6"
-              >
-                <div className="flex flex-col gap-5">
-                  <AnimatePresence initial={false}>
-                    {rows.map((row, i) => (
-                      <motion.div
-                        key={i}
-                        initial={{ opacity: 0, y: 6 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.25 }}
-                        className={cn(
-                          "flex gap-3",
-                          row.role === "user"
-                            ? "flex-row-reverse"
-                            : "flex-row",
-                        )}
-                      >
-                        <div
-                          className={cn(
-                            "mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-lg",
-                            row.role === "user"
-                              ? "bg-[#003fc7] text-white"
-                              : "bg-[#f6e3f3] text-[#002c92]",
-                          )}
-                        >
-                          {row.role === "user" ? (
-                            <User className="size-4" aria-hidden />
-                          ) : (
-                            <Bot className="size-4" aria-hidden />
-                          )}
-                        </div>
-                        <div
-                          className={cn(
-                            "min-w-0 max-w-[min(100%,22rem)]",
-                            row.role === "user" ? "text-right" : "",
-                          )}
-                        >
-                          <div
-                            className={cn(
-                              "inline-block rounded-2xl px-4 py-3 text-left text-sm leading-relaxed shadow-[0_1px_2px_rgba(0,0,0,0.05)]",
-                              row.role === "user"
-                                ? "rounded-tr-sm bg-[#002c92] text-white"
-                                : "rounded-tl-sm border border-[rgb(196_197_215/0.12)] bg-white text-[#221823]",
-                            )}
-                          >
-                            {row.content ||
-                              (streaming && i === rows.length - 1 ? (
-                                <span className="inline-flex gap-1">
-                                  <span className="size-1.5 animate-bounce rounded-full bg-[#434654]/50 [animation-delay:-0.2s]" />
-                                  <span className="size-1.5 animate-bounce rounded-full bg-[#434654]/50 [animation-delay:-0.1s]" />
-                                  <span className="size-1.5 animate-bounce rounded-full bg-[#434654]/50" />
-                                </span>
-                              ) : null)}
-                          </div>
-                          {row.role === "assistant" &&
-                            row.content &&
-                            i === 0 &&
-                            !streaming && (
-                              <p className="mt-1.5 pl-1 text-left text-[10px] text-[#434654]">
-                                {t("justNow")}
-                              </p>
-                            )}
-                        </div>
-                      </motion.div>
-                    ))}
-                  </AnimatePresence>
-                </div>
-              </div>
-
-              {showEndPanel && (
-                <div className="border-t border-[rgb(196_197_215/0.12)] bg-gradient-to-b from-[#ffeffc]/90 to-white px-5 py-8 text-center sm:px-8">
-                  <p className="text-sm font-semibold text-[#221823]">
-                    {limitReached ? t("limitTitle") : t("unavailableTitle")}
-                  </p>
-                  <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-[#434654]">
-                    {limitReached ? t("limitBody") : t("unavailableBody")}
-                  </p>
-                  <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-                    <a
-                      href={LINKS.web}
-                      className={cn(
-                        buttonVariants({ size: "lg" }),
-                        "btn-figma-primary gap-2 rounded-xl border-0 px-8 text-base text-white shadow-none",
-                      )}
-                    >
-                      {t("ctaWeb")}
-                      <ArrowUpRight className="size-4" />
-                    </a>
-                    <a
-                      href={LINKS.app}
-                      className={cn(
-                        buttonVariants({ variant: "outline", size: "lg" }),
-                        "rounded-xl",
-                      )}
-                    >
-                      {t("ctaRegister")}
-                    </a>
-                  </div>
-                  <p className="mt-6 text-xs text-[#747686]">
-                    <Link
-                      href="/"
-                      className="font-medium underline underline-offset-2 hover:text-[#002c92]"
-                    >
-                      {t("backHome")}
-                    </Link>
-                  </p>
-                </div>
-              )}
-
-              {!showEndPanel && (
-                <div className="border-t border-[rgb(196_197_215/0.1)] bg-white/60 px-4 pb-5 pt-4 sm:px-6">
-                  <div className="relative">
-                    <textarea
-                      ref={textareaRef}
-                      value={input}
-                      onChange={(e) => setInput(e.target.value)}
-                      onKeyDown={(e) => {
-                        if (e.key === "Enter" && !e.shiftKey) {
-                          e.preventDefault();
-                          void send();
-                        }
-                      }}
-                      placeholder={t("placeholder")}
-                      disabled={disabled}
-                      rows={2}
-                      className={cn(
-                        "min-h-[3.25rem] w-full resize-none rounded-2xl border border-[rgb(196_197_215/0.2)] bg-white py-3.5 pl-5 pr-14 text-sm leading-relaxed text-[#221823] outline-none transition-[box-shadow,border-color]",
-                        "placeholder:text-[#747686]/60",
-                        "focus:border-[#002c92]/35 focus:ring-2 focus:ring-[#002c92]/15",
-                        "disabled:cursor-not-allowed disabled:opacity-50",
-                      )}
-                    />
-                    <button
-                      type="button"
-                      disabled={disabled || !input.trim()}
-                      onClick={() => void send()}
-                      className={cn(
-                        "absolute right-2 top-1/2 flex size-10 -translate-y-1/2 items-center justify-center rounded-xl bg-gradient-to-br from-[#002c92] to-[#003fc7] text-white shadow-[0_10px_15px_-3px_rgba(0,44,146,0.2)] transition-opacity",
-                        "hover:opacity-95 disabled:pointer-events-none disabled:opacity-40",
-                      )}
-                      aria-label={streaming ? t("sending") : t("send")}
-                    >
-                      <Send className="size-4" />
-                    </button>
-                  </div>
-
-                  <div className="mt-3 flex flex-wrap gap-2">
-                    {quickChips.map((chip) => (
-                      <button
-                        key={chip.label}
-                        type="button"
-                        disabled={disabled}
-                        onClick={() => {
-                          setInput(chip.prompt);
-                          textareaRef.current?.focus();
-                        }}
-                        className="rounded-lg bg-[#fbe8f9] px-3 py-1.5 text-xs font-medium text-[#434654] transition-colors hover:bg-[#f6e3f3] disabled:cursor-not-allowed disabled:opacity-40"
-                      >
-                        {chip.label}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
+            <TryChatDemoChatCard
+              variant="embedded"
+              isFullscreen={false}
+              onEnterFullscreen={() => setIsFullscreen(true)}
+              status={status}
+              rows={rows}
+              streaming={streaming}
+              disabled={disabled}
+              showEndPanel={showEndPanel}
+              limitReached={limitReached}
+              apiUnavailable={apiUnavailable}
+              input={input}
+              setInput={setInput}
+              send={send}
+              messagesScrollRef={messagesScrollRef}
+              textareaRef={textareaRef}
+              quickChips={quickChips}
+            />
           </motion.div>
         </div>
+        )}
 
+        {!isFullscreen && (
+        <>
         {/* Bottom feature grid — Figma three cards */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -819,7 +757,48 @@ export function TryChatExperience({
             </a>
           </div>
         </motion.section>
+        </>
+        )}
       </div>
+      {portalReady &&
+        isFullscreen &&
+        createPortal(
+          <div className="fixed inset-0 z-[10000] flex h-[100dvh] max-h-[100dvh] w-full flex-row overflow-hidden bg-gradient-to-br from-[#f6f4fb] to-[#eef2ff] pb-[env(safe-area-inset-bottom,0px)]">
+            <TryChatFullscreenRail onDemoAction={showDemoToast} />
+            <div className="flex h-full min-h-0 flex-1 flex-col overflow-hidden">
+              <TryChatFullscreenTopBar
+                onDemoAction={showDemoToast}
+                onExit={() => setIsFullscreen(false)}
+                localeLabel={locale.startsWith("de") ? "DE" : "EN"}
+              />
+              <div className="flex min-h-0 flex-1 flex-col overflow-hidden px-1 pb-1 sm:px-3">
+                <TryChatDemoChatCard
+                  variant="fullscreenPortal"
+                  isFullscreen
+                  status={status}
+                  rows={rows}
+                  streaming={streaming}
+                  disabled={disabled}
+                  showEndPanel={showEndPanel}
+                  limitReached={limitReached}
+                  apiUnavailable={apiUnavailable}
+                  input={input}
+                  setInput={setInput}
+                  send={send}
+                  messagesScrollRef={messagesScrollRef}
+                  textareaRef={textareaRef}
+                  quickChips={quickChips}
+                />
+              </div>
+              <TryChatFullscreenModeBar onDemoAction={showDemoToast} />
+            </div>
+          </div>,
+          document.body,
+        )}
+      <TryChatFullscreenDemoToast
+        visible={demoToastVisible}
+        onDismiss={() => setDemoToastVisible(false)}
+      />
     </div>
   );
 }
