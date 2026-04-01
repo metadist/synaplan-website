@@ -1,6 +1,12 @@
 "use client";
 
-import { useEffect, useState, useRef, useCallback, useLayoutEffect } from "react";
+import {
+  useEffect,
+  useState,
+  useRef,
+  useCallback,
+  useLayoutEffect,
+} from "react";
 import { ArrowRight, Send, Bot, User, MoreVertical } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
@@ -34,6 +40,8 @@ export function ChatWidgetPreview() {
   const messagesScrollRef = useRef<HTMLDivElement>(null);
   /** True while user is within PIN_THRESHOLD_PX of the bottom — only then auto-scroll */
   const pinnedToBottomRef = useRef(true);
+  /** Typing demo was forced static while allowHeavyEffects was false (hydration / reduced). */
+  const hadReducedMotionProfileRef = useRef(false);
 
   const updatePinnedFromScroll = useCallback(() => {
     const el = messagesScrollRef.current;
@@ -44,8 +52,15 @@ export function ChatWidgetPreview() {
 
   useLayoutEffect(() => {
     if (!allowHeavyEffects) {
+      hadReducedMotionProfileRef.current = true;
       setVisibleCount(STEPS.length);
       setIsTyping(false);
+      return;
+    }
+    if (hadReducedMotionProfileRef.current) {
+      hadReducedMotionProfileRef.current = false;
+      setVisibleCount(0);
+      setIsTyping(true);
     }
   }, [allowHeavyEffects]);
 

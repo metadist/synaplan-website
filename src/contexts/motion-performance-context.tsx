@@ -74,41 +74,48 @@ export function MotionPerformanceProvider({ children }: { children: ReactNode })
   const [flags, setFlags] = useState<MotionPerformanceFlags>(
     defaultServerFlags,
   );
-  /** Avoid hydration mismatch: SSR + first client paint match; real GPU/motion flags apply after mount. */
-  const [hydrated, setHydrated] = useState(false);
 
   useLayoutEffect(() => {
     setFlags(computeFlags());
-    setHydrated(true);
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     const onChange = () => setFlags(computeFlags());
     mq.addEventListener("change", onChange);
     return () => mq.removeEventListener("change", onChange);
   }, []);
 
-  const value = useMemo<MotionPerformanceFlags>(
-    () => ({
-      ...flags,
-      allowHeavyEffects: hydrated && flags.allowHeavyEffects,
-    }),
-    [flags, hydrated],
-  );
-
   useLayoutEffect(() => {
-    if (!value.allowHeavyEffects) {
+    if (!flags.allowHeavyEffects) {
       document.documentElement.setAttribute("data-motion-profile", "reduced");
     } else {
       document.documentElement.removeAttribute("data-motion-profile");
     }
-  }, [value.allowHeavyEffects]);
+  }, [flags.allowHeavyEffects]);
 
   return (
-    <MotionPerformanceContext.Provider value={value}>
+    <MotionPerformanceContext.Provider value={flags}>
       {children}
     </MotionPerformanceContext.Provider>
   );
 }
 
+/**
+ * `allowHeavyEffects` stays false on the first render (SSR + hydration) so markup matches; then
+ * `useLayoutEffect` flips `mounted` before paint. Consumers inside Suspense / `next/dynamic` still
+ * get a matching first render when they hydrate later.
+ */
 export function useMotionPerformance() {
-  return useContext(MotionPerformanceContext);
+  const flags = useContext(MotionPerformanceContext);
+  const [mounted, setMounted] = useState(false);
+
+  useLayoutEffect(() => {
+    setMounted(true);
+  }, []);
+
+  return useMemo<MotionPerformanceFlags>(
+    () => ({
+      ...flags,
+      allowHeavyEffects: mounted && flags.allowHeavyEffects,
+    }),
+    [flags, mounted],
+  );
 }

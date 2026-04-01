@@ -106,18 +106,10 @@ export function MemoriesChatDemoPanel({
   const t = useTranslations("memoriesSection");
   const tChat = useTranslations("chatPreview");
   const { allowHeavyEffects } = useMotionPerformance();
-  /** Avoid SSR/client class mismatch: context can update before hydration finishes. */
-  const [motionEffectsReady, setMotionEffectsReady] = useState(false);
   const reduceMotion = useReducedMotion() ?? false;
   const scrollRef = useRef<HTMLDivElement>(null);
   const [lines, setLines] = useState<ChatLine[]>([]);
   const [typing, setTyping] = useState(false);
-
-  const heavyEffects = motionEffectsReady && allowHeavyEffects;
-
-  useEffect(() => {
-    setMotionEffectsReady(true);
-  }, []);
 
   useEffect(() => {
     const ac = new AbortController();
@@ -226,7 +218,7 @@ export function MemoriesChatDemoPanel({
       <div
         className={cn(
           "relative flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-slate-100/50 shadow-[0_32px_64px_-24px_rgb(15_23_42/0.18)] ring-1 ring-slate-950/[0.04] dark:border-slate-700/80 dark:bg-slate-900/30 dark:ring-white/[0.06]",
-          heavyEffects ? "backdrop-blur-[12px]" : "backdrop-blur-none",
+          allowHeavyEffects ? "backdrop-blur-[12px]" : "backdrop-blur-none",
         )}
       >
         <div
@@ -290,7 +282,7 @@ export function MemoriesChatDemoPanel({
                     transition={{ duration: 0.35, delay: i === 0 ? 0 : 0.03 }}
                     className={cn(
                       "flex gap-2.5",
-                      heavyEffects && "chat-preview-msg-in",
+                      allowHeavyEffects && "chat-preview-msg-in",
                       line.role === "user" ? "flex-row-reverse" : "flex-row",
                     )}
                   >
@@ -366,7 +358,7 @@ export function MemoriesChatDemoPanel({
                   <div
                     className={cn(
                       "flex gap-2.5",
-                      heavyEffects && "chat-preview-typing-in",
+                      allowHeavyEffects && "chat-preview-typing-in",
                     )}
                   >
                     <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-white text-[#002c92] shadow-sm ring-2 ring-slate-200 dark:bg-slate-800 dark:text-[#93c5fd] dark:ring-slate-700">
