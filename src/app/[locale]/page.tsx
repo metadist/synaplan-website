@@ -1,8 +1,9 @@
 import dynamic from "next/dynamic";
-import { setRequestLocale } from "next-intl/server";
+import { setRequestLocale, getTranslations } from "next-intl/server";
 import { HeroSection } from "@/components/sections/hero";
 import { HomeSectionSkeleton } from "@/components/sections/home-section-skeleton";
 import { getSynaplanGithubRepoStats } from "@/lib/github-synaplan-repo";
+import { buildFaqSchema, buildSoftwareAppSchema, SITE_URL } from "@/lib/jsonld";
 
 const WidgetFlowSection = dynamic(
   () =>
@@ -83,6 +84,16 @@ const CTASection = dynamic(
   },
 );
 
+const FaqSection = dynamic(
+  () =>
+    import("@/components/sections/faq-section").then((m) => m.FaqSection),
+  {
+    loading: () => (
+      <HomeSectionSkeleton className="min-h-[32rem] rounded-none bg-transparent" />
+    ),
+  },
+);
+
 export default async function HomePage({
   params,
 }: {
@@ -93,8 +104,36 @@ export default async function HomePage({
 
   const githubRepo = getSynaplanGithubRepoStats();
 
+  const t = await getTranslations({ locale, namespace: "faq" });
+  type FaqItem = { q: string; a: string };
+  const faqItems = t.raw("items") as FaqItem[];
+
+  // Page-level structured data: SoftwareApplication + FAQPage (with publisher)
+  const pageJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      buildSoftwareAppSchema(locale),
+      buildFaqSchema(faqItems),
+      {
+        "@type": "WebPage",
+        "@id": `${SITE_URL}${locale === "de" ? "/de" : ""}/#webpage`,
+        url: locale === "de" ? `${SITE_URL}/de` : SITE_URL,
+        name: "Synaplan — KI-Plattform für Unternehmen",
+        isPartOf: { "@id": `${SITE_URL}/#website` },
+        about: { "@id": `${SITE_URL}/#software` },
+        publisher: { "@id": "https://metadist.de/#organization" },
+        author: { "@id": "https://metadist.de/#organization" },
+        inLanguage: locale === "de" ? "de-DE" : "en-US",
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
+      />
       <HeroSection />
       <WidgetFlowSection />
       <MemoriesSection />
@@ -102,6 +141,7 @@ export default async function HomePage({
       <FeaturesShowcase />
       <UseCasesSection />
       <OpenSourceSection githubRepo={githubRepo} />
+      <FaqSection />
       <CTASection />
     </>
   );

@@ -549,6 +549,45 @@
       }
     }
   },
+  "faq": {
+    "label": "FAQ",
+    "title": "Häufig gestellte Fragen",
+    "subtitle": "Alles, was Sie über Synaplan wissen müssen — von der Installation bis zur DSGVO-Konformität.",
+    "items": [
+      {
+        "q": "Was genau ist Synaplan?",
+        "a": "Synaplan ist eine Open-Source-KI-Plattform auf Basis von PHP 8.3+. Sie verbindet mehrere KI-Modelle (OpenAI, Anthropic, Groq, Gemini, Ollama), ermöglicht das Einbetten eines Chat-Widgets auf jeder Website, durchsucht Dokumente per RAG (Retrieval-Augmented Generation) und lässt sich mit unternehmensspezifischen Plugins erweitern — alles in einer selbst gehosteten Plattform."
+      },
+      {
+        "q": "Ist Synaplan eine ChatGPT-Alternative?",
+        "a": "Ja. Im Gegensatz zu ChatGPT läuft Synaplan auf Ihrer eigenen Infrastruktur, unterstützt gleichzeitig mehrere KI-Modelle, ist vollständig Open Source und hält alle Daten unter Ihrer Kontrolle. Sie sind nicht von einem einzelnen Anbieter abhängig und können Modelle jederzeit wechseln."
+      },
+      {
+        "q": "Ist Synaplan DSGVO-konform?",
+        "a": "Absolut. Synaplan kann vollständig innerhalb Deutschlands oder der EU selbst gehostet werden — Ihre Daten verlassen niemals Ihre Server. Mit lokalen Modellen über Ollama werden keinerlei externe API-Aufrufe getätigt. Das macht Synaplan zu einer der wenigen KI-Plattformen, die vollständig DSGVO-konform betrieben werden kann."
+      },
+      {
+        "q": "Wie füge ich das Chat-Widget zu meiner Website hinzu?",
+        "a": "Sie betten einen kleinen JavaScript-Schnipsel in Ihre Website ein — ähnlich wie Google Analytics oder ein Live-Chat-Script. Das Widget verbindet sich mit Ihrer Synaplan-Instanz, nutzt Ihre eigene Wissensdatenbank (hochgeladene Dokumente, FAQs etc.) und lässt sich an Ihr Corporate Design anpassen. Die Einrichtung dauert weniger als 10 Minuten."
+      },
+      {
+        "q": "Welche KI-Modelle unterstützt Synaplan?",
+        "a": "Synaplan unterstützt OpenAI (GPT-4o, GPT-4.1), Anthropic (Claude), Google Gemini, Groq (ultraschnelle Inferenz) und Ollama für lokale, selbst gehostete Modelle. Sie können verschiedene Modelle für verschiedene Anwendungsfälle zuweisen oder das Routing automatisch steuern lassen."
+      },
+      {
+        "q": "Kann ich Synaplan selbst hosten?",
+        "a": "Ja — das ist eine der Kernstärken von Synaplan. Ein einziges `docker compose up -d` genügt. Das Standardsetup (~9 GB) enthält lokale KI via Ollama; das Minimalsetup (~5 GB) funktioniert nur mit Cloud-APIs (Groq, OpenAI). Läuft auf jedem Standard-Linux-Server."
+      },
+      {
+        "q": "Was sind Synaplan-Plugins?",
+        "a": "Plugins sind unternehmensspezifische KI-Erweiterungen, die Synaplan mit Ihren bestehenden Geschäftsprozessen verbinden. Beispiele sind SortX (KI-gestütztes Dateimanagement), Marketing-Automatisierung und Dokumenten-Workflows. Sie können vorhandene Plugins nutzen oder ein maßgeschneidertes Plugin in Auftrag geben."
+      },
+      {
+        "q": "Für welche Branchen und Unternehmensgrößen eignet sich Synaplan?",
+        "a": "Synaplan wird von KMUs und Großunternehmen in verschiedenen Branchen eingesetzt, darunter Gastgewerbe, Handwerk & Gewerbe, Gesundheitswesen und Technologie. Website-Betreiber nutzen das Chat-Widget für den Kundenservice, größere Organisationen die gesamte Plattform für internes Wissensmanagement, Dokumentenverarbeitung, WhatsApp-Integration und E-Mail-Automatisierung."
+      }
+    ]
+  },
   "cta": {
     "title": "Bereit, Ihre KI unter Kontrolle zu bringen?",
     "subtitle": "Kostenlos starten oder eine 30-Minuten-Demo buchen für eine klare KI-Roadmap für Ihr Unternehmen.",
@@ -809,8 +848,8 @@
     "s1Title": "1. Verantwortlicher",
     "s1Body": "Verantwortliche Stelle für die Datenverarbeitung auf dieser Website:",
     "s1Company": "metadist data management GmbH",
-    "s1Address": "[Straße Nr.], [PLZ Stadt]",
-    "s1Email": "privacy@synaplan.com",
+    "s1Address": "Königsallee 82, 40212 Düsseldorf, Deutschland",
+    "s1Email": "team@synaplan.com",
     "s2Title": "2. Allgemeines zur Datenverarbeitung",
     "s2Body": "Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst und behandeln Ihre personenbezogenen Daten vertraulich sowie entsprechend den gesetzlichen Datenschutzvorschriften und dieser Datenschutzerklärung. Die Nutzung unserer Website ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben. Wir weisen darauf hin, dass die Datenübertragung im Internet Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.",
     "s3Title": "3. Datenerfassung auf dieser Website",
@@ -889,6 +928,34 @@
     "s10Body": "Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von http:// auf https:// wechselt und an dem Schloss-Symbol in Ihrer Browserzeile. Wenn die SSL- bzw. TLS-Verschlüsselung aktiviert ist, können die Daten, die Sie an uns übermitteln, nicht von Dritten mitgelesen werden.",
     "s11Title": "11. Widerspruch gegen Werbe-E-Mails",
     "s11Body": "Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-E-Mails, vor."
+  },
+  "imprint": {
+    "metaTitle": "Impressum — metadist data management GmbH",
+    "metaDescription": "Pflichtangaben gemäß § 5 TMG für die metadist data management GmbH, Betreiberin von synaplan.com.",
+    "pageTitle": "Impressum",
+    "pageSubtitle": "Angaben gemäß § 5 Telemediengesetz (TMG)",
+    "breadcrumbHome": "Startseite",
+    "companyTitle": "Unternehmensangaben",
+    "companyName": "metadist data management GmbH",
+    "addressLabel": "Adresse",
+    "address": "Königsallee 82, 40212 Düsseldorf, Deutschland",
+    "contactTitle": "Kontakt",
+    "emailLabel": "E-Mail",
+    "phoneLabel": "Telefon",
+    "phone": "+49 (0)211 90760084",
+    "managementTitle": "Geschäftsführung",
+    "ceoLabel": "Geschäftsführer",
+    "ceo": "Ralf Schwoebel",
+    "registerTitle": "Registereintrag",
+    "registerLabel": "Registergericht",
+    "registerCourt": "Amtsgericht Düsseldorf",
+    "registerNumber": "HRB 101206",
+    "taxLabel": "Umsatzsteuer-Identifikationsnummer",
+    "taxId": "DE301805620",
+    "disclaimerTitle": "Haftungsausschluss",
+    "disclaimerBody": "Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.",
+    "copyrightTitle": "Urheberrecht",
+    "copyrightBody": "Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors."
   },
   "companiesPage": {
     "metaTitle": "Synaplan für Unternehmen — KI unter Kontrolle",

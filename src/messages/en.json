@@ -549,6 +549,45 @@
       }
     }
   },
+  "faq": {
+    "label": "FAQ",
+    "title": "Frequently asked questions",
+    "subtitle": "Everything you need to know about Synaplan — from setup to GDPR compliance.",
+    "items": [
+      {
+        "q": "What exactly is Synaplan?",
+        "a": "Synaplan is an open-source AI platform built on PHP 8.3+. It lets you connect multiple AI models (OpenAI, Anthropic, Groq, Gemini, Ollama), embed a chat widget on any website, search your documents with RAG (retrieval-augmented generation), and extend functionality with business-specific plugins — all in one self-hosted platform."
+      },
+      {
+        "q": "Is Synaplan a ChatGPT alternative?",
+        "a": "Yes. Unlike ChatGPT, Synaplan runs on your own infrastructure, supports multiple AI models simultaneously, is fully open source, and keeps all data within your control. You are not dependent on a single provider and can switch models at any time."
+      },
+      {
+        "q": "Is Synaplan GDPR-compliant?",
+        "a": "Absolutely. Synaplan can be self-hosted entirely within Germany or the EU — your data never leaves your servers. With local models via Ollama, no external API calls are made at all. This makes Synaplan one of the few AI platforms that can be operated in full GDPR compliance."
+      },
+      {
+        "q": "How do I add the chat widget to my website?",
+        "a": "You embed a small JavaScript snippet into your website — just like a Google Analytics or live chat script. The widget connects to your Synaplan instance, uses your custom knowledge base (uploaded documents, FAQs, etc.), and can be styled to match your brand. Setup takes less than 10 minutes."
+      },
+      {
+        "q": "Which AI models does Synaplan support?",
+        "a": "Synaplan supports OpenAI (GPT-4o, GPT-4.1), Anthropic (Claude), Google Gemini, Groq (ultra-fast inference), and Ollama for local self-hosted models. You can assign different models to different use cases or let the platform route automatically."
+      },
+      {
+        "q": "Can I self-host Synaplan?",
+        "a": "Yes — that is one of Synaplan's core strengths. A single `docker compose up -d` is all it takes. The standard setup (~9 GB) includes local AI via Ollama; the minimal setup (~5 GB) works with cloud APIs only (Groq, OpenAI). Runs on any standard Linux server."
+      },
+      {
+        "q": "What are Synaplan plugins?",
+        "a": "Plugins are company-specific AI extensions that connect Synaplan to your existing business processes. Examples include SortX (AI-powered file management), marketing automation, and document workflows. You can use existing plugins or commission a custom plugin tailored to your company."
+      },
+      {
+        "q": "Which industries and company sizes is Synaplan suited for?",
+        "a": "Synaplan is used by SMBs and enterprises across industries including hospitality, trades & crafts, healthcare, and technology. Website operators use the chat widget for customer service, while larger organizations use the full platform for internal knowledge management, document processing, WhatsApp integration, and email automation."
+      }
+    ]
+  },
   "cta": {
     "title": "Ready to take control of your AI?",
     "subtitle": "Start for free or book a 30-minute demo to get a clear AI roadmap for your organization.",
@@ -809,8 +848,8 @@
     "s1Title": "1. Controller",
     "s1Body": "The controller responsible for data processing on this website is:",
     "s1Company": "metadist data management GmbH",
-    "s1Address": "[Street No.], [ZIP City]",
-    "s1Email": "privacy@synaplan.com",
+    "s1Address": "Königsallee 82, 40212 Düsseldorf, Germany",
+    "s1Email": "team@synaplan.com",
     "s2Title": "2. General information on data processing",
     "s2Body": "We take the protection of your personal data very seriously and treat it in accordance with applicable data protection laws and this privacy policy. In general, you can use our website without providing personal data. Where personal data is collected on our pages, this is always on a voluntary basis. This data will not be passed on to third parties without your explicit consent. We draw your attention to the fact that data transmission over the internet may have security gaps. Complete protection against access by third parties is not possible.",
     "s3Title": "3. Data collection on this website",
@@ -889,6 +928,34 @@
     "s10Body": "For security reasons and to protect the transmission of confidential content, this site uses SSL or TLS encryption. You can recognise an encrypted connection by the fact that the address line of the browser changes from 'http://' to 'https://' and by the lock icon in the browser bar. When SSL or TLS encryption is active, the data you transmit to us cannot be read by third parties.",
     "s11Title": "11. Objection to promotional emails",
     "s11Body": "We hereby object to the use of contact data published as part of our imprint obligation for the purpose of sending unsolicited advertising and informational materials. The site operators expressly reserve the right to take legal action in the event of the unsolicited sending of advertising information, such as spam emails."
+  },
+  "imprint": {
+    "metaTitle": "Imprint — metadist data management GmbH",
+    "metaDescription": "Legal information and contact details for metadist data management GmbH, operator of synaplan.com.",
+    "pageTitle": "Imprint",
+    "pageSubtitle": "Information according to § 5 Telemediengesetz (TMG)",
+    "breadcrumbHome": "Home",
+    "companyTitle": "Company information",
+    "companyName": "metadist data management GmbH",
+    "addressLabel": "Address",
+    "address": "Königsallee 82, 40212 Düsseldorf, Germany",
+    "contactTitle": "Contact",
+    "emailLabel": "E-Mail",
+    "phoneLabel": "Phone",
+    "phone": "+49 (0)211 90760084",
+    "managementTitle": "Management",
+    "ceoLabel": "CEO",
+    "ceo": "Ralf Schwoebel",
+    "registerTitle": "Register entry",
+    "registerLabel": "Registration court",
+    "registerCourt": "Amtsgericht Düsseldorf",
+    "registerNumber": "HRB 101206",
+    "taxLabel": "VAT identification number",
+    "taxId": "DE301805620",
+    "disclaimerTitle": "Disclaimer",
+    "disclaimerBody": "Despite careful content control, we assume no liability for the content of external links. The operators of linked pages are solely responsible for their content.",
+    "copyrightTitle": "Copyright",
+    "copyrightBody": "The contents and works created on these pages by the site operators are subject to German copyright law. Reproduction, adaptation, distribution and any form of utilisation outside the limits of copyright require the written consent of the respective author."
   },
   "companiesPage": {
     "metaTitle": "Synaplan for Companies — AI under control",

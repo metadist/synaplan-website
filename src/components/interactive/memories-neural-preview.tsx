@@ -294,10 +294,15 @@ export function MemoriesNeuralPreview({
 
       Events.on(engine, "beforeUpdate", applyIdleDrift);
 
+      const canvasBg =
+        getComputedStyle(document.documentElement)
+          .getPropertyValue("--color-page-tint")
+          .trim() || "oklch(0.992 0.005 250)";
+
       const draw = () => {
         if (!ctx) return;
         ctx.clearRect(0, 0, w, h);
-        ctx.fillStyle = "rgb(255 247 250)";
+        ctx.fillStyle = canvasBg;
         ctx.fillRect(0, 0, w, h);
 
         ctx.strokeStyle = "rgb(0 44 146 / 0.06)";

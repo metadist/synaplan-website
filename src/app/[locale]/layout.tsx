@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { MotionPerformanceProvider } from "@/contexts/motion-performance-context";
+import { buildOrganizationSchema, buildWebSiteSchema } from "@/lib/jsonld";
 import "../globals.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -76,12 +77,27 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
   const messages = await getMessages();
 
+  const orgSchema = buildOrganizationSchema();
+  const siteSchema = buildWebSiteSchema(locale);
+
   return (
     <html
       lang={locale}
       className={`${plusJakartaSans.variable} ${jetbrainsMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
+      <head>
+        {/* Global structured data — injected on every page for E-E-A-T trust */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [orgSchema, siteSchema],
+            }),
+          }}
+        />
+      </head>
       <body
         className="flex min-h-full flex-col bg-background text-foreground"
         suppressHydrationWarning
