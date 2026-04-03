@@ -40,6 +40,9 @@ export async function generateMetadata({
       template: `%s | Synaplan`,
     },
     description: t("description"),
+    // metadataBase ensures relative URLs in page-level metadata resolve to the
+    // production domain, not the dev-server host (localhost) — this is what
+    // caused the "canonical points to localhost" Lighthouse SEO warning.
     metadataBase: new URL("https://synaplan.com"),
     openGraph: {
       title: t("title"),
@@ -51,14 +54,9 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
     },
-    alternates: {
-      canonical: locale === "en" ? "https://synaplan.com" : `https://synaplan.com/de`,
-      languages: {
-        en: "https://synaplan.com",
-        de: "https://synaplan.com/de",
-        "x-default": "https://synaplan.com",
-      },
-    },
+    // Do NOT set alternates here — every page sets its own canonical + hreflang.
+    // Setting it in the layout causes Next.js to output conflicting <link> tags
+    // which Lighthouse flags as "canonical points to another hreflang location".
   };
 }
 

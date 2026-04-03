@@ -17,7 +17,7 @@ export function LanguageSwitcher() {
   return (
     <button
       onClick={switchLocale}
-      className="flex items-center gap-1 rounded-lg border border-border px-2 py-1 text-xs font-semibold uppercase tracking-wider text-muted-foreground transition-colors hover:border-brand-500 hover:text-foreground"
+      className="flex min-h-11 min-w-11 items-center gap-1 rounded-lg border border-border px-3 py-2.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground transition-colors hover:border-brand-500 hover:text-foreground"
       aria-label={`Switch to ${otherLocale === "de" ? "German" : "English"}`}
     >
       <span className={locale === "en" ? "text-foreground" : ""}>EN</span>

@@ -83,7 +83,7 @@ export function Header() {
               href={LINKS.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground md:flex"
+              className="hidden min-h-11 items-center gap-1.5 rounded-lg px-3 py-2.5 text-sm text-muted-foreground transition-colors hover:text-foreground md:flex"
             >
               <GithubIcon className="size-4" />
               <span className="text-xs font-medium">GitHub</span>
@@ -94,7 +94,7 @@ export function Header() {
             <div className="hidden items-center gap-2 sm:flex">
               <a
                 href={LINKS.appointment}
-                className="rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                className="flex min-h-11 items-center rounded-lg px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
               >
                 {t("common.bookDemo")}
               </a>

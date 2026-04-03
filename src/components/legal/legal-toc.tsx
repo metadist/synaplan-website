@@ -96,7 +96,7 @@ export function LegalToc({
                   else linkRefs.current.delete(id);
                 }}
                 onClick={(e) => handleClick(e, id)}
-                className={`rounded-lg px-3 py-1.5 text-sm transition-all duration-200 ${
+                className={`flex min-h-11 items-center rounded-lg px-3 py-2 text-sm transition-all duration-200 ${
                   isActive
                     ? "font-medium text-brand-700 bg-brand-50"
                     : "text-muted-foreground hover:text-foreground hover:bg-soft-accent"
