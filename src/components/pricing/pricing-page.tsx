@@ -1,502 +1,427 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
-import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
+import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { Badge } from "@/components/ui/badge";
+import { motion } from "framer-motion";
 import { buttonVariants } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogTitle,
-} from "@/components/ui/dialog";
 import { LINKS } from "@/lib/constants";
+import { GithubIcon } from "@/components/icons";
 import { cn } from "@/lib/utils";
 import {
   ArrowRight,
-  BookOpen,
+  Building2,
   Check,
   ChevronRight,
-  HelpCircle,
-  LayoutGrid,
-  Shield,
+  Globe,
   Sparkles,
-  TrendingUp,
 } from "lucide-react";
 
-type PlanId = "pro" | "team" | "business";
-
-const PLAN_ORDER: { id: PlanId; recommended: boolean; featureKeys: string[] }[] =
-  [
-    {
-      id: "pro",
-      recommended: false,
-      featureKeys: [
-        "feature1",
-        "feature2",
-        "feature3",
-        "feature4",
-        "feature5",
-      ],
-    },
-    {
-      id: "team",
-      recommended: true,
-      featureKeys: [
-        "feature1",
-        "feature2",
-        "feature3",
-        "feature4",
-        "feature5",
-        "feature6",
-      ],
-    },
-    {
-      id: "business",
-      recommended: false,
-      featureKeys: [
-        "feature1",
-        "feature2",
-        "feature3",
-        "feature4",
-        "feature5",
-        "feature6",
-        "feature7",
-      ],
-    },
-  ];
-
-const COMPARE_KEYS = [
-  "messages",
-  "images",
-  "storage",
-  "video",
-  "api",
-  "collab",
-  "whiteLabel",
-  "support",
-] as const;
-
-const INCLUDED_KEYS = [
-  "included1",
-  "included2",
-  "included3",
-  "included4",
-  "included5",
-  "included6",
-] as const;
-
-const FAQ_KEYS = ["faq1", "faq2", "faq3", "faq4", "faq5"] as const;
-
+// ─── Animation preset ───────────────────────────────────────────────────────
 const fadeUp = {
-  initial: { opacity: 0, y: 20 },
+  initial: { opacity: 0, y: 18 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-48px" },
+  viewport: { once: true, margin: "-40px" },
   transition: { duration: 0.45 },
 };
 
-function FairUseInline({
-  onOpen,
-}: {
-  onOpen: () => void;
-}) {
-  const t = useTranslations("pricingPage");
+// ─── Checkmark list item ─────────────────────────────────────────────────────
+function Feature({ text, light = false }: { text: string; light?: boolean }) {
   return (
-    <button
-      type="button"
-      onClick={onOpen}
-      className="group inline-flex items-center gap-1.5 rounded-full border border-[#002c92]/20 bg-soft-accent/80 px-3 py-1 text-xs font-semibold text-[#002c92] shadow-sm transition hover:border-[#002c92]/35 hover:bg-soft-accent"
-    >
-      <HelpCircle className="size-3.5 opacity-80" aria-hidden />
-      {t("fairUseCta")}
-    </button>
+    <li className="flex items-start gap-2.5">
+      <span
+        className={cn(
+          "mt-0.5 flex size-4.5 shrink-0 items-center justify-center rounded-full",
+          light
+            ? "bg-white/20 text-white"
+            : "bg-brand-100 text-brand-700",
+        )}
+      >
+        <Check className="size-2.5" strokeWidth={3} />
+      </span>
+      <span className={cn("text-sm leading-snug", light ? "text-white/85" : "text-muted-foreground")}>
+        {text}
+      </span>
+    </li>
   );
 }
 
+// ─── Plan card (Platform sub-tiers) ─────────────────────────────────────────
+function PlanCard({
+  name,
+  tagline,
+  price,
+  features,
+  recommended,
+  cta,
+}: {
+  name: string;
+  tagline: string;
+  price: string;
+  features: string[];
+  recommended: boolean;
+  cta: string;
+}) {
+  return (
+    <div
+      className={cn(
+        "relative flex flex-col rounded-2xl border p-6 transition-shadow duration-200",
+        recommended
+          ? "border-brand-400 bg-white shadow-lg shadow-brand-100/50 ring-1 ring-brand-400"
+          : "border-[rgb(196_197_215/0.4)] bg-white/70 hover:shadow-md",
+      )}
+    >
+      {recommended && (
+        <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-brand-600 px-3 py-0.5 text-[11px] font-bold uppercase tracking-widest text-white shadow-sm">
+          Recommended
+        </span>
+      )}
+
+      <div className="mb-4">
+        <p className="text-base font-bold text-foreground">{name}</p>
+        <p className="mt-0.5 text-xs text-muted-foreground">{tagline}</p>
+      </div>
+
+      <div className="mb-5 flex items-baseline gap-1">
+        <span className="text-3xl font-bold tracking-tight text-foreground">
+          {price}
+        </span>
+        <span className="text-sm text-muted-foreground">/mo</span>
+      </div>
+
+      <ul className="mb-6 flex flex-col gap-2.5 flex-1">
+        {features.map((f) => (
+          <Feature key={f} text={f} />
+        ))}
+      </ul>
+
+      <a
+        href={LINKS.web}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={cn(
+          buttonVariants({ size: "sm" }),
+          recommended
+            ? "btn-figma-primary border-0 text-white shadow-none hover:opacity-95"
+            : "bg-soft-accent text-brand-700 hover:bg-soft-accent-hover border-0 shadow-none",
+          "w-full justify-center rounded-xl text-sm font-semibold",
+        )}
+      >
+        {cta}
+      </a>
+    </div>
+  );
+}
+
+// ─── Main component ──────────────────────────────────────────────────────────
 export function PricingPage() {
   const t = useTranslations("pricingPage");
-  const [fairUseOpen, setFairUseOpen] = useState(false);
+  const locale = useLocale();
 
-  const fu = (chunks: ReactNode) => (
-    <button
-      type="button"
-      onClick={() => setFairUseOpen(true)}
-      className="font-semibold text-[#002c92] underline decoration-[#002c92]/35 underline-offset-[0.2em] transition hover:decoration-[#002c92]"
-    >
-      {chunks}
-    </button>
-  );
+  const openSourceFeatures = [
+    t("pathOpenSourceF1"),
+    t("pathOpenSourceF2"),
+    t("pathOpenSourceF3"),
+    t("pathOpenSourceF4"),
+  ];
+
+  const platformFeatures = [
+    t("pathPlatformF1"),
+    t("pathPlatformF2"),
+    t("pathPlatformF3"),
+    t("pathPlatformF4"),
+  ];
+
+  const enterpriseFeatures = [
+    t("pathEnterpriseF1"),
+    t("pathEnterpriseF2"),
+    t("pathEnterpriseF3"),
+    t("pathEnterpriseF4"),
+    t("pathEnterpriseF5"),
+  ];
+
+  const plans = [
+    {
+      id: "pro" as const,
+      name: t("plans.pro.name"),
+      tagline: t("plans.pro.tagline"),
+      price: "€19.95",
+      features: [
+        t("plans.pro.feature1plain"),
+        t("plans.pro.feature2"),
+        t("plans.pro.feature3"),
+        t("plans.pro.feature4"),
+        t("plans.pro.feature5"),
+      ],
+      recommended: false,
+      cta: t("selectPlan"),
+    },
+    {
+      id: "team" as const,
+      name: t("plans.team.name"),
+      tagline: t("plans.team.tagline"),
+      price: "€49.95",
+      features: [
+        t("plans.team.feature1"),
+        t("plans.team.feature2"),
+        t("plans.team.feature3"),
+        t("plans.team.feature4"),
+        t("plans.team.feature5"),
+        t("plans.team.feature6"),
+      ],
+      recommended: true,
+      cta: t("selectPlan"),
+    },
+    {
+      id: "business" as const,
+      name: t("plans.business.name"),
+      tagline: t("plans.business.tagline"),
+      price: "€99.95",
+      features: [
+        t("plans.business.feature1"),
+        t("plans.business.feature2plain"),
+        t("plans.business.feature3plain"),
+        t("plans.business.feature4"),
+        t("plans.business.feature5"),
+        t("plans.business.feature6"),
+        t("plans.business.feature7"),
+      ],
+      recommended: false,
+      cta: t("selectPlan"),
+    },
+  ];
 
   return (
-    <div className="relative overflow-hidden bg-page-tint">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -left-24 top-0 size-[28rem] rounded-full bg-[#002c92]/25 blur-[100px]"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -right-20 top-1/3 size-[22rem] rounded-full bg-[#003fc7]/18 blur-[90px]"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute bottom-20 left-1/3 size-72 rounded-full bg-soft-accent/80 blur-[70px]"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.35]"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0,44,146,0.05) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0,44,146,0.05) 1px, transparent 1px)`,
-          backgroundSize: "56px 56px",
-        }}
-      />
-
-      <Dialog open={fairUseOpen} onOpenChange={setFairUseOpen}>
-        <DialogContent className="max-w-md sm:max-w-lg">
-          <DialogTitle>{t("fairUseDialogTitle")}</DialogTitle>
-          <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
-            <p className="font-medium text-foreground/90">
-              {t("fairUseDialogLead")}
-            </p>
-            <p>{t("fairUseDialogP1")}</p>
-            <p>{t("fairUseDialogP2")}</p>
-            <p>{t("fairUseDialogP3")}</p>
+    <div className="min-h-screen bg-page-tint">
+      {/* ── Hero ─────────────────────────────────────────────────────────── */}
+      <div className="border-b border-[rgb(196_197_215/0.2)] bg-gradient-to-b from-background to-soft-accent/30">
+        <div className="container-narrow section-padding py-14 md:py-20">
+          <nav className="mb-6 flex items-center gap-2 text-sm text-muted-foreground">
+            <Link href="/" className="hover:text-foreground transition-colors">
+              {t("breadcrumbHome")}
+            </Link>
+            <ChevronRight className="size-3.5 opacity-40" />
+            <span className="font-medium text-foreground">{t("breadcrumbPricing")}</span>
+          </nav>
+          <div className="flex items-center gap-2 mb-4">
+            <Sparkles className="size-4 text-brand-700" />
+            <span className="text-xs font-semibold uppercase tracking-widest text-brand-700">
+              {t("heroEyebrow")}
+            </span>
           </div>
-        </DialogContent>
-      </Dialog>
-
-      <div className="container-wide section-padding relative z-10 pb-24 pt-10 md:pb-32 md:pt-14">
-        <nav
-          className="mb-10 flex flex-wrap items-center gap-2 text-sm text-[#434654]"
-          aria-label="Breadcrumb"
-        >
-          <Link href="/" className="transition hover:text-[#002c92]">
-            {t("breadcrumbHome")}
-          </Link>
-          <ChevronRight className="size-4 opacity-50" aria-hidden />
-          <span className="font-medium text-[#221823]">
-            {t("breadcrumbPricing")}
-          </span>
-        </nav>
-
-        <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45 }}
-          className="mx-auto max-w-3xl text-center"
-        >
-          <div className="inline-flex items-center gap-2 rounded-full bg-soft-accent px-3 py-1.5 text-xs font-bold uppercase tracking-[0.12em] text-[#002c92]">
-            <Sparkles className="size-3.5" aria-hidden />
-            {t("heroEyebrow")}
-          </div>
-          <h1 className="mt-6 text-balance text-4xl font-extrabold tracking-tight text-[#221823] sm:text-5xl lg:text-6xl">
+          <h1 className="text-3xl font-bold tracking-tight text-foreground md:text-5xl">
             {t("heroTitle")}
           </h1>
-          <p className="mx-auto mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-[#434654]">
+          <p className="mt-4 max-w-2xl text-base text-muted-foreground leading-relaxed md:text-lg">
             {t("heroSubtitle")}
           </p>
-          <div className="mt-6 flex justify-center">
-            <FairUseInline onOpen={() => setFairUseOpen(true)} />
-          </div>
-        </motion.div>
-
-        {/* Narrative */}
-        <motion.section {...fadeUp} className="mx-auto mt-16 max-w-3xl md:mt-20">
-          <h2 className="text-center text-2xl font-bold tracking-tight text-[#221823] sm:text-3xl">
-            {t("narrativeTitle")}
-          </h2>
-          <p className="mt-4 text-pretty text-center text-base leading-relaxed text-[#434654]">
-            {t("narrativeP1")}
-          </p>
-          <p className="mt-4 text-pretty text-center text-base leading-relaxed text-[#434654]">
-            {t("narrativeP2")}
-          </p>
-        </motion.section>
-
-        {/* Value pillars */}
-        <motion.div
-          {...fadeUp}
-          className="mx-auto mt-14 grid max-w-5xl gap-5 sm:grid-cols-3 sm:gap-6"
-        >
-          {(
-            [
-              { icon: TrendingUp, titleKey: "value1Title", bodyKey: "value1Body" },
-              { icon: Shield, titleKey: "value2Title", bodyKey: "value2Body" },
-              { icon: LayoutGrid, titleKey: "value3Title", bodyKey: "value3Body" },
-            ] as const
-          ).map((item) => (
-            <div
-              key={item.titleKey}
-              className="rounded-[1.75rem] border border-[rgb(196_197_215/0.2)] bg-white/70 p-6 shadow-[0_12px_40px_-20px_rgba(0,44,146,0.12)] backdrop-blur-sm transition hover:border-[#002c92]/15 hover:shadow-md"
-            >
-              <div className="flex size-11 items-center justify-center rounded-2xl bg-gradient-to-br from-[#002c92] to-[#003fc7] text-white shadow-sm">
-                <item.icon className="size-5" aria-hidden />
-              </div>
-              <h3 className="mt-4 text-lg font-bold text-[#221823]">
-                {t(item.titleKey)}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-[#434654]">
-                {t(item.bodyKey)}
-              </p>
-            </div>
-          ))}
-        </motion.div>
-
-        {/* Plan cards */}
-        <div className="mx-auto mt-16 grid max-w-6xl gap-6 lg:mt-20 lg:grid-cols-3 lg:items-stretch lg:gap-5">
-          {PLAN_ORDER.map((plan, index) => (
-            <motion.div
-              key={plan.id}
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.45, delay: 0.06 * index }}
-              className={cn(
-                "relative flex flex-col rounded-[2rem] border bg-white/85 p-8 shadow-[0_25px_50px_-12px_rgba(0,44,146,0.08)] backdrop-blur-md",
-                plan.recommended
-                  ? "border-[#002c92]/35 ring-2 ring-[#002c92]/25 lg:-translate-y-1 lg:scale-[1.02] lg:p-9"
-                  : "border-[rgb(196_197_215/0.18)]",
-              )}
-            >
-              {plan.recommended && (
-                <div className="absolute -top-3 left-1/2 z-10 -translate-x-1/2">
-                  <Badge className="border-0 bg-gradient-to-r from-[#002c92] to-[#003fc7] px-4 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-lg">
-                    {t("recommended")}
-                  </Badge>
-                </div>
-              )}
-
-              <div className="mb-5 text-center">
-                <p className="text-sm font-bold uppercase tracking-[0.14em] text-[#747686]">
-                  {t(`plans.${plan.id}.name`)}
-                </p>
-                <p className="mt-3 flex items-baseline justify-center gap-1">
-                  <span className="text-4xl font-extrabold tabular-nums text-[#221823] sm:text-5xl">
-                    {t(`plans.${plan.id}.price`)}
-                  </span>
-                  <span className="text-base font-medium text-[#747686]">
-                    {t("perMonth")}
-                  </span>
-                </p>
-                <p className="mt-4 text-pretty text-sm leading-relaxed text-[#434654]">
-                  {t(`plans.${plan.id}.tagline`)}
-                </p>
-              </div>
-
-              <ul className="flex flex-1 flex-col gap-3.5">
-                {plan.featureKeys.map((key) => (
-                  <li
-                    key={key}
-                    className="flex gap-3 text-left text-sm leading-snug text-[#434654]"
-                  >
-                    <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-lg bg-[#dce1ff]/80 text-[#002c92]">
-                      <Check className="size-3.5" strokeWidth={2.5} />
-                    </span>
-                    <span className="min-w-0 pt-0.5">
-                      {t.rich(`plans.${plan.id}.${key}`, { fu })}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-
-              <a
-                href={LINKS.app}
-                className={cn(
-                  buttonVariants({ size: "lg" }),
-                  "btn-figma-primary mt-8 w-full gap-2 rounded-xl border-0 py-6 text-base font-semibold text-white shadow-none",
-                  !plan.recommended && "opacity-95 hover:opacity-100",
-                )}
-              >
-                {t("selectPlan")}
-                <ArrowRight className="size-4" />
-              </a>
-            </motion.div>
-          ))}
         </div>
+      </div>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.15, duration: 0.4 }}
-          className="mx-auto mt-12 max-w-xl text-center text-sm text-[#747686]"
-        >
-          <button
-            type="button"
-            onClick={() => setFairUseOpen(true)}
-            className="font-medium text-[#002c92] underline decoration-[#002c92]/30 underline-offset-4 hover:decoration-[#002c92]/60"
-          >
-            {t("fairUseCta")}
-          </button>
-        </motion.p>
+      <div className="container-wide section-padding py-14 md:py-20 space-y-20">
 
-        {/* Comparison table */}
-        <motion.section {...fadeUp} className="mx-auto mt-20 max-w-5xl lg:mt-24">
-          <div className="text-center">
-            <h2 className="text-2xl font-bold tracking-tight text-[#221823] sm:text-3xl">
-              {t("compareTitle")}
-            </h2>
-            <p className="mx-auto mt-3 max-w-2xl text-pretty text-sm leading-relaxed text-[#434654] sm:text-base">
-              {t("compareSubtitle")}
+        {/* ── Three deployment paths ──────────────────────────────────────── */}
+        <motion.div {...fadeUp} className="grid gap-5 lg:grid-cols-3">
+
+          {/* Open Source */}
+          <div className="flex flex-col rounded-2xl border border-[rgb(196_197_215/0.4)] bg-white/80 p-7">
+            <div className="mb-5 flex size-10 items-center justify-center rounded-xl bg-soft-accent">
+              <GithubIcon className="size-5 text-foreground" />
+            </div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-1">
+              {t("pathOpenSourceTagline")}
             </p>
-          </div>
-          <div className="mt-10 overflow-x-auto rounded-[1.75rem] border border-[rgb(196_197_215/0.2)] bg-white/80 shadow-[0_20px_50px_-24px_rgba(0,44,146,0.12)] backdrop-blur-sm">
-            <table className="w-full min-w-[640px] border-collapse text-left text-sm">
-              <thead>
-                <tr className="border-b border-[rgb(196_197_215/0.25)] bg-soft-accent/40">
-                  <th className="px-5 py-4 font-semibold text-[#221823] sm:px-6">
-                    {/* feature column */}
-                  </th>
-                  <th className="px-4 py-4 text-center font-bold text-[#002c92]">
-                    {t("compareColPro")}
-                  </th>
-                  <th className="px-4 py-4 text-center font-bold text-[#002c92]">
-                    {t("compareColTeam")}
-                  </th>
-                  <th className="px-4 py-4 text-center font-bold text-[#002c92]">
-                    {t("compareColBusiness")}
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {COMPARE_KEYS.map((key, i) => (
-                  <tr
-                    key={key}
-                    className={cn(
-                      "border-b border-[rgb(196_197_215/0.12)] transition hover:bg-page-tint/80",
-                      i % 2 === 1 && "bg-white/50",
-                    )}
-                  >
-                    <td className="px-5 py-3.5 font-medium text-[#221823] sm:px-6">
-                      {t(`compare.${key}.label`)}
-                    </td>
-                    <td className="px-4 py-3.5 text-center tabular-nums text-[#434654]">
-                      {t(`compare.${key}.pro`)}
-                    </td>
-                    <td className="px-4 py-3.5 text-center tabular-nums text-[#434654]">
-                      {t(`compare.${key}.team`)}
-                    </td>
-                    <td className="px-4 py-3.5 text-center tabular-nums text-[#434654]">
-                      {t(`compare.${key}.business`)}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </motion.section>
-
-        {/* Included everywhere */}
-        <motion.section {...fadeUp} className="mx-auto mt-20 max-w-5xl lg:mt-24">
-          <div className="rounded-[2rem] border border-[rgb(196_197_215/0.18)] bg-gradient-to-b from-white/90 to-page-tint/90 p-8 shadow-inner sm:p-10">
-            <h2 className="text-center text-2xl font-bold tracking-tight text-[#221823] sm:text-3xl">
-              {t("includedTitle")}
-            </h2>
-            <p className="mx-auto mt-3 max-w-2xl text-center text-pretty text-sm leading-relaxed text-[#434654] sm:text-base">
-              {t("includedLead")}
+            <h2 className="text-2xl font-bold text-foreground">{t("pathOpenSourceTitle")}</h2>
+            <div className="my-4 flex items-baseline gap-1.5">
+              <span className="text-4xl font-bold tracking-tight text-foreground">
+                {t("pathOpenSourcePrice")}
+              </span>
+              <span className="text-sm text-muted-foreground">{t("pathOpenSourcePriceSub")}</span>
+            </div>
+            <p className="mb-5 text-sm text-muted-foreground leading-relaxed">
+              {t("pathOpenSourceDesc")}
             </p>
-            <ul className="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-2 lg:gap-5">
-              {INCLUDED_KEYS.map((key) => (
-                <li
-                  key={key}
-                  className="flex gap-3 rounded-2xl border border-[rgb(196_197_215/0.12)] bg-white/70 px-4 py-3.5 sm:px-5"
-                >
-                  <span className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-xl bg-[#dce1ff]/90 text-[#002c92]">
-                    <Check className="size-4" strokeWidth={2.5} />
-                  </span>
-                  <span className="text-sm leading-relaxed text-[#434654]">
-                    {t(key)}
-                  </span>
-                </li>
+            <ul className="mb-7 flex flex-col gap-2.5 flex-1">
+              {openSourceFeatures.map((f) => (
+                <Feature key={f} text={f} />
               ))}
             </ul>
+            <a
+              href={LINKS.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(
+                buttonVariants({ variant: "outline", size: "sm" }),
+                "w-full justify-center gap-2 rounded-xl font-semibold",
+              )}
+            >
+              <GithubIcon className="size-4" />
+              {t("pathOpenSourceCta")}
+            </a>
           </div>
-        </motion.section>
 
-        {/* FAQ */}
-        <motion.section {...fadeUp} className="mx-auto mt-20 max-w-3xl lg:mt-24">
-          <h2 className="text-center text-2xl font-bold tracking-tight text-[#221823] sm:text-3xl">
-            {t("faqTitle")}
-          </h2>
-          <Accordion className="mt-10 rounded-[1.75rem] border border-[rgb(196_197_215/0.2)] bg-white/75 px-4 py-2 backdrop-blur-sm sm:px-6">
-            {FAQ_KEYS.map((id) => (
-              <AccordionItem key={id} value={id} className="border-[rgb(196_197_215/0.15)]">
-                <AccordionTrigger className="py-4 text-base font-semibold text-[#221823] hover:no-underline">
-                  {t(`${id}Q`)}
-                </AccordionTrigger>
-                <AccordionContent className="pb-4 text-[#434654]">
-                  {t(`${id}A`)}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </motion.section>
-
-        {/* Enterprise CTA */}
-        <motion.section
-          {...fadeUp}
-          className="relative mx-auto mt-20 max-w-5xl overflow-hidden rounded-[2.5rem] p-10 text-center sm:p-14 lg:mt-24"
-        >
-          <div className="absolute inset-0 gradient-brand" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,_oklch(0.55_0.19_280_/_0.25),_transparent_55%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,_white/10,_transparent_45%)]" />
-          <div className="relative z-10 mx-auto max-w-2xl">
-            <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
-              {t("enterpriseTitle")}
-            </h2>
-            <p className="mt-4 text-pretty text-base leading-relaxed text-white/85">
-              {t("enterpriseLead")}
+          {/* Platform — featured */}
+          <div className="relative flex flex-col rounded-2xl border-2 border-brand-500 bg-white p-7 shadow-xl shadow-brand-100/40 ring-1 ring-brand-500/20">
+            <div className="absolute -top-3.5 left-7 rounded-full bg-brand-600 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-white shadow">
+              Popular
+            </div>
+            <div className="mb-5 flex size-10 items-center justify-center rounded-xl bg-brand-100">
+              <Globe className="size-5 text-brand-700" />
+            </div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-brand-600 mb-1">
+              {t("pathPlatformTagline")}
             </p>
-            <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
-              <Link
-                href="/appointment"
-                className={cn(
-                  buttonVariants({ size: "lg" }),
-                  "gap-2 border-transparent bg-white px-8 text-base font-semibold text-brand-700 shadow-xl hover:bg-white/95",
-                )}
-              >
-                {t("enterpriseCtaDemo")}
-                <ArrowRight className="size-4" />
-              </Link>
+            <h2 className="text-2xl font-bold text-foreground">{t("pathPlatformTitle")}</h2>
+            <div className="my-4 flex items-baseline gap-1.5">
+              <span className="text-xs font-medium text-muted-foreground">{t("pathPlatformFrom")}</span>
+              <span className="text-4xl font-bold tracking-tight text-foreground">
+                {t("pathPlatformPrice")}
+              </span>
+              <span className="text-sm text-muted-foreground">{t("pathPlatformPriceSub")}</span>
+            </div>
+            <p className="mb-5 text-sm text-muted-foreground leading-relaxed">
+              {t("pathPlatformDesc")}
+            </p>
+            <ul className="mb-7 flex flex-col gap-2.5 flex-1">
+              {platformFeatures.map((f) => (
+                <Feature key={f} text={f} />
+              ))}
+            </ul>
+            <div className="flex flex-col gap-2">
               <a
                 href={LINKS.web}
-                className={cn(
-                  buttonVariants({ variant: "outline", size: "lg" }),
-                  "border-white/40 bg-white/10 px-8 text-base font-semibold text-white backdrop-blur-sm hover:bg-white/20",
-                )}
-              >
-                {t("enterpriseCtaStart")}
-              </a>
-            </div>
-            <p className="mt-8 text-pretty text-sm leading-relaxed text-white/75">
-              {t("enterpriseFootnote")}{" "}
-              <a
-                href={LINKS.docs}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-medium text-white underline decoration-white/40 underline-offset-4 hover:decoration-white"
+                className={cn(
+                  buttonVariants({ size: "sm" }),
+                  "btn-figma-primary w-full justify-center gap-1.5 rounded-xl border-0 text-white shadow-none hover:opacity-95 font-semibold",
+                )}
               >
-                <BookOpen className="mb-0.5 mr-1 inline size-3.5" aria-hidden />
-                docs.synaplan.com
+                {t("pathPlatformCta")}
+                <ArrowRight className="size-3.5" />
               </a>
+              <a
+                href="#platform-plans"
+                className="text-center text-xs font-medium text-brand-600 hover:underline"
+              >
+                {t("pathPlatformSeeAll")}
+              </a>
+            </div>
+          </div>
+
+          {/* Enterprise */}
+          <div className="relative flex flex-col rounded-2xl bg-gradient-to-br from-[#001256] to-[#002c92] p-7 text-white overflow-hidden">
+            {/* Subtle grid texture */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 opacity-10"
+              style={{
+                backgroundImage: `linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px),
+                  linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)`,
+                backgroundSize: "32px 32px",
+              }}
+            />
+            <div className="relative">
+              <div className="mb-5 flex size-10 items-center justify-center rounded-xl bg-white/15">
+                <Building2 className="size-5 text-white" />
+              </div>
+              <p className="text-xs font-semibold uppercase tracking-widest text-white/60 mb-1">
+                {t("pathEnterpriseTagline")}
+              </p>
+              <h2 className="text-2xl font-bold text-white">{t("pathEnterpriseTitle")}</h2>
+              <div className="my-4">
+                <span className="text-xl font-bold text-white/90">
+                  {t("pathEnterprisePrice")}
+                </span>
+              </div>
+              <p className="mb-5 text-sm text-white/75 leading-relaxed">
+                {t("pathEnterpriseDesc")}
+              </p>
+              <ul className="mb-7 flex flex-col gap-2.5 flex-1">
+                {enterpriseFeatures.map((f) => (
+                  <Feature key={f} text={f} light />
+                ))}
+              </ul>
+              <a
+                href={LINKS.appointment}
+                className="flex w-full items-center justify-center gap-1.5 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-[#001256] transition-opacity hover:opacity-90"
+              >
+                {t("pathEnterpriseCta")}
+                <ArrowRight className="size-3.5" />
+              </a>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* ── Platform plan details ───────────────────────────────────────── */}
+        <motion.section id="platform-plans" {...fadeUp}>
+          <div className="mb-8 text-center">
+            <h2 className="text-2xl font-bold tracking-tight text-foreground md:text-3xl">
+              {t("platformSectionTitle")}
+            </h2>
+            <p className="mt-2 text-sm text-muted-foreground max-w-xl mx-auto">
+              {t("platformSectionSub")}
             </p>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-3">
+            {plans.map((plan) => (
+              <PlanCard key={plan.id} {...plan} />
+            ))}
+          </div>
+          <p className="mt-5 text-center text-xs text-muted-foreground/60">
+            {t("pageFootnote")}
+          </p>
+        </motion.section>
+
+        {/* ── Included in every platform plan ────────────────────────────── */}
+        <motion.section {...fadeUp}>
+          <div className="rounded-2xl border border-[rgb(196_197_215/0.35)] bg-white/80 p-8 md:p-10">
+            <div className="mb-8 text-center">
+              <h2 className="text-xl font-bold text-foreground md:text-2xl">
+                {t("includedTitle")}
+              </h2>
+              <p className="mt-1.5 text-sm text-muted-foreground">{t("includedLead")}</p>
+            </div>
+            <div className="grid gap-x-8 gap-y-4 sm:grid-cols-2 lg:grid-cols-3">
+              {(["included1","included2","included3","included4","included5","included6"] as const).map((key) => (
+                <div key={key} className="flex items-start gap-3">
+                  <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-brand-100">
+                    <Check className="size-3 text-brand-700" strokeWidth={3} />
+                  </span>
+                  <span className="text-sm text-foreground leading-snug">{t(key)}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </motion.section>
 
-        <motion.p
-          {...fadeUp}
-          className="mx-auto mt-12 max-w-3xl text-center text-xs leading-relaxed text-[#747686]"
-        >
-          {t("pageFootnote")}
-        </motion.p>
+        {/* ── FAQ ─────────────────────────────────────────────────────────── */}
+        <motion.section {...fadeUp}>
+          <div className="mb-6 text-center">
+            <h2 className="text-xl font-bold text-foreground md:text-2xl">{t("faqTitle")}</h2>
+          </div>
+          <div className="mx-auto max-w-2xl divide-y divide-[rgb(196_197_215/0.3)]">
+            {(["faq1","faq2","faq3","faq4","faq5"] as const).map((key) => (
+              <FaqItem key={key} q={t(`${key}Q`)} a={t(`${key}A`)} />
+            ))}
+          </div>
+        </motion.section>
+
       </div>
     </div>
+  );
+}
+
+// ─── Simple inline FAQ accordion ─────────────────────────────────────────────
+function FaqItem({ q, a }: { q: string; a: string }) {
+  return (
+    <details className="group py-4">
+      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-semibold text-foreground">
+        {q}
+        <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-soft-accent text-muted-foreground transition-transform group-open:rotate-45">
+          <ArrowRight className="size-3 rotate-[-45deg] group-open:rotate-0 transition-transform" />
+        </span>
+      </summary>
+      <p className="mt-2.5 text-sm text-muted-foreground leading-relaxed">{a}</p>
+    </details>
   );
 }
