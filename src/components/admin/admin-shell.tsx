@@ -116,17 +116,17 @@ export function AdminPageHeader({
 export function StatCard({
   label,
   value,
-  icon: Icon,
+  icon,
 }: {
   label: string;
   value: number | string;
-  icon: React.ElementType;
+  icon: React.ReactNode;
 }) {
   return (
     <div className="rounded-xl border bg-background p-5">
       <div className="flex items-center justify-between">
         <span className="text-sm text-muted-foreground">{label}</span>
-        <Icon className="size-4 text-muted-foreground" />
+        {icon}
       </div>
       <p className="mt-2 text-2xl font-semibold tabular-nums">{value}</p>
     </div>

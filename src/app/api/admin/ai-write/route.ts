@@ -1,9 +1,16 @@
 /**
- * AI-assisted blog writing via Synaplan API.
+ * AI writing assistant for the blog editor.
  * POST /api/admin/ai-write
  *
- * Body: { prompt: string; locale?: "de" | "en"; mode?: "full" | "outline" | "expand" }
- * Response: SSE stream (text/event-stream) — same format as /messages/stream
+ * Body:
+ *   prompt      string  — user instruction / topic
+ *   locale      "de" | "en"
+ *   mode        "full" | "outline" | "continue" | "rewrite" | "improve" | "translate"
+ *   content?    string  — existing editor content (for continue / rewrite / improve)
+ *   selection?  string  — selected text (for rewrite / improve)
+ *   targetLocale? "de" | "en"  — only used for "translate" mode
+ *
+ * Response: SSE stream (text/event-stream)
  */
 import { NextResponse } from "next/server";
 import { getAdminSessionFromCookies } from "@/lib/admin-session";
@@ -15,22 +22,84 @@ import {
 
 export const runtime = "nodejs";
 
-const SYSTEM_HINTS: Record<string, string> = {
-  full_de: `Du bist ein professioneller Blog-Autor für Synaplan, eine KI-Plattform für Unternehmen.
-Schreibe einen vollständigen, SEO-optimierten deutschen Blogartikel im Markdown-Format.
-Struktur: Einleitung, mehrere H2-Abschnitte, Fazit.
-Halte den Ton professionell aber zugänglich. Vermeide Floskeln.`,
-  full_en: `You are a professional blog author for Synaplan, an enterprise AI platform.
-Write a complete, SEO-optimised English blog post in Markdown format.
-Structure: introduction, multiple H2 sections, conclusion.
-Keep the tone professional yet approachable. Avoid buzzwords.`,
-  outline_de: `Erstelle eine detaillierte Gliederung (Outline) für einen Blogartikel auf Deutsch.
-Format: Markdown-Liste mit H2-Überschriften und kurzen Beschreibungen der Unterabschnitte.`,
-  outline_en: `Create a detailed outline for a blog post in English.
-Format: Markdown list with H2 headings and brief descriptions of sub-sections.`,
-  expand_de: `Erweitere den folgenden Text zu einem ausführlichen deutschen Abschnitt. Behalte den Kontext und schreibe im selben Stil weiter.`,
-  expand_en: `Expand the following text into a detailed English paragraph. Maintain context and continue in the same style.`,
-};
+type Mode = "full" | "outline" | "continue" | "rewrite" | "improve" | "translate";
+
+function buildSystemPrompt(
+  mode: Mode,
+  locale: string,
+  targetLocale?: string,
+): string {
+  const lang = locale === "en" ? "English" : "German";
+  const targetLang = targetLocale === "en" ? "English" : "German";
+
+  const base = `You are a professional blog author for Synaplan, an enterprise AI platform (open-source, GDPR-compliant, multi-model). Write in a professional yet approachable tone. Use Markdown formatting.`;
+
+  switch (mode) {
+    case "full":
+      return `${base}
+Write a complete, SEO-optimised blog post in ${lang}.
+Structure: engaging introduction, multiple H2 sections with real insights, a conclusion with CTA.
+Minimum 600 words. Include relevant subheadings and examples.`;
+
+    case "outline":
+      return `${base}
+Create a detailed blog post outline in ${lang}.
+Format: Markdown list with H2 headings and 2-3 bullet points per section describing what to cover.`;
+
+    case "continue":
+      return `${base}
+Continue the following blog post in ${lang}. Match the existing style, tone and formatting exactly.
+Write at least 3 more paragraphs. Do NOT repeat what was already written. Start directly with new content.`;
+
+    case "rewrite":
+      return `${base}
+Rewrite the following text in ${lang}. Keep the same meaning but improve clarity, flow and engagement.
+Return ONLY the rewritten text, no commentary.`;
+
+    case "improve":
+      return `${base}
+Improve the following text in ${lang}: fix grammar, enhance readability, strengthen the argument, make it more engaging.
+Return ONLY the improved version, no explanations.`;
+
+    case "translate":
+      return `You are a professional translator specialising in tech and AI content.
+Translate the following from ${lang} to ${targetLang}.
+Preserve all Markdown formatting (headings, bold, lists, code blocks) exactly.
+The text is about Synaplan, an open-source enterprise AI platform.
+Return ONLY the translated text.`;
+  }
+}
+
+function buildMessage(
+  mode: Mode,
+  prompt: string,
+  content?: string,
+  selection?: string,
+): string {
+  const workingText = selection || content || "";
+
+  switch (mode) {
+    case "full":
+    case "outline":
+      return prompt;
+
+    case "continue":
+      return `${workingText}\n\n---\n\n${prompt ? `Additional instructions: ${prompt}` : "Please continue writing."}`;
+
+    case "rewrite":
+      return selection
+        ? `Rewrite this text:\n\n${selection}\n\n${prompt ? `Instructions: ${prompt}` : ""}`
+        : `Rewrite this entire post:\n\n${content}\n\n${prompt ? `Instructions: ${prompt}` : ""}`;
+
+    case "improve":
+      return selection
+        ? `Improve this text:\n\n${selection}\n\n${prompt ? `Focus on: ${prompt}` : ""}`
+        : `Improve this entire post:\n\n${content}\n\n${prompt ? `Focus on: ${prompt}` : ""}`;
+
+    case "translate":
+      return workingText || prompt;
+  }
+}
 
 export async function POST(req: Request) {
   const session = await getAdminSessionFromCookies();
@@ -39,10 +108,7 @@ export async function POST(req: Request) {
   }
 
   if (!isDemoChatConfigured()) {
-    return NextResponse.json(
-      { error: "Synaplan API not configured" },
-      { status: 503 },
-    );
+    return NextResponse.json({ error: "Synaplan API not configured" }, { status: 503 });
   }
 
   let body: unknown;
@@ -53,35 +119,46 @@ export async function POST(req: Request) {
   }
 
   const {
-    prompt,
+    prompt = "",
     locale = "de",
     mode = "full",
+    content,
+    selection,
+    targetLocale,
   } = body as Record<string, unknown>;
 
-  if (typeof prompt !== "string" || !prompt.trim()) {
-    return NextResponse.json({ error: "prompt is required" }, { status: 400 });
-  }
-
+  const resolvedMode = (mode as Mode) || "full";
   const lang = locale === "en" ? "en" : "de";
-  const key = `${mode}_${lang}`;
-  const systemHint = SYSTEM_HINTS[key] ?? SYSTEM_HINTS[`full_${lang}`];
+  const tLang = targetLocale === "en" ? "en" : "de";
 
-  const fullMessage = `${systemHint}\n\n---\n\n${prompt.trim()}`;
+  const systemPrompt = buildSystemPrompt(resolvedMode, lang, tLang);
+  const userMessage = buildMessage(
+    resolvedMode,
+    typeof prompt === "string" ? prompt : "",
+    typeof content === "string" ? content : undefined,
+    typeof selection === "string" ? selection : undefined,
+  );
+
+  const fullMessage = `${systemPrompt}\n\n---\n\n${userMessage}`;
 
   let chatId: number;
   try {
-    chatId = await createDemoChat(`admin-ai-write-${Date.now()}`);
+    chatId = await createDemoChat(`admin-ai-${resolvedMode}-${Date.now()}`);
   } catch (err) {
-    const msg = err instanceof Error ? err.message : "Failed to create AI session";
-    return NextResponse.json({ error: msg }, { status: 502 });
+    return NextResponse.json(
+      { error: err instanceof Error ? err.message : "Failed to create AI session" },
+      { status: 502 },
+    );
   }
 
   let upstream: Response;
   try {
     upstream = await fetchMessagesStream(fullMessage, chatId);
   } catch (err) {
-    const msg = err instanceof Error ? err.message : "Failed to reach AI";
-    return NextResponse.json({ error: msg }, { status: 502 });
+    return NextResponse.json(
+      { error: err instanceof Error ? err.message : "Failed to reach AI" },
+      { status: 502 },
+    );
   }
 
   if (!upstream.ok || !upstream.body) {

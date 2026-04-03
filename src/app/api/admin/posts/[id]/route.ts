@@ -56,6 +56,7 @@ export async function PUT(req: Request, { params }: Params) {
     locale,
     tags,
     publishedAt,
+    translationKey,
   } = body as Record<string, unknown>;
 
   // If transitioning to PUBLISHED for the first time, set publishedAt
@@ -79,6 +80,7 @@ export async function PUT(req: Request, { params }: Params) {
       ...(typeof status === "string" && { status: status as PostStatus }),
       ...(typeof locale === "string" && { locale }),
       ...(Array.isArray(tags) && { tags: tags as string[] }),
+      ...(typeof translationKey === "string" && { translationKey: translationKey || null }),
       publishedAt: resolvedPublishedAt,
     },
   });

@@ -98,6 +98,7 @@ export async function POST(req: Request) {
     locale = "de",
     tags = [],
     publishedAt,
+    translationKey,
   } = body as Record<string, unknown>;
 
   if (typeof title !== "string" || !title.trim()) {
@@ -122,6 +123,7 @@ export async function POST(req: Request) {
       status: status as PostStatus,
       locale: typeof locale === "string" ? locale : "de",
       tags: Array.isArray(tags) ? (tags as string[]) : [],
+      translationKey: typeof translationKey === "string" && translationKey ? translationKey : null,
       publishedAt:
         status === "PUBLISHED"
           ? typeof publishedAt === "string"

@@ -1,97 +1,547 @@
 "use client";
 
-import { useState, useTransition, useCallback } from "react";
+import {
+  useState,
+  useTransition,
+  useCallback,
+  useRef,
+  type ChangeEvent,
+} from "react";
 import { useRouter } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { Sparkles, Eye, Code2, Loader2, X, ChevronDown } from "lucide-react";
+import {
+  Sparkles, Eye, Code2, Loader2, X, ChevronDown,
+  ImageUp, CheckCircle2, AlertCircle,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 
-type PostStatus = "DRAFT" | "PUBLISHED" | "ARCHIVED";
+// ─── Types ────────────────────────────────────────────────────────────────────
 
-interface PostData {
+type PostStatus = "DRAFT" | "PUBLISHED" | "ARCHIVED";
+type AiMode = "full" | "outline" | "continue" | "rewrite" | "improve" | "translate";
+
+interface LocaleData {
   id?: number;
-  title?: string;
-  slug?: string;
-  excerpt?: string;
-  content?: string;
-  coverImage?: string;
-  status?: PostStatus;
-  locale?: string;
-  tags?: string[];
+  title: string;
+  slug: string;
+  excerpt: string;
+  content: string;
+  status: PostStatus;
+  tags: string; // comma-separated
 }
 
 interface PostEditorProps {
-  initial?: PostData;
+  initial?: {
+    id?: number;
+    title?: string;
+    slug?: string;
+    excerpt?: string;
+    content?: string;
+    coverImage?: string;
+    status?: PostStatus;
+    locale?: string;
+    tags?: string[];
+    translationKey?: string | null;
+    // pre-loaded translation (opposite locale)
+    translation?: {
+      id?: number;
+      title?: string;
+      slug?: string;
+      excerpt?: string;
+      content?: string;
+      status?: PostStatus;
+      tags?: string[];
+    } | null;
+  };
 }
+
+// ─── Helpers ─────────────────────────────────────────────────────────────────
+
+function slugify(text: string) {
+  return text
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-");
+}
+
+function makeDefaultLocaleData(
+  locale: string,
+  d?: PostEditorProps["initial"],
+): LocaleData {
+  const src =
+    locale === (d?.locale ?? "de") ? d : d?.translation;
+  return {
+    id: src?.id,
+    title: src?.title ?? "",
+    slug: src?.slug ?? "",
+    excerpt: src?.excerpt ?? "",
+    content: src?.content ?? "",
+    status: src?.status ?? "DRAFT",
+    tags: (src?.tags ?? []).join(", "),
+  };
+}
+
+// ─── AI streaming helper ──────────────────────────────────────────────────────
+
+async function streamAI(
+  payload: object,
+  onChunk: (text: string) => void,
+): Promise<void> {
+  const res = await fetch("/api/admin/ai-write", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+
+  if (!res.ok || !res.body) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error((err as { error?: string }).error ?? "AI error");
+  }
+
+  const reader = res.body.getReader();
+  const decoder = new TextDecoder();
+
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    for (const line of decoder.decode(value, { stream: true }).split("\n")) {
+      if (!line.startsWith("data: ")) continue;
+      const payload = line.slice(6).trim();
+      if (payload === "[DONE]") return;
+      try {
+        const p = JSON.parse(payload) as { content?: string; delta?: string; text?: string };
+        onChunk(p.content ?? p.delta ?? p.text ?? "");
+      } catch {
+        onChunk(payload);
+      }
+    }
+  }
+}
+
+// ─── AI Panel ─────────────────────────────────────────────────────────────────
+
+const AI_MODES: { value: AiMode; label: string; hint: string }[] = [
+  { value: "full",      label: "Full post",  hint: "Write a complete article from your prompt" },
+  { value: "outline",   label: "Outline",    hint: "Generate a structured outline" },
+  { value: "continue",  label: "Continue",   hint: "Continue writing from current content" },
+  { value: "rewrite",   label: "Rewrite",    hint: "Rewrite the current text (or selection)" },
+  { value: "improve",   label: "Improve",    hint: "Polish grammar, flow and clarity" },
+  { value: "translate", label: "Translate",  hint: "Translate content to the other language" },
+];
+
+interface AiPanelProps {
+  locale: string;
+  content: string;
+  selection: string;
+  onInsert: (text: string) => void;
+  onReplace: (text: string) => void;
+  onClose: () => void;
+}
+
+function AiPanel({ locale, content, selection, onInsert, onReplace, onClose }: AiPanelProps) {
+  const [aiMode, setAiMode] = useState<AiMode>("full");
+  const [prompt, setPrompt] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [output, setOutput] = useState("");
+  const [error, setError] = useState("");
+
+  const targetLocale = locale === "de" ? "en" : "de";
+  const isReplace = ["rewrite", "improve", "translate"].includes(aiMode);
+
+  async function generate() {
+    if (!prompt.trim() && !["continue", "rewrite", "improve", "translate"].includes(aiMode)) return;
+    setError("");
+    setOutput("");
+    setLoading(true);
+    try {
+      await streamAI(
+        { prompt, locale, mode: aiMode, content, selection, targetLocale },
+        (chunk) => setOutput((p) => p + chunk),
+      );
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "Unknown error");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  const selectedMode = AI_MODES.find((m) => m.value === aiMode)!;
+
+  return (
+    <div className="flex w-[380px] shrink-0 flex-col border-l bg-white">
+      {/* Header */}
+      <div className="flex items-center justify-between border-b px-4 py-3">
+        <div className="flex items-center gap-2 text-sm font-semibold text-gray-800">
+          <Sparkles className="size-4 text-brand-500" />
+          AI Assistant
+        </div>
+        <button onClick={onClose} className="rounded p-1 hover:bg-gray-100">
+          <X className="size-4 text-gray-400" />
+        </button>
+      </div>
+
+      <div className="flex-1 overflow-auto p-4 space-y-4">
+        {/* Mode selector */}
+        <div>
+          <p className="mb-2 text-xs font-medium text-gray-500 uppercase tracking-wide">Mode</p>
+          <div className="grid grid-cols-3 gap-1.5">
+            {AI_MODES.map((m) => (
+              <button
+                key={m.value}
+                onClick={() => setAiMode(m.value)}
+                title={m.hint}
+                className={cn(
+                  "rounded-lg border px-2 py-1.5 text-xs font-medium transition-colors",
+                  aiMode === m.value
+                    ? "border-brand-500 bg-brand-50 text-brand-700"
+                    : "border-gray-200 hover:bg-gray-50 text-gray-600",
+                )}
+              >
+                {m.label}
+              </button>
+            ))}
+          </div>
+          <p className="mt-1.5 text-xs text-gray-400">{selectedMode.hint}</p>
+        </div>
+
+        {/* Selection hint */}
+        {selection && (
+          <div className="rounded-lg border border-brand-200 bg-brand-50 px-3 py-2">
+            <p className="text-xs font-medium text-brand-700">Selection active</p>
+            <p className="mt-0.5 truncate text-xs text-brand-600">{selection.slice(0, 80)}…</p>
+          </div>
+        )}
+
+        {/* Prompt */}
+        {!["continue", "rewrite", "improve", "translate"].includes(aiMode) || aiMode === "translate" ? (
+          <div>
+            <label className="mb-1.5 block text-xs font-medium text-gray-600">
+              {aiMode === "translate"
+                ? `Translate to ${targetLocale === "en" ? "English" : "German"}`
+                : "Prompt"}
+            </label>
+            <textarea
+              value={prompt}
+              onChange={(e) => setPrompt(e.target.value)}
+              rows={aiMode === "translate" ? 2 : 4}
+              placeholder={
+                aiMode === "translate"
+                  ? "Optional: additional translation instructions…"
+                  : aiMode === "full"
+                    ? `Write a blog post about AI chatbots for German businesses…`
+                    : `Describe what to outline…`
+              }
+              className="w-full rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-sm outline-none focus:border-brand-400 focus:bg-white focus:ring-2 focus:ring-brand-500/15"
+            />
+          </div>
+        ) : (
+          <div>
+            <label className="mb-1.5 block text-xs font-medium text-gray-600">
+              Additional instructions <span className="text-gray-400">(optional)</span>
+            </label>
+            <textarea
+              value={prompt}
+              onChange={(e) => setPrompt(e.target.value)}
+              rows={2}
+              placeholder={
+                aiMode === "continue" ? "e.g. focus on the ROI aspect…" : "e.g. make it more formal…"
+              }
+              className="w-full rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-sm outline-none focus:border-brand-400 focus:bg-white focus:ring-2 focus:ring-brand-500/15"
+            />
+          </div>
+        )}
+
+        <button
+          onClick={generate}
+          disabled={loading}
+          className="flex w-full items-center justify-center gap-2 rounded-lg bg-brand-600 px-4 py-2.5 text-sm font-medium text-white hover:bg-brand-700 disabled:opacity-60"
+        >
+          {loading ? (
+            <><Loader2 className="size-4 animate-spin" /> Generating…</>
+          ) : (
+            <><Sparkles className="size-4" /> Generate</>
+          )}
+        </button>
+
+        {error && (
+          <div className="flex items-start gap-2 rounded-lg border border-red-200 bg-red-50 px-3 py-2">
+            <AlertCircle className="size-4 shrink-0 text-red-500 mt-0.5" />
+            <p className="text-xs text-red-600">{error}</p>
+          </div>
+        )}
+
+        {/* Output */}
+        {output && (
+          <div className="space-y-2">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-medium text-gray-600">Output</span>
+              <div className="flex gap-1.5">
+                {isReplace ? (
+                  <button
+                    onClick={() => onReplace(output)}
+                    className="flex items-center gap-1 rounded-md bg-brand-600 px-2.5 py-1 text-xs font-medium text-white hover:bg-brand-700"
+                  >
+                    <CheckCircle2 className="size-3.5" /> Replace
+                  </button>
+                ) : null}
+                <button
+                  onClick={() => onInsert(output)}
+                  className="flex items-center gap-1 rounded-md border border-gray-300 px-2.5 py-1 text-xs font-medium hover:bg-gray-50"
+                >
+                  Insert
+                </button>
+              </div>
+            </div>
+            <div className="max-h-80 overflow-auto rounded-lg border bg-gray-50 p-3 font-mono text-xs leading-relaxed whitespace-pre-wrap">
+              {output}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// ─── Image Upload Button ───────────────────────────────────────────────────────
+
+interface ImageUploadProps {
+  onUploaded: (url: string) => void;
+}
+
+function ImageUploadButton({ onUploaded }: ImageUploadProps) {
+  const fileRef = useRef<HTMLInputElement>(null);
+  const [uploading, setUploading] = useState(false);
+  const [error, setError] = useState("");
+
+  async function handleFile(e: ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setError("");
+    setUploading(true);
+    try {
+      const fd = new FormData();
+      fd.append("file", file);
+      const res = await fetch("/api/admin/upload", { method: "POST", body: fd });
+      const data = await res.json() as { url?: string; error?: string };
+      if (!res.ok) throw new Error(data.error ?? "Upload failed");
+      onUploaded(data.url!);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Upload failed");
+    } finally {
+      setUploading(false);
+      if (fileRef.current) fileRef.current.value = "";
+    }
+  }
+
+  return (
+    <div className="relative">
+      <input
+        ref={fileRef}
+        type="file"
+        accept="image/*"
+        className="hidden"
+        onChange={handleFile}
+      />
+      <button
+        type="button"
+        title={error || "Upload image"}
+        onClick={() => fileRef.current?.click()}
+        disabled={uploading}
+        className={cn(
+          "flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-medium transition-colors disabled:opacity-60",
+          error
+            ? "border-red-300 text-red-600 hover:bg-red-50"
+            : "border-gray-200 text-gray-600 hover:bg-gray-100",
+        )}
+      >
+        {uploading ? (
+          <Loader2 className="size-3.5 animate-spin" />
+        ) : (
+          <ImageUp className="size-3.5" />
+        )}
+        {uploading ? "Uploading…" : "Image"}
+      </button>
+    </div>
+  );
+}
+
+// ─── Single locale form ───────────────────────────────────────────────────────
+
+interface LocaleFormProps {
+  data: LocaleData;
+  locale: string;
+  isEdit: boolean;
+  onChange: (patch: Partial<LocaleData>) => void;
+  view: "edit" | "preview";
+  titleAutoSlug: boolean;
+  onTitleChange: (val: string) => void;
+  onImageInsert: (url: string) => void;
+}
+
+function LocaleForm({
+  data, locale, onChange, view, titleAutoSlug, onTitleChange, onImageInsert,
+}: LocaleFormProps) {
+  function insertImage(url: string) {
+    const md = `\n![image](${url})\n`;
+    onChange({ content: data.content + md });
+    onImageInsert(url);
+  }
+
+  return (
+    <div className="flex flex-col gap-4">
+      {/* Title */}
+      <input
+        placeholder={locale === "de" ? "Titel des Artikels…" : "Post title…"}
+        value={data.title}
+        onChange={(e) => onTitleChange(e.target.value)}
+        className="w-full border-none bg-transparent text-2xl font-bold text-gray-900 outline-none placeholder:text-gray-300"
+      />
+
+      {/* Meta row */}
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+        <div>
+          <label className="mb-1 block text-xs font-medium text-gray-500">Slug</label>
+          <input
+            value={data.slug}
+            onChange={(e) => onChange({ slug: e.target.value })}
+            placeholder="my-post-slug"
+            className="w-full rounded-lg border border-gray-200 bg-gray-50 px-3 py-1.5 text-sm outline-none focus:border-brand-400 focus:bg-white focus:ring-2 focus:ring-brand-500/15"
+          />
+        </div>
+        <div>
+          <label className="mb-1 block text-xs font-medium text-gray-500">Status</label>
+          <div className="relative">
+            <select
+              value={data.status}
+              onChange={(e) => onChange({ status: e.target.value as PostStatus })}
+              className="w-full appearance-none rounded-lg border border-gray-200 bg-gray-50 px-3 py-1.5 text-sm outline-none focus:border-brand-400 focus:bg-white"
+            >
+              <option value="DRAFT">Draft</option>
+              <option value="PUBLISHED">Published</option>
+              <option value="ARCHIVED">Archived</option>
+            </select>
+            <ChevronDown className="pointer-events-none absolute right-2.5 top-1/2 size-3.5 -translate-y-1/2 text-gray-400" />
+          </div>
+        </div>
+        <div className="col-span-2">
+          <label className="mb-1 block text-xs font-medium text-gray-500">Tags (comma-separated)</label>
+          <input
+            value={data.tags}
+            onChange={(e) => onChange({ tags: e.target.value })}
+            placeholder="AI, SaaS, Synaplan"
+            className="w-full rounded-lg border border-gray-200 bg-gray-50 px-3 py-1.5 text-sm outline-none focus:border-brand-400 focus:bg-white focus:ring-2 focus:ring-brand-500/15"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label className="mb-1 block text-xs font-medium text-gray-500">Excerpt</label>
+        <textarea
+          value={data.excerpt}
+          onChange={(e) => onChange({ excerpt: e.target.value })}
+          rows={2}
+          placeholder={locale === "de" ? "Kurze Beschreibung für die Übersichtsseite…" : "Short description shown in post listings…"}
+          className="w-full rounded-lg border border-gray-200 bg-gray-50 px-3 py-1.5 text-sm outline-none focus:border-brand-400 focus:bg-white focus:ring-2 focus:ring-brand-500/15"
+        />
+      </div>
+
+      {/* Image upload toolbar */}
+      <div className="flex items-center gap-2 border-b pb-3">
+        <span className="text-xs text-gray-400">Insert:</span>
+        <ImageUploadButton onUploaded={insertImage} />
+      </div>
+
+      {/* Content */}
+      {view === "edit" ? (
+        <textarea
+          value={data.content}
+          onChange={(e) => onChange({ content: e.target.value })}
+          className="min-h-[420px] w-full resize-none rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 font-mono text-sm leading-relaxed outline-none focus:border-brand-400 focus:bg-white focus:ring-2 focus:ring-brand-500/15"
+          placeholder={locale === "de"
+            ? "# Überschrift\n\nSchreib deinen Artikel hier in Markdown…"
+            : "# Heading\n\nWrite your article here in Markdown…"}
+        />
+      ) : (
+        <div className="prose prose-neutral max-w-none rounded-xl border border-gray-100 bg-gray-50 px-6 py-5">
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+            {data.content || "_Nothing to preview yet._"}
+          </ReactMarkdown>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Main PostEditor ──────────────────────────────────────────────────────────
 
 export function PostEditor({ initial = {} }: PostEditorProps) {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
 
-  // Form state
-  const [title, setTitle] = useState(initial.title ?? "");
-  const [slug, setSlug] = useState(initial.slug ?? "");
-  const [excerpt, setExcerpt] = useState(initial.excerpt ?? "");
-  const [content, setContent] = useState(initial.content ?? "");
+  const primaryLocale = initial.locale ?? "de";
+  const secondaryLocale = primaryLocale === "de" ? "en" : "de";
+
+  // Per-locale state
+  const [localeData, setLocaleData] = useState<Record<string, LocaleData>>({
+    [primaryLocale]: makeDefaultLocaleData(primaryLocale, initial),
+    [secondaryLocale]: makeDefaultLocaleData(secondaryLocale, initial),
+  });
+
+  const [activeLocale, setActiveLocale] = useState(primaryLocale);
   const [coverImage, setCoverImage] = useState(initial.coverImage ?? "");
-  const [status, setStatus] = useState<PostStatus>(initial.status ?? "DRAFT");
-  const [locale, setLocale] = useState(initial.locale ?? "de");
-  const [tags, setTags] = useState((initial.tags ?? []).join(", "));
-  const [error, setError] = useState("");
+  const [translationKey, setTranslationKey] = useState(
+    initial.translationKey ?? slugify(initial.title ?? ""),
+  );
 
-  // Editor view
   const [view, setView] = useState<"edit" | "preview">("edit");
-
-  // AI panel
   const [aiOpen, setAiOpen] = useState(false);
-  const [aiPrompt, setAiPrompt] = useState("");
-  const [aiMode, setAiMode] = useState<"full" | "outline" | "expand">("full");
-  const [aiLoading, setAiLoading] = useState(false);
-  const [aiOutput, setAiOutput] = useState("");
+  const [selection, setSelection] = useState("");
+  const [error, setError] = useState("");
+  const [saveStatus, setSaveStatus] = useState<"idle" | "saved" | "error">("idle");
 
-  const isEdit = Boolean(initial.id);
+  const data = localeData[activeLocale];
+  const titleAutoSlug = useRef(!initial.slug);
 
-  // Auto-generate slug from title (only if slug is untouched)
+  function patchLocale(locale: string, patch: Partial<LocaleData>) {
+    setLocaleData((prev) => ({ ...prev, [locale]: { ...prev[locale], ...patch } }));
+  }
+
   function handleTitleChange(val: string) {
-    setTitle(val);
-    if (!initial.slug && !slug) {
-      setSlug(
-        val
-          .toLowerCase()
-          .normalize("NFD")
-          .replace(/[\u0300-\u036f]/g, "")
-          .replace(/[^a-z0-9\s-]/g, "")
-          .trim()
-          .replace(/\s+/g, "-"),
-      );
+    patchLocale(activeLocale, { title: val });
+    if (titleAutoSlug.current) {
+      const s = slugify(val);
+      patchLocale(activeLocale, { title: val, slug: `${s}${activeLocale === "en" ? "-en" : ""}` });
+      if (!translationKey) setTranslationKey(s);
     }
   }
 
-  // ── Save ────────────────────────────────────────────────────────────────────
+  // ── Save one locale ────────────────────────────────────────────────────────
 
-  async function save(targetStatus?: PostStatus) {
-    setError("");
-    const resolvedStatus = targetStatus ?? status;
+  async function saveLocale(locale: string, targetStatus?: PostStatus) {
+    const d = localeData[locale];
+    if (!d.title.trim()) return null;
 
+    const resolvedStatus = targetStatus ?? d.status;
     const body = {
-      title,
-      slug,
-      excerpt,
-      content,
+      title: d.title,
+      slug: d.slug || slugify(d.title),
+      excerpt: d.excerpt,
+      content: d.content,
       coverImage,
       status: resolvedStatus,
       locale,
-      tags: tags
-        .split(",")
-        .map((t) => t.trim())
-        .filter(Boolean),
+      tags: d.tags.split(",").map((t) => t.trim()).filter(Boolean),
+      translationKey: translationKey || slugify(d.title),
+      publishedAt: resolvedStatus === "PUBLISHED" ? new Date().toISOString() : undefined,
     };
 
-    const url = isEdit
-      ? `/api/admin/posts/${initial.id}`
-      : "/api/admin/posts";
-    const method = isEdit ? "PUT" : "POST";
+    const url = d.id ? `/api/admin/posts/${d.id}` : "/api/admin/posts";
+    const method = d.id ? "PUT" : "POST";
 
     const res = await fetch(url, {
       method,
@@ -100,347 +550,236 @@ export function PostEditor({ initial = {} }: PostEditorProps) {
     });
 
     if (!res.ok) {
-      const data = await res.json().catch(() => ({}));
-      setError((data as { error?: string }).error ?? "Failed to save post");
-      return;
+      const err = await res.json().catch(() => ({}));
+      throw new Error((err as { error?: string }).error ?? "Save failed");
     }
 
-    const data = await res.json();
-    if (!isEdit) {
-      router.push(`/admin/posts/${(data as { post: { id: number } }).post.id}/edit`);
-      router.refresh();
-    } else {
-      setStatus(resolvedStatus);
-      router.refresh();
-    }
+    const json = await res.json() as { post: { id: number } };
+    patchLocale(locale, { id: json.post.id, status: resolvedStatus });
+    return json.post.id;
   }
 
-  // ── AI write ────────────────────────────────────────────────────────────────
-
-  const generateWithAI = useCallback(async () => {
-    if (!aiPrompt.trim()) return;
-    setAiLoading(true);
-    setAiOutput("");
-
+  async function save(targetStatus?: PostStatus) {
+    setError("");
+    setSaveStatus("idle");
     try {
-      const res = await fetch("/api/admin/ai-write", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt: aiPrompt, locale, mode: aiMode }),
-      });
-
-      if (!res.ok || !res.body) {
-        const err = await res.json().catch(() => ({}));
-        setAiOutput(`Error: ${(err as { error?: string }).error ?? "Unknown error"}`);
-        return;
+      // Save active locale; save sibling only if it has content
+      const activeId = await saveLocale(activeLocale, targetStatus);
+      const sibling = activeLocale === "de" ? "en" : "de";
+      if (localeData[sibling].title.trim()) {
+        await saveLocale(sibling, targetStatus);
       }
 
-      const reader = res.body.getReader();
-      const decoder = new TextDecoder();
-      let accumulated = "";
-
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        const chunk = decoder.decode(value, { stream: true });
-        // SSE: parse data: lines
-        for (const line of chunk.split("\n")) {
-          if (line.startsWith("data: ")) {
-            const payload = line.slice(6).trim();
-            if (payload === "[DONE]") break;
-            try {
-              const parsed = JSON.parse(payload) as { content?: string; delta?: string; text?: string };
-              const text = parsed.content ?? parsed.delta ?? parsed.text ?? "";
-              accumulated += text;
-              setAiOutput(accumulated);
-            } catch {
-              // plain text SSE
-              accumulated += payload;
-              setAiOutput(accumulated);
-            }
-          }
-        }
+      if (!initial.id && activeId) {
+        router.push(`/admin/posts/${activeId}/edit`);
+        router.refresh();
+      } else {
+        setSaveStatus("saved");
+        setTimeout(() => setSaveStatus("idle"), 2500);
+        router.refresh();
       }
-    } finally {
-      setAiLoading(false);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Save failed");
+      setSaveStatus("error");
     }
-  }, [aiPrompt, locale, aiMode]);
-
-  function insertAiOutput() {
-    setContent((prev) => (prev ? `${prev}\n\n${aiOutput}` : aiOutput));
-    setAiOutput("");
-    setAiPrompt("");
-    setAiOpen(false);
   }
+
+  // ── AI callbacks ───────────────────────────────────────────────────────────
+
+  const handleInsert = useCallback((text: string) => {
+    patchLocale(activeLocale, { content: data.content + "\n\n" + text });
+  }, [activeLocale, data.content]);
+
+  const handleReplace = useCallback((text: string) => {
+    patchLocale(activeLocale, { content: text });
+  }, [activeLocale]);
+
+  // ── Image upload for cover ─────────────────────────────────────────────────
+
+  async function handleCoverUpload(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const fd = new FormData();
+    fd.append("file", file);
+    const res = await fetch("/api/admin/upload", { method: "POST", body: fd });
+    const json = await res.json() as { url?: string };
+    if (json.url) setCoverImage(json.url);
+  }
+
+  const locales: { code: string; flag: string; label: string }[] = [
+    { code: "de", flag: "🇩🇪", label: "Deutsch" },
+    { code: "en", flag: "🇬🇧", label: "English" },
+  ];
 
   return (
-    <div className="flex h-full flex-col">
-      {/* Toolbar */}
-      <div className="flex items-center justify-between border-b bg-background px-6 py-3">
-        <div className="flex items-center gap-2 text-sm">
-          <button
-            onClick={() => setView("edit")}
-            className={cn(
-              "flex items-center gap-1.5 rounded-lg px-3 py-1.5 transition-colors",
-              view === "edit" ? "bg-muted font-medium" : "text-muted-foreground hover:bg-muted",
-            )}
-          >
-            <Code2 className="size-4" />
-            Write
-          </button>
-          <button
-            onClick={() => setView("preview")}
-            className={cn(
-              "flex items-center gap-1.5 rounded-lg px-3 py-1.5 transition-colors",
-              view === "preview" ? "bg-muted font-medium" : "text-muted-foreground hover:bg-muted",
-            )}
-          >
-            <Eye className="size-4" />
-            Preview
-          </button>
+    <div className="flex h-full flex-col bg-white">
+      {/* ── Toolbar ─────────────────────────────────────────────────────── */}
+      <div className="flex items-center justify-between border-b bg-white px-5 py-2.5">
+        {/* Left: locale tabs + view toggle */}
+        <div className="flex items-center gap-3">
+          {/* Language tabs */}
+          <div className="flex rounded-lg border border-gray-200 p-0.5">
+            {locales.map((l) => {
+              const ld = localeData[l.code];
+              const hasContent = Boolean(ld.title.trim());
+              const isPublished = ld.status === "PUBLISHED";
+              return (
+                <button
+                  key={l.code}
+                  onClick={() => setActiveLocale(l.code)}
+                  className={cn(
+                    "flex items-center gap-1.5 rounded-md px-3 py-1 text-xs font-medium transition-colors",
+                    activeLocale === l.code
+                      ? "bg-brand-600 text-white"
+                      : "text-gray-500 hover:bg-gray-100",
+                  )}
+                >
+                  <span>{l.flag}</span>
+                  {l.label}
+                  {hasContent && (
+                    <span className={cn(
+                      "size-1.5 rounded-full",
+                      isPublished ? "bg-green-400" : "bg-yellow-400",
+                      activeLocale === l.code ? "opacity-100" : "opacity-70",
+                    )} />
+                  )}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Write / Preview */}
+          <div className="flex rounded-lg border border-gray-200 p-0.5">
+            {(["edit", "preview"] as const).map((v) => (
+              <button
+                key={v}
+                onClick={() => setView(v)}
+                className={cn(
+                  "flex items-center gap-1 rounded-md px-2.5 py-1 text-xs font-medium capitalize transition-colors",
+                  view === v ? "bg-gray-100 text-gray-900" : "text-gray-400 hover:text-gray-600",
+                )}
+              >
+                {v === "edit" ? <Code2 className="size-3.5" /> : <Eye className="size-3.5" />}
+                {v}
+              </button>
+            ))}
+          </div>
         </div>
 
+        {/* Right: AI + save */}
         <div className="flex items-center gap-2">
+          {saveStatus === "saved" && (
+            <span className="flex items-center gap-1 text-xs text-green-600">
+              <CheckCircle2 className="size-3.5" /> Saved
+            </span>
+          )}
+
           <button
             onClick={() => setAiOpen(!aiOpen)}
-            className="flex items-center gap-2 rounded-lg border border-brand-200 bg-brand-50 px-3 py-1.5 text-sm font-medium text-brand-700 transition-colors hover:bg-brand-100 dark:border-brand-800 dark:bg-brand-950/40 dark:text-brand-300"
+            className={cn(
+              "flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-medium transition-colors",
+              aiOpen
+                ? "border-brand-500 bg-brand-50 text-brand-700"
+                : "border-gray-200 text-gray-600 hover:bg-gray-50",
+            )}
           >
-            <Sparkles className="size-4" />
-            AI Write
+            <Sparkles className="size-3.5" />
+            AI
           </button>
 
           <button
             onClick={() => startTransition(() => save("DRAFT"))}
             disabled={isPending}
-            className="rounded-lg border px-3 py-1.5 text-sm font-medium hover:bg-muted disabled:opacity-60"
+            className="rounded-lg border border-gray-200 px-3 py-1.5 text-xs font-medium text-gray-600 hover:bg-gray-50 disabled:opacity-60"
           >
-            Save draft
+            Draft
           </button>
 
           <button
             onClick={() => startTransition(() => save("PUBLISHED"))}
             disabled={isPending}
-            className="rounded-lg bg-brand-600 px-4 py-1.5 text-sm font-medium text-white hover:bg-brand-700 disabled:opacity-60"
+            className="flex items-center gap-1.5 rounded-lg bg-brand-600 px-4 py-1.5 text-xs font-medium text-white hover:bg-brand-700 disabled:opacity-60"
           >
-            {isPending ? (
-              <Loader2 className="size-4 animate-spin" />
-            ) : status === "PUBLISHED" ? (
-              "Update"
-            ) : (
-              "Publish"
-            )}
+            {isPending ? <Loader2 className="size-3.5 animate-spin" /> : null}
+            {data.status === "PUBLISHED" ? "Update" : "Publish"}
           </button>
         </div>
       </div>
 
+      {/* ── Error banner ─────────────────────────────────────────────────── */}
+      {error && (
+        <div className="flex items-center gap-2 bg-red-50 px-5 py-2.5 text-sm text-red-600">
+          <AlertCircle className="size-4 shrink-0" />
+          {error}
+          <button onClick={() => setError("")} className="ml-auto">
+            <X className="size-4" />
+          </button>
+        </div>
+      )}
+
+      {/* ── Body ─────────────────────────────────────────────────────────── */}
       <div className="flex flex-1 overflow-hidden">
-        {/* Form + editor */}
-        <div className={cn("flex flex-1 flex-col overflow-auto", aiOpen && "lg:w-[calc(100%-400px)]")}>
-          {/* Meta fields */}
-          <div className="border-b bg-background px-6 py-4 space-y-4">
-            {error && (
-              <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-600 dark:bg-red-950/30 dark:text-red-400">
-                {error}
-              </p>
+        {/* Editor + meta */}
+        <div className="flex flex-1 flex-col overflow-auto">
+          {/* Cover image row */}
+          <div className="flex items-center gap-3 border-b bg-gray-50 px-5 py-3">
+            <span className="text-xs font-medium text-gray-500">Cover image</span>
+            {coverImage ? (
+              <div className="flex items-center gap-2">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={coverImage} alt="" className="h-8 w-14 rounded object-cover border" />
+                <button
+                  onClick={() => setCoverImage("")}
+                  className="text-xs text-gray-400 hover:text-red-500"
+                >
+                  Remove
+                </button>
+              </div>
+            ) : (
+              <label className="flex cursor-pointer items-center gap-1.5 rounded-lg border border-dashed border-gray-300 px-3 py-1.5 text-xs text-gray-400 hover:border-brand-400 hover:text-brand-600 transition-colors">
+                <ImageUp className="size-3.5" />
+                Upload cover
+                <input type="file" accept="image/*" className="hidden" onChange={handleCoverUpload} />
+              </label>
             )}
 
-            <input
-              placeholder="Post title"
-              value={title}
-              onChange={(e) => handleTitleChange(e.target.value)}
-              className="w-full border-none bg-transparent text-2xl font-bold outline-none placeholder:text-muted-foreground/50"
-            />
-
-            <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
-              <div>
-                <label className="mb-1 block text-xs font-medium text-muted-foreground">Slug</label>
-                <input
-                  value={slug}
-                  onChange={(e) => setSlug(e.target.value)}
-                  className="w-full rounded-lg border bg-muted/30 px-3 py-1.5 text-sm outline-none focus:ring-2 focus:ring-brand-500"
-                  placeholder="my-post-slug"
-                />
-              </div>
-
-              <div>
-                <label className="mb-1 block text-xs font-medium text-muted-foreground">Status</label>
-                <div className="relative">
-                  <select
-                    value={status}
-                    onChange={(e) => setStatus(e.target.value as PostStatus)}
-                    className="w-full appearance-none rounded-lg border bg-muted/30 px-3 py-1.5 text-sm outline-none focus:ring-2 focus:ring-brand-500"
-                  >
-                    <option value="DRAFT">Draft</option>
-                    <option value="PUBLISHED">Published</option>
-                    <option value="ARCHIVED">Archived</option>
-                  </select>
-                  <ChevronDown className="pointer-events-none absolute right-2.5 top-1/2 size-3.5 -translate-y-1/2 text-muted-foreground" />
-                </div>
-              </div>
-
-              <div>
-                <label className="mb-1 block text-xs font-medium text-muted-foreground">Locale</label>
-                <div className="relative">
-                  <select
-                    value={locale}
-                    onChange={(e) => setLocale(e.target.value)}
-                    className="w-full appearance-none rounded-lg border bg-muted/30 px-3 py-1.5 text-sm outline-none focus:ring-2 focus:ring-brand-500"
-                  >
-                    <option value="de">German (de)</option>
-                    <option value="en">English (en)</option>
-                  </select>
-                  <ChevronDown className="pointer-events-none absolute right-2.5 top-1/2 size-3.5 -translate-y-1/2 text-muted-foreground" />
-                </div>
-              </div>
-
-              <div>
-                <label className="mb-1 block text-xs font-medium text-muted-foreground">Tags (comma-sep.)</label>
-                <input
-                  value={tags}
-                  onChange={(e) => setTags(e.target.value)}
-                  className="w-full rounded-lg border bg-muted/30 px-3 py-1.5 text-sm outline-none focus:ring-2 focus:ring-brand-500"
-                  placeholder="KI, SaaS, Synaplan"
-                />
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
-              <div>
-                <label className="mb-1 block text-xs font-medium text-muted-foreground">Excerpt</label>
-                <textarea
-                  value={excerpt}
-                  onChange={(e) => setExcerpt(e.target.value)}
-                  rows={2}
-                  className="w-full rounded-lg border bg-muted/30 px-3 py-1.5 text-sm outline-none focus:ring-2 focus:ring-brand-500"
-                  placeholder="Short description shown in post listings…"
-                />
-              </div>
-              <div>
-                <label className="mb-1 block text-xs font-medium text-muted-foreground">Cover image URL</label>
-                <input
-                  value={coverImage}
-                  onChange={(e) => setCoverImage(e.target.value)}
-                  className="w-full rounded-lg border bg-muted/30 px-3 py-1.5 text-sm outline-none focus:ring-2 focus:ring-brand-500"
-                  placeholder="https://..."
-                />
-              </div>
+            <div className="ml-auto flex items-center gap-2">
+              <span className="text-xs text-gray-400">Translation key</span>
+              <input
+                value={translationKey}
+                onChange={(e) => setTranslationKey(e.target.value)}
+                placeholder="shared-slug-base"
+                className="w-40 rounded-lg border border-gray-200 bg-white px-2.5 py-1 text-xs outline-none focus:border-brand-400"
+              />
             </div>
           </div>
 
-          {/* Markdown editor / preview */}
-          <div className="flex-1 p-6">
-            {view === "edit" ? (
-              <textarea
-                value={content}
-                onChange={(e) => setContent(e.target.value)}
-                className="min-h-[500px] w-full resize-none rounded-lg border bg-muted/20 px-4 py-3 font-mono text-sm leading-relaxed outline-none focus:ring-2 focus:ring-brand-500"
-                placeholder={`# Post title\n\nWrite your post in Markdown…`}
-              />
-            ) : (
-              <div className="prose prose-neutral dark:prose-invert max-w-none">
-                <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                  {content || "_Nothing to preview yet._"}
-                </ReactMarkdown>
-              </div>
-            )}
+          {/* Form */}
+          <div className="flex-1 p-5">
+            <LocaleForm
+              key={activeLocale}
+              data={data}
+              locale={activeLocale}
+              isEdit={Boolean(data.id)}
+              onChange={(patch) => patchLocale(activeLocale, patch)}
+              view={view}
+              titleAutoSlug={titleAutoSlug.current}
+              onTitleChange={handleTitleChange}
+              onImageInsert={() => {}}
+            />
           </div>
         </div>
 
-        {/* AI Writing Panel */}
+        {/* AI Panel */}
         {aiOpen && (
-          <div className="flex w-[400px] flex-col border-l bg-background">
-            <div className="flex items-center justify-between border-b px-4 py-3">
-              <div className="flex items-center gap-2 text-sm font-medium">
-                <Sparkles className="size-4 text-brand-500" />
-                AI Write
-              </div>
-              <button
-                onClick={() => setAiOpen(false)}
-                className="rounded p-1 hover:bg-muted"
-              >
-                <X className="size-4 text-muted-foreground" />
-              </button>
-            </div>
-
-            <div className="flex-1 overflow-auto p-4 space-y-4">
-              {/* Mode */}
-              <div>
-                <label className="mb-1.5 block text-xs font-medium text-muted-foreground">Mode</label>
-                <div className="flex gap-2">
-                  {(["full", "outline", "expand"] as const).map((m) => (
-                    <button
-                      key={m}
-                      onClick={() => setAiMode(m)}
-                      className={cn(
-                        "rounded-lg border px-3 py-1.5 text-xs font-medium capitalize transition-colors",
-                        aiMode === m
-                          ? "border-brand-500 bg-brand-50 text-brand-700 dark:bg-brand-950/40"
-                          : "hover:bg-muted",
-                      )}
-                    >
-                      {m}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Prompt */}
-              <div>
-                <label className="mb-1.5 block text-xs font-medium text-muted-foreground">
-                  What should the AI write?
-                </label>
-                <textarea
-                  value={aiPrompt}
-                  onChange={(e) => setAiPrompt(e.target.value)}
-                  rows={4}
-                  className="w-full rounded-lg border bg-muted/30 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-brand-500"
-                  placeholder={
-                    aiMode === "full"
-                      ? "Write a blog post about how Synaplan helps teams save 4h/day with AI…"
-                      : aiMode === "outline"
-                        ? "Outline a post comparing AI gateway solutions…"
-                        : "Paste text to expand here…"
-                  }
-                />
-              </div>
-
-              <button
-                onClick={generateWithAI}
-                disabled={aiLoading || !aiPrompt.trim()}
-                className="flex w-full items-center justify-center gap-2 rounded-lg bg-brand-600 px-4 py-2.5 text-sm font-medium text-white hover:bg-brand-700 disabled:opacity-60"
-              >
-                {aiLoading ? (
-                  <>
-                    <Loader2 className="size-4 animate-spin" />
-                    Generating…
-                  </>
-                ) : (
-                  <>
-                    <Sparkles className="size-4" />
-                    Generate
-                  </>
-                )}
-              </button>
-
-              {/* Output */}
-              {aiOutput && (
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-medium text-muted-foreground">Output</span>
-                    <button
-                      onClick={insertAiOutput}
-                      className="rounded-lg bg-green-600 px-3 py-1 text-xs font-medium text-white hover:bg-green-700"
-                    >
-                      Insert into editor
-                    </button>
-                  </div>
-                  <div className="max-h-96 overflow-auto rounded-lg bg-muted/30 p-3 font-mono text-xs leading-relaxed whitespace-pre-wrap">
-                    {aiOutput}
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
+          <AiPanel
+            locale={activeLocale}
+            content={data.content}
+            selection={selection}
+            onInsert={handleInsert}
+            onReplace={handleReplace}
+            onClose={() => setAiOpen(false)}
+          />
         )}
       </div>
     </div>

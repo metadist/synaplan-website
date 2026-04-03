@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { Loader2 } from "lucide-react";
 
 export function LoginForm() {
   const router = useRouter();
@@ -42,10 +43,13 @@ export function LoginForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-5">
       <div>
-        <label className="mb-1.5 block text-sm font-medium" htmlFor="email">
-          Email
+        <label
+          htmlFor="email"
+          className="mb-1.5 block text-xs font-medium text-gray-600"
+        >
+          Email address
         </label>
         <input
           id="email"
@@ -54,12 +58,16 @@ export function LoginForm() {
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full rounded-lg border bg-muted/30 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-brand-500"
+          placeholder="admin@synaplan.com"
+          className="w-full rounded-lg border border-gray-200 bg-gray-50 px-3.5 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 outline-none transition focus:border-brand-400 focus:bg-white focus:ring-3 focus:ring-brand-500/15"
         />
       </div>
 
       <div>
-        <label className="mb-1.5 block text-sm font-medium" htmlFor="password">
+        <label
+          htmlFor="password"
+          className="mb-1.5 block text-xs font-medium text-gray-600"
+        >
           Password
         </label>
         <input
@@ -69,12 +77,13 @@ export function LoginForm() {
           required
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full rounded-lg border bg-muted/30 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-brand-500"
+          placeholder="••••••••"
+          className="w-full rounded-lg border border-gray-200 bg-gray-50 px-3.5 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 outline-none transition focus:border-brand-400 focus:bg-white focus:ring-3 focus:ring-brand-500/15"
         />
       </div>
 
       {error && (
-        <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-600 dark:bg-red-950/30 dark:text-red-400">
+        <p className="rounded-lg border border-red-200 bg-red-50 px-3.5 py-2.5 text-xs text-red-600">
           {error}
         </p>
       )}
@@ -82,9 +91,16 @@ export function LoginForm() {
       <button
         type="submit"
         disabled={loading}
-        className="w-full rounded-lg bg-brand-600 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-brand-700 disabled:opacity-60"
+        className="flex w-full items-center justify-center gap-2 rounded-lg bg-brand-600 px-4 py-2.5 text-sm font-medium text-white transition hover:bg-brand-700 disabled:opacity-60"
       >
-        {loading ? "Signing in…" : "Sign in"}
+        {loading ? (
+          <>
+            <Loader2 className="size-3.5 animate-spin" />
+            Signing in…
+          </>
+        ) : (
+          "Sign in"
+        )}
       </button>
     </form>
   );

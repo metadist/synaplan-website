@@ -26,17 +26,38 @@ export default async function EditPostPage({ params }: Params) {
       status: true,
       locale: true,
       tags: true,
+      translationKey: true,
     },
   });
 
   if (!post) notFound();
 
+  // Load linked translation (same translationKey, opposite locale)
+  const translation = post.translationKey
+    ? await prisma.post.findFirst({
+        where: {
+          translationKey: post.translationKey,
+          locale: post.locale === "de" ? "en" : "de",
+          NOT: { id: post.id },
+        },
+        select: {
+          id: true,
+          title: true,
+          slug: true,
+          excerpt: true,
+          content: true,
+          status: true,
+          tags: true,
+        },
+      })
+    : null;
+
   return (
     <AdminShell userName={session?.name}>
       <div className="flex h-screen flex-col overflow-hidden">
-        <div className="border-b bg-background px-6 py-4">
-          <h1 className="text-lg font-semibold">Edit post</h1>
-          <p className="text-sm text-muted-foreground">{post.title}</p>
+        <div className="border-b bg-white px-6 py-4">
+          <h1 className="text-base font-semibold text-gray-900">Edit post</h1>
+          <p className="text-sm text-gray-500">{post.title}</p>
         </div>
         <div className="flex-1 overflow-hidden">
           <PostEditor
@@ -44,7 +65,15 @@ export default async function EditPostPage({ params }: Params) {
               ...post,
               excerpt: post.excerpt ?? undefined,
               coverImage: post.coverImage ?? undefined,
+              translationKey: post.translationKey ?? undefined,
               status: post.status as "DRAFT" | "PUBLISHED" | "ARCHIVED",
+              translation: translation
+                ? {
+                    ...translation,
+                    excerpt: translation.excerpt ?? undefined,
+                    status: translation.status as "DRAFT" | "PUBLISHED" | "ARCHIVED",
+                  }
+                : null,
             }}
           />
         </div>

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { FileText, Eye, Globe, LayoutDashboard } from "lucide-react";
+
+const iconCls = "size-4 text-muted-foreground";
 import { prisma } from "@/lib/prisma";
 import { getAdminSessionFromCookies } from "@/lib/admin-session";
 import { AdminShell, AdminPageHeader, StatCard } from "@/components/admin/admin-shell";
@@ -42,10 +44,10 @@ export default async function AdminDashboardPage() {
       <div className="p-6 space-y-6">
         {/* Stats */}
         <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-          <StatCard label="Total posts" value={total} icon={FileText} />
-          <StatCard label="Published" value={published} icon={Globe} />
-          <StatCard label="Drafts" value={drafts} icon={LayoutDashboard} />
-          <StatCard label="Total views" value={totalViews._sum.views ?? 0} icon={Eye} />
+          <StatCard label="Total posts" value={total} icon={<FileText className={iconCls} />} />
+          <StatCard label="Published" value={published} icon={<Globe className={iconCls} />} />
+          <StatCard label="Drafts" value={drafts} icon={<LayoutDashboard className={iconCls} />} />
+          <StatCard label="Total views" value={totalViews._sum.views ?? 0} icon={<Eye className={iconCls} />} />
         </div>
 
         {/* Recent posts */}
