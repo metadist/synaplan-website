@@ -4,7 +4,7 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import { HeroSection } from "@/components/sections/hero";
 import { HomeSectionSkeleton } from "@/components/sections/home-section-skeleton";
 import { getSynaplanGithubRepoStats } from "@/lib/github-synaplan-repo";
-import { buildFaqSchema, buildSoftwareAppSchema, SITE_URL } from "@/lib/jsonld";
+import { buildFaqSchema, buildHowToSchema, buildSoftwareAppSchema, SITE_URL } from "@/lib/jsonld";
 import { GithubFeed } from "@/components/sections/github-feed";
 
 const WidgetFlowSection = dynamic(
@@ -152,22 +152,26 @@ export default async function HomePage({
   type FaqItem = { q: string; a: string };
   const faqItems = t.raw("items") as FaqItem[];
 
-  // Page-level structured data: SoftwareApplication + FAQPage (with publisher)
+  // Page-level structured data: SoftwareApplication + FAQPage + HowTo
+  const isDE = locale === "de";
   const pageJsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       buildSoftwareAppSchema(locale),
       buildFaqSchema(faqItems),
+      buildHowToSchema(locale),
       {
         "@type": "WebPage",
-        "@id": `${SITE_URL}${locale === "de" ? "/de" : ""}/#webpage`,
-        url: locale === "de" ? `${SITE_URL}/de` : SITE_URL,
-        name: "Synaplan — KI-Plattform für Unternehmen",
+        "@id": `${SITE_URL}${isDE ? "/de" : ""}/#webpage`,
+        url: isDE ? `${SITE_URL}/de` : SITE_URL,
+        name: isDE
+          ? "Synaplan — KI-Plattform für Unternehmen"
+          : "Synaplan — AI Platform for Businesses",
         isPartOf: { "@id": `${SITE_URL}/#website` },
         about: { "@id": `${SITE_URL}/#software` },
         publisher: { "@id": "https://metadist.de/#organization" },
         author: { "@id": "https://metadist.de/#organization" },
-        inLanguage: locale === "de" ? "de-DE" : "en-US",
+        inLanguage: isDE ? "de-DE" : "en-US",
       },
     ],
   };

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { setRequestLocale } from "next-intl/server";
 import { prisma } from "@/lib/prisma";
-import { canonicalUrl } from "@/lib/jsonld";
+import { buildBlogSchema, buildBreadcrumbSchema, canonicalUrl, SITE_URL } from "@/lib/jsonld";
 
 export const dynamic = "force-dynamic";
 
@@ -54,8 +54,40 @@ export default async function BlogListPage({ params }: Props) {
 
   const isDE = locale === "de";
   const blogPrefix = isDE ? "/de/blog" : "/blog";
+  const blogUrl = canonicalUrl(locale, "/blog");
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      ...((buildBlogSchema(locale) as { "@graph": unknown[] })["@graph"]),
+      buildBreadcrumbSchema([
+        { name: isDE ? "Startseite" : "Home", url: SITE_URL },
+        { name: "Blog", url: blogUrl },
+      ]),
+      ...(posts.length > 0
+        ? [
+            {
+              "@type": "ItemList",
+              "@id": `${blogUrl}#list`,
+              name: isDE ? "Aktuelle Artikel" : "Latest Articles",
+              itemListElement: posts.map((post, i) => ({
+                "@type": "ListItem",
+                position: i + 1,
+                url: `${blogUrl}/${post.slug}`,
+                name: post.title,
+              })),
+            },
+          ]
+        : []),
+    ],
+  };
 
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     <main className="container-narrow section-padding">
       {/* Header */}
       <div className="mb-12 text-center">
@@ -134,5 +166,6 @@ export default async function BlogListPage({ params }: Props) {
         </div>
       )}
     </main>
+    </>
   );
 }

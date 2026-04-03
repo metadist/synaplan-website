@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { PricingPage } from "@/components/pricing/pricing-page";
 import { alternateLanguageUrls, canonicalUrl } from "@/lib/seo";
-import { buildBreadcrumbSchema, buildProductPricingSchema, SITE_URL } from "@/lib/jsonld";
+import { buildBreadcrumbSchema, buildPricingFaqSchema, buildProductPricingSchema, SITE_URL } from "@/lib/jsonld";
 
 export const dynamic = "force-static";
 
@@ -72,6 +72,7 @@ export default async function PricingRoutePage({
     "@context": "https://schema.org",
     "@graph": [
       buildProductPricingSchema(locale, offers),
+      buildPricingFaqSchema(locale),
       buildBreadcrumbSchema([
         { name: isDE ? "Startseite" : "Home", url: SITE_URL },
         { name: isDE ? "Preise" : "Pricing", url: pageUrl },

@@ -1,16 +1,53 @@
-import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { getGithubReleases, formatReleaseDate, releaseExcerpt } from "@/lib/github-releases";
 import { Tag, ExternalLink, ArrowRight } from "lucide-react";
 import { GithubIcon } from "@/components/icons";
 
 // ─── Server component — fetches live release data ────────────────────────────
+// Rendering: SSR via Next.js ISR (revalidate: 1 h, tag: "github-releases").
+// Google sees fully rendered HTML on first visit — no client JS needed.
 
 export async function GithubFeed({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: "githubFeed" });
   const releases = await getGithubReleases(4);
 
+  // JSON-LD: ItemList of SoftwareApplication releases — helps Google index versions
+  const jsonLd = releases.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Synaplan Releases",
+    description: "Latest open-source releases of the Synaplan AI platform",
+    url: "https://github.com/metadist/synaplan/releases",
+    itemListElement: releases.map((r, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: {
+        "@type": "SoftwareApplication",
+        name: r.name || r.tag_name,
+        softwareVersion: r.tag_name,
+        datePublished: r.published_at,
+        url: r.html_url,
+        description: r.body ? releaseExcerpt(r.body, 200) : undefined,
+        applicationCategory: "BusinessApplication",
+        operatingSystem: "Any",
+        offers: {
+          "@type": "Offer",
+          price: "0",
+          priceCurrency: "EUR",
+          availability: "https://schema.org/InStock",
+        },
+      },
+    })),
+  } : null;
+
   return (
+    <>
+      {jsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      )}
     <section className="container-wide section-padding py-16 sm:py-20">
       {/* Header */}
       <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
@@ -84,5 +121,6 @@ export async function GithubFeed({ locale }: { locale: string }) {
         </div>
       )}
     </section>
+    </>
   );
 }

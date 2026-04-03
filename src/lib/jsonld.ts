@@ -18,13 +18,15 @@ export function canonicalUrl(locale: string, path: string): string {
 // ─── Shared identity ────────────────────────────────────────────────────────
 
 export const PUBLISHER = {
-  "@type": "Organization",
+  "@type": ["Organization", "LocalBusiness"],
   "@id": "https://metadist.de/#organization",
   name: "metadist data management GmbH",
   url: "https://metadist.de",
   sameAs: [
     "https://synaplan.com",
     "https://github.com/metadist",
+    "https://www.linkedin.com/company/metadist",
+    "https://www.wikidata.org/wiki/Q131736023",
   ],
   logo: {
     "@type": "ImageObject",
@@ -196,6 +198,166 @@ export function buildBreadcrumbSchema(
       position: i + 1,
       name: crumb.name,
       item: crumb.url,
+    })),
+  };
+}
+
+// ─── HowTo ───────────────────────────────────────────────────────────────────
+
+/**
+ * Schema.org HowTo — "Getting Started" steps.
+ * Eligible for a rich result showing numbered steps directly in Google Search.
+ */
+export function buildHowToSchema(locale: string) {
+  const isDE = locale === "de";
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "@id": `${SITE_URL}${isDE ? "/de" : ""}/#howto`,
+    name: isDE
+      ? "Synaplan einrichten: KI-Chatbot in 3 Schritten"
+      : "Set up Synaplan: AI chatbot in 3 steps",
+    description: isDE
+      ? "So richtest du Synaplan als KI-Plattform oder Chat-Widget für deine Website ein."
+      : "How to set up Synaplan as an AI platform or chat widget for your website.",
+    totalTime: "PT10M",
+    inLanguage: isDE ? "de-DE" : "en-US",
+    author: { "@id": "https://metadist.de/#organization" },
+    step: isDE
+      ? [
+          {
+            "@type": "HowToStep",
+            position: 1,
+            name: "Konto erstellen",
+            text: "Registriere dich kostenlos auf web.synaplan.com oder lade die Open-Source-Version von GitHub herunter und starte sie per Docker.",
+            url: "https://web.synaplan.com",
+          },
+          {
+            "@type": "HowToStep",
+            position: 2,
+            name: "KI-Modell verbinden",
+            text: "Wähle dein bevorzugtes KI-Modell (OpenAI, Claude, Groq, Gemini oder lokal via Ollama) und verbinde es mit deinem API-Schlüssel.",
+            url: `${SITE_URL}/de/features/multi-model`,
+          },
+          {
+            "@type": "HowToStep",
+            position: 3,
+            name: "Chat-Widget einbinden",
+            text: "Kopiere einen einzeiligen Script-Tag und füge ihn in deine Website ein. Das Widget ist sofort einsatzbereit — kein Coding nötig.",
+            url: `${SITE_URL}/de/solutions/chat-widget`,
+          },
+        ]
+      : [
+          {
+            "@type": "HowToStep",
+            position: 1,
+            name: "Create an account",
+            text: "Sign up for free at web.synaplan.com or download the open-source version from GitHub and run it via Docker.",
+            url: "https://web.synaplan.com",
+          },
+          {
+            "@type": "HowToStep",
+            position: 2,
+            name: "Connect an AI model",
+            text: "Choose your preferred AI model (OpenAI, Claude, Groq, Gemini, or local via Ollama) and connect it with your API key.",
+            url: `${SITE_URL}/features/multi-model`,
+          },
+          {
+            "@type": "HowToStep",
+            position: 3,
+            name: "Embed the chat widget",
+            text: "Copy a one-line script tag and paste it into your website. The widget is ready immediately — no coding required.",
+            url: `${SITE_URL}/solutions/chat-widget`,
+          },
+        ],
+  };
+}
+
+// ─── Blog ─────────────────────────────────────────────────────────────────────
+
+/** Schema.org Blog + CollectionPage — registers /blog as a structured content hub */
+export function buildBlogSchema(locale: string) {
+  const isDE = locale === "de";
+  const url = isDE ? `${SITE_URL}/de/blog` : `${SITE_URL}/blog`;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["Blog", "CollectionPage"],
+        "@id": `${url}#blog`,
+        name: isDE ? "Synaplan Blog — KI-Insights & Neuigkeiten" : "Synaplan Blog — AI Insights & News",
+        description: isDE
+          ? "Artikel zu KI-Strategie, Multi-Model-Routing, DSGVO-Compliance und mehr vom Synaplan-Team."
+          : "Articles on AI strategy, multi-model routing, GDPR compliance and more from the Synaplan team.",
+        url,
+        inLanguage: isDE ? "de-DE" : "en-US",
+        publisher: { "@id": "https://metadist.de/#organization" },
+        author: { "@id": "https://metadist.de/#organization" },
+        isPartOf: { "@id": `${SITE_URL}/#website` },
+      },
+    ],
+  };
+}
+
+// ─── Pricing FAQ ──────────────────────────────────────────────────────────────
+
+/** FAQPage for /pricing — enables FAQ rich results on the pricing page */
+export function buildPricingFaqSchema(locale: string) {
+  const isDE = locale === "de";
+  const items = isDE
+    ? [
+        {
+          q: "Ist Synaplan wirklich kostenlos?",
+          a: "Die Open-Source-Version von Synaplan ist komplett kostenlos. Du kannst sie von GitHub herunterladen und auf deiner eigenen Infrastruktur betreiben. Für das verwaltete Chat-Widget auf web.synaplan.com fallen ab 19,95 €/Monat Kosten an.",
+        },
+        {
+          q: "Was kostet das Chat-Widget?",
+          a: "Das Synaplan Chat-Widget für Websites ist ab 19,95 €/Monat erhältlich. Der Preis beinhaltet Hosting, Updates und Support. Es gibt keine versteckten Kosten — das Abonnement ist monatlich kündbar.",
+        },
+        {
+          q: "Gibt es eine kostenlose Testphase?",
+          a: "Ja. Du kannst Synaplan kostenlos testen — entweder über die Self-Hosted Open-Source-Version oder über eine Demo-Anfrage für die Cloud-Plattform.",
+        },
+        {
+          q: "Was kostet die Enterprise-Lösung?",
+          a: "Der Preis für die Enterprise-Installation (On-Premise auf eurer eigenen Infrastruktur) ist individuell und hängt von Unternehmensgröße, Anforderungen und gewünschten Plugins ab. Kontaktiert uns für ein Angebot.",
+        },
+        {
+          q: "Welche Zahlungsmethoden werden akzeptiert?",
+          a: "Für die Platform-Pläne akzeptieren wir Kreditkarte und SEPA-Lastschrift. Enterprise-Kunden können per Rechnung zahlen.",
+        },
+      ]
+    : [
+        {
+          q: "Is Synaplan really free?",
+          a: "The open-source version of Synaplan is completely free. You can download it from GitHub and run it on your own infrastructure. The managed chat widget on web.synaplan.com starts at €19.95/month.",
+        },
+        {
+          q: "How much does the chat widget cost?",
+          a: "The Synaplan chat widget for websites starts at €19.95/month. The price includes hosting, updates and support. No hidden costs — cancel anytime.",
+        },
+        {
+          q: "Is there a free trial?",
+          a: "Yes. You can try Synaplan for free — either via the self-hosted open-source version or by requesting a demo of the cloud platform.",
+        },
+        {
+          q: "How much does the Enterprise solution cost?",
+          a: "The price for an Enterprise installation (on-premise on your own infrastructure) is individual and depends on company size, requirements and desired plugins. Contact us for a quote.",
+        },
+        {
+          q: "What payment methods are accepted?",
+          a: "For platform plans we accept credit card and SEPA direct debit. Enterprise customers can pay by invoice.",
+        },
+      ];
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${SITE_URL}${isDE ? "/de" : ""}/pricing#faq`,
+    mainEntity: items.map(({ q, a }) => ({
+      "@type": "Question",
+      name: q,
+      acceptedAnswer: { "@type": "Answer", text: a },
     })),
   };
 }
