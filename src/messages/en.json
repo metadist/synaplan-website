@@ -1,7 +1,9 @@
 {
   "meta": {
-    "title": "Synaplan — AI under control",
-    "description": "The open-source platform for professional AI management. All models, one platform. Secure, transparent, flexible."
+    "title": "Synaplan — AI Platform | All Models. One Platform.",
+    "description": "Synaplan is the open-source AI platform for companies. Self-hosted, GDPR-compliant, multi-model routing (OpenAI, Claude, Gemini, Ollama). Embed a chat widget on any website in minutes.",
+    "homeTitle": "Synaplan — AI Platform | Open-Source · GDPR-Compliant · Self-Hosted",
+    "homeDescription": "The open-source AI platform for companies and developers. Connect OpenAI, Claude, Groq & local models. GDPR-compliant, self-hosted via Docker. Add an AI chatbot to your website in minutes."
   },
   "nav": {
     "solutions": "Solutions",

@@ -1,7 +1,9 @@
 {
   "meta": {
-    "title": "Synaplan — KI unter Kontrolle",
-    "description": "Die Open-Source-Plattform für professionelles KI-Management. Alle Modelle, eine Plattform. Sicher, transparent, flexibel."
+    "title": "Synaplan — KI-Plattform | Alle Modelle. Eine Plattform.",
+    "description": "Synaplan ist die Open-Source-KI-Plattform für Unternehmen. Self-hosted, DSGVO-konform, Multi-Model-Routing (OpenAI, Claude, Gemini, Ollama). KI-Chatbot für Ihre Website in Minuten einrichten.",
+    "homeTitle": "Synaplan — KI-Plattform | Open-Source · DSGVO-konform · Self-Hosted",
+    "homeDescription": "Die Open-Source-KI-Plattform für Unternehmen und Entwickler. KI-Chatbot, RAG-Dokumentensuche und Multi-Model-Routing — DSGVO-konform, selbst gehostet via Docker. Jetzt kostenlos starten."
   },
   "nav": {
     "solutions": "Lösungen",

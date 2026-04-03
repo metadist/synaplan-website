@@ -56,6 +56,7 @@ export async function generateMetadata({
       languages: {
         en: "https://synaplan.com",
         de: "https://synaplan.com/de",
+        "x-default": "https://synaplan.com",
       },
     },
   };

@@ -3,41 +3,77 @@ import { routing } from "@/i18n/routing";
 
 const SITE = "https://synaplan.com";
 
-const PATHS = [
-  "",
-  "/pricing",
-  "/try-chat",
-  "/solutions/chat-widget",
-  "/solutions/memories",
-  "/solutions/chat-widget/trades",
-  "/solutions/chat-widget/hospitality",
-  "/solutions/chat-widget/customers",
-] as const;
+/**
+ * Priority mapping based on SISTRIX keyword research (25.03.2026):
+ * - Homepage:              1.0  (ki plattform, ai platform)
+ * - Chat-Widget:           0.95 (ki chatbot 2.100 SV, ki kundenservice €15 CPC — highest commercial value)
+ * - Pricing:               0.90
+ * - Companies:             0.85 (chatgpt für unternehmen)
+ * - Developers:            0.85 (open source ki 400 SV, ai gateway €13 CPC)
+ * - Widget sub-pages:      0.80
+ * - Memories / Plugins:    0.75
+ * - Legal pages:           0.30
+ */
+type PathConfig = {
+  path: string;
+  priority: number;
+  changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"];
+};
+
+const PATHS: PathConfig[] = [
+  // ── Core ──────────────────────────────────────────────────────────────────
+  { path: "",                                   priority: 1.0,  changeFrequency: "weekly" },
+  { path: "/pricing",                           priority: 0.90, changeFrequency: "monthly" },
+
+  // ── Solutions ──────────────────────────────────────────────────────────────
+  { path: "/solutions/chat-widget",             priority: 0.95, changeFrequency: "monthly" },
+  { path: "/solutions/companies",               priority: 0.85, changeFrequency: "monthly" },
+  { path: "/solutions/developers",              priority: 0.85, changeFrequency: "monthly" },
+  { path: "/solutions/memories",               priority: 0.75, changeFrequency: "monthly" },
+  { path: "/solutions/plugins",                priority: 0.75, changeFrequency: "monthly" },
+
+  // ── Chat-Widget sub-pages ─────────────────────────────────────────────────
+  { path: "/solutions/chat-widget/trades",      priority: 0.80, changeFrequency: "monthly" },
+  { path: "/solutions/chat-widget/hospitality", priority: 0.80, changeFrequency: "monthly" },
+  { path: "/solutions/chat-widget/customers",   priority: 0.80, changeFrequency: "monthly" },
+
+  // ── Utility ───────────────────────────────────────────────────────────────
+  { path: "/try-chat",                          priority: 0.65, changeFrequency: "monthly" },
+
+  // ── Legal — low priority but must be indexed ──────────────────────────────
+  { path: "/imprint",                           priority: 0.30, changeFrequency: "yearly" },
+  { path: "/privacy-policy",                    priority: 0.30, changeFrequency: "yearly" },
+];
+
+function buildUrl(locale: string, path: string): string {
+  const isDefault = locale === routing.defaultLocale;
+  if (path === "") {
+    return isDefault ? `${SITE}/` : `${SITE}/${locale}`;
+  }
+  return isDefault ? `${SITE}${path}` : `${SITE}/${locale}${path}`;
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
 
   for (const locale of routing.locales) {
-    for (const path of PATHS) {
-      const url =
-        locale === routing.defaultLocale
-          ? path === ""
-            ? `${SITE}/`
-            : `${SITE}${path}`
-          : path === ""
-            ? `${SITE}/${locale}`
-            : `${SITE}/${locale}${path}`;
+    for (const { path, priority, changeFrequency } of PATHS) {
+      const url = buildUrl(locale, path);
+
+      // Build hreflang alternates for each entry
+      const alternates: Record<string, string> = {};
+      for (const loc of routing.locales) {
+        alternates[loc] = buildUrl(loc, path);
+      }
+      // x-default points to the EN (default locale) version
+      alternates["x-default"] = buildUrl(routing.defaultLocale, path);
 
       entries.push({
         url,
         lastModified: new Date(),
-        changeFrequency: path === "" ? "weekly" : "monthly",
-        priority:
-          path === ""
-            ? 1
-            : path === "/solutions/chat-widget"
-              ? 0.9
-              : 0.75,
+        changeFrequency,
+        priority,
+        alternates: { languages: alternates },
       });
     }
   }

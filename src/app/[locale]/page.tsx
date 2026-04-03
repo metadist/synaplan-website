@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { HeroSection } from "@/components/sections/hero";
@@ -93,6 +94,48 @@ const FaqSection = dynamic(
     ),
   },
 );
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "meta" });
+  const title = t("homeTitle");
+  const description = t("homeDescription");
+  const url = locale === "de" ? `${SITE_URL}/de` : `${SITE_URL}/`;
+
+  return {
+    title,
+    description,
+    keywords:
+      locale === "de"
+        ? "KI-Plattform, KI Chatbot, KI Kundenservice, ChatGPT Alternative, Open Source KI, DSGVO KI, Self Hosted AI, Chat Widget, KI Unternehmen"
+        : "AI platform, AI chatbot, AI customer service, ChatGPT alternative, open source AI, GDPR AI, self hosted AI, chat widget",
+    openGraph: {
+      title,
+      description,
+      url,
+      type: "website",
+      siteName: "Synaplan",
+      locale: locale === "de" ? "de_DE" : "en_US",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+    alternates: {
+      canonical: url,
+      languages: {
+        en: `${SITE_URL}/`,
+        de: `${SITE_URL}/de`,
+        "x-default": `${SITE_URL}/`,
+      },
+    },
+  };
+}
 
 export default async function HomePage({
   params,
