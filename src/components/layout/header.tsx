@@ -25,9 +25,22 @@ export function Header() {
     { href: "/solutions/plugins", label: t("nav.plugins") },
   ];
 
+  const features = [
+    { href: "/features/multi-model", label: t("nav.multiModel") },
+    { href: "/features/audit-logs", label: t("nav.auditLogs") },
+    { href: "/features/memories", label: t("nav.memories") },
+    { href: "/features", label: t("nav.features") },
+  ];
+
+  const aboutItems = [
+    { href: "/about/team", label: t("nav.team") },
+    { href: "/about/philosophy", label: t("nav.philosophy") },
+    { href: "/about/partners", label: t("nav.partners") },
+    { href: "/about", label: t("nav.about") },
+  ];
+
   const navItems = [
     { href: "/pricing", label: t("nav.pricing") },
-    { href: "/about", label: t("nav.about") },
   ];
 
   return (
@@ -43,50 +56,91 @@ export function Header() {
           </Link>
 
           <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 lg:flex">
-              <div className="group relative">
-                <button className="flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
-                  {t("nav.solutions")}
-                  <ChevronDown className="size-3.5 transition-transform group-hover:rotate-180" />
-                </button>
-                <div className="invisible absolute left-0 top-full pt-2 opacity-0 transition-all group-hover:visible group-hover:opacity-100">
-                  <div className="w-64 rounded-xl border border-border bg-popover p-2 shadow-lg">
-                    {solutions.map((item) => (
-                      <Link
-                        key={item.href}
-                        href={item.href}
-                        className="block rounded-lg px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
-                      >
-                        {item.label}
-                      </Link>
-                    ))}
-                  </div>
+            {/* Solutions dropdown */}
+            <div className="group relative">
+              <button className="flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
+                {t("nav.solutions")}
+                <ChevronDown className="size-3.5 transition-transform group-hover:rotate-180" />
+              </button>
+              <div className="invisible absolute left-0 top-full pt-2 opacity-0 transition-all group-hover:visible group-hover:opacity-100">
+                <div className="w-60 rounded-xl border border-border bg-popover p-2 shadow-lg">
+                  {solutions.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="block rounded-lg px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
                 </div>
               </div>
+            </div>
 
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`rounded-lg px-3 py-2 text-sm font-medium transition-colors hover:text-foreground ${
-                    pathname === item.href
-                      ? "text-[#002c92]"
-                      : "text-muted-foreground"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
+            {/* Features dropdown */}
+            <div className="group relative">
+              <button className="flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
+                {t("nav.features")}
+                <ChevronDown className="size-3.5 transition-transform group-hover:rotate-180" />
+              </button>
+              <div className="invisible absolute left-0 top-full pt-2 opacity-0 transition-all group-hover:visible group-hover:opacity-100">
+                <div className="w-60 rounded-xl border border-border bg-popover p-2 shadow-lg">
+                  {features.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="block rounded-lg px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`rounded-lg px-3 py-2 text-sm font-medium transition-colors hover:text-foreground ${
+                  pathname === item.href ? "text-[#002c92]" : "text-muted-foreground"
+                }`}
+              >
+                {item.label}
+              </Link>
+            ))}
+
+            {/* About dropdown */}
+            <div className="group relative">
+              <button className="flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
+                {t("nav.about")}
+                <ChevronDown className="size-3.5 transition-transform group-hover:rotate-180" />
+              </button>
+              <div className="invisible absolute right-0 top-full pt-2 opacity-0 transition-all group-hover:visible group-hover:opacity-100">
+                <div className="w-52 rounded-xl border border-border bg-popover p-2 shadow-lg">
+                  {aboutItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="block rounded-lg px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </nav>
 
           <div className="relative z-10 flex items-center gap-3">
             <a
               href={LINKS.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden min-h-11 items-center gap-1.5 rounded-lg px-3 py-2.5 text-sm text-muted-foreground transition-colors hover:text-foreground md:flex"
+              aria-label="GitHub"
+              className="hidden min-h-11 min-w-11 items-center justify-center rounded-lg px-2.5 py-2.5 text-muted-foreground transition-colors hover:text-foreground xl:flex"
             >
-              <GithubIcon className="size-4" />
-              <span className="text-xs font-medium">GitHub</span>
+              <GithubIcon className="size-4.5" />
             </a>
 
             <LanguageSwitcher />
@@ -123,6 +177,36 @@ export function Header() {
                       {t("nav.solutions")}
                     </p>
                     {solutions.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        onClick={() => setMobileOpen(false)}
+                        className="rounded-lg px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                      {t("nav.features")}
+                    </p>
+                    {features.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        onClick={() => setMobileOpen(false)}
+                        className="rounded-lg px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                      {t("nav.about")}
+                    </p>
+                    {aboutItems.map((item) => (
                       <Link
                         key={item.href}
                         href={item.href}

@@ -5,6 +5,7 @@ import { HeroSection } from "@/components/sections/hero";
 import { HomeSectionSkeleton } from "@/components/sections/home-section-skeleton";
 import { getSynaplanGithubRepoStats } from "@/lib/github-synaplan-repo";
 import { buildFaqSchema, buildSoftwareAppSchema, SITE_URL } from "@/lib/jsonld";
+import { GithubFeed } from "@/components/sections/github-feed";
 
 const WidgetFlowSection = dynamic(
   () =>
@@ -184,6 +185,7 @@ export default async function HomePage({
       <FeaturesShowcase />
       <UseCasesSection />
       <OpenSourceSection githubRepo={githubRepo} />
+      <GithubFeed locale={locale} />
       <FaqSection />
       <CTASection />
     </>

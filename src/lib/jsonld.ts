@@ -194,6 +194,47 @@ export function buildBreadcrumbSchema(
   };
 }
 
+// ─── Pricing ─────────────────────────────────────────────────────────────────
+
+type PricingOffer = {
+  name: string;
+  description: string;
+  price: string;
+  priceCurrency?: string;
+  priceSpecification?: string;
+};
+
+/** Schema.org Product with Offer array — enables pricing rich results in Google */
+export function buildProductPricingSchema(
+  locale: string,
+  offers: PricingOffer[],
+) {
+  const url = locale === "de" ? `${SITE_URL}/de/pricing` : `${SITE_URL}/pricing`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "@id": `${SITE_URL}/#product`,
+    name: "Synaplan",
+    description:
+      locale === "de"
+        ? "Open-Source-KI-Plattform für Unternehmen — Chat-Widget, RAG, Multi-Model-Routing, DSGVO-konform."
+        : "Open-source AI platform for businesses — chat widget, RAG, multi-model routing, GDPR-compliant.",
+    url,
+    brand: { "@id": "https://metadist.de/#organization" },
+    manufacturer: { "@id": "https://metadist.de/#organization" },
+    offers: offers.map((o) => ({
+      "@type": "Offer",
+      name: o.name,
+      description: o.description,
+      price: o.price,
+      priceCurrency: o.priceCurrency ?? "EUR",
+      availability: "https://schema.org/InStock",
+      url,
+      seller: { "@id": "https://metadist.de/#organization" },
+    })),
+  };
+}
+
 /** Serialise one or more schemas into a JSON-LD string for dangerouslySetInnerHTML */
 export function serializeJsonLd(
   ...schemas: Record<string, unknown>[]

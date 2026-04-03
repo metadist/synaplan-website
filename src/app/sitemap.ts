@@ -37,6 +37,18 @@ const PATHS: PathConfig[] = [
   { path: "/solutions/chat-widget/hospitality", priority: 0.80, changeFrequency: "monthly" },
   { path: "/solutions/chat-widget/customers",   priority: 0.80, changeFrequency: "monthly" },
 
+  // ── Features (new) ────────────────────────────────────────────────────────
+  { path: "/features",                          priority: 0.85, changeFrequency: "monthly" },
+  { path: "/features/multi-model",              priority: 0.82, changeFrequency: "monthly" },
+  { path: "/features/audit-logs",               priority: 0.82, changeFrequency: "monthly" },
+  { path: "/features/memories",                 priority: 0.78, changeFrequency: "monthly" },
+
+  // ── About (new) ───────────────────────────────────────────────────────────
+  { path: "/about",                             priority: 0.70, changeFrequency: "monthly" },
+  { path: "/about/team",                        priority: 0.65, changeFrequency: "monthly" },
+  { path: "/about/philosophy",                  priority: 0.60, changeFrequency: "yearly"  },
+  { path: "/about/partners",                    priority: 0.65, changeFrequency: "monthly" },
+
   // ── Utility ───────────────────────────────────────────────────────────────
   { path: "/try-chat",                          priority: 0.65, changeFrequency: "monthly" },
 
