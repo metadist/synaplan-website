@@ -112,7 +112,7 @@ function FairUseInline({
     <button
       type="button"
       onClick={onOpen}
-      className="group inline-flex items-center gap-1.5 rounded-full border border-[#002c92]/20 bg-[#f6e3f3]/80 px-3 py-1 text-xs font-semibold text-[#002c92] shadow-sm transition hover:border-[#002c92]/35 hover:bg-[#f6e3f3]"
+      className="group inline-flex items-center gap-1.5 rounded-full border border-[#002c92]/20 bg-soft-accent/80 px-3 py-1 text-xs font-semibold text-[#002c92] shadow-sm transition hover:border-[#002c92]/35 hover:bg-soft-accent"
     >
       <HelpCircle className="size-3.5 opacity-80" aria-hidden />
       {t("fairUseCta")}
@@ -135,7 +135,7 @@ export function PricingPage() {
   );
 
   return (
-    <div className="relative overflow-hidden bg-[#fff7fa]">
+    <div className="relative overflow-hidden bg-page-tint">
       <div
         aria-hidden
         className="pointer-events-none absolute -left-24 top-0 size-[28rem] rounded-full bg-[#002c92]/25 blur-[100px]"
@@ -146,7 +146,7 @@ export function PricingPage() {
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute bottom-20 left-1/3 size-72 rounded-full bg-[#f6e3f3]/80 blur-[70px]"
+        className="pointer-events-none absolute bottom-20 left-1/3 size-72 rounded-full bg-soft-accent/80 blur-[70px]"
       />
       <div
         aria-hidden
@@ -192,7 +192,7 @@ export function PricingPage() {
           transition={{ duration: 0.45 }}
           className="mx-auto max-w-3xl text-center"
         >
-          <div className="inline-flex items-center gap-2 rounded-full bg-[#f6e3f3] px-3 py-1.5 text-xs font-bold uppercase tracking-[0.12em] text-[#002c92]">
+          <div className="inline-flex items-center gap-2 rounded-full bg-soft-accent px-3 py-1.5 text-xs font-bold uppercase tracking-[0.12em] text-[#002c92]">
             <Sparkles className="size-3.5" aria-hidden />
             {t("heroEyebrow")}
           </div>
@@ -350,7 +350,7 @@ export function PricingPage() {
           <div className="mt-10 overflow-x-auto rounded-[1.75rem] border border-[rgb(196_197_215/0.2)] bg-white/80 shadow-[0_20px_50px_-24px_rgba(0,44,146,0.12)] backdrop-blur-sm">
             <table className="w-full min-w-[640px] border-collapse text-left text-sm">
               <thead>
-                <tr className="border-b border-[rgb(196_197_215/0.25)] bg-[#f6e3f3]/40">
+                <tr className="border-b border-[rgb(196_197_215/0.25)] bg-soft-accent/40">
                   <th className="px-5 py-4 font-semibold text-[#221823] sm:px-6">
                     {/* feature column */}
                   </th>
@@ -370,7 +370,7 @@ export function PricingPage() {
                   <tr
                     key={key}
                     className={cn(
-                      "border-b border-[rgb(196_197_215/0.12)] transition hover:bg-[#fff7fa]/80",
+                      "border-b border-[rgb(196_197_215/0.12)] transition hover:bg-page-tint/80",
                       i % 2 === 1 && "bg-white/50",
                     )}
                   >
@@ -395,7 +395,7 @@ export function PricingPage() {
 
         {/* Included everywhere */}
         <motion.section {...fadeUp} className="mx-auto mt-20 max-w-5xl lg:mt-24">
-          <div className="rounded-[2rem] border border-[rgb(196_197_215/0.18)] bg-gradient-to-b from-white/90 to-[#fff7fa]/90 p-8 shadow-inner sm:p-10">
+          <div className="rounded-[2rem] border border-[rgb(196_197_215/0.18)] bg-gradient-to-b from-white/90 to-page-tint/90 p-8 shadow-inner sm:p-10">
             <h2 className="text-center text-2xl font-bold tracking-tight text-[#221823] sm:text-3xl">
               {t("includedTitle")}
             </h2>

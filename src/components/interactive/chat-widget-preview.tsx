@@ -99,7 +99,7 @@ export function ChatWidgetPreview() {
     <div className="relative isolate mx-auto w-full max-w-md [contain:layout]">
       <div
         className={cn(
-          "relative flex flex-col overflow-hidden rounded-3xl border border-[rgb(196_197_215/0.15)] bg-[rgb(255_247_250/0.8)] shadow-[0_25px_50px_-12px_rgb(0_0_0/0.25)] dark:border-white/10 dark:bg-zinc-900/80",
+          "relative flex flex-col overflow-hidden rounded-3xl border border-[rgb(196_197_215/0.15)] bg-page-tint/80 shadow-[0_25px_50px_-12px_rgb(0_0_0/0.25)] dark:border-white/10 dark:bg-zinc-900/80",
           allowHeavyEffects ? "backdrop-blur-[10px]" : "backdrop-blur-none",
         )}
       >
@@ -151,7 +151,7 @@ export function ChatWidgetPreview() {
                 <div
                   className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
                     step.role === "bot"
-                      ? "rounded-tl-sm bg-[#fbe8f9] text-[#221823] dark:bg-zinc-800 dark:text-zinc-100"
+                      ? "rounded-tl-sm bg-chat-bubble-user text-foreground dark:bg-zinc-800 dark:text-zinc-100"
                       : "rounded-tr-sm border border-[rgb(0_44_146/0.1)] bg-[rgb(0_44_146/0.05)] text-[#002c92]"
                   }`}
                 >
@@ -184,7 +184,7 @@ export function ChatWidgetPreview() {
                 <div
                   className={`rounded-2xl px-4 py-3 ${
                     pending.role === "bot"
-                      ? "rounded-tl-sm bg-[#fbe8f9] dark:bg-zinc-800"
+                      ? "rounded-tl-sm bg-chat-bubble-user dark:bg-zinc-800"
                       : "rounded-tr-sm border border-[rgb(0_44_146/0.1)] bg-[rgb(0_44_146/0.05)]"
                   }`}
                 >
@@ -211,7 +211,7 @@ export function ChatWidgetPreview() {
           </div>
         </div>
 
-        <div className="shrink-0 border-t border-[rgb(196_197_215/0.1)] bg-[#ffeffc] p-4 dark:border-zinc-800 dark:bg-zinc-900/50">
+        <div className="shrink-0 border-t border-[rgb(196_197_215/0.1)] bg-chat-input-bg p-4 dark:border-zinc-800 dark:bg-zinc-900/50">
           <div className="flex items-center justify-between gap-3 rounded-xl border border-[rgb(196_197_215/0.2)] bg-white px-4 py-2.5 dark:border-zinc-700 dark:bg-zinc-800">
             <span className="flex-1 truncate text-sm text-[#434654]/80">
               {t("placeholder")}

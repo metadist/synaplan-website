@@ -243,7 +243,7 @@ function WidgetFlowEmbedChat({
 
   return (
     <div className="relative isolate w-full max-h-full [contain:layout]">
-      <div className="relative flex max-h-[min(52vh,360px)] min-h-[240px] w-full max-w-[18rem] flex-col overflow-hidden rounded-3xl border border-[rgb(196_197_215/0.15)] bg-[rgb(255_247_250/0.85)] shadow-[0_25px_50px_-12px_rgb(0_0_0/0.22)] backdrop-blur-[10px] sm:max-h-[min(50vh,380px)] sm:max-w-[19rem] sm:min-h-[260px]">
+      <div className="relative flex max-h-[min(52vh,360px)] min-h-[240px] w-full max-w-[18rem] flex-col overflow-hidden rounded-3xl border border-[rgb(196_197_215/0.15)] bg-page-tint/85 shadow-[0_25px_50px_-12px_rgb(0_0_0/0.22)] backdrop-blur-[10px] sm:max-h-[min(50vh,380px)] sm:max-w-[19rem] sm:min-h-[260px]">
         <div className="flex shrink-0 items-center justify-between gap-1 bg-[#002c92] px-2 py-2.5 sm:px-3 sm:py-3.5">
           <div className="flex min-w-0 flex-1 items-center gap-1.5 sm:gap-2">
             <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-white/15 sm:size-8">
@@ -295,7 +295,7 @@ function WidgetFlowEmbedChat({
                     <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-[#002c92]/10 text-[#002c92]">
                       <Bot className="size-4" />
                     </div>
-                    <div className="max-w-[92%] rounded-2xl rounded-tl-sm bg-[#fbe8f9] px-3.5 py-3 text-sm leading-relaxed text-[#221823] shadow-sm">
+                    <div className="max-w-[92%] rounded-2xl rounded-tl-sm bg-chat-bubble-user px-3.5 py-3 text-sm leading-relaxed text-foreground shadow-sm">
                       {t("previewGreeting")}
                     </div>
                   </div>
@@ -326,7 +326,7 @@ function WidgetFlowEmbedChat({
                     <Bot className="size-3.5" />
                   </div>
                   <div className="min-w-0 flex-1 space-y-2">
-                    <div className="rounded-2xl rounded-tl-sm bg-[#fbe8f9] px-3 py-2.5 text-xs leading-relaxed text-[#221823] shadow-sm sm:text-[13px]">
+                    <div className="rounded-2xl rounded-tl-sm bg-chat-bubble-user px-3 py-2.5 text-xs leading-relaxed text-foreground shadow-sm sm:text-[13px]">
                       <div className="flex flex-wrap items-center gap-1.5 border-b border-[rgb(196_197_215/0.25)] pb-2">
                         <a
                           href={c.href}
@@ -345,7 +345,7 @@ function WidgetFlowEmbedChat({
                         {c.reply}
                       </p>
                     </div>
-                    <p className="flex items-start gap-1.5 rounded-lg bg-[#f6e3f3]/70 px-2.5 py-1.5 text-[10px] leading-snug text-muted-foreground">
+                    <p className="flex items-start gap-1.5 rounded-lg bg-soft-accent/70 px-2.5 py-1.5 text-[10px] leading-snug text-muted-foreground">
                       <span className="mt-0.5 shrink-0 font-medium text-[#002c92]/90">
                         ↳
                       </span>
@@ -391,7 +391,7 @@ function WidgetFlowEmbedChat({
                     "rounded-2xl px-4 py-3",
                     pending.kind === "greeting" ||
                       (pending.kind === "turn" && pending.role === "bot")
-                      ? "rounded-tl-sm bg-[#fbe8f9]"
+                      ? "rounded-tl-sm bg-chat-bubble-user"
                       : "rounded-tr-sm border border-[rgb(0_44_146/0.1)] bg-[rgb(0_44_146/0.05)]",
                   )}
                 >
@@ -406,7 +406,7 @@ function WidgetFlowEmbedChat({
           </div>
         </div>
 
-        <div className="shrink-0 border-t border-[rgb(196_197_215/0.12)] bg-[#ffeffc] p-3 sm:p-4">
+        <div className="shrink-0 border-t border-[rgb(196_197_215/0.12)] bg-chat-input-bg p-3 sm:p-4">
           <div className="flex items-center justify-between gap-2 rounded-xl border border-[rgb(196_197_215/0.2)] bg-white px-3 py-2 sm:px-4 sm:py-2.5">
             <span className="flex-1 truncate text-xs text-[#434654]/80">
               {tChat("placeholder")}
@@ -601,7 +601,7 @@ export function WidgetFlowSection() {
                   {t("panelHint")}
                 </p>
               </div>
-              <span className="hidden rounded-full border border-[#002c92]/20 bg-[#f6e3f3] px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-[#002c92] sm:inline">
+              <span className="hidden rounded-full border border-[#002c92]/20 bg-soft-accent px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-[#002c92] sm:inline">
                 {t("dragMe")}
               </span>
             </div>
@@ -711,7 +711,7 @@ export function WidgetFlowSection() {
                         onDragLeave={() => setDragOverQ(null)}
                         onDrop={(e) => onDropQuestion(e, qid)}
                         className={cn(
-                          "flex min-w-0 flex-1 cursor-grab touch-manipulation items-center gap-2 rounded-l-xl rounded-r-none border border-r-0 bg-[#fff7fa] px-3 py-2.5 text-left text-sm text-foreground shadow-sm active:cursor-grabbing",
+                          "flex min-w-0 flex-1 cursor-grab touch-manipulation items-center gap-2 rounded-l-xl rounded-r-none border border-r-0 bg-page-tint px-3 py-2.5 text-left text-sm text-foreground shadow-sm active:cursor-grabbing",
                           "border-[rgb(196_197_215/0.45)] transition-[border-color,box-shadow]",
                           "hover:border-[#002c92]/35 hover:shadow-md",
                           dragOverQ === qid &&
@@ -845,7 +845,7 @@ export function WidgetFlowSection() {
                 </Badge>
               </div>
 
-              <div className="relative flex min-h-[380px] flex-col overflow-hidden bg-gradient-to-b from-slate-100/90 via-[#fff7fa] to-[#f6e3f3]/55 pb-2 pt-6 sm:min-h-[400px] sm:pt-8 sm:pb-3">
+              <div className="relative flex min-h-[380px] flex-col overflow-hidden bg-gradient-to-b from-slate-100/90 via-page-tint to-soft-accent/55 pb-2 pt-6 sm:min-h-[400px] sm:pt-8 sm:pb-3">
                 {/* Page body — scrolls; chat widget overlays the lower area (same frame size as before) */}
                 <div className="widget-embed-scroll min-h-0 flex-1 overflow-y-auto px-3 pb-28 sm:pb-32">
                   <div className="mx-auto w-full max-w-sm px-2 text-left sm:max-w-md">
@@ -901,7 +901,7 @@ export function WidgetFlowSection() {
                   </div>
                 </div>
 
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 border-t border-[rgb(196_197_215/0.18)] bg-gradient-to-t from-[#f6e3f3]/85 via-[#fff7fa]/55 to-transparent px-3 pb-2 pt-10 sm:pt-12">
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 border-t border-[rgb(196_197_215/0.18)] bg-gradient-to-t from-soft-accent/85 via-page-tint/55 to-transparent px-3 pb-2 pt-10 sm:pt-12">
                   <div className="pointer-events-auto flex w-full flex-col items-end">
                     {!previewWidgetOpen && (
                       <div className="flex w-full justify-end">
@@ -937,7 +937,7 @@ export function WidgetFlowSection() {
                           )}
                         >
                           {previewWidgetCollapsed ? (
-                            <div className="flex w-full items-center gap-2 rounded-2xl border border-[rgb(196_197_215/0.35)] bg-[rgb(255_247_250/0.95)] px-2.5 py-2 shadow-[0_12px_40px_-12px_rgb(0_44_146/0.3)] backdrop-blur-sm">
+                            <div className="flex w-full items-center gap-2 rounded-2xl border border-[rgb(196_197_215/0.35)] bg-page-tint/95 px-2.5 py-2 shadow-[0_12px_40px_-12px_rgb(0_44_146/0.3)] backdrop-blur-sm">
                               <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-[#002c92]/12 text-[#002c92]">
                                 <Bot className="size-4" />
                               </div>

@@ -42,7 +42,7 @@ export function ChatWidgetHubLanding() {
             <div className="flex flex-col items-center text-center lg:col-span-7 lg:items-start lg:text-left">
               <Badge
                 variant="secondary"
-                className="mb-5 gap-2 rounded-full border-0 bg-[#f6e3f3] px-3 py-1.5 text-xs font-bold uppercase tracking-[0.06em] text-[#002c92]"
+                className="mb-5 gap-2 rounded-full border-0 bg-soft-accent px-3 py-1.5 text-xs font-bold uppercase tracking-[0.06em] text-[#002c92]"
               >
                 <span className="text-[10px] leading-none" aria-hidden>
                   ●
@@ -68,7 +68,7 @@ export function ChatWidgetHubLanding() {
                 </a>
                 <a
                   href={LINKS.appointment}
-                  className="inline-flex h-12 items-center justify-center rounded-xl border-0 bg-[#f6e3f3] px-8 text-base font-bold text-[#002c92] transition-colors hover:bg-[#edd8ea]"
+                  className="inline-flex h-12 items-center justify-center rounded-xl border-0 bg-soft-accent px-8 text-base font-bold text-[#002c92] transition-colors hover:bg-soft-accent-hover"
                 >
                   {tc("bookDemo")}
                 </a>
@@ -109,7 +109,7 @@ export function ChatWidgetHubLanding() {
 
       <section
         aria-labelledby="cw-stats"
-        className="border-b border-[rgb(196_197_215/0.15)] bg-gradient-to-b from-[#fff7fa]/80 to-background py-14 sm:py-16"
+        className="border-b border-[rgb(196_197_215/0.15)] bg-gradient-to-b from-page-tint/80 to-background py-14 sm:py-16"
       >
         <div className="container-wide section-padding">
           <h2
@@ -176,7 +176,7 @@ export function ChatWidgetHubLanding() {
       </section>
 
       <section
-        className="border-y border-[rgb(196_197_215/0.15)] bg-[#fff7fa]/40 py-14 sm:py-20"
+        className="border-y border-[rgb(196_197_215/0.15)] bg-page-tint/40 py-14 sm:py-20"
         aria-labelledby="cw-pain"
       >
         <div className="container-wide section-padding">
@@ -228,7 +228,7 @@ export function ChatWidgetHubLanding() {
                   initial={{ opacity: 0, y: 8 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="rounded-2xl border border-[#002c92]/15 bg-gradient-to-br from-white to-[#f6e3f3]/40 p-5 shadow-sm"
+                  className="rounded-2xl border border-[#002c92]/15 bg-gradient-to-br from-white to-soft-accent/40 p-5 shadow-sm"
                 >
                   <Icon className="size-6 text-[#002c92]" strokeWidth={1.75} />
                   <h3 className="mt-3 text-base font-semibold text-foreground">
@@ -261,7 +261,7 @@ export function ChatWidgetHubLanding() {
               </a>
               <a
                 href={LINKS.appointment}
-                className="inline-flex h-11 flex-1 items-center justify-center rounded-xl bg-[#f6e3f3] px-6 text-sm font-bold text-[#002c92] hover:bg-[#edd8ea] sm:flex-initial"
+                className="inline-flex h-11 flex-1 items-center justify-center rounded-xl bg-soft-accent px-6 text-sm font-bold text-[#002c92] hover:bg-soft-accent-hover sm:flex-initial"
               >
                 {tc("bookDemo")}
               </a>
@@ -289,7 +289,7 @@ export function ChatWidgetHubLanding() {
       </section>
 
       <section
-        className="border-t border-[rgb(196_197_215/0.15)] bg-gradient-to-b from-background to-[#fff7fa]/50 py-14 sm:py-20"
+        className="border-t border-[rgb(196_197_215/0.15)] bg-gradient-to-b from-background to-page-tint/50 py-14 sm:py-20"
         aria-labelledby="cw-faq"
       >
         <div className="container-wide section-padding">
@@ -316,7 +316,7 @@ export function ChatWidgetHubLanding() {
 
       <section className="border-t border-[rgb(196_197_215/0.15)] pb-20 pt-14">
         <div className="container-wide section-padding">
-          <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 rounded-3xl border border-[#002c92]/15 bg-gradient-to-br from-[#002c92]/8 via-transparent to-[#f6e3f3]/40 px-6 py-12 text-center">
+          <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 rounded-3xl border border-[#002c92]/15 bg-gradient-to-br from-[#002c92]/8 via-transparent to-soft-accent/40 px-6 py-12 text-center">
             <h2 className="text-2xl font-bold text-foreground">
               {t("hub.bottomCtaTitle")}
             </h2>
@@ -331,7 +331,7 @@ export function ChatWidgetHubLanding() {
               </a>
               <a
                 href={LINKS.appointment}
-                className="inline-flex h-11 items-center justify-center rounded-xl border-0 bg-[#f6e3f3] px-8 text-base font-semibold text-[#002c92] transition-colors hover:bg-[#edd8ea]"
+                className="inline-flex h-11 items-center justify-center rounded-xl border-0 bg-soft-accent px-8 text-base font-semibold text-[#002c92] transition-colors hover:bg-soft-accent-hover"
               >
                 {tc("bookDemo")}
               </a>

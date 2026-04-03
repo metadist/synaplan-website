@@ -38,7 +38,7 @@ export function ChatWidgetIndustryLanding({ slug }: { slug: IndustrySlug }) {
             <div className="flex flex-col items-center text-center lg:col-span-7 lg:items-start lg:text-left">
               <Badge
                 variant="secondary"
-                className="mb-5 gap-2 rounded-full border-0 bg-[#f6e3f3] px-3 py-1.5 text-xs font-bold uppercase tracking-[0.06em] text-[#002c92]"
+                className="mb-5 gap-2 rounded-full border-0 bg-soft-accent px-3 py-1.5 text-xs font-bold uppercase tracking-[0.06em] text-[#002c92]"
               >
                 <Icon className="size-3.5" aria-hidden />
                 {t(`${p}landingHeroBadge`)}
@@ -62,7 +62,7 @@ export function ChatWidgetIndustryLanding({ slug }: { slug: IndustrySlug }) {
                 </a>
                 <a
                   href={LINKS.appointment}
-                  className="inline-flex h-12 items-center justify-center rounded-xl border-0 bg-[#f6e3f3] px-8 text-base font-bold text-[#002c92] transition-colors hover:bg-[#edd8ea]"
+                  className="inline-flex h-12 items-center justify-center rounded-xl border-0 bg-soft-accent px-8 text-base font-bold text-[#002c92] transition-colors hover:bg-soft-accent-hover"
                 >
                   {tc("bookDemo")}
                 </a>
@@ -132,7 +132,7 @@ export function ChatWidgetIndustryLanding({ slug }: { slug: IndustrySlug }) {
       </section>
 
       <section
-        className="border-y border-[rgb(196_197_215/0.15)] bg-[#fff7fa]/40 py-14 sm:py-16"
+        className="border-y border-[rgb(196_197_215/0.15)] bg-page-tint/40 py-14 sm:py-16"
         aria-labelledby="ind-pain"
       >
         <div className="container-wide section-padding">
@@ -178,7 +178,7 @@ export function ChatWidgetIndustryLanding({ slug }: { slug: IndustrySlug }) {
                 initial={{ opacity: 0, y: 8 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="rounded-2xl border border-[#002c92]/15 bg-gradient-to-br from-white to-[#f6e3f3]/35 p-5"
+                className="rounded-2xl border border-[#002c92]/15 bg-gradient-to-br from-white to-soft-accent/35 p-5"
               >
                 <h3 className="text-base font-semibold text-foreground">
                   {t(`${p}benefit${n}Title`)}
@@ -194,7 +194,7 @@ export function ChatWidgetIndustryLanding({ slug }: { slug: IndustrySlug }) {
 
       <section className="border-t border-[rgb(196_197_215/0.15)] pb-20 pt-12">
         <div className="container-wide section-padding">
-          <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 rounded-3xl border border-[#002c92]/15 bg-gradient-to-br from-[#002c92]/8 via-transparent to-[#f6e3f3]/40 px-6 py-10 text-center">
+          <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 rounded-3xl border border-[#002c92]/15 bg-gradient-to-br from-[#002c92]/8 via-transparent to-soft-accent/40 px-6 py-10 text-center">
             <h2 className="text-xl font-bold text-foreground sm:text-2xl">
               {t(`${p}bottomCtaTitle`)}
             </h2>

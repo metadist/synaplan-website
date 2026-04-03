@@ -14,7 +14,6 @@ import { cn } from "@/lib/utils";
 
 export function Header() {
   const t = useTranslations();
-  const tf = useTranslations("footer");
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -23,12 +22,7 @@ export function Header() {
     { href: "/solutions/developers", label: t("nav.forDevelopers") },
     { href: "/solutions/chat-widget", label: t("nav.chatWidget") },
     { href: "/solutions/memories", label: t("nav.memories") },
-  ];
-
-  const navWidgetMore = [
-    { href: "/solutions/chat-widget/trades", label: tf("widgetTrades") },
-    { href: "/solutions/chat-widget/hospitality", label: tf("widgetHospitality") },
-    { href: "/solutions/chat-widget/customers", label: tf("widgetReferences") },
+    { href: "/solutions/plugins", label: t("nav.plugins") },
   ];
 
   const navItems = [
@@ -37,7 +31,7 @@ export function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-[rgb(196_197_215/0.2)] bg-[rgb(255_247_250/0.75)] backdrop-blur-md dark:border-white/10 dark:bg-background/80">
+    <header className="sticky top-0 z-50 w-full border-b border-[rgb(196_197_215/0.2)] bg-page-tint/75 backdrop-blur-md dark:border-white/10 dark:bg-background/80">
       <div className="container-wide section-padding">
         <div className="relative flex h-20 items-center justify-between">
           <Link
@@ -65,17 +59,6 @@ export function Header() {
                         {item.label}
                       </Link>
                     ))}
-                    <div className="mt-1 border-t border-border pt-2">
-                      {navWidgetMore.map((item) => (
-                        <Link
-                          key={item.href}
-                          href={item.href}
-                          className="block rounded-lg px-3 py-2 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
-                        >
-                          {item.label}
-                        </Link>
-                      ))}
-                    </div>
                   </div>
                 </div>
               </div>
@@ -149,18 +132,6 @@ export function Header() {
                         {item.label}
                       </Link>
                     ))}
-                    <div className="mt-1 border-t border-border pt-2">
-                      {navWidgetMore.map((item) => (
-                        <Link
-                          key={item.href}
-                          href={item.href}
-                          onClick={() => setMobileOpen(false)}
-                          className="block rounded-lg px-3 py-2 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
-                        >
-                          {item.label}
-                        </Link>
-                      ))}
-                    </div>
                   </div>
                   <div className="flex flex-col gap-1">
                     {navItems.map((item) => (

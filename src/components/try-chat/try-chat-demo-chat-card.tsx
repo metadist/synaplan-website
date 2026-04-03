@@ -101,7 +101,7 @@ export function TryChatDemoChatCard({
               <button
                 type="button"
                 onClick={onEnterFullscreen}
-                className="group flex h-10 items-center gap-2 rounded-full border border-[rgb(196_197_215/0.35)] bg-gradient-to-br from-white to-[#f6e3f3]/90 px-3 text-xs font-semibold text-[#002c92] shadow-[0_2px_14px_rgba(0,44,146,0.12)] transition-all hover:scale-[1.02] hover:border-[#002c92]/40 hover:shadow-[0_8px_28px_rgba(0,44,146,0.2)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#002c92]/30"
+                className="group flex h-10 items-center gap-2 rounded-full border border-[rgb(196_197_215/0.35)] bg-gradient-to-br from-white to-soft-accent/90 px-3 text-xs font-semibold text-[#002c92] shadow-[0_2px_14px_rgba(0,44,146,0.12)] transition-all hover:scale-[1.02] hover:border-[#002c92]/40 hover:shadow-[0_8px_28px_rgba(0,44,146,0.2)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#002c92]/30"
                 aria-label={t("fullscreenEnter")}
                 title={t("fullscreenEnter")}
               >
@@ -145,7 +145,7 @@ export function TryChatDemoChatCard({
       <div
         ref={messagesScrollRef}
         className={cn(
-          "min-h-0 flex-1 overflow-y-auto overscroll-y-contain bg-gradient-to-b from-white/40 to-[#fff7fa]/30 px-4 py-5 sm:px-6",
+          "min-h-0 flex-1 overflow-y-auto overscroll-y-contain bg-gradient-to-b from-white/40 to-page-tint/30 px-4 py-5 sm:px-6",
           isFullscreen && "px-4 sm:px-8",
         )}
       >
@@ -172,7 +172,7 @@ export function TryChatDemoChatCard({
                     "mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-lg",
                     row.role === "user"
                       ? "bg-[#003fc7] text-white"
-                      : "bg-[#f6e3f3] text-[#002c92]",
+                      : "bg-soft-accent text-[#002c92]",
                   )}
                 >
                   {row.role === "user" ? (
@@ -234,7 +234,7 @@ export function TryChatDemoChatCard({
       </div>
 
       {showEndPanel && (
-        <div className="shrink-0 border-t border-[rgb(196_197_215/0.12)] bg-gradient-to-b from-[#ffeffc]/90 to-white px-5 py-5 text-center sm:px-8">
+        <div className="shrink-0 border-t border-[rgb(196_197_215/0.12)] bg-gradient-to-b from-chat-input-bg/90 to-white px-5 py-5 text-center sm:px-8">
           <p className="text-sm font-semibold text-[#221823]">
             {limitReached ? t("limitTitle") : t("unavailableTitle")}
           </p>
@@ -326,7 +326,7 @@ export function TryChatDemoChatCard({
                   setInput(chip.prompt);
                   textareaRef.current?.focus();
                 }}
-                className="rounded-lg bg-[#fbe8f9] px-3 py-1.5 text-xs font-medium text-[#434654] transition-colors hover:bg-[#f6e3f3] disabled:cursor-not-allowed disabled:opacity-40"
+                className="rounded-lg bg-chat-bubble-user px-3 py-1.5 text-xs font-medium text-foreground transition-colors hover:bg-soft-accent disabled:cursor-not-allowed disabled:opacity-40"
               >
                 {chip.label}
               </button>

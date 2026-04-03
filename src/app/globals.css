@@ -12,6 +12,14 @@
   --font-heading: var(--font-plus-jakarta-sans);
 
   --color-brand-50: oklch(0.97 0.01 250);
+  /* Secondary button + accent surface (was pink #f6e3f3, now cool gray) */
+  --color-soft-accent: oklch(0.94 0.009 250);
+  --color-soft-accent-hover: oklch(0.90 0.013 250);
+  /* Chat widget UI colors (were pink #fbe8f9 / #ffeffc, now cool gray) */
+  --color-chat-bubble-user: oklch(0.93 0.010 250);
+  --color-chat-input-bg: oklch(0.965 0.006 250);
+  /* Page tint — section surface backgrounds (neutral cool-white) */
+  --color-page-tint: oklch(0.992 0.005 250);
   --color-brand-100: oklch(0.93 0.03 250);
   --color-brand-200: oklch(0.87 0.06 250);
   --color-brand-300: oklch(0.78 0.10 250);
@@ -62,8 +70,7 @@
 }
 
 :root {
-  /* Figma-aligned warm page tint (~#fff7fa) */
-  --background: oklch(0.992 0.008 330);
+  --background: oklch(0.993 0 0);
   --foreground: oklch(0.22 0.02 310);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -197,12 +204,12 @@
     background-size: 200% 100%;
     animation: shimmer 3s ease-in-out infinite;
   }
-  /* Figma marketing surfaces */
+  /* Marketing section surfaces — neutral alternating grays */
   .surface-rose {
-    background-color: oklch(0.97 0.02 330);
+    background-color: oklch(0.967 0.004 250);
   }
   .surface-lavender {
-    background-color: oklch(0.94 0.04 320);
+    background-color: oklch(0.945 0.006 250);
   }
   .btn-figma-primary {
     background: linear-gradient(135deg, #002c92 0%, #003fc7 100%);

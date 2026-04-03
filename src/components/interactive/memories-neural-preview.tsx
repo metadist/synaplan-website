@@ -468,7 +468,7 @@ export function MemoriesNeuralPreview({
   return (
     <div
       className={cn(
-        "relative flex h-full min-h-0 w-full flex-col overflow-hidden rounded-2xl border border-[rgb(196_197_215/0.45)] bg-gradient-to-b from-[#fff7fa] via-white to-[#f6e3f3]/35 shadow-[0_24px_50px_-28px_rgb(0_44_146/0.18)] ring-1 ring-[rgb(0_44_146/0.05)]",
+        "relative flex h-full min-h-0 w-full flex-col overflow-hidden rounded-2xl border border-[rgb(196_197_215/0.45)] bg-gradient-to-b from-page-tint via-white to-soft-accent/35 shadow-[0_24px_50px_-28px_rgb(0_44_146/0.18)] ring-1 ring-[rgb(0_44_146/0.05)]",
         className,
       )}
     >
@@ -488,7 +488,7 @@ export function MemoriesNeuralPreview({
         </div>
       </div>
 
-      <div className="flex flex-col gap-2 border-b border-[rgb(196_197_215/0.25)] bg-[rgb(255_247_250/0.8)] px-3 py-2 text-[10px] text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-4 sm:text-[11px]">
+      <div className="flex flex-col gap-2 border-b border-[rgb(196_197_215/0.25)] bg-page-tint/80 px-3 py-2 text-[10px] text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-4 sm:text-[11px]">
         <div className="flex min-w-0 flex-wrap items-center gap-2">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-white/90 px-2 py-0.5 font-medium text-foreground/90 ring-1 ring-[rgb(0_44_146/0.12)]">
             <FolderInput className="size-3.5 shrink-0 text-[#002c92]" aria-hidden />

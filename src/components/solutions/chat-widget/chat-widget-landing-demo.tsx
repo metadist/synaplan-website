@@ -86,13 +86,13 @@ export function ChatWidgetLandingDemo({
       <button
         type="button"
         onClick={replay}
-        className="absolute -top-2 right-0 z-20 flex items-center gap-1.5 rounded-full border border-[#002c92]/20 bg-white/95 px-3 py-1.5 text-[11px] font-semibold text-[#002c92] shadow-sm backdrop-blur-sm transition hover:bg-[#f6e3f3] sm:-top-3"
+        className="absolute -top-2 right-0 z-20 flex items-center gap-1.5 rounded-full border border-[#002c92]/20 bg-white/95 px-3 py-1.5 text-[11px] font-semibold text-[#002c92] shadow-sm backdrop-blur-sm transition hover:bg-soft-accent sm:-top-3"
       >
         <RefreshCw className="size-3.5" aria-hidden />
         {t("demos.replay")}
       </button>
 
-      <div className="relative flex flex-col overflow-hidden rounded-3xl border border-[rgb(196_197_215/0.15)] bg-[rgb(255_247_250/0.85)] shadow-[0_25px_50px_-12px_rgb(0_0_0/0.22)] backdrop-blur-[10px]">
+      <div className="relative flex flex-col overflow-hidden rounded-3xl border border-[rgb(196_197_215/0.15)] bg-page-tint/85 shadow-[0_25px_50px_-12px_rgb(0_0_0/0.22)] backdrop-blur-[10px]">
         <div className="flex shrink-0 items-center justify-between gap-2 bg-[#002c92] px-3 py-3 sm:px-4">
           <div className="flex min-w-0 flex-1 items-center gap-2.5 sm:gap-3">
             <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-white/15">
@@ -139,7 +139,7 @@ export function ChatWidgetLandingDemo({
                 <div
                   className={`max-w-[88%] rounded-2xl px-3.5 py-2.5 text-sm leading-relaxed ${
                     step.role === "bot"
-                      ? "rounded-tl-sm bg-[#fbe8f9] text-[#221823]"
+                      ? "rounded-tl-sm bg-chat-bubble-user text-foreground"
                       : "rounded-tr-sm border border-[rgb(0_44_146/0.1)] bg-[rgb(0_44_146/0.05)] text-[#002c92]"
                   }`}
                 >
@@ -170,7 +170,7 @@ export function ChatWidgetLandingDemo({
                 <div
                   className={`rounded-2xl px-4 py-3 ${
                     pending.role === "bot"
-                      ? "rounded-tl-sm bg-[#fbe8f9]"
+                      ? "rounded-tl-sm bg-chat-bubble-user"
                       : "rounded-tr-sm border border-[rgb(0_44_146/0.1)] bg-[rgb(0_44_146/0.05)]"
                   }`}
                 >
@@ -185,7 +185,7 @@ export function ChatWidgetLandingDemo({
           </div>
         </div>
 
-        <div className="shrink-0 border-t border-[rgb(196_197_215/0.1)] bg-[#ffeffc] p-3.5">
+        <div className="shrink-0 border-t border-[rgb(196_197_215/0.1)] bg-chat-input-bg p-3.5">
           <div className="flex items-center justify-between gap-3 rounded-xl border border-[rgb(196_197_215/0.2)] bg-white px-3.5 py-2.5">
             <span className="flex-1 truncate text-xs text-[#434654]/80">
               {t(`${ns}.placeholder`)}

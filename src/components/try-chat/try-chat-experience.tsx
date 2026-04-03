@@ -386,7 +386,7 @@ export function TryChatExperience({
   ];
 
   return (
-    <div className="relative overflow-hidden bg-[#fff7fa]">
+    <div className="relative overflow-hidden bg-page-tint">
       {/* Soft brand glows — same language as homepage hero */}
       <div
         aria-hidden
@@ -416,7 +416,7 @@ export function TryChatExperience({
             transition={{ duration: 0.45 }}
             className="flex flex-col gap-8"
           >
-            <div className="inline-flex w-fit items-center gap-2 rounded-full bg-[#f6e3f3] px-3 py-1.5 text-sm font-semibold text-[#002c92]">
+            <div className="inline-flex w-fit items-center gap-2 rounded-full bg-soft-accent px-3 py-1.5 text-sm font-semibold text-[#002c92]">
               <span className="size-2 rounded-full bg-[#002c92]" aria-hidden />
               {t("heroEyebrow")}
             </div>
@@ -434,13 +434,13 @@ export function TryChatExperience({
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-xl border border-[rgb(196_197_215/0.15)] bg-[#ffeffc] p-4 shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
+              <div className="rounded-xl border border-[rgb(196_197_215/0.15)] bg-chat-input-bg p-4 shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
                 <p className="text-sm font-semibold text-[#221823]">
                   {t("feature1Title")}
                 </p>
                 <p className="mt-1 text-sm text-[#434654]">{t("feature1Sub")}</p>
               </div>
-              <div className="rounded-xl border border-[rgb(196_197_215/0.15)] bg-[#ffeffc] p-4 shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
+              <div className="rounded-xl border border-[rgb(196_197_215/0.15)] bg-chat-input-bg p-4 shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
                 <p className="text-sm font-semibold text-[#221823]">
                   {t("feature2Title")}
                 </p>
@@ -458,7 +458,7 @@ export function TryChatExperience({
           >
             <div
               aria-hidden
-              className="pointer-events-none absolute -right-10 -top-10 z-0 hidden size-24 rotate-12 rounded-2xl border border-white/50 bg-gradient-to-br from-white to-[#f6e3f3] shadow-xl sm:block"
+              className="pointer-events-none absolute -right-10 -top-10 z-0 hidden size-24 rotate-12 rounded-2xl border border-white/50 bg-gradient-to-br from-white to-soft-accent shadow-xl sm:block"
             />
             <TryChatDemoChatCard
               variant="embedded"
@@ -496,7 +496,7 @@ export function TryChatExperience({
               key={card.title}
               className="rounded-[2rem] border border-[rgb(196_197_215/0.1)] bg-white p-8 shadow-[0_1px_2px_rgba(0,0,0,0.05)]"
             >
-              <div className="flex size-12 items-center justify-center rounded-2xl bg-[#f6e3f3] text-[#002c92]">
+              <div className="flex size-12 items-center justify-center rounded-2xl bg-soft-accent text-[#002c92]">
                 <card.icon className="size-5" aria-hidden />
               </div>
               <h3 className="mt-6 text-xl font-bold text-[#221823]">
@@ -569,7 +569,7 @@ export function TryChatExperience({
             ).map((item) => (
               <div
                 key={item.step}
-                className="relative rounded-[2rem] border border-[rgb(196_197_215/0.12)] bg-gradient-to-b from-white to-[#fff7fa]/80 p-8 shadow-[0_1px_2px_rgba(0,0,0,0.04)]"
+                className="relative rounded-[2rem] border border-[rgb(196_197_215/0.12)] bg-gradient-to-b from-white to-page-tint/80 p-8 shadow-[0_1px_2px_rgba(0,0,0,0.04)]"
               >
                 <span
                   className="inline-flex size-10 items-center justify-center rounded-xl bg-[#002c92] text-sm font-bold text-white"
@@ -668,7 +668,7 @@ export function TryChatExperience({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, delay: 0.32 }}
-          className="mx-auto mt-16 max-w-4xl rounded-[2rem] border border-[rgb(196_197_215/0.15)] bg-gradient-to-br from-[#f6e3f3]/50 to-white p-8 text-center sm:p-10"
+          className="mx-auto mt-16 max-w-4xl rounded-[2rem] border border-[rgb(196_197_215/0.15)] bg-gradient-to-br from-soft-accent/50 to-white p-8 text-center sm:p-10"
           aria-labelledby="try-chat-trust-heading"
         >
           <h2
@@ -688,7 +688,7 @@ export function TryChatExperience({
               href={`${LINKS.github}/stargazers`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-baseline gap-1.5 rounded-lg px-1 py-0.5 transition-colors hover:bg-[#f6e3f3]/60 hover:text-[#002c92]"
+              className="inline-flex items-baseline gap-1.5 rounded-lg px-1 py-0.5 transition-colors hover:bg-soft-accent/60 hover:text-[#002c92]"
             >
               <span className="text-lg font-bold tabular-nums text-[#221823]">
                 {formatGithubRepoStatNumber(
@@ -705,7 +705,7 @@ export function TryChatExperience({
               href={`${LINKS.github}/forks`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-baseline gap-1.5 rounded-lg px-1 py-0.5 transition-colors hover:bg-[#f6e3f3]/60 hover:text-[#002c92]"
+              className="inline-flex items-baseline gap-1.5 rounded-lg px-1 py-0.5 transition-colors hover:bg-soft-accent/60 hover:text-[#002c92]"
             >
               <span className="text-lg font-bold tabular-nums text-[#221823]">
                 {formatGithubRepoStatNumber(
@@ -722,7 +722,7 @@ export function TryChatExperience({
               href={`${LINKS.github}/blob/main/LICENSE`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-baseline gap-1.5 rounded-lg px-1 py-0.5 transition-colors hover:bg-[#f6e3f3]/60 hover:text-[#002c92]"
+              className="inline-flex items-baseline gap-1.5 rounded-lg px-1 py-0.5 transition-colors hover:bg-soft-accent/60 hover:text-[#002c92]"
             >
               <span className="text-lg font-bold tabular-nums text-[#221823]">
                 {githubRepo?.licenseLabel ?? "\u2014"}

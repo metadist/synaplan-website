@@ -51,7 +51,7 @@ export async function MemoriesHubPage({ locale }: { locale: string }) {
           href={LINKS.docs}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl border border-[#002c92]/25 bg-[#f6e3f3] px-8 text-base font-semibold text-[#002c92] transition-colors hover:bg-[#edd8ea] sm:w-auto"
+          className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl border border-[#002c92]/25 bg-soft-accent px-8 text-base font-semibold text-[#002c92] transition-colors hover:bg-soft-accent-hover sm:w-auto"
         >
           <BookOpen className="size-4" />
           {t("pageCtaSecondary")}

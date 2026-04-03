@@ -33,7 +33,7 @@ export function HeroSection() {
             <div className="flex flex-col items-center text-center lg:col-span-7 lg:items-start lg:text-left">
               <Badge
                 variant="secondary"
-                className="mb-6 gap-2 rounded-full border-0 bg-[#f6e3f3] px-3 py-1.5 text-xs font-bold uppercase tracking-[0.06em] text-[#002c92]"
+                className="mb-6 gap-2 rounded-full border-0 bg-soft-accent px-3 py-1.5 text-xs font-bold uppercase tracking-[0.06em] text-[#002c92]"
               >
                 <span className="text-[10px] leading-none" aria-hidden>
                   ●
@@ -68,7 +68,7 @@ export function HeroSection() {
                   href={LINKS.appointment}
                   className={cn(
                     buttonVariants({ variant: "outline", size: "lg" }),
-                    "rounded-xl border-0 bg-[#f6e3f3] px-8 text-base font-bold text-[#002c92] hover:bg-[#edd8ea]",
+                    "rounded-xl border-0 bg-soft-accent px-8 text-base font-bold text-[#002c92] hover:bg-soft-accent-hover",
                   )}
                 >
                   {t("common.bookDemo")}

@@ -50,7 +50,7 @@ export function TryChatFullscreenRail({
           key={labelKey}
           type="button"
           onClick={onDemoAction}
-          className="flex size-10 items-center justify-center rounded-xl text-[#747686] transition-colors hover:bg-[#f6e3f3]/80 hover:text-[#002c92]"
+          className="flex size-10 items-center justify-center rounded-xl text-[#747686] transition-colors hover:bg-soft-accent/80 hover:text-[#002c92]"
           aria-label={t(labelKey)}
           title={t(labelKey)}
         >
@@ -70,7 +70,7 @@ export function TryChatFullscreenRail({
         <button
           type="button"
           onClick={onDemoAction}
-          className="flex size-10 items-center justify-center rounded-xl text-[#747686] transition-colors hover:bg-[#f6e3f3]/80 hover:text-[#002c92]"
+          className="flex size-10 items-center justify-center rounded-xl text-[#747686] transition-colors hover:bg-soft-accent/80 hover:text-[#002c92]"
           aria-label={t("fsSidebarProfile")}
           title={t("fsSidebarProfile")}
         >
@@ -97,14 +97,14 @@ export function TryChatFullscreenTopBar({
         <button
           type="button"
           onClick={onDemoAction}
-          className="rounded-lg px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-[#434654] transition-colors hover:bg-[#f6e3f3]/60 sm:text-xs"
+          className="rounded-lg px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-[#434654] transition-colors hover:bg-soft-accent/60 sm:text-xs"
         >
           {t("fsTopAdvanced")}
         </button>
         <button
           type="button"
           onClick={onDemoAction}
-          className="rounded-lg px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-[#434654] transition-colors hover:bg-[#f6e3f3]/60 sm:text-xs"
+          className="rounded-lg px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-[#434654] transition-colors hover:bg-soft-accent/60 sm:text-xs"
           aria-label={t("fsTopLang")}
         >
           {localeLabel}
@@ -112,7 +112,7 @@ export function TryChatFullscreenTopBar({
         <button
           type="button"
           onClick={onDemoAction}
-          className="flex size-8 items-center justify-center rounded-lg text-[#747686] transition-colors hover:bg-[#f6e3f3]/60"
+          className="flex size-8 items-center justify-center rounded-lg text-[#747686] transition-colors hover:bg-soft-accent/60"
           aria-label={t("fsTopTheme")}
         >
           <Moon className="size-4" aria-hidden />
@@ -120,7 +120,7 @@ export function TryChatFullscreenTopBar({
         <button
           type="button"
           onClick={onDemoAction}
-          className="inline-flex items-center gap-1 rounded-lg px-2 py-1 text-[10px] font-medium text-[#747686] transition-colors hover:bg-[#f6e3f3]/60 sm:text-xs"
+          className="inline-flex items-center gap-1 rounded-lg px-2 py-1 text-[10px] font-medium text-[#747686] transition-colors hover:bg-soft-accent/60 sm:text-xs"
         >
           <FileText className="size-3.5 shrink-0" aria-hidden />
           {t("fsTopVersion")}
@@ -129,7 +129,7 @@ export function TryChatFullscreenTopBar({
       <button
         type="button"
         onClick={onExit}
-        className="group inline-flex shrink-0 items-center gap-2 rounded-full border border-[rgb(196_197_215/0.35)] bg-gradient-to-br from-white to-[#f6e3f3]/90 px-3 py-2 text-xs font-semibold text-[#002c92] shadow-[0_2px_14px_rgba(0,44,146,0.12)] transition-all hover:scale-[1.02] hover:border-[#002c92]/40 hover:shadow-[0_8px_24px_rgba(0,44,146,0.18)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#002c92]/30"
+        className="group inline-flex shrink-0 items-center gap-2 rounded-full border border-[rgb(196_197_215/0.35)] bg-gradient-to-br from-white to-soft-accent/90 px-3 py-2 text-xs font-semibold text-[#002c92] shadow-[0_2px_14px_rgba(0,44,146,0.12)] transition-all hover:scale-[1.02] hover:border-[#002c92]/40 hover:shadow-[0_8px_24px_rgba(0,44,146,0.18)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#002c92]/30"
         aria-label={t("fullscreenExit")}
       >
         <Minimize2
@@ -196,7 +196,7 @@ export function TryChatFullscreenModeBar({
                   demoModeChipBase,
                   "min-w-0 flex-1 sm:min-w-[3.75rem]",
                   variant === "mic"
-                    ? "border border-dashed border-[#002c92]/22 bg-[#f6e3f3]/35 text-[#3d4a6b] opacity-[0.9] saturate-[0.94] hover:border-[#002c92]/35 hover:bg-[#f6e3f3]/55 hover:opacity-100 hover:saturate-100"
+                    ? "border border-dashed border-[#002c92]/22 bg-soft-accent/35 text-[#3d4a6b] opacity-[0.9] saturate-[0.94] hover:border-[#002c92]/35 hover:bg-soft-accent/55 hover:opacity-100 hover:saturate-100"
                     : i === 0
                       ? "bg-white/95 text-[#221823] shadow-sm ring-1 ring-[rgb(196_197_215/0.22)]"
                       : "text-[#5a5d6c] opacity-[0.88] saturate-[0.92] hover:bg-white/65 hover:opacity-100 hover:saturate-100",

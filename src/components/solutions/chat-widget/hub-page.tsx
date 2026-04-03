@@ -54,7 +54,7 @@ export async function ChatWidgetHubPage({ locale }: { locale: string }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
       <div className="min-h-screen">
-        <div className="container-wide section-padding border-b border-[rgb(196_197_215/0.12)] bg-[#fff7fa]/30 pb-4 pt-6 sm:pt-8">
+        <div className="container-wide section-padding border-b border-[rgb(196_197_215/0.12)] bg-page-tint/30 pb-4 pt-6 sm:pt-8">
           <nav
             aria-label="Breadcrumb"
             className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground"

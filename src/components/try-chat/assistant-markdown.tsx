@@ -52,7 +52,7 @@ const components: Components = {
     </blockquote>
   ),
   pre: ({ children }) => (
-    <pre className="my-2 overflow-x-auto rounded-lg bg-[#f6e3f3]/60 px-3 py-2 text-[13px] leading-relaxed [&_code]:bg-transparent [&_code]:p-0">
+    <pre className="my-2 overflow-x-auto rounded-lg bg-soft-accent/60 px-3 py-2 text-[13px] leading-relaxed [&_code]:bg-transparent [&_code]:p-0">
       {children}
     </pre>
   ),
@@ -75,7 +75,7 @@ const components: Components = {
     }
     return (
       <code
-        className="rounded bg-[#f6e3f3]/80 px-1 py-0.5 font-mono text-[13px] text-[#221823]"
+        className="rounded bg-soft-accent/80 px-1 py-0.5 font-mono text-[13px] text-[#221823]"
         {...props}
       >
         {children}

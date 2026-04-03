@@ -13,7 +13,7 @@ export function SolutionArticleShell({
   breadcrumbItems: SolutionBreadcrumbItem[];
 }) {
   return (
-    <article className="relative overflow-hidden border-b border-[rgb(196_197_215/0.2)] bg-gradient-to-b from-background via-[#fff7fa]/35 to-[#f6e3f3]/25">
+    <article className="relative overflow-hidden border-b border-[rgb(196_197_215/0.2)] bg-gradient-to-b from-background via-page-tint/35 to-soft-accent/25">
       <div className="container-wide section-padding py-10 sm:py-14">
         <nav
           aria-label="Breadcrumb"

@@ -37,7 +37,7 @@ export function ChatWidgetCustomersPage() {
       </header>
 
       <div className="relative mx-auto mt-10 max-w-3xl">
-        <div className="flex flex-col gap-6 rounded-3xl border border-[rgb(196_197_215/0.4)] bg-gradient-to-br from-[#fff7fa]/80 to-[#f6e3f3]/30 p-6 shadow-sm sm:p-8">
+        <div className="flex flex-col gap-6 rounded-3xl border border-[rgb(196_197_215/0.4)] bg-gradient-to-br from-page-tint/80 to-soft-accent/30 p-6 shadow-sm sm:p-8">
           <p className="leading-relaxed text-muted-foreground">
             {t("customers.introP1")}
           </p>
@@ -54,7 +54,7 @@ export function ChatWidgetCustomersPage() {
         transition={{ duration: 0.5 }}
         className="relative mx-auto mt-14 max-w-5xl"
       >
-        <div className="relative overflow-hidden rounded-[2rem] border border-[rgb(0_44_146/0.1)] bg-gradient-to-b from-white/90 to-[#f6e3f3]/25 p-6 shadow-[0_24px_48px_-28px_rgb(0_44_146/0.15)] sm:p-10">
+        <div className="relative overflow-hidden rounded-[2rem] border border-[rgb(0_44_146/0.1)] bg-gradient-to-b from-white/90 to-soft-accent/25 p-6 shadow-[0_24px_48px_-28px_rgb(0_44_146/0.15)] sm:p-10">
           <div className="mb-8 flex flex-wrap items-center gap-3">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-[#002c92]/15 bg-[#002c92]/[0.06] px-3 py-1 text-xs font-bold uppercase tracking-[0.08em] text-[#002c92]">
               <Sparkles className="size-3.5" aria-hidden />

@@ -24,7 +24,7 @@ export function MemoriesSection() {
     <>
       <section
         id="memories"
-        className="border-t border-[rgb(196_197_215/0.2)] bg-gradient-to-b from-background via-[#f0f9ff]/[0.12] to-[#fff7fa]/80 py-16 sm:py-24"
+        className="border-t border-[rgb(196_197_215/0.2)] bg-gradient-to-b from-background via-[#f0f9ff]/[0.12] to-page-tint/80 py-16 sm:py-24"
         aria-labelledby="memories-heading"
       >
         <div className="container-wide section-padding">
@@ -71,7 +71,7 @@ export function MemoriesSection() {
       </section>
 
       <section
-        className="border-t border-[rgb(196_197_215/0.15)] bg-[#fff7fa]/40 py-12 sm:py-16"
+        className="border-t border-[rgb(196_197_215/0.15)] bg-page-tint/40 py-12 sm:py-16"
         aria-label={t("ctaButton")}
       >
         <div className="container-wide section-padding">
