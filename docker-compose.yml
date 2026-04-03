@@ -1,12 +1,65 @@
 services:
+  # ─── PostgreSQL ─────────────────────────────────────────────────────────────
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-synaplan}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD is required}
+      POSTGRES_DB: ${POSTGRES_DB:-synaplan_web}
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER:-synaplan}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    # Do NOT expose the DB port in production; remove this in prod environments
+    # ports:
+    #   - "5432:5432"
+
+  # ─── Migration runner (runs once on startup) ─────────────────────────────────
+  migrate:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder
+    command: ["npx", "prisma", "migrate", "deploy"]
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:-synaplan}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB:-synaplan_web}
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # ─── Next.js web app ─────────────────────────────────────────────────────────
   web:
     build:
       context: .
       dockerfile: Dockerfile
+    restart: unless-stopped
     ports:
-      - "3000:3000"
+      - "${PORT:-3000}:3000"
     environment:
       NODE_ENV: production
-    # Optional: create `.env` next to this file with API keys for demo-chat routes
-    # env_file:
-    #   - .env
+      DATABASE_URL: postgresql://${POSTGRES_USER:-synaplan}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB:-synaplan_web}
+      ADMIN_SESSION_SECRET: ${ADMIN_SESSION_SECRET:?ADMIN_SESSION_SECRET is required (min 32 chars)}
+      SYNAPLAN_API_BASE_URL: ${SYNAPLAN_API_BASE_URL:-https://web.synaplan.com/api/v1}
+      SYNAPLAN_DEMO_BEARER_TOKEN: ${SYNAPLAN_DEMO_BEARER_TOKEN:-}
+      DEMO_CHAT_SESSION_SECRET: ${DEMO_CHAT_SESSION_SECRET:-}
+      GITHUB_TOKEN: ${GITHUB_TOKEN:-}
+      GITHUB_WEBHOOK_SECRET: ${GITHUB_WEBHOOK_SECRET:-}
+      CLOUDFLARE_ZARAZ_TOKEN: ${CLOUDFLARE_ZARAZ_TOKEN:-}
+      CLOUDFLARE_ZARAZ_SITE_ID: ${CLOUDFLARE_ZARAZ_SITE_ID:-}
+      NEXT_PUBLIC_CLOUDFLARE_RECAPTCHA_KEY: ${NEXT_PUBLIC_CLOUDFLARE_RECAPTCHA_KEY:-}
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3000/api/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+
+volumes:
+  db_data:

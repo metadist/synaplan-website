@@ -1,0 +1,49 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ─── Admin ────────────────────────────────────────────────────────────────────
+
+model AdminUser {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  name      String
+  password  String   // bcrypt hash
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  posts     Post[]
+}
+
+// ─── Blog ─────────────────────────────────────────────────────────────────────
+
+enum PostStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+model Post {
+  id          Int        @id @default(autoincrement())
+  slug        String     @unique
+  title       String
+  excerpt     String?
+  content     String     @db.Text
+  coverImage  String?
+  status      PostStatus @default(DRAFT)
+  locale      String     @default("de") // "de" | "en"
+  tags        String[]   @default([])
+  views       Int        @default(0)
+  publishedAt DateTime?
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  authorId    Int
+  author      AdminUser  @relation(fields: [authorId], references: [id])
+
+  @@index([status, locale])
+  @@index([slug])
+}

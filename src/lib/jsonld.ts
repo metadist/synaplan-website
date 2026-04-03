@@ -9,6 +9,12 @@
 
 export const SITE_URL = "https://synaplan.com";
 
+/** Build a canonical URL for a given locale + path. */
+export function canonicalUrl(locale: string, path: string): string {
+  const prefix = locale === "de" ? "/de" : "";
+  return `${SITE_URL}${prefix}${path}`;
+}
+
 // ─── Shared identity ────────────────────────────────────────────────────────
 
 export const PUBLISHER = {
