@@ -12,6 +12,7 @@
 
 # testing
 /coverage
+/graphic_ideas_material/
 
 # next.js
 /.next/

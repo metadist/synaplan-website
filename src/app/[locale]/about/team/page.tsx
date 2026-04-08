@@ -5,7 +5,7 @@ import { alternateLanguageUrls, canonicalUrl } from "@/lib/seo";
 import { buildBreadcrumbSchema, SITE_URL } from "@/lib/jsonld";
 import { LinkedInIcon } from "@/components/icons";
 import { LINKS } from "@/lib/constants";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, ArrowUpRight } from "lucide-react";
 
 export const dynamic = "force-static";
 
@@ -41,26 +41,26 @@ type TeamMember = {
   color: string;
 };
 
-const TEAM: TeamMember[] = [
-  {
-    name: "Daniel",
-    role: "CEO & Co-Founder",
-    location: "Düsseldorf / Zürich",
-    linkedin: "https://linkedin.com/in/",
-    initials: "D",
-    color: "bg-brand-600",
-  },
-  {
-    name: "Stefan",
-    role: "CTO & Co-Founder",
-    location: "Düsseldorf",
-    initials: "S",
-    color: "bg-emerald-600",
-  },
+type Advisor = {
+  name: string;
+  linkedin: string;
+  initials: string;
+  color: string;
+};
+
+type TechPartner = {
+  name: string;
+  url: string;
+  color: string;
+  textColor: string;
+};
+
+const TEAM_DE: TeamMember[] = [
   {
     name: "Ralf",
-    role: "Senior Engineer",
-    location: "Germany",
+    role: "CEO & Founder",
+    location: "Düsseldorf",
+    linkedin: "https://www.linkedin.com/in/orgaralf/",
     initials: "R",
     color: "bg-amber-600",
   },
@@ -70,13 +70,6 @@ const TEAM: TeamMember[] = [
     location: "Germany",
     initials: "Y",
     color: "bg-violet-600",
-  },
-  {
-    name: "Aurel",
-    role: "AI / ML Engineer",
-    location: "Germany",
-    initials: "A",
-    color: "bg-rose-600",
   },
   {
     name: "Ana",
@@ -99,7 +92,108 @@ const TEAM: TeamMember[] = [
     initials: "F",
     color: "bg-orange-600",
   },
+  {
+    name: "Stefan",
+    role: "UI Design",
+    location: "Düsseldorf",
+    initials: "S",
+    color: "bg-emerald-600",
+  },
 ];
+
+const TEAM_CH: TeamMember[] = [
+  {
+    name: "Daniel",
+    role: "CEO, Synaplan Schweiz GmbH",
+    location: "Basel, Switzerland",
+    initials: "D",
+    color: "bg-brand-600",
+  },
+  {
+    name: "Aurel",
+    role: "AI / ML Engineer",
+    location: "Basel, Switzerland",
+    initials: "A",
+    color: "bg-rose-600",
+  },
+];
+
+const ADVISORS: Advisor[] = [
+  {
+    name: "Claudia",
+    linkedin: "https://www.linkedin.com/in/claudianemat/",
+    initials: "C",
+    color: "bg-indigo-600",
+  },
+  {
+    name: "Oliver",
+    linkedin: "https://www.linkedin.com/in/oli-b-0057362a/",
+    initials: "O",
+    color: "bg-cyan-600",
+  },
+  {
+    name: "André",
+    linkedin: "https://www.linkedin.com/in/dr-andre-t-nemat/",
+    initials: "A",
+    color: "bg-fuchsia-600",
+  },
+];
+
+const TECH_PARTNERS: TechPartner[] = [
+  {
+    name: "IABG",
+    url: "https://www.iabg.de/",
+    color: "bg-brand-50 border-brand-200",
+    textColor: "text-brand-700",
+  },
+  {
+    name: "B1 Systems",
+    url: "https://www.b1-systems.de/",
+    color: "bg-emerald-50 border-emerald-200",
+    textColor: "text-emerald-700",
+  },
+  {
+    name: "Groq",
+    url: "https://groq.com/",
+    color: "bg-amber-50 border-amber-200",
+    textColor: "text-amber-700",
+  },
+  {
+    name: "Vultr",
+    url: "https://www.vultr.com/",
+    color: "bg-violet-50 border-violet-200",
+    textColor: "text-violet-700",
+  },
+];
+
+const ALL_MEMBERS = [...TEAM_DE, ...TEAM_CH];
+
+function MemberCard({ member }: { member: TeamMember }) {
+  return (
+    <div className="group flex flex-col items-center rounded-2xl border border-border bg-background p-6 text-center transition-shadow hover:shadow-md">
+      <span
+        className={`mb-4 flex size-16 items-center justify-center rounded-2xl text-xl font-bold text-white ${member.color}`}
+      >
+        {member.initials}
+      </span>
+      <strong className="font-semibold text-foreground">{member.name}</strong>
+      <p className="mt-1 text-sm text-muted-foreground">{member.role}</p>
+      <p className="mt-0.5 text-xs text-muted-foreground/70">{member.location}</p>
+      {member.linkedin && (
+        <a
+          href={member.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${member.name} on LinkedIn`}
+          className="mt-3 flex items-center gap-1 text-xs text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100 hover:text-foreground"
+        >
+          <LinkedInIcon className="size-3.5" />
+          LinkedIn
+        </a>
+      )}
+    </div>
+  );
+}
 
 export default async function TeamPage({
   params,
@@ -112,7 +206,7 @@ export default async function TeamPage({
   const isDE = locale === "de";
   const pageUrl = canonicalUrl(locale, PATH);
 
-  const personSchemas = TEAM.map((m) => ({
+  const personSchemas = ALL_MEMBERS.map((m) => ({
     "@type": "Person",
     name: m.name,
     jobTitle: m.role,
@@ -156,35 +250,77 @@ export default async function TeamPage({
           <p className="mt-5 text-lg leading-relaxed text-muted-foreground">{t("heroLead")}</p>
         </header>
 
-        {/* Team Grid */}
-        <section className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {TEAM.map((member) => (
-            <div
-              key={member.name + member.role}
-              className="group flex flex-col items-center rounded-2xl border border-border bg-background p-6 text-center transition-shadow hover:shadow-md"
-            >
-              <span
-                className={`mb-4 flex size-16 items-center justify-center rounded-2xl text-xl font-bold text-white ${member.color}`}
+        {/* metadist GmbH — Germany */}
+        <section className="mt-16">
+          <h2 className="mb-2 text-xl font-bold text-foreground">{t("deTitle")}</h2>
+          <p className="mb-6 text-sm text-muted-foreground">{t("deSub")}</p>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {TEAM_DE.map((member) => (
+              <MemberCard key={member.name + member.role} member={member} />
+            ))}
+          </div>
+        </section>
+
+        {/* Synaplan Schweiz GmbH — Switzerland */}
+        <section className="mt-12">
+          <h2 className="mb-2 text-xl font-bold text-foreground">{t("chTitle")}</h2>
+          <p className="mb-6 text-sm text-muted-foreground">{t("chSub")}</p>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {TEAM_CH.map((member) => (
+              <MemberCard key={member.name + member.role} member={member} />
+            ))}
+          </div>
+        </section>
+
+        {/* Board of Advisors */}
+        <section className="mt-16">
+          <h2 className="mb-2 text-xl font-bold text-foreground">{t("advisorsTitle")}</h2>
+          <p className="mb-6 text-sm text-muted-foreground">{t("advisorsSub")}</p>
+          <div className="grid gap-5 sm:grid-cols-3">
+            {ADVISORS.map((advisor) => (
+              <a
+                key={advisor.name}
+                href={advisor.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col items-center rounded-2xl border border-border bg-background p-6 text-center transition-shadow hover:shadow-md"
               >
-                {member.initials}
-              </span>
-              <strong className="font-semibold text-foreground">{member.name}</strong>
-              <p className="mt-1 text-sm text-muted-foreground">{member.role}</p>
-              <p className="mt-0.5 text-xs text-muted-foreground/70">{member.location}</p>
-              {member.linkedin && (
-                <a
-                  href={member.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${member.name} on LinkedIn`}
-                  className="mt-3 flex items-center gap-1 text-xs text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100 hover:text-foreground"
+                <span
+                  className={`mb-4 flex size-16 items-center justify-center rounded-2xl text-xl font-bold text-white ${advisor.color}`}
                 >
+                  {advisor.initials}
+                </span>
+                <strong className="font-semibold text-foreground">{advisor.name}</strong>
+                <span className="mt-3 flex items-center gap-1 text-xs text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100">
                   <LinkedInIcon className="size-3.5" />
                   LinkedIn
-                </a>
-              )}
-            </div>
-          ))}
+                </span>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        {/* Technology Partners */}
+        <section className="mt-16">
+          <h2 className="mb-2 text-xl font-bold text-foreground">{t("techPartnersTitle")}</h2>
+          <p className="mb-6 text-sm text-muted-foreground">{t("techPartnersSub")}</p>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {TECH_PARTNERS.map((partner) => (
+              <a
+                key={partner.name}
+                href={partner.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`group flex flex-col items-center rounded-2xl border p-6 text-center transition-shadow hover:shadow-md ${partner.color}`}
+              >
+                <strong className={`text-lg font-bold ${partner.textColor}`}>{partner.name}</strong>
+                <span className="mt-2 flex items-center gap-1 text-xs text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100">
+                  {t("visitWebsite")}
+                  <ArrowUpRight className="size-3" />
+                </span>
+              </a>
+            ))}
+          </div>
         </section>
 
         {/* Join CTA */}
