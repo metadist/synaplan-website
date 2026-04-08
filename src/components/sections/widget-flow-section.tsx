@@ -863,9 +863,9 @@ export function WidgetFlowSection() {
                     <p className="mt-1 max-w-[22rem] text-[10px] leading-relaxed text-muted-foreground sm:text-[11px]">
                       {t("previewFauxSub")}
                     </p>
-                    <h2 className="mt-3 text-xs font-semibold leading-snug tracking-tight text-foreground sm:text-sm">
+                    <p className="mt-3 text-xs font-semibold leading-snug tracking-tight text-foreground sm:text-sm" role="presentation">
                       {t("previewFauxHeadline")}
-                    </h2>
+                    </p>
                     <p className="mt-1.5 text-[10px] leading-relaxed text-muted-foreground sm:text-[11px]">
                       {t("previewFauxLead")}
                     </p>

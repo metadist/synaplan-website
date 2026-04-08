@@ -55,7 +55,7 @@ export function CTASection() {
                 <ArrowRight className="size-4" />
               </a>
               <a
-                href={LINKS.appointment}
+                href={LINKS.whatsappDE}
                 className={cn(
                   buttonVariants({ variant: "outline", size: "lg" }),
                   // outline defaults to bg-background — on gradient-brand that reads as white; force glass + dark text on light pill for contrast

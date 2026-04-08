@@ -23,7 +23,7 @@ export function SynaplanLogo({
   return (
     <img
       src="/synaplan_logo.svg"
-      alt=""
+      alt="Synaplan — Open-Source AI Platform"
       width={151}
       height={33}
       decoding="async"

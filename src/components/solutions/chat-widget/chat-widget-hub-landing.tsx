@@ -67,7 +67,7 @@ export function ChatWidgetHubLanding() {
                   <ArrowRight className="size-4" />
                 </a>
                 <a
-                  href={LINKS.appointment}
+                  href={LINKS.whatsappDE}
                   className="inline-flex h-12 items-center justify-center rounded-xl border-0 bg-soft-accent px-8 text-base font-bold text-[#002c92] transition-colors hover:bg-soft-accent-hover"
                 >
                   {tc("bookDemo")}
@@ -260,7 +260,7 @@ export function ChatWidgetHubLanding() {
                 <ArrowRight className="size-4" />
               </a>
               <a
-                href={LINKS.appointment}
+                href={LINKS.whatsappDE}
                 className="inline-flex h-11 flex-1 items-center justify-center rounded-xl bg-soft-accent px-6 text-sm font-bold text-[#002c92] hover:bg-soft-accent-hover sm:flex-initial"
               >
                 {tc("bookDemo")}
@@ -330,7 +330,7 @@ export function ChatWidgetHubLanding() {
                 <ArrowRight className="size-4" />
               </a>
               <a
-                href={LINKS.appointment}
+                href={LINKS.whatsappDE}
                 className="inline-flex h-11 items-center justify-center rounded-xl border-0 bg-soft-accent px-8 text-base font-semibold text-[#002c92] transition-colors hover:bg-soft-accent-hover"
               >
                 {tc("bookDemo")}

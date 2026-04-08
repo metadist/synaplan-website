@@ -342,7 +342,7 @@ export function PricingPage() {
                 ))}
               </ul>
               <a
-                href={LINKS.appointment}
+                href={LINKS.whatsappDE}
                 className="flex w-full items-center justify-center gap-1.5 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-[#001256] transition-opacity hover:opacity-90"
               >
                 {t("pathEnterpriseCta")}

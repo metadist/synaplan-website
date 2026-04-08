@@ -7,7 +7,8 @@ export const LINKS = {
   linkedin: "https://www.linkedin.com/showcase/synaplan/",
   instagram: "https://www.instagram.com/synaplan/",
   facebook: "https://www.facebook.com/people/Synaplan/61581362235207/",
-  appointment: "/appointment",
+  whatsappDE: "https://wa.me/4915116038214",
+  whatsappUS: "https://wa.me/16282253244",
 } as const;
 
 export const USE_CASES = [

@@ -152,7 +152,7 @@ export default async function FeaturesOverviewPage({
               {t("ctaPrimary")}
             </a>
             <a
-              href={LINKS.appointment}
+              href={LINKS.whatsappDE}
               className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl border border-border bg-background px-8 text-base font-medium text-foreground transition-colors hover:bg-accent sm:w-auto"
             >
               {t("ctaSecondary")}

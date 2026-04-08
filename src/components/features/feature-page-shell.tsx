@@ -72,7 +72,7 @@ export function FeaturePageShell({
               <ExternalLink className="size-4" />
             </a>
             <a
-              href={ctaSecondaryHref ?? LINKS.appointment}
+              href={ctaSecondaryHref ?? LINKS.whatsappDE}
               className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl border border-border bg-background px-8 text-base font-medium text-foreground transition-colors hover:bg-accent sm:w-auto"
             >
               {ctaSecondary}
@@ -117,7 +117,7 @@ export function FeaturePageShell({
               <ExternalLink className="size-4" />
             </a>
             <a
-              href={ctaSecondaryHref ?? LINKS.appointment}
+              href={ctaSecondaryHref ?? LINKS.whatsappDE}
               className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl border border-border bg-background px-8 text-base font-medium text-foreground transition-colors hover:bg-accent sm:w-auto"
             >
               {ctaSecondary}

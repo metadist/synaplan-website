@@ -7,7 +7,7 @@ import { Button, buttonVariants } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { LINKS } from "@/lib/constants";
 import { Menu, ChevronDown } from "lucide-react";
-import { GithubIcon } from "@/components/icons";
+import { GithubIcon, WhatsAppIcon } from "@/components/icons";
 import { SynaplanLogo } from "@/components/brand/synaplan-logo";
 import { LanguageSwitcher } from "./language-switcher";
 import { cn } from "@/lib/utils";
@@ -55,7 +55,7 @@ export function Header() {
             <SynaplanLogo variant="light" size="compact" className="max-w-full" />
           </Link>
 
-          <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 lg:flex">
+          <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 xl:flex">
             {/* Solutions dropdown */}
             <div className="group relative">
               <button className="flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
@@ -138,6 +138,7 @@ export function Header() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
+              title="Synaplan open-source repository on GitHub"
               className="hidden min-h-11 min-w-11 items-center justify-center rounded-lg px-2.5 py-2.5 text-muted-foreground transition-colors hover:text-foreground xl:flex"
             >
               <GithubIcon className="size-4.5" />
@@ -146,12 +147,35 @@ export function Header() {
             <LanguageSwitcher />
 
             <div className="hidden items-center gap-2 sm:flex">
-              <a
-                href={LINKS.appointment}
-                className="flex min-h-11 items-center rounded-lg px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-              >
-                {t("common.bookDemo")}
-              </a>
+              <div className="group relative">
+                <button className="flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
+                  <WhatsAppIcon className="size-4 text-[#25D366]" />
+                  WhatsApp
+                  <ChevronDown className="size-3.5 transition-transform group-hover:rotate-180" />
+                </button>
+                <div className="invisible absolute right-0 top-full pt-2 opacity-0 transition-all group-hover:visible group-hover:opacity-100">
+                  <div className="w-52 rounded-xl border border-border bg-popover p-2 shadow-lg">
+                    <a
+                      href={LINKS.whatsappDE}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                    >
+                      <span className="text-base leading-none">&#x1F1E9;&#x1F1EA;</span>
+                      +49 1511 6038214
+                    </a>
+                    <a
+                      href={LINKS.whatsappUS}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                    >
+                      <span className="text-base leading-none">&#x1F1FA;&#x1F1F8;</span>
+                      +1 (628) 225-3244
+                    </a>
+                  </div>
+                </div>
+              </div>
               <a
                 href={LINKS.web}
                 className={cn(
@@ -165,7 +189,7 @@ export function Header() {
 
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
               <SheetTrigger
-                className="lg:hidden"
+                className="xl:hidden"
                 render={<Button variant="ghost" size="icon" />}
               >
                 <Menu className="size-5" />
@@ -236,12 +260,26 @@ export function Header() {
                     >
                       {t("common.startForFree")}
                     </a>
-                    <a
-                      href={LINKS.appointment}
-                      className={cn(buttonVariants({ variant: "outline" }), "w-full")}
-                    >
-                      {t("common.bookDemo")}
-                    </a>
+                    <div className="flex gap-2">
+                      <a
+                        href={LINKS.whatsappDE}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={cn(buttonVariants({ variant: "outline" }), "flex-1 gap-2")}
+                      >
+                        <span className="text-base leading-none">&#x1F1E9;&#x1F1EA;</span>
+                        WhatsApp
+                      </a>
+                      <a
+                        href={LINKS.whatsappUS}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={cn(buttonVariants({ variant: "outline" }), "flex-1 gap-2")}
+                      >
+                        <span className="text-base leading-none">&#x1F1FA;&#x1F1F8;</span>
+                        WhatsApp
+                      </a>
+                    </div>
                   </div>
                 </div>
               </SheetContent>

@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "Synaplan — AI Platform | All Models. One Platform.",
+    "title": "Synaplan — Open-Source AI Platform | Switch Between AIs",
     "description": "Synaplan is the open-source AI platform for companies. Self-hosted, GDPR-compliant, multi-model routing (OpenAI, Claude, Gemini, Ollama). Embed a chat widget on any website in minutes.",
-    "homeTitle": "Synaplan — AI Platform | Open-Source · GDPR-Compliant · Self-Hosted",
-    "homeDescription": "The open-source AI platform for companies and developers. Connect OpenAI, Claude, Groq & local models. GDPR-compliant, self-hosted via Docker. Add an AI chatbot to your website in minutes."
+    "homeTitle": "Synaplan — Open-Source AI Platform | Multi-Model, GDPR-Compliant, Self-Hosted",
+    "homeDescription": "The open-source AI platform for companies and developers. Connect OpenAI, Claude, Groq & local models via multi-model routing. GDPR-compliant, self-hosted via Docker. AI chatbot widget for your website."
   },
   "nav": {
     "solutions": "Solutions",
@@ -25,7 +25,7 @@
   },
   "common": {
     "startForFree": "Start for free",
-    "bookDemo": "Book a demo",
+    "bookDemo": "Chat on WhatsApp",
     "learnMore": "Learn more",
     "viewOnGithub": "View on GitHub",
     "madeInGermany": "Made in Germany",
@@ -35,8 +35,8 @@
     "ctaTryChatTeaser": "Rather chat first? You can try the AI here without signing in."
   },
   "tryChat": {
-    "metaTitle": "Try Synaplan AI — no login",
-    "metaDescription": "Send a few messages to Synaplan’s AI on our website before opening the full app. Limited demo; continue on web.synaplan.com when you are ready.",
+    "metaTitle": "Try Synaplan AI Chat Free — No Login Required",
+    "metaDescription": "Chat with Synaplan’s AI right in your browser — no account, no install. Test multi-model responses, RAG, and more. Register free for full access.",
     "badge": "Live demo",
     "heroEyebrow": "Live preview",
     "heroDisplay": "Live demo",
@@ -287,9 +287,9 @@
   },
   "hero": {
     "badge": "Open Source AI Platform",
-    "title": "Take control of your AI.",
-    "titleHighlight": "All models.\nOne platform.",
-    "description": "Synaplan connects leading AI systems with professional management — free model choice, cost control, full transparency, and GDPR compliance.",
+    "title": "Switch between AIs.",
+    "titleHighlight": "Full control of AI chats & agents.",
+    "description": "One place for all your AI activity — and you’re the one in charge. Connect any leading model, see every token and cost, stay GDPR compliant.",
     "trustedBy": "Trusted by innovative companies",
     "scrollDown": "Scroll to the next section",
     "tryChatCta": "Try a quick AI chat on this page — no login"
@@ -312,7 +312,7 @@
   },
   "memoriesSection": {
     "badge": "Memories",
-    "title": "Memory that stays structured — and actually gets used",
+    "title": "AI Memories & RAG — structured and actually used",
     "subtitle": "Capture preferences, tone, and facts as categorized memories. The neural view shows how they connect to your categories so the model can draft replies, automate email, and sound like you.",
     "bullet1": "Answer recurring email faster with context that remembers your tone, signatures, and policies — without pasting the same instructions every time.",
     "bullet2": "Ground automation in what you approved: memories stay grouped by category, so routing and RAG stay explainable for teams and compliance.",
@@ -410,32 +410,32 @@
     "multiModel": {
       "label": "Multi-Model",
       "title": "Route to the best model",
-      "description": "Send prompts to OpenAI, Google, Meta, Grok and more. Switch freely, no vendor lock-in."
+      "description": "GPT, Claude, Gemini, Llama, and local <ollama>Ollama</ollama> models — routed automatically by cost, latency, and your own policies. No separate accounts, no copy-paste between tools."
     },
     "documents": {
       "label": "RAG",
       "title": "Your knowledge, AI-powered",
-      "description": "Upload documents and get context-aware answers. Your own AI knowledge base."
+      "description": "Upload PDFs, Word files, or crawl entire websites. <rag>RAG</rag> retrieves the right context so the model answers from your data, not generic training."
     },
     "audit": {
       "label": "Compliance",
       "title": "Every action logged",
-      "description": "Gapless audit trails for all AI activities. Meet GDPR and internal compliance requirements."
+      "description": "Every <prompt>prompt</prompt>, response, model, and <token>token</token> count is logged with timestamps. Export for compliance or feed into your existing SIEM."
     },
     "widget": {
       "label": "Widget",
       "title": "Live on your website in minutes",
-      "description": "Embed a smart chatbot via WordPress plugin or code snippet. Multilingual, customizable."
+      "description": "Embed a <knowledgeBase>knowledge-grounded</knowledgeBase> chatbot on any site via snippet or WordPress plugin. Multilingual, brand-customizable, <gdpr>GDPR</gdpr>-ready."
     },
     "dashboard": {
       "label": "Analytics",
       "title": "Full visibility",
-      "description": "Monitor AI and document usage with a real-time dashboard. Track costs, tokens, and performance."
+      "description": "Track <token>token</token> usage, model costs, and response times in real time. Spot anomalies before they become budget surprises."
     },
     "security": {
       "label": "Security",
       "title": "Your data, your rules",
-      "description": "Self-host on your own infrastructure or use our cloud. Full data sovereignty, always."
+      "description": "<selfHosted>Self-host</selfHosted> on your own infrastructure or use our EU cloud. Full data sovereignty, always."
     }
   },
   "useCases": {
@@ -443,14 +443,14 @@
     "subtitle": "See how organizations use Synaplan to deploy AI securely and efficiently."
   },
   "openSource": {
-    "title": "Built in the open",
+    "title": "Open-source AI — built in the open",
     "subtitle": "Synaplan is 100% open source. Inspect the code, contribute, or self-host — you're always in control.",
     "stars": "GitHub Stars",
     "forks": "Forks",
     "license": "License"
   },
   "pricingPage": {
-    "metaTitle": "Pricing — Synaplan",
+    "metaTitle": "Synaplan Pricing — Free Open Source, SaaS from €19.95, Enterprise",
     "metaDescription": "Three ways to use Synaplan: open-source self-hosting (free), managed SaaS platform from €19.95/month, or enterprise on-premise deployment with custom pricing.",
     "breadcrumbHome": "Home",
     "breadcrumbPricing": "Pricing",
@@ -955,7 +955,7 @@
   },
   "companiesPage": {
     "metaTitle": "Synaplan for Companies — AI under control",
-    "metaDescription": "All AI models your team needs in one GDPR-compliant platform. RAG knowledge base, audit logs, cost controls, and a chat widget — without extra IT overhead.",
+    "metaDescription": "Deploy AI safely across your organization with Synaplan. Multi-model routing, RAG knowledge base, audit logs, and an embeddable chat widget — GDPR-compliant and self-hosted.",
     "breadcrumbHome": "Home",
     "breadcrumbCompanies": "For Companies",
     "badge": "For Companies",
@@ -985,7 +985,7 @@
   },
   "developersPage": {
     "metaTitle": "Synaplan for Developers — open AI infrastructure",
-    "metaDescription": "Fully open-source AI platform. Self-host with Docker, connect via REST API, build custom plugins, and use Synaplan as the AI backbone for your own product.",
+    "metaDescription": "Build on Synaplan’s open-source AI infrastructure: REST API, Docker deployment, plugin system, multi-model gateway. Apache 2.0 licensed, self-hosted.",
     "breadcrumbHome": "Home",
     "breadcrumbDevelopers": "For Developers",
     "badge": "For Developers",
@@ -1056,7 +1056,7 @@
   },
   "featuresPage": {
     "metaTitle": "Features — Synaplan AI Platform",
-    "metaDescription": "Explore Synaplan features: multi-model AI routing (AI gateway), RAG memories, GDPR audit logs, and embeddable chat widgets — all in one open-source platform.",
+    "metaDescription": "Explore Synaplan’s AI platform features: multi-model routing, RAG knowledge base, audit logs, chat widget, real-time dashboard, and self-hosted deployment.",
     "breadcrumbHome": "Home",
     "breadcrumbFeatures": "Features",
     "badge": "Platform Features",
@@ -1161,8 +1161,8 @@
     "ctaSecondary": "Book a demo"
   },
   "aboutPage": {
-    "metaTitle": "About Synaplan — Built by metadist",
-    "metaDescription": "Synaplan is built by metadist data management GmbH, a German software company. Open-source AI platform for companies who want transparency, control, and data sovereignty.",
+    "metaTitle": "About Synaplan — Open-Source AI Platform from Germany",
+    "metaDescription": "Synaplan is an open-source AI platform built by metadist GmbH in Düsseldorf, Germany. Multi-model routing, RAG, audit logs, and a GDPR-compliant chat widget.",
     "breadcrumbHome": "Home",
     "breadcrumbAbout": "About",
     "badge": "About us",
@@ -1181,8 +1181,8 @@
     "ctaPartners": "Our partners"
   },
   "teamPage": {
-    "metaTitle": "Team — Synaplan",
-    "metaDescription": "Meet the team behind Synaplan — engineers, designers, and AI specialists building open-source AI infrastructure from Düsseldorf and Basel.",
+    "metaTitle": "Meet the Synaplan Team — AI Engineers in Germany & Switzerland",
+    "metaDescription": "The people behind Synaplan: AI engineers, designers, and open-source specialists from Düsseldorf and Basel building enterprise AI infrastructure.",
     "breadcrumbHome": "Home",
     "breadcrumbAbout": "About",
     "breadcrumbTeam": "Team",
@@ -1204,8 +1204,8 @@
     "ctaContact": "Get in touch"
   },
   "philosophyPage": {
-    "metaTitle": "Philosophy — Synaplan",
-    "metaDescription": "Why we build open-source AI: transparency, control, and making AI a tool that truly serves businesses — not the other way around.",
+    "metaTitle": "Our Philosophy — Why Open-Source AI Matters | Synaplan",
+    "metaDescription": "Why we build open-source AI: full transparency, data sovereignty, and making AI a tool that truly serves businesses — not the other way around.",
     "breadcrumbHome": "Home",
     "breadcrumbAbout": "About",
     "breadcrumbPhilosophy": "Philosophy",
@@ -1267,5 +1267,22 @@
     "viewAll": "View all releases",
     "release": "Release",
     "noReleases": "No releases available"
+  },
+  "glossary": {
+    "rag": "Retrieval-Augmented Generation — an AI technique that grounds model answers in your own documents and data, reducing hallucinations and keeping responses factual.",
+    "llm": "Large Language Model — a neural network trained on vast text data (e.g. GPT, Claude, Llama) that understands and generates human-like text.",
+    "inference": "The process of sending a prompt to an AI model and receiving a response. Faster inference means quicker answers.",
+    "embedding": "A numerical representation of text that captures its meaning. Used to find semantically similar content in a knowledge base.",
+    "vectorDb": "A database optimized for storing and searching embeddings. Enables fast similarity search across millions of documents.",
+    "gdpr": "General Data Protection Regulation — the EU privacy law that governs how personal data must be collected, processed, and stored.",
+    "sso": "Single Sign-On — lets users log in once and access multiple systems. OIDC (OpenID Connect) is the most common standard.",
+    "auditLog": "A chronological record of every AI interaction — who asked what, which model answered, how many tokens were used, and when.",
+    "multiModel": "The ability to route prompts to different AI providers (OpenAI, Anthropic, Google, Ollama) from a single interface based on cost, speed, or policy.",
+    "ollama": "An open-source tool for running AI models locally on your own hardware — no cloud, no data leaving your network.",
+    "fineTuning": "Training an existing AI model on your own data to specialize its responses for your domain or writing style.",
+    "prompt": "The input text you send to an AI model. Prompt engineering is the practice of crafting inputs to get better, more relevant outputs.",
+    "token": "The smallest unit of text an AI model processes — roughly 3/4 of a word. Pricing and usage limits are measured in tokens.",
+    "knowledgeBase": "A curated collection of documents, FAQs, and data that an AI system can search to provide accurate, grounded answers.",
+    "selfHosted": "Running software on your own servers instead of a third-party cloud. Gives you full control over data, uptime, and compliance."
   }
 }

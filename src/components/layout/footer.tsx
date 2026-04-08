@@ -96,6 +96,7 @@ export function Footer() {
               rel="noopener noreferrer"
               className="text-neutral-400 transition-colors hover:text-white"
               aria-label="GitHub"
+              title="Synaplan open-source repository on GitHub"
             >
               <GithubIcon className="size-4" />
             </a>
@@ -105,6 +106,7 @@ export function Footer() {
               rel="noopener noreferrer"
               className="text-neutral-400 transition-colors hover:text-white"
               aria-label="LinkedIn"
+              title="Synaplan on LinkedIn"
             >
               <LinkedInIcon className="size-4" />
             </a>

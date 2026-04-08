@@ -41,10 +41,10 @@ export function HeroSection() {
                 {t("hero.badge")}
               </Badge>
 
-              <h1 className="max-w-3xl text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-[4.25rem] lg:leading-[1.1] lg:tracking-[-0.045em] [word-spacing:0.04em]">
+              <h1 className="max-w-3xl text-[1.8rem] font-extrabold leading-[1.15] tracking-tight text-foreground sm:text-[2.4rem] md:text-[3rem] lg:text-[3.4rem] lg:leading-[1.1] lg:tracking-[-0.045em] [word-spacing:0.04em]">
                 {t("hero.title")}
                 <br />
-                <span className="mt-3 block whitespace-pre-line text-[#002c92] sm:mt-4 lg:mt-5 lg:leading-[1.18] lg:[word-spacing:0.06em]">
+                <span className="mt-3 block text-[0.875em] text-[#002c92] sm:mt-4 lg:mt-5 lg:leading-[1.18] lg:[word-spacing:0.06em]">
                   {t("hero.titleHighlight")}
                 </span>
               </h1>
@@ -65,7 +65,7 @@ export function HeroSection() {
                   <ArrowRight className="size-4" />
                 </a>
                 <a
-                  href={LINKS.appointment}
+                  href={LINKS.whatsappDE}
                   className={cn(
                     buttonVariants({ variant: "outline", size: "lg" }),
                     "rounded-xl border-0 bg-soft-accent px-8 text-base font-bold text-[#002c92] hover:bg-soft-accent-hover",

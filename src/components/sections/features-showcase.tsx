@@ -1,7 +1,9 @@
 "use client";
 
+import { type ReactNode } from "react";
 import { useTranslations } from "next-intl";
 import { Badge } from "@/components/ui/badge";
+import { GlossaryTerm } from "@/components/ui/glossary-term";
 import {
   Shuffle,
   FileText,
@@ -30,7 +32,18 @@ const features = [
 
 export function FeaturesShowcase() {
   const t = useTranslations("features");
+  const tg = useTranslations("glossary");
   const { allowHeavyEffects } = useMotionPerformance();
+
+  const glossaryRich = {
+    rag: (c: ReactNode) => <GlossaryTerm definition={tg("rag")}>{c}</GlossaryTerm>,
+    ollama: (c: ReactNode) => <GlossaryTerm definition={tg("ollama")}>{c}</GlossaryTerm>,
+    prompt: (c: ReactNode) => <GlossaryTerm definition={tg("prompt")}>{c}</GlossaryTerm>,
+    token: (c: ReactNode) => <GlossaryTerm definition={tg("token")}>{c}</GlossaryTerm>,
+    gdpr: (c: ReactNode) => <GlossaryTerm definition={tg("gdpr")}>{c}</GlossaryTerm>,
+    knowledgeBase: (c: ReactNode) => <GlossaryTerm definition={tg("knowledgeBase")}>{c}</GlossaryTerm>,
+    selfHosted: (c: ReactNode) => <GlossaryTerm definition={tg("selfHosted")}>{c}</GlossaryTerm>,
+  };
 
   return (
     <section className="surface-rose relative py-20 sm:py-28">
@@ -81,7 +94,7 @@ export function FeaturesShowcase() {
                     {t(`${feat.key}.title`)}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    {t(`${feat.key}.description`)}
+                    {t.rich(`${feat.key}.description`, glossaryRich)}
                   </p>
                 </div>
 

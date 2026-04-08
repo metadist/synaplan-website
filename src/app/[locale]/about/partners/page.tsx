@@ -166,7 +166,7 @@ export default async function PartnersPage({
           <p className="mt-3 text-base text-muted-foreground">{t("ctaBody")}</p>
           <div className="mt-6">
             <a
-              href={LINKS.appointment}
+              href={LINKS.whatsappDE}
               className="btn-figma-primary inline-flex h-12 items-center justify-center gap-2 rounded-xl border-0 px-8 text-base font-medium text-white"
             >
               {t("ctaPrimary")}

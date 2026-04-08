@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "Synaplan — KI-Plattform | Alle Modelle. Eine Plattform.",
+    "title": "Synaplan — KI-Plattform | Wechsle zwischen KIs.",
     "description": "Synaplan ist die Open-Source-KI-Plattform für Unternehmen. Self-hosted, DSGVO-konform, Multi-Model-Routing (OpenAI, Claude, Gemini, Ollama). KI-Chatbot für Ihre Website in Minuten einrichten.",
-    "homeTitle": "Synaplan — KI-Plattform | Open-Source · DSGVO-konform · Self-Hosted",
-    "homeDescription": "Die Open-Source-KI-Plattform für Unternehmen und Entwickler. KI-Chatbot, RAG-Dokumentensuche und Multi-Model-Routing — DSGVO-konform, selbst gehostet via Docker. Jetzt kostenlos starten."
+    "homeTitle": "Synaplan — Open-Source KI-Plattform | Multi-Model, DSGVO-konform, Self-Hosted",
+    "homeDescription": "Die Open-Source-KI-Plattform für Unternehmen und Entwickler. OpenAI, Claude, Groq & lokale Modelle per Multi-Model-Routing verbinden. DSGVO-konform, self-hosted via Docker. KI-Chatbot-Widget für Ihre Website."
   },
   "nav": {
     "solutions": "Lösungen",
@@ -25,7 +25,7 @@
   },
   "common": {
     "startForFree": "Kostenlos starten",
-    "bookDemo": "Demo buchen",
+    "bookDemo": "Chat via WhatsApp",
     "learnMore": "Mehr erfahren",
     "viewOnGithub": "Auf GitHub ansehen",
     "madeInGermany": "Made in Germany",
@@ -35,8 +35,8 @@
     "ctaTryChatTeaser": "Lieber erst chatten? Hier kannst du die KI ohne Anmeldung ausprobieren."
   },
   "tryChat": {
-    "metaTitle": "Synaplan KI testen — ohne Login",
-    "metaDescription": "Schick ein paar Nachrichten an Synaplans KI direkt auf unserer Website, bevor du die volle App öffnest. Kurzes Demo-Limit; danach geht es auf web.synaplan.com weiter.",
+    "metaTitle": "Synaplan KI-Chat kostenlos testen — Ohne Anmeldung",
+    "metaDescription": "Synaplan-KI direkt im Browser testen — kein Konto, keine Installation. Multi-Model-Antworten, RAG und mehr ausprobieren. Kostenlos registrieren für vollen Zugang.",
     "badge": "Live-Demo",
     "heroEyebrow": "Live-Vorschau",
     "heroDisplay": "Live-Demo",
@@ -287,9 +287,9 @@
   },
   "hero": {
     "badge": "Open-Source KI-Plattform",
-    "title": "KI unter Kontrolle.",
-    "titleHighlight": "Alle Modelle.\nEine Plattform.",
-    "description": "Synaplan verbindet führende KI-Systeme mit professionellem Management — freie Modellwahl, Kostenkontrolle, volle Transparenz und DSGVO-Konformität.",
+    "title": "Wechsle zwischen KIs.",
+    "titleHighlight": "Volle Kontrolle über KI-Chats & Agenten.",
+    "description": "Ein Ort für alle deine KI-Aktivitäten — und du behältst die Kontrolle. Jedes führende Modell anbinden, jeden Token und jede Kostenstelle sehen, DSGVO-konform bleiben.",
     "trustedBy": "Vertraut von innovativen Unternehmen",
     "scrollDown": "Zur nächsten Sektion scrollen",
     "tryChatCta": "Kurz den KI-Chat auf dieser Seite ausprobieren — ohne Login"
@@ -312,7 +312,7 @@
   },
   "memoriesSection": {
     "badge": "Memories",
-    "title": "Strukturiertes Gedächtnis — das die KI wirklich nutzt",
+    "title": "KI-Memories & RAG — strukturiert und tatsächlich genutzt",
     "subtitle": "Erfassen Sie Präferenzen, Tonalität und Fakten als kategorisierte Memories. Die neuronale Ansicht zeigt, wie sie zu Ihren Kategorien gehören — für Entwürfe, E-Mail-Automatisierung und einen Assistenten, der Sie besser kennt.",
     "bullet1": "Beantworten Sie wiederkehrende E-Mails schneller mit Kontext zu Tonfall, Signatur und Richtlinien — ohne jedes Mal dieselben Anweisungen einzufügen.",
     "bullet2": "Automatisierung auf dem, was Sie freigegeben haben: Memories bleiben nach Kategorie gruppiert — Routing und RAG bleiben für Teams und Compliance nachvollziehbar.",
@@ -410,32 +410,32 @@
     "multiModel": {
       "label": "Multi-Model",
       "title": "Zum besten Modell routen",
-      "description": "Prompts an OpenAI, Google, Meta, Grok und mehr senden. Frei wechseln, kein Vendor Lock-in."
+      "description": "GPT, Claude, Gemini, Llama und lokale <ollama>Ollama</ollama>-Modelle — automatisch geroutet nach Kosten, Latenz und Ihren eigenen Richtlinien. Keine separaten Konten, kein Copy-Paste."
     },
     "documents": {
       "label": "RAG",
       "title": "Ihr Wissen, KI-gestützt",
-      "description": "Dokumente hochladen und kontextbezogene Antworten erhalten. Ihre eigene KI-Wissensbasis."
+      "description": "PDFs, Word-Dateien hochladen oder ganze Websites crawlen. <rag>RAG</rag> ruft den passenden Kontext ab, damit das Modell aus Ihren Daten antwortet, nicht aus generischem Training."
     },
     "audit": {
       "label": "Compliance",
       "title": "Jede Aktion protokolliert",
-      "description": "Lückenlose Audit-Trails für alle KI-Aktivitäten. DSGVO und interne Compliance erfüllen."
+      "description": "Jeder <prompt>Prompt</prompt>, jede Antwort, jedes Modell und jeder <token>Token</token>-Verbrauch wird mit Zeitstempel protokolliert. Exportieren für Compliance oder in Ihr SIEM einspeisen."
     },
     "widget": {
       "label": "Widget",
       "title": "In Minuten live auf Ihrer Website",
-      "description": "Einen smarten Chatbot per WordPress-Plugin oder Code-Snippet einbinden. Mehrsprachig, anpassbar."
+      "description": "Einen <knowledgeBase>wissensbasierten</knowledgeBase> Chatbot per Snippet oder WordPress-Plugin einbinden. Mehrsprachig, markenkonform, <gdpr>DSGVO</gdpr>-konform."
     },
     "dashboard": {
       "label": "Analytics",
       "title": "Volle Übersicht",
-      "description": "KI- und Dokumentennutzung mit einem Echtzeit-Dashboard überwachen. Kosten, Tokens und Performance tracken."
+      "description": "<token>Token</token>-Verbrauch, Modellkosten und Antwortzeiten in Echtzeit verfolgen. Anomalien erkennen, bevor sie zu Budgetüberraschungen werden."
     },
     "security": {
       "label": "Sicherheit",
       "title": "Ihre Daten, Ihre Regeln",
-      "description": "Selbst hosten oder unsere Cloud nutzen. Volle Datensouveränität, immer."
+      "description": "<selfHosted>Selbst hosten</selfHosted> auf eigener Infrastruktur oder unsere EU-Cloud nutzen. Volle Datensouveränität, immer."
     }
   },
   "useCases": {
@@ -443,14 +443,14 @@
     "subtitle": "Sehen Sie, wie Organisationen Synaplan nutzen, um KI sicher und effizient einzusetzen."
   },
   "openSource": {
-    "title": "Offen entwickelt",
+    "title": "Open-Source-KI — offen entwickelt",
     "subtitle": "Synaplan ist 100% Open Source. Code einsehen, beitragen oder selbst hosten — Sie behalten immer die Kontrolle.",
     "stars": "GitHub Stars",
     "forks": "Forks",
     "license": "Lizenz"
   },
   "pricingPage": {
-    "metaTitle": "Preise — Synaplan",
+    "metaTitle": "Synaplan Preise — Kostenlos Open Source, SaaS ab 19,95 €, Enterprise",
     "metaDescription": "Drei Wege, Synaplan zu nutzen: Open Source (kostenlos, selbst gehostet), verwaltete SaaS-Plattform ab €19,95/Monat oder Enterprise On-Premise-Deployment.",
     "breadcrumbHome": "Startseite",
     "breadcrumbPricing": "Preise",
@@ -955,7 +955,7 @@
   },
   "companiesPage": {
     "metaTitle": "Synaplan für Unternehmen — KI unter Kontrolle",
-    "metaDescription": "Alle KI-Modelle Ihres Teams auf einer DSGVO-konformen Plattform. Wissensdatenbank, Audit-Protokolle, Kostenkontrolle und Chat-Widget — ohne zusätzlichen IT-Aufwand.",
+    "metaDescription": "KI sicher im Unternehmen einsetzen mit Synaplan. Multi-Model-Routing, RAG-Wissensdatenbank, Audit-Logs und ein einbettbares Chat-Widget — DSGVO-konform und self-hosted.",
     "breadcrumbHome": "Startseite",
     "breadcrumbCompanies": "Für Unternehmen",
     "badge": "Für Unternehmen",
@@ -985,7 +985,7 @@
   },
   "developersPage": {
     "metaTitle": "Synaplan für Entwickler — offene KI-Infrastruktur",
-    "metaDescription": "Vollständig quelloffene KI-Plattform. Self-Hosting mit Docker, REST-API, eigene Plugins und Synaplan als KI-Backbone für Ihr Produkt — Apache 2.0, kein Lock-in.",
+    "metaDescription": "Auf Synaplans Open-Source-KI-Infrastruktur aufbauen: REST-API, Docker-Deployment, Plugin-System, Multi-Model-Gateway. Apache-2.0-Lizenz, self-hosted.",
     "breadcrumbHome": "Startseite",
     "breadcrumbDevelopers": "Für Entwickler",
     "badge": "Für Entwickler",
@@ -1056,7 +1056,7 @@
   },
   "featuresPage": {
     "metaTitle": "Funktionen — Synaplan KI-Plattform",
-    "metaDescription": "Alle Synaplan-Funktionen: Multi-Model-KI-Routing (AI Gateway), RAG-Memories, DSGVO-Audit-Logs und einbettbares Chat-Widget — in einer Open-Source-Plattform.",
+    "metaDescription": "Funktionen der Synaplan KI-Plattform entdecken: Multi-Model-Routing, RAG-Wissensdatenbank, Audit-Logs, Chat-Widget, Echtzeit-Dashboard und Self-Hosted-Deployment.",
     "breadcrumbHome": "Startseite",
     "breadcrumbFeatures": "Funktionen",
     "badge": "Plattform-Funktionen",
@@ -1161,8 +1161,8 @@
     "ctaSecondary": "Demo buchen"
   },
   "aboutPage": {
-    "metaTitle": "Über Synaplan — Entwickelt von metadist",
-    "metaDescription": "Synaplan wird von metadist data management GmbH entwickelt — einem deutschen Software-Unternehmen, das transparente, datenschutzkonforme KI-Tools für Unternehmen und Entwickler baut.",
+    "metaTitle": "Über Synaplan — Open-Source KI-Plattform aus Deutschland",
+    "metaDescription": "Synaplan ist eine Open-Source-KI-Plattform der metadist GmbH aus Düsseldorf. Multi-Model-Routing, RAG, Audit-Logs und ein DSGVO-konformes Chat-Widget.",
     "breadcrumbHome": "Startseite",
     "breadcrumbAbout": "Über uns",
     "badge": "Über uns",
@@ -1181,8 +1181,8 @@
     "ctaPartners": "Unsere Partner"
   },
   "teamPage": {
-    "metaTitle": "Team — Synaplan",
-    "metaDescription": "Das Team hinter Synaplan — Ingenieure, Designer und KI-Spezialisten aus Düsseldorf und Basel, die Open-Source-KI-Infrastruktur für Unternehmen entwickeln.",
+    "metaTitle": "Das Synaplan-Team — KI-Ingenieure in Deutschland & der Schweiz",
+    "metaDescription": "Die Menschen hinter Synaplan: KI-Ingenieure, Designer und Open-Source-Spezialisten aus Düsseldorf und Basel entwickeln Enterprise-KI-Infrastruktur.",
     "breadcrumbHome": "Startseite",
     "breadcrumbAbout": "Über uns",
     "breadcrumbTeam": "Team",
@@ -1204,8 +1204,8 @@
     "ctaContact": "Kontakt aufnehmen"
   },
   "philosophyPage": {
-    "metaTitle": "Philosophie — Synaplan",
-    "metaDescription": "Warum wir Open-Source-KI bauen: Transparenz, Kontrolle und KI als Werkzeug, das Unternehmen wirklich dient — nicht umgekehrt.",
+    "metaTitle": "Unsere Philosophie — Warum Open-Source-KI wichtig ist | Synaplan",
+    "metaDescription": "Warum wir Open-Source-KI bauen: volle Transparenz, Datensouveränität und KI als Werkzeug, das Unternehmen wirklich dient — nicht umgekehrt.",
     "breadcrumbHome": "Startseite",
     "breadcrumbAbout": "Über uns",
     "breadcrumbPhilosophy": "Philosophie",
@@ -1267,5 +1267,22 @@
     "viewAll": "Alle Releases ansehen",
     "release": "Release",
     "noReleases": "Keine Releases verfügbar"
+  },
+  "glossary": {
+    "rag": "Retrieval-Augmented Generation — eine KI-Technik, die Modellantworten auf Ihren eigenen Dokumenten und Daten basieren lässt, um Halluzinationen zu reduzieren und Antworten faktisch korrekt zu halten.",
+    "llm": "Large Language Model — ein neuronales Netz, das auf riesigen Textmengen trainiert wurde (z. B. GPT, Claude, Llama) und menschenähnlichen Text versteht und generiert.",
+    "inference": "Der Vorgang, einen Prompt an ein KI-Modell zu senden und eine Antwort zu erhalten. Schnellere Inferenz bedeutet kürzere Antwortzeiten.",
+    "embedding": "Eine numerische Darstellung von Text, die dessen Bedeutung erfasst. Wird verwendet, um semantisch ähnliche Inhalte in einer Wissensdatenbank zu finden.",
+    "vectorDb": "Eine Datenbank, die für das Speichern und Durchsuchen von Embeddings optimiert ist. Ermöglicht schnelle Ähnlichkeitssuche über Millionen von Dokumenten.",
+    "gdpr": "Datenschutz-Grundverordnung (DSGVO) — das EU-Datenschutzgesetz, das regelt, wie personenbezogene Daten erhoben, verarbeitet und gespeichert werden müssen.",
+    "sso": "Single Sign-On — ermöglicht es Nutzern, sich einmal anzumelden und auf mehrere Systeme zuzugreifen. OIDC (OpenID Connect) ist der verbreitetste Standard.",
+    "auditLog": "Eine chronologische Aufzeichnung jeder KI-Interaktion — wer was gefragt hat, welches Modell geantwortet hat, wie viele Tokens verbraucht wurden und wann.",
+    "multiModel": "Die Möglichkeit, Prompts über eine einzige Oberfläche an verschiedene KI-Anbieter (OpenAI, Anthropic, Google, Ollama) zu senden — basierend auf Kosten, Geschwindigkeit oder Richtlinien.",
+    "ollama": "Ein Open-Source-Tool zum lokalen Betrieb von KI-Modellen auf eigener Hardware — ohne Cloud, ohne dass Daten Ihr Netzwerk verlassen.",
+    "fineTuning": "Das Nachtrainieren eines bestehenden KI-Modells mit eigenen Daten, um seine Antworten für Ihre Branche oder Ihren Schreibstil zu spezialisieren.",
+    "prompt": "Der Eingabetext, den Sie an ein KI-Modell senden. Prompt-Engineering ist die Praxis, Eingaben so zu formulieren, dass bessere und relevantere Ergebnisse erzielt werden.",
+    "token": "Die kleinste Texteinheit, die ein KI-Modell verarbeitet — ungefähr 3/4 eines Wortes. Preise und Nutzungslimits werden in Tokens gemessen.",
+    "knowledgeBase": "Eine kuratierte Sammlung von Dokumenten, FAQs und Daten, die ein KI-System durchsuchen kann, um präzise und fundierte Antworten zu liefern.",
+    "selfHosted": "Software auf eigenen Servern betreiben statt in einer fremden Cloud. Gibt Ihnen volle Kontrolle über Daten, Verfügbarkeit und Compliance."
   }
 }

@@ -52,6 +52,9 @@ const PATHS: PathConfig[] = [
   // ── Utility ───────────────────────────────────────────────────────────────
   { path: "/try-chat",                          priority: 0.65, changeFrequency: "monthly" },
 
+  // ── Blog ──────────────────────────────────────────────────────────────────
+  { path: "/blog",                              priority: 0.60, changeFrequency: "weekly" },
+
   // ── Legal — low priority but must be indexed ──────────────────────────────
   { path: "/imprint",                           priority: 0.30, changeFrequency: "yearly" },
   { path: "/privacy-policy",                    priority: 0.30, changeFrequency: "yearly" },

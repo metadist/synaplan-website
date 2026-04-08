@@ -59,7 +59,7 @@ export async function CompaniesHubPage({ locale }: { locale: string }) {
             <ArrowRight className="size-4" />
           </a>
           <a
-            href={LINKS.appointment}
+            href={LINKS.whatsappDE}
             className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl border border-[#002c92]/25 bg-soft-accent px-8 text-base font-semibold text-[#002c92] transition-colors hover:bg-soft-accent-hover sm:w-auto"
           >
             {t("ctaSecondary")}
@@ -136,7 +136,7 @@ export async function CompaniesHubPage({ locale }: { locale: string }) {
             <ArrowRight className="size-4" />
           </a>
           <a
-            href={LINKS.appointment}
+            href={LINKS.whatsappDE}
             className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl border border-white/30 px-8 text-base font-medium text-white transition-colors hover:bg-white/10 sm:w-auto"
           >
             {tc("bookDemo")}

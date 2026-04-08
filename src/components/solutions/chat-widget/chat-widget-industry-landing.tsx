@@ -61,7 +61,7 @@ export function ChatWidgetIndustryLanding({ slug }: { slug: IndustrySlug }) {
                   <ArrowRight className="size-4" />
                 </a>
                 <a
-                  href={LINKS.appointment}
+                  href={LINKS.whatsappDE}
                   className="inline-flex h-12 items-center justify-center rounded-xl border-0 bg-soft-accent px-8 text-base font-bold text-[#002c92] transition-colors hover:bg-soft-accent-hover"
                 >
                   {tc("bookDemo")}
