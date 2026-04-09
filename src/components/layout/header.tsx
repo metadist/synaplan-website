@@ -29,7 +29,7 @@ export function Header() {
     { href: "/features/multi-model", label: t("nav.multiModel") },
     { href: "/features/audit-logs", label: t("nav.auditLogs") },
     { href: "/features/memories", label: t("nav.memories") },
-    { href: "/features", label: t("nav.features") },
+    { href: "/features", label: t("nav.allFeatures") },
   ];
 
   const aboutItems = [
@@ -139,9 +139,9 @@ export function Header() {
               rel="noopener noreferrer"
               aria-label="GitHub"
               title="Synaplan open-source repository on GitHub"
-              className="hidden min-h-11 min-w-11 items-center justify-center rounded-lg px-2.5 py-2.5 text-muted-foreground transition-colors hover:text-foreground xl:flex"
+              className="ml-[10px] hidden min-h-11 min-w-11 items-center justify-center rounded-lg px-2.5 py-2.5 text-muted-foreground transition-colors hover:text-foreground xl:flex"
             >
-              <GithubIcon className="size-4.5" />
+              <GithubIcon className="size-[27px]" />
             </a>
 
             <LanguageSwitcher />

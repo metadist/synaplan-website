@@ -8,6 +8,7 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { MotionPerformanceProvider } from "@/contexts/motion-performance-context";
 import { buildOrganizationSchema, buildWebSiteSchema } from "@/lib/jsonld";
+import { SynaplanWidget } from "@/components/layout/synaplan-widget";
 import "../globals.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -108,6 +109,7 @@ export default async function LocaleLayout({
             <Footer />
           </MotionPerformanceProvider>
         </NextIntlClientProvider>
+        <SynaplanWidget />
       </body>
     </html>
   );

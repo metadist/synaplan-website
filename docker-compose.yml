@@ -36,6 +36,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        SYNAPLAN_WIDGET_ID: ${SYNAPLAN_WIDGET_ID:-}
+        SYNAPLAN_WIDGET_API_URL: ${SYNAPLAN_WIDGET_API_URL:-}
+        SYNAPLAN_WIDGET_CONFIG: ${SYNAPLAN_WIDGET_CONFIG:-}
     restart: unless-stopped
     ports:
       - "${PORT:-3000}:3000"
@@ -51,6 +55,9 @@ services:
       CLOUDFLARE_ZARAZ_TOKEN: ${CLOUDFLARE_ZARAZ_TOKEN:-}
       CLOUDFLARE_ZARAZ_SITE_ID: ${CLOUDFLARE_ZARAZ_SITE_ID:-}
       NEXT_PUBLIC_CLOUDFLARE_RECAPTCHA_KEY: ${NEXT_PUBLIC_CLOUDFLARE_RECAPTCHA_KEY:-}
+      SYNAPLAN_WIDGET_ID: ${SYNAPLAN_WIDGET_ID:-}
+      SYNAPLAN_WIDGET_API_URL: ${SYNAPLAN_WIDGET_API_URL:-https://web.synaplan.com}
+      SYNAPLAN_WIDGET_CONFIG: ${SYNAPLAN_WIDGET_CONFIG:-}
     depends_on:
       migrate:
         condition: service_completed_successfully

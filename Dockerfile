@@ -20,6 +20,15 @@ COPY . .
 ENV DATABASE_URL="postgresql://dummy:dummy@localhost:5432/dummy"
 RUN npx prisma generate
 
+# Optional: Synaplan chat widget config baked into static pages at build time.
+# Pass via docker compose build args; pages also pick up runtime env via ISR.
+ARG SYNAPLAN_WIDGET_ID
+ARG SYNAPLAN_WIDGET_API_URL
+ARG SYNAPLAN_WIDGET_CONFIG
+ENV SYNAPLAN_WIDGET_ID=${SYNAPLAN_WIDGET_ID}
+ENV SYNAPLAN_WIDGET_API_URL=${SYNAPLAN_WIDGET_API_URL}
+ENV SYNAPLAN_WIDGET_CONFIG=${SYNAPLAN_WIDGET_CONFIG}
+
 # Build Next.js (output: standalone)
 RUN npm run build
 
@@ -38,7 +47,6 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 # Prisma schema + migrations (needed for migrate deploy at runtime)
 COPY --from=builder --chown=nextjs:nodejs /app/prisma ./prisma
-COPY --from=builder --chown=nextjs:nodejs /app/node_modules/.prisma ./node_modules/.prisma
 COPY --from=builder --chown=nextjs:nodejs /app/src/generated ./src/generated
 
 USER nextjs

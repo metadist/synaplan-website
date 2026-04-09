@@ -12,6 +12,18 @@ const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
  *   ✓ "Mitigate DOM-based XSS with Trusted Types" (partial)
  */
 
+// Derive the widget origin (e.g. "https://web.synaplan.com") for CSP when configured
+const widgetApiUrl = process.env.SYNAPLAN_WIDGET_API_URL || "https://web.synaplan.com";
+const widgetOrigin = process.env.SYNAPLAN_WIDGET_ID
+  ? (() => {
+      try {
+        return new URL(widgetApiUrl).origin;
+      } catch {
+        return widgetApiUrl.replace(/\/+$/, "");
+      }
+    })()
+  : null;
+
 // Content-Security-Policy
 // Next.js requires 'unsafe-inline' for its own inline scripts/styles and
 // 'unsafe-eval' for development hot-reload. Both are stripped in production
@@ -20,15 +32,15 @@ const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 const csp = [
   "default-src 'self'",
   // Next.js inlines critical scripts — unsafe-inline is unavoidable without nonces
-  "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+  `script-src 'self' 'unsafe-inline' 'unsafe-eval'${widgetOrigin ? ` ${widgetOrigin}` : ""}`,
   // Tailwind/Next.js inlines styles; Google Fonts loaded via next/font (self-hosted)
-  "style-src 'self' 'unsafe-inline'",
+  `style-src 'self' 'unsafe-inline'${widgetOrigin ? ` ${widgetOrigin}` : ""}`,
   // next/font self-hosts fonts — no external font CDN needed
   "font-src 'self' data:",
   // Images: self + data URIs for inline SVG + blob for canvas exports
   "img-src 'self' data: blob: https:",
-  // API calls: GitHub for repo stats
-  "connect-src 'self' https://api.github.com https://synaplan.com",
+  // API calls: GitHub for repo stats; widget API when enabled
+  `connect-src 'self' https://api.github.com https://synaplan.com${widgetOrigin ? ` ${widgetOrigin}` : ""}`,
   // No iframes, plugins, or base tag overrides
   "frame-src 'none'",
   "object-src 'none'",
