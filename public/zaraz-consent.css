@@ -1,0 +1,346 @@
+/*
+ * Synaplan — Cloudflare Zaraz Consent Modal
+ *
+ * Paste this into: Cloudflare Dashboard → Zaraz → Consent → Appearance → Custom CSS
+ *
+ * The consent modal renders inside a Shadow DOM, so these styles MUST live
+ * inside the shadow root (via Cloudflare's custom CSS field). External
+ * stylesheets like globals.css cannot reach it.
+ */
+
+/* ─── Modal container & backdrop ─── */
+.cf_modal {
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  background: #ffffff;
+  color: #1c1c2e;
+  border-radius: 1rem;
+  box-shadow:
+    0 25px 50px -12px rgba(0, 44, 146, 0.12),
+    0 12px 24px -8px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  max-width: 480px;
+  width: calc(100vw - 2.5rem);
+  filter: none;
+  border: 1px solid #e5e5eb;
+  --padding: 2rem;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* ─── Title ─── */
+.title_container {
+  margin-bottom: 1.25rem;
+  padding: 0;
+}
+
+.cf_modal h2 {
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1c1c2e;
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
+}
+
+/* ─── Intro text ─── */
+.cf_consent-intro {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #555566;
+  text-align: left;
+}
+
+.cf_consent-intro a {
+  color: #002c92;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.cf_consent-intro a:hover {
+  color: #003fc7;
+  text-decoration: underline;
+}
+
+.cf_consent-intro b {
+  color: #1c1c2e;
+  font-weight: 600;
+}
+
+/* ─── Separator ─── */
+hr {
+  border: none;
+  height: 1px;
+  background: #e5e5eb;
+  margin: 1.25rem 0;
+}
+
+/* ─── Consent list ─── */
+ul {
+  padding: 0.75rem 0;
+  margin: 0;
+}
+
+/* ─── Consent element (purpose row) ─── */
+.cf_consent-element {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 0.75rem;
+  border: 1px solid #e5e5eb;
+  border-radius: 0.75rem;
+  padding: 0.875rem 1rem;
+  background: #fafafc;
+  transition: background 0.15s ease;
+}
+
+.cf_consent-element + .cf_consent-element {
+  margin-top: 0.5rem;
+}
+
+.cf_consent-element:hover {
+  background: #f0f0f8;
+}
+
+.cf_consent-element label {
+  grid-column: 1;
+}
+
+.cf_consent-element > div:last-child {
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  padding-top: 0.125rem;
+}
+
+.cf_consent-element__checkbox-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+/* ─── Details / summary toggles ─── */
+.cf_consent-element summary,
+.cf_modal summary {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1c1c2e;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.cf_consent-element summary::before,
+.cf_modal details > summary::before {
+  content: "▸";
+  font-size: 0.75rem;
+  transition: transform 0.15s ease;
+  display: inline-block;
+}
+
+.cf_consent-element details[open] > summary::before,
+.cf_modal details[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+.cf_consent-element p {
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: #555566;
+  margin: 0;
+}
+
+.cf_consent-element h3 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1c1c2e;
+  line-height: 1.5;
+  margin: 0;
+}
+
+details > :nth-child(2) {
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+  font-size: 0.8125rem;
+  color: #555566;
+}
+
+details > :nth-child(2) > * {
+  margin-top: 0.375rem;
+}
+
+/* ─── Checkbox ─── */
+input[type="checkbox"] {
+  accent-color: #002c92;
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* ─── Vendor list button ─── */
+.cf_consent-vendorlist-button {
+  background: transparent;
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #002c92;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0.25rem 0;
+  margin-bottom: 0.5rem;
+  border: none;
+  transition: color 0.15s ease;
+}
+
+.cf_consent-vendorlist-button:hover {
+  color: #003fc7;
+  text-decoration: underline;
+}
+
+/* ─── Labels (e.g. "not IAB TCF") ─── */
+.cf_label {
+  margin-left: 0.5em;
+  font-size: 0.75rem;
+  color: #888899;
+  font-weight: 400;
+}
+
+/* ─── Vendor list ─── */
+.cf_consent-vendors-list {
+  list-style: none;
+  padding: 0;
+  font-size: 0.8125rem;
+}
+
+.cf_consent-vendors-list a {
+  color: #002c92;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.cf_consent-vendors-list a:hover {
+  color: #003fc7;
+  text-decoration: underline;
+}
+
+/* ─── Button bar ─── */
+.cf_consent-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-flow: row wrap;
+  margin: 0;
+  margin-top: 1.5rem;
+  padding: 0;
+  background: transparent;
+  align-items: center;
+  justify-content: stretch;
+}
+
+/* ─── Shared button base ─── */
+.cf_button {
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.625rem 1.25rem;
+  height: auto;
+  line-height: 1.4;
+  border-radius: 0.625rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+  margin: 0;
+}
+
+/* Accept All — primary gradient */
+.cf_button--accept {
+  background: linear-gradient(135deg, #002c92 0%, #003fc7 100%);
+  color: #ffffff;
+  box-shadow:
+    0 4px 12px -2px rgba(0, 44, 146, 0.3),
+    0 2px 4px -1px rgba(0, 44, 146, 0.15);
+}
+
+.cf_button--accept:hover {
+  background: linear-gradient(135deg, #003fc7 0%, #0052e0 100%);
+  box-shadow:
+    0 8px 16px -4px rgba(0, 44, 146, 0.35),
+    0 4px 6px -2px rgba(0, 44, 146, 0.2);
+  transform: translateY(-1px);
+}
+
+/* Reject All — subtle outline */
+.cf_button--reject {
+  background: #ffffff;
+  color: #555566;
+  border: 1px solid #e5e5eb;
+}
+
+.cf_button--reject:hover {
+  background: #f0f0f8;
+  color: #1c1c2e;
+  border-color: #ccccd4;
+}
+
+/* Confirm My Choices — secondary filled */
+.cf_button--save {
+  background: #f0f0f8;
+  color: #002c92;
+  border: 1px solid #dddde8;
+}
+
+.cf_button--save:hover {
+  background: #e4e4f0;
+  border-color: #002c92;
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 500px) {
+  .cf_modal {
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    max-width: calc(100vw - 1.5rem);
+    --padding: 1.5rem;
+  }
+
+  .cf_modal h2 {
+    font-size: 1.125rem;
+  }
+
+  .cf_consent-buttons {
+    flex-direction: column;
+  }
+
+  .cf_button {
+    width: 100%;
+    flex: none;
+    padding: 0.75rem 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .cf_modal {
+    width: calc(100vw - 1rem);
+    padding: 1.25rem;
+    --padding: 1.25rem;
+  }
+}
+
+/* Hide empty details sections Cloudflare injects */
+details[data-show=""] {
+  display: none;
+}
