@@ -55,7 +55,7 @@ export function Header() {
             <SynaplanLogo variant="light" size="compact" className="max-w-full" />
           </Link>
 
-          <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 xl:flex">
+          <nav className="ml-[50px] hidden items-center gap-1 xl:flex">
             {/* Solutions dropdown */}
             <div className="group relative">
               <button className="flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
@@ -139,7 +139,7 @@ export function Header() {
               rel="noopener noreferrer"
               aria-label="GitHub"
               title="Synaplan open-source repository on GitHub"
-              className="ml-[10px] hidden min-h-11 min-w-11 items-center justify-center rounded-lg px-2.5 py-2.5 text-muted-foreground transition-colors hover:text-foreground xl:flex"
+              className="hidden min-h-11 min-w-11 items-center justify-center rounded-lg px-2.5 py-2.5 text-muted-foreground transition-colors hover:text-foreground xl:flex"
             >
               <GithubIcon className="size-[27px]" />
             </a>
