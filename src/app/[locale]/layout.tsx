@@ -51,9 +51,11 @@ export async function generateMetadata({
       siteName: "Synaplan",
       locale: locale === "de" ? "de_DE" : "en_US",
       type: "website",
+      images: [{ url: "/og/homepage.png", width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
+      images: ["/og/homepage.png"],
     },
     // Do NOT set alternates here — every page sets its own canonical + hreflang.
     // Setting it in the layout causes Next.js to output conflicting <link> tags
