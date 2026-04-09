@@ -12,26 +12,32 @@ const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
  *   ✓ "Mitigate DOM-based XSS with Trusted Types" (partial)
  */
 
-// Widget API origin for CSP — always allowed because the widget component
-// reads SYNAPLAN_WIDGET_ID at runtime (server component), but CSP headers
-// are baked at build time when that env var is absent in CI.
-const widgetOrigin = (() => {
-  const url = process.env.SYNAPLAN_WIDGET_API_URL || "https://web.synaplan.com";
-  try {
-    return new URL(url).origin;
-  } catch {
-    return url.replace(/\/+$/, "");
-  }
-})();
-
-// Content-Security-Policy
+// Content-Security-Policy — all known production origins hardcoded so the
+// CSP is correct in every Docker image regardless of build-time env vars.
 const csp = [
   "default-src 'self'",
-  `script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://static.cloudflareinsights.com ${widgetOrigin}`,
-  `style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net ${widgetOrigin}`,
+  [
+    "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+    "https://cdn.jsdelivr.net",
+    "https://static.cloudflareinsights.com",
+    "https://web.synaplan.com",
+  ].join(" "),
+  [
+    "style-src 'self' 'unsafe-inline'",
+    "https://cdn.jsdelivr.net",
+    "https://web.synaplan.com",
+  ].join(" "),
   "font-src 'self' data:",
   "img-src 'self' data: blob: https:",
-  `connect-src 'self' https://api.github.com https://synaplan.com https://cdn.jsdelivr.net https://cloudflareinsights.com ${widgetOrigin}`,
+  [
+    "connect-src 'self'",
+    "https://api.github.com",
+    "https://synaplan.com",
+    "https://www.synaplan.com",
+    "https://web.synaplan.com",
+    "https://cdn.jsdelivr.net",
+    "https://cloudflareinsights.com",
+  ].join(" "),
   "frame-src 'none'",
   "object-src 'none'",
   "base-uri 'self'",
