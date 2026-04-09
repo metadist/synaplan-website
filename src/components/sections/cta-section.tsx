@@ -58,7 +58,6 @@ export function CTASection() {
                 href={LINKS.whatsappDE}
                 className={cn(
                   buttonVariants({ variant: "outline", size: "lg" }),
-                  // outline defaults to bg-background — on gradient-brand that reads as white; force glass + dark text on light pill for contrast
                   "border-2 border-white/80 bg-white px-8 text-base font-semibold text-brand-700 shadow-md backdrop-blur-sm hover:bg-white/95 hover:text-brand-800",
                 )}
               >

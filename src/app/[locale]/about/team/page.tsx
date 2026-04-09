@@ -338,7 +338,7 @@ export default async function TeamPage({
               <ExternalLink className="size-4" />
             </a>
             <a
-              href={LINKS.whatsappDE}
+              href={LINKS.contact}
               className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-xl border border-border bg-background px-6 text-sm font-medium text-foreground transition-colors hover:bg-accent sm:w-auto"
             >
               {t("ctaContact")}

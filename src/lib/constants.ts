@@ -9,6 +9,7 @@ export const LINKS = {
   facebook: "https://www.facebook.com/people/Synaplan/61581362235207/",
   whatsappDE: "https://wa.me/4915116038214",
   whatsappUS: "https://wa.me/16282253244",
+  contact: "mailto:info@metadist.de",
 } as const;
 
 export const USE_CASES = [

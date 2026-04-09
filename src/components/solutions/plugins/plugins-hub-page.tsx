@@ -208,7 +208,7 @@ export async function PluginsHubPage({ locale }: { locale: string }) {
               ))}
             </ul>
             <a
-              href={LINKS.whatsappDE}
+              href={LINKS.contact}
               className="mt-6 inline-flex h-12 items-center gap-2 rounded-xl bg-white px-8 text-base font-bold text-[#002c92] transition-opacity hover:opacity-90"
             >
               {t("commissionCta")}
