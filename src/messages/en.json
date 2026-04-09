@@ -152,7 +152,7 @@
     "user2": "We're also looking at the website widget — how fast can we go live?",
     "bot3": "Many teams embed the chat widget in a day: add the snippet or WordPress plugin, style it to your brand, and route traffic through the same policies and models as your internal apps.",
     "user3": "Last question: how do we try it without a huge commitment?",
-    "bot4": "Start with the free tier to explore models and flows, then scale when you're ready. Book a demo anytime if you want a guided walkthrough for your security and procurement checklist.",
+    "bot4": "Start with the free tier to explore models and flows, then scale when you're ready. Test it via WhatsApp anytime if you want to see the AI in action for your security and procurement checklist.",
     "ctaTryChat": "Try the AI chat · no login needed"
   },
   "platformPreview": {
@@ -587,7 +587,7 @@
   },
   "cta": {
     "title": "Ready to take control of your AI?",
-    "subtitle": "Start for free or book a 30-minute demo to get a clear AI roadmap for your organization.",
+    "subtitle": "Start for free or chat with our AI directly via WhatsApp to get a clear AI roadmap for your organization.",
     "immediately": "Immediately available",
     "gdpr": "GDPR compliant",
     "germany": "Made in Germany"
@@ -643,9 +643,9 @@
       "faq3Q": "Is it suitable for GDPR-focused teams?",
       "faq3A": "Synaplan is designed with EU deployment in mind: data residency options, retention controls, and detailed logs. Your legal review still applies to your use case.",
       "faq4Q": "Where do I start?",
-      "faq4A": "Open the docs for the embed snippet and WordPress plugin, or book a demo for a walkthrough with your IT and marketing stakeholders.",
+      "faq4A": "Open the docs for the embed snippet and WordPress plugin, or test it directly via WhatsApp with your IT and marketing stakeholders.",
       "bottomCtaTitle": "Ready to try it on your site?",
-      "bottomCtaLead": "Start free, or book a short demo to align security and branding.",
+      "bottomCtaLead": "Start free, or test it via WhatsApp to align security and branding.",
       "landingHeroBadge": "Website AI · Lead-ready",
       "landingStatsTitle": "Fast experiences, serious governance",
       "landingStatsSubtitle": "Aligned with our technical SEO goals: responsive UI, minimal layout shift, and EU-friendly data handling.",
@@ -685,7 +685,7 @@
       "pricingHighlight": "Plans from €19.95/mo for website widgets — scale when traffic grows.",
       "demoCaption": "Interactive preview — scripted demo, not live data.",
       "midCtaTitle": "Try it",
-      "midCtaLead": "Start free or book a demo — we cover embed, your knowledge sources, and settings for your website widget."
+      "midCtaLead": "Start free or try it via WhatsApp — we cover embed, your knowledge sources, and settings for your website widget."
     },
     "trades": {
       "metaTitle": "AI Chatbot for Trades & Crafts — Customer Service AI",
@@ -717,7 +717,7 @@
       "benefit3Title": "Faster experiments",
       "benefit3Desc": "Change copy and mappings in Synaplan — no redeploy of a separate bot platform.",
       "bottomCtaTitle": "Launch a trades-ready widget",
-      "bottomCtaLead": "Start free, connect your pages, then book a demo to align dispatch and marketing."
+      "bottomCtaLead": "Start free, connect your pages, then try it via WhatsApp to align dispatch and marketing."
     },
     "hospitality": {
       "metaTitle": "AI Chatbot for Hotels & Hospitality",
@@ -963,7 +963,7 @@
     "heroTitle": "AI for companies — one platform, full control",
     "heroLead": "Synaplan puts every AI model your business uses under one roof: audit trails, cost limits, GDPR-compliant EU hosting, and a knowledge base that answers from your own documents.",
     "ctaPrimary": "Start for free",
-    "ctaSecondary": "Book a demo",
+    "ctaSecondary": "Test via WhatsApp",
     "featuresTitle": "Everything your team needs — nothing your compliance team hates",
     "f1Title": "All models, one interface",
     "f1Desc": "GPT, Claude, Gemini, Llama, and local Ollama models — routed automatically by cost, latency, and your own policies. No separate accounts, no copy-paste between tools.",
@@ -1077,7 +1077,7 @@
     "f4Href": "/solutions/chat-widget",
     "ctaTitle": "Open source. Self-hosted. Yours.",
     "ctaPrimary": "View on GitHub",
-    "ctaSecondary": "Book a demo"
+    "ctaSecondary": "Test via WhatsApp"
   },
   "multiModelPage": {
     "metaTitle": "AI Gateway & LLM Proxy — Multi-Model Routing",
@@ -1109,7 +1109,7 @@
     "model6": "Custom endpoints via API",
     "ctaTitle": "Start routing AI models in minutes",
     "ctaPrimary": "View on GitHub",
-    "ctaSecondary": "Book a demo"
+    "ctaSecondary": "Test via WhatsApp"
   },
   "auditLogsPage": {
     "metaTitle": "AI Compliance & Audit Logs — GDPR-Ready Logging",
@@ -1134,7 +1134,7 @@
     "why6Desc": "No third-party telemetry. Your logs stay on your servers. Full control over who can access what.",
     "ctaTitle": "Demonstrate compliance with confidence",
     "ctaPrimary": "View on GitHub",
-    "ctaSecondary": "Book a demo"
+    "ctaSecondary": "Test via WhatsApp"
   },
   "memoriesFeaturePage": {
     "metaTitle": "AI Memories & RAG — Persistent Knowledge for Your AI",
@@ -1159,7 +1159,7 @@
     "why6Desc": "Your documents never leave your server. Synaplan + Qdrant run entirely on your infrastructure via Docker Compose.",
     "ctaTitle": "Give your AI a real memory",
     "ctaPrimary": "View on GitHub",
-    "ctaSecondary": "Book a demo"
+    "ctaSecondary": "Test via WhatsApp"
   },
   "aboutPage": {
     "metaTitle": "About Synaplan — Open-Source AI, Made in Germany",
@@ -1222,7 +1222,7 @@
     "s4Title": "What we are building toward",
     "s4Body": "A world where every company has access to enterprise-grade AI they truly own. Where AI is a productivity multiplier, not a privacy risk. Where the question is not whether to adopt AI — but which AI to deploy next.",
     "ctaGithub": "View on GitHub",
-    "ctaDemo": "Book a demo"
+    "ctaDemo": "Test via WhatsApp"
   },
   "partnersPage": {
     "metaTitle": "Partners & Integrations — Synaplan",

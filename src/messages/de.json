@@ -152,7 +152,7 @@
     "user2": "Wir prüfen auch das Website-Widget — wie schnell können wir live gehen?",
     "bot3": "Viele Teams binden das Chat-Widget innerhalb eines Tages ein: Snippet oder WordPress-Plugin, Branding anpassen und denselben Richtlinien und Modellen wie intern ausliefern.",
     "user3": "Letzte Frage: Wie testen wir das ohne großes Risiko?",
-    "bot4": "Starten Sie mit der kostenlosen Stufe, um Modelle und Flows zu erkunden, und skalieren Sie bei Bedarf. Für Security und Einkauf buchen Sie jederzeit eine geführte Demo.",
+    "bot4": "Starten Sie mit der kostenlosen Stufe, um Modelle und Flows zu erkunden, und skalieren Sie bei Bedarf. Testen Sie die KI jederzeit via WhatsApp — auch für Security und Einkauf.",
     "ctaTryChat": "KI-Chat ausprobieren · ohne Login"
   },
   "platformPreview": {
@@ -587,7 +587,7 @@
   },
   "cta": {
     "title": "Bereit, Ihre KI unter Kontrolle zu bringen?",
-    "subtitle": "Kostenlos starten oder eine 30-Minuten-Demo buchen für eine klare KI-Roadmap für Ihr Unternehmen.",
+    "subtitle": "Kostenlos starten oder direkt via WhatsApp mit unserer KI chatten — für eine klare KI-Roadmap für Ihr Unternehmen.",
     "immediately": "Sofort verfügbar",
     "gdpr": "DSGVO-konform",
     "germany": "Made in Germany"
@@ -643,9 +643,9 @@
       "faq3Q": "Ist das für DSGVO-fokussierte Teams geeignet?",
       "faq3A": "Synaplan ist für EU-Einsatz konzipiert: Datenstandort, Aufbewahrung, detaillierte Logs. Ihre Rechtsprüfung bleibt natürlich anwendungsspezifisch.",
       "faq4Q": "Wo starte ich?",
-      "faq4A": "Dokumentation zu Snippet und WordPress-Plugin lesen oder eine Demo buchen — für IT und Marketing gemeinsam.",
+      "faq4A": "Dokumentation zu Snippet und WordPress-Plugin lesen oder direkt via WhatsApp testen — für IT und Marketing gemeinsam.",
       "bottomCtaTitle": "Direkt auf Ihrer Seite testen?",
-      "bottomCtaLead": "Kostenlos starten oder kurz demo buchen — Security und Branding im Blick.",
+      "bottomCtaLead": "Kostenlos starten oder kurz via WhatsApp testen — Security und Branding im Blick.",
       "landingHeroBadge": "Website-KI · conversionstark",
       "landingStatsTitle": "Schnelle UX, klare Governance",
       "landingStatsSubtitle": "Passend zu unseren SEO-Zielen: schlankes UI, wenig Layout-Sprung, EU-taugliche Datenführung.",
@@ -685,7 +685,7 @@
       "pricingHighlight": "Tarife ab 19,95 €/Monat fürs Website-Widget — skalieren wenn Traffic wächst.",
       "demoCaption": "Interaktive Vorschau — Demo-Skript, keine Live-Daten.",
       "midCtaTitle": "Jetzt ausprobieren",
-      "midCtaLead": "Synaplan kostenlos testen oder eine Demo buchen — Einbindung, Ihre Wissensquellen und die Einstellungen für Ihr Website-Widget."
+      "midCtaLead": "Synaplan kostenlos testen oder direkt via WhatsApp ausprobieren — Einbindung, Ihre Wissensquellen und die Einstellungen für Ihr Website-Widget."
     },
     "trades": {
       "metaTitle": "KI-Chatbot für Handwerk & Gewerbe — Kundenservice-KI",
@@ -717,7 +717,7 @@
       "benefit3Title": "Schneller testen",
       "benefit3Desc": "Texte und Mappings in Synaplan ändern — ohne zweite Bot-Plattform neu deployen.",
       "bottomCtaTitle": "Widget für Handwerk starten",
-      "bottomCtaLead": "Kostenlos testen, Seiten anbinden, dann Demo buchen — Disposition und Marketing im Blick."
+      "bottomCtaLead": "Kostenlos testen, Seiten anbinden, dann via WhatsApp ausprobieren — Disposition und Marketing im Blick."
     },
     "hospitality": {
       "metaTitle": "KI-Chatbot für Hotels & Hospitality",
@@ -963,7 +963,7 @@
     "heroTitle": "KI für Unternehmen — eine Plattform, volle Kontrolle",
     "heroLead": "Synaplan bündelt alle KI-Modelle Ihres Unternehmens unter einem Dach: Audit-Protokolle, Kostenlimits, DSGVO-konformes EU-Hosting und eine Wissensdatenbank, die aus Ihren eigenen Dokumenten antwortet.",
     "ctaPrimary": "Kostenlos starten",
-    "ctaSecondary": "Demo buchen",
+    "ctaSecondary": "Test via WhatsApp",
     "featuresTitle": "Alles, was Ihr Team braucht — nichts, was Ihre Compliance-Abteilung hasst",
     "f1Title": "Alle Modelle, eine Oberfläche",
     "f1Desc": "GPT, Claude, Gemini, Llama und lokale Ollama-Modelle — automatisch geroutet nach Kosten, Latenz und Ihren eigenen Richtlinien. Keine separaten Accounts, kein Copy-Paste zwischen Tools.",
@@ -1077,7 +1077,7 @@
     "f4Href": "/solutions/chat-widget",
     "ctaTitle": "Open Source. Self-hosted. Yours.",
     "ctaPrimary": "Auf GitHub ansehen",
-    "ctaSecondary": "Demo buchen"
+    "ctaSecondary": "Test via WhatsApp"
   },
   "multiModelPage": {
     "metaTitle": "AI Gateway & LLM-Proxy — Multi-Model-KI-Routing",
@@ -1109,7 +1109,7 @@
     "model6": "Eigene Endpunkte via API",
     "ctaTitle": "KI-Modell-Routing in Minuten einrichten",
     "ctaPrimary": "Auf GitHub ansehen",
-    "ctaSecondary": "Demo buchen"
+    "ctaSecondary": "Test via WhatsApp"
   },
   "auditLogsPage": {
     "metaTitle": "KI-Compliance & Audit-Logs — DSGVO-konforme Protokollierung",
@@ -1134,7 +1134,7 @@
     "why6Desc": "Keine Drittanbieter-Telemetrie. Ihre Logs verbleiben auf Ihren Servern. Vollständige Kontrolle darüber, wer auf was zugreifen kann.",
     "ctaTitle": "Compliance sicher nachweisen",
     "ctaPrimary": "Auf GitHub ansehen",
-    "ctaSecondary": "Demo buchen"
+    "ctaSecondary": "Test via WhatsApp"
   },
   "memoriesFeaturePage": {
     "metaTitle": "KI-Memories & RAG — Dauerhaftes Wissen für Ihre KI",
@@ -1159,7 +1159,7 @@
     "why6Desc": "Ihre Dokumente verlassen niemals Ihren Server. Synaplan + Qdrant laufen komplett auf Ihrer Infrastruktur via Docker Compose.",
     "ctaTitle": "Ihrer KI ein echtes Gedächtnis geben",
     "ctaPrimary": "Auf GitHub ansehen",
-    "ctaSecondary": "Demo buchen"
+    "ctaSecondary": "Test via WhatsApp"
   },
   "aboutPage": {
     "metaTitle": "Über Synaplan — Open-Source-KI, Made in Germany",
@@ -1222,7 +1222,7 @@
     "s4Title": "Wohin wir bauen",
     "s4Body": "Eine Welt, in der jedes Unternehmen Zugang zu Enterprise-KI hat, die es wirklich besitzt. Wo KI ein Produktivitätsmultiplikator ist, kein Datenschutzrisiko. Wo die Frage nicht lautet, ob man KI einsetzt — sondern welche KI man als nächstes deployt.",
     "ctaGithub": "Auf GitHub ansehen",
-    "ctaDemo": "Demo buchen"
+    "ctaDemo": "Test via WhatsApp"
   },
   "partnersPage": {
     "metaTitle": "Partner & Integrationen — Synaplan",
