@@ -18,7 +18,7 @@ export function SynaplanWidget() {
   ).replace(/\/+$/, '')
 
   let extraConfig: Record<string, unknown> = {}
-  if (process.env.SYNAPLAN_WIDGET_CONFIG) {
+  if (process.env.SYNAPLAN_WIDGET_CONFIG?.trim()) {
     try {
       extraConfig = JSON.parse(process.env.SYNAPLAN_WIDGET_CONFIG)
     } catch {
