@@ -32,15 +32,15 @@ const widgetOrigin = process.env.SYNAPLAN_WIDGET_ID
 const csp = [
   "default-src 'self'",
   // Next.js inlines critical scripts — unsafe-inline is unavoidable without nonces
-  `script-src 'self' 'unsafe-inline' 'unsafe-eval'${widgetOrigin ? ` ${widgetOrigin}` : ""}`,
-  // Tailwind/Next.js inlines styles; Google Fonts loaded via next/font (self-hosted)
-  `style-src 'self' 'unsafe-inline'${widgetOrigin ? ` ${widgetOrigin}` : ""}`,
+  `script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net${widgetOrigin ? ` ${widgetOrigin}` : ""}`,
+  // Tailwind/Next.js inlines styles; widget loads Vue CSS from CDN
+  `style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net${widgetOrigin ? ` ${widgetOrigin}` : ""}`,
   // next/font self-hosts fonts — no external font CDN needed
   "font-src 'self' data:",
   // Images: self + data URIs for inline SVG + blob for canvas exports
   "img-src 'self' data: blob: https:",
   // API calls: GitHub for repo stats; widget API when enabled
-  `connect-src 'self' https://api.github.com https://synaplan.com${widgetOrigin ? ` ${widgetOrigin}` : ""}`,
+  `connect-src 'self' https://api.github.com https://synaplan.com https://cdn.jsdelivr.net${widgetOrigin ? ` ${widgetOrigin}` : ""}`,
   // No iframes, plugins, or base tag overrides
   "frame-src 'none'",
   "object-src 'none'",
