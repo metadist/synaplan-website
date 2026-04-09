@@ -12,43 +12,31 @@ const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
  *   ✓ "Mitigate DOM-based XSS with Trusted Types" (partial)
  */
 
-// Derive the widget origin (e.g. "https://web.synaplan.com") for CSP when configured
-const widgetApiUrl = process.env.SYNAPLAN_WIDGET_API_URL || "https://web.synaplan.com";
-const widgetOrigin = process.env.SYNAPLAN_WIDGET_ID
-  ? (() => {
-      try {
-        return new URL(widgetApiUrl).origin;
-      } catch {
-        return widgetApiUrl.replace(/\/+$/, "");
-      }
-    })()
-  : null;
+// Widget API origin for CSP — always allowed because the widget component
+// reads SYNAPLAN_WIDGET_ID at runtime (server component), but CSP headers
+// are baked at build time when that env var is absent in CI.
+const widgetOrigin = (() => {
+  const url = process.env.SYNAPLAN_WIDGET_API_URL || "https://web.synaplan.com";
+  try {
+    return new URL(url).origin;
+  } catch {
+    return url.replace(/\/+$/, "");
+  }
+})();
 
 // Content-Security-Policy
-// Next.js requires 'unsafe-inline' for its own inline scripts/styles and
-// 'unsafe-eval' for development hot-reload. Both are stripped in production
-// via the isDev check if needed, but for now we keep them for compatibility
-// and focus on the other CSP directives that Lighthouse checks.
 const csp = [
   "default-src 'self'",
-  // Next.js inlines critical scripts — unsafe-inline is unavoidable without nonces
-  `script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://static.cloudflareinsights.com${widgetOrigin ? ` ${widgetOrigin}` : ""}`,
-  // Tailwind/Next.js inlines styles; widget loads Vue CSS from CDN
-  `style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net${widgetOrigin ? ` ${widgetOrigin}` : ""}`,
-  // next/font self-hosts fonts — no external font CDN needed
+  `script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://static.cloudflareinsights.com ${widgetOrigin}`,
+  `style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net ${widgetOrigin}`,
   "font-src 'self' data:",
-  // Images: self + data URIs for inline SVG + blob for canvas exports
   "img-src 'self' data: blob: https:",
-  // API calls: GitHub for repo stats; widget API when enabled
-  `connect-src 'self' https://api.github.com https://synaplan.com https://cdn.jsdelivr.net https://cloudflareinsights.com${widgetOrigin ? ` ${widgetOrigin}` : ""}`,
-  // No iframes, plugins, or base tag overrides
+  `connect-src 'self' https://api.github.com https://synaplan.com https://cdn.jsdelivr.net https://cloudflareinsights.com ${widgetOrigin}`,
   "frame-src 'none'",
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self'",
-  // Prevent this page from being embedded anywhere (stronger than X-Frame-Options)
   "frame-ancestors 'none'",
-  // Force HTTPS for all sub-requests
   "upgrade-insecure-requests",
 ].join("; ");
 
