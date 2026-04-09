@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { SolutionArticleShell } from "@/components/solutions/solution-article-shell";
 import { FeaturePageShell, ModelsList } from "@/components/features/feature-page-shell";
-import { alternateLanguageUrls, canonicalUrl } from "@/lib/seo";
+import { alternateLanguageUrls, canonicalUrl, OG_IMAGE } from "@/lib/seo";
 import { buildBreadcrumbSchema, buildServiceSchema, SITE_URL } from "@/lib/jsonld";
 import { Shuffle, DollarSign, Unlink, Eye, Server, Code2 } from "lucide-react";
 
@@ -26,8 +26,8 @@ export async function generateMetadata({
       locale === "de"
         ? "AI Gateway, LLM Proxy, OpenAI Alternative, Multi-Model Routing, Ollama, KI-Plattform"
         : "AI gateway, LLM proxy, OpenAI alternative, multi-model routing, Ollama, self-hosted AI",
-    openGraph: { title, description, url: canonicalUrl(locale, PATH) },
-    twitter: { card: "summary_large_image", title, description },
+    openGraph: { title, description, url: canonicalUrl(locale, PATH), images: [OG_IMAGE] },
+    twitter: { card: "summary_large_image", title, description, images: [OG_IMAGE.url] },
     alternates: {
       canonical: canonicalUrl(locale, PATH),
       languages: alternateLanguageUrls(PATH),

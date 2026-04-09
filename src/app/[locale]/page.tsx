@@ -5,6 +5,7 @@ import { HeroSection } from "@/components/sections/hero";
 import { HomeSectionSkeleton } from "@/components/sections/home-section-skeleton";
 import { getSynaplanGithubRepoStats } from "@/lib/github-synaplan-repo";
 import { buildFaqSchema, buildHowToSchema, buildSoftwareAppSchema, SITE_URL } from "@/lib/jsonld";
+import { OG_IMAGE } from "@/lib/seo";
 import { GithubFeed } from "@/components/sections/github-feed";
 
 const WidgetFlowSection = dynamic(
@@ -121,11 +122,13 @@ export async function generateMetadata({
       type: "website",
       siteName: "Synaplan",
       locale: locale === "de" ? "de_DE" : "en_US",
+      images: [OG_IMAGE],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: [OG_IMAGE.url],
     },
     alternates: {
       canonical: url,

@@ -13,7 +13,7 @@ import {
   Server,
   Shield,
 } from "lucide-react";
-import { canonicalUrl, alternateLanguageUrls } from "@/lib/seo";
+import { alternateLanguageUrls, canonicalUrl, OG_IMAGE } from "@/lib/seo";
 import { LegalToc } from "@/components/legal/legal-toc";
 
 const PATH = "/privacy-policy";
@@ -30,7 +30,8 @@ export async function generateMetadata({
   return {
     title,
     description,
-    openGraph: { title, description },
+    openGraph: { title, description, url: canonicalUrl(locale, PATH), images: [OG_IMAGE] },
+    twitter: { card: "summary_large_image", title, description, images: [OG_IMAGE.url] },
     alternates: {
       canonical: canonicalUrl(locale, PATH),
       languages: alternateLanguageUrls(PATH),

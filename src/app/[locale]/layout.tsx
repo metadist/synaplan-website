@@ -8,6 +8,7 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { MotionPerformanceProvider } from "@/contexts/motion-performance-context";
 import { buildOrganizationSchema, buildWebSiteSchema } from "@/lib/jsonld";
+import { OG_IMAGE } from "@/lib/seo";
 import { SynaplanWidget } from "@/components/layout/synaplan-widget";
 import "../globals.css";
 
@@ -51,11 +52,11 @@ export async function generateMetadata({
       siteName: "Synaplan",
       locale: locale === "de" ? "de_DE" : "en_US",
       type: "website",
-      images: [{ url: "/og/homepage.png", width: 1200, height: 630 }],
+      images: [OG_IMAGE],
     },
     twitter: {
       card: "summary_large_image",
-      images: ["/og/homepage.png"],
+      images: [OG_IMAGE.url],
     },
     // Do NOT set alternates here — every page sets its own canonical + hreflang.
     // Setting it in the layout causes Next.js to output conflicting <link> tags

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { FeaturePageShell } from "@/components/features/feature-page-shell";
-import { alternateLanguageUrls, canonicalUrl } from "@/lib/seo";
+import { alternateLanguageUrls, canonicalUrl, OG_IMAGE } from "@/lib/seo";
 import { buildBreadcrumbSchema, buildServiceSchema, SITE_URL } from "@/lib/jsonld";
 import { Upload, Search, Brain, Layers, Sparkles, Server } from "lucide-react";
 
@@ -25,8 +25,8 @@ export async function generateMetadata({
       locale === "de"
         ? "KI Memories, RAG, Retrieval-Augmented Generation, Vektorsuche, Qdrant, Dokument-KI"
         : "AI memories, RAG, retrieval augmented generation, vector search, Qdrant, document AI",
-    openGraph: { title, description, url: canonicalUrl(locale, PATH) },
-    twitter: { card: "summary_large_image", title, description },
+    openGraph: { title, description, url: canonicalUrl(locale, PATH), images: [OG_IMAGE] },
+    twitter: { card: "summary_large_image", title, description, images: [OG_IMAGE.url] },
     alternates: {
       canonical: canonicalUrl(locale, PATH),
       languages: alternateLanguageUrls(PATH),

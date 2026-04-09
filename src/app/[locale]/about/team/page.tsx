@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { SolutionArticleShell } from "@/components/solutions/solution-article-shell";
-import { alternateLanguageUrls, canonicalUrl } from "@/lib/seo";
+import { alternateLanguageUrls, canonicalUrl, OG_IMAGE } from "@/lib/seo";
 import { buildBreadcrumbSchema, SITE_URL } from "@/lib/jsonld";
 import { LinkedInIcon } from "@/components/icons";
 import { LINKS } from "@/lib/constants";
@@ -23,8 +23,8 @@ export async function generateMetadata({
   return {
     title,
     description,
-    openGraph: { title, description, url: canonicalUrl(locale, PATH) },
-    twitter: { card: "summary_large_image", title, description },
+    openGraph: { title, description, url: canonicalUrl(locale, PATH), images: [OG_IMAGE] },
+    twitter: { card: "summary_large_image", title, description, images: [OG_IMAGE.url] },
     alternates: {
       canonical: canonicalUrl(locale, PATH),
       languages: alternateLanguageUrls(PATH),

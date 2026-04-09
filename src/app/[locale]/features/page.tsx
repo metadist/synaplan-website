@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { SolutionArticleShell } from "@/components/solutions/solution-article-shell";
-import { alternateLanguageUrls, canonicalUrl } from "@/lib/seo";
+import { alternateLanguageUrls, canonicalUrl, OG_IMAGE } from "@/lib/seo";
 import { buildBreadcrumbSchema, SITE_URL } from "@/lib/jsonld";
 import { ArrowRight, GitBranch, BookOpen, ShieldCheck, MessageSquare } from "lucide-react";
 import { LINKS } from "@/lib/constants";
@@ -27,8 +27,8 @@ export async function generateMetadata({
       locale === "de"
         ? "KI-Plattform Funktionen, AI Gateway, KI Compliance, RAG, Chat-Widget"
         : "AI platform features, AI gateway, LLM proxy, RAG memories, audit logs",
-    openGraph: { title, description, url: canonicalUrl(locale, PATH) },
-    twitter: { card: "summary_large_image", title, description },
+    openGraph: { title, description, url: canonicalUrl(locale, PATH), images: [OG_IMAGE] },
+    twitter: { card: "summary_large_image", title, description, images: [OG_IMAGE.url] },
     alternates: {
       canonical: canonicalUrl(locale, PATH),
       languages: alternateLanguageUrls(PATH),

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { setRequestLocale } from "next-intl/server";
 import { prisma } from "@/lib/prisma";
 import { buildBlogSchema, buildBreadcrumbSchema, canonicalUrl, SITE_URL } from "@/lib/jsonld";
+import { OG_IMAGE } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
 
@@ -30,7 +31,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         "x-default": canonicalUrl("en", "/blog"),
       },
     },
-    openGraph: { title, description, url: canonicalUrl(locale, "/blog") },
+    openGraph: {
+      title,
+      description,
+      url: canonicalUrl(locale, "/blog"),
+      images: [OG_IMAGE],
+    },
+    twitter: { card: "summary_large_image", title, description, images: [OG_IMAGE.url] },
   };
 }
 
