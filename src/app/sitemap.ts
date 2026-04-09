@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
+import { prisma } from "@/lib/prisma";
 
 const SITE = "https://synaplan.com";
 
@@ -68,19 +69,17 @@ function buildUrl(locale: string, path: string): string {
   return isDefault ? `${SITE}${path}` : `${SITE}/${locale}${path}`;
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const entries: MetadataRoute.Sitemap = [];
 
   for (const locale of routing.locales) {
     for (const { path, priority, changeFrequency } of PATHS) {
       const url = buildUrl(locale, path);
 
-      // Build hreflang alternates for each entry
       const alternates: Record<string, string> = {};
       for (const loc of routing.locales) {
         alternates[loc] = buildUrl(loc, path);
       }
-      // x-default points to the EN (default locale) version
       alternates["x-default"] = buildUrl(routing.defaultLocale, path);
 
       entries.push({
@@ -91,6 +90,60 @@ export default function sitemap(): MetadataRoute.Sitemap {
         alternates: { languages: alternates },
       });
     }
+  }
+
+  // Dynamic blog posts from the database
+  try {
+    const posts = await prisma.post.findMany({
+      where: { status: "PUBLISHED" },
+      select: {
+        slug: true,
+        locale: true,
+        translationKey: true,
+        updatedAt: true,
+      },
+    });
+
+    const translationMap = new Map<string, Map<string, string>>();
+    for (const post of posts) {
+      if (post.translationKey) {
+        if (!translationMap.has(post.translationKey)) {
+          translationMap.set(post.translationKey, new Map());
+        }
+        translationMap.get(post.translationKey)!.set(post.locale, post.slug);
+      }
+    }
+
+    for (const post of posts) {
+      const blogPath = `/blog/${post.slug}`;
+      const locale = routing.locales.includes(post.locale as "en" | "de")
+        ? post.locale
+        : routing.defaultLocale;
+      const url = buildUrl(locale, blogPath);
+
+      const alternates: Record<string, string> = {};
+      alternates[locale] = url;
+
+      if (post.translationKey) {
+        const translations = translationMap.get(post.translationKey);
+        if (translations) {
+          for (const [loc, slug] of translations) {
+            alternates[loc] = buildUrl(loc, `/blog/${slug}`);
+          }
+        }
+      }
+      alternates["x-default"] = alternates[routing.defaultLocale] ?? url;
+
+      entries.push({
+        url,
+        lastModified: post.updatedAt,
+        changeFrequency: "weekly",
+        priority: 0.70,
+        alternates: { languages: alternates },
+      });
+    }
+  } catch {
+    // DB unavailable at build time (e.g. CI without DATABASE_URL) — skip blog posts
   }
 
   return entries;

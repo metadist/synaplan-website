@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "Synaplan — KI-Plattform | Wechsle zwischen KIs.",
-    "description": "Synaplan ist die Open-Source-KI-Plattform für Unternehmen. Self-hosted, DSGVO-konform, Multi-Model-Routing (OpenAI, Claude, Gemini, Ollama). KI-Chatbot für Ihre Website in Minuten einrichten.",
-    "homeTitle": "Synaplan — Open-Source KI-Plattform | Multi-Model, DSGVO-konform, Self-Hosted",
-    "homeDescription": "Die Open-Source-KI-Plattform für Unternehmen und Entwickler. OpenAI, Claude, Groq & lokale Modelle per Multi-Model-Routing verbinden. DSGVO-konform, self-hosted via Docker. KI-Chatbot-Widget für Ihre Website."
+    "title": "Synaplan — KI-Plattform für Unternehmen | Open Source",
+    "description": "Open-Source-KI-Plattform mit Multi-Model-Routing, DSGVO-Konformität und KI-Chatbot-Widget. OpenAI, Claude, Gemini & Ollama verbinden. Self-hosted via Docker.",
+    "homeTitle": "Synaplan — Open-Source KI-Plattform | DSGVO-konform, Self-Hosted",
+    "homeDescription": "Die KI-Plattform für Unternehmen und Entwickler. Multi-Model-Routing, DSGVO-konform, self-hosted via Docker. KI-Chatbot-Widget für Ihre Website einbetten."
   },
   "nav": {
     "solutions": "Lösungen",
@@ -289,8 +289,8 @@
   "hero": {
     "badge": "Open-Source KI-Plattform",
     "title": "Wechsle zwischen KIs.",
-    "titleHighlight": "Volle Kontrolle über KI-Chats & Agenten.",
-    "description": "Ein Ort für alle deine KI-Aktivitäten — und du behältst die Kontrolle. Jedes führende Modell anbinden, jeden Token und jede Kostenstelle sehen, DSGVO-konform bleiben.",
+    "titleHighlight": "Die KI-Plattform mit voller Kontrolle.",
+    "description": "Eine KI-Plattform für jedes Modell, jedes Team und jeden Workflow. OpenAI, Claude, Gemini & Ollama verbinden — jeden Token sehen, DSGVO-konform.",
     "trustedBy": "Vertraut von innovativen Unternehmen",
     "scrollDown": "Zur nächsten Sektion scrollen",
     "tryChatCta": "Kurz den KI-Chat auf dieser Seite ausprobieren — ohne Login"
@@ -451,8 +451,8 @@
     "license": "Lizenz"
   },
   "pricingPage": {
-    "metaTitle": "Synaplan Preise — Kostenlos Open Source, SaaS ab 19,95 €, Enterprise",
-    "metaDescription": "Drei Wege, Synaplan zu nutzen: Open Source (kostenlos, selbst gehostet), verwaltete SaaS-Plattform ab €19,95/Monat oder Enterprise On-Premise-Deployment.",
+    "metaTitle": "Preise — Kostenlos Open Source, SaaS ab 19,95 €",
+    "metaDescription": "Drei Wege, die KI-Plattform zu nutzen: selbst hosten (kostenlos, Open Source), verwaltete SaaS ab 19,95 €/Monat oder Enterprise On-Premise.",
     "breadcrumbHome": "Startseite",
     "breadcrumbPricing": "Preise",
     "heroEyebrow": "Pläne & Preise",
@@ -613,11 +613,11 @@
   },
   "chatWidget": {
     "hub": {
-      "metaTitle": "Synaplan Chat-Widget — Website-KI mit RAG & DSGVO",
-      "metaDescription": "Synaplan Chat-Widget einbinden: gecrawlte Seiten, PDFs, FAQs und APIs als Wissen. Handwerk, Hotels und echte Kundenbeispiele. EU-tauglich.",
+      "metaTitle": "KI-Chatbot für Ihre Website — DSGVO-konformer Kundenservice",
+      "metaDescription": "KI-Chatbot für Ihre Website in Minuten erstellen. Fundiert auf Ihren Inhalten — Seiten, PDFs, FAQs. DSGVO-konformer KI-Kundenservice ab 19,95 €/Monat.",
       "breadcrumbHome": "Start",
       "breadcrumbChatWidget": "Chat-Widget",
-      "heroTitle": "Ihre Website, Ihre KI — fundiert auf Ihren Inhalten",
+      "heroTitle": "KI-Chatbot für Ihre Website — fundiert auf Ihren Inhalten",
       "heroLead": "Das Synaplan Chat-Widget beantwortet Besucherfragen mit denselben Modellen und Richtlinien wie intern. Verknüpfen Sie gecrawlte Seiten, hochgeladene Dokumente, strukturierte Listen oder angebundene Systeme — für präzise, markenkonforme Antworten.",
       "sectionEmbedTitle": "Schnell live",
       "sectionEmbedP1": "Einbindung per Snippet oder WordPress-Plugin, Farben und Position an Layout anpassen und veröffentlichen — ohne separaten Bot-Stack; das Widget nutzt Ihren Synaplan-Workspace inkl. Routing und Kostenkontrolle.",
@@ -688,7 +688,7 @@
       "midCtaLead": "Synaplan kostenlos testen oder eine Demo buchen — Einbindung, Ihre Wissensquellen und die Einstellungen für Ihr Website-Widget."
     },
     "trades": {
-      "metaTitle": "Chat-Widget für Handwerk & Gewerbe — Synaplan",
+      "metaTitle": "KI-Chatbot für Handwerk & Gewerbe — Kundenservice-KI",
       "metaDescription": "Termine, Preise und Notfallfragen auf der Handwerks-Website mit Synaplan Chat-Widget — fundiert auf echten Seiten und PDFs.",
       "breadcrumbCurrent": "Handwerk & Gewerbe",
       "heroTitle": "Weniger Telefon-Chaos, mehr Zeit auf der Baustelle",
@@ -720,7 +720,7 @@
       "bottomCtaLead": "Kostenlos testen, Seiten anbinden, dann Demo buchen — Disposition und Marketing im Blick."
     },
     "hospitality": {
-      "metaTitle": "Chat-Widget für Hotels & Hospitality — Synaplan",
+      "metaTitle": "KI-Chatbot für Hotels & Hospitality",
       "metaDescription": "Rezeption entlasten mit Synaplan Chat-Widget: Check-in, Parken, Frühstück und lokale Tipps — mehrsprachig und markenkonform.",
       "breadcrumbCurrent": "Hotels & Hospitality",
       "heroTitle": "Gästefragen, konsistente Antworten",
@@ -752,7 +752,7 @@
       "bottomCtaLead": "Synaplan kostenlos testen, offizielle Seiten anbinden — Pro-Connectoren bei Bedarf nachziehen."
     },
     "customers": {
-      "metaTitle": "Synaplan Chat-Widget — Kundenreferenzen",
+      "metaTitle": "KI-Chatbot Kundenbeispiele — Echte Einsätze",
       "metaDescription": "Wie Yoga-Studios, Pflegedienste, öffentliche Cloud und Produktteams Synaplan nutzen — inklusive Website-Widget und sicherer KI-Workflows.",
       "breadcrumbCurrent": "Kundenreferenzen",
       "heroTitle": "Eingesetzt von Teams, die Klarheit und Kontrolle brauchen",
@@ -955,12 +955,12 @@
     "copyrightBody": "Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors."
   },
   "companiesPage": {
-    "metaTitle": "Synaplan für Unternehmen — KI unter Kontrolle",
-    "metaDescription": "KI sicher im Unternehmen einsetzen mit Synaplan. Multi-Model-Routing, RAG-Wissensdatenbank, Audit-Logs und ein einbettbares Chat-Widget — DSGVO-konform und self-hosted.",
+    "metaTitle": "KI für Unternehmen — DSGVO-konforme KI-Plattform",
+    "metaDescription": "Die DSGVO-konforme KI-Plattform für Unternehmen. Multi-Model-Routing, RAG-Wissensdatenbank, Audit-Logs und KI-Chatbot-Widget — die ChatGPT-Alternative mit KI-Datenschutz.",
     "breadcrumbHome": "Startseite",
     "breadcrumbCompanies": "Für Unternehmen",
     "badge": "Für Unternehmen",
-    "heroTitle": "Alle KI, die Ihr Team braucht — eine Plattform, volle Kontrolle",
+    "heroTitle": "KI für Unternehmen — eine Plattform, volle Kontrolle",
     "heroLead": "Synaplan bündelt alle KI-Modelle Ihres Unternehmens unter einem Dach: Audit-Protokolle, Kostenlimits, DSGVO-konformes EU-Hosting und eine Wissensdatenbank, die aus Ihren eigenen Dokumenten antwortet.",
     "ctaPrimary": "Kostenlos starten",
     "ctaSecondary": "Demo buchen",
@@ -985,12 +985,12 @@
     "germany": "Made in Germany"
   },
   "developersPage": {
-    "metaTitle": "Synaplan für Entwickler — offene KI-Infrastruktur",
-    "metaDescription": "Auf Synaplans Open-Source-KI-Infrastruktur aufbauen: REST-API, Docker-Deployment, Plugin-System, Multi-Model-Gateway. Apache-2.0-Lizenz, self-hosted.",
+    "metaTitle": "Open-Source-KI für Entwickler — Self-Hosted",
+    "metaDescription": "Open-Source-KI-Infrastruktur selbst hosten: REST-API, Docker-Deployment, Plugin-System und Multi-Model-Gateway. Apache-2.0-Lizenz, KI selbst hosten.",
     "breadcrumbHome": "Startseite",
     "breadcrumbDevelopers": "Für Entwickler",
     "badge": "Für Entwickler",
-    "heroTitle": "Offene Infrastruktur für KI-gestützte Produkte",
+    "heroTitle": "Open-Source-KI-Infrastruktur — self-hosted, API-first",
     "heroLead": "Synaplan ist vollständig quelloffen. Self-Hosting, REST-API, eigene Plugins oder als KI-Backbone für Ihr Produkt — Apache 2.0, kein Lock-in.",
     "ctaPrimary": "Auf GitHub ansehen",
     "ctaSecondary": "Dokumentation lesen",
@@ -1018,7 +1018,7 @@
     "pluginsCtaLink": "Plugins erkunden →"
   },
   "pluginsPage": {
-    "metaTitle": "Synaplan Plugins — KI-Erweiterungen für Ihre Workflows",
+    "metaTitle": "KI-Plugins — Synaplan für Ihre Workflows erweitern",
     "metaDescription": "Erweitern Sie Synaplan mit spezialisierten Plugins: Marketing-Kampagnen, Nextcloud & OpenCloud KI, WordPress-Support-Chat und mehr. Open Source, für Ihre Branche.",
     "breadcrumbHome": "Startseite",
     "breadcrumbPlugins": "Plugins",
@@ -1056,12 +1056,12 @@
     "commissionFeature3": "Entwickelt vom Team hinter Synaplan"
   },
   "featuresPage": {
-    "metaTitle": "Funktionen — Synaplan KI-Plattform",
-    "metaDescription": "Funktionen der Synaplan KI-Plattform entdecken: Multi-Model-Routing, RAG-Wissensdatenbank, Audit-Logs, Chat-Widget, Echtzeit-Dashboard und Self-Hosted-Deployment.",
+    "metaTitle": "KI-Plattform Funktionen — Multi-Model, RAG, Compliance",
+    "metaDescription": "Funktionen der KI-Plattform: Multi-Model-Routing, RAG-Wissensdatenbank, KI-Compliance-Audit-Logs, Chatbot-Widget und Self-Hosted-Deployment.",
     "breadcrumbHome": "Startseite",
     "breadcrumbFeatures": "Funktionen",
     "badge": "Plattform-Funktionen",
-    "heroTitle": "Alles, was professionelle KI braucht",
+    "heroTitle": "Alles, was Ihre KI-Plattform braucht",
     "heroLead": "Eine Plattform für Routing, Memory, Compliance und Deployment. Self-hosted oder verwaltet — Sie behalten die Kontrolle.",
     "f1Title": "Multi-Model-Routing",
     "f1Desc": "OpenAI, Claude, Groq, Gemini und lokale Ollama-Modelle verbinden. Anfragen nach Kosten, Latenz oder Kapazität weiterleiten.",
@@ -1080,8 +1080,8 @@
     "ctaSecondary": "Demo buchen"
   },
   "multiModelPage": {
-    "metaTitle": "Multi-Model-KI-Routing — AI Gateway für OpenAI, Claude & Ollama",
-    "metaDescription": "Synaplan ist ein Open-Source-AI-Gateway und LLM-Proxy. OpenAI, Claude, Gemini, Groq und lokale Ollama-Modelle über eine einzige API verbinden — mit Kostenkontrolle und vollständiger Transparenz.",
+    "metaTitle": "AI Gateway & LLM-Proxy — Multi-Model-KI-Routing",
+    "metaDescription": "Open-Source-AI-Gateway und LLM-Proxy. OpenAI, Claude, Gemini, Groq und Ollama über eine API routen — mit Kostenkontrolle und voller Transparenz.",
     "breadcrumbHome": "Startseite",
     "breadcrumbFeatures": "Funktionen",
     "breadcrumbPage": "Multi-Model-Routing",
@@ -1112,13 +1112,13 @@
     "ctaSecondary": "Demo buchen"
   },
   "auditLogsPage": {
-    "metaTitle": "KI-Compliance & Audit-Logs — DSGVO-konforme KI-Protokollierung",
-    "metaDescription": "Synaplan protokolliert jede KI-Interaktion — Nutzer, Modell, Tokens, Zeitstempel. DSGVO-konform, Enterprise-Audit-Export, keine Drittanbieter-Telemetrie. Self-hosted auf Ihren Servern.",
+    "metaTitle": "KI-Compliance & Audit-Logs — DSGVO-konforme Protokollierung",
+    "metaDescription": "Jede KI-Interaktion protokolliert — Nutzer, Modell, Tokens, Zeitstempel. Für KI-Compliance, KI-Datenschutz und Enterprise-Audits. Self-hosted, ohne Drittanbieter-Telemetrie.",
     "breadcrumbHome": "Startseite",
     "breadcrumbFeatures": "Funktionen",
     "breadcrumbPage": "Audit & Compliance",
     "badge": "Compliance",
-    "heroTitle": "KI-Compliance, die Sie nachweisen können",
+    "heroTitle": "KI-Compliance, die Sie nachweisen können — jede Interaktion protokolliert",
     "heroLead": "Jeder Prompt. Jede Antwort. Jede Modellentscheidung — protokolliert, zuordenbar und exportierbar. Synaplan macht KI auditierbar für Enterprise-Einkauf, DSGVO-Prüfungen und regulierte Branchen.",
     "why1Title": "Vollständige Interaktionsprotokollierung",
     "why1Desc": "Nutzer, Nachricht, Modell, Token-Anzahl, Latenz und Ergebnis werden für jede KI-Interaktion erfasst. Keine Black Boxes.",
@@ -1137,13 +1137,13 @@
     "ctaSecondary": "Demo buchen"
   },
   "memoriesFeaturePage": {
-    "metaTitle": "KI-Memories & RAG — Retrieval-Augmented Generation",
+    "metaTitle": "KI-Memories & RAG — Dauerhaftes Wissen für Ihre KI",
     "metaDescription": "Synaplan Memories nutzt RAG (Retrieval-Augmented Generation) mit Qdrant-Vektorsuche, um Ihrer KI dauerhaftes, durchsuchbares Wissen zu geben — aus hochgeladenen Dokumenten und sitzungsübergreifendem Gedächtnis.",
     "breadcrumbHome": "Startseite",
     "breadcrumbFeatures": "Funktionen",
     "breadcrumbPage": "Memories & RAG",
     "badge": "Memories & RAG",
-    "heroTitle": "KI, die sich das Wichtige merkt",
+    "heroTitle": "KI, die sich das Wichtige merkt — RAG & dauerhaftes Gedächtnis",
     "heroLead": "Dokumente hochladen, Wissensdatenbanken verbinden und Synaplan den richtigen Kontext für jede Antwort finden lassen. Ihre KI hört auf zu halluzinieren — und fängt an zu wissen.",
     "why1Title": "Dokument-Upload & Indexierung",
     "why1Desc": "PDFs, Word-Dateien, HTML oder Plaintext hochladen. Synaplan segmentiert, bettet ein und indexiert sie für semantische Suche.",
@@ -1162,7 +1162,7 @@
     "ctaSecondary": "Demo buchen"
   },
   "aboutPage": {
-    "metaTitle": "Über Synaplan — Open-Source KI-Plattform aus Deutschland",
+    "metaTitle": "Über Synaplan — Open-Source-KI, Made in Germany",
     "metaDescription": "Synaplan ist eine Open-Source-KI-Plattform der metadist GmbH aus Düsseldorf. Multi-Model-Routing, RAG, Audit-Logs und ein DSGVO-konformes Chat-Widget.",
     "breadcrumbHome": "Startseite",
     "breadcrumbAbout": "Über uns",
@@ -1205,7 +1205,7 @@
     "ctaContact": "Kontakt aufnehmen"
   },
   "philosophyPage": {
-    "metaTitle": "Unsere Philosophie — Warum Open-Source-KI wichtig ist | Synaplan",
+    "metaTitle": "Unsere Philosophie — Warum Open-Source-KI wichtig ist",
     "metaDescription": "Warum wir Open-Source-KI bauen: volle Transparenz, Datensouveränität und KI als Werkzeug, das Unternehmen wirklich dient — nicht umgekehrt.",
     "breadcrumbHome": "Startseite",
     "breadcrumbAbout": "Über uns",

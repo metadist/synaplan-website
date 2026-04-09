@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "Synaplan — Open-Source AI Platform | Switch Between AIs",
-    "description": "Synaplan is the open-source AI platform for companies. Self-hosted, GDPR-compliant, multi-model routing (OpenAI, Claude, Gemini, Ollama). Embed a chat widget on any website in minutes.",
-    "homeTitle": "Synaplan — Open-Source AI Platform | Multi-Model, GDPR-Compliant, Self-Hosted",
-    "homeDescription": "The open-source AI platform for companies and developers. Connect OpenAI, Claude, Groq & local models via multi-model routing. GDPR-compliant, self-hosted via Docker. AI chatbot widget for your website."
+    "title": "Synaplan — Open-Source AI Platform for Companies",
+    "description": "Open-source AI platform with multi-model routing, GDPR compliance, and an AI chatbot widget. Connect OpenAI, Claude, Gemini & Ollama. Self-hosted via Docker.",
+    "homeTitle": "Synaplan — Open-Source AI Platform | GDPR-Compliant, Self-Hosted",
+    "homeDescription": "The open-source AI platform for companies and developers. Multi-model routing, GDPR-compliant, self-hosted via Docker. Embed an AI chatbot widget on any website."
   },
   "nav": {
     "solutions": "Solutions",
@@ -287,10 +287,10 @@
     "ctaButton": "Learn more about the chat widget"
   },
   "hero": {
-    "badge": "Open Source AI Platform",
+    "badge": "Open-Source AI Platform",
     "title": "Switch between AIs.",
-    "titleHighlight": "Full control of AI chats & agents.",
-    "description": "One place for all your AI activity — and you’re the one in charge. Connect any leading model, see every token and cost, stay GDPR compliant.",
+    "titleHighlight": "The AI platform that puts you in control.",
+    "description": "One AI platform for every model, team, and workflow. Connect OpenAI, Claude, Gemini & Ollama — see every token and cost, stay GDPR compliant.",
     "trustedBy": "Trusted by innovative companies",
     "scrollDown": "Scroll to the next section",
     "tryChatCta": "Try a quick AI chat on this page — no login"
@@ -451,8 +451,8 @@
     "license": "License"
   },
   "pricingPage": {
-    "metaTitle": "Synaplan Pricing — Free Open Source, SaaS from €19.95, Enterprise",
-    "metaDescription": "Three ways to use Synaplan: open-source self-hosting (free), managed SaaS platform from €19.95/month, or enterprise on-premise deployment with custom pricing.",
+    "metaTitle": "Pricing — Free Open Source, SaaS from €19.95",
+    "metaDescription": "Three ways to use the AI platform: self-host free (open source), managed SaaS from €19.95/month, or enterprise on-premise deployment.",
     "breadcrumbHome": "Home",
     "breadcrumbPricing": "Pricing",
     "heroEyebrow": "Plans & pricing",
@@ -613,11 +613,11 @@
   },
   "chatWidget": {
     "hub": {
-      "metaTitle": "Synaplan chat widget — website AI with RAG & GDPR",
-      "metaDescription": "Embed Synaplan’s chat widget on your site: crawled pages, PDFs, FAQs, and APIs as knowledge. Trades, hotels, and real customer stories. EU-ready.",
+      "metaTitle": "AI Chatbot Widget for Your Website — GDPR-Compliant",
+      "metaDescription": "Build an AI chatbot for your website in minutes. Grounded in your content — crawled pages, PDFs, FAQs. GDPR-compliant customer service AI from €19.95/month.",
       "breadcrumbHome": "Home",
       "breadcrumbChatWidget": "Chat widget",
-      "heroTitle": "Your website, your AI — grounded in your content",
+      "heroTitle": "AI chatbot for your website — grounded in your content",
       "heroLead": "The Synaplan chat widget answers visitors with the same models and policies you use internally. Point it at crawled pages, uploaded documents, structured lists, or connected systems — so answers stay accurate and on-brand.",
       "sectionEmbedTitle": "Go live in a day",
       "sectionEmbedP1": "Add a small script snippet or the WordPress plugin, match colors and placement to your layout, and publish. No separate bot stack — the widget uses your Synaplan workspace, including routing and cost controls.",
@@ -688,7 +688,7 @@
       "midCtaLead": "Start free or book a demo — we cover embed, your knowledge sources, and settings for your website widget."
     },
     "trades": {
-      "metaTitle": "Chat widget for trades & crafts — Synaplan",
+      "metaTitle": "AI Chatbot for Trades & Crafts — Customer Service AI",
       "metaDescription": "Answer appointment, pricing, and emergency questions on your craft business website with a Synaplan chat widget grounded in your real pages and PDFs.",
       "breadcrumbCurrent": "Trades & crafts",
       "heroTitle": "Less phone tag, more time on the job",
@@ -720,7 +720,7 @@
       "bottomCtaLead": "Start free, connect your pages, then book a demo to align dispatch and marketing."
     },
     "hospitality": {
-      "metaTitle": "Chat widget for hotels & hospitality — Synaplan",
+      "metaTitle": "AI Chatbot for Hotels & Hospitality",
       "metaDescription": "Reduce front-desk load with a Synaplan chat widget: check-in, parking, breakfast, and local tips from your official content — multilingual and on-brand.",
       "breadcrumbCurrent": "Hotels & hospitality",
       "heroTitle": "Guest questions, consistent answers",
@@ -752,7 +752,7 @@
       "bottomCtaLead": "Try Synaplan free, connect your official pages, then scale with Pro connectors when needed."
     },
     "customers": {
-      "metaTitle": "Synaplan chat widget — customer references",
+      "metaTitle": "AI Chatbot Customer Stories — Real Deployments",
       "metaDescription": "How yoga studios, care providers, public-sector cloud, and product teams use Synaplan — including the website chat widget and secure AI workflows.",
       "breadcrumbCurrent": "Customer references",
       "heroTitle": "Deployed by teams who need clarity and control",
@@ -955,12 +955,12 @@
     "copyrightBody": "The contents and works created on these pages by the site operators are subject to German copyright law. Reproduction, adaptation, distribution and any form of utilisation outside the limits of copyright require the written consent of the respective author."
   },
   "companiesPage": {
-    "metaTitle": "Synaplan for Companies — AI under control",
-    "metaDescription": "Deploy AI safely across your organization with Synaplan. Multi-model routing, RAG knowledge base, audit logs, and an embeddable chat widget — GDPR-compliant and self-hosted.",
+    "metaTitle": "AI for Companies — GDPR-Compliant AI Platform",
+    "metaDescription": "The GDPR-compliant AI platform for companies. Multi-model routing, RAG knowledge base, audit logs, and an AI chatbot widget — self-hosted or managed SaaS.",
     "breadcrumbHome": "Home",
     "breadcrumbCompanies": "For Companies",
     "badge": "For Companies",
-    "heroTitle": "All the AI your team needs — one platform, full control",
+    "heroTitle": "AI for companies — one platform, full control",
     "heroLead": "Synaplan puts every AI model your business uses under one roof: audit trails, cost limits, GDPR-compliant EU hosting, and a knowledge base that answers from your own documents.",
     "ctaPrimary": "Start for free",
     "ctaSecondary": "Book a demo",
@@ -985,12 +985,12 @@
     "germany": "Made in Germany"
   },
   "developersPage": {
-    "metaTitle": "Synaplan for Developers — open AI infrastructure",
-    "metaDescription": "Build on Synaplan’s open-source AI infrastructure: REST API, Docker deployment, plugin system, multi-model gateway. Apache 2.0 licensed, self-hosted.",
+    "metaTitle": "Open-Source AI Platform for Developers — Self-Hosted",
+    "metaDescription": "Open-source AI infrastructure you can self-host: REST API, Docker deployment, plugin system, and multi-model AI gateway. Apache 2.0 licensed.",
     "breadcrumbHome": "Home",
     "breadcrumbDevelopers": "For Developers",
     "badge": "For Developers",
-    "heroTitle": "Open infrastructure for AI-powered products",
+    "heroTitle": "Open-source AI infrastructure — self-hosted, API-first",
     "heroLead": "Synaplan is fully open-source. Self-host it, connect via REST API, build custom plugins, or use it as the AI backbone for your own product — Apache 2.0, no lock-in.",
     "ctaPrimary": "View on GitHub",
     "ctaSecondary": "Read the docs",
@@ -1018,7 +1018,7 @@
     "pluginsCtaLink": "Explore plugins →"
   },
   "pluginsPage": {
-    "metaTitle": "Synaplan Plugins — AI extensions for your workflows",
+    "metaTitle": "AI Plugins — Extend Synaplan for Your Workflows",
     "metaDescription": "Extend Synaplan with purpose-built plugins: marketing campaigns, Nextcloud & OpenCloud AI, WordPress support chat, and more. Open source, built for your industry.",
     "breadcrumbHome": "Home",
     "breadcrumbPlugins": "Plugins",
@@ -1056,12 +1056,12 @@
     "commissionFeature3": "Built by the team behind Synaplan"
   },
   "featuresPage": {
-    "metaTitle": "Features — Synaplan AI Platform",
-    "metaDescription": "Explore Synaplan’s AI platform features: multi-model routing, RAG knowledge base, audit logs, chat widget, real-time dashboard, and self-hosted deployment.",
+    "metaTitle": "AI Platform Features — Multi-Model, RAG, Compliance",
+    "metaDescription": "Explore the AI platform features: multi-model routing, RAG knowledge base, AI compliance audit logs, chatbot widget, and self-hosted deployment.",
     "breadcrumbHome": "Home",
     "breadcrumbFeatures": "Features",
     "badge": "Platform Features",
-    "heroTitle": "Everything you need for professional AI",
+    "heroTitle": "Everything your AI platform needs",
     "heroLead": "One platform for routing, memory, compliance, and deployment. Self-hosted or managed — you own the stack.",
     "f1Title": "Multi-Model Routing",
     "f1Desc": "Connect OpenAI, Claude, Groq, Gemini, and local Ollama models. Route requests to the right model for cost, speed, or capability.",
@@ -1080,8 +1080,8 @@
     "ctaSecondary": "Book a demo"
   },
   "multiModelPage": {
-    "metaTitle": "Multi-Model AI Routing — AI Gateway for OpenAI, Claude & Ollama",
-    "metaDescription": "Synaplan is an open-source AI gateway and LLM proxy. Connect OpenAI, Claude, Gemini, Groq, and self-hosted Ollama through one unified API — with cost control and full observability.",
+    "metaTitle": "AI Gateway & LLM Proxy — Multi-Model Routing",
+    "metaDescription": "Open-source AI gateway and LLM proxy. Route requests to OpenAI, Claude, Gemini, Groq, and Ollama through one API — with cost control and full observability.",
     "breadcrumbHome": "Home",
     "breadcrumbFeatures": "Features",
     "breadcrumbPage": "Multi-Model Routing",
@@ -1112,13 +1112,13 @@
     "ctaSecondary": "Book a demo"
   },
   "auditLogsPage": {
-    "metaTitle": "AI Compliance & Audit Logs — GDPR-Compliant AI Logging",
-    "metaDescription": "Synaplan logs every AI interaction — user, model, tokens, timestamp. Built for GDPR compliance, enterprise audits, and regulated industries. Self-hosted, no third-party telemetry.",
+    "metaTitle": "AI Compliance & Audit Logs — GDPR-Ready Logging",
+    "metaDescription": "Every AI interaction logged — user, model, tokens, timestamp. Built for GDPR compliance and enterprise audits. Self-hosted, zero third-party telemetry.",
     "breadcrumbHome": "Home",
     "breadcrumbFeatures": "Features",
     "breadcrumbPage": "Audit & Compliance",
     "badge": "Compliance",
-    "heroTitle": "AI Compliance You Can Prove",
+    "heroTitle": "AI compliance you can prove — every interaction logged",
     "heroLead": "Every prompt. Every response. Every model decision — logged, attributable, and exportable. Synaplan makes AI auditable for enterprise procurement, GDPR reviews, and regulated industries.",
     "why1Title": "Full Interaction Logging",
     "why1Desc": "User, message, model, token count, latency, and outcome recorded for every AI interaction. No black boxes.",
@@ -1137,13 +1137,13 @@
     "ctaSecondary": "Book a demo"
   },
   "memoriesFeaturePage": {
-    "metaTitle": "AI Memories & RAG — Retrieval-Augmented Generation",
+    "metaTitle": "AI Memories & RAG — Persistent Knowledge for Your AI",
     "metaDescription": "Synaplan Memories uses RAG (Retrieval-Augmented Generation) with Qdrant vector search to give your AI persistent, searchable knowledge — from uploaded documents to cross-session memory.",
     "breadcrumbHome": "Home",
     "breadcrumbFeatures": "Features",
     "breadcrumbPage": "Memories & RAG",
     "badge": "Memories & RAG",
-    "heroTitle": "AI That Remembers What Matters",
+    "heroTitle": "AI that remembers what matters — RAG & persistent memory",
     "heroLead": "Upload documents, connect knowledge bases, and let Synaplan find the right context for every answer. Your AI stops hallucinating — and starts knowing.",
     "why1Title": "Document Upload & Indexing",
     "why1Desc": "Upload PDFs, Word files, HTML, or plain text. Synaplan chunks, embeds, and indexes them for semantic retrieval.",
@@ -1162,7 +1162,7 @@
     "ctaSecondary": "Book a demo"
   },
   "aboutPage": {
-    "metaTitle": "About Synaplan — Open-Source AI Platform from Germany",
+    "metaTitle": "About Synaplan — Open-Source AI, Made in Germany",
     "metaDescription": "Synaplan is an open-source AI platform built by metadist GmbH in Düsseldorf, Germany. Multi-model routing, RAG, audit logs, and a GDPR-compliant chat widget.",
     "breadcrumbHome": "Home",
     "breadcrumbAbout": "About",
@@ -1205,7 +1205,7 @@
     "ctaContact": "Get in touch"
   },
   "philosophyPage": {
-    "metaTitle": "Our Philosophy — Why Open-Source AI Matters | Synaplan",
+    "metaTitle": "Our Philosophy — Why Open-Source AI Matters",
     "metaDescription": "Why we build open-source AI: full transparency, data sovereignty, and making AI a tool that truly serves businesses — not the other way around.",
     "breadcrumbHome": "Home",
     "breadcrumbAbout": "About",
