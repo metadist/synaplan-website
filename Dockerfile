@@ -45,9 +45,17 @@ RUN addgroup --system --gid 1001 nodejs \
 COPY --from=builder /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
-# Prisma schema + migrations (needed for migrate deploy at runtime)
+# Prisma schema, config, and migrations (needed for migrate deploy at runtime)
 COPY --from=builder --chown=nextjs:nodejs /app/prisma ./prisma
+COPY --from=builder --chown=nextjs:nodejs /app/prisma.config.ts ./prisma.config.ts
 COPY --from=builder --chown=nextjs:nodejs /app/src/generated ./src/generated
+# Prisma CLI for runtime migrations (not traced by Next.js standalone output).
+# Must npm-install rather than copy — Prisma 7.x has transitive deps (pathe, @prisma/dev, …).
+COPY --from=builder /app/node_modules/prisma/package.json /tmp/prisma-pkg.json
+RUN PRISMA_V=$(node -e "console.log(require('/tmp/prisma-pkg.json').version)") \
+  && npm install --no-save "prisma@${PRISMA_V}" \
+  && rm /tmp/prisma-pkg.json \
+  && chown -R nextjs:nodejs node_modules/prisma node_modules/@prisma node_modules/.bin/prisma 2>/dev/null || true
 
 USER nextjs
 EXPOSE 3000
