@@ -10,6 +10,8 @@ import {
 import { useRouter } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import rehypeHighlight from "rehype-highlight";
+import "highlight.js/styles/github-dark.min.css";
 import {
   Sparkles, Eye, Code2, Loader2, X, ChevronDown,
   ImageUp, CheckCircle2, AlertCircle,
@@ -473,7 +475,7 @@ function LocaleForm({
         />
       ) : (
         <div className="prose prose-neutral max-w-none rounded-xl border border-gray-100 bg-gray-50 px-6 py-5">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+          <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeHighlight]}>
             {data.content || "_Nothing to preview yet._"}
           </ReactMarkdown>
         </div>

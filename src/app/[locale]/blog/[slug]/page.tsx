@@ -4,6 +4,8 @@ import Link from "next/link";
 import { setRequestLocale } from "next-intl/server";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import rehypeHighlight from "rehype-highlight";
+import "highlight.js/styles/github-dark.min.css";
 import { prisma } from "@/lib/prisma";
 import { canonicalUrl } from "@/lib/jsonld";
 import { ArrowLeft } from "lucide-react";
@@ -147,7 +149,7 @@ export default async function BlogPostPage({ params }: Props) {
 
         {/* Content */}
         <div className="prose prose-neutral dark:prose-invert max-w-none prose-headings:font-semibold prose-a:text-brand-600">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+          <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeHighlight]}>
             {post.content}
           </ReactMarkdown>
         </div>
