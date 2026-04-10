@@ -37,7 +37,7 @@ const PLUGINS = [
     nameKey: "plugin3Name" as const,
     descKey: "plugin3Desc" as const,
     tagKey: "plugin3Tag" as const,
-    githubSlug: "synaplan-opencloud",
+    githubSlug: "synaplan-templatex",
     accent: "#14b8a6",
     bg: "bg-teal-50",
     border: "border-teal-100",
