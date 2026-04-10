@@ -115,7 +115,7 @@ export default async function BlogListPage({ params }: Props) {
           </p>
         </div>
       ) : (
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="mb-8 grid gap-8 md:grid-cols-2">
           {posts.map((post) => (
             <article
               key={post.slug}
