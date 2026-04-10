@@ -94,6 +94,7 @@ async function streamAI(
 ): Promise<void> {
   const res = await fetch("/api/admin/ai-write", {
     method: "POST",
+    credentials: "include",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload),
   });
@@ -326,7 +327,11 @@ function ImageUploadButton({ onUploaded }: ImageUploadProps) {
     try {
       const fd = new FormData();
       fd.append("file", file);
-      const res = await fetch("/api/admin/upload", { method: "POST", body: fd });
+      const res = await fetch("/api/admin/upload", {
+        method: "POST",
+        credentials: "include",
+        body: fd,
+      });
       const data = await res.json() as { url?: string; error?: string };
       if (!res.ok) throw new Error(data.error ?? "Upload failed");
       onUploaded(data.url!);
@@ -545,6 +550,7 @@ export function PostEditor({ initial = {} }: PostEditorProps) {
 
     const res = await fetch(url, {
       method,
+      credentials: "include",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
     });
@@ -563,15 +569,20 @@ export function PostEditor({ initial = {} }: PostEditorProps) {
     setError("");
     setSaveStatus("idle");
     try {
-      // Save active locale; save sibling only if it has content
-      const activeId = await saveLocale(activeLocale, targetStatus);
       const sibling = activeLocale === "de" ? "en" : "de";
+      const activeId = await saveLocale(activeLocale, targetStatus);
+      let siblingId: number | null = null;
       if (localeData[sibling].title.trim()) {
-        await saveLocale(sibling, targetStatus);
+        siblingId = await saveLocale(sibling, targetStatus);
       }
 
-      if (!initial.id && activeId) {
-        router.push(`/admin/posts/${activeId}/edit`);
+      const anyNewId = activeId ?? siblingId;
+      if (!initial.id && !anyNewId) {
+        throw new Error("Add a title in at least one language tab before saving.");
+      }
+
+      if (!initial.id && anyNewId) {
+        router.push(`/admin/posts/${anyNewId}/edit`);
         router.refresh();
       } else {
         setSaveStatus("saved");
@@ -601,7 +612,11 @@ export function PostEditor({ initial = {} }: PostEditorProps) {
     if (!file) return;
     const fd = new FormData();
     fd.append("file", file);
-    const res = await fetch("/api/admin/upload", { method: "POST", body: fd });
+    const res = await fetch("/api/admin/upload", {
+      method: "POST",
+      credentials: "include",
+      body: fd,
+    });
     const json = await res.json() as { url?: string };
     if (json.url) setCoverImage(json.url);
   }

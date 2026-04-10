@@ -38,7 +38,10 @@ export function PostsTable({ posts }: { posts: PostRow[] }) {
     if (!confirm(`Delete "${title}"? This cannot be undone.`)) return;
     setDeleting(id);
     try {
-      const res = await fetch(`/api/admin/posts/${id}`, { method: "DELETE" });
+      const res = await fetch(`/api/admin/posts/${id}`, {
+        method: "DELETE",
+        credentials: "include",
+      });
       if (res.ok) {
         window.location.reload();
       } else {

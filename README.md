@@ -95,6 +95,7 @@ Open:
 | `npm run db:migrate:deploy` | Apply migrations (production) |
 | `npm run db:seed` | Create initial admin user |
 | `npm run db:studio` | Open Prisma Studio (visual DB browser) |
+| `./scripts/sync-public-to-remote.sh` | Rsync `public/` to a server (env vars in script header) |
 
 ---
 
@@ -186,6 +187,8 @@ The compose file starts three services in order:
 1. `db` — PostgreSQL 16
 2. `migrate` — runs `prisma migrate deploy`
 3. `web` — Next.js production server
+
+Blog/admin image uploads go to `public/uploads/`. **Production** (`docker-compose.prod.yml`): bind-mounts the host directory `${SYNAPLAN_UPLOADS_HOST_PATH:-/wwwroot/synaplan.com/public/uploads}` → `/app/public/uploads`. Create it on the server and allow the container user (`nextjs`, uid **1001**): `mkdir -p /wwwroot/synaplan.com/public/uploads && chown -R 1001:1001 /wwwroot/synaplan.com/public/uploads`. **Local Compose** uses `./public/uploads` the same way. Sync from your laptop with `./scripts/sync-public-to-remote.sh` (see script header).
 
 Then seed the admin user:
 ```bash

@@ -13,6 +13,11 @@ const intlMiddleware = createMiddleware(routing);
 export default async function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
+  // ── Static uploads (blog/admin) — skip i18n; matcher may miss some paths ─────
+  if (pathname === "/uploads" || pathname.startsWith("/uploads/")) {
+    return NextResponse.next();
+  }
+
   // ── Admin protection ────────────────────────────────────────────────────────
   if (pathname.startsWith("/admin")) {
     if (pathname === "/admin/login" || pathname === "/admin/login/") {
@@ -34,5 +39,6 @@ export default async function proxy(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"],
+  // Exclude static files (.*\..*), API, Next internals, and /uploads (blog images).
+  matcher: ["/((?!api|_next|_vercel|uploads(?:/|$)|.*\\..*).*)"],
 };

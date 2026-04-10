@@ -113,26 +113,41 @@ export async function POST(req: Request) {
       ? slugify(rawSlug)
       : slugify(title);
 
-  const post = await prisma.post.create({
-    data: {
-      title,
-      slug,
-      excerpt: typeof excerpt === "string" ? excerpt : null,
-      content,
-      coverImage: typeof coverImage === "string" ? coverImage : null,
-      status: status as PostStatus,
-      locale: typeof locale === "string" ? locale : "de",
-      tags: Array.isArray(tags) ? (tags as string[]) : [],
-      translationKey: typeof translationKey === "string" && translationKey ? translationKey : null,
-      publishedAt:
-        status === "PUBLISHED"
-          ? typeof publishedAt === "string"
-            ? new Date(publishedAt)
-            : new Date()
-          : null,
-      authorId: session.userId,
-    },
-  });
+  try {
+    const post = await prisma.post.create({
+      data: {
+        title,
+        slug,
+        excerpt: typeof excerpt === "string" ? excerpt : null,
+        content,
+        coverImage: typeof coverImage === "string" ? coverImage : null,
+        status: status as PostStatus,
+        locale: typeof locale === "string" ? locale : "de",
+        tags: Array.isArray(tags) ? (tags as string[]) : [],
+        translationKey: typeof translationKey === "string" && translationKey ? translationKey : null,
+        publishedAt:
+          status === "PUBLISHED"
+            ? typeof publishedAt === "string"
+              ? new Date(publishedAt)
+              : new Date()
+            : null,
+        authorId: session.userId,
+      },
+    });
 
-  return NextResponse.json({ post }, { status: 201 });
+    return NextResponse.json({ post }, { status: 201 });
+  } catch (e: unknown) {
+    const code = typeof e === "object" && e !== null && "code" in e ? (e as { code: string }).code : "";
+    if (code === "P2002") {
+      return NextResponse.json(
+        {
+          error:
+            "A post with this slug already exists. Change the slug (or the title that generates it).",
+        },
+        { status: 409 },
+      );
+    }
+    console.error("POST /api/admin/posts", e);
+    return NextResponse.json({ error: "Could not save post" }, { status: 500 });
+  }
 }

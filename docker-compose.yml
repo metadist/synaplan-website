@@ -61,6 +61,9 @@ services:
     depends_on:
       migrate:
         condition: service_completed_successfully
+    volumes:
+      # Same layout as production: repo public/uploads → container (easy local testing).
+      - ./public/uploads:/app/public/uploads
     healthcheck:
       test: ["CMD-SHELL", "wget -qO- http://localhost:3000/api/health || exit 1"]
       interval: 30s

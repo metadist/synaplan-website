@@ -103,8 +103,23 @@ const nextConfig: NextConfig = {
 
   async headers() {
     return [
+      // Uploaded images: do not send COEP/CORP/CSP — those break display in some
+      // browsers when combined with the document's credentialless COEP.
       {
-        // Apply security headers to all routes
+        source: "/uploads/:path*",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+        ],
+      },
+      // JSON/API responses must not send document isolation headers (COEP/CORP/CSP/COOP):
+      // some browsers treat them as opaque or block reading the body for same-origin fetch().
+      {
+        source: "/api/:path*",
+        headers: [{ key: "X-Content-Type-Options", value: "nosniff" }],
+      },
+      {
+        // Apply security headers to all other routes
         source: "/(.*)",
         headers: securityHeaders,
       },

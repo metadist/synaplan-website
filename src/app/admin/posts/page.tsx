@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { getAdminSessionFromCookies } from "@/lib/admin-session";
 import { AdminShell, AdminPageHeader, NewPostButton } from "@/components/admin/admin-shell";
@@ -21,6 +22,10 @@ export default async function AdminPostsPage({
   searchParams: Promise<SearchParams>;
 }) {
   const session = await getAdminSessionFromCookies();
+  if (!session) {
+    redirect("/admin/login?from=/admin/posts");
+  }
+
   const searchParams = await rawSP;
 
   const page = Math.max(1, parseInt(searchParams.page ?? "1"));
@@ -64,7 +69,7 @@ export default async function AdminPostsPage({
   const totalPages = Math.ceil(total / limit);
 
   return (
-    <AdminShell userName={session?.name}>
+      <AdminShell userName={session.name}>
       <AdminPageHeader
         title="Posts"
         description={`${total} post${total !== 1 ? "s" : ""} total`}

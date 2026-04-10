@@ -42,7 +42,10 @@ ENV HOSTNAME=0.0.0.0
 RUN addgroup --system --gid 1001 nodejs \
   && adduser --system --uid 1001 nextjs
 
-COPY --from=builder /app/public ./public
+# Must be writable by nextjs: image uploads go to public/uploads/ (see api/admin/upload).
+COPY --from=builder --chown=nextjs:nodejs /app/public ./public
+# Empty Compose volume mounts replace this path; ensure dir exists and is owned by nextjs.
+RUN mkdir -p public/uploads && chown -R nextjs:nodejs public/uploads
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 # Prisma schema, config, and migrations (needed for migrate deploy at runtime)

@@ -11,6 +11,17 @@ import type { PostStatus } from "@/generated/prisma/client";
 
 export const runtime = "nodejs";
 
+function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-");
+}
+
 type Params = { params: Promise<{ id: string }> };
 
 // ─── GET ──────────────────────────────────────────────────────────────────────
@@ -69,23 +80,35 @@ export async function PUT(req: Request, { params }: Params) {
         : new Date()
       : existing.publishedAt;
 
-  const post = await prisma.post.update({
-    where: { id: parseInt(id) },
-    data: {
-      ...(typeof title === "string" && { title }),
-      ...(typeof slug === "string" && { slug }),
-      ...(typeof excerpt === "string" && { excerpt }),
-      ...(typeof content === "string" && { content }),
-      ...(typeof coverImage === "string" && { coverImage }),
-      ...(typeof status === "string" && { status: status as PostStatus }),
-      ...(typeof locale === "string" && { locale }),
-      ...(Array.isArray(tags) && { tags: tags as string[] }),
-      ...(typeof translationKey === "string" && { translationKey: translationKey || null }),
-      publishedAt: resolvedPublishedAt,
-    },
-  });
+  try {
+    const post = await prisma.post.update({
+      where: { id: parseInt(id) },
+      data: {
+        ...(typeof title === "string" && { title }),
+        ...(typeof slug === "string" && slug.trim() && { slug: slugify(slug) }),
+        ...(typeof excerpt === "string" && { excerpt }),
+        ...(typeof content === "string" && { content }),
+        ...(typeof coverImage === "string" && { coverImage }),
+        ...(typeof status === "string" && { status: status as PostStatus }),
+        ...(typeof locale === "string" && { locale }),
+        ...(Array.isArray(tags) && { tags: tags as string[] }),
+        ...(typeof translationKey === "string" && { translationKey: translationKey || null }),
+        publishedAt: resolvedPublishedAt,
+      },
+    });
 
-  return NextResponse.json({ post });
+    return NextResponse.json({ post });
+  } catch (e: unknown) {
+    const code = typeof e === "object" && e !== null && "code" in e ? (e as { code: string }).code : "";
+    if (code === "P2002") {
+      return NextResponse.json(
+        { error: "A post with this slug already exists. Choose a different slug." },
+        { status: 409 },
+      );
+    }
+    console.error("PUT /api/admin/posts/:id", e);
+    return NextResponse.json({ error: "Could not update post" }, { status: 500 });
+  }
 }
 
 // ─── DELETE ───────────────────────────────────────────────────────────────────
