@@ -1269,6 +1269,18 @@
     "release": "Release",
     "noReleases": "No releases available"
   },
+  "newsPage": {
+    "metaTitle": "News — Blog, Releases & Community",
+    "metaDescription": "Latest blog posts, GitHub releases, and community updates from the Synaplan team.",
+    "blogTitle": "Latest Blog Posts",
+    "blogViewAll": "View all posts",
+    "blogEmpty": "No posts published yet — check back soon.",
+    "releasesTitle": "Latest Releases",
+    "releasesViewAll": "View all releases on GitHub",
+    "releasesEmpty": "No releases available right now.",
+    "discordCta": "Join our Discord",
+    "discordLead": "Chat with the team and community — questions, feedback, and feature discussions."
+  },
   "glossary": {
     "rag": "Retrieval-Augmented Generation — an AI technique that grounds model answers in your own documents and data, reducing hallucinations and keeping responses factual.",
     "llm": "Large Language Model — a neural network trained on vast text data (e.g. GPT, Claude, Llama) that understands and generates human-like text.",
