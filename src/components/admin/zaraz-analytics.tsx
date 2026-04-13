@@ -28,48 +28,18 @@ export function ZarazAnalytics({ zarazToken, zarazSiteId }: ZarazAnalyticsProps)
       return;
     }
 
-    const today = new Date();
-    const weekAgo = new Date(today);
-    weekAgo.setDate(weekAgo.getDate() - 7);
-    const fmt = (d: Date) => d.toISOString().slice(0, 10);
-
-    const query = `{
-      viewer {
-        zones(filter: { zoneTag: "${zarazSiteId}" }) {
-          httpRequests1dGroups(
-            limit: 7
-            filter: { date_geq: "${fmt(weekAgo)}", date_leq: "${fmt(today)}" }
-          ) {
-            sum { pageViews requests }
-            uniq { uniques }
-          }
-        }
-      }
-    }`;
-
-    fetch("https://api.cloudflare.com/client/v4/graphql", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${zarazToken}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ query }),
-    })
-      .then((r) => r.json())
-      .then((data: { data?: { viewer?: { zones?: { httpRequests1dGroups?: { sum?: { pageViews?: number; requests?: number }; uniq?: { uniques?: number } }[] }[] } }; errors?: unknown[] }) => {
-        if (data.errors) throw new Error("GraphQL error");
-        const groups = data?.data?.viewer?.zones?.[0]?.httpRequests1dGroups ?? [];
-        let pageviews = 0;
-        let visitors = 0;
-        for (const g of groups) {
-          pageviews += g.sum?.pageViews ?? 0;
-          visitors += g.uniq?.uniques ?? 0;
-        }
-        setStats({ pageviews, visitors });
+    fetch("/api/admin/analytics", { credentials: "include" })
+      .then((r) => {
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((data: { pageviews?: number; visitors?: number; error?: string }) => {
+        if (data.error) throw new Error(data.error);
+        setStats({ pageviews: data.pageviews, visitors: data.visitors });
       })
       .catch(() => setError("Failed to load analytics"))
       .finally(() => setLoading(false));
-  }, [configured, zarazToken, zarazSiteId]);
+  }, [configured]);
 
   if (!configured) {
     return (
