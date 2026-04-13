@@ -92,7 +92,7 @@ export default async function BlogPostPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <main className="container-narrow section-padding">
+      <main className="container-narrow section-padding pb-20">
         {/* Back link */}
         <Link
           href={blogHref}
