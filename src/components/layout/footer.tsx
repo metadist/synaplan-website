@@ -84,7 +84,7 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
           <div className="flex items-center gap-2.5">
-            <SynaplanLogo variant="dark" className="max-h-8" />
+            <SynaplanLogo variant="dark" className="max-h-8" alt={tn("logoAlt")} />
           </div>
           <p className="text-xs text-neutral-500">
             {t("copyright", { year })}

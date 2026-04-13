@@ -10,6 +10,8 @@ type SynaplanLogoProps = {
   className?: string;
   /** Shorter height on very small screens */
   size?: "default" | "compact";
+  /** Override the default img alt text (for locale-aware SEO) */
+  alt?: string;
 };
 
 /**
@@ -19,11 +21,12 @@ export function SynaplanLogo({
   variant,
   className,
   size = "default",
+  alt = "Open Source AI Platform",
 }: SynaplanLogoProps) {
   return (
     <img
       src="/synaplan_logo.svg"
-      alt="Synaplan — Open-Source AI Platform"
+      alt={alt}
       width={151}
       height={33}
       decoding="async"

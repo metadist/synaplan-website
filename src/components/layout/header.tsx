@@ -53,7 +53,7 @@ export function Header() {
             className="relative z-10 flex max-w-[min(100%,10.5rem)] shrink-0 items-center sm:max-w-none"
             aria-label={t("nav.logoAlt")}
           >
-            <SynaplanLogo variant="light" size="compact" className="max-w-full" />
+            <SynaplanLogo variant="light" size="compact" className="max-w-full" alt={t("nav.logoAlt")} />
           </Link>
 
           <nav className="ml-[50px] hidden items-center gap-1 xl:flex">
