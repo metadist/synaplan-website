@@ -23,7 +23,8 @@
     "team": "Team",
     "philosophy": "Philosophie",
     "partners": "Partner",
-    "logoAlt": "Open Source KI Plattform"
+    "logoAlt": "Open Source KI Plattform",
+    "chatgptAlternative": "ChatGPT-Alternative"
   },
   "common": {
     "startForFree": "Kostenlos starten",
@@ -75,7 +76,7 @@
     "ctaRegister": "Konto erstellen",
     "backHome": "Zur Startseite",
     "justNow": "Gerade eben",
-    "placeholder": "Nachricht schreiben…",
+    "placeholder": "Stelle irgendeine Frage…",
     "placeholderLimit": "Demo-Limit erreicht — weiter auf web.synaplan.com",
     "placeholderUnavailable": "Demo nicht erreichbar — später erneut versuchen",
     "limitInline": "Demo-Limit erreicht — so geht’s weiter auf web.synaplan.com.",
@@ -1269,6 +1270,33 @@
     "viewAll": "Alle Releases ansehen",
     "release": "Release",
     "noReleases": "Keine Releases verfügbar"
+  },
+  "chatgptAlt": {
+    "metaTitle": "ChatGPT-Alternative: Open Source",
+    "metaDescription": "Synaplan ist die Open-Source-ChatGPT-Alternative mit Multi-Model-Routing, Self-Hosting und voller Datenkontrolle. GPT, Claude, Gemini und lokale Modelle über eine Oberfläche.",
+    "heroEyebrow": "Live-Vorschau",
+    "h1": "Die Open-Source ChatGPT-Alternative",
+    "intro": "Synaplan ist eine Open-Source-Managementschicht zwischen Ihrem Team und allen KI-Modellen auf dem Markt — GPT, Claude, Gemini, Mistral und lokale Modelle via Ollama. Statt sich an einen Anbieter zu binden, routen Sie Anfragen über eine Oberfläche, kontrollieren Kosten und behalten die volle Hoheit über Ihre Daten.",
+    "f1Title": "Multi-Model-Routing",
+    "f1Desc": "Zwischen OpenAI, Anthropic, Google, Groq und selbst gehosteten Modellen wechseln — ohne Integrationscode anzupassen. Routing nach Kosten, Latenz oder Richtlinie — automatisch.",
+    "f2Title": "Ihre Daten, Ihre Regeln",
+    "f2Desc": "Auf eigener Infrastruktur hosten oder EU-gehostetes SaaS nutzen. Jede Interaktion mit vollständigen Audit-Trails protokolliert. DSGVO-konform by Design.",
+    "f3Title": "100% Open Source",
+    "f3Desc": "Apache-2.0-lizenziert. Jede Zeile Code einsehen, auf GitHub beitragen oder forken. Keine Black Box, kein Vendor Lock-in, keine versteckte Telemetrie.",
+    "worksWithTitle": "Funktioniert mit ChatGPT — und darüber hinaus",
+    "worksWithDesc": "Synaplan ist kein Ersatz, der ChatGPT blockiert — es arbeitet damit. Routen Sie Anfragen an OpenAI, Anthropic, Google, Groq, Mistral oder lokale Ollama-Modelle über eine Oberfläche. Wir aktualisieren wöchentlich auf die neuesten Modellversionen und Features — wenn ein Anbieter etwas Neues veröffentlicht, haben Sie in Tagen Zugriff, nicht in Monaten. Ihr Team nutzt weiterhin das beste Modell je Aufgabe, und Sie behalten ein Dashboard für Kosten, Logs und Richtlinien.",
+    "worksWithLink": "So funktioniert Multi-Model-Routing",
+    "worksWithHref": "/features/multi-model",
+    "ragTitle": "Ihre Dateien bleiben bei Ihnen — Lokales RAG",
+    "ragDesc": "Laden Sie PDFs, Word-Dateien, Tabellen hoch oder crawlen Sie ganze Websites. Synaplan segmentiert, vektorisiert und indexiert alles lokal mit Qdrant-Vektorsuche. Ihre Dokumente verlassen niemals Ihren Server — kein Drittanbieter-Embedding-Dienst, keine Cloud-only-Wissensdatenbank. Die KI antwortet aus Ihren Daten, fundiert auf den Dateien, denen Sie vertrauen.",
+    "ragLink": "Memories & RAG erkunden",
+    "ragHref": "/features/memories",
+    "memoriesTitle": "KI-Memories migrieren — von einem Modell zum anderen",
+    "memoriesDesc": "ChatGPT speichert Memories eingesperrt bei OpenAI. Mit Synaplan sind Ihre Präferenzen, Tonalität, Kontext und Gesprächsverlauf strukturiert und portabel. Wechseln Sie von GPT zu Claude oder einem lokalen Modell — Ihre Memories kommen mit. Kategorisieren Sie sie, prüfen Sie, was die KI weiß, und behalten Sie die Kontrolle über den Kontext, der jede Antwort formt.",
+    "memoriesLink": "Mehr über KI-Memories",
+    "memoriesHref": "/solutions/memories",
+    "ctaPrimary": "Auf GitHub ansehen",
+    "ctaSecondary": "Kostenlos starten"
   },
   "newsPage": {
     "metaTitle": "News — Blog, Releases & Community",

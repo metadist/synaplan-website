@@ -296,8 +296,8 @@ export function TryChatDemoChatCard({
               disabled={disabled}
               rows={2}
               className={cn(
-                "min-h-[3.25rem] w-full resize-none rounded-2xl border border-[rgb(196_197_215/0.2)] bg-white py-3.5 pl-5 pr-14 text-sm leading-relaxed text-[#221823] outline-none transition-[box-shadow,border-color]",
-                "placeholder:text-[#747686]/60",
+                "min-h-[3.25rem] w-full resize-none rounded-2xl border border-[rgb(196_197_215/0.5)] bg-white py-3.5 pl-5 pr-14 text-sm leading-relaxed text-[#221823] outline-none transition-[box-shadow,border-color]",
+                "placeholder:text-[#747686]",
                 "focus:border-[#002c92]/35 focus:ring-2 focus:ring-[#002c92]/15",
                 "disabled:cursor-not-allowed disabled:opacity-50",
               )}

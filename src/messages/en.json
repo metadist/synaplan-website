@@ -23,7 +23,8 @@
     "team": "Team",
     "philosophy": "Philosophy",
     "partners": "Partners",
-    "logoAlt": "Open Source AI Platform"
+    "logoAlt": "Open Source AI Platform",
+    "chatgptAlternative": "ChatGPT Alternative"
   },
   "common": {
     "startForFree": "Start for free",
@@ -75,7 +76,7 @@
     "ctaRegister": "Create an account",
     "backHome": "Back to homepage",
     "justNow": "Just now",
-    "placeholder": "Write a message…",
+    "placeholder": "Ask anything…",
     "placeholderLimit": "Demo limit reached — continue on web.synaplan.com",
     "placeholderUnavailable": "Demo unavailable — try again later",
     "limitInline": "Demo limit reached — continue on web.synaplan.com.",
@@ -1269,6 +1270,33 @@
     "viewAll": "View all releases",
     "release": "Release",
     "noReleases": "No releases available"
+  },
+  "chatgptAlt": {
+    "metaTitle": "ChatGPT Alternative: Open Source",
+    "metaDescription": "Synaplan is the open-source ChatGPT alternative with multi-model routing, self-hosting, and full data control. Try GPT, Claude, Gemini, and local models from one interface.",
+    "heroEyebrow": "Live preview",
+    "h1": "The Open-Source ChatGPT Alternative",
+    "intro": "Synaplan is an open-source management layer between your team and every AI model on the market — GPT, Claude, Gemini, Mistral, and local models via Ollama. Instead of locking into a single vendor, you route requests through one interface, control costs, and keep full ownership of your data.",
+    "f1Title": "Multi-Model Routing",
+    "f1Desc": "Switch between OpenAI, Anthropic, Google, Groq, and self-hosted models without changing your integration. Route by cost, latency, or policy — automatically.",
+    "f2Title": "Your Data, Your Rules",
+    "f2Desc": "Self-host on your own infrastructure or use EU-hosted SaaS. Every interaction is logged with full audit trails. GDPR-ready by design.",
+    "f3Title": "100% Open Source",
+    "f3Desc": "Apache 2.0 licensed. Inspect every line of code, contribute on GitHub, or fork it. No black box, no vendor lock-in, no hidden telemetry.",
+    "worksWithTitle": "Works With ChatGPT — and Beyond",
+    "worksWithDesc": "Synaplan is not a replacement that blocks ChatGPT — it works with it. Route requests to OpenAI, Anthropic, Google, Groq, Mistral, or local Ollama models through one interface. We update weekly to the latest model versions and features — when a provider launches something new, you get access in days, not months. Your team keeps using the best model for each task, and you keep one dashboard for costs, logs, and policies.",
+    "worksWithLink": "How multi-model routing works",
+    "worksWithHref": "/features/multi-model",
+    "ragTitle": "Your Files Stay With You — Local RAG",
+    "ragDesc": "Upload PDFs, Word files, spreadsheets, or crawl entire websites. Synaplan chunks, embeds, and indexes everything locally using Qdrant vector search. Your documents never leave your server — no third-party embedding service, no cloud-only knowledge base. The AI answers from your data, grounded in the files you trust.",
+    "ragLink": "Explore Memories & RAG",
+    "ragHref": "/features/memories",
+    "memoriesTitle": "Migrate Your AI Memories — From One Model to Another",
+    "memoriesDesc": "ChatGPT stores memories locked inside OpenAI. With Synaplan, your preferences, tone, context, and conversation history are structured and portable. Switch from GPT to Claude or a local model — your memories come with you. Categorize them, review what the AI knows, and stay in control of the context that shapes every answer.",
+    "memoriesLink": "Learn about AI Memories",
+    "memoriesHref": "/solutions/memories",
+    "ctaPrimary": "View on GitHub",
+    "ctaSecondary": "Start for free"
   },
   "newsPage": {
     "metaTitle": "News — Blog, Releases & Community",
