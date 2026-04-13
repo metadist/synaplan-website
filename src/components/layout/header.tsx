@@ -51,7 +51,7 @@ export function Header() {
           <Link
             href="/"
             className="relative z-10 flex max-w-[min(100%,10.5rem)] shrink-0 items-center sm:max-w-none"
-            aria-label="Synaplan home"
+            aria-label={t("nav.logoAlt")}
           >
             <SynaplanLogo variant="light" size="compact" className="max-w-full" />
           </Link>

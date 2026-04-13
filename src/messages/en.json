@@ -22,7 +22,8 @@
     "widget": "Widget Details",
     "team": "Team",
     "philosophy": "Philosophy",
-    "partners": "Partners"
+    "partners": "Partners",
+    "logoAlt": "Open Source AI Platform"
   },
   "common": {
     "startForFree": "Start for free",
