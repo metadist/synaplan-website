@@ -1275,6 +1275,7 @@
     "metaTitle": "ChatGPT Alternative: Open Source",
     "metaDescription": "Synaplan is the open-source ChatGPT alternative with multi-model routing, self-hosting, and full data control. Try GPT, Claude, Gemini, and local models from one interface.",
     "heroEyebrow": "Live preview",
+    "heroCta": "Platform offer for everyone",
     "h1": "The Open-Source ChatGPT Alternative",
     "intro": "Synaplan is an open-source management layer between your team and every AI model on the market — GPT, Claude, Gemini, Mistral, and local models via Ollama. Instead of locking into a single vendor, you route requests through one interface, control costs, and keep full ownership of your data.",
     "f1Title": "Multi-Model Routing",
