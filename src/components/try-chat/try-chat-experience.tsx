@@ -262,12 +262,14 @@ export function TryChatExperience({
     setRows((r) => [...r, { role: "assistant", content: "" }]);
     setStreaming(true);
 
+    const langHint = locale !== "en" ? `[Please reply in ${locale === "de" ? "German" : locale}] ` : "";
+
     try {
       const res = await fetch("/api/demo-chat/send", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
-        body: JSON.stringify({ message: text }),
+        body: JSON.stringify({ message: langHint + text }),
       });
 
       const ct = res.headers.get("content-type") ?? "";

@@ -1,7 +1,7 @@
 "use client"
 
 import { useCallback, useEffect, useRef, useState } from "react"
-import { useTranslations } from "next-intl"
+import { useLocale, useTranslations } from "next-intl"
 import { motion } from "framer-motion"
 import { LINKS } from "@/lib/constants"
 import { GithubIcon } from "@/components/icons"
@@ -97,6 +97,7 @@ export function ChatGptAlternativePage({
 }: ChatGptAlternativePageProps) {
   const t = useTranslations("tryChat")
   const tc = useTranslations("chatgptAlt")
+  const locale = useLocale()
   const [status, setStatus] = useState<DemoStatusPayload | null>(null)
   const [rows, setRows] = useState<ChatRow[]>([])
   const [storageReady, setStorageReady] = useState(false)
@@ -104,6 +105,7 @@ export function ChatGptAlternativePage({
   const [streaming, setStreaming] = useState(false)
   const [apiUnavailable, setApiUnavailable] = useState(false)
   const [limitReached, setLimitReached] = useState(false)
+  const [isFullscreen, setIsFullscreen] = useState(false)
   const messagesScrollRef = useRef<HTMLDivElement>(null)
   const textareaRef = useRef<HTMLTextAreaElement>(null)
 
@@ -168,12 +170,14 @@ export function ChatGptAlternativePage({
     setRows((r) => [...r, { role: "assistant", content: "" }])
     setStreaming(true)
 
+    const langHint = locale !== "en" ? `[Please reply in ${locale === "de" ? "German" : locale}] ` : ""
+
     try {
       const res = await fetch("/api/demo-chat/send", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
-        body: JSON.stringify({ message: text }),
+        body: JSON.stringify({ message: langHint + text }),
       })
 
       const ct = res.headers.get("content-type") ?? ""
@@ -287,7 +291,8 @@ export function ChatGptAlternativePage({
           <div className="w-full">
             <TryChatDemoChatCard
               variant="embedded"
-              isFullscreen={false}
+              isFullscreen={isFullscreen}
+              onEnterFullscreen={() => setIsFullscreen(true)}
               status={status}
               rows={rows}
               streaming={streaming}
