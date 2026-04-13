@@ -6,8 +6,9 @@ import { motion } from "framer-motion"
 import { LINKS } from "@/lib/constants"
 import { GithubIcon } from "@/components/icons"
 import type { SynaplanGithubRepoStats } from "@/lib/github-synaplan-repo"
+import { createPortal } from "react-dom"
 import { Link } from "@/i18n/navigation"
-import { ArrowRight, Brain, FileText, Globe, Lock, RefreshCw, Server } from "lucide-react"
+import { ArrowRight, Brain, FileText, Globe, Lock, RefreshCw, Server, X } from "lucide-react"
 import {
   TryChatDemoChatCard,
   type DemoChatRow,
@@ -106,8 +107,25 @@ export function ChatGptAlternativePage({
   const [apiUnavailable, setApiUnavailable] = useState(false)
   const [limitReached, setLimitReached] = useState(false)
   const [isFullscreen, setIsFullscreen] = useState(false)
+  const [portalReady, setPortalReady] = useState(false)
   const messagesScrollRef = useRef<HTMLDivElement>(null)
   const textareaRef = useRef<HTMLTextAreaElement>(null)
+
+  useEffect(() => { setPortalReady(true) }, [])
+
+  useEffect(() => {
+    if (!isFullscreen) return
+    const prev = document.body.style.overflow
+    document.body.style.overflow = "hidden"
+    return () => { document.body.style.overflow = prev }
+  }, [isFullscreen])
+
+  useEffect(() => {
+    if (!isFullscreen) return
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setIsFullscreen(false) }
+    window.addEventListener("keydown", onKey)
+    return () => window.removeEventListener("keydown", onKey)
+  }, [isFullscreen])
 
   const scrollMessagesToBottom = useCallback(() => {
     const el = messagesScrollRef.current
@@ -291,7 +309,7 @@ export function ChatGptAlternativePage({
           <div className="w-full">
             <TryChatDemoChatCard
               variant="embedded"
-              isFullscreen={isFullscreen}
+              isFullscreen={false}
               onEnterFullscreen={() => setIsFullscreen(true)}
               status={status}
               rows={rows}
@@ -318,6 +336,44 @@ export function ChatGptAlternativePage({
           </a>
         </motion.div>
       </div>
+
+      {/* Fullscreen modal overlay */}
+      {isFullscreen && portalReady && createPortal(
+        <div className="fixed inset-0 z-[9999] flex flex-col bg-black/60 backdrop-blur-sm">
+          <div className="flex shrink-0 items-center justify-end p-3">
+            <button
+              type="button"
+              onClick={() => setIsFullscreen(false)}
+              className="flex size-10 items-center justify-center rounded-full bg-white/90 text-[#221823] shadow-lg transition-colors hover:bg-white"
+              aria-label="Close"
+            >
+              <X className="size-5" />
+            </button>
+          </div>
+          <div className="mx-auto flex w-full max-w-4xl flex-1 flex-col overflow-hidden px-4 pb-4">
+            <div className="flex flex-1 flex-col overflow-hidden rounded-2xl border border-white/40 bg-white/95 shadow-2xl backdrop-blur-md">
+              <TryChatDemoChatCard
+                variant="fullscreenPortal"
+                isFullscreen={true}
+                status={status}
+                rows={rows}
+                streaming={streaming}
+                disabled={disabled}
+                showEndPanel={showEndPanel}
+                limitReached={limitReached}
+                apiUnavailable={apiUnavailable}
+                input={input}
+                setInput={setInput}
+                send={send}
+                messagesScrollRef={messagesScrollRef}
+                textareaRef={textareaRef}
+                quickChips={quickChips}
+              />
+            </div>
+          </div>
+        </div>,
+        document.body,
+      )}
 
       {/* SEO content below the chat */}
       <div className="relative z-10 bg-white">
