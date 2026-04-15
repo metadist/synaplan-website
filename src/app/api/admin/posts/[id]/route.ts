@@ -102,7 +102,7 @@ export async function PUT(req: Request, { params }: Params) {
     const code = typeof e === "object" && e !== null && "code" in e ? (e as { code: string }).code : "";
     if (code === "P2002") {
       return NextResponse.json(
-        { error: "A post with this slug already exists. Choose a different slug." },
+        { error: "A post with this slug already exists for this locale. Choose a different slug." },
         { status: 409 },
       );
     }

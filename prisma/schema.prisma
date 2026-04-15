@@ -29,7 +29,7 @@ enum PostStatus {
 
 model Post {
   id          Int        @id @default(autoincrement())
-  slug        String     @unique
+  slug        String
   title       String
   excerpt     String?
   content     String     @db.Text
@@ -45,7 +45,7 @@ model Post {
   authorId    Int
   author      AdminUser  @relation(fields: [authorId], references: [id])
 
+  @@unique([slug, locale])
   @@index([status, locale])
-  @@index([slug])
   @@index([translationKey])
 }

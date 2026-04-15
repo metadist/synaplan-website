@@ -7,7 +7,7 @@
  * — the company behind Synaplan (metadist.de) used for E-E-A-T signals.
  */
 
-export const SITE_URL = "https://synaplan.com";
+export const SITE_URL = "https://www.synaplan.com";
 
 /** Build a canonical URL for a given locale + path. */
 export function canonicalUrl(locale: string, path: string): string {
@@ -23,7 +23,7 @@ export const PUBLISHER = {
   name: "metadist data management GmbH",
   url: "https://metadist.de",
   sameAs: [
-    "https://synaplan.com",
+    "https://www.synaplan.com",
     "https://github.com/metadist",
     "https://www.linkedin.com/company/metadist",
     "https://www.wikidata.org/wiki/Q131736023",

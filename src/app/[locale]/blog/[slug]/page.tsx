@@ -37,6 +37,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "article",
       images: post.coverImage ? [{ url: post.coverImage }] : undefined,
     },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt ?? undefined,
+      images: post.coverImage ? [post.coverImage] : undefined,
+    },
   };
 }
 
@@ -73,13 +79,13 @@ export default async function BlogPostPage({ params }: Props) {
     author: {
       "@type": "Person",
       name: post.author.name,
-      worksFor: { "@type": "Organization", name: "Synaplan", url: "https://synaplan.com" },
+      worksFor: { "@type": "Organization", name: "Synaplan", url: "https://www.synaplan.com" },
     },
     publisher: {
       "@type": "Organization",
       name: "Synaplan",
-      url: "https://synaplan.com",
-      logo: { "@type": "ImageObject", url: "https://synaplan.com/logo.png" },
+      url: "https://www.synaplan.com",
+      logo: { "@type": "ImageObject", url: "https://www.synaplan.com/logo.png" },
     },
     url: canonicalUrl(locale, `/blog/${slug}`),
     inLanguage: locale === "de" ? "de-DE" : "en-US",

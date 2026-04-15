@@ -22,7 +22,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/"],
       },
     ],
-    sitemap: "https://synaplan.com/sitemap.xml",
-    host: "https://synaplan.com",
+    sitemap: "https://www.synaplan.com/sitemap.xml",
+    host: "https://www.synaplan.com",
   };
 }

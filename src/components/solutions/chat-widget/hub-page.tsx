@@ -28,7 +28,7 @@ export async function ChatWidgetHubPage({ locale }: { locale: string }) {
     provider: {
       "@type": "Organization",
       name: "Synaplan",
-      url: "https://synaplan.com",
+      url: "https://www.synaplan.com",
     },
     areaServed: {
       "@type": "Place",
@@ -39,7 +39,7 @@ export async function ChatWidgetHubPage({ locale }: { locale: string }) {
       priceCurrency: "EUR",
       price: "19.95",
       description: t("hub.pricingHighlight"),
-      url: "https://synaplan.com",
+      url: "https://www.synaplan.com",
     },
   };
 

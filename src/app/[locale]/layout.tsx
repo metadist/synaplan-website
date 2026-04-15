@@ -45,7 +45,7 @@ export async function generateMetadata({
     // metadataBase ensures relative URLs in page-level metadata resolve to the
     // production domain, not the dev-server host (localhost) — this is what
     // caused the "canonical points to localhost" Lighthouse SEO warning.
-    metadataBase: new URL("https://synaplan.com"),
+    metadataBase: new URL("https://www.synaplan.com"),
     openGraph: {
       title: t("title"),
       description: t("description"),

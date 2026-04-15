@@ -7,7 +7,7 @@ import { createHmac } from "crypto";
  *
  * Setup in GitHub:
  *   Settings → Webhooks → Add webhook
- *   Payload URL:  https://synaplan.com/api/github-webhook
+ *   Payload URL:  https://www.synaplan.com/api/github-webhook
  *   Content type: application/json
  *   Secret:       set GITHUB_WEBHOOK_SECRET in .env.local / Vercel env vars
  *   Events:       "Releases" (and optionally "Pushes")

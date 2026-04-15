@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
 import { prisma } from "@/lib/prisma";
 
-const SITE = "https://synaplan.com";
+const SITE = "https://www.synaplan.com";
 
 /**
  * Priority mapping based on SISTRIX keyword research (25.03.2026):

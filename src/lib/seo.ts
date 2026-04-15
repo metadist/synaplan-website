@@ -1,6 +1,6 @@
 import { routing } from "@/i18n/routing";
 
-const SITE = "https://synaplan.com";
+const SITE = "https://www.synaplan.com";
 
 /** Path must start with `/` (e.g. `/solutions/chat-widget`). */
 export function canonicalUrl(locale: string, path: string): string {
@@ -11,7 +11,13 @@ export function canonicalUrl(locale: string, path: string): string {
   return `${SITE}/${locale}${p}`;
 }
 
-export const OG_IMAGE = { url: "/og/homepage.png", width: 1200, height: 630 };
+export const OG_IMAGE = {
+  url: "/og/homepage.png",
+  width: 1200,
+  height: 630,
+  type: "image/png",
+  alt: "Synaplan — Open-Source AI Platform for businesses. Multi-model routing, GDPR-compliant, self-hosted.",
+};
 
 /** hreflang-style alternate URLs for `alternates.languages`. */
 export function alternateLanguageUrls(path: string): Record<string, string> {
@@ -19,5 +25,6 @@ export function alternateLanguageUrls(path: string): Record<string, string> {
   return {
     en: `${SITE}${p}`,
     de: `${SITE}/de${p}`,
+    "x-default": `${SITE}${p}`,
   };
 }

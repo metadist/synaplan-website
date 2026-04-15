@@ -142,7 +142,7 @@ export async function POST(req: Request) {
       return NextResponse.json(
         {
           error:
-            "A post with this slug already exists. Change the slug (or the title that generates it).",
+            "A post with this slug already exists for this locale. Change the slug (or the title that generates it).",
         },
         { status: 409 },
       );
