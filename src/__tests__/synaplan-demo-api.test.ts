@@ -1,10 +1,11 @@
 /**
  * Unit tests for synaplan-demo-api helpers.
  */
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi, afterEach } from "vitest";
 import {
   normalizeBearerToken,
   extractChatIdFromCreateBody,
+  buildMessagesStreamUrl,
 } from "@/lib/synaplan-demo-api";
 
 describe("normalizeBearerToken", () => {
@@ -55,5 +56,30 @@ describe("extractChatIdFromCreateBody", () => {
 
   it("returns null for missing chat field", () => {
     expect(extractChatIdFromCreateBody({ success: true })).toBeNull();
+  });
+});
+
+describe("buildMessagesStreamUrl", () => {
+  afterEach(() => {
+    vi.unstubAllEnvs();
+  });
+
+  it("always includes disableMemories=1 to prevent memory leaks for public demo", () => {
+    vi.stubEnv("SYNAPLAN_API_BASE_URL", "https://api.synaplan.com/api/v1");
+    vi.stubEnv("SYNAPLAN_DEMO_BEARER_TOKEN", "testtoken");
+
+    const url = new URL(buildMessagesStreamUrl("hello world", 42));
+
+    expect(url.searchParams.get("disableMemories")).toBe("1");
+  });
+
+  it("includes message and chatId in the URL", () => {
+    vi.stubEnv("SYNAPLAN_API_BASE_URL", "https://api.synaplan.com/api/v1");
+    vi.stubEnv("SYNAPLAN_DEMO_BEARER_TOKEN", "testtoken");
+
+    const url = new URL(buildMessagesStreamUrl("test message", 123));
+
+    expect(url.searchParams.get("message")).toBe("test message");
+    expect(url.searchParams.get("chatId")).toBe("123");
   });
 });

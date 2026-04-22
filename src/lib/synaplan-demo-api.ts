@@ -177,6 +177,9 @@ export function buildMessagesStreamUrl(message: string, chatId: number): string 
   const url = new URL(`${base}/messages/stream`);
   url.searchParams.set("message", message);
   url.searchParams.set("chatId", String(chatId));
+  // Prevent Ralf's personal memories from leaking into public demo responses
+  // and stop demo conversations from being extracted as memories.
+  url.searchParams.set("disableMemories", "1");
   return url.toString();
 }
 
