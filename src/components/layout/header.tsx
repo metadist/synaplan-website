@@ -196,8 +196,8 @@ export function Header() {
               >
                 <Menu className="size-5" />
               </SheetTrigger>
-              <SheetContent side="right" className="w-80 p-6">
-                <div className="flex flex-col gap-6 pt-8">
+              <SheetContent side="right" className="w-80 p-0">
+                <div className="flex h-full flex-col gap-6 overflow-y-auto overscroll-contain p-6 pt-10 pb-[max(1.5rem,env(safe-area-inset-bottom))]">
                   <div className="flex flex-col gap-1">
                     <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                       {t("nav.solutions")}
