@@ -4,11 +4,16 @@ export const routing = defineRouting({
   locales: ["en", "de"],
   defaultLocale: "en",
   localePrefix: "as-needed",
-  // The URL is the single source of truth for the visitor's chosen
-  // language. Do NOT auto-redirect based on Accept-Language headers or a
-  // previously stored NEXT_LOCALE cookie — that overrides the visitor's
-  // explicit intent (e.g. clicking the EN/DE switcher, sharing /de links,
-  // search engines crawling /de) and previously made the language
-  // switcher appear broken on /de for German-locale browsers.
+  // The URL is the ONLY source of truth for the visitor's chosen language.
+  //
+  // - `localeDetection: false` → never redirect based on Accept-Language.
+  // - `localeCookie: false`    → never write a NEXT_LOCALE cookie.
+  //
+  // Together these guarantee that clicking EN on a /de page actually lands
+  // the visitor on the EN page, instead of being silently re-routed back to
+  // DE by a leftover cookie or a browser-language sniffer. If you ever feel
+  // tempted to flip these on for "convenience", DON'T — it's the exact bug
+  // we removed.
   localeDetection: false,
+  localeCookie: false,
 });

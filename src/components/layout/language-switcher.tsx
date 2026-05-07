@@ -3,6 +3,18 @@
 import { useLocale } from "next-intl";
 import { useRouter, usePathname } from "@/i18n/navigation";
 
+/**
+ * EN / DE switcher.
+ *
+ * Deliberately dumb: it swaps the locale on the *current* pathname and
+ * navigates there. Nothing else.
+ *
+ * No <link rel="alternate"> sniffing, no cookies, no Accept-Language, no
+ * "remember last choice", no redirect to a marketing-preferred locale. If
+ * the visitor clicks EN, they go to the EN URL — period. If that URL does
+ * not exist (e.g. a German-only blog post slug), they get a normal 404 and
+ * can navigate from there. That is the user's call to make, not ours.
+ */
 export function LanguageSwitcher() {
   const locale = useLocale();
   const router = useRouter();
@@ -11,21 +23,6 @@ export function LanguageSwitcher() {
   const otherLocale = locale === "en" ? "de" : "en";
 
   function switchLocale() {
-    // Pages that have language-specific URLs (e.g. blog posts whose slug
-    // differs between EN and DE) advertise the translated URL via
-    // <link rel="alternate" hreflang="..."> tags in <head>. Prefer those
-    // over a blind locale-prefix swap so the switcher always lands on a
-    // real, existing page.
-    if (typeof document !== "undefined") {
-      const target = otherLocale === "de" ? "de" : "en";
-      const link = document.querySelector<HTMLLinkElement>(
-        `link[rel="alternate"][hreflang^="${target}"]`,
-      );
-      if (link?.href) {
-        window.location.assign(link.href);
-        return;
-      }
-    }
     router.replace(pathname, { locale: otherLocale });
   }
 

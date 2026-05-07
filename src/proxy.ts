@@ -35,7 +35,18 @@ export default async function proxy(req: NextRequest) {
   }
 
   // ── i18n routing ────────────────────────────────────────────────────────────
-  return intlMiddleware(req);
+  const res = intlMiddleware(req);
+
+  // Defensive cleanup: if a visitor still has a NEXT_LOCALE cookie from an
+  // earlier deploy (when next-intl wrote one), evict it. We never read it
+  // anymore (localeDetection: false, localeCookie: false), but leaving it
+  // around is confusing during debugging. The URL is the only source of
+  // truth for language now.
+  if (req.cookies.has("NEXT_LOCALE")) {
+    res.cookies.set("NEXT_LOCALE", "", { path: "/", maxAge: 0 });
+  }
+
+  return res;
 }
 
 export const config = {
