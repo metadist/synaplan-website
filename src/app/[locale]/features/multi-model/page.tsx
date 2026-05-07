@@ -1,10 +1,19 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { SolutionArticleShell } from "@/components/solutions/solution-article-shell";
 import { FeaturePageShell, ModelsList } from "@/components/features/feature-page-shell";
 import { alternateLanguageUrls, canonicalUrl, OG_IMAGE } from "@/lib/seo";
 import { buildBreadcrumbSchema, buildServiceSchema, SITE_URL } from "@/lib/jsonld";
+import { LINKS } from "@/lib/constants";
 import { Shuffle, DollarSign, Unlink, Eye, Server, Code2 } from "lucide-react";
+
+const EXTERNAL_LINKS = {
+  huggingface: "https://huggingface.co/",
+  groq: "https://groq.com/",
+} as const;
+
+const inlineLinkClass =
+  "font-medium text-brand-700 underline-offset-4 transition-colors hover:text-brand-800 hover:underline";
 
 export const dynamic = "force-static";
 
@@ -81,6 +90,29 @@ export default async function MultiModelPage({
     { label: t("model6") },
   ];
 
+  const modelsLead = t.rich("modelsLead", {
+    hf: (chunks: ReactNode) => (
+      <a
+        href={EXTERNAL_LINKS.huggingface}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={inlineLinkClass}
+      >
+        {chunks}
+      </a>
+    ),
+    groq: (chunks: ReactNode) => (
+      <a
+        href={EXTERNAL_LINKS.groq}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={inlineLinkClass}
+      >
+        {chunks}
+      </a>
+    ),
+  });
+
   return (
     <>
       <script
@@ -97,7 +129,15 @@ export default async function MultiModelPage({
         heroTitle={t("heroTitle")}
         heroLead={t("heroLead")}
         whyCards={whyCards}
-        extraSection={<ModelsList title={t("modelsTitle")} models={models} />}
+        extraSection={
+          <ModelsList
+            title={t("modelsTitle")}
+            lead={modelsLead}
+            models={models}
+            ctaLabel={t("modelsCtaLabel")}
+            ctaHref={LINKS.docs}
+          />
+        }
         ctaTitle={t("ctaTitle")}
         ctaPrimary={t("ctaPrimary")}
         ctaSecondary={t("ctaSecondary")}

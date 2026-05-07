@@ -19,17 +19,46 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const post = await prisma.post.findFirst({
     where: { slug, status: "PUBLISHED", locale },
-    select: { title: true, excerpt: true, coverImage: true },
+    select: { title: true, excerpt: true, coverImage: true, translationKey: true },
   });
 
   if (!post) return { title: "Not Found" };
 
   const canonical = canonicalUrl(locale, `/blog/${slug}`);
 
+  // Build hreflang alternates so the global language switcher can find the
+  // translated post (or fall back to the other-locale blog index when there
+  // is no translation yet).
+  const otherLocale = locale === "de" ? "en" : "de";
+  let sibling = post.translationKey
+    ? await prisma.post.findFirst({
+        where: {
+          translationKey: post.translationKey,
+          locale: otherLocale,
+          status: "PUBLISHED",
+        },
+        select: { slug: true },
+      })
+    : null;
+  // Backwards-compat: pre-translationKey posts often share the same slug
+  // across locales — keep that pair linked too.
+  if (!sibling) {
+    sibling = await prisma.post.findFirst({
+      where: { slug, locale: otherLocale, status: "PUBLISHED" },
+      select: { slug: true },
+    });
+  }
+
+  const otherLocalePath = sibling ? `/blog/${sibling.slug}` : "/blog";
+  const languages: Record<string, string> = {
+    "en-US": canonicalUrl(locale === "en" ? locale : otherLocale, locale === "en" ? `/blog/${slug}` : otherLocalePath),
+    "de-DE": canonicalUrl(locale === "de" ? locale : otherLocale, locale === "de" ? `/blog/${slug}` : otherLocalePath),
+  };
+
   return {
     title: post.title,
     description: post.excerpt ?? undefined,
-    alternates: { canonical },
+    alternates: { canonical, languages },
     openGraph: {
       title: post.title,
       description: post.excerpt ?? undefined,

@@ -129,10 +129,27 @@ export function FeaturePageShell({
   );
 }
 
-export function ModelsList({ title, models }: { title: string; models: ModelItem[] }) {
+export function ModelsList({
+  title,
+  models,
+  lead,
+  ctaLabel,
+  ctaHref,
+}: {
+  title: string;
+  models: ModelItem[];
+  lead?: React.ReactNode;
+  ctaLabel?: string;
+  ctaHref?: string;
+}) {
   return (
     <section className="mt-16">
-      <h2 className="mb-6 text-center text-xl font-bold text-foreground">{title}</h2>
+      <div className="mx-auto max-w-3xl text-center">
+        <h2 className="mb-4 text-xl font-bold text-foreground">{title}</h2>
+        {lead && (
+          <p className="mb-8 text-base leading-relaxed text-muted-foreground">{lead}</p>
+        )}
+      </div>
       <ul className="mx-auto grid max-w-3xl gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {models.map((m, i) => (
           <li
@@ -144,6 +161,19 @@ export function ModelsList({ title, models }: { title: string; models: ModelItem
           </li>
         ))}
       </ul>
+      {ctaLabel && ctaHref && (
+        <div className="mt-8 flex justify-center">
+          <a
+            href={ctaHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-xl border border-border bg-background px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+          >
+            {ctaLabel}
+            <ExternalLink className="size-4" />
+          </a>
+        </div>
+      )}
     </section>
   );
 }
