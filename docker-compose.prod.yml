@@ -9,7 +9,7 @@ services:
     volumes:
       - db_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER:-synaplan}"]
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER:-synaplan} -d $${POSTGRES_DB:-synaplan_web}"]
       interval: 5s
       timeout: 5s
       retries: 10
