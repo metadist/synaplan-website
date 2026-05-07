@@ -128,6 +128,17 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     return [
+      // Apex (naked) domain → www. Any request that arrives with
+      // Host: synaplan.com is 301-redirected to the canonical www host,
+      // preserving path and query string. NOTE: this only fires when
+      // the apex DNS actually points at this origin (via Cloudflare
+      // proxy). The apex must not be parked on a third-party host.
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "synaplan.com" }],
+        destination: "https://www.synaplan.com/:path*",
+        permanent: true,
+      },
       // Trailing-slash normalisation — avoids duplicate content penalties
       {
         source: "/de/",
