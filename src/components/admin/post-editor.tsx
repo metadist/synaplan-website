@@ -534,6 +534,21 @@ export function PostEditor({ initial = {} }: PostEditorProps) {
     if (!d.title.trim()) return null;
 
     const resolvedStatus = targetStatus ?? d.status;
+    // publishedAt is *not* sent from the client.
+    //
+    // The server is the single source of truth for this field:
+    //   - POST /api/admin/posts        → sets publishedAt = now when a new post
+    //                                    is created directly as PUBLISHED.
+    //   - PUT  /api/admin/posts/:id    → sets publishedAt = now only when the
+    //                                    post is transitioning from a non-
+    //                                    PUBLISHED state to PUBLISHED; on any
+    //                                    other edit it preserves the existing
+    //                                    publishedAt (typo-fix on a 6-month-old
+    //                                    article does *not* re-date it).
+    //
+    // Sending `new Date()` from here on every save was a latent bug — the
+    // server happens to ignore it today, but the moment that guard is touched
+    // every edit would silently reset the article's date. Don't send the value.
     const body = {
       title: d.title,
       slug: d.slug || slugify(d.title),
@@ -544,7 +559,6 @@ export function PostEditor({ initial = {} }: PostEditorProps) {
       locale,
       tags: d.tags.split(",").map((t) => t.trim()).filter(Boolean),
       translationKey: translationKey || slugify(d.title),
-      publishedAt: resolvedStatus === "PUBLISHED" ? new Date().toISOString() : undefined,
     };
 
     const url = d.id ? `/api/admin/posts/${d.id}` : "/api/admin/posts";
