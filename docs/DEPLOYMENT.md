@@ -28,11 +28,18 @@ Client ──► Cloudflare (SSL / 443) ──► Apache2 (:80) ──► Docker
 ```
 git push (main) ──► GitHub Actions ──► Build image ──► Push to GHCR
                                                             │
-Server:  docker compose pull && docker compose up -d  ◄─────┘
+Server:  synaplan-watchguard.timer (every 2 min)            │
+           ─► docker compose pull                           │
+           ─► if digest changed: docker compose up -d  ◄────┘
 ```
 
 The GitHub Actions workflow (`.github/workflows/ci.yml`) builds and pushes
 `ghcr.io/metadist/synaplan-website:latest` on every push to `main`.
+
+On the server, a small systemd timer (`synaplan-watchguard.timer`) polls
+GHCR every 2 minutes and triggers a compose recreate when the upstream
+digest changes. Source for the timer + script lives in `deploy/`; see
+`deploy/README.md` for install instructions and behaviour notes.
 
 ---
 
@@ -212,11 +219,13 @@ ssh -p16803 root@s1 "cd /wwwroot/synaplan.com && docker compose pull web && dock
 
 ### Standard Update (after pushing to main)
 
-GitHub Actions builds and pushes a new image automatically. To deploy:
+GitHub Actions builds and pushes a new image automatically. Within ~2
+minutes of that completing, the `synaplan-watchguard.timer` running on
+the server notices the new digest and runs the equivalent of:
 
 ```bash
 cd /wwwroot/synaplan.com
-docker compose pull web
+docker compose pull
 docker compose up -d
 ```
 
@@ -226,6 +235,25 @@ What happens:
 3. The `migrate` sidecar runs `prisma migrate deploy` (handles schema changes)
 4. The `web` container starts with the new code
 5. The `db` container and `db_data` volume are **untouched** — all data persists
+
+To force a redeploy immediately, run the same two commands by hand, or
+trigger the timer's unit:
+
+```bash
+ssh -p16803 root@s1 'systemctl start synaplan-watchguard.service'
+```
+
+If the watchguard ever stops running (the original failure mode this
+mechanism exists to prevent), reinstall it from `deploy/`:
+
+```bash
+cd /path/to/synaplan-website
+sudo install -m 0755 deploy/watchguard.sh /usr/local/bin/synaplan-watchguard.sh
+sudo install -m 0644 deploy/synaplan-watchguard.service /etc/systemd/system/
+sudo install -m 0644 deploy/synaplan-watchguard.timer /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable --now synaplan-watchguard.timer
+```
 
 ### Updating Environment Variables
 
