@@ -31,6 +31,11 @@ interface LocaleData {
   content: string;
   status: PostStatus;
   tags: string; // comma-separated
+  // ISO yyyy-mm-dd (date-only). Empty string = no override; the server keeps
+  // the existing publishedAt (or stamps "now" when the post first transitions
+  // to PUBLISHED). Set this when you need to backdate (e.g. publishing a
+  // language-bridge stub that should slot in next to the original article).
+  publishedAt: string;
 }
 
 interface PostEditorProps {
@@ -44,6 +49,7 @@ interface PostEditorProps {
     status?: PostStatus;
     locale?: string;
     tags?: string[];
+    publishedAt?: string | null;
     translationKey?: string | null;
     // pre-loaded translation (opposite locale)
     translation?: {
@@ -54,6 +60,7 @@ interface PostEditorProps {
       content?: string;
       status?: PostStatus;
       tags?: string[];
+      publishedAt?: string | null;
     } | null;
   };
 }
@@ -71,6 +78,17 @@ function slugify(text: string) {
     .replace(/-+/g, "-");
 }
 
+function toDateInputValue(value: string | null | undefined): string {
+  if (!value) return "";
+  const d = new Date(value);
+  if (Number.isNaN(d.getTime())) return "";
+  // <input type="date"> wants yyyy-mm-dd in local time.
+  const yyyy = d.getFullYear();
+  const mm = String(d.getMonth() + 1).padStart(2, "0");
+  const dd = String(d.getDate()).padStart(2, "0");
+  return `${yyyy}-${mm}-${dd}`;
+}
+
 function makeDefaultLocaleData(
   locale: string,
   d?: PostEditorProps["initial"],
@@ -85,6 +103,7 @@ function makeDefaultLocaleData(
     content: src?.content ?? "",
     status: src?.status ?? "DRAFT",
     tags: (src?.tags ?? []).join(", "),
+    publishedAt: toDateInputValue(src?.publishedAt),
   };
 }
 
@@ -435,7 +454,21 @@ function LocaleForm({
             <ChevronDown className="pointer-events-none absolute right-2.5 top-1/2 size-3.5 -translate-y-1/2 text-gray-400" />
           </div>
         </div>
-        <div className="col-span-2">
+        <div>
+          <label
+            className="mb-1 block text-xs font-medium text-gray-500"
+            title="Override the publish date — leave blank to keep the existing one. Useful for backdating a bridge/stub post so it slots in next to the original article it links to."
+          >
+            Published
+          </label>
+          <input
+            type="date"
+            value={data.publishedAt}
+            onChange={(e) => onChange({ publishedAt: e.target.value })}
+            className="w-full rounded-lg border border-gray-200 bg-gray-50 px-3 py-1.5 text-sm outline-none focus:border-brand-400 focus:bg-white focus:ring-2 focus:ring-brand-500/15"
+          />
+        </div>
+        <div>
           <label className="mb-1 block text-xs font-medium text-gray-500">Tags (comma-separated)</label>
           <input
             value={data.tags}
@@ -534,21 +567,21 @@ export function PostEditor({ initial = {} }: PostEditorProps) {
     if (!d.title.trim()) return null;
 
     const resolvedStatus = targetStatus ?? d.status;
-    // publishedAt is *not* sent from the client.
+    // publishedAt rules (server enforces this; we only send a value when the
+    // editor explicitly typed one in the "Published" date field):
+    //   - POST /api/admin/posts        → server stamps "now" when a new post
+    //                                    is created directly as PUBLISHED,
+    //                                    unless an explicit ISO date is sent.
+    //   - PUT  /api/admin/posts/:id    → an explicit date wins; otherwise
+    //                                    "now" only on the first transition
+    //                                    to PUBLISHED; otherwise the existing
+    //                                    publishedAt is preserved (so a
+    //                                    typo-fix does *not* re-date a post).
     //
-    // The server is the single source of truth for this field:
-    //   - POST /api/admin/posts        → sets publishedAt = now when a new post
-    //                                    is created directly as PUBLISHED.
-    //   - PUT  /api/admin/posts/:id    → sets publishedAt = now only when the
-    //                                    post is transitioning from a non-
-    //                                    PUBLISHED state to PUBLISHED; on any
-    //                                    other edit it preserves the existing
-    //                                    publishedAt (typo-fix on a 6-month-old
-    //                                    article does *not* re-date it).
-    //
-    // Sending `new Date()` from here on every save was a latent bug — the
-    // server happens to ignore it today, but the moment that guard is touched
-    // every edit would silently reset the article's date. Don't send the value.
+    // Previously the editor sent `new Date()` on every PUBLISHED save, which
+    // would silently reset the publish date of any edited article if the
+    // server guard ever regressed. Don't do that.
+    const explicitPublishedAt = d.publishedAt.trim();
     const body = {
       title: d.title,
       slug: d.slug || slugify(d.title),
@@ -559,6 +592,12 @@ export function PostEditor({ initial = {} }: PostEditorProps) {
       locale,
       tags: d.tags.split(",").map((t) => t.trim()).filter(Boolean),
       translationKey: translationKey || slugify(d.title),
+      // Send only when the user explicitly set a date. <input type="date">
+      // emits yyyy-mm-dd; we promote to an ISO timestamp at local midnight so
+      // the server's `new Date(value)` resolves unambiguously.
+      ...(explicitPublishedAt && {
+        publishedAt: new Date(`${explicitPublishedAt}T00:00:00`).toISOString(),
+      }),
     };
 
     const url = d.id ? `/api/admin/posts/${d.id}` : "/api/admin/posts";

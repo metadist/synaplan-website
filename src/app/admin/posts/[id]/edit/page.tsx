@@ -27,6 +27,7 @@ export default async function EditPostPage({ params }: Params) {
       locale: true,
       tags: true,
       translationKey: true,
+      publishedAt: true,
     },
   });
 
@@ -48,6 +49,7 @@ export default async function EditPostPage({ params }: Params) {
           content: true,
           status: true,
           tags: true,
+          publishedAt: true,
         },
       })
     : null;
@@ -67,11 +69,15 @@ export default async function EditPostPage({ params }: Params) {
               coverImage: post.coverImage ?? undefined,
               translationKey: post.translationKey ?? undefined,
               status: post.status as "DRAFT" | "PUBLISHED" | "ARCHIVED",
+              publishedAt: post.publishedAt ? post.publishedAt.toISOString() : undefined,
               translation: translation
                 ? {
                     ...translation,
                     excerpt: translation.excerpt ?? undefined,
                     status: translation.status as "DRAFT" | "PUBLISHED" | "ARCHIVED",
+                    publishedAt: translation.publishedAt
+                      ? translation.publishedAt.toISOString()
+                      : undefined,
                   }
                 : null,
             }}

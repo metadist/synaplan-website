@@ -70,14 +70,22 @@ export async function PUT(req: Request, { params }: Params) {
     translationKey,
   } = body as Record<string, unknown>;
 
-  // If transitioning to PUBLISHED for the first time, set publishedAt
+  // publishedAt resolution order:
+  //   1. Explicit override from the editor (admin sets a backdate or
+  //      forward-date in the date input) wins, regardless of status changes.
+  //   2. Transitioning to PUBLISHED for the first time → stamp "now".
+  //   3. Otherwise preserve the existing value (typo-fix on a published
+  //      article does *not* re-date it).
   const wasPublished = existing.status === "PUBLISHED";
   const nowPublished = status === "PUBLISHED";
-  const resolvedPublishedAt =
-    nowPublished && !wasPublished
-      ? typeof publishedAt === "string"
-        ? new Date(publishedAt)
-        : new Date()
+  const explicitPublishedAt =
+    typeof publishedAt === "string" && publishedAt.trim() !== ""
+      ? new Date(publishedAt)
+      : null;
+  const resolvedPublishedAt = explicitPublishedAt
+    ? explicitPublishedAt
+    : nowPublished && !wasPublished
+      ? new Date()
       : existing.publishedAt;
 
   try {
