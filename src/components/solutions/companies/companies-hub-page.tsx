@@ -9,6 +9,7 @@ import {
   Database,
   Euro,
   Globe,
+  Landmark,
   MessageSquare,
   Shield,
 } from "lucide-react";
@@ -118,6 +119,37 @@ export async function CompaniesHubPage({ locale }: { locale: string }) {
               </p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Public-sector / digital sovereignty (EU/CH) */}
+      <section className="mx-auto mt-14 max-w-3xl">
+        <div className="flex flex-col gap-4 rounded-3xl border border-[rgb(196_197_215/0.45)] bg-white/70 p-6 sm:flex-row sm:items-center sm:gap-6 sm:p-8">
+          <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-brand-50">
+            <Landmark className="size-6 text-brand-700" />
+          </div>
+          <div className="flex-1">
+            <div className="flex items-center gap-2">
+              <span className="text-base leading-none" aria-hidden>
+                &#x1F1EA;&#x1F1FA;&#x200B;&#x1F1E8;&#x1F1ED;
+              </span>
+              <h2 className="text-lg font-bold text-foreground">
+                {t("sovereignTitle")}
+              </h2>
+            </div>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              {t("sovereignBody")}
+            </p>
+          </div>
+          <a
+            href={LINKS.sovereignEU}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-11 shrink-0 items-center justify-center gap-2 rounded-xl border border-[#002c92]/25 bg-soft-accent px-6 text-sm font-semibold text-[#002c92] transition-colors hover:bg-soft-accent-hover"
+          >
+            {t("sovereignCta")}
+            <ArrowRight className="size-4" />
+          </a>
         </div>
       </section>
 

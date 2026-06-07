@@ -24,7 +24,7 @@ export function Footer() {
           label: t("sovereign"),
           href: LINKS.sovereignEU,
           external: true,
-          flag: "\u{1F1EA}\u{1F1FA}",
+          flag: "\u{1F1EA}\u{1F1FA}\u{200B}\u{1F1E8}\u{1F1ED}",
         },
       ],
     },

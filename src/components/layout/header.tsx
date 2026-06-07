@@ -82,7 +82,7 @@ export function Header() {
                     className="mt-1 flex items-center gap-2.5 rounded-lg border-t border-border px-3 pb-2.5 pt-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
                   >
                     <span className="text-base leading-none" aria-hidden>
-                      &#x1F1EA;&#x1F1FA;
+                      &#x1F1EA;&#x1F1FA;&#x200B;&#x1F1E8;&#x1F1ED;
                     </span>
                     {t("nav.sovereignEU")}
                   </a>
@@ -231,7 +231,7 @@ export function Header() {
                       className="mt-1 flex items-center gap-2.5 rounded-lg border-t border-border px-3 pb-2.5 pt-3 text-sm font-medium text-foreground transition-colors hover:bg-accent"
                     >
                       <span className="text-base leading-none" aria-hidden>
-                        &#x1F1EA;&#x1F1FA;
+                        &#x1F1EA;&#x1F1FA;&#x200B;&#x1F1E8;&#x1F1ED;
                       </span>
                       {t("nav.sovereignEU")}
                     </a>
