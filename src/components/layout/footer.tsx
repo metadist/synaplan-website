@@ -20,6 +20,12 @@ export function Footer() {
         { label: t("plugins"), href: "/solutions/plugins" },
         { label: t("tryChat"), href: "/try-chat" },
         { label: tn("pricing"), href: "/pricing" },
+        {
+          label: t("sovereign"),
+          href: LINKS.sovereignEU,
+          external: true,
+          flag: "\u{1F1EA}\u{1F1FA}",
+        },
       ],
     },
     {
@@ -63,8 +69,13 @@ export function Footer() {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm text-neutral-400 transition-colors hover:text-white"
+                        className="inline-flex items-center gap-2 text-sm text-neutral-400 transition-colors hover:text-white"
                       >
+                        {"flag" in link && link.flag ? (
+                          <span className="text-base leading-none" aria-hidden>
+                            {link.flag}
+                          </span>
+                        ) : null}
                         {link.label}
                       </a>
                     ) : (

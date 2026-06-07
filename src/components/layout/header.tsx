@@ -75,6 +75,17 @@ export function Header() {
                       {item.label}
                     </Link>
                   ))}
+                  <a
+                    href={LINKS.sovereignEU}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1 flex items-center gap-2.5 rounded-lg border-t border-border px-3 pb-2.5 pt-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                  >
+                    <span className="text-base leading-none" aria-hidden>
+                      &#x1F1EA;&#x1F1FA;
+                    </span>
+                    {t("nav.sovereignEU")}
+                  </a>
                 </div>
               </div>
             </div>
@@ -212,6 +223,18 @@ export function Header() {
                         {item.label}
                       </Link>
                     ))}
+                    <a
+                      href={LINKS.sovereignEU}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setMobileOpen(false)}
+                      className="mt-1 flex items-center gap-2.5 rounded-lg border-t border-border px-3 pb-2.5 pt-3 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                    >
+                      <span className="text-base leading-none" aria-hidden>
+                        &#x1F1EA;&#x1F1FA;
+                      </span>
+                      {t("nav.sovereignEU")}
+                    </a>
                   </div>
                   <div className="flex flex-col gap-1">
                     <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">

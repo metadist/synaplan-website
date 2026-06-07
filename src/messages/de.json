@@ -24,7 +24,8 @@
     "philosophy": "Philosophie",
     "partners": "Partner",
     "logoAlt": "Open Source KI Plattform",
-    "chatgptAlternative": "ChatGPT-Alternative"
+    "chatgptAlternative": "ChatGPT-Alternative",
+    "sovereignEU": "synaplan EU/CH"
   },
   "common": {
     "startForFree": "Kostenlos starten",
@@ -146,6 +147,7 @@
     "status": "Online",
     "statusDone": "Bereit",
     "placeholder": "Nachricht eingeben…",
+    "inputCta": "Kostenlos starten",
     "bot0": "Hallo! Ich bin Ihr Synaplan-Assistent. Ich unterstütze Teams bei Multi-Model-Routing, RAG auf eigenen Dokumenten und lückenlosen Audit-Logs — alles auf einer Open-Source-Plattform, die Sie einsehen und selbst hosten können.",
     "user0": "Können wir GPT und Claude im selben Workspace nutzen, ohne fünf verschiedene Oberflächen zu jonglieren?",
     "bot1": "Ja. Routen Sie Prompts zu OpenAI, Anthropic, Google, Meta, Mistral und mehr über eine API und ein UI. Wechseln Sie pro Anfrage oder Workflow — ohne Vendor Lock-in, mit einer gemeinsamen Kosten- und Nutzungsübersicht.",
@@ -611,7 +613,8 @@
     "widgetHospitality": "Widget: Hotels",
     "widgetReferences": "Widget: Kundenreferenzen",
     "tryChat": "Chat ohne Login",
-    "plugins": "Plugins"
+    "plugins": "Plugins",
+    "sovereign": "Souverän (EU/CH)"
   },
   "chatWidget": {
     "hub": {

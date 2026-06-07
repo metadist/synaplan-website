@@ -24,7 +24,8 @@
     "philosophy": "Philosophy",
     "partners": "Partners",
     "logoAlt": "Open Source AI Platform",
-    "chatgptAlternative": "ChatGPT Alternative"
+    "chatgptAlternative": "ChatGPT Alternative",
+    "sovereignEU": "synaplan EU/CH"
   },
   "common": {
     "startForFree": "Start for free",
@@ -146,6 +147,7 @@
     "status": "Online",
     "statusDone": "Ready",
     "placeholder": "Type your message…",
+    "inputCta": "Start for free",
     "bot0": "Hi! I'm your Synaplan assistant. I help teams run multi-model routing, RAG on their own documents, and full audit trails — all in one open-source platform you can inspect and self-host.",
     "user0": "Can we use GPT and Claude in the same workspace without juggling five different dashboards?",
     "bot1": "Yes. Route prompts to OpenAI, Anthropic, Google, Meta, Mistral, and more from a single API and UI. Switch models per request or per workflow — no vendor lock-in, and you keep one cost and usage view.",
@@ -611,7 +613,8 @@
     "widgetHospitality": "Widget: Hotels",
     "widgetReferences": "Widget: Customer stories",
     "tryChat": "Chat without logging in",
-    "plugins": "Plugins"
+    "plugins": "Plugins",
+    "sovereign": "Sovereign (EU/CH)"
   },
   "chatWidget": {
     "hub": {

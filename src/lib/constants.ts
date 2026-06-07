@@ -1,6 +1,7 @@
 export const LINKS = {
   app: "https://app.synaplan.com/index.php/register",
   web: "https://web.synaplan.com/",
+  sovereignEU: "https://www.synaplan.eu/",
   github: "https://github.com/metadist/synaplan",
   docs: "https://docs.synaplan.com/",
   discord: "https://discord.com/invite/kQB3eDjWfF",
