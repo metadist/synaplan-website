@@ -10,6 +10,8 @@ import {
   Globe,
   Lock,
   Mail,
+  Puzzle,
+  Scale,
   Server,
   Shield,
 } from "lucide-react";
@@ -137,6 +139,9 @@ export default async function PrivacyPolicyPage({
     { id: "s8", title: t("s8Title"), icon: Database },
     { id: "s9", title: t("s9Title"), icon: Shield },
     { id: "s10", title: t("s10Title"), icon: Lock },
+    { id: "s11", title: t("s11Title"), icon: Puzzle },
+    { id: "s12", title: t("s12Title"), icon: Scale },
+    { id: "s13", title: t("s13Title"), icon: Mail },
   ];
 
   const tocItems = sections.map(({ id, title }) => ({ id, title }));
@@ -368,6 +373,74 @@ export default async function PrivacyPolicyPage({
             <div className="pt-10">
               <SectionCard id="s10" icon={Lock} title={t("s10Title")}>
                 <p className="text-sm text-muted-foreground leading-relaxed">{t("s10Body")}</p>
+              </SectionCard>
+            </div>
+
+            {/* S11 — Platform & plugin connections */}
+            <div className="pt-10">
+              <SectionCard id="s11" icon={Puzzle} title={t("s11Title")}>
+                <p className="text-sm text-muted-foreground leading-relaxed">{t("s11Body")}</p>
+                <div>
+                  <h3 className="mb-1.5 text-sm font-semibold text-foreground">{t("s11PluginTitle")}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{t("s11PluginBody")}</p>
+                </div>
+                <HighlightBox>
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-brand-700">
+                    {t("s11ProfilingTitle")}
+                  </p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{t("s11ProfilingBody")}</p>
+                </HighlightBox>
+                <InfoBox>
+                  <InfoRow label={t("operatorLabel")} value={t("s11Operator")} />
+                  <InfoRow label={t("dataLocationLabel")} value={t("s11DataLocation")} />
+                  <InfoRow label={t("legalBasis")} value={t("s11Legal")} />
+                  <InfoRow label={t("aiModelsLabel")} value={t("s11Models")} />
+                </InfoBox>
+              </SectionCard>
+            </div>
+
+            {/* S12 — Open source & licensing */}
+            <div className="pt-10">
+              <SectionCard id="s12" icon={Scale} title={t("s12Title")}>
+                <p className="text-sm text-muted-foreground leading-relaxed">{t("s12Body")}</p>
+                <InfoBox>
+                  <div className="flex flex-col gap-2">
+                    <a
+                      href="https://github.com/metadist/Synamail"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-sm font-medium text-brand-700 hover:underline"
+                    >
+                      {t("s12Synamail")}
+                      <ArrowRight className="size-3" />
+                    </a>
+                    <a
+                      href="https://github.com/metadist/synaplan"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-sm font-medium text-brand-700 hover:underline"
+                    >
+                      {t("s12Platform")}
+                      <ArrowRight className="size-3" />
+                    </a>
+                    <a
+                      href="https://www.apache.org/licenses/LICENSE-2.0"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-sm font-medium text-brand-700 hover:underline"
+                    >
+                      {t("s12License")}
+                      <ArrowRight className="size-3" />
+                    </a>
+                  </div>
+                </InfoBox>
+              </SectionCard>
+            </div>
+
+            {/* S13 — Objection to promotional emails */}
+            <div className="pt-10">
+              <SectionCard id="s13" icon={Mail} title={t("s13Title")}>
+                <p className="text-sm text-muted-foreground leading-relaxed">{t("s13Body")}</p>
               </SectionCard>
             </div>
 
