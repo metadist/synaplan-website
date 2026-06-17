@@ -10,12 +10,15 @@ import {
   Puzzle,
 } from "lucide-react";
 
+// Each card links straight to its page in the docs (docs.synaplan.com).
+// Synamail has its own docs page; the rest are documented on /plugins.
 const PLUGINS = [
   {
     nameKey: "plugin1Name" as const,
     descKey: "plugin1Desc" as const,
     tagKey: "plugin1Tag" as const,
-    githubSlug: "synaplan-marketing",
+    docHref: `${LINKS.docs}plugins`,
+    icon: Puzzle,
     accent: "#f97316",
     bg: "bg-orange-50",
     border: "border-orange-100",
@@ -26,18 +29,8 @@ const PLUGINS = [
     nameKey: "plugin2Name" as const,
     descKey: "plugin2Desc" as const,
     tagKey: "plugin2Tag" as const,
-    githubSlug: "synaplan-nextcloud",
-    accent: "#0ea5e9",
-    bg: "bg-sky-50",
-    border: "border-sky-100",
-    iconBg: "bg-sky-100",
-    iconColor: "text-sky-600",
-  },
-  {
-    nameKey: "plugin3Name" as const,
-    descKey: "plugin3Desc" as const,
-    tagKey: "plugin3Tag" as const,
-    githubSlug: "synaplan-templatex",
+    docHref: `${LINKS.docs}plugins`,
+    icon: Puzzle,
     accent: "#14b8a6",
     bg: "bg-teal-50",
     border: "border-teal-100",
@@ -45,10 +38,23 @@ const PLUGINS = [
     iconColor: "text-teal-600",
   },
   {
+    nameKey: "plugin3Name" as const,
+    descKey: "plugin3Desc" as const,
+    tagKey: "plugin3Tag" as const,
+    docHref: `${LINKS.docs}synamail`,
+    icon: Mail,
+    accent: "#0ea5e9",
+    bg: "bg-sky-50",
+    border: "border-sky-100",
+    iconBg: "bg-sky-100",
+    iconColor: "text-sky-600",
+  },
+  {
     nameKey: "plugin4Name" as const,
     descKey: "plugin4Desc" as const,
     tagKey: "plugin4Tag" as const,
-    githubSlug: "synaplan-ai-support-chat",
+    docHref: `${LINKS.docs}plugins`,
+    icon: Puzzle,
     accent: "#8b5cf6",
     bg: "bg-violet-50",
     border: "border-violet-100",
@@ -59,23 +65,37 @@ const PLUGINS = [
     nameKey: "plugin5Name" as const,
     descKey: "plugin5Desc" as const,
     tagKey: "plugin5Tag" as const,
-    githubSlug: "synaplan",
-    accent: "#e11d48",
-    bg: "bg-rose-50",
-    border: "border-rose-100",
-    iconBg: "bg-rose-100",
-    iconColor: "text-rose-600",
+    docHref: `${LINKS.docs}plugins`,
+    icon: Puzzle,
+    accent: "#f59e0b",
+    bg: "bg-amber-50",
+    border: "border-amber-100",
+    iconBg: "bg-amber-100",
+    iconColor: "text-amber-600",
   },
   {
     nameKey: "plugin6Name" as const,
     descKey: "plugin6Desc" as const,
     tagKey: "plugin6Tag" as const,
-    githubSlug: "synaplan-memories",
+    docHref: `${LINKS.docs}plugins`,
+    icon: Puzzle,
     accent: "#6366f1",
     bg: "bg-indigo-50",
     border: "border-indigo-100",
     iconBg: "bg-indigo-100",
     iconColor: "text-indigo-600",
+  },
+  {
+    nameKey: "plugin7Name" as const,
+    descKey: "plugin7Desc" as const,
+    tagKey: "plugin7Tag" as const,
+    docHref: `${LINKS.docs}plugins`,
+    icon: Puzzle,
+    accent: "#e11d48",
+    bg: "bg-rose-50",
+    border: "border-rose-100",
+    iconBg: "bg-rose-100",
+    iconColor: "text-rose-600",
   },
 ] as const;
 
@@ -125,10 +145,12 @@ export async function PluginsHubPage({ locale }: { locale: string }) {
 
       {/* Plugin cards */}
       <div className="mx-auto mt-12 grid max-w-5xl gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {PLUGINS.map((plugin) => (
+        {PLUGINS.map((plugin) => {
+          const Icon = plugin.icon;
+          return (
           <a
             key={plugin.nameKey}
-            href={`https://github.com/metadist/${plugin.githubSlug}`}
+            href={plugin.docHref}
             target="_blank"
             rel="noopener noreferrer"
             className={`group flex flex-col gap-4 rounded-2xl border p-6 transition-all hover:shadow-md hover:-translate-y-0.5 ${plugin.bg} ${plugin.border}`}
@@ -137,7 +159,7 @@ export async function PluginsHubPage({ locale }: { locale: string }) {
               <div
                 className={`flex size-10 shrink-0 items-center justify-center rounded-xl ${plugin.iconBg}`}
               >
-                <Puzzle className={`size-5 ${plugin.iconColor}`} />
+                <Icon className={`size-5 ${plugin.iconColor}`} />
               </div>
               <ExternalLink className="size-4 text-muted-foreground/40 transition-colors group-hover:text-muted-foreground" />
             </div>
@@ -153,7 +175,8 @@ export async function PluginsHubPage({ locale }: { locale: string }) {
               {t(plugin.tagKey)}
             </p>
           </a>
-        ))}
+          );
+        })}
       </div>
 
       {/* Build your own */}
@@ -175,7 +198,7 @@ export async function PluginsHubPage({ locale }: { locale: string }) {
             <ArrowRight className="size-4" />
           </a>
           <a
-            href={LINKS.docs}
+            href={`${LINKS.docs}plugins`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex h-11 items-center gap-2 rounded-xl border border-[#002c92]/25 bg-soft-accent px-7 text-sm font-semibold text-[#002c92] transition-colors hover:bg-soft-accent-hover"
