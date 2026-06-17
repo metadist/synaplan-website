@@ -13,28 +13,28 @@ import { useLocale, useTranslations } from "next-intl";
 
 const MODELS = [
   {
-    name: "GPT-4o",
+    name: "GPT-5.5",
     provider: "OpenAI",
     color: "bg-emerald-500",
     latency: "320ms",
     tokens: "1.2k",
   },
   {
-    name: "Claude 4",
+    name: "Claude Opus 4.8",
     provider: "Anthropic",
     color: "bg-amber-500",
     latency: "280ms",
     tokens: "0.9k",
   },
   {
-    name: "Gemini 2.5",
+    name: "Gemini 2.5 Pro",
     provider: "Google",
     color: "bg-blue-500",
     latency: "190ms",
     tokens: "1.5k",
   },
   {
-    name: "Llama 3.3",
+    name: "Llama 4",
     provider: "Meta",
     color: "bg-purple-500",
     latency: "150ms",

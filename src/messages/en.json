@@ -573,7 +573,7 @@
       },
       {
         "q": "Which AI models does Synaplan support?",
-        "a": "Synaplan supports OpenAI (GPT-4o, GPT-4.1), Anthropic (Claude), Google Gemini, Groq (ultra-fast inference), and Ollama for local self-hosted models. You can assign different models to different use cases or let the platform route automatically."
+        "a": "Synaplan supports OpenAI (GPT-5.5, GPT-5.5 Pro), Anthropic (Claude Opus 4.8), Google Gemini, Groq (ultra-fast inference), and Ollama for local self-hosted models. You can assign different models to different use cases or let the platform route automatically."
       },
       {
         "q": "Can I self-host Synaplan?",
@@ -1115,7 +1115,7 @@
     "heroTitle": "One API. All AI Models.",
     "heroLead": "Stop managing five different AI vendor APIs. Synaplan routes requests to OpenAI, Claude, Gemini, Groq, and local Ollama models through a single endpoint — with fallbacks, cost controls, and full observability.",
     "why1Title": "Model Flexibility",
-    "why1Desc": "Switch models per use case — fast Groq for chat, powerful GPT-4o for reasoning, local Ollama for GDPR-strict environments.",
+    "why1Desc": "Switch models per use case — fast Groq for chat, powerful GPT-5.5 for reasoning, local Ollama for GDPR-strict environments.",
     "why2Title": "Cost Control",
     "why2Desc": "Route simple queries to cheaper models, complex ones to more powerful. Define rules by cost, latency, or capability.",
     "why3Title": "No Vendor Lock-in",
@@ -1123,7 +1123,7 @@
     "why4Title": "Full Observability",
     "why4Desc": "Every request logged with model, tokens, latency, and cost. Audit trails ready for compliance reviews.",
     "why5Title": "Local Models via Ollama",
-    "why5Desc": "Run Llama 3, Mistral, Qwen, or any Ollama-compatible model on your hardware. No data leaves your server.",
+    "why5Desc": "Run Llama 4, Mistral, Qwen 3, or any Ollama-compatible model on your hardware. No data leaves your server.",
     "why6Title": "OpenAI-Compatible API",
     "why6Desc": "Synaplan speaks the OpenAI API format. Drop it in as an OpenAI proxy — no SDK changes needed.",
     "modelsTitle": "Models & providers",

@@ -573,7 +573,7 @@
       },
       {
         "q": "Welche KI-Modelle unterstützt Synaplan?",
-        "a": "Synaplan unterstützt OpenAI (GPT-4o, GPT-4.1), Anthropic (Claude), Google Gemini, Groq (ultraschnelle Inferenz) und Ollama für lokale, selbst gehostete Modelle. Sie können verschiedene Modelle für verschiedene Anwendungsfälle zuweisen oder das Routing automatisch steuern lassen."
+        "a": "Synaplan unterstützt OpenAI (GPT-5.5, GPT-5.5 Pro), Anthropic (Claude Opus 4.8), Google Gemini, Groq (ultraschnelle Inferenz) und Ollama für lokale, selbst gehostete Modelle. Sie können verschiedene Modelle für verschiedene Anwendungsfälle zuweisen oder das Routing automatisch steuern lassen."
       },
       {
         "q": "Kann ich Synaplan selbst hosten?",
@@ -1115,7 +1115,7 @@
     "heroTitle": "Eine API. Alle KI-Modelle.",
     "heroLead": "Schluss mit fünf verschiedenen KI-Anbieter-APIs. Synaplan leitet Anfragen an OpenAI, Claude, Gemini, Groq und lokale Ollama-Modelle über einen einzigen Endpunkt weiter — mit Fallbacks, Kostenkontrolle und vollständiger Transparenz.",
     "why1Title": "Modellflexibilität",
-    "why1Desc": "Modelle je nach Anwendungsfall wechseln — schnelles Groq für Chat, leistungsstarkes GPT-4o für komplexe Analysen, lokales Ollama für DSGVO-kritische Umgebungen.",
+    "why1Desc": "Modelle je nach Anwendungsfall wechseln — schnelles Groq für Chat, leistungsstarkes GPT-5.5 für komplexe Analysen, lokales Ollama für DSGVO-kritische Umgebungen.",
     "why2Title": "Kostenkontrolle",
     "why2Desc": "Einfache Anfragen an günstigere Modelle, komplexe an leistungsstärkere routen. Regeln nach Kosten, Latenz oder Kapazität definieren.",
     "why3Title": "Kein Vendor-Lock-in",
@@ -1123,7 +1123,7 @@
     "why4Title": "Vollständige Transparenz",
     "why4Desc": "Jede Anfrage mit Modell, Tokens, Latenz und Kosten protokolliert. Prüfpfade für Compliance-Reviews.",
     "why5Title": "Lokale Modelle via Ollama",
-    "why5Desc": "Llama 3, Mistral, Qwen oder beliebige Ollama-kompatible Modelle auf eigener Hardware betreiben. Keine Daten verlassen den Server.",
+    "why5Desc": "Llama 4, Mistral, Qwen 3 oder beliebige Ollama-kompatible Modelle auf eigener Hardware betreiben. Keine Daten verlassen den Server.",
     "why6Title": "OpenAI-kompatible API",
     "why6Desc": "Synaplan spricht das OpenAI-API-Format. Als OpenAI-Proxy einsetzen — keine SDK-Änderungen in bestehenden Apps nötig.",
     "modelsTitle": "Modelle & Anbieter",

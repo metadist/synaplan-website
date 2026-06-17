@@ -5,10 +5,10 @@ import { useMotionPerformance } from "@/contexts/motion-performance-context";
 import { cn } from "@/lib/utils";
 
 const MODELS = [
-  { name: "GPT-4o", color: "#10b981", x: 75, y: 15 },
+  { name: "GPT-5.5", color: "#10b981", x: 75, y: 15 },
   { name: "Claude", color: "#f59e0b", x: 90, y: 40 },
   { name: "Gemini", color: "#3b82f6", x: 80, y: 65 },
-  { name: "Llama 3", color: "#8b5cf6", x: 70, y: 88 },
+  { name: "Llama 4", color: "#8b5cf6", x: 70, y: 88 },
   { name: "Mistral", color: "#ef4444", x: 92, y: 85 },
 ];
 
