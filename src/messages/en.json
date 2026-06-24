@@ -525,7 +525,7 @@
         "feature2": "100 images / month",
         "feature3": "Advanced AI models",
         "feature4": "Priority support",
-        "feature5": "10 GB storage"
+        "feature5": "5 GB storage"
       },
       "team": {
         "name": "Team",
@@ -534,7 +534,7 @@
         "feature2": "500 images / month",
         "feature3": "Team collaboration",
         "feature4": "Custom prompts",
-        "feature5": "50 GB storage",
+        "feature5": "20 GB storage",
         "feature6": "API access"
       },
       "business": {
