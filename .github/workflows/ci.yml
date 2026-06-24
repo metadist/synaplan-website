@@ -12,9 +12,48 @@ env:
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
+  quality:
+    name: Lint, Type-check & Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Generate the Prisma client so type-checking sees the DB types.
+      # A dummy DATABASE_URL is only needed for codegen, never for a real connection.
+      - name: Generate Prisma client
+        run: npx prisma generate
+        env:
+          DATABASE_URL: postgresql://dummy:dummy@localhost:5432/dummy
+
+      # Type errors are the main risk for route handlers/components — block on them.
+      - name: Type-check
+        run: npm run typecheck
+
+      - name: Test
+        run: npm test
+
+      # Lint runs but does not block yet: the repo has pre-existing ESLint
+      # errors (react-hooks, unescaped entities). Once that debt is cleared,
+      # drop continue-on-error to make linting a hard gate.
+      - name: Lint
+        run: npm run lint
+        continue-on-error: true
+
   docker:
     name: Build & Push Docker Image
     runs-on: ubuntu-latest
+    needs: quality
     permissions:
       contents: read
       packages: write

@@ -103,24 +103,33 @@ const nextConfig: NextConfig = {
 
   async headers() {
     return [
-      // Uploaded images: do not send COEP/CORP/CSP — those break display in some
-      // browsers when combined with the document's credentialless COEP.
+      // Uploaded images are meant to be embedded cross-origin (e.g. the RSS feed's
+      // cover images shown in the Synaplan app on a different origin). They must
+      // therefore send Cross-Origin-Resource-Policy: cross-origin and must NOT
+      // inherit the document isolation headers. The catch-all below explicitly
+      // excludes this path so its same-origin CORP can't override this rule.
       {
         source: "/uploads/:path*",
         headers: [
           { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
           { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Cross-Origin-Resource-Policy", value: "cross-origin" },
+          // Public blog assets — allow any origin to embed/fetch them.
+          { key: "Access-Control-Allow-Origin", value: "*" },
         ],
       },
       // JSON/API responses must not send document isolation headers (COEP/CORP/CSP/COOP):
       // some browsers treat them as opaque or block reading the body for same-origin fetch().
+      // Excluded from the catch-all below so those headers are not re-added.
       {
         source: "/api/:path*",
         headers: [{ key: "X-Content-Type-Options", value: "nosniff" }],
       },
       {
-        // Apply security headers to all other routes
-        source: "/(.*)",
+        // Apply security headers to all other routes. Negative lookahead keeps the
+        // /uploads and /api rules above authoritative (Next.js merges headers from
+        // every matching source, so a bare /(.*) would re-add CORP: same-origin).
+        source: "/((?!api/|uploads/).*)",
         headers: securityHeaders,
       },
     ];

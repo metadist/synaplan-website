@@ -64,6 +64,9 @@ export async function GET(
         "Content-Type": contentType,
         "Cache-Control": "public, max-age=31536000, immutable",
         "X-Content-Type-Options": "nosniff",
+        // Allow cross-origin embedding (RSS cover images shown in the Synaplan app).
+        "Cross-Origin-Resource-Policy": "cross-origin",
+        "Access-Control-Allow-Origin": "*",
       },
     });
   } catch {
