@@ -65,13 +65,6 @@ const TEAM_DE: TeamMember[] = [
     color: "bg-amber-600",
   },
   {
-    name: "Yusuf",
-    role: "Full Stack Developer",
-    location: "Germany",
-    initials: "Y",
-    color: "bg-violet-600",
-  },
-  {
     name: "Ana",
     role: "Product & Design",
     location: "Germany",
