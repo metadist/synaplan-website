@@ -30,6 +30,7 @@ export function Header() {
     { href: "/features/multi-model", label: t("nav.multiModel") },
     { href: "/features/audit-logs", label: t("nav.auditLogs") },
     { href: "/features/memories", label: t("nav.memories") },
+    { href: "/features/mcp", label: t("nav.mcp") },
     { href: "/features", label: t("nav.allFeatures") },
   ];
 

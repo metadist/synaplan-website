@@ -43,6 +43,7 @@ const PATHS: PathConfig[] = [
   { path: "/features/multi-model",              priority: 0.82, changeFrequency: "monthly" },
   { path: "/features/audit-logs",               priority: 0.82, changeFrequency: "monthly" },
   { path: "/features/memories",                 priority: 0.78, changeFrequency: "monthly" },
+  { path: "/features/mcp",                      priority: 0.78, changeFrequency: "monthly" },
 
   // ── About (new) ───────────────────────────────────────────────────────────
   { path: "/about",                             priority: 0.70, changeFrequency: "monthly" },

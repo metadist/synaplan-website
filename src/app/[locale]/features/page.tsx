@@ -4,7 +4,7 @@ import { Link } from "@/i18n/navigation";
 import { SolutionArticleShell } from "@/components/solutions/solution-article-shell";
 import { alternateLanguageUrls, canonicalUrl, OG_IMAGE } from "@/lib/seo";
 import { buildBreadcrumbSchema, SITE_URL } from "@/lib/jsonld";
-import { ArrowRight, GitBranch, BookOpen, ShieldCheck, MessageSquare } from "lucide-react";
+import { ArrowRight, GitBranch, BookOpen, ShieldCheck, MessageSquare, Plug } from "lucide-react";
 import { LINKS } from "@/lib/constants";
 
 export const dynamic = "force-static";
@@ -68,6 +68,14 @@ const featureCards = [
     descKey: "f4Desc" as const,
     color: "text-violet-600",
     bg: "bg-violet-50",
+  },
+  {
+    icon: Plug,
+    hrefKey: "f5Href" as const,
+    titleKey: "f5Title" as const,
+    descKey: "f5Desc" as const,
+    color: "text-sky-600",
+    bg: "bg-sky-50",
   },
 ] as const;
 
