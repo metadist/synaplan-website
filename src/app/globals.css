@@ -480,4 +480,23 @@
     animation: none;
     opacity: 0.75;
   }
+  .channels-hub-pulse {
+    animation: channels-hub-pulse 2.8s ease-out infinite;
+  }
+  html[data-motion-profile="reduced"] .channels-hub-pulse {
+    animation: none;
+    opacity: 0.4;
+  }
+}
+
+@keyframes channels-hub-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  70%,
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
 }
