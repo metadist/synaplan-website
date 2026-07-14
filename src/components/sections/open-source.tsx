@@ -9,7 +9,7 @@ import {
   type SynaplanGithubRepoStats,
 } from "@/lib/github-synaplan-repo";
 import { cn } from "@/lib/utils";
-import { GitFork, Scale, Star } from "lucide-react";
+import { Check, GitFork, Scale, Star } from "lucide-react";
 
 export type OpenSourceSectionProps = {
   githubRepo?: SynaplanGithubRepoStats | null;
@@ -26,6 +26,15 @@ export function OpenSourceSection({
   const forks = formatGithubRepoStatNumber(githubRepo?.forks, locale);
   const license =
     githubRepo?.licenseLabel?.trim() || "\u2014";
+
+  const benefits = [
+    t("benefit1"),
+    t("benefit2"),
+    t("benefit3"),
+    t("benefit4"),
+    t("benefit5"),
+    t("benefit6"),
+  ];
 
   const stats: {
     icon: typeof Star;
@@ -75,6 +84,20 @@ export function OpenSourceSection({
             {t("title")}
           </h2>
           <p className="mt-4 text-lg text-white/60">{t("subtitle")}</p>
+        </div>
+
+        <div className="mx-auto mt-12 grid max-w-3xl grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {benefits.map((benefit) => (
+            <div
+              key={benefit}
+              className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3"
+            >
+              <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-brand-400/20 text-brand-300">
+                <Check className="size-4" />
+              </span>
+              <span className="text-sm font-medium text-white/90">{benefit}</span>
+            </div>
+          ))}
         </div>
 
         <div className="mx-auto mt-14 flex max-w-lg flex-wrap items-center justify-center gap-10">
