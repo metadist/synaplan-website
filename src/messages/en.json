@@ -2,8 +2,8 @@
   "meta": {
     "title": "Synaplan — Open-Source AI Platform for Companies",
     "description": "Open-source AI platform with multi-model routing, GDPR compliance, and an AI chatbot widget. Connect OpenAI, Claude, Gemini & Ollama. Self-hosted via Docker.",
-    "homeTitle": "Synaplan — Open-Source AI Platform | GDPR-Compliant, Self-Hosted",
-    "homeDescription": "The open-source AI platform for companies and developers. Multi-model routing, GDPR-compliant, self-hosted via Docker. Embed an AI chatbot widget on any website."
+    "homeTitle": "Synaplan — The Open-Source AI Communication Platform",
+    "homeDescription": "One AI across every channel — WhatsApp, email, Outlook, website, API & MCP. Connect every AI model to every business process. Open source, GDPR-compliant, self-hosted."
   },
   "nav": {
     "solutions": "Solutions",
@@ -291,13 +291,124 @@
     "ctaButton": "Learn more about the chat widget"
   },
   "hero": {
-    "badge": "Open-Source AI Platform",
-    "title": "Switch between AIs.",
-    "titleHighlight": "The AI platform that puts you in control.",
-    "description": "One AI platform for every model, team, and workflow. Connect OpenAI, Claude, Gemini & Ollama — see every token and cost, stay GDPR compliant.",
+    "badge": "The Open-Source AI Communication Platform",
+    "title": "One AI.",
+    "titleHighlight": "Every channel. Full control.",
+    "description": "Synaplan connects every AI model to every business process and every communication channel — WhatsApp, email, Outlook, website, API, and MCP. One knowledge base. One platform. Fully open source.",
     "trustedBy": "Trusted by innovative companies",
     "scrollDown": "Scroll to the next section",
     "tryChatCta": "Try a quick AI chat on this page — no login"
+  },
+  "channels": {
+    "badge": "Every channel",
+    "title": "Every conversation reaches the same AI",
+    "subtitle": "WhatsApp, email, Outlook, your website, your API — every message flows into one intelligent core with one shared knowledge base.",
+    "hub": "Synaplan",
+    "hubHint": "One AI core",
+    "footnote": "One knowledge base. One set of policies. Every channel.",
+    "nodes": {
+      "whatsapp": "WhatsApp",
+      "email": "Email",
+      "outlook": "Outlook",
+      "website": "Website Chat",
+      "api": "REST API",
+      "mcp": "MCP Tools",
+      "voice": "Voice Agents"
+    }
+  },
+  "agents": {
+    "badge": "AI Agents",
+    "title": "Build AI employees, not just chatbots",
+    "subtitle": "Give every business process its own agent — with your knowledge, your tools, and your rules.",
+    "sales": {
+      "name": "Sales Agent",
+      "description": "Qualifies leads, drafts offers, and books meetings around the clock."
+    },
+    "support": {
+      "name": "Support Agent",
+      "description": "Answers customer questions instantly from your docs and CRM."
+    },
+    "hr": {
+      "name": "HR Agent",
+      "description": "Handles onboarding, policy questions, and internal requests."
+    },
+    "knowledge": {
+      "name": "Knowledge Agent",
+      "description": "Turns your documents and wikis into instant, sourced answers."
+    },
+    "compliance": {
+      "name": "Compliance Agent",
+      "description": "Reviews content and flags risk with a full audit trail."
+    },
+    "meeting": {
+      "name": "Meeting Agent",
+      "description": "Joins calls, takes notes, and creates follow-up tasks."
+    },
+    "email": {
+      "name": "Email Agent",
+      "description": "Triages your inbox, drafts replies, and routes what matters."
+    },
+    "marketing": {
+      "name": "Marketing Agent",
+      "description": "Produces on-brand content across channels from one brief."
+    }
+  },
+  "workflow": {
+    "badge": "Workflows",
+    "title": "From message to done — automatically",
+    "subtitle": "Synaplan doesn't just answer. It reads your systems, reasons with the best model, and completes the entire process.",
+    "steps": [
+      { "title": "Customer writes on WhatsApp", "detail": "A prospect asks for a quote." },
+      { "title": "Synaplan receives it", "detail": "One core, one knowledge base." },
+      { "title": "Reads your CRM", "detail": "Pulls the customer's history and context." },
+      { "title": "Reads your PDFs", "detail": "Grounds the answer in your documents." },
+      { "title": "Asks the best model", "detail": "Routes to GPT-5.5 or your local model." },
+      { "title": "Creates the offer", "detail": "Generates a tailored, on-brand quote." },
+      { "title": "Sends the email", "detail": "Delivers it through your mail system." },
+      { "title": "Books the appointment", "detail": "Creates the Outlook calendar event." },
+      { "title": "Logs everything", "detail": "A full audit trail for every step." }
+    ]
+  },
+  "integrations": {
+    "badge": "Integrations",
+    "title": "Connect AI to your business",
+    "subtitle": "Synaplan plugs into the tools you already run — no rip-and-replace required.",
+    "footnote": "Missing one? Build it with our REST API, MCP, or plugin SDK.",
+    "items": {
+      "outlook": "Outlook",
+      "exchange": "Exchange",
+      "whatsapp": "WhatsApp",
+      "restApi": "REST API",
+      "mcp": "MCP",
+      "crm": "CRM",
+      "erp": "ERP",
+      "sap": "SAP",
+      "microsoft365": "Microsoft 365",
+      "wordpress": "WordPress",
+      "nextcloud": "Nextcloud",
+      "files": "Files",
+      "documents": "Documents",
+      "voice": "Voice",
+      "email": "Email"
+    }
+  },
+  "devPlatform": {
+    "badge": "For developers",
+    "title": "Build once. Use everywhere.",
+    "subtitle": "Open standards, first-class APIs, and self-hosting. Ship AI into your product without the lock-in.",
+    "ctaDocs": "Read the docs",
+    "ctaGithub": "View on GitHub",
+    "items": {
+      "rest": "REST",
+      "openapi": "OpenAPI",
+      "mcp": "MCP",
+      "webhooks": "Webhooks",
+      "plugins": "Plugins",
+      "docker": "Docker",
+      "kubernetes": "Kubernetes",
+      "oauth": "OAuth",
+      "sso": "SSO"
+    }
   },
   "solutions": {
     "title": "Built for every team",
@@ -410,35 +521,35 @@
     "pageCtaSecondary": "Documentation"
   },
   "features": {
-    "title": "Everything you need for professional AI management",
-    "subtitle": "From model selection and cost control to logging and multilingual capabilities.",
+    "title": "Less technology. More outcomes.",
+    "subtitle": "We connect your business to AI — so every team gets the result, not the complexity.",
     "multiModel": {
       "label": "Multi-Model",
-      "title": "Route to the best model",
-      "description": "GPT, Claude, Gemini, Llama, and local <ollama>Ollama</ollama> models — routed automatically by cost, latency, and your own policies. No separate accounts, no copy-paste between tools."
+      "title": "Always the best model — automatically",
+      "description": "GPT, Claude, Gemini, Llama, and local <ollama>Ollama</ollama> models. Synaplan picks the right one for every task by cost, latency, and your policies — no separate accounts, no copy-paste."
     },
     "documents": {
-      "label": "RAG",
-      "title": "Your knowledge, AI-powered",
-      "description": "Upload PDFs, Word files, or crawl entire websites. <rag>RAG</rag> retrieves the right context so the model answers from your data, not generic training."
+      "label": "Knowledge",
+      "title": "Your AI answers from your documents",
+      "description": "Upload PDFs, Word files, or crawl entire websites. <rag>RAG</rag> grounds every answer in your own data — so replies are accurate, not generic."
     },
     "audit": {
-      "label": "Compliance",
-      "title": "Every action logged",
-      "description": "Every <prompt>prompt</prompt>, response, model, and <token>token</token> count is logged with timestamps. Export for compliance or feed into your existing SIEM."
+      "label": "Trust",
+      "title": "Every AI decision can be explained later",
+      "description": "Every <prompt>prompt</prompt>, response, model, and <token>token</token> count is logged with a timestamp. Export for compliance or feed your existing SIEM."
     },
     "widget": {
-      "label": "Widget",
+      "label": "Reach",
       "title": "Live on your website in minutes",
       "description": "Embed a <knowledgeBase>knowledge-grounded</knowledgeBase> chatbot on any site via snippet or WordPress plugin. Multilingual, brand-customizable, <gdpr>GDPR</gdpr>-ready."
     },
     "dashboard": {
-      "label": "Analytics",
-      "title": "Full visibility",
+      "label": "Control",
+      "title": "See every token, every cost",
       "description": "Track <token>token</token> usage, model costs, and response times in real time. Spot anomalies before they become budget surprises."
     },
     "security": {
-      "label": "Security",
+      "label": "Sovereignty",
       "title": "Your data, your rules",
       "description": "<selfHosted>Self-host</selfHosted> on your own infrastructure or use our EU cloud. Full data sovereignty, always."
     }
@@ -448,8 +559,15 @@
     "subtitle": "See how organizations use Synaplan to deploy AI securely and efficiently."
   },
   "openSource": {
-    "title": "Open-source AI — built in the open",
-    "subtitle": "Synaplan is 100% open source. Inspect the code, contribute, or self-host — you're always in control.",
+    "title": "Own your AI. Not your vendor.",
+    "subtitle": "Your models. Your servers. Your data. Your rules.",
+    "benefitsTitle": "Open source means freedom",
+    "benefit1": "No license costs",
+    "benefit2": "No user limits",
+    "benefit3": "No vendor lock-in",
+    "benefit4": "Infinitely customizable",
+    "benefit5": "Host it anywhere",
+    "benefit6": "Extend it freely",
     "stars": "GitHub Stars",
     "forks": "Forks",
     "license": "License"
@@ -590,7 +708,7 @@
     ]
   },
   "cta": {
-    "title": "Ready to take control of your AI?",
+    "title": "One AI. Every channel. Full control.",
     "subtitle": "Start for free or chat with our AI directly via WhatsApp to get a clear AI roadmap for your organization.",
     "immediately": "Immediately available",
     "gdpr": "GDPR compliant",

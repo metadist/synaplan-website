@@ -2,8 +2,8 @@
   "meta": {
     "title": "Synaplan — KI-Plattform für Unternehmen | Open Source",
     "description": "Open-Source-KI-Plattform mit Multi-Model-Routing, DSGVO-Konformität und KI-Chatbot-Widget. OpenAI, Claude, Gemini & Ollama verbinden. Self-hosted via Docker.",
-    "homeTitle": "Synaplan — Open-Source KI-Plattform | DSGVO-konform, Self-Hosted",
-    "homeDescription": "Die KI-Plattform für Unternehmen und Entwickler. Multi-Model-Routing, DSGVO-konform, self-hosted via Docker. KI-Chatbot-Widget für Ihre Website einbetten."
+    "homeTitle": "Synaplan — Die Open-Source-Plattform für KI-Kommunikation",
+    "homeDescription": "Eine KI über jeden Kanal — WhatsApp, E-Mail, Outlook, Website, API & MCP. Jedes KI-Modell mit jedem Geschäftsprozess verbinden. Open Source, DSGVO-konform, self-hosted."
   },
   "nav": {
     "solutions": "Lösungen",
@@ -291,13 +291,124 @@
     "ctaButton": "Mehr zum Chat-Widget erfahren"
   },
   "hero": {
-    "badge": "Open-Source KI-Plattform",
-    "title": "Wechsle zwischen KIs.",
-    "titleHighlight": "Die KI-Plattform mit voller Kontrolle.",
-    "description": "Eine KI-Plattform für jedes Modell, jedes Team und jeden Workflow. OpenAI, Claude, Gemini & Ollama verbinden — jeden Token sehen, DSGVO-konform.",
+    "badge": "Die Open-Source-Plattform für KI-Kommunikation",
+    "title": "Eine KI.",
+    "titleHighlight": "Jeder Kanal. Volle Kontrolle.",
+    "description": "Synaplan verbindet jedes KI-Modell mit jedem Geschäftsprozess und jedem Kommunikationskanal — WhatsApp, E-Mail, Outlook, Website, API und MCP. Eine Wissensbasis. Eine Plattform. Vollständig Open Source.",
     "trustedBy": "Vertraut von innovativen Unternehmen",
     "scrollDown": "Zur nächsten Sektion scrollen",
     "tryChatCta": "Kurz den KI-Chat auf dieser Seite ausprobieren — ohne Login"
+  },
+  "channels": {
+    "badge": "Jeder Kanal",
+    "title": "Jede Konversation erreicht dieselbe KI",
+    "subtitle": "WhatsApp, E-Mail, Outlook, Ihre Website, Ihre API — jede Nachricht fließt in einen intelligenten Kern mit einer gemeinsamen Wissensbasis.",
+    "hub": "Synaplan",
+    "hubHint": "Ein KI-Kern",
+    "footnote": "Eine Wissensbasis. Ein Regelwerk. Jeder Kanal.",
+    "nodes": {
+      "whatsapp": "WhatsApp",
+      "email": "E-Mail",
+      "outlook": "Outlook",
+      "website": "Website-Chat",
+      "api": "REST API",
+      "mcp": "MCP-Tools",
+      "voice": "Voice-Agents"
+    }
+  },
+  "agents": {
+    "badge": "KI-Agenten",
+    "title": "Bauen Sie KI-Mitarbeiter, nicht nur Chatbots",
+    "subtitle": "Geben Sie jedem Geschäftsprozess seinen eigenen Agenten — mit Ihrem Wissen, Ihren Tools und Ihren Regeln.",
+    "sales": {
+      "name": "Sales-Agent",
+      "description": "Qualifiziert Leads, erstellt Angebote und bucht Termine rund um die Uhr."
+    },
+    "support": {
+      "name": "Support-Agent",
+      "description": "Beantwortet Kundenfragen sofort aus Ihren Dokumenten und dem CRM."
+    },
+    "hr": {
+      "name": "HR-Agent",
+      "description": "Übernimmt Onboarding, Richtlinienfragen und interne Anfragen."
+    },
+    "knowledge": {
+      "name": "Wissens-Agent",
+      "description": "Macht aus Ihren Dokumenten und Wikis sofortige, belegte Antworten."
+    },
+    "compliance": {
+      "name": "Compliance-Agent",
+      "description": "Prüft Inhalte und markiert Risiken mit vollständigem Audit-Trail."
+    },
+    "meeting": {
+      "name": "Meeting-Agent",
+      "description": "Nimmt an Calls teil, protokolliert und erstellt Folgeaufgaben."
+    },
+    "email": {
+      "name": "E-Mail-Agent",
+      "description": "Sortiert Ihr Postfach, entwirft Antworten und leitet Wichtiges weiter."
+    },
+    "marketing": {
+      "name": "Marketing-Agent",
+      "description": "Erstellt markenkonforme Inhalte über alle Kanäle aus einem Briefing."
+    }
+  },
+  "workflow": {
+    "badge": "Workflows",
+    "title": "Von der Nachricht bis erledigt — automatisch",
+    "subtitle": "Synaplan antwortet nicht nur. Es liest Ihre Systeme, denkt mit dem besten Modell mit und erledigt den gesamten Prozess.",
+    "steps": [
+      { "title": "Kunde schreibt auf WhatsApp", "detail": "Ein Interessent bittet um ein Angebot." },
+      { "title": "Synaplan empfängt es", "detail": "Ein Kern, eine Wissensbasis." },
+      { "title": "Liest Ihr CRM", "detail": "Ruft Historie und Kontext des Kunden ab." },
+      { "title": "Liest Ihre PDFs", "detail": "Verankert die Antwort in Ihren Dokumenten." },
+      { "title": "Fragt das beste Modell", "detail": "Routet zu GPT-5.5 oder Ihrem lokalen Modell." },
+      { "title": "Erstellt das Angebot", "detail": "Generiert ein maßgeschneidertes, markenkonformes Angebot." },
+      { "title": "Sendet die E-Mail", "detail": "Zustellung über Ihr Mailsystem." },
+      { "title": "Bucht den Termin", "detail": "Erstellt den Outlook-Kalendereintrag." },
+      { "title": "Protokolliert alles", "detail": "Vollständiger Audit-Trail für jeden Schritt." }
+    ]
+  },
+  "integrations": {
+    "badge": "Integrationen",
+    "title": "Verbinden Sie KI mit Ihrem Unternehmen",
+    "subtitle": "Synaplan fügt sich in die Tools ein, die Sie bereits nutzen — kein Rip-and-Replace.",
+    "footnote": "Etwas fehlt? Bauen Sie es mit unserer REST API, MCP oder dem Plugin-SDK.",
+    "items": {
+      "outlook": "Outlook",
+      "exchange": "Exchange",
+      "whatsapp": "WhatsApp",
+      "restApi": "REST API",
+      "mcp": "MCP",
+      "crm": "CRM",
+      "erp": "ERP",
+      "sap": "SAP",
+      "microsoft365": "Microsoft 365",
+      "wordpress": "WordPress",
+      "nextcloud": "Nextcloud",
+      "files": "Dateien",
+      "documents": "Dokumente",
+      "voice": "Sprache",
+      "email": "E-Mail"
+    }
+  },
+  "devPlatform": {
+    "badge": "Für Entwickler",
+    "title": "Einmal bauen. Überall nutzen.",
+    "subtitle": "Offene Standards, erstklassige APIs und Self-Hosting. Bringen Sie KI in Ihr Produkt — ohne Lock-in.",
+    "ctaDocs": "Zur Dokumentation",
+    "ctaGithub": "Auf GitHub ansehen",
+    "items": {
+      "rest": "REST",
+      "openapi": "OpenAPI",
+      "mcp": "MCP",
+      "webhooks": "Webhooks",
+      "plugins": "Plugins",
+      "docker": "Docker",
+      "kubernetes": "Kubernetes",
+      "oauth": "OAuth",
+      "sso": "SSO"
+    }
   },
   "solutions": {
     "title": "Für jedes Team gebaut",
@@ -410,35 +521,35 @@
     "pageCtaSecondary": "Dokumentation"
   },
   "features": {
-    "title": "Alles für professionelles KI-Management",
-    "subtitle": "Von Modellauswahl und Kostenkontrolle bis zu Logging und Mehrsprachigkeit.",
+    "title": "Weniger Technik. Mehr Nutzen.",
+    "subtitle": "Wir verbinden Ihr Unternehmen mit KI — damit jedes Team das Ergebnis bekommt, nicht die Komplexität.",
     "multiModel": {
       "label": "Multi-Model",
-      "title": "Zum besten Modell routen",
-      "description": "GPT, Claude, Gemini, Llama und lokale <ollama>Ollama</ollama>-Modelle — automatisch geroutet nach Kosten, Latenz und Ihren eigenen Richtlinien. Keine separaten Konten, kein Copy-Paste."
+      "title": "Immer das beste Modell — automatisch",
+      "description": "GPT, Claude, Gemini, Llama und lokale <ollama>Ollama</ollama>-Modelle. Synaplan wählt für jede Aufgabe das richtige — nach Kosten, Latenz und Ihren Richtlinien. Keine separaten Konten, kein Copy-Paste."
     },
     "documents": {
-      "label": "RAG",
-      "title": "Ihr Wissen, KI-gestützt",
-      "description": "PDFs, Word-Dateien hochladen oder ganze Websites crawlen. <rag>RAG</rag> ruft den passenden Kontext ab, damit das Modell aus Ihren Daten antwortet, nicht aus generischem Training."
+      "label": "Wissen",
+      "title": "Ihre KI antwortet aus Ihren Dokumenten",
+      "description": "PDFs, Word-Dateien hochladen oder ganze Websites crawlen. <rag>RAG</rag> verankert jede Antwort in Ihren eigenen Daten — präzise statt generisch."
     },
     "audit": {
-      "label": "Compliance",
-      "title": "Jede Aktion protokolliert",
+      "label": "Vertrauen",
+      "title": "Jede KI-Entscheidung ist später erklärbar",
       "description": "Jeder <prompt>Prompt</prompt>, jede Antwort, jedes Modell und jeder <token>Token</token>-Verbrauch wird mit Zeitstempel protokolliert. Exportieren für Compliance oder in Ihr SIEM einspeisen."
     },
     "widget": {
-      "label": "Widget",
+      "label": "Reichweite",
       "title": "In Minuten live auf Ihrer Website",
       "description": "Einen <knowledgeBase>wissensbasierten</knowledgeBase> Chatbot per Snippet oder WordPress-Plugin einbinden. Mehrsprachig, markenkonform, <gdpr>DSGVO</gdpr>-konform."
     },
     "dashboard": {
-      "label": "Analytics",
-      "title": "Volle Übersicht",
+      "label": "Kontrolle",
+      "title": "Jeden Token, jede Kosten im Blick",
       "description": "<token>Token</token>-Verbrauch, Modellkosten und Antwortzeiten in Echtzeit verfolgen. Anomalien erkennen, bevor sie zu Budgetüberraschungen werden."
     },
     "security": {
-      "label": "Sicherheit",
+      "label": "Souveränität",
       "title": "Ihre Daten, Ihre Regeln",
       "description": "<selfHosted>Selbst hosten</selfHosted> auf eigener Infrastruktur oder unsere EU-Cloud nutzen. Volle Datensouveränität, immer."
     }
@@ -448,8 +559,15 @@
     "subtitle": "Sehen Sie, wie Organisationen Synaplan nutzen, um KI sicher und effizient einzusetzen."
   },
   "openSource": {
-    "title": "Open-Source-KI — offen entwickelt",
-    "subtitle": "Synaplan ist 100% Open Source. Code einsehen, beitragen oder selbst hosten — Sie behalten immer die Kontrolle.",
+    "title": "Ihre KI gehört Ihnen. Nicht dem Anbieter.",
+    "subtitle": "Ihre Modelle. Ihre Server. Ihre Daten. Ihre Regeln.",
+    "benefitsTitle": "Open Source bedeutet Freiheit",
+    "benefit1": "Keine Lizenzkosten",
+    "benefit2": "Keine Benutzerlimits",
+    "benefit3": "Kein Vendor-Lock-in",
+    "benefit4": "Beliebig anpassbar",
+    "benefit5": "Überall hostbar",
+    "benefit6": "Frei erweiterbar",
     "stars": "GitHub Stars",
     "forks": "Forks",
     "license": "Lizenz"
@@ -590,7 +708,7 @@
     ]
   },
   "cta": {
-    "title": "Bereit, Ihre KI unter Kontrolle zu bringen?",
+    "title": "Eine KI. Jeder Kanal. Volle Kontrolle.",
     "subtitle": "Kostenlos starten oder direkt via WhatsApp mit unserer KI chatten — für eine klare KI-Roadmap für Ihr Unternehmen.",
     "immediately": "Sofort verfügbar",
     "gdpr": "DSGVO-konform",
