@@ -10,7 +10,7 @@ import { FloatingOrbs } from "@/components/interactive/floating-orbs";
 import { HeroChatSlot } from "@/components/sections/hero-chat-slot";
 import { Link } from "@/i18n/navigation";
 
-const NEXT_SECTION_ID = "widget-flow";
+const NEXT_SECTION_ID = "channels";
 
 export function HeroSection() {
   const t = useTranslations();

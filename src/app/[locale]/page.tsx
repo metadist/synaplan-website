@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { HeroSection } from "@/components/sections/hero";
+import { ChannelsSection } from "@/components/sections/channels-section";
 import { HomeSectionSkeleton } from "@/components/sections/home-section-skeleton";
 import { getSynaplanGithubRepoStats } from "@/lib/github-synaplan-repo";
 import { buildFaqSchema, buildHowToSchema, buildSoftwareAppSchema, SITE_URL } from "@/lib/jsonld";
@@ -20,10 +21,20 @@ const WidgetFlowSection = dynamic(
   },
 );
 
-const MemoriesSection = dynamic(
+const AgentsSection = dynamic(
   () =>
-    import("@/components/sections/memories-section").then(
-      (m) => m.MemoriesSection,
+    import("@/components/sections/agents-section").then((m) => m.AgentsSection),
+  {
+    loading: () => (
+      <HomeSectionSkeleton className="min-h-[28rem] rounded-none bg-transparent" />
+    ),
+  },
+);
+
+const WorkflowSection = dynamic(
+  () =>
+    import("@/components/sections/workflow-section").then(
+      (m) => m.WorkflowSection,
     ),
   {
     loading: () => (
@@ -32,14 +43,38 @@ const MemoriesSection = dynamic(
   },
 );
 
-const SolutionsGrid = dynamic(
+const IntegrationsSection = dynamic(
   () =>
-    import("@/components/sections/solutions-grid").then(
-      (m) => m.SolutionsGrid,
+    import("@/components/sections/integrations-section").then(
+      (m) => m.IntegrationsSection,
     ),
   {
     loading: () => (
-      <HomeSectionSkeleton className="min-h-[22rem] rounded-none bg-transparent" />
+      <HomeSectionSkeleton className="min-h-[24rem] rounded-none bg-transparent" />
+    ),
+  },
+);
+
+const DevPlatformSection = dynamic(
+  () =>
+    import("@/components/sections/dev-platform-section").then(
+      (m) => m.DevPlatformSection,
+    ),
+  {
+    loading: () => (
+      <HomeSectionSkeleton className="min-h-[28rem] rounded-none bg-transparent" />
+    ),
+  },
+);
+
+const MemoriesSection = dynamic(
+  () =>
+    import("@/components/sections/memories-section").then(
+      (m) => m.MemoriesSection,
+    ),
+  {
+    loading: () => (
+      <HomeSectionSkeleton className="min-h-[28rem] rounded-none bg-transparent" />
     ),
   },
 );
@@ -113,8 +148,8 @@ export async function generateMetadata({
     description,
     keywords:
       locale === "de"
-        ? "KI-Plattform, KI Chatbot, KI Kundenservice, ChatGPT Alternative, Open Source KI, DSGVO KI, Self Hosted AI, Chat Widget, KI Unternehmen"
-        : "AI platform, AI chatbot, AI customer service, ChatGPT alternative, open source AI, GDPR AI, self hosted AI, chat widget",
+        ? "KI-Kommunikationsplattform, KI-Middleware, KI-Agenten, WhatsApp KI, Outlook KI, MCP Server, Open Source KI, DSGVO KI, Self Hosted AI, KI Integration"
+        : "AI communication platform, AI middleware, AI agents, WhatsApp AI, Outlook AI, MCP server, open source AI, GDPR AI, self hosted AI, AI integration",
     openGraph: {
       title,
       description,
@@ -168,8 +203,8 @@ export default async function HomePage({
         "@id": `${SITE_URL}${isDE ? "/de" : ""}/#webpage`,
         url: isDE ? `${SITE_URL}/de` : SITE_URL,
         name: isDE
-          ? "Synaplan — KI-Plattform für Unternehmen"
-          : "Synaplan — AI Platform for Businesses",
+          ? "Synaplan — Die Open-Source-Plattform für KI-Kommunikation"
+          : "Synaplan — The Open-Source AI Communication Platform",
         isPartOf: { "@id": `${SITE_URL}/#website` },
         about: { "@id": `${SITE_URL}/#software` },
         publisher: { "@id": "https://metadist.de/#organization" },
@@ -186,12 +221,16 @@ export default async function HomePage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
       />
       <HeroSection />
-      <WidgetFlowSection />
-      <MemoriesSection />
-      <SolutionsGrid />
+      <ChannelsSection />
+      <AgentsSection />
+      <WorkflowSection />
+      <IntegrationsSection />
       <FeaturesShowcase />
-      <UseCasesSection />
+      <MemoriesSection />
+      <WidgetFlowSection />
+      <DevPlatformSection />
       <OpenSourceSection githubRepo={githubRepo} />
+      <UseCasesSection />
       <GithubFeed locale={locale} />
       <FaqSection />
       <CTASection />
