@@ -60,7 +60,10 @@ export function buildOrganizationSchema() {
   };
 }
 
-/** Schema.org WebSite — enables Sitelinks Searchbox in Google */
+/**
+ * Schema.org WebSite — site identity for Google.
+ * No SearchAction: we do not expose a public /search route (dead URLTemplate harms SEO).
+ */
 export function buildWebSiteSchema(locale: string) {
   return {
     "@context": "https://schema.org",
@@ -70,14 +73,6 @@ export function buildWebSiteSchema(locale: string) {
     url: locale === "de" ? `${SITE_URL}/de` : SITE_URL,
     inLanguage: locale === "de" ? "de-DE" : "en-US",
     publisher: { "@id": "https://metadist.de/#organization" },
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${SITE_URL}/search?q={search_term_string}`,
-      },
-      "query-input": "required name=search_term_string",
-    },
   };
 }
 

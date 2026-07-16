@@ -36,6 +36,8 @@ const ITEMS: { key: string; icon: LucideIcon }[] = [
   { key: "microsoft365", icon: LayoutGrid },
   { key: "wordpress", icon: Globe },
   { key: "nextcloud", icon: Cloud },
+  { key: "opencloud", icon: Cloud },
+  { key: "owncloudOnline", icon: Cloud },
   { key: "files", icon: FolderOpen },
   { key: "documents", icon: FileText },
   { key: "voice", icon: Mic },

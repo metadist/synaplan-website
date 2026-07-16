@@ -43,6 +43,8 @@ const PATHS: PathConfig[] = [
   { path: "/features/multi-model",              priority: 0.82, changeFrequency: "monthly" },
   { path: "/features/audit-logs",               priority: 0.82, changeFrequency: "monthly" },
   { path: "/features/memories",                 priority: 0.78, changeFrequency: "monthly" },
+  // SISTRIX: "chatgpt alternative" / "chatgpt alternative open source" — real search demand
+  { path: "/features/chatgpt-alternative",      priority: 0.85, changeFrequency: "monthly" },
 
   // ── About (new) ───────────────────────────────────────────────────────────
   { path: "/about",                             priority: 0.70, changeFrequency: "monthly" },
@@ -52,6 +54,7 @@ const PATHS: PathConfig[] = [
 
   // ── Utility ───────────────────────────────────────────────────────────────
   { path: "/try-chat",                          priority: 0.65, changeFrequency: "monthly" },
+  { path: "/news",                              priority: 0.55, changeFrequency: "weekly" },
 
   // ── Blog ──────────────────────────────────────────────────────────────────
   { path: "/blog",                              priority: 0.60, changeFrequency: "weekly" },

@@ -97,6 +97,18 @@ const PLUGINS = [
     iconBg: "bg-rose-100",
     iconColor: "text-rose-600",
   },
+  {
+    nameKey: "plugin8Name" as const,
+    descKey: "plugin8Desc" as const,
+    tagKey: "plugin8Tag" as const,
+    docHref: `${LINKS.docs}plugins`,
+    icon: Puzzle,
+    accent: "#0d9488",
+    bg: "bg-teal-50",
+    border: "border-teal-100",
+    iconBg: "bg-teal-100",
+    iconColor: "text-teal-700",
+  },
 ] as const;
 
 const commissionFeatureKeys = [
