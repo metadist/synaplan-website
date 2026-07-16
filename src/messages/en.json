@@ -728,6 +728,7 @@
     "contact": "Contact",
     "imprint": "Imprint",
     "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
     "copyright": "© {year} metadist data management GmbH",
     "widgetTrades": "Widget: Trades & crafts",
     "widgetHospitality": "Widget: Hotels",
@@ -1068,6 +1069,91 @@
     "s12License": "Apache License 2.0",
     "s13Title": "13. Objection to promotional emails",
     "s13Body": "We hereby object to the use of contact data published as part of our imprint obligation for the purpose of sending unsolicited advertising and informational materials. The site operators expressly reserve the right to take legal action in the event of the unsolicited sending of advertising information, such as spam emails."
+  },
+  "termsOfUse": {
+    "metaTitle": "Terms of Use & App EULA — Synaplan",
+    "metaDescription": "Terms of Use and End User License Agreement for the Synaplan hosted service and the official Synaplan mobile apps, operated by metadist data management GmbH. Synaplan is open source under the Apache License 2.0.",
+    "pageTitle": "Terms of Use & App EULA",
+    "pageSubtitle": "The terms for using the Synaplan hosted service at synaplan.com and the official Synaplan mobile apps. Synaplan is open-source software, licensed under the Apache License 2.0.",
+    "badge": "Apache-2.0 Open Source",
+    "breadcrumbHome": "Home",
+    "lastUpdated": "Last updated: 16 July 2026",
+    "linkPrivacy": "View Privacy Policy",
+    "linkImprint": "View Imprint",
+    "sections": [
+      {
+        "title": "Who we are and what these terms cover",
+        "body": [
+          "These Terms of Use and End User License Agreement (the \"Terms\") form an agreement between you and metadist data management GmbH, Königsallee 82, 40212 Düsseldorf, Germany (\"metadist\", \"we\", \"us\"), the operator of the Synaplan service.",
+          "They apply when you use the Synaplan hosted service at synaplan.com and the official Synaplan mobile applications for iOS and Android (together, the \"Service\"). By creating an account or using the Service, you accept these Terms. If you do not agree, please do not use the Service."
+        ]
+      },
+      {
+        "title": "Open source and the Apache 2.0 license",
+        "body": [
+          "Synaplan is open-source software. Its source code is published on GitHub and licensed under the Apache License, Version 2.0. You are free to inspect, run, modify and self-host the software under the terms of that license.",
+          "As set out in the Apache 2.0 license, the software is provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. If you self-host Synaplan, you do so on your own responsibility and are the operator of your own instance. These Terms govern only your use of the hosted service and the official apps operated by metadist."
+        ]
+      },
+      {
+        "title": "Your account and acceptable use",
+        "body": [
+          "You are responsible for your account, for keeping your credentials secure, and for all prompts, files and other content you submit (\"Your Content\") as well as the output you generate with them.",
+          "You agree not to use the Service to create, upload or distribute content that is unlawful, infringing, harmful, deceptive, hateful, harassing, sexually exploitative or otherwise objectionable, not to attempt to circumvent safety filters, and not to use the Service to harm others or violate any applicable law.",
+          "We operate a zero-tolerance policy for objectionable content and abusive behaviour and may suspend, block or terminate accounts that violate these Terms or applicable law."
+        ]
+      },
+      {
+        "title": "AI-generated content",
+        "body": [
+          "The Service uses third-party AI models to generate text, images and other output. AI output can be inaccurate, incomplete, biased or unsuitable for a particular purpose. You must not rely on it for professional, legal, medical, financial or other consequential decisions without independent verification.",
+          "You are responsible for how you use AI output. AI providers apply their own safety filters, but no filter is perfect, and objectionable output may still occur despite these measures."
+        ]
+      },
+      {
+        "title": "Reporting objectionable content and abuse",
+        "body": [
+          "If you encounter objectionable content or abusive behaviour, please report it to team@synaplan.com. You can also report content directly from within the app where a report option is provided.",
+          "We review reports and act on them within a reasonable time. This may include removing content and suspending or blocking the responsible account."
+        ]
+      },
+      {
+        "title": "Subscriptions and payments",
+        "body": [
+          "Synaplan offers a free tier and optional paid subscriptions that unlock additional usage and features.",
+          "In the mobile apps, subscriptions are sold and billed through your app store account and are managed or cancelled there. On the web, subscriptions are handled through our website. The applicable price, taxes and billing terms are shown to you at the point of purchase."
+        ]
+      },
+      {
+        "title": "No warranty",
+        "body": [
+          "The hosted Service is provided \"as is\" and \"as available\", without warranties of any kind to the maximum extent permitted by applicable law, consistent with the disclaimer of warranties in the Apache 2.0 license. We do not warrant that the Service will be uninterrupted, error-free or secure, or that AI output will be accurate or fit for any particular purpose."
+        ]
+      },
+      {
+        "title": "Limitation of liability",
+        "body": [
+          "To the maximum extent permitted by applicable law, metadist is not liable for damages arising from or in connection with your use of the Service.",
+          "This limitation does not affect liability that cannot be excluded or limited under mandatory law, in particular liability for intent and gross negligence, for injury to life, body or health, under the German Product Liability Act (Produkthaftungsgesetz), or under any guarantee we have expressly given."
+        ]
+      },
+      {
+        "title": "Apple App Store and Google Play",
+        "body": [
+          "For apps obtained from the Apple App Store or Google Play, this agreement is concluded solely between you and metadist, and not with Apple or Google. metadist, not the app store provider, is solely responsible for the app and its content, maintenance and support.",
+          "The app store provider has no obligation to furnish support or to handle any warranty claims; to the extent required by law, such claims are metadist's responsibility. Apple Inc. and its subsidiaries are third-party beneficiaries of these Terms and may enforce them against you.",
+          "You represent that you are not located in a country subject to a U.S. Government embargo or designated by the U.S. Government as a \"terrorist-supporting\" country, that you are not listed on any U.S. Government list of prohibited or restricted parties, and that you will comply with all applicable third-party terms and export-control laws when using the app."
+        ]
+      },
+      {
+        "title": "Changes, governing law and contact",
+        "body": [
+          "We may update these Terms from time to time; the current version is always available on this page. If you continue to use the Service after a change takes effect, you accept the updated Terms.",
+          "German law applies, excluding its conflict-of-law rules and the UN Convention on Contracts for the International Sale of Goods. Where you are a consumer, the mandatory consumer-protection provisions of your country of residence remain unaffected. The place of jurisdiction, where legally permissible, is Düsseldorf, Germany.",
+          "Contact: metadist data management GmbH, Königsallee 82, 40212 Düsseldorf, Germany — team@synaplan.com."
+        ]
+      }
+    ]
   },
   "imprint": {
     "metaTitle": "Imprint — metadist data management GmbH",

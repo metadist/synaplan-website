@@ -728,6 +728,7 @@
     "contact": "Kontakt",
     "imprint": "Impressum",
     "privacy": "Datenschutz",
+    "terms": "Nutzungsbedingungen",
     "copyright": "© {year} metadist data management GmbH",
     "widgetTrades": "Widget: Handwerk & Gewerbe",
     "widgetHospitality": "Widget: Hotels",
@@ -1068,6 +1069,91 @@
     "s12License": "Apache-Lizenz 2.0",
     "s13Title": "13. Widerspruch gegen Werbe-E-Mails",
     "s13Body": "Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-E-Mails, vor."
+  },
+  "termsOfUse": {
+    "metaTitle": "Nutzungsbedingungen & App-EULA — Synaplan",
+    "metaDescription": "Nutzungsbedingungen und Endnutzer-Lizenzvereinbarung für den gehosteten Synaplan-Dienst und die offiziellen Synaplan-Apps, betrieben von der metadist data management GmbH. Synaplan ist Open Source unter der Apache-Lizenz 2.0.",
+    "pageTitle": "Nutzungsbedingungen & App-EULA",
+    "pageSubtitle": "Die Bedingungen für die Nutzung des gehosteten Synaplan-Dienstes unter synaplan.com und der offiziellen Synaplan-Apps. Synaplan ist Open-Source-Software und unter der Apache-Lizenz 2.0 lizenziert.",
+    "badge": "Apache-2.0 Open Source",
+    "breadcrumbHome": "Startseite",
+    "lastUpdated": "Zuletzt aktualisiert: 16. Juli 2026",
+    "linkPrivacy": "Zur Datenschutzerklärung",
+    "linkImprint": "Zum Impressum",
+    "sections": [
+      {
+        "title": "Wer wir sind und was diese Bedingungen regeln",
+        "body": [
+          "Diese Nutzungsbedingungen und Endnutzer-Lizenzvereinbarung (die \"Bedingungen\") sind eine Vereinbarung zwischen Ihnen und der metadist data management GmbH, Königsallee 82, 40212 Düsseldorf, Deutschland (\"metadist\", \"wir\", \"uns\"), der Betreiberin des Synaplan-Dienstes.",
+          "Sie gelten, wenn Sie den gehosteten Synaplan-Dienst unter synaplan.com und die offiziellen Synaplan-Apps für iOS und Android nutzen (zusammen der \"Dienst\"). Mit der Erstellung eines Kontos oder der Nutzung des Dienstes akzeptieren Sie diese Bedingungen. Wenn Sie nicht einverstanden sind, nutzen Sie den Dienst bitte nicht."
+        ]
+      },
+      {
+        "title": "Open Source und die Apache-2.0-Lizenz",
+        "body": [
+          "Synaplan ist Open-Source-Software. Der Quellcode ist auf GitHub veröffentlicht und unter der Apache-Lizenz, Version 2.0, lizenziert. Es steht Ihnen frei, die Software im Rahmen dieser Lizenz einzusehen, auszuführen, zu verändern und selbst zu hosten.",
+          "Wie in der Apache-2.0-Lizenz festgelegt, wird die Software \"WIE BESEHEN\" (\"AS IS\") ohne jegliche ausdrückliche oder stillschweigende Gewährleistung bereitgestellt. Wenn Sie Synaplan selbst hosten, tun Sie dies auf eigene Verantwortung und sind Betreiber Ihrer eigenen Instanz. Diese Bedingungen regeln ausschließlich Ihre Nutzung des von metadist betriebenen gehosteten Dienstes und der offiziellen Apps."
+        ]
+      },
+      {
+        "title": "Ihr Konto und zulässige Nutzung",
+        "body": [
+          "Sie sind für Ihr Konto, die sichere Aufbewahrung Ihrer Zugangsdaten sowie für alle Eingaben, Dateien und sonstigen Inhalte, die Sie übermitteln (\"Ihre Inhalte\"), und die damit erzeugten Ausgaben verantwortlich.",
+          "Sie verpflichten sich, den Dienst nicht zu nutzen, um Inhalte zu erstellen, hochzuladen oder zu verbreiten, die rechtswidrig, rechtsverletzend, schädlich, täuschend, hasserfüllt, belästigend, sexuell ausbeuterisch oder anderweitig anstößig sind, Sicherheitsfilter nicht zu umgehen und den Dienst nicht zu nutzen, um anderen zu schaden oder geltendes Recht zu verletzen.",
+          "Wir verfolgen eine Null-Toleranz-Politik gegenüber anstößigen Inhalten und missbräuchlichem Verhalten und können Konten, die gegen diese Bedingungen oder geltendes Recht verstoßen, sperren, blockieren oder kündigen."
+        ]
+      },
+      {
+        "title": "KI-generierte Inhalte",
+        "body": [
+          "Der Dienst nutzt KI-Modelle Dritter, um Texte, Bilder und andere Ausgaben zu erzeugen. KI-Ausgaben können ungenau, unvollständig, verzerrt oder für einen bestimmten Zweck ungeeignet sein. Sie dürfen sich ohne unabhängige Überprüfung nicht darauf für berufliche, rechtliche, medizinische, finanzielle oder andere folgenreiche Entscheidungen verlassen.",
+          "Sie sind dafür verantwortlich, wie Sie KI-Ausgaben verwenden. KI-Anbieter wenden eigene Sicherheitsfilter an, doch kein Filter ist perfekt; trotz dieser Maßnahmen können anstößige Ausgaben auftreten."
+        ]
+      },
+      {
+        "title": "Meldung anstößiger Inhalte und von Missbrauch",
+        "body": [
+          "Wenn Sie auf anstößige Inhalte oder missbräuchliches Verhalten stoßen, melden Sie dies bitte an team@synaplan.com. Sie können Inhalte auch direkt in der App melden, sofern eine Meldefunktion angeboten wird.",
+          "Wir prüfen Meldungen und reagieren innerhalb angemessener Zeit darauf. Dies kann das Entfernen von Inhalten sowie das Sperren oder Blockieren des verantwortlichen Kontos umfassen."
+        ]
+      },
+      {
+        "title": "Abonnements und Zahlungen",
+        "body": [
+          "Synaplan bietet eine kostenlose Stufe sowie optionale kostenpflichtige Abonnements, die zusätzliche Nutzung und Funktionen freischalten.",
+          "In den mobilen Apps werden Abonnements über Ihr App-Store-Konto verkauft und abgerechnet und dort verwaltet oder gekündigt. Im Web werden Abonnements über unsere Website abgewickelt. Der jeweils geltende Preis, Steuern und Abrechnungsbedingungen werden Ihnen vor dem Kauf angezeigt."
+        ]
+      },
+      {
+        "title": "Keine Gewährleistung",
+        "body": [
+          "Der gehostete Dienst wird \"wie besehen\" und \"wie verfügbar\" bereitgestellt, ohne jegliche Gewährleistung im größtmöglichen gesetzlich zulässigen Umfang, im Einklang mit dem Gewährleistungsausschluss der Apache-2.0-Lizenz. Wir gewährleisten nicht, dass der Dienst ununterbrochen, fehlerfrei oder sicher ist oder dass KI-Ausgaben zutreffend oder für einen bestimmten Zweck geeignet sind."
+        ]
+      },
+      {
+        "title": "Haftungsbeschränkung",
+        "body": [
+          "Im größtmöglichen gesetzlich zulässigen Umfang haftet metadist nicht für Schäden, die aus oder im Zusammenhang mit Ihrer Nutzung des Dienstes entstehen.",
+          "Diese Beschränkung berührt nicht die Haftung, die nach zwingendem Recht nicht ausgeschlossen oder beschränkt werden kann, insbesondere die Haftung für Vorsatz und grobe Fahrlässigkeit, für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit, nach dem Produkthaftungsgesetz oder aus einer von uns ausdrücklich übernommenen Garantie."
+        ]
+      },
+      {
+        "title": "Apple App Store und Google Play",
+        "body": [
+          "Für Apps, die über den Apple App Store oder Google Play bezogen werden, kommt diese Vereinbarung ausschließlich zwischen Ihnen und metadist zustande und nicht mit Apple oder Google. metadist – nicht der App-Store-Anbieter – ist allein für die App und ihre Inhalte, Wartung und Unterstützung verantwortlich.",
+          "Der App-Store-Anbieter ist nicht verpflichtet, Support zu leisten oder Gewährleistungsansprüche zu bearbeiten; soweit gesetzlich erforderlich, liegen solche Ansprüche in der Verantwortung von metadist. Apple Inc. und ihre Tochtergesellschaften sind Drittbegünstigte dieser Bedingungen und können sie Ihnen gegenüber durchsetzen.",
+          "Sie sichern zu, dass Sie sich nicht in einem Land befinden, das einem US-Embargo unterliegt oder von der US-Regierung als \"terrorismusunterstützend\" eingestuft wird, dass Sie auf keiner Liste verbotener oder eingeschränkter Parteien der US-Regierung stehen und dass Sie bei der Nutzung der App alle geltenden Bedingungen Dritter und Exportkontrollgesetze einhalten."
+        ]
+      },
+      {
+        "title": "Änderungen, anwendbares Recht und Kontakt",
+        "body": [
+          "Wir können diese Bedingungen von Zeit zu Zeit aktualisieren; die aktuelle Fassung ist stets auf dieser Seite verfügbar. Wenn Sie den Dienst nach Inkrafttreten einer Änderung weiter nutzen, akzeptieren Sie die aktualisierten Bedingungen.",
+          "Es gilt deutsches Recht unter Ausschluss seiner Kollisionsnormen und des UN-Kaufrechts (CISG). Sind Sie Verbraucher, bleiben die zwingenden Verbraucherschutzvorschriften Ihres Wohnsitzlandes unberührt. Gerichtsstand ist, soweit gesetzlich zulässig, Düsseldorf, Deutschland.",
+          "Kontakt: metadist data management GmbH, Königsallee 82, 40212 Düsseldorf, Deutschland — team@synaplan.com."
+        ]
+      }
+    ]
   },
   "imprint": {
     "metaTitle": "Impressum — metadist data management GmbH",

@@ -48,6 +48,7 @@ export function Footer() {
       links: [
         { label: t("imprint"), href: "/imprint" },
         { label: t("privacy"), href: "/privacy-policy" },
+        { label: t("terms"), href: "/terms" },
       ],
     },
   ];

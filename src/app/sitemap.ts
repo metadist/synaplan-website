@@ -62,6 +62,7 @@ const PATHS: PathConfig[] = [
   // ── Legal — low priority but must be indexed ──────────────────────────────
   { path: "/imprint",                           priority: 0.30, changeFrequency: "yearly" },
   { path: "/privacy-policy",                    priority: 0.30, changeFrequency: "yearly" },
+  { path: "/terms",                             priority: 0.30, changeFrequency: "yearly" },
 ];
 
 function buildUrl(locale: string, path: string): string {
