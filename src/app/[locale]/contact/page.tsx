@@ -133,6 +133,7 @@ export default async function ContactPage({
       title: t("topicSupportTitle"),
       description: t("topicSupportDesc"),
       actions: [
+        { label: t("topicSupportCtaPage"), href: "/support", internal: true },
         { label: t("topicSupportCta"), href: LINKS.discord, external: true },
         { label: t("topicSupportCtaAlt"), href: LINKS.docs, external: true },
       ],
@@ -302,6 +303,11 @@ export default async function ContactPage({
                           {action.label}
                           <ExternalLink className="size-3 opacity-60" aria-hidden />
                         </a>
+                      ) : "internal" in action && action.internal ? (
+                        <Link key={action.href} href={action.href} className={actionClass}>
+                          {action.label}
+                          <ArrowRight className="size-3.5 opacity-70" aria-hidden />
+                        </Link>
                       ) : (
                         <a key={action.href} href={action.href} className={actionClass}>
                           {action.label}
