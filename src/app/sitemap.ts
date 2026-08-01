@@ -55,6 +55,7 @@ const PATHS: PathConfig[] = [
   // ── Utility ───────────────────────────────────────────────────────────────
   { path: "/try-chat",                          priority: 0.65, changeFrequency: "monthly" },
   { path: "/news",                              priority: 0.55, changeFrequency: "weekly" },
+  { path: "/contact",                           priority: 0.55, changeFrequency: "yearly" },
 
   // ── Blog ──────────────────────────────────────────────────────────────────
   { path: "/blog",                              priority: 0.60, changeFrequency: "weekly" },
