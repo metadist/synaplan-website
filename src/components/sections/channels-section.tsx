@@ -48,7 +48,7 @@ export function ChannelsSection() {
         <AnimatedSection className="mx-auto max-w-2xl text-center">
           <Badge
             variant="secondary"
-            className="mb-5 rounded-full border-0 bg-soft-accent px-3 py-1.5 text-xs font-bold uppercase tracking-[0.06em] text-[#002c92]"
+            className="mb-5 max-w-full rounded-full border-0 bg-soft-accent px-3 py-1.5 text-center text-xs font-bold uppercase tracking-[0.06em] text-[#002c92]"
           >
             {t("badge")}
           </Badge>
@@ -117,7 +117,7 @@ export function ChannelsSection() {
                 >
                   <node.icon className="size-5 sm:size-6" />
                 </div>
-                <span className="whitespace-nowrap rounded-full bg-white/80 px-2 py-0.5 text-xs font-semibold text-foreground shadow-sm backdrop-blur-sm sm:text-sm">
+                <span className="max-w-[5.75rem] rounded-full bg-white/80 px-2 py-0.5 text-center text-[10px] font-semibold leading-tight text-foreground shadow-sm backdrop-blur-sm sm:max-w-none sm:whitespace-nowrap sm:text-sm">
                   {t(`nodes.${node.key}`)}
                 </span>
               </div>

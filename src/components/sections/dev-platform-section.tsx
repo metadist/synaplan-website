@@ -63,7 +63,7 @@ export function DevPlatformSection() {
           <AnimatedSection>
             <Badge
               variant="secondary"
-              className="mb-5 rounded-full border-0 bg-white/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.06em] text-brand-300"
+              className="mb-5 max-w-full rounded-full border-0 bg-white/10 px-3 py-1.5 text-center text-xs font-bold uppercase tracking-[0.06em] text-brand-300"
             >
               {t("badge")}
             </Badge>

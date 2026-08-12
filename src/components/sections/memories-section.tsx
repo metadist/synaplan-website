@@ -31,7 +31,7 @@ export function MemoriesSection() {
           <div className="mx-auto max-w-2xl text-center">
             <Badge
               variant="secondary"
-              className="mb-4 gap-1.5 rounded-full border-0 bg-[#e0f2fe]/90 px-3 py-1 text-xs font-bold uppercase tracking-[0.06em] text-[#002c92]"
+              className="mb-4 max-w-full gap-1.5 rounded-full border-0 bg-[#e0f2fe]/90 px-3 py-1 text-center text-xs font-bold uppercase tracking-[0.06em] text-[#002c92]"
             >
               <Brain className="size-3.5" aria-hidden />
               {t("badge")}

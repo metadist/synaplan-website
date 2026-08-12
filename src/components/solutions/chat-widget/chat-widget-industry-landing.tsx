@@ -38,7 +38,7 @@ export function ChatWidgetIndustryLanding({ slug }: { slug: IndustrySlug }) {
             <div className="flex flex-col items-center text-center lg:col-span-7 lg:items-start lg:text-left">
               <Badge
                 variant="secondary"
-                className="mb-5 gap-2 rounded-full border-0 bg-soft-accent px-3 py-1.5 text-xs font-bold uppercase tracking-[0.06em] text-[#002c92]"
+                className="mb-5 max-w-full gap-2 rounded-full border-0 bg-soft-accent px-3 py-1.5 text-center text-xs font-bold uppercase tracking-[0.06em] text-[#002c92]"
               >
                 <Icon className="size-3.5" aria-hidden />
                 {t(`${p}landingHeroBadge`)}
