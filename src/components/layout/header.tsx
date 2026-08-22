@@ -1,21 +1,23 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { LINKS } from "@/lib/constants";
+import { LINKS, storeLinksFor } from "@/lib/constants";
 import { Menu, ChevronDown } from "lucide-react";
-import { GithubIcon, WhatsAppIcon } from "@/components/icons";
+import { AppleIcon, GithubIcon, GooglePlayIcon, WhatsAppIcon } from "@/components/icons";
 import { SynaplanLogo } from "@/components/brand/synaplan-logo";
 import { LanguageSwitcher } from "./language-switcher";
 import { cn } from "@/lib/utils";
 
 export function Header() {
   const t = useTranslations();
+  const locale = useLocale();
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const stores = storeLinksFor(locale);
 
   const solutions = [
     { href: "/solutions/companies", label: t("nav.forCompanies") },
@@ -75,6 +77,29 @@ export function Header() {
                       {item.label}
                     </Link>
                   ))}
+                  <div className="mt-1 border-t border-border pt-2">
+                    <p className="px-3 pb-1 pt-1 text-[0.65rem] font-semibold uppercase tracking-wider text-muted-foreground">
+                      {t("nav.mobileApps")}
+                    </p>
+                    <a
+                      href={stores.appStore}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                    >
+                      <AppleIcon className="size-4" />
+                      {t("nav.appStore")}
+                    </a>
+                    <a
+                      href={stores.playStore}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                    >
+                      <GooglePlayIcon className="size-4" />
+                      {t("nav.googlePlay")}
+                    </a>
+                  </div>
                   <a
                     href={LINKS.sovereignEU}
                     target="_blank"
@@ -223,6 +248,31 @@ export function Header() {
                         {item.label}
                       </Link>
                     ))}
+                    <div className="mt-1 border-t border-border pt-2">
+                      <p className="px-3 pb-1 pt-1 text-[0.65rem] font-semibold uppercase tracking-wider text-muted-foreground">
+                        {t("nav.mobileApps")}
+                      </p>
+                      <a
+                        href={stores.appStore}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setMobileOpen(false)}
+                        className="flex items-center gap-2.5 rounded-lg px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                      >
+                        <AppleIcon className="size-4" />
+                        {t("nav.appStore")}
+                      </a>
+                      <a
+                        href={stores.playStore}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setMobileOpen(false)}
+                        className="flex items-center gap-2.5 rounded-lg px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                      >
+                        <GooglePlayIcon className="size-4" />
+                        {t("nav.googlePlay")}
+                      </a>
+                    </div>
                     <a
                       href={LINKS.sovereignEU}
                       target="_blank"

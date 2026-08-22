@@ -3,7 +3,7 @@
     "title": "Synaplan — Open-Source AI Platform for Companies",
     "description": "Open-source AI platform with multi-model routing, GDPR compliance, and an AI chatbot widget. Connect OpenAI, Claude, Gemini & Ollama. Self-hosted via Docker.",
     "homeTitle": "Synaplan — The Open-Source AI Communication Platform",
-    "homeDescription": "One AI across every channel — WhatsApp, email, Outlook, website, API & MCP. Connect every AI model to every business process. Open source, GDPR-compliant, self-hosted."
+    "homeDescription": "One AI across every channel — WhatsApp, email, Outlook, website, API, MCP, and now iOS & Android. Connect every AI model to every business process. Open source, GDPR-compliant, self-hosted."
   },
   "nav": {
     "solutions": "Solutions",
@@ -25,7 +25,10 @@
     "partners": "Partners",
     "logoAlt": "Open Source AI Platform",
     "chatgptAlternative": "ChatGPT Alternative",
-    "sovereignEU": "synaplan EU/CH"
+    "sovereignEU": "synaplan EU/CH",
+    "mobileApps": "Mobile Apps",
+    "appStore": "App Store (iOS)",
+    "googlePlay": "Google Play (Android)"
   },
   "common": {
     "startForFree": "Start for free",
@@ -294,7 +297,7 @@
     "badge": "The Open-Source AI Communication Platform",
     "title": "One AI.",
     "titleHighlight": "Every channel. Full control.",
-    "description": "Synaplan connects every AI model to every business process and every communication channel — WhatsApp, email, Outlook, website, API, and MCP. One knowledge base. One platform. Fully open source.",
+    "description": "Synaplan connects every AI model to every business process and every communication channel — WhatsApp, email, Outlook, website, API, MCP, and now iOS & Android. One knowledge base. One platform. Fully open source.",
     "trustedBy": "Trusted by innovative companies",
     "scrollDown": "Scroll to the next section",
     "tryChatCta": "Try a quick AI chat on this page — no login"
@@ -302,7 +305,7 @@
   "channels": {
     "badge": "Every channel",
     "title": "Every conversation reaches the same AI",
-    "subtitle": "WhatsApp, email, Outlook, your website, your API — every message flows into one intelligent core with one shared knowledge base.",
+    "subtitle": "WhatsApp, email, Outlook, website chat, API, MCP, voice — and now the iOS and Android apps. Every message flows into one intelligent core with one shared knowledge base.",
     "hub": "Synaplan",
     "hubHint": "One AI core",
     "footnote": "One knowledge base. One set of policies. Every channel.",
@@ -313,8 +316,24 @@
       "website": "Website Chat",
       "api": "REST API",
       "mcp": "MCP Tools",
-      "voice": "Voice Agents"
+      "voice": "Voice Agents",
+      "mobile": "iOS & Android"
     }
+  },
+  "apps": {
+    "badge": "Now on your phone",
+    "title": "Two mobile apps. Same AI. Your knowledge.",
+    "subtitle": "Synaplan is out on iOS and Android — chat with leading models and your own documents, from any Synaplan server you choose.",
+    "point1": "Chat with your documents and get answers with sources.",
+    "point2": "Voice input, image generation, and dark mode — ready on the go.",
+    "point3": "Connect to synaplan.com or your own self-hosted server.",
+    "imageAlt": "Synaplan Android app on Google Play, with screenshots of chat, knowledge, and channels",
+    "appStoreEyebrow": "Download on the",
+    "appStoreLabel": "App Store",
+    "appStoreAria": "Download Synaplan on the App Store",
+    "playStoreEyebrow": "Get it on",
+    "playStoreLabel": "Google Play",
+    "playStoreAria": "Get Synaplan on Google Play"
   },
   "agents": {
     "badge": "AI Agents",

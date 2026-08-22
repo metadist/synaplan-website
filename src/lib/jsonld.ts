@@ -7,6 +7,8 @@
  * — the company behind Synaplan (metadist.de) used for E-E-A-T signals.
  */
 
+import { storeLinksFor } from "@/lib/constants";
+
 export const SITE_URL = "https://www.synaplan.com";
 
 /** Build a canonical URL for a given locale + path. */
@@ -80,15 +82,17 @@ export function buildWebSiteSchema(locale: string) {
 
 /** Schema.org SoftwareApplication — makes Synaplan eligible for app rich results */
 export function buildSoftwareAppSchema(locale: string) {
+  const stores = storeLinksFor(locale);
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "@id": `${SITE_URL}/#software`,
     name: "Synaplan",
     url: SITE_URL,
+    sameAs: [stores.appStore, stores.playStore],
     applicationCategory: "BusinessApplication",
     applicationSubCategory: "AI Platform",
-    operatingSystem: "Any (self-hosted via Docker)",
+    operatingSystem: "Web, iOS, Android, self-hosted via Docker",
     softwareVersion: "2.4.1",
     inLanguage: ["de-DE", "en-US"],
     description:
@@ -103,6 +107,7 @@ export function buildSoftwareAppSchema(locale: string) {
       "Plugin system for business-specific extensions",
       "WhatsApp & email AI integration",
       "AI Memories with Qdrant vector search",
+      "Native iOS and Android apps",
     ],
     offers: [
       {

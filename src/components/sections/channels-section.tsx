@@ -9,6 +9,7 @@ import {
   MessageCircle,
   Mic,
   Puzzle,
+  Smartphone,
   type LucideIcon,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -28,6 +29,7 @@ const NODES: ChannelNode[] = [
   { key: "api", icon: Code2 },
   { key: "mcp", icon: Puzzle },
   { key: "voice", icon: Mic },
+  { key: "mobile", icon: Smartphone },
 ];
 
 function polar(index: number, total: number, radius: number) {

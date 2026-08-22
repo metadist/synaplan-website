@@ -13,6 +13,25 @@ export const LINKS = {
   contact: "mailto:info@metadist.de",
 } as const;
 
+export const STORE_LINKS = {
+  appStore: {
+    de: "https://apps.apple.com/de/app/synaplan-ki-chat-wissen/id6784278288",
+    en: "https://apps.apple.com/us/app/synaplan-ai-control/id6784278288",
+  },
+  playStore: {
+    de: "https://play.google.com/store/apps/details?id=com.synaplan.app&hl=de",
+    en: "https://play.google.com/store/apps/details?id=com.synaplan.app&hl=en",
+  },
+} as const;
+
+export function storeLinksFor(locale: string) {
+  const lang = locale.startsWith("de") ? "de" : "en";
+  return {
+    appStore: STORE_LINKS.appStore[lang],
+    playStore: STORE_LINKS.playStore[lang],
+  };
+}
+
 export const USE_CASES = [
   {
     company: "Megaherz Yoga",

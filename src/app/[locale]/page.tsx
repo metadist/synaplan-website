@@ -21,6 +21,15 @@ const WidgetFlowSection = dynamic(
   },
 );
 
+const AppsSection = dynamic(
+  () => import("@/components/sections/apps-section").then((m) => m.AppsSection),
+  {
+    loading: () => (
+      <HomeSectionSkeleton className="min-h-[28rem] rounded-none bg-transparent" />
+    ),
+  },
+);
+
 const AgentsSection = dynamic(
   () =>
     import("@/components/sections/agents-section").then((m) => m.AgentsSection),
@@ -222,6 +231,7 @@ export default async function HomePage({
       />
       <HeroSection />
       <ChannelsSection />
+      <AppsSection />
       <AgentsSection />
       <WorkflowSection />
       <IntegrationsSection />

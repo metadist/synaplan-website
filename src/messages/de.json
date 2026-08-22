@@ -3,7 +3,7 @@
     "title": "Synaplan — KI-Plattform für Unternehmen | Open Source",
     "description": "Open-Source-KI-Plattform mit Multi-Model-Routing, DSGVO-Konformität und KI-Chatbot-Widget. OpenAI, Claude, Gemini & Ollama verbinden. Self-hosted via Docker.",
     "homeTitle": "Synaplan — Die Open-Source-Plattform für KI-Kommunikation",
-    "homeDescription": "Eine KI über jeden Kanal — WhatsApp, E-Mail, Outlook, Website, API & MCP. Jedes KI-Modell mit jedem Geschäftsprozess verbinden. Open Source, DSGVO-konform, self-hosted."
+    "homeDescription": "Eine KI über jeden Kanal — WhatsApp, E-Mail, Outlook, Website, API, MCP und jetzt iOS & Android. Jedes KI-Modell mit jedem Geschäftsprozess verbinden. Open Source, DSGVO-konform, self-hosted."
   },
   "nav": {
     "solutions": "Lösungen",
@@ -25,7 +25,10 @@
     "partners": "Partner",
     "logoAlt": "Open Source KI Plattform",
     "chatgptAlternative": "ChatGPT-Alternative",
-    "sovereignEU": "synaplan EU/CH"
+    "sovereignEU": "synaplan EU/CH",
+    "mobileApps": "Mobile Apps",
+    "appStore": "App Store (iOS)",
+    "googlePlay": "Google Play (Android)"
   },
   "common": {
     "startForFree": "Kostenlos starten",
@@ -294,7 +297,7 @@
     "badge": "Die Open-Source-Plattform für KI-Kommunikation",
     "title": "Eine KI.",
     "titleHighlight": "Jeder Kanal. Volle Kontrolle.",
-    "description": "Synaplan verbindet jedes KI-Modell mit jedem Geschäftsprozess und jedem Kommunikationskanal — WhatsApp, E-Mail, Outlook, Website, API und MCP. Eine Wissensbasis. Eine Plattform. Vollständig Open Source.",
+    "description": "Synaplan verbindet jedes KI-Modell mit jedem Geschäftsprozess und jedem Kommunikationskanal — WhatsApp, E-Mail, Outlook, Website, API, MCP und jetzt iOS & Android. Eine Wissensbasis. Eine Plattform. Vollständig Open Source.",
     "trustedBy": "Vertraut von innovativen Unternehmen",
     "scrollDown": "Zur nächsten Sektion scrollen",
     "tryChatCta": "Kurz den KI-Chat auf dieser Seite ausprobieren — ohne Login"
@@ -302,7 +305,7 @@
   "channels": {
     "badge": "Jeder Kanal",
     "title": "Jede Konversation erreicht dieselbe KI",
-    "subtitle": "WhatsApp, E-Mail, Outlook, Ihre Website, Ihre API — jede Nachricht fließt in einen intelligenten Kern mit einer gemeinsamen Wissensbasis.",
+    "subtitle": "WhatsApp, E-Mail, Outlook, Website-Chat, API, MCP, Sprache — und jetzt die iOS- und Android-Apps. Jede Nachricht fließt in einen intelligenten Kern mit einer gemeinsamen Wissensbasis.",
     "hub": "Synaplan",
     "hubHint": "Ein KI-Kern",
     "footnote": "Eine Wissensbasis. Ein Regelwerk. Jeder Kanal.",
@@ -313,8 +316,24 @@
       "website": "Website-Chat",
       "api": "REST API",
       "mcp": "MCP-Tools",
-      "voice": "Voice-Agents"
+      "voice": "Voice-Agents",
+      "mobile": "iOS & Android"
     }
+  },
+  "apps": {
+    "badge": "Jetzt auf dem Handy",
+    "title": "Zwei Mobile-Apps. Dieselbe KI. Ihr Wissen.",
+    "subtitle": "Synaplan ist auf iOS und Android da — chatten Sie mit führenden Modellen und Ihren eigenen Dokumenten, auf dem Synaplan-Server Ihrer Wahl.",
+    "point1": "Mit Ihren Dokumenten chatten und Antworten mit Quellen erhalten.",
+    "point2": "Spracheingabe, Bildgenerierung und Dark Mode — unterwegs bereit.",
+    "point3": "Verbinden Sie sich mit synaplan.com oder Ihrem eigenen Server.",
+    "imageAlt": "Synaplan-Android-App bei Google Play, mit Screenshots zu Chat, Wissen und Kanälen",
+    "appStoreEyebrow": "Laden im",
+    "appStoreLabel": "App Store",
+    "appStoreAria": "Synaplan im App Store laden",
+    "playStoreEyebrow": "Jetzt bei",
+    "playStoreLabel": "Google Play",
+    "playStoreAria": "Synaplan bei Google Play laden"
   },
   "agents": {
     "badge": "KI-Agenten",

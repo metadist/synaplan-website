@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { LINKS } from "@/lib/constants";
+import { StoreBadges } from "@/components/brand/store-badges";
 import { GithubIcon, LinkedInIcon } from "@/components/icons";
 import { SynaplanLogo } from "@/components/brand/synaplan-logo";
 
@@ -95,9 +96,10 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
-          <div className="flex items-center gap-2.5">
+        <div className="mt-12 flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-8 lg:flex-row">
+          <div className="flex flex-col items-center gap-4 sm:flex-row sm:gap-6">
             <SynaplanLogo variant="dark" className="max-h-8" alt={tn("logoAlt")} />
+            <StoreBadges size="sm" variant="onDark" />
           </div>
           <p className="text-xs text-neutral-500">
             {t("copyright", { year })}
