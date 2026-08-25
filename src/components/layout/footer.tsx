@@ -3,6 +3,7 @@ import { Link } from "@/i18n/navigation";
 import { LINKS } from "@/lib/constants";
 import { StoreBadges } from "@/components/brand/store-badges";
 import { GithubIcon, LinkedInIcon } from "@/components/icons";
+import { OsbaMemberBadge } from "@/components/brand/osba-member-badge";
 import { SynaplanLogo } from "@/components/brand/synaplan-logo";
 
 export function Footer() {
@@ -96,7 +97,11 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-8 lg:flex-row">
+        <div className="mt-12 flex justify-center border-t border-white/10 pt-8 sm:justify-start">
+          <OsbaMemberBadge hint={t("osbaHint")} />
+        </div>
+
+        <div className="mt-8 flex flex-col items-center justify-between gap-6 lg:flex-row">
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:gap-6">
             <SynaplanLogo variant="dark" className="max-h-8" alt={tn("logoAlt")} />
             <StoreBadges size="sm" variant="onDark" />

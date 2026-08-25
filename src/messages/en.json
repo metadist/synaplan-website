@@ -755,7 +755,8 @@
     "widgetReferences": "Widget: Customer stories",
     "tryChat": "Chat without logging in",
     "plugins": "Plugins",
-    "sovereign": "Sovereign (EU/CH)"
+    "sovereign": "Sovereign (EU/CH)",
+    "osbaHint": "Member of the Open Source Business Alliance"
   },
   "chatWidget": {
     "hub": {

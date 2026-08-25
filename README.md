@@ -278,3 +278,7 @@ Structured data builders live in `src/lib/jsonld.ts`:
 ## Project conventions
 
 See [`AGENTS.md`](./AGENTS.md) for coding standards, component patterns, and design system conventions used by AI agents and developers alike.
+
+<p align="center">
+  <a href="https://osb-alliance.de/" target="_blank" rel="noopener noreferrer"><img src="public/osba-member.png" alt="OSBA" width="180" height="90"></a>
+</p>
