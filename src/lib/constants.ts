@@ -11,6 +11,7 @@ export const LINKS = {
   whatsappDE: "https://wa.me/4915116038214",
   whatsappUS: "https://wa.me/16282253244",
   contact: "mailto:info@metadist.de",
+  osba: "https://osb-alliance.de/",
 } as const;
 
 export const STORE_LINKS = {
