@@ -43,6 +43,9 @@ const PATHS: PathConfig[] = [
   { path: "/features/multi-model",              priority: 0.82, changeFrequency: "monthly" },
   { path: "/features/audit-logs",               priority: 0.82, changeFrequency: "monthly" },
   { path: "/features/memories",                 priority: 0.78, changeFrequency: "monthly" },
+  { path: "/features/connections",              priority: 0.80, changeFrequency: "monthly" },
+  { path: "/features/mcp",                      priority: 0.78, changeFrequency: "monthly" },
+  { path: "/features/documents",                priority: 0.80, changeFrequency: "monthly" },
   // SISTRIX: "chatgpt alternative" / "chatgpt alternative open source" — real search demand
   { path: "/features/chatgpt-alternative",      priority: 0.85, changeFrequency: "monthly" },
 

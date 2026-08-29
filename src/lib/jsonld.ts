@@ -102,11 +102,15 @@ export function buildSoftwareAppSchema(locale: string) {
     featureList: [
       "Multi-model AI routing (OpenAI, Anthropic, Groq, Gemini, Ollama)",
       "Embeddable chat widget for any website",
-      "RAG document search with vector database",
+      "RAG document search with semantic vector search (MariaDB VECTOR or Qdrant)",
+      "MCP integration — server and client for the Model Context Protocol",
+      "Connections to Microsoft 365, Nextcloud, Dropbox, WebDAV, and CalDAV calendars",
+      "AI document generation (Word, Excel, PowerPoint, CSV) with cloud export",
       "GDPR-compliant self-hosting via Docker",
       "Plugin system for business-specific extensions",
       "WhatsApp & email AI integration",
       "AI Memories with Qdrant vector search",
+      "White-label branding for platform and chat widget",
       "Native iOS and Android apps",
     ],
     offers: [

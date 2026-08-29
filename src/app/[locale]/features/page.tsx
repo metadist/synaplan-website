@@ -4,7 +4,17 @@ import { Link } from "@/i18n/navigation";
 import { SolutionArticleShell } from "@/components/solutions/solution-article-shell";
 import { alternateLanguageUrls, canonicalUrl, OG_IMAGE } from "@/lib/seo";
 import { buildBreadcrumbSchema, SITE_URL } from "@/lib/jsonld";
-import { ArrowRight, GitBranch, BookOpen, ShieldCheck, MessageSquare } from "lucide-react";
+import {
+  ArrowRight,
+  GitBranch,
+  BookOpen,
+  ShieldCheck,
+  MessageSquare,
+  Plug,
+  Cable,
+  FileOutput,
+  Palette,
+} from "lucide-react";
 import { LINKS } from "@/lib/constants";
 
 export const dynamic = "force-static";
@@ -25,8 +35,8 @@ export async function generateMetadata({
     description,
     keywords:
       locale === "de"
-        ? "KI-Plattform Funktionen, AI Gateway, KI Compliance, RAG, Chat-Widget"
-        : "AI platform features, AI gateway, LLM proxy, RAG memories, audit logs",
+        ? "KI-Plattform Funktionen, AI Gateway, KI Compliance, RAG, Vektorsuche, MCP, KI Integrationen, KI Dokumente erstellen, Chat-Widget"
+        : "AI platform features, AI gateway, LLM proxy, RAG memories, vector search, MCP integration, AI connections, AI document generation, audit logs",
     openGraph: { title, description, url: canonicalUrl(locale, PATH), images: [OG_IMAGE] },
     twitter: { card: "summary_large_image", title, description, images: [OG_IMAGE.url] },
     alternates: {
@@ -68,6 +78,38 @@ const featureCards = [
     descKey: "f4Desc" as const,
     color: "text-violet-600",
     bg: "bg-violet-50",
+  },
+  {
+    icon: Plug,
+    hrefKey: "f5Href" as const,
+    titleKey: "f5Title" as const,
+    descKey: "f5Desc" as const,
+    color: "text-sky-600",
+    bg: "bg-sky-50",
+  },
+  {
+    icon: Cable,
+    hrefKey: "f6Href" as const,
+    titleKey: "f6Title" as const,
+    descKey: "f6Desc" as const,
+    color: "text-rose-600",
+    bg: "bg-rose-50",
+  },
+  {
+    icon: FileOutput,
+    hrefKey: "f7Href" as const,
+    titleKey: "f7Title" as const,
+    descKey: "f7Desc" as const,
+    color: "text-teal-600",
+    bg: "bg-teal-50",
+  },
+  {
+    icon: Palette,
+    hrefKey: "f8Href" as const,
+    titleKey: "f8Title" as const,
+    descKey: "f8Desc" as const,
+    color: "text-orange-600",
+    bg: "bg-orange-50",
   },
 ] as const;
 

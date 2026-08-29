@@ -30,8 +30,11 @@ export function Header() {
   const features = [
     { href: "/features/chatgpt-alternative", label: t("nav.chatgptAlternative") },
     { href: "/features/multi-model", label: t("nav.multiModel") },
-    { href: "/features/audit-logs", label: t("nav.auditLogs") },
     { href: "/features/memories", label: t("nav.memories") },
+    { href: "/features/connections", label: t("nav.connections") },
+    { href: "/features/mcp", label: t("nav.mcp") },
+    { href: "/features/documents", label: t("nav.documents") },
+    { href: "/features/audit-logs", label: t("nav.auditLogs") },
     { href: "/features", label: t("nav.allFeatures") },
   ];
 
