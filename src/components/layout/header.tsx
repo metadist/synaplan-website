@@ -46,6 +46,7 @@ export function Header() {
   ];
 
   const navItems = [
+    { href: "/app", label: t("nav.mobileApp") },
     { href: "/pricing", label: t("nav.pricing") },
     { href: "/news", label: "News" },
   ];

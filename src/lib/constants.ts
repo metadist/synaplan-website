@@ -33,6 +33,16 @@ export function storeLinksFor(locale: string) {
   };
 }
 
+/** Tags a store URL so installs can be attributed to a campaign. */
+export function storeUrlWithCampaign(
+  storeUrl: string,
+  campaign = "website-app",
+): string {
+  const tagged = new URL(storeUrl);
+  tagged.searchParams.set("ct", campaign);
+  return tagged.toString();
+}
+
 export const USE_CASES = [
   {
     company: "Megaherz Yoga",

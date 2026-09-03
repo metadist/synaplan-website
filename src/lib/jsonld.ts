@@ -190,6 +190,50 @@ export function buildServiceSchema({ name, description, url, locale }: ServiceSc
   };
 }
 
+/** Schema.org MobileApplication entries — iOS + Android for the /app page */
+export function buildMobileAppSchemas(locale: string): Record<string, unknown>[] {
+  const isDE = locale === "de";
+  const pageUrl = isDE ? `${SITE_URL}/de/app` : `${SITE_URL}/app`;
+  const stores = storeLinksFor(locale);
+  const description = isDE
+    ? "Die Synaplan-App für iPhone und Android. Gleiches Konto, gleiche Chats und Dokumente — unterwegs."
+    : "The Synaplan app for iPhone and Android. Same account, same chats and documents — on the go.";
+
+  const shared = {
+    "@type": "MobileApplication",
+    name: "Synaplan",
+    applicationCategory: "BusinessApplication",
+    url: pageUrl,
+    inLanguage: isDE ? "de-DE" : "en-US",
+    description,
+    author: { "@id": "https://metadist.de/#organization" },
+    publisher: { "@id": "https://metadist.de/#organization" },
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "EUR",
+      availability: "https://schema.org/InStock",
+    },
+  };
+
+  return [
+    {
+      ...shared,
+      "@id": `${pageUrl}#ios`,
+      operatingSystem: "iOS",
+      downloadUrl: stores.appStore,
+      installUrl: stores.appStore,
+    },
+    {
+      ...shared,
+      "@id": `${pageUrl}#android`,
+      operatingSystem: "Android",
+      downloadUrl: stores.playStore,
+      installUrl: stores.playStore,
+    },
+  ];
+}
+
 /** Schema.org BreadcrumbList */
 export function buildBreadcrumbSchema(
   crumbs: { name: string; url: string }[],

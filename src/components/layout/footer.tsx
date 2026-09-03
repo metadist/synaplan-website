@@ -21,6 +21,7 @@ export function Footer() {
         { label: tn("memories"), href: "/solutions/memories" },
         { label: t("plugins"), href: "/solutions/plugins" },
         { label: t("tryChat"), href: "/try-chat" },
+        { label: t("mobileApp"), href: "/app" },
         { label: tn("pricing"), href: "/pricing" },
         {
           label: t("sovereign"),
