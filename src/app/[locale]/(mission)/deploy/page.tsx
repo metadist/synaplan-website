@@ -15,7 +15,7 @@ type Requirement = { label: string; text: string };
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "mission.meta.deploy" });
-  return missionMetadata(locale, PATH, t("title"), t("description"));
+  return missionMetadata(locale, PATH, t("title"), t("description"), t.raw("keywords") as string[]);
 }
 
 export default async function DeployPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -37,7 +37,13 @@ export default async function DeployPage({ params }: { params: Promise<{ locale:
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(missionPageJsonLd(locale, PATH, tm("title"), tm("description"))) }}
       />
-      <PageHero eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} aside={<ComposeSample />} />
+      <PageHero
+        eyebrow={t("eyebrow")}
+        title={t("title")}
+        lead={t("lead")}
+        terms={tm.raw("terms") as string[]}
+        aside={<ComposeSample />}
+      />
 
       {tiers.map((tier, i) => (
         <section key={tier.id} className={`mc-section ${i % 2 === 1 ? "mc-panel-light" : ""}`}>

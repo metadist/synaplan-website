@@ -14,7 +14,7 @@ type System = { id: string; name: string; text: string };
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "mission.meta.connect" });
-  return missionMetadata(locale, PATH, t("title"), t("description"));
+  return missionMetadata(locale, PATH, t("title"), t("description"), t.raw("keywords") as string[]);
 }
 
 export default async function ConnectPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -31,7 +31,7 @@ export default async function ConnectPage({ params }: { params: Promise<{ locale
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(missionPageJsonLd(locale, PATH, tm("title"), tm("description"))) }}
       />
-      <PageHero eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} />
+      <PageHero eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} terms={tm.raw("terms") as string[]} />
       <section className="pb-4">
         <div className="mc-wrap">
           <Topology />

@@ -1894,28 +1894,145 @@
   "mission": {
     "meta": {
       "home": {
-        "title": "Synaplan — Mission Control for AI that actually does things",
-        "description": "Open-source agent infrastructure: run AI agents, connect tools and channels (Outlook, WhatsApp, web, API, MCP), give them knowledge and human approvals. Docker, Kubernetes, self-hosted or EU-hosted. Apache-2.0."
+        "title": "Synaplan — Open-Source AI Platform | Self-Hosted Agents & Chatbot",
+        "description": "Open-source AI platform for companies: self-hosted AI agents, GDPR-compliant chatbot widget, RAG knowledge base, WhatsApp and Outlook AI, MCP, multi-model routing. Docker, Kubernetes or hosted in Germany. Apache-2.0 ChatGPT alternative.",
+        "keywords": [
+          "open source AI platform",
+          "self-hosted AI",
+          "AI agents",
+          "AI chatbot",
+          "chatbot widget",
+          "RAG",
+          "GDPR AI",
+          "WhatsApp AI",
+          "Outlook AI",
+          "MCP server",
+          "ChatGPT alternative",
+          "Kubernetes AI",
+          "on-premise AI"
+        ],
+        "terms": [
+          "Open-source AI platform",
+          "Self-hosted AI",
+          "AI agents",
+          "Chatbot widget",
+          "RAG",
+          "GDPR",
+          "WhatsApp AI",
+          "Outlook AI",
+          "MCP",
+          "ChatGPT alternative"
+        ]
       },
       "product": {
-        "title": "Product — What Synaplan is, system by system",
-        "description": "Chat, knowledge (RAG), agents, embeddable widget, channels, memories, multi-model routing and audit — the open-source Synaplan platform explained as a system inventory."
+        "title": "AI Platform Features — Chat, RAG, Agents, Widget & MCP | Synaplan",
+        "description": "Synaplan AI platform features: multi-model chat, RAG knowledge base, AI agents, embeddable chatbot widget, WhatsApp and Outlook channels, memories, MCP, Microsoft 365 connections and GDPR audit logs. Open source, self-hosted.",
+        "keywords": [
+          "AI platform",
+          "RAG",
+          "AI chatbot widget",
+          "multi-model routing",
+          "MCP",
+          "AI memories",
+          "audit logs",
+          "open source AI"
+        ],
+        "terms": [
+          "AI platform",
+          "RAG knowledge base",
+          "AI chatbot widget",
+          "Multi-model routing",
+          "MCP",
+          "Memories",
+          "Audit logs",
+          "Self-hosted"
+        ]
       },
       "deploy": {
-        "title": "Deploy — Laptop, server, Kubernetes cluster or sovereign cloud",
-        "description": "Run Synaplan with a single docker compose up -d, deploy it with the public Helm chart on Kubernetes, or use the managed platform hosted in Germany. Same open-source code everywhere."
+        "title": "Self-Hosted AI: Docker, Kubernetes & On-Premise | Synaplan",
+        "description": "Self-host the Synaplan open-source AI platform with Docker Compose, deploy on Kubernetes with the public Helm chart, or use on-premise / EU hosting in Germany. Same Apache-2.0 code on a laptop, a server or a cluster.",
+        "keywords": [
+          "self-hosted AI",
+          "on-premise AI",
+          "Docker AI",
+          "Kubernetes AI",
+          "Helm chart",
+          "open source AI",
+          "EU hosting"
+        ],
+        "terms": [
+          "Self-hosted AI",
+          "On-premise AI",
+          "Docker Compose",
+          "Kubernetes",
+          "Helm chart",
+          "EU hosting",
+          "openDesk"
+        ]
       },
       "connect": {
-        "title": "Connect — Outlook, WhatsApp, web, API, MCP, desktop and your systems",
-        "description": "Every channel enters one system: Outlook add-in, WhatsApp, embeddable chat widget, REST API, MCP server and client, desktop app, Microsoft 365 and Nextcloud connections."
+        "title": "WhatsApp, Outlook & Website AI Chatbot | Synaplan",
+        "description": "Connect a GDPR-compliant AI chatbot to WhatsApp Business, Outlook, your website widget, email, REST API, MCP, Microsoft 365 and Nextcloud. One open-source AI platform for every channel.",
+        "keywords": [
+          "WhatsApp AI",
+          "Outlook AI",
+          "website chatbot",
+          "AI chatbot widget",
+          "MCP server",
+          "Microsoft 365 AI",
+          "Nextcloud AI"
+        ],
+        "terms": [
+          "WhatsApp AI",
+          "Outlook add-in",
+          "Website chatbot",
+          "Chat widget",
+          "MCP",
+          "Microsoft 365",
+          "Nextcloud"
+        ]
       },
       "agents": {
-        "title": "Agents — Missions with knowledge, tools and human approval",
-        "description": "How a Synaplan agent works: understand, retrieve, reason, use tools, wait for human approval, execute. Local or cloud models, full telemetry, agent skills on the desktop."
+        "title": "AI Agents with RAG, Tools & Human Approval | Synaplan",
+        "description": "Open-source AI agents that retrieve from your RAG knowledge base, call tools and MCP servers, and wait for human approval before they write. Local Ollama or cloud models. Full audit log. Self-hosted.",
+        "keywords": [
+          "AI agents",
+          "RAG agents",
+          "human-in-the-loop AI",
+          "MCP tools",
+          "Ollama",
+          "self-hosted agents"
+        ],
+        "terms": [
+          "AI agents",
+          "RAG",
+          "Human approval",
+          "MCP tools",
+          "Ollama",
+          "Desktop skills",
+          "Audit log"
+        ]
       },
       "source": {
-        "title": "Source — Open source, Apache-2.0, all of it",
-        "description": "Synaplan is fully open source under Apache-2.0: platform, Helm charts, desktop client, Outlook add-in. GitHub telemetry, documentation, community and the sovereign edition."
+        "title": "Open-Source AI Platform — Apache-2.0, Self-Hosted | Synaplan",
+        "description": "Synaplan is a fully open-source AI platform under Apache-2.0: self-hosted AI, Helm charts, desktop client and Outlook add-in. No community edition — the real product. Made in Germany. Member of the OSBA.",
+        "keywords": [
+          "open source AI",
+          "Apache-2.0",
+          "self-hosted AI",
+          "GitHub",
+          "digital sovereignty",
+          "Made in Germany"
+        ],
+        "terms": [
+          "Open-source AI",
+          "Apache-2.0",
+          "Self-hosted",
+          "GitHub",
+          "Helm charts",
+          "Digital sovereignty",
+          "Made in Germany"
+        ]
       }
     },
     "brand": "Mission Control",
@@ -1945,12 +2062,12 @@
     },
     "hero": {
       "eyebrow": "SYNAPLAN // MISSION CONTROL",
-      "title": "AI has talked enough. Put it to work.",
-      "subtitle": "Open-source agent infrastructure for people who run real systems. Run agents. Connect tools. Give them knowledge. Put them on your servers, your Kubernetes cluster — or ours.",
+      "title": "Open-source AI platform. Put it to work.",
+      "subtitle": "Self-hosted AI agents, a GDPR-compliant chatbot widget and RAG over your documents — on WhatsApp, Outlook, your website, API and MCP. Run it with Docker or Kubernetes, or host it in Germany. Apache-2.0 ChatGPT alternative.",
       "primary": "Start a mission",
       "secondary": "Read the source",
       "note": "Apache-2.0 · Docker · Kubernetes · self-hosted or hosted in Germany",
-      "engineerTitle": "Open-source agent infrastructure. No lock-in. No theatre.",
+      "engineerTitle": "Open-source AI platform. Self-hosted. No lock-in.",
       "engineerSubtitle": "PHP 8.4 / Symfony backend, Vue 3 frontend, MariaDB VECTOR + Qdrant, gRPC inference, OpenAPI contract, MCP server and client. One `docker compose up -d` away."
     },
     "ticker": [
@@ -2035,8 +2152,8 @@
     "signals": {
       "num": "01",
       "title": "Incoming signals",
-      "heading": "Everything that talks to your company can talk to your agents.",
-      "text": "Mail, WhatsApp, the website, Outlook, the desktop, the API. Every message enters the same system, meets the same knowledge and follows the same rules — no matter where it came from.",
+      "heading": "WhatsApp, Outlook, mail and website — one AI for every channel.",
+      "text": "A GDPR-compliant AI chatbot and the same agents on WhatsApp Business, Outlook, your website widget, desktop and the API. Every message meets the same RAG knowledge base and the same rules — no matter where it came from.",
       "core": "Agent core",
       "channels": [
         {
@@ -2074,8 +2191,8 @@
     "core": {
       "num": "02",
       "title": "Agent core",
-      "heading": "Understand. Retrieve. Reason. Act — with a human where it matters.",
-      "text": "An agent in Synaplan is not a chat window with a system prompt. It is a pipeline with knowledge, tools, an approval gate and telemetry for every step.",
+      "heading": "AI agents with RAG, tools — and a human where it matters.",
+      "text": "A Synaplan AI agent is not a chat window with a system prompt. It is a pipeline: RAG over your documents, multi-model routing, tools and MCP, a human approval gate and an audit log for every step.",
       "steps": [
         {
           "key": "understand",
@@ -2130,8 +2247,8 @@
     "connect": {
       "num": "03",
       "title": "Connect everything",
-      "heading": "A topology, not a chatbot.",
-      "text": "Synaplan sits in the middle of the systems you already run. Channels come in, knowledge and tools connect around it, every packet is logged.",
+      "heading": "A topology, not just a chatbot.",
+      "text": "The open-source AI platform sits between WhatsApp, Outlook, your website chatbot, Microsoft 365, Nextcloud and MCP. Channels come in, the RAG knowledge base and tools connect around it, every packet is logged.",
       "hint": "Hover or tap a node to follow the traffic.",
       "nodes": {
         "synaplan": "The core. Agents, knowledge, routing, approvals, audit.",
@@ -2148,8 +2265,8 @@
     "run": {
       "num": "04",
       "title": "Run it anywhere",
-      "heading": "Laptop today. Cluster tomorrow. Same system.",
-      "text": "The whole platform is Dockerised and Apache-2.0 licensed. Start on a laptop, move to a server, scale on Kubernetes with the public Helm chart — or let us host it in Germany.",
+      "heading": "Self-hosted AI: Docker today, Kubernetes tomorrow.",
+      "text": "The whole open-source AI platform is Dockerised and Apache-2.0 licensed. Start on a laptop, move to an on-premise server, scale on Kubernetes with the public Helm chart — or let us host it in Germany.",
       "tabs": {
         "compose": "Docker Compose",
         "helm": "Kubernetes",
@@ -2187,8 +2304,8 @@
     "source": {
       "num": "06",
       "title": "The source",
-      "heading": "Yes. The source. All of it.",
-      "text": "Platform, Helm charts, desktop client, Outlook add-in — public repositories under Apache-2.0. Read it, run it, fork it, audit it. Your data stays where you put it.",
+      "heading": "Open-source AI platform. Apache-2.0. All of it.",
+      "text": "Platform, Helm charts, desktop client, Outlook add-in — public repositories under Apache-2.0. Self-host it, fork it, audit it. Your data stays where you put it. Made in Germany.",
       "stars": "GitHub stars",
       "forks": "Forks",
       "license": "License",
@@ -2259,7 +2376,7 @@
     },
     "cta": {
       "title": "Ready for launch?",
-      "text": "Start on our platform in two minutes, or clone the repository and run it on yours. Either way: your AI, your infrastructure, your rules.",
+      "text": "Start the open-source AI platform in two minutes, or self-host it with Docker on yours. Chatbot, agents, RAG — your infrastructure, your rules.",
       "primary": "Start on web.synaplan.com",
       "secondary": "Talk to an engineer"
     },
@@ -2289,7 +2406,7 @@
       ]
     },
     "footer": {
-      "tagline": "Mission control for AI that actually does things.",
+      "tagline": "Open-source AI platform for self-hosted agents, chatbots and RAG.",
       "product": "Product",
       "deep": "Deep dives",
       "company": "Company",
@@ -2319,8 +2436,8 @@
     "pages": {
       "product": {
         "eyebrow": "PRODUCT // SYS-01",
-        "title": "One platform. Every system your AI needs to actually work.",
-        "lead": "Synaplan is the open-source platform under your agents: chat, knowledge, tools, channels and control — on infrastructure you choose. Here is the inventory.",
+        "title": "Open-source AI platform: chat, RAG, agents and widget.",
+        "lead": "Synaplan is the self-hosted AI platform under your agents: multi-model chat, RAG knowledge base, tools, WhatsApp and Outlook channels, MCP and GDPR audit — on infrastructure you choose. Here is the inventory.",
         "inventoryTitle": "System inventory",
         "inventory": [
           {
@@ -2465,8 +2582,8 @@
       },
       "deploy": {
         "eyebrow": "DEPLOY // SYS-04",
-        "title": "From your laptop to a sovereign cluster. Same commands, same code.",
-        "lead": "Synaplan ships as Docker images and a public Helm chart. There is no enterprise fork and no hidden binary. What runs on your laptop is what runs in production.",
+        "title": "Self-hosted AI — Docker, Kubernetes or Germany.",
+        "lead": "The open-source AI platform ships as Docker images and a public Helm chart. On-premise on a laptop or a server, Kubernetes in your cluster, or EU hosting in Germany. Same Apache-2.0 code. No enterprise fork.",
         "tiers": [
           {
             "id": "T-01",
@@ -2541,8 +2658,8 @@
       },
       "connect": {
         "eyebrow": "CONNECT // SYS-05",
-        "title": "Every channel in. Every system reachable. One place to see it all.",
-        "lead": "Synaplan does not replace your tools. It sits between them: messages come in from the channels your people already use, knowledge and tools connect around the core.",
+        "title": "WhatsApp, Outlook and website AI chatbot. One system.",
+        "lead": "Connect a GDPR-compliant AI chatbot to WhatsApp Business, Outlook, your website widget, email, REST API and MCP. Microsoft 365 and Nextcloud sit around the same RAG knowledge base. One open-source AI platform.",
         "channelsTitle": "Inbound channels",
         "channels": [
           {
@@ -2614,8 +2731,8 @@
       },
       "agents": {
         "eyebrow": "AGENTS // SYS-03",
-        "title": "Missions, not prompts. Agents that do work — and ask before they write.",
-        "lead": "A Synaplan agent receives a message from any channel, retrieves what it needs from your knowledge, reasons with the model you chose, uses tools, waits for approval where policy says so, and executes. Every step is logged.",
+        "title": "AI agents with RAG, tools and human approval.",
+        "lead": "A Synaplan AI agent receives a message from WhatsApp, Outlook or your website chatbot, retrieves from your RAG knowledge base, reasons with Ollama or a cloud model, calls tools and MCP servers, waits for human approval, and executes. Every step is in the audit log. Self-hosted.",
         "pipelineTitle": "Mission profile",
         "sections": [
           {
@@ -2688,8 +2805,8 @@
       },
       "source": {
         "eyebrow": "SOURCE // SYS-00",
-        "title": "Yes. The source. All of it.",
-        "lead": "Synaplan is open source under Apache-2.0 — the platform, the Helm charts, the desktop client, the Outlook add-in. Not a community edition next to a real one. The real one.",
+        "title": "Open-source AI platform. Apache-2.0. All of it.",
+        "lead": "Synaplan is a fully open-source AI platform under Apache-2.0 — self-hosted AI, Helm charts, desktop client, Outlook add-in. Not a community edition next to a real one. The real one. Made in Germany.",
         "reposTitle": "Repositories",
         "repos": [
           {

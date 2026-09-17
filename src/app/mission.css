@@ -100,6 +100,33 @@
     color: var(--mc-muted-on-cream);
   }
 
+  .mc-terms {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.5rem;
+    margin-top: 1.15rem;
+    max-width: 42rem;
+    list-style: none;
+    padding: 0;
+  }
+
+  .mc-term {
+    font-family: var(--mc-mono);
+    font-size: 0.625rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--mc-text);
+    border: 1px solid var(--mc-line);
+    padding: 0.3rem 0.6rem;
+    border-radius: 999px;
+    line-height: 1.2;
+  }
+
+  .mc-panel-light .mc-term {
+    color: var(--mc-ink);
+    border-color: color-mix(in oklab, var(--mc-ink) 18%, transparent);
+  }
+
   /* ─── Surfaces ───────────────────────────────────────────────────────────── */
 
   .mc-section {

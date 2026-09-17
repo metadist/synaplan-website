@@ -1894,28 +1894,145 @@
   "mission": {
     "meta": {
       "home": {
-        "title": "Synaplan — Mission Control für KI, die wirklich arbeitet",
-        "description": "Open-Source-Infrastruktur für KI-Agenten: Agenten betreiben, Tools und Kanäle verbinden (Outlook, WhatsApp, Web, API, MCP), Wissen und menschliche Freigaben. Docker, Kubernetes, selbst gehostet oder in Deutschland gehostet. Apache-2.0."
+        "title": "Synaplan — Open-Source-KI-Plattform | Self-Hosted Agenten & Chatbot",
+        "description": "Open-Source-KI-Plattform für Unternehmen: self-hosted KI-Agenten, DSGVO-konformes Chatbot-Widget, RAG-Wissensdatenbank, WhatsApp- und Outlook-KI, MCP, Multi-Model-Routing. Docker, Kubernetes oder Hosting in Deutschland. Apache-2.0 ChatGPT-Alternative.",
+        "keywords": [
+          "Open-Source-KI-Plattform",
+          "Self-Hosted KI",
+          "KI-Agenten",
+          "KI-Chatbot",
+          "Chatbot-Widget",
+          "RAG",
+          "DSGVO KI",
+          "WhatsApp KI",
+          "Outlook KI",
+          "MCP-Server",
+          "ChatGPT-Alternative",
+          "Kubernetes KI",
+          "On-Premise KI"
+        ],
+        "terms": [
+          "Open-Source-KI-Plattform",
+          "Self-Hosted KI",
+          "KI-Agenten",
+          "Chatbot-Widget",
+          "RAG",
+          "DSGVO",
+          "WhatsApp-KI",
+          "Outlook-KI",
+          "MCP",
+          "ChatGPT-Alternative"
+        ]
       },
       "product": {
-        "title": "Produkt — Was Synaplan ist, System für System",
-        "description": "Chat, Wissen (RAG), Agenten, einbettbares Widget, Kanäle, Memories, Multi-Model-Routing und Audit — die Open-Source-Plattform Synaplan als Systeminventar erklärt."
+        "title": "KI-Plattform: Chat, RAG, Agenten, Widget & MCP | Synaplan",
+        "description": "Funktionen der Synaplan-KI-Plattform: Multi-Model-Chat, RAG-Wissensdatenbank, KI-Agenten, einbettbares Chatbot-Widget, WhatsApp- und Outlook-Kanäle, Memories, MCP, Microsoft-365-Verbindungen und DSGVO-Audit-Logs. Open Source, self-hosted.",
+        "keywords": [
+          "KI-Plattform",
+          "RAG",
+          "KI-Chatbot-Widget",
+          "Multi-Model-Routing",
+          "MCP",
+          "KI-Memories",
+          "Audit-Logs",
+          "Open-Source-KI"
+        ],
+        "terms": [
+          "KI-Plattform",
+          "RAG-Wissensdatenbank",
+          "KI-Chatbot-Widget",
+          "Multi-Model-Routing",
+          "MCP",
+          "Memories",
+          "Audit-Logs",
+          "Self-Hosted"
+        ]
       },
       "deploy": {
-        "title": "Deploy — Laptop, Server, Kubernetes-Cluster oder souveräne Cloud",
-        "description": "Synaplan mit einem einzigen docker compose up -d starten, mit dem öffentlichen Helm-Chart auf Kubernetes ausrollen oder die in Deutschland gehostete Plattform nutzen. Überall derselbe Open-Source-Code."
+        "title": "Self-Hosted KI: Docker, Kubernetes & On-Premise | Synaplan",
+        "description": "Die Open-Source-KI-Plattform Synaplan selbst hosten: Docker Compose, Kubernetes mit öffentlichem Helm-Chart, On-Premise oder EU-Hosting in Deutschland. Derselbe Apache-2.0-Code auf Laptop, Server oder Cluster.",
+        "keywords": [
+          "Self-Hosted KI",
+          "On-Premise KI",
+          "Docker KI",
+          "Kubernetes KI",
+          "Helm-Chart",
+          "Open-Source-KI",
+          "EU-Hosting"
+        ],
+        "terms": [
+          "Self-Hosted KI",
+          "On-Premise KI",
+          "Docker Compose",
+          "Kubernetes",
+          "Helm-Chart",
+          "EU-Hosting",
+          "openDesk"
+        ]
       },
       "connect": {
-        "title": "Connect — Outlook, WhatsApp, Web, API, MCP, Desktop und Ihre Systeme",
-        "description": "Jeder Kanal landet in einem System: Outlook-Add-in, WhatsApp, einbettbares Chat-Widget, REST-API, MCP-Server und -Client, Desktop-App, Microsoft-365- und Nextcloud-Verbindungen."
+        "title": "WhatsApp-, Outlook- & Website-KI-Chatbot | Synaplan",
+        "description": "DSGVO-konformen KI-Chatbot an WhatsApp Business, Outlook, Website-Widget, E-Mail, REST-API, MCP, Microsoft 365 und Nextcloud anbinden. Eine Open-Source-KI-Plattform für jeden Kanal.",
+        "keywords": [
+          "WhatsApp-KI",
+          "Outlook-KI",
+          "Website-Chatbot",
+          "KI-Chatbot-Widget",
+          "MCP-Server",
+          "Microsoft-365-KI",
+          "Nextcloud-KI"
+        ],
+        "terms": [
+          "WhatsApp-KI",
+          "Outlook-Add-in",
+          "Website-Chatbot",
+          "Chat-Widget",
+          "MCP",
+          "Microsoft 365",
+          "Nextcloud"
+        ]
       },
       "agents": {
-        "title": "Agents — Missionen mit Wissen, Tools und menschlicher Freigabe",
-        "description": "So arbeitet ein Synaplan-Agent: verstehen, abrufen, schließen, Tools nutzen, auf menschliche Freigabe warten, ausführen. Lokale oder Cloud-Modelle, vollständige Telemetrie, Agent Skills auf dem Desktop."
+        "title": "KI-Agenten mit RAG, Tools & menschlicher Freigabe | Synaplan",
+        "description": "Open-Source-KI-Agenten, die in Ihrer RAG-Wissensdatenbank suchen, Tools und MCP-Server aufrufen und auf menschliche Freigabe warten, bevor sie schreiben. Lokales Ollama oder Cloud-Modelle. Vollständiges Audit-Log. Self-hosted.",
+        "keywords": [
+          "KI-Agenten",
+          "RAG-Agenten",
+          "Human-in-the-Loop KI",
+          "MCP-Tools",
+          "Ollama",
+          "Self-Hosted Agenten"
+        ],
+        "terms": [
+          "KI-Agenten",
+          "RAG",
+          "Menschliche Freigabe",
+          "MCP-Tools",
+          "Ollama",
+          "Desktop-Skills",
+          "Audit-Log"
+        ]
       },
       "source": {
-        "title": "Source — Open Source, Apache-2.0, vollständig",
-        "description": "Synaplan ist vollständig Open Source unter Apache-2.0: Plattform, Helm-Charts, Desktop-Client, Outlook-Add-in. GitHub-Telemetrie, Dokumentation, Community und die souveräne Edition."
+        "title": "Open-Source-KI-Plattform — Apache-2.0, Self-Hosted | Synaplan",
+        "description": "Synaplan ist eine vollständig offene KI-Plattform unter Apache-2.0: Self-Hosted KI, Helm-Charts, Desktop-Client und Outlook-Add-in. Keine Community-Edition — das echte Produkt. Made in Germany. Mitglied der OSBA.",
+        "keywords": [
+          "Open-Source-KI",
+          "Apache-2.0",
+          "Self-Hosted KI",
+          "GitHub",
+          "digitale Souveränität",
+          "Made in Germany"
+        ],
+        "terms": [
+          "Open-Source-KI",
+          "Apache-2.0",
+          "Self-Hosted",
+          "GitHub",
+          "Helm-Charts",
+          "Digitale Souveränität",
+          "Made in Germany"
+        ]
       }
     },
     "brand": "Mission Control",
@@ -1945,12 +2062,12 @@
     },
     "hero": {
       "eyebrow": "SYNAPLAN // MISSION CONTROL",
-      "title": "Genug geredet. Gib der KI einen Job.",
-      "subtitle": "Open-Source-Infrastruktur für KI-Agenten — für Menschen, die echte Systeme betreiben. Agenten starten. Tools anbinden. Wissen mitgeben. Auf Ihren Servern, Ihrem Kubernetes-Cluster — oder unserem.",
+      "title": "Open-Source-KI-Plattform. Gib ihr einen Job.",
+      "subtitle": "Self-hosted KI-Agenten, ein DSGVO-konformes Chatbot-Widget und RAG über Ihre Dokumente — auf WhatsApp, Outlook, Ihrer Website, API und MCP. Mit Docker oder Kubernetes betreiben oder in Deutschland hosten. Apache-2.0 ChatGPT-Alternative.",
       "primary": "Mission starten",
       "secondary": "Quellcode lesen",
       "note": "Apache-2.0 · Docker · Kubernetes · selbst gehostet oder in Deutschland gehostet",
-      "engineerTitle": "Open-Source-Agenten-Infrastruktur. Kein Lock-in. Kein Theater.",
+      "engineerTitle": "Open-Source-KI-Plattform. Self-Hosted. Kein Lock-in.",
       "engineerSubtitle": "PHP 8.4 / Symfony-Backend, Vue-3-Frontend, MariaDB VECTOR + Qdrant, gRPC-Inferenz, OpenAPI-Vertrag, MCP-Server und -Client. Ein `docker compose up -d` entfernt."
     },
     "ticker": [
@@ -2035,8 +2152,8 @@
     "signals": {
       "num": "01",
       "title": "Eingehende Signale",
-      "heading": "Alles, was mit Ihrem Unternehmen spricht, kann mit Ihren Agenten sprechen.",
-      "text": "Mail, WhatsApp, die Website, Outlook, der Desktop, die API. Jede Nachricht landet im selben System, trifft auf dasselbe Wissen und folgt denselben Regeln — egal, woher sie kommt.",
+      "heading": "WhatsApp, Outlook, Mail und Website — eine KI für jeden Kanal.",
+      "text": "Ein DSGVO-konformer KI-Chatbot und dieselben Agenten auf WhatsApp Business, Outlook, Ihrem Website-Widget, Desktop und der API. Jede Nachricht trifft auf dieselbe RAG-Wissensdatenbank und dieselben Regeln — egal, woher sie kommt.",
       "core": "Agent-Kern",
       "channels": [
         {
@@ -2074,8 +2191,8 @@
     "core": {
       "num": "02",
       "title": "Agent-Kern",
-      "heading": "Verstehen. Abrufen. Schließen. Handeln — mit einem Menschen, wo es zählt.",
-      "text": "Ein Agent in Synaplan ist kein Chatfenster mit System-Prompt. Er ist eine Pipeline mit Wissen, Tools, einem Freigabe-Gate und Telemetrie für jeden Schritt.",
+      "heading": "KI-Agenten mit RAG, Tools — und einem Menschen, wo es zählt.",
+      "text": "Ein Synaplan-KI-Agent ist kein Chatfenster mit System-Prompt. Er ist eine Pipeline: RAG über Ihre Dokumente, Multi-Model-Routing, Tools und MCP, ein Freigabe-Gate und ein Audit-Log für jeden Schritt.",
       "steps": [
         {
           "key": "understand",
@@ -2130,8 +2247,8 @@
     "connect": {
       "num": "03",
       "title": "Alles verbinden",
-      "heading": "Eine Topologie, kein Chatbot.",
-      "text": "Synaplan sitzt in der Mitte der Systeme, die Sie ohnehin betreiben. Kanäle kommen herein, Wissen und Tools docken an den Kern an, jedes Paket wird protokolliert.",
+      "heading": "Eine Topologie, nicht nur ein Chatbot.",
+      "text": "Die Open-Source-KI-Plattform sitzt zwischen WhatsApp, Outlook, Ihrem Website-Chatbot, Microsoft 365, Nextcloud und MCP. Kanäle kommen herein, die RAG-Wissensdatenbank und Tools docken am Kern an, jedes Paket wird protokolliert.",
       "hint": "Knoten berühren oder anklicken, um den Datenverkehr zu verfolgen.",
       "nodes": {
         "synaplan": "Der Kern. Agenten, Wissen, Routing, Freigaben, Audit.",
@@ -2148,8 +2265,8 @@
     "run": {
       "num": "04",
       "title": "Überall lauffähig",
-      "heading": "Heute Laptop. Morgen Cluster. Dasselbe System.",
-      "text": "Die gesamte Plattform ist dockerisiert und unter Apache-2.0 lizenziert. Auf dem Laptop starten, auf einen Server umziehen, mit dem öffentlichen Helm-Chart auf Kubernetes skalieren — oder von uns in Deutschland hosten lassen.",
+      "heading": "Self-Hosted KI: Heute Docker, morgen Kubernetes.",
+      "text": "Die gesamte Open-Source-KI-Plattform ist dockerisiert und unter Apache-2.0 lizenziert. Auf dem Laptop starten, auf einen On-Premise-Server umziehen, mit dem öffentlichen Helm-Chart auf Kubernetes skalieren — oder von uns in Deutschland hosten lassen.",
       "tabs": {
         "compose": "Docker Compose",
         "helm": "Kubernetes",
@@ -2187,8 +2304,8 @@
     "source": {
       "num": "06",
       "title": "Der Quellcode",
-      "heading": "Ja. Der Quellcode. Der ganze.",
-      "text": "Plattform, Helm-Charts, Desktop-Client, Outlook-Add-in — öffentliche Repositories unter Apache-2.0. Lesen, betreiben, forken, prüfen. Ihre Daten bleiben, wo Sie sie hingelegt haben.",
+      "heading": "Open-Source-KI-Plattform. Apache-2.0. Der ganze Code.",
+      "text": "Plattform, Helm-Charts, Desktop-Client, Outlook-Add-in — öffentliche Repositories unter Apache-2.0. Self-hosten, forken, prüfen. Ihre Daten bleiben, wo Sie sie hingelegt haben. Made in Germany.",
       "stars": "GitHub-Sterne",
       "forks": "Forks",
       "license": "Lizenz",
@@ -2259,7 +2376,7 @@
     },
     "cta": {
       "title": "Bereit zum Start?",
-      "text": "In zwei Minuten auf unserer Plattform loslegen — oder das Repository klonen und auf Ihrer laufen lassen. So oder so: Ihre KI, Ihre Infrastruktur, Ihre Regeln.",
+      "text": "Die Open-Source-KI-Plattform in zwei Minuten starten — oder self-hosten mit Docker auf Ihrer. Chatbot, Agenten, RAG — Ihre Infrastruktur, Ihre Regeln.",
       "primary": "Auf web.synaplan.com starten",
       "secondary": "Mit einem Engineer sprechen"
     },
@@ -2289,7 +2406,7 @@
       ]
     },
     "footer": {
-      "tagline": "Mission Control für KI, die wirklich arbeitet.",
+      "tagline": "Open-Source-KI-Plattform für self-hosted Agenten, Chatbots und RAG.",
       "product": "Produkt",
       "deep": "Vertiefung",
       "company": "Unternehmen",
@@ -2319,8 +2436,8 @@
     "pages": {
       "product": {
         "eyebrow": "PRODUKT // SYS-01",
-        "title": "Eine Plattform. Jedes System, das Ihre KI braucht, um wirklich zu arbeiten.",
-        "lead": "Synaplan ist die Open-Source-Plattform unter Ihren Agenten: Chat, Wissen, Tools, Kanäle und Kontrolle — auf der Infrastruktur Ihrer Wahl. Hier ist das Inventar.",
+        "title": "Open-Source-KI-Plattform: Chat, RAG, Agenten und Widget.",
+        "lead": "Synaplan ist die self-hosted KI-Plattform unter Ihren Agenten: Multi-Model-Chat, RAG-Wissensdatenbank, Tools, WhatsApp- und Outlook-Kanäle, MCP und DSGVO-Audit — auf der Infrastruktur Ihrer Wahl. Hier ist das Inventar.",
         "inventoryTitle": "Systeminventar",
         "inventory": [
           {
@@ -2465,8 +2582,8 @@
       },
       "deploy": {
         "eyebrow": "DEPLOY // SYS-04",
-        "title": "Vom Laptop bis zum souveränen Cluster. Dieselben Befehle, derselbe Code.",
-        "lead": "Synaplan wird als Docker-Images und öffentliches Helm-Chart ausgeliefert. Es gibt keinen Enterprise-Fork und keine versteckte Binärdatei. Was auf Ihrem Laptop läuft, läuft in der Produktion.",
+        "title": "Self-Hosted KI — Docker, Kubernetes oder Deutschland.",
+        "lead": "Die Open-Source-KI-Plattform kommt als Docker-Images und öffentliches Helm-Chart. On-Premise auf Laptop oder Server, Kubernetes im eigenen Cluster oder EU-Hosting in Deutschland. Derselbe Apache-2.0-Code. Kein Enterprise-Fork.",
         "tiers": [
           {
             "id": "T-01",
@@ -2541,8 +2658,8 @@
       },
       "connect": {
         "eyebrow": "CONNECT // SYS-05",
-        "title": "Jeder Kanal rein. Jedes System erreichbar. Ein Ort, um alles zu sehen.",
-        "lead": "Synaplan ersetzt Ihre Werkzeuge nicht. Es sitzt dazwischen: Nachrichten kommen aus den Kanälen, die Ihre Leute ohnehin nutzen, Wissen und Tools docken am Kern an.",
+        "title": "WhatsApp-, Outlook- und Website-KI-Chatbot. Ein System.",
+        "lead": "Einen DSGVO-konformen KI-Chatbot an WhatsApp Business, Outlook, Ihr Website-Widget, E-Mail, REST-API und MCP anbinden. Microsoft 365 und Nextcloud sitzen um dieselbe RAG-Wissensdatenbank. Eine Open-Source-KI-Plattform.",
         "channelsTitle": "Eingehende Kanäle",
         "channels": [
           {
@@ -2614,8 +2731,8 @@
       },
       "agents": {
         "eyebrow": "AGENTEN // SYS-03",
-        "title": "Missionen statt Prompts. Agenten, die arbeiten — und fragen, bevor sie schreiben.",
-        "lead": "Ein Synaplan-Agent empfängt eine Nachricht aus einem beliebigen Kanal, holt sich das Nötige aus Ihrem Wissen, schließt mit dem Modell Ihrer Wahl, nutzt Tools, wartet auf Freigabe, wo die Regel es verlangt, und führt aus. Jeder Schritt wird protokolliert.",
+        "title": "KI-Agenten mit RAG, Tools und menschlicher Freigabe.",
+        "lead": "Ein Synaplan-KI-Agent empfängt eine Nachricht aus WhatsApp, Outlook oder Ihrem Website-Chatbot, holt sich das Nötige aus der RAG-Wissensdatenbank, schließt mit Ollama oder einem Cloud-Modell, nutzt Tools und MCP-Server, wartet auf menschliche Freigabe und führt aus. Jeder Schritt steht im Audit-Log. Self-hosted.",
         "pipelineTitle": "Missionsprofil",
         "sections": [
           {
@@ -2688,8 +2805,8 @@
       },
       "source": {
         "eyebrow": "SOURCE // SYS-00",
-        "title": "Ja. Der Quellcode. Der ganze.",
-        "lead": "Synaplan ist Open Source unter Apache-2.0 — die Plattform, die Helm-Charts, der Desktop-Client, das Outlook-Add-in. Keine Community-Edition neben einer echten. Die echte.",
+        "title": "Open-Source-KI-Plattform. Apache-2.0. Der ganze Code.",
+        "lead": "Synaplan ist eine vollständig offene KI-Plattform unter Apache-2.0 — Self-Hosted KI, Helm-Charts, Desktop-Client, Outlook-Add-in. Keine Community-Edition neben einer echten. Die echte. Made in Germany.",
         "reposTitle": "Repositories",
         "repos": [
           {

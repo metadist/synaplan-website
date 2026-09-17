@@ -16,7 +16,7 @@ type Principle = { label: string; text: string };
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "mission.meta.source" });
-  return missionMetadata(locale, PATH, t("title"), t("description"));
+  return missionMetadata(locale, PATH, t("title"), t("description"), t.raw("keywords") as string[]);
 }
 
 export default async function SourcePage({ params }: { params: Promise<{ locale: string }> }) {
@@ -40,6 +40,7 @@ export default async function SourcePage({ params }: { params: Promise<{ locale:
         eyebrow={t("eyebrow")}
         title={t("title")}
         lead={t("lead")}
+        terms={tm.raw("terms") as string[]}
         aside={<InspectSample title={ti("title")} rows={ti.raw("rows") as { key: string; value: string }[]} />}
       />
 

@@ -19,14 +19,7 @@ import {
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "mission.meta.home" });
-  const meta = missionMetadata(locale, "/", t("title"), t("description"));
-  return {
-    ...meta,
-    keywords:
-      locale === "de"
-        ? "KI-Agenten, Open Source KI-Plattform, Agenten-Infrastruktur, Self-Hosted AI, Kubernetes KI, MCP Server, WhatsApp KI, Outlook KI, DSGVO KI, RAG"
-        : "AI agents, open source AI platform, agent infrastructure, self-hosted AI, Kubernetes AI, MCP server, WhatsApp AI, Outlook AI, GDPR AI, RAG",
-  };
+  return missionMetadata(locale, "/", t("title"), t("description"), t.raw("keywords") as string[]);
 }
 
 export default async function MissionHomePage({ params }: { params: Promise<{ locale: string }> }) {

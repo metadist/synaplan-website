@@ -3,11 +3,20 @@ import { alternateLanguageUrls, canonicalUrl, OG_IMAGE } from "@/lib/seo";
 import { SITE_URL, buildBreadcrumbSchema } from "@/lib/jsonld";
 
 /** Metadata for a Mission Control page: canonical + hreflang + OG/Twitter. */
-export function missionMetadata(locale: string, path: string, title: string, description: string): Metadata {
+export function missionMetadata(
+  locale: string,
+  path: string,
+  title: string,
+  description: string,
+  keywords?: string[],
+): Metadata {
   const url = canonicalUrl(locale, path);
   return {
-    title,
+    // Absolute so the locale layout's `%s | Synaplan` template cannot
+    // append a second brand suffix after a title that already names Synaplan.
+    title: { absolute: title },
     description,
+    keywords,
     openGraph: {
       title,
       description,

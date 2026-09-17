@@ -52,6 +52,20 @@ export function Lamp({
   );
 }
 
+/** Visible on-page search terms — indexed copy, styled as mission chips. */
+export function SearchTerms({ terms }: { terms: string[] }) {
+  if (terms.length === 0) return null;
+  return (
+    <ul className="mc-terms">
+      {terms.map((term) => (
+        <li key={term} className="mc-term">
+          {term}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 /** Thin technical ruler with coordinate-like markings */
 export function Ruler({ left, right, center }: { left: string; right: string; center?: string }) {
   return (

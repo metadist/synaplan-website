@@ -1,12 +1,24 @@
 import type { ReactNode } from "react";
 import { Link } from "@/i18n/navigation";
-import { Lamp, Reveal, Ruler, SectionHead } from "./primitives";
+import { Lamp, Reveal, Ruler, SearchTerms, SectionHead } from "./primitives";
 
 export type PanelItem = { label: string; text: string };
 export type PanelSection = { num: string; title: string; heading: string; text: string; items: PanelItem[] };
 
 /** Sub-page hero: eyebrow (SYS id), H1 and lead — with the blueprint grid. */
-export function PageHero({ eyebrow, title, lead, aside }: { eyebrow: string; title: string; lead: string; aside?: ReactNode }) {
+export function PageHero({
+  eyebrow,
+  title,
+  lead,
+  terms,
+  aside,
+}: {
+  eyebrow: string;
+  title: string;
+  lead: string;
+  terms?: string[];
+  aside?: ReactNode;
+}) {
   return (
     <section className="relative overflow-hidden pt-14 pb-12 sm:pt-20 lg:pt-24 lg:pb-16">
       <div className="mc-grid" aria-hidden />
@@ -17,6 +29,7 @@ export function PageHero({ eyebrow, title, lead, aside }: { eyebrow: string; tit
             {eyebrow}
           </p>
           <h1 className="mc-display mt-6 max-w-4xl text-[clamp(2.2rem,5vw,4.2rem)]">{title}</h1>
+          {terms ? <SearchTerms terms={terms} /> : null}
           <p className="mc-lead mt-6 max-w-2xl">{lead}</p>
         </div>
         {aside ? <div>{aside}</div> : null}
