@@ -1890,5 +1890,872 @@
     "token": "The smallest unit of text an AI model processes — roughly 3/4 of a word. Pricing and usage limits are measured in tokens.",
     "knowledgeBase": "A curated collection of documents, FAQs, and data that an AI system can search to provide accurate, grounded answers.",
     "selfHosted": "Running software on your own servers instead of a third-party cloud. Gives you full control over data, uptime, and compliance."
+  },
+  "mission": {
+    "meta": {
+      "home": {
+        "title": "Synaplan — Mission Control for AI that actually does things",
+        "description": "Open-source agent infrastructure: run AI agents, connect tools and channels (Outlook, WhatsApp, web, API, MCP), give them knowledge and human approvals. Docker, Kubernetes, self-hosted or EU-hosted. Apache-2.0."
+      },
+      "product": {
+        "title": "Product — What Synaplan is, system by system",
+        "description": "Chat, knowledge (RAG), agents, embeddable widget, channels, memories, multi-model routing and audit — the open-source Synaplan platform explained as a system inventory."
+      },
+      "deploy": {
+        "title": "Deploy — Laptop, server, Kubernetes cluster or sovereign cloud",
+        "description": "Run Synaplan with a single docker compose up -d, deploy it with the public Helm chart on Kubernetes, or use the managed platform hosted in Germany. Same open-source code everywhere."
+      },
+      "connect": {
+        "title": "Connect — Outlook, WhatsApp, web, API, MCP, desktop and your systems",
+        "description": "Every channel enters one system: Outlook add-in, WhatsApp, embeddable chat widget, REST API, MCP server and client, desktop app, Microsoft 365 and Nextcloud connections."
+      },
+      "agents": {
+        "title": "Agents — Missions with knowledge, tools and human approval",
+        "description": "How a Synaplan agent works: understand, retrieve, reason, use tools, wait for human approval, execute. Local or cloud models, full telemetry, agent skills on the desktop."
+      },
+      "source": {
+        "title": "Source — Open source, Apache-2.0, all of it",
+        "description": "Synaplan is fully open source under Apache-2.0: platform, Helm charts, desktop client, Outlook add-in. GitHub telemetry, documentation, community and the sovereign edition."
+      }
+    },
+    "brand": "Mission Control",
+    "skip": "Skip to content",
+    "nav": {
+      "product": "Product",
+      "deploy": "Deploy",
+      "connect": "Connect",
+      "agents": "Agents",
+      "source": "Source",
+      "docs": "Docs",
+      "status": "System status",
+      "nominal": "Nominal",
+      "menu": "Open menu",
+      "close": "Close menu",
+      "launch": "Launch",
+      "github": "GitHub repository",
+      "mode": "Mode",
+      "marketing": "Marketing",
+      "engineer": "Engineer",
+      "parrot": "Parrot",
+      "on": "On",
+      "off": "Off",
+      "language": "Language",
+      "options": "Options",
+      "classic": "Classic homepage"
+    },
+    "hero": {
+      "eyebrow": "SYNAPLAN // MISSION CONTROL",
+      "title": "AI has talked enough. Put it to work.",
+      "subtitle": "Open-source agent infrastructure for people who run real systems. Run agents. Connect tools. Give them knowledge. Put them on your servers, your Kubernetes cluster — or ours.",
+      "primary": "Start a mission",
+      "secondary": "Read the source",
+      "note": "Apache-2.0 · Docker · Kubernetes · self-hosted or hosted in Germany",
+      "engineerTitle": "Open-source agent infrastructure. No lock-in. No theatre.",
+      "engineerSubtitle": "PHP 8.4 / Symfony backend, Vue 3 frontend, MariaDB VECTOR + Qdrant, gRPC inference, OpenAPI contract, MCP server and client. One `docker compose up -d` away."
+    },
+    "ticker": [
+      "Apache-2.0 licensed",
+      "docker compose up -d",
+      "helm install synaplan",
+      "Outlook · WhatsApp · Web · API · Desktop",
+      "MCP server + client",
+      "Local models via Ollama",
+      "RAG · Memories · Human approvals",
+      "Built in Düsseldorf, Germany",
+      "Parrot operational"
+    ],
+    "console": {
+      "mission": "Mission",
+      "live": "Live demo",
+      "labels": {
+        "inbound": "inbound",
+        "agent": "agent",
+        "knowledge": "knowledge",
+        "model": "model",
+        "tools": "tools",
+        "node": "node"
+      },
+      "approvalRequired": "Approval required",
+      "steps": {
+        "received": "message received",
+        "context": "context loaded",
+        "tool": "tool executed",
+        "waiting": "waiting for human",
+        "executed": "executed",
+        "complete": "mission complete",
+        "deferred": "deferred to queue",
+        "stillWaiting": "still waiting. humans."
+      },
+      "approve": "Approve mission",
+      "approved": "Approved by you",
+      "hint": "A demo — but every line maps to a real capability.",
+      "missions": [
+        {
+          "id": "0427",
+          "inbound": "outlook/mail",
+          "agent": "procurement-assistant",
+          "knowledge": "/contracts /suppliers",
+          "model": "llama-local",
+          "tools": "erp.search mail.send",
+          "node": "de-dus-k8s-03",
+          "result": "mail.send → 1 offer request to 3 suppliers"
+        },
+        {
+          "id": "0428",
+          "inbound": "whatsapp/+49…",
+          "agent": "support-desk",
+          "knowledge": "/handbook /faq",
+          "model": "cloud/gpt",
+          "tools": "crm.lookup ticket.create",
+          "node": "eu-fra-vm-01",
+          "result": "ticket.create → #4471 assigned to Level 2"
+        },
+        {
+          "id": "0429",
+          "inbound": "web/widget",
+          "agent": "booking-concierge",
+          "knowledge": "/rooms /rates",
+          "model": "cloud/claude",
+          "tools": "calendar.check booking.hold",
+          "node": "de-dus-k8s-03",
+          "result": "booking.hold → 2 nights, held for 24 h"
+        },
+        {
+          "id": "0430",
+          "inbound": "api/v1",
+          "agent": "invoice-extractor",
+          "knowledge": "/invoices /vendors",
+          "model": "mistral-local",
+          "tools": "ocr.read erp.post",
+          "node": "onprem-rack-02",
+          "result": "erp.post → 14 line items booked"
+        }
+      ]
+    },
+    "signals": {
+      "num": "01",
+      "title": "Incoming signals",
+      "heading": "Everything that talks to your company can talk to your agents.",
+      "text": "Mail, WhatsApp, the website, Outlook, the desktop, the API. Every message enters the same system, meets the same knowledge and follows the same rules — no matter where it came from.",
+      "core": "Agent core",
+      "channels": [
+        {
+          "key": "mail",
+          "label": "Mail",
+          "desc": "Inbound mailboxes become agent queues."
+        },
+        {
+          "key": "whatsapp",
+          "label": "WhatsApp",
+          "desc": "Business number, answered in seconds."
+        },
+        {
+          "key": "web",
+          "label": "Web",
+          "desc": "One script tag. The widget on any site."
+        },
+        {
+          "key": "api",
+          "label": "API",
+          "desc": "REST + OpenAPI. Anthropic-compatible gateway."
+        },
+        {
+          "key": "outlook",
+          "label": "Outlook",
+          "desc": "Add-in inside the mail client."
+        },
+        {
+          "key": "desktop",
+          "label": "Desktop",
+          "desc": "Native client runs skills locally."
+        }
+      ]
+    },
+    "core": {
+      "num": "02",
+      "title": "Agent core",
+      "heading": "Understand. Retrieve. Reason. Act — with a human where it matters.",
+      "text": "An agent in Synaplan is not a chat window with a system prompt. It is a pipeline with knowledge, tools, an approval gate and telemetry for every step.",
+      "steps": [
+        {
+          "key": "understand",
+          "label": "understand",
+          "desc": "Classify intent, language and channel."
+        },
+        {
+          "key": "retrieve",
+          "label": "retrieve",
+          "desc": "RAG over your documents and memories."
+        },
+        {
+          "key": "reason",
+          "label": "reason",
+          "desc": "Local or cloud model — your routing."
+        },
+        {
+          "key": "tool",
+          "label": "tool",
+          "desc": "ERP, calendar, mail, MCP servers."
+        },
+        {
+          "key": "approval",
+          "label": "approval",
+          "desc": "A person confirms before it writes."
+        },
+        {
+          "key": "execute",
+          "label": "execute",
+          "desc": "Do the thing. Log everything."
+        }
+      ],
+      "facts": [
+        {
+          "label": "Knowledge",
+          "value": "RAG over documents, mail and files — MariaDB VECTOR or Qdrant"
+        },
+        {
+          "label": "Models",
+          "value": "Ollama, OpenAI, Anthropic, Groq, Gemini, xAI — routed per task"
+        },
+        {
+          "label": "Tools",
+          "value": "Built-in tools, plugins, MCP servers, desktop skills"
+        },
+        {
+          "label": "Control",
+          "value": "Approvals, audit log, per-user memories, rate limits"
+        }
+      ]
+    },
+    "connect": {
+      "num": "03",
+      "title": "Connect everything",
+      "heading": "A topology, not a chatbot.",
+      "text": "Synaplan sits in the middle of the systems you already run. Channels come in, knowledge and tools connect around it, every packet is logged.",
+      "hint": "Hover or tap a node to follow the traffic.",
+      "nodes": {
+        "synaplan": "The core. Agents, knowledge, routing, approvals, audit.",
+        "outlook": "Outlook add-in: summarise, draft, file — inside the mail client.",
+        "whatsapp": "WhatsApp Business: one number, answered by your agent.",
+        "web": "Chat widget: one script tag on any website.",
+        "desktop": "Desktop client: runs agent skills on the user's computer.",
+        "erp": "Your systems: ERP, CRM, ticketing — via tools and plugins.",
+        "mcp": "MCP: Synaplan is both server and client for the Model Context Protocol.",
+        "m365": "Microsoft 365, Nextcloud, Dropbox, WebDAV, CalDAV connections.",
+        "models": "Models: local via Ollama or cloud providers — per-task routing."
+      }
+    },
+    "run": {
+      "num": "04",
+      "title": "Run it anywhere",
+      "heading": "Laptop today. Cluster tomorrow. Same system.",
+      "text": "The whole platform is Dockerised and Apache-2.0 licensed. Start on a laptop, move to a server, scale on Kubernetes with the public Helm chart — or let us host it in Germany.",
+      "tabs": {
+        "compose": "Docker Compose",
+        "helm": "Kubernetes",
+        "cloud": "Managed"
+      },
+      "ladder": [
+        {
+          "label": "Laptop",
+          "desc": "docker compose, ten minutes"
+        },
+        {
+          "label": "Server",
+          "desc": "one Linux box, the deploy/ contract"
+        },
+        {
+          "label": "Cluster",
+          "desc": "Helm chart, Galera, Qdrant"
+        },
+        {
+          "label": "Sovereign cloud",
+          "desc": "openDesk, EU hosting, your keys"
+        }
+      ],
+      "cloudText": "Nothing to install: web.synaplan.com runs the same open-source code, hosted in Germany. Start free, upgrade when you need to.",
+      "cloudCta": "Open the platform",
+      "docs": "Deployment docs"
+    },
+    "log": {
+      "num": "05",
+      "title": "Flight log",
+      "heading": "Missions already flown.",
+      "text": "Public institutions, hospitality, care services, industry. Small teams and large ones. Same platform.",
+      "status": "Operational"
+    },
+    "source": {
+      "num": "06",
+      "title": "The source",
+      "heading": "Yes. The source. All of it.",
+      "text": "Platform, Helm charts, desktop client, Outlook add-in — public repositories under Apache-2.0. Read it, run it, fork it, audit it. Your data stays where you put it.",
+      "stars": "GitHub stars",
+      "forks": "Forks",
+      "license": "License",
+      "cta": "Open repository",
+      "docs": "Read the docs",
+      "eu": "Sovereign edition"
+    },
+    "inspect": {
+      "title": "synaplan inspect",
+      "rows": [
+        {
+          "key": "license",
+          "value": "Apache-2.0"
+        },
+        {
+          "key": "deployment",
+          "value": "docker / kubernetes / managed"
+        },
+        {
+          "key": "backend",
+          "value": "PHP 8.4 · Symfony · FrankenPHP"
+        },
+        {
+          "key": "frontend",
+          "value": "Vue 3 · TypeScript · Vite"
+        },
+        {
+          "key": "vectors",
+          "value": "MariaDB VECTOR · Qdrant"
+        },
+        {
+          "key": "models",
+          "value": "local (ollama) / cloud (6 providers)"
+        },
+        {
+          "key": "rag",
+          "value": "enabled"
+        },
+        {
+          "key": "agents",
+          "value": "enabled · human approvals"
+        },
+        {
+          "key": "mcp",
+          "value": "server + client"
+        },
+        {
+          "key": "api",
+          "value": "openapi 3 · anthropic-compatible gateway"
+        },
+        {
+          "key": "channels",
+          "value": "mail · whatsapp · web · outlook · desktop · api"
+        },
+        {
+          "key": "lock-in",
+          "value": "nope"
+        },
+        {
+          "key": "parrot",
+          "value": "operational"
+        }
+      ]
+    },
+    "faq": {
+      "num": "07",
+      "title": "Briefing"
+    },
+    "cta": {
+      "title": "Ready for launch?",
+      "text": "Start on our platform in two minutes, or clone the repository and run it on yours. Either way: your AI, your infrastructure, your rules.",
+      "primary": "Start on web.synaplan.com",
+      "secondary": "Talk to an engineer"
+    },
+    "parrot": {
+      "prefix": "PARROT://",
+      "aria": "Synaplan parrot — click for a comment",
+      "mute": "Mute the parrot",
+      "unmute": "Bring the parrot back",
+      "hello": "Systems nominal. Scroll when ready.",
+      "signals": "Six channels, one system. I counted.",
+      "core": "Retrieve before you reason. Words to live by.",
+      "connect": "Hover the nodes. The packets like attention.",
+      "run": "Kubernetes found. Good choice.",
+      "source": "Yes. The source. All of it.",
+      "github": "Your data left the building. Just kidding — you're self-hosting.",
+      "engineerOn": "Engineer mode. Finally.",
+      "engineerOff": "Back to the pretty words.",
+      "approved": "Approved. Humans remain useful.",
+      "idle": [
+        "I am not a chatbot. I am a flight engineer.",
+        "Fun fact: I run on-prem too.",
+        "Nobody ever reads the ticker. You did. Respect.",
+        "Try engineer mode. It's in the header. I'll wait.",
+        "Apache-2.0. Say it with me.",
+        "docker compose up -d. That's the whole install.",
+        "Cloud is just someone else's Kubernetes."
+      ]
+    },
+    "footer": {
+      "tagline": "Mission control for AI that actually does things.",
+      "product": "Product",
+      "deep": "Deep dives",
+      "company": "Company",
+      "legal": "Legal",
+      "features": "All features",
+      "solutions": "Solutions",
+      "pricing": "Pricing",
+      "widget": "Chat widget",
+      "apps": "Mobile apps",
+      "blog": "Blog",
+      "news": "News",
+      "tryChat": "Try the chat",
+      "about": "About",
+      "contact": "Contact",
+      "support": "Support",
+      "imprint": "Imprint",
+      "privacy": "Privacy policy",
+      "terms": "Terms of use",
+      "sovereign": "Sovereign edition (EU/CH)",
+      "docs": "Documentation",
+      "discord": "Discord",
+      "github": "GitHub",
+      "copyright": "© {year} metadist data management GmbH · Düsseldorf",
+      "status": "All systems nominal",
+      "parrotLine": "The parrot has been informed."
+    },
+    "pages": {
+      "product": {
+        "eyebrow": "PRODUCT // SYS-01",
+        "title": "One platform. Every system your AI needs to actually work.",
+        "lead": "Synaplan is the open-source platform under your agents: chat, knowledge, tools, channels and control — on infrastructure you choose. Here is the inventory.",
+        "inventoryTitle": "System inventory",
+        "inventory": [
+          {
+            "id": "SYS-01",
+            "name": "Chat",
+            "desc": "Multi-model chat for teams. Files, images, voice, web search. iOS and Android apps.",
+            "status": "operational",
+            "href": "/features/chatgpt-alternative"
+          },
+          {
+            "id": "SYS-02",
+            "name": "Knowledge (RAG)",
+            "desc": "Upload documents, connect drives, search semantically. MariaDB VECTOR or Qdrant.",
+            "status": "operational",
+            "href": "/features/documents"
+          },
+          {
+            "id": "SYS-03",
+            "name": "Agents",
+            "desc": "Missions with knowledge, tools, approvals and telemetry. Skills run on the desktop.",
+            "status": "operational",
+            "href": "/agents"
+          },
+          {
+            "id": "SYS-04",
+            "name": "Chat widget",
+            "desc": "One script tag. Your knowledge on your website, in your brand.",
+            "status": "operational",
+            "href": "/solutions/chat-widget"
+          },
+          {
+            "id": "SYS-05",
+            "name": "Channels",
+            "desc": "Mail, WhatsApp, Outlook add-in, web, API, desktop — one inbox for the agent.",
+            "status": "operational",
+            "href": "/connect"
+          },
+          {
+            "id": "SYS-06",
+            "name": "Memories",
+            "desc": "Per-user long-term memory, vector-indexed, visible and deletable.",
+            "status": "operational",
+            "href": "/features/memories"
+          },
+          {
+            "id": "SYS-07",
+            "name": "Model routing",
+            "desc": "Ollama, OpenAI, Anthropic, Groq, Gemini, xAI — configured per task, switchable any time.",
+            "status": "operational",
+            "href": "/features/multi-model"
+          },
+          {
+            "id": "SYS-08",
+            "name": "MCP",
+            "desc": "Server and client for the Model Context Protocol. Plug tools in, expose your knowledge out.",
+            "status": "operational",
+            "href": "/features/mcp"
+          },
+          {
+            "id": "SYS-09",
+            "name": "Connections",
+            "desc": "Microsoft 365, Nextcloud, Dropbox, WebDAV, CalDAV. Read, write, export.",
+            "status": "operational",
+            "href": "/features/connections"
+          },
+          {
+            "id": "SYS-10",
+            "name": "Audit & compliance",
+            "desc": "Who asked what, which model answered, what was written. Exportable.",
+            "status": "operational",
+            "href": "/features/audit-logs"
+          }
+        ],
+        "sections": [
+          {
+            "num": "01",
+            "title": "For the people who ask",
+            "heading": "Ask once. Get an answer from your own knowledge.",
+            "text": "Teams use Synaplan like a very well-informed colleague: it knows the handbook, the contracts and the last 200 tickets — and says where the answer came from.",
+            "items": [
+              {
+                "label": "Sources cited",
+                "text": "Every answer points to the document and passage it used."
+              },
+              {
+                "label": "Any device",
+                "text": "Web, iOS, Android, Outlook, desktop — one account."
+              },
+              {
+                "label": "Any model",
+                "text": "Local for sensitive data, cloud for speed — the router decides by policy."
+              }
+            ]
+          },
+          {
+            "num": "02",
+            "title": "For the people who run it",
+            "heading": "Operate it like any other service you own.",
+            "text": "Feature modules, environment-driven configuration, migrations on start, health endpoints, OpenAPI contract. No surprises at 3 a.m.",
+            "items": [
+              {
+                "label": "Feature modules",
+                "text": "Optional pieces (local AI, search, TTS, Qdrant) are declared modules — off means absent."
+              },
+              {
+                "label": "Observable",
+                "text": "Structured logs, rate limits, per-user quotas, audit trail."
+              },
+              {
+                "label": "Upgradable",
+                "text": "Tagged releases, idempotent seeders, Doctrine migrations."
+              }
+            ]
+          },
+          {
+            "num": "03",
+            "title": "For the people who decide",
+            "heading": "Open source is the compliance feature.",
+            "text": "Apache-2.0, readable code, data that never has to leave your building. Meets the criteria for digital sovereignty used by German public administration.",
+            "items": [
+              {
+                "label": "No lock-in",
+                "text": "Switch models, providers or hosting without switching platforms."
+              },
+              {
+                "label": "GDPR by design",
+                "text": "Self-host in the EU or use our German hosting. Local models: zero external calls."
+              },
+              {
+                "label": "Transparent pricing",
+                "text": "Free forever self-hosted. Platform plans from €19.95. Enterprise on request."
+              }
+            ]
+          }
+        ],
+        "cta": {
+          "title": "See it before you believe it.",
+          "text": "Try the chat without an account, or start a free workspace.",
+          "primary": "Try the chat",
+          "secondary": "Pricing"
+        }
+      },
+      "deploy": {
+        "eyebrow": "DEPLOY // SYS-04",
+        "title": "From your laptop to a sovereign cluster. Same commands, same code.",
+        "lead": "Synaplan ships as Docker images and a public Helm chart. There is no enterprise fork and no hidden binary. What runs on your laptop is what runs in production.",
+        "tiers": [
+          {
+            "id": "T-01",
+            "label": "Laptop",
+            "heading": "docker compose up -d",
+            "text": "The complete development stack — backend, worker, frontend, MariaDB, Redis, Qdrant, Ollama — in about ten minutes on any machine with Docker.",
+            "facts": [
+              "~3 GB standard install, cloud AI",
+              "+ local AI via the local-ai compose profile",
+              "Linux, macOS (Apple Silicon native), Windows/WSL2"
+            ]
+          },
+          {
+            "id": "T-02",
+            "label": "Server",
+            "heading": "The deploy/ contract",
+            "text": "One Linux server, pre-built images from ghcr.io, a reverse proxy in front. Migrations run on container start. Documented as a contract, not a wiki page.",
+            "facts": [
+              "ghcr.io/metadist/synaplan",
+              "Automatic TLS via Caddy",
+              "Runs on 4 vCPU / 8 GB"
+            ]
+          },
+          {
+            "id": "T-03",
+            "label": "Cluster",
+            "heading": "helm install synaplan",
+            "text": "Public Helm chart for Kubernetes: multiple web replicas, external MariaDB Galera, Qdrant, Redis, GPU workers for local inference. Built for hosting providers.",
+            "facts": [
+              "oci://ghcr.io/metadist/synaplan-charts",
+              "Galera-safe migrations",
+              "Optional Triton / Ollama GPU nodes"
+            ]
+          },
+          {
+            "id": "T-04",
+            "label": "Sovereign cloud",
+            "heading": "openDesk and EU hosting",
+            "text": "Synaplan integrates with openDesk and runs on European infrastructure. Or skip the ops entirely and use our platform hosted in Germany.",
+            "facts": [
+              "openDesk installer",
+              "web.synaplan.com — hosted in Germany",
+              "synaplan.eu for public administration"
+            ]
+          }
+        ],
+        "requirementsTitle": "Minimum requirements",
+        "requirements": [
+          {
+            "label": "Runtime",
+            "text": "Docker 24+ with Compose v2, or Kubernetes 1.28+"
+          },
+          {
+            "label": "Database",
+            "text": "MariaDB 11.7+ (VECTOR) — bundled or external Galera"
+          },
+          {
+            "label": "Vectors",
+            "text": "Qdrant (bundled) or MariaDB VECTOR"
+          },
+          {
+            "label": "Models",
+            "text": "Ollama locally, or any supported cloud API key"
+          }
+        ],
+        "cta": {
+          "title": "The docs are the manual. Not marketing.",
+          "text": "Getting started, production deployment, Kubernetes, feature modules — all on docs.synaplan.com.",
+          "primary": "Open deployment docs",
+          "secondary": "Helm charts on GitHub"
+        }
+      },
+      "connect": {
+        "eyebrow": "CONNECT // SYS-05",
+        "title": "Every channel in. Every system reachable. One place to see it all.",
+        "lead": "Synaplan does not replace your tools. It sits between them: messages come in from the channels your people already use, knowledge and tools connect around the core.",
+        "channelsTitle": "Inbound channels",
+        "channels": [
+          {
+            "id": "CH-01",
+            "name": "Outlook add-in",
+            "text": "Synamail lives inside Outlook: summarise threads, draft replies from your knowledge, file to the right place. Web, Windows, Mac.",
+            "href": "/features/connections"
+          },
+          {
+            "id": "CH-02",
+            "name": "WhatsApp Business",
+            "text": "A business number answered by an agent that knows your FAQ, your opening hours and your booking system — with hand-off to a human.",
+            "href": "/solutions/chat-widget"
+          },
+          {
+            "id": "CH-03",
+            "name": "Chat widget",
+            "text": "One script tag. Your knowledge on your website, styled to your brand, with lead capture and approvals.",
+            "href": "/solutions/chat-widget"
+          },
+          {
+            "id": "CH-04",
+            "name": "Mail",
+            "text": "Mailboxes as agent queues: classify, answer, escalate. Every reply logged.",
+            "href": "/features/connections"
+          },
+          {
+            "id": "CH-05",
+            "name": "REST API",
+            "text": "OpenAPI 3 contract plus an Anthropic-compatible Messages gateway — point existing SDKs at your own Synaplan.",
+            "href": "/solutions/developers"
+          },
+          {
+            "id": "CH-06",
+            "name": "Desktop",
+            "text": "Synaplan Desktop pairs a computer with your workspace and runs agent skills locally under a folder allowlist.",
+            "href": "/agents"
+          }
+        ],
+        "systemsTitle": "Connected systems",
+        "systems": [
+          {
+            "id": "SY-01",
+            "name": "MCP",
+            "text": "Synaplan is an MCP server (expose knowledge, memories, chats) and an MCP client (use any MCP tool inside an agent)."
+          },
+          {
+            "id": "SY-02",
+            "name": "Microsoft 365 & Nextcloud",
+            "text": "Read and write documents, calendars and mail. Generate Word, Excel and PowerPoint and export back."
+          },
+          {
+            "id": "SY-03",
+            "name": "Dropbox · WebDAV · CalDAV",
+            "text": "Bring the files and calendars where they are — no migration project first."
+          },
+          {
+            "id": "SY-04",
+            "name": "ERP / CRM via plugins",
+            "text": "Business-specific plugins connect the systems that make your company run. Open plugin API."
+          }
+        ],
+        "cta": {
+          "title": "Bring your own systems.",
+          "text": "Plugins and the MCP integration are documented. Or ask us — we build integrations for customers every week.",
+          "primary": "Integration docs",
+          "secondary": "Talk to us"
+        }
+      },
+      "agents": {
+        "eyebrow": "AGENTS // SYS-03",
+        "title": "Missions, not prompts. Agents that do work — and ask before they write.",
+        "lead": "A Synaplan agent receives a message from any channel, retrieves what it needs from your knowledge, reasons with the model you chose, uses tools, waits for approval where policy says so, and executes. Every step is logged.",
+        "pipelineTitle": "Mission profile",
+        "sections": [
+          {
+            "num": "01",
+            "title": "Knowledge first",
+            "heading": "Agents read your documents before they open their beak.",
+            "text": "Retrieval-augmented generation over uploaded files, connected drives and mailboxes. Per-user memories add what the person prefers. Sources are cited.",
+            "items": [
+              {
+                "label": "Documents",
+                "text": "PDF, Office, mail, images with OCR — chunked and embedded."
+              },
+              {
+                "label": "Memories",
+                "text": "What the user told you last month, stored per user, visible and deletable."
+              },
+              {
+                "label": "Scopes",
+                "text": "Which agent may read which folder is a setting, not a hope."
+              }
+            ]
+          },
+          {
+            "num": "02",
+            "title": "Tools and skills",
+            "heading": "Payloads: what the agent may actually do.",
+            "text": "Tools are explicit: built-in actions, plugins, MCP servers, and Agent Skills that run on the user's own computer through the desktop client.",
+            "items": [
+              {
+                "label": "Built-in",
+                "text": "Web search, document generation, calendar, mail, file operations."
+              },
+              {
+                "label": "MCP",
+                "text": "Any MCP-compatible tool server. Synaplan speaks the protocol both ways."
+              },
+              {
+                "label": "Desktop skills",
+                "text": "Runs locally under a folder allowlist. No shell is ever constructed."
+              }
+            ]
+          },
+          {
+            "num": "03",
+            "title": "Mission control",
+            "heading": "A human approves before anything is written.",
+            "text": "Approval gates are part of the pipeline. Pending missions show up where people already work — in Synaplan, in Outlook, on the phone. Approve, reject, or edit and approve.",
+            "items": [
+              {
+                "label": "Approvals",
+                "text": "Per tool, per agent, per amount — policy decides what needs a person."
+              },
+              {
+                "label": "Telemetry",
+                "text": "Every retrieval, model call and tool execution in the audit log."
+              },
+              {
+                "label": "Stop button",
+                "text": "Turn an agent off from the same row. The consequence is stated in one sentence."
+              }
+            ]
+          }
+        ],
+        "cta": {
+          "title": "Give your AI a job.",
+          "text": "Build a first agent on our platform in minutes, or read how the pipeline works in the docs.",
+          "primary": "Start on the platform",
+          "secondary": "Agent docs"
+        }
+      },
+      "source": {
+        "eyebrow": "SOURCE // SYS-00",
+        "title": "Yes. The source. All of it.",
+        "lead": "Synaplan is open source under Apache-2.0 — the platform, the Helm charts, the desktop client, the Outlook add-in. Not a community edition next to a real one. The real one.",
+        "reposTitle": "Repositories",
+        "repos": [
+          {
+            "name": "synaplan",
+            "text": "The platform: backend, frontend, widget, plugins, Docker stack.",
+            "href": "https://github.com/metadist/synaplan"
+          },
+          {
+            "name": "synaplan-charts",
+            "text": "Helm charts for Kubernetes, incl. GPU inference deployments.",
+            "href": "https://github.com/metadist/synaplan-charts"
+          },
+          {
+            "name": "synaplan-desktop",
+            "text": "Tauri desktop client that runs Agent Skills locally.",
+            "href": "https://github.com/metadist/synaplan-desktop"
+          },
+          {
+            "name": "synaplan-opendesk",
+            "text": "Installer for openDesk + Synaplan on any Kubernetes cluster.",
+            "href": "https://github.com/metadist/synaplan-opendesk"
+          }
+        ],
+        "telemetryTitle": "Telemetry",
+        "principlesTitle": "Why open",
+        "principles": [
+          {
+            "label": "Auditable",
+            "text": "Ministries and hospitals do not take our word for it. They read the code."
+          },
+          {
+            "label": "Portable",
+            "text": "Take the images, the chart and your data to any provider. Or your basement."
+          },
+          {
+            "label": "Community",
+            "text": "Issues, pull requests, Discord. Member of the Open Source Business Alliance."
+          },
+          {
+            "label": "Honest",
+            "text": "What is on the homepage is in the repository. The parrot checks."
+          }
+        ],
+        "cta": {
+          "title": "Star it. Fork it. Run it.",
+          "text": "The repository is the product. The docs are the manual. The sovereign edition for public administration lives on synaplan.eu.",
+          "primary": "Open on GitHub",
+          "secondary": "Sovereign edition"
+        }
+      }
+    },
+    "notFound": {
+      "code": "404",
+      "title": "Signal not found",
+      "text": "This page is not in the flight plan. The link may be outdated or the address mistyped.",
+      "parrot": "I looked everywhere. Even in /var/log.",
+      "home": "Return to mission control",
+      "docs": "Search the docs"
+    },
+    "error": {
+      "code": "500",
+      "title": "Mission lost",
+      "text": "This should not have happened. Engineers have been summoned.",
+      "parrot": "The parrot has been informed.",
+      "retry": "Try again",
+      "home": "Return to mission control"
+    }
   }
 }

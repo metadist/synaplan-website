@@ -155,6 +155,9 @@ export async function generateMetadata({
   return {
     title,
     description,
+    // The classic homepage is kept for side-by-side comparison with the new
+    // Mission Control home. It is not part of the public site map.
+    robots: { index: false, follow: true },
     keywords:
       locale === "de"
         ? "KI-Kommunikationsplattform, KI-Middleware, KI-Agenten, WhatsApp KI, Outlook KI, MCP Server, Open Source KI, DSGVO KI, Self Hosted AI, KI Integration"

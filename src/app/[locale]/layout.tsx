@@ -4,8 +4,6 @@ import { NextIntlClientProvider } from "next-intl";
 import { getTranslations, getMessages, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
-import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
 import { MotionPerformanceProvider } from "@/contexts/motion-performance-context";
 import { buildOrganizationSchema, buildWebSiteSchema } from "@/lib/jsonld";
 import { OG_IMAGE } from "@/lib/seo";
@@ -105,12 +103,13 @@ export default async function LocaleLayout({
         className="flex min-h-full flex-col bg-background text-foreground"
         suppressHydrationWarning
       >
+        {/*
+          Page chrome lives in the route groups:
+          - (mission) → the "Mission Control" site (home + product nav pages)
+          - (site)    → the classic header/footer for deep content pages
+        */}
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <MotionPerformanceProvider>
-            <Header />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </MotionPerformanceProvider>
+          <MotionPerformanceProvider>{children}</MotionPerformanceProvider>
         </NextIntlClientProvider>
         <SynaplanWidget />
       </body>
