@@ -1185,8 +1185,13 @@
     "metaTitle": "Impressum — metadist data management GmbH",
     "metaDescription": "Pflichtangaben gemäß § 5 TMG für die metadist data management GmbH, Betreiberin von synaplan.com.",
     "pageTitle": "Impressum",
-    "pageSubtitle": "Angaben gemäß § 5 Telemediengesetz (TMG)",
+    "pageSubtitle": "Angaben gemäß § 5 Telemediengesetz (TMG) — Betreiberin von synaplan.com.",
+    "eyebrow": "RECHTLICHES // § 5 TMG",
+    "inventoryTitle": "Betreiberin",
+    "notesTitle": "Hinweise",
+    "privacyCta": "Datenschutzerklärung",
     "breadcrumbHome": "Startseite",
+    "country": "Deutschland",
     "companyTitle": "Unternehmensangaben",
     "companyName": "metadist data management GmbH",
     "addressLabel": "Adresse",
@@ -1911,7 +1916,7 @@
           "Kubernetes KI",
           "On-Premise KI"
         ],
-        "terms": [
+        "searchTerms": [
           "Open-Source-KI-Plattform",
           "Self-Hosted KI",
           "KI-Agenten",
@@ -1937,7 +1942,7 @@
           "Audit-Logs",
           "Open-Source-KI"
         ],
-        "terms": [
+        "searchTerms": [
           "KI-Plattform",
           "RAG-Wissensdatenbank",
           "KI-Chatbot-Widget",
@@ -1960,7 +1965,7 @@
           "Open-Source-KI",
           "EU-Hosting"
         ],
-        "terms": [
+        "searchTerms": [
           "Self-Hosted KI",
           "On-Premise KI",
           "Docker Compose",
@@ -1982,7 +1987,7 @@
           "Microsoft-365-KI",
           "Nextcloud-KI"
         ],
-        "terms": [
+        "searchTerms": [
           "WhatsApp-KI",
           "Outlook-Add-in",
           "Website-Chatbot",
@@ -2003,7 +2008,7 @@
           "Ollama",
           "Self-Hosted Agenten"
         ],
-        "terms": [
+        "searchTerms": [
           "KI-Agenten",
           "RAG",
           "Menschliche Freigabe",
@@ -2024,7 +2029,7 @@
           "digitale Souveränität",
           "Made in Germany"
         ],
-        "terms": [
+        "searchTerms": [
           "Open-Source-KI",
           "Apache-2.0",
           "Self-Hosted",

@@ -53,11 +53,12 @@ export function Lamp({
 }
 
 /** Visible on-page search terms — indexed copy, styled as mission chips. */
-export function SearchTerms({ terms }: { terms: string[] }) {
-  if (terms.length === 0) return null;
+export function SearchTerms({ terms }: { terms?: unknown }) {
+  const list = Array.isArray(terms) ? terms.filter((t): t is string => typeof t === "string") : [];
+  if (list.length === 0) return null;
   return (
     <ul className="mc-terms">
-      {terms.map((term) => (
+      {list.map((term) => (
         <li key={term} className="mc-term">
           {term}
         </li>

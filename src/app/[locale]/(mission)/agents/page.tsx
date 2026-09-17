@@ -35,7 +35,7 @@ export default async function AgentsPage({ params }: { params: Promise<{ locale:
         eyebrow={t("eyebrow")}
         title={t("title")}
         lead={t("lead")}
-        terms={tm.raw("terms") as string[]}
+        terms={tm.raw("searchTerms")}
         aside={<MissionConsole />}
       />
       <section className="mc-section mc-panel-light">

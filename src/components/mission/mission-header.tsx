@@ -78,7 +78,7 @@ export function MissionHeader() {
       <div className="mc-wrap flex h-16 items-center justify-between gap-4">
         {/* Brand */}
         <Link href="/" className="flex items-center gap-3 no-underline" aria-label="Synaplan — Mission Control">
-          <ParrotGlyph still className="h-8 w-7" />
+          <ParrotGlyph still color="var(--mc-text)" className="h-8 w-7" />
           <span className="mc-mono whitespace-nowrap text-[0.8rem] tracking-[0.18em] uppercase">
             <span className="text-[var(--mc-text)]">SYNAPLAN</span>
             <span className="hidden text-[var(--mc-text-faint)] sm:inline xl:hidden">{" //"}</span>

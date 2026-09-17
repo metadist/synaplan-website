@@ -40,7 +40,7 @@ export default async function SourcePage({ params }: { params: Promise<{ locale:
         eyebrow={t("eyebrow")}
         title={t("title")}
         lead={t("lead")}
-        terms={tm.raw("terms") as string[]}
+        terms={tm.raw("searchTerms")}
         aside={<InspectSample title={ti("title")} rows={ti.raw("rows") as { key: string; value: string }[]} />}
       />
 

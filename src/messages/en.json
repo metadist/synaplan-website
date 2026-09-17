@@ -1185,8 +1185,13 @@
     "metaTitle": "Imprint — metadist data management GmbH",
     "metaDescription": "Legal information and contact details for metadist data management GmbH, operator of synaplan.com.",
     "pageTitle": "Imprint",
-    "pageSubtitle": "Information according to § 5 Telemediengesetz (TMG)",
+    "pageSubtitle": "Information according to § 5 Telemediengesetz (TMG) — operator of synaplan.com.",
+    "eyebrow": "LEGAL // § 5 TMG",
+    "inventoryTitle": "Operator",
+    "notesTitle": "Notes",
+    "privacyCta": "Privacy policy",
     "breadcrumbHome": "Home",
+    "country": "Germany",
     "companyTitle": "Company information",
     "companyName": "metadist data management GmbH",
     "addressLabel": "Address",
@@ -1911,7 +1916,7 @@
           "Kubernetes AI",
           "on-premise AI"
         ],
-        "terms": [
+        "searchTerms": [
           "Open-source AI platform",
           "Self-hosted AI",
           "AI agents",
@@ -1937,7 +1942,7 @@
           "audit logs",
           "open source AI"
         ],
-        "terms": [
+        "searchTerms": [
           "AI platform",
           "RAG knowledge base",
           "AI chatbot widget",
@@ -1960,7 +1965,7 @@
           "open source AI",
           "EU hosting"
         ],
-        "terms": [
+        "searchTerms": [
           "Self-hosted AI",
           "On-premise AI",
           "Docker Compose",
@@ -1982,7 +1987,7 @@
           "Microsoft 365 AI",
           "Nextcloud AI"
         ],
-        "terms": [
+        "searchTerms": [
           "WhatsApp AI",
           "Outlook add-in",
           "Website chatbot",
@@ -2003,7 +2008,7 @@
           "Ollama",
           "self-hosted agents"
         ],
-        "terms": [
+        "searchTerms": [
           "AI agents",
           "RAG",
           "Human approval",
@@ -2024,7 +2029,7 @@
           "digital sovereignty",
           "Made in Germany"
         ],
-        "terms": [
+        "searchTerms": [
           "Open-source AI",
           "Apache-2.0",
           "Self-hosted",

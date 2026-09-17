@@ -23,7 +23,7 @@ export type CtaLink = { label: string; href: string; external?: boolean; newTab?
 export async function Hero({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: "mission.hero" });
   const tm = await getTranslations({ locale, namespace: "mission.meta.home" });
-  const terms = tm.raw("terms") as string[];
+  const terms = tm.raw("searchTerms");
   return (
     <section className="relative overflow-hidden pt-14 pb-16 sm:pt-20 lg:pt-24 lg:pb-24" data-parrot="hello">
       <div className="mc-grid" aria-hidden />

@@ -41,7 +41,7 @@ export default async function DeployPage({ params }: { params: Promise<{ locale:
         eyebrow={t("eyebrow")}
         title={t("title")}
         lead={t("lead")}
-        terms={tm.raw("terms") as string[]}
+        terms={tm.raw("searchTerms")}
         aside={<ComposeSample />}
       />
 

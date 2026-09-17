@@ -31,7 +31,7 @@ export default async function ConnectPage({ params }: { params: Promise<{ locale
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(missionPageJsonLd(locale, PATH, tm("title"), tm("description"))) }}
       />
-      <PageHero eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} terms={tm.raw("terms") as string[]} />
+      <PageHero eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} terms={tm.raw("searchTerms")} />
       <section className="pb-4">
         <div className="mc-wrap">
           <Topology />
