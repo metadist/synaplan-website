@@ -1185,8 +1185,13 @@
     "metaTitle": "Impressum — metadist data management GmbH",
     "metaDescription": "Pflichtangaben gemäß § 5 TMG für die metadist data management GmbH, Betreiberin von synaplan.com.",
     "pageTitle": "Impressum",
-    "pageSubtitle": "Angaben gemäß § 5 Telemediengesetz (TMG)",
+    "pageSubtitle": "Angaben gemäß § 5 Telemediengesetz (TMG) — Betreiberin von synaplan.com.",
+    "eyebrow": "RECHTLICHES // § 5 TMG",
+    "inventoryTitle": "Betreiberin",
+    "notesTitle": "Hinweise",
+    "privacyCta": "Datenschutzerklärung",
     "breadcrumbHome": "Startseite",
+    "country": "Deutschland",
     "companyTitle": "Unternehmensangaben",
     "companyName": "metadist data management GmbH",
     "addressLabel": "Adresse",
@@ -1890,5 +1895,989 @@
     "token": "Die kleinste Texteinheit, die ein KI-Modell verarbeitet — ungefähr 3/4 eines Wortes. Preise und Nutzungslimits werden in Tokens gemessen.",
     "knowledgeBase": "Eine kuratierte Sammlung von Dokumenten, FAQs und Daten, die ein KI-System durchsuchen kann, um präzise und fundierte Antworten zu liefern.",
     "selfHosted": "Software auf eigenen Servern betreiben statt in einer fremden Cloud. Gibt Ihnen volle Kontrolle über Daten, Verfügbarkeit und Compliance."
+  },
+  "mission": {
+    "meta": {
+      "home": {
+        "title": "Synaplan — Open-Source-KI-Plattform | Self-Hosted Agenten & Chatbot",
+        "description": "Open-Source-KI-Plattform für Unternehmen: self-hosted KI-Agenten, DSGVO-konformes Chatbot-Widget, RAG-Wissensdatenbank, WhatsApp- und Outlook-KI, MCP, Multi-Model-Routing. Docker, Kubernetes oder Hosting in Deutschland. Apache-2.0 ChatGPT-Alternative.",
+        "keywords": [
+          "Open-Source-KI-Plattform",
+          "Self-Hosted KI",
+          "KI-Agenten",
+          "KI-Chatbot",
+          "Chatbot-Widget",
+          "RAG",
+          "DSGVO KI",
+          "WhatsApp KI",
+          "Outlook KI",
+          "MCP-Server",
+          "ChatGPT-Alternative",
+          "Kubernetes KI",
+          "On-Premise KI"
+        ],
+        "searchTerms": [
+          "Open-Source-KI-Plattform",
+          "Self-Hosted KI",
+          "KI-Agenten",
+          "Chatbot-Widget",
+          "RAG",
+          "DSGVO",
+          "WhatsApp-KI",
+          "Outlook-KI",
+          "MCP",
+          "ChatGPT-Alternative"
+        ]
+      },
+      "product": {
+        "title": "KI-Plattform: Chat, RAG, Agenten, Widget & MCP | Synaplan",
+        "description": "Funktionen der Synaplan-KI-Plattform: Multi-Model-Chat, RAG-Wissensdatenbank, KI-Agenten, einbettbares Chatbot-Widget, WhatsApp- und Outlook-Kanäle, Memories, MCP, Microsoft-365-Verbindungen und DSGVO-Audit-Logs. Open Source, self-hosted.",
+        "keywords": [
+          "KI-Plattform",
+          "RAG",
+          "KI-Chatbot-Widget",
+          "Multi-Model-Routing",
+          "MCP",
+          "KI-Memories",
+          "Audit-Logs",
+          "Open-Source-KI"
+        ],
+        "searchTerms": [
+          "KI-Plattform",
+          "RAG-Wissensdatenbank",
+          "KI-Chatbot-Widget",
+          "Multi-Model-Routing",
+          "MCP",
+          "Memories",
+          "Audit-Logs",
+          "Self-Hosted"
+        ]
+      },
+      "deploy": {
+        "title": "Self-Hosted KI: Docker, Kubernetes & On-Premise | Synaplan",
+        "description": "Die Open-Source-KI-Plattform Synaplan selbst hosten: Docker Compose, Kubernetes mit öffentlichem Helm-Chart, On-Premise oder EU-Hosting in Deutschland. Derselbe Apache-2.0-Code auf Laptop, Server oder Cluster.",
+        "keywords": [
+          "Self-Hosted KI",
+          "On-Premise KI",
+          "Docker KI",
+          "Kubernetes KI",
+          "Helm-Chart",
+          "Open-Source-KI",
+          "EU-Hosting"
+        ],
+        "searchTerms": [
+          "Self-Hosted KI",
+          "On-Premise KI",
+          "Docker Compose",
+          "Kubernetes",
+          "Helm-Chart",
+          "EU-Hosting",
+          "openDesk"
+        ]
+      },
+      "connect": {
+        "title": "WhatsApp-, Outlook- & Website-KI-Chatbot | Synaplan",
+        "description": "DSGVO-konformen KI-Chatbot an WhatsApp Business, Outlook, Website-Widget, E-Mail, REST-API, MCP, Microsoft 365 und Nextcloud anbinden. Eine Open-Source-KI-Plattform für jeden Kanal.",
+        "keywords": [
+          "WhatsApp-KI",
+          "Outlook-KI",
+          "Website-Chatbot",
+          "KI-Chatbot-Widget",
+          "MCP-Server",
+          "Microsoft-365-KI",
+          "Nextcloud-KI"
+        ],
+        "searchTerms": [
+          "WhatsApp-KI",
+          "Outlook-Add-in",
+          "Website-Chatbot",
+          "Chat-Widget",
+          "MCP",
+          "Microsoft 365",
+          "Nextcloud"
+        ]
+      },
+      "agents": {
+        "title": "KI-Agenten mit RAG, Tools & menschlicher Freigabe | Synaplan",
+        "description": "Open-Source-KI-Agenten, die in Ihrer RAG-Wissensdatenbank suchen, Tools und MCP-Server aufrufen und auf menschliche Freigabe warten, bevor sie schreiben. Lokales Ollama oder Cloud-Modelle. Vollständiges Audit-Log. Self-hosted.",
+        "keywords": [
+          "KI-Agenten",
+          "RAG-Agenten",
+          "Human-in-the-Loop KI",
+          "MCP-Tools",
+          "Ollama",
+          "Self-Hosted Agenten"
+        ],
+        "searchTerms": [
+          "KI-Agenten",
+          "RAG",
+          "Menschliche Freigabe",
+          "MCP-Tools",
+          "Ollama",
+          "Desktop-Skills",
+          "Audit-Log"
+        ]
+      },
+      "source": {
+        "title": "Open-Source-KI-Plattform — Apache-2.0, Self-Hosted | Synaplan",
+        "description": "Synaplan ist eine vollständig offene KI-Plattform unter Apache-2.0: Self-Hosted KI, Helm-Charts, Desktop-Client und Outlook-Add-in. Keine Community-Edition — das echte Produkt. Made in Germany. Mitglied der OSBA.",
+        "keywords": [
+          "Open-Source-KI",
+          "Apache-2.0",
+          "Self-Hosted KI",
+          "GitHub",
+          "digitale Souveränität",
+          "Made in Germany"
+        ],
+        "searchTerms": [
+          "Open-Source-KI",
+          "Apache-2.0",
+          "Self-Hosted",
+          "GitHub",
+          "Helm-Charts",
+          "Digitale Souveränität",
+          "Made in Germany"
+        ]
+      }
+    },
+    "brand": "Mission Control",
+    "skip": "Zum Inhalt springen",
+    "nav": {
+      "product": "Produkt",
+      "deploy": "Deploy",
+      "connect": "Connect",
+      "agents": "Agenten",
+      "source": "Source",
+      "docs": "Docs",
+      "status": "Systemstatus",
+      "nominal": "Nominal",
+      "menu": "Menü öffnen",
+      "close": "Menü schließen",
+      "launch": "Starten",
+      "github": "GitHub-Repository",
+      "mode": "Modus",
+      "marketing": "Marketing",
+      "engineer": "Engineer",
+      "parrot": "Papagei",
+      "on": "An",
+      "off": "Aus",
+      "language": "Sprache",
+      "options": "Optionen",
+      "classic": "Klassische Startseite"
+    },
+    "hero": {
+      "eyebrow": "SYNAPLAN // MISSION CONTROL",
+      "title": "Open-Source-KI-Plattform. Gib ihr einen Job.",
+      "subtitle": "Self-hosted KI-Agenten, ein DSGVO-konformes Chatbot-Widget und RAG über Ihre Dokumente — auf WhatsApp, Outlook, Ihrer Website, API und MCP. Mit Docker oder Kubernetes betreiben oder in Deutschland hosten. Apache-2.0 ChatGPT-Alternative.",
+      "primary": "Mission starten",
+      "secondary": "Quellcode lesen",
+      "note": "Apache-2.0 · Docker · Kubernetes · selbst gehostet oder in Deutschland gehostet",
+      "engineerTitle": "Open-Source-KI-Plattform. Self-Hosted. Kein Lock-in.",
+      "engineerSubtitle": "PHP 8.4 / Symfony-Backend, Vue-3-Frontend, MariaDB VECTOR + Qdrant, gRPC-Inferenz, OpenAPI-Vertrag, MCP-Server und -Client. Ein `docker compose up -d` entfernt."
+    },
+    "ticker": [
+      "Lizenz: Apache-2.0",
+      "docker compose up -d",
+      "helm install synaplan",
+      "Outlook · WhatsApp · Web · API · Desktop",
+      "MCP-Server + -Client",
+      "Lokale Modelle via Ollama",
+      "RAG · Memories · Menschliche Freigaben",
+      "Entwickelt in Düsseldorf",
+      "Papagei einsatzbereit"
+    ],
+    "console": {
+      "mission": "Mission",
+      "live": "Live-Demo",
+      "labels": {
+        "inbound": "eingang",
+        "agent": "agent",
+        "knowledge": "wissen",
+        "model": "modell",
+        "tools": "tools",
+        "node": "node"
+      },
+      "approvalRequired": "Freigabe erforderlich",
+      "steps": {
+        "received": "nachricht empfangen",
+        "context": "kontext geladen",
+        "tool": "tool ausgeführt",
+        "waiting": "warte auf mensch",
+        "executed": "ausgeführt",
+        "complete": "mission abgeschlossen",
+        "deferred": "in warteschlange verschoben",
+        "stillWaiting": "warte immer noch. menschen."
+      },
+      "approve": "Mission freigeben",
+      "approved": "Von Ihnen freigegeben",
+      "hint": "Eine Demo — aber jede Zeile entspricht einer echten Funktion.",
+      "missions": [
+        {
+          "id": "0427",
+          "inbound": "outlook/mail",
+          "agent": "einkaufs-assistent",
+          "knowledge": "/vertraege /lieferanten",
+          "model": "llama-local",
+          "tools": "erp.search mail.send",
+          "node": "de-dus-k8s-03",
+          "result": "mail.send → 1 Angebotsanfrage an 3 Lieferanten"
+        },
+        {
+          "id": "0428",
+          "inbound": "whatsapp/+49…",
+          "agent": "support-desk",
+          "knowledge": "/handbuch /faq",
+          "model": "cloud/gpt",
+          "tools": "crm.lookup ticket.create",
+          "node": "eu-fra-vm-01",
+          "result": "ticket.create → #4471 an Level 2 übergeben"
+        },
+        {
+          "id": "0429",
+          "inbound": "web/widget",
+          "agent": "buchungs-concierge",
+          "knowledge": "/zimmer /preise",
+          "model": "cloud/claude",
+          "tools": "calendar.check booking.hold",
+          "node": "de-dus-k8s-03",
+          "result": "booking.hold → 2 Nächte, 24 h reserviert"
+        },
+        {
+          "id": "0430",
+          "inbound": "api/v1",
+          "agent": "rechnungs-extraktor",
+          "knowledge": "/rechnungen /lieferanten",
+          "model": "mistral-local",
+          "tools": "ocr.read erp.post",
+          "node": "onprem-rack-02",
+          "result": "erp.post → 14 Positionen gebucht"
+        }
+      ]
+    },
+    "signals": {
+      "num": "01",
+      "title": "Eingehende Signale",
+      "heading": "WhatsApp, Outlook, Mail und Website — eine KI für jeden Kanal.",
+      "text": "Ein DSGVO-konformer KI-Chatbot und dieselben Agenten auf WhatsApp Business, Outlook, Ihrem Website-Widget, Desktop und der API. Jede Nachricht trifft auf dieselbe RAG-Wissensdatenbank und dieselben Regeln — egal, woher sie kommt.",
+      "core": "Agent-Kern",
+      "channels": [
+        {
+          "key": "mail",
+          "label": "Mail",
+          "desc": "Postfächer werden zu Agenten-Queues."
+        },
+        {
+          "key": "whatsapp",
+          "label": "WhatsApp",
+          "desc": "Geschäftsnummer, in Sekunden beantwortet."
+        },
+        {
+          "key": "web",
+          "label": "Web",
+          "desc": "Ein Script-Tag. Das Widget auf jeder Website."
+        },
+        {
+          "key": "api",
+          "label": "API",
+          "desc": "REST + OpenAPI. Anthropic-kompatibles Gateway."
+        },
+        {
+          "key": "outlook",
+          "label": "Outlook",
+          "desc": "Add-in direkt im Mailprogramm."
+        },
+        {
+          "key": "desktop",
+          "label": "Desktop",
+          "desc": "Nativer Client führt Skills lokal aus."
+        }
+      ]
+    },
+    "core": {
+      "num": "02",
+      "title": "Agent-Kern",
+      "heading": "KI-Agenten mit RAG, Tools — und einem Menschen, wo es zählt.",
+      "text": "Ein Synaplan-KI-Agent ist kein Chatfenster mit System-Prompt. Er ist eine Pipeline: RAG über Ihre Dokumente, Multi-Model-Routing, Tools und MCP, ein Freigabe-Gate und ein Audit-Log für jeden Schritt.",
+      "steps": [
+        {
+          "key": "understand",
+          "label": "verstehen",
+          "desc": "Absicht, Sprache und Kanal erkennen."
+        },
+        {
+          "key": "retrieve",
+          "label": "abrufen",
+          "desc": "RAG über Ihre Dokumente und Memories."
+        },
+        {
+          "key": "reason",
+          "label": "schließen",
+          "desc": "Lokales oder Cloud-Modell — Ihr Routing."
+        },
+        {
+          "key": "tool",
+          "label": "tool",
+          "desc": "ERP, Kalender, Mail, MCP-Server."
+        },
+        {
+          "key": "approval",
+          "label": "freigabe",
+          "desc": "Ein Mensch bestätigt, bevor geschrieben wird."
+        },
+        {
+          "key": "execute",
+          "label": "ausführen",
+          "desc": "Erledigen. Alles protokollieren."
+        }
+      ],
+      "facts": [
+        {
+          "label": "Wissen",
+          "value": "RAG über Dokumente, Mails und Dateien — MariaDB VECTOR oder Qdrant"
+        },
+        {
+          "label": "Modelle",
+          "value": "Ollama, OpenAI, Anthropic, Groq, Gemini, xAI — pro Aufgabe geroutet"
+        },
+        {
+          "label": "Tools",
+          "value": "Eingebaute Tools, Plugins, MCP-Server, Desktop-Skills"
+        },
+        {
+          "label": "Kontrolle",
+          "value": "Freigaben, Audit-Log, Memories pro Nutzer, Rate Limits"
+        }
+      ]
+    },
+    "connect": {
+      "num": "03",
+      "title": "Alles verbinden",
+      "heading": "Eine Topologie, nicht nur ein Chatbot.",
+      "text": "Die Open-Source-KI-Plattform sitzt zwischen WhatsApp, Outlook, Ihrem Website-Chatbot, Microsoft 365, Nextcloud und MCP. Kanäle kommen herein, die RAG-Wissensdatenbank und Tools docken am Kern an, jedes Paket wird protokolliert.",
+      "hint": "Knoten berühren oder anklicken, um den Datenverkehr zu verfolgen.",
+      "nodes": {
+        "synaplan": "Der Kern. Agenten, Wissen, Routing, Freigaben, Audit.",
+        "outlook": "Outlook-Add-in: zusammenfassen, entwerfen, ablegen — direkt im Mailprogramm.",
+        "whatsapp": "WhatsApp Business: eine Nummer, beantwortet von Ihrem Agenten.",
+        "web": "Chat-Widget: ein Script-Tag auf jeder Website.",
+        "desktop": "Desktop-Client: führt Agent Skills auf dem Rechner der Nutzer aus.",
+        "erp": "Ihre Systeme: ERP, CRM, Ticketing — über Tools und Plugins.",
+        "mcp": "MCP: Synaplan ist Server und Client für das Model Context Protocol.",
+        "m365": "Verbindungen zu Microsoft 365, Nextcloud, Dropbox, WebDAV, CalDAV.",
+        "models": "Modelle: lokal via Ollama oder Cloud-Anbieter — Routing pro Aufgabe."
+      }
+    },
+    "run": {
+      "num": "04",
+      "title": "Überall lauffähig",
+      "heading": "Self-Hosted KI: Heute Docker, morgen Kubernetes.",
+      "text": "Die gesamte Open-Source-KI-Plattform ist dockerisiert und unter Apache-2.0 lizenziert. Auf dem Laptop starten, auf einen On-Premise-Server umziehen, mit dem öffentlichen Helm-Chart auf Kubernetes skalieren — oder von uns in Deutschland hosten lassen.",
+      "tabs": {
+        "compose": "Docker Compose",
+        "helm": "Kubernetes",
+        "cloud": "Gehostet"
+      },
+      "ladder": [
+        {
+          "label": "Laptop",
+          "desc": "docker compose, zehn Minuten"
+        },
+        {
+          "label": "Server",
+          "desc": "eine Linux-Maschine, der deploy/-Vertrag"
+        },
+        {
+          "label": "Cluster",
+          "desc": "Helm-Chart, Galera, Qdrant"
+        },
+        {
+          "label": "Souveräne Cloud",
+          "desc": "openDesk, EU-Hosting, Ihre Schlüssel"
+        }
+      ],
+      "cloudText": "Nichts zu installieren: web.synaplan.com läuft mit demselben Open-Source-Code, gehostet in Deutschland. Kostenlos starten, upgraden, wenn nötig.",
+      "cloudCta": "Plattform öffnen",
+      "docs": "Deployment-Doku"
+    },
+    "log": {
+      "num": "05",
+      "title": "Flugbuch",
+      "heading": "Bereits geflogene Missionen.",
+      "text": "Öffentliche Einrichtungen, Gastgewerbe, Pflege, Industrie. Kleine Teams und große. Dieselbe Plattform.",
+      "status": "In Betrieb"
+    },
+    "source": {
+      "num": "06",
+      "title": "Der Quellcode",
+      "heading": "Open-Source-KI-Plattform. Apache-2.0. Der ganze Code.",
+      "text": "Plattform, Helm-Charts, Desktop-Client, Outlook-Add-in — öffentliche Repositories unter Apache-2.0. Self-hosten, forken, prüfen. Ihre Daten bleiben, wo Sie sie hingelegt haben. Made in Germany.",
+      "stars": "GitHub-Sterne",
+      "forks": "Forks",
+      "license": "Lizenz",
+      "cta": "Repository öffnen",
+      "docs": "Doku lesen",
+      "eu": "Souveräne Edition"
+    },
+    "inspect": {
+      "title": "synaplan inspect",
+      "rows": [
+        {
+          "key": "license",
+          "value": "Apache-2.0"
+        },
+        {
+          "key": "deployment",
+          "value": "docker / kubernetes / gehostet"
+        },
+        {
+          "key": "backend",
+          "value": "PHP 8.4 · Symfony · FrankenPHP"
+        },
+        {
+          "key": "frontend",
+          "value": "Vue 3 · TypeScript · Vite"
+        },
+        {
+          "key": "vectors",
+          "value": "MariaDB VECTOR · Qdrant"
+        },
+        {
+          "key": "models",
+          "value": "lokal (ollama) / cloud (6 anbieter)"
+        },
+        {
+          "key": "rag",
+          "value": "aktiv"
+        },
+        {
+          "key": "agents",
+          "value": "aktiv · menschliche freigaben"
+        },
+        {
+          "key": "mcp",
+          "value": "server + client"
+        },
+        {
+          "key": "api",
+          "value": "openapi 3 · anthropic-kompatibles gateway"
+        },
+        {
+          "key": "channels",
+          "value": "mail · whatsapp · web · outlook · desktop · api"
+        },
+        {
+          "key": "lock-in",
+          "value": "nö"
+        },
+        {
+          "key": "parrot",
+          "value": "einsatzbereit"
+        }
+      ]
+    },
+    "faq": {
+      "num": "07",
+      "title": "Briefing"
+    },
+    "cta": {
+      "title": "Bereit zum Start?",
+      "text": "Die Open-Source-KI-Plattform in zwei Minuten starten — oder self-hosten mit Docker auf Ihrer. Chatbot, Agenten, RAG — Ihre Infrastruktur, Ihre Regeln.",
+      "primary": "Auf web.synaplan.com starten",
+      "secondary": "Mit einem Engineer sprechen"
+    },
+    "parrot": {
+      "prefix": "PARROT://",
+      "aria": "Synaplan-Papagei — klicken für einen Kommentar",
+      "mute": "Papagei stummschalten",
+      "unmute": "Papagei zurückholen",
+      "hello": "Systeme nominal. Scrollen, wenn bereit.",
+      "signals": "Sechs Kanäle, ein System. Ich habe nachgezählt.",
+      "core": "Erst abrufen, dann schließen. Lebensweisheit.",
+      "connect": "Fahren Sie über die Knoten. Die Pakete mögen Aufmerksamkeit.",
+      "run": "Kubernetes gefunden. Gute Wahl.",
+      "source": "Ja. Der Quellcode. Der ganze.",
+      "github": "Ihre Daten haben das Gebäude verlassen. Kleiner Scherz — Sie hosten selbst.",
+      "engineerOn": "Engineer-Modus. Endlich.",
+      "engineerOff": "Zurück zu den schönen Worten.",
+      "approved": "Freigegeben. Menschen bleiben nützlich.",
+      "idle": [
+        "Ich bin kein Chatbot. Ich bin Flugingenieur.",
+        "Fun Fact: Ich laufe auch on-prem.",
+        "Niemand liest den Ticker. Sie schon. Respekt.",
+        "Probieren Sie den Engineer-Modus. Oben im Header. Ich warte.",
+        "Apache-2.0. Sagen Sie es mit mir.",
+        "docker compose up -d. Das ist die ganze Installation.",
+        "Cloud ist nur das Kubernetes von jemand anderem."
+      ]
+    },
+    "footer": {
+      "tagline": "Open-Source-KI-Plattform für self-hosted Agenten, Chatbots und RAG.",
+      "product": "Produkt",
+      "deep": "Vertiefung",
+      "company": "Unternehmen",
+      "legal": "Rechtliches",
+      "features": "Alle Funktionen",
+      "solutions": "Lösungen",
+      "pricing": "Preise",
+      "widget": "Chat-Widget",
+      "apps": "Mobile Apps",
+      "blog": "Blog",
+      "news": "News",
+      "tryChat": "Chat ausprobieren",
+      "about": "Über uns",
+      "contact": "Kontakt",
+      "support": "Support",
+      "imprint": "Impressum",
+      "privacy": "Datenschutz",
+      "terms": "Nutzungsbedingungen",
+      "sovereign": "Souveräne Edition (EU/CH)",
+      "docs": "Dokumentation",
+      "discord": "Discord",
+      "github": "GitHub",
+      "copyright": "© {year} metadist data management GmbH · Düsseldorf",
+      "status": "Alle Systeme nominal",
+      "parrotLine": "Der Papagei wurde informiert."
+    },
+    "pages": {
+      "product": {
+        "eyebrow": "PRODUKT // SYS-01",
+        "title": "Open-Source-KI-Plattform: Chat, RAG, Agenten und Widget.",
+        "lead": "Synaplan ist die self-hosted KI-Plattform unter Ihren Agenten: Multi-Model-Chat, RAG-Wissensdatenbank, Tools, WhatsApp- und Outlook-Kanäle, MCP und DSGVO-Audit — auf der Infrastruktur Ihrer Wahl. Hier ist das Inventar.",
+        "inventoryTitle": "Systeminventar",
+        "inventory": [
+          {
+            "id": "SYS-01",
+            "name": "Chat",
+            "desc": "Multi-Model-Chat für Teams. Dateien, Bilder, Sprache, Websuche. iOS- und Android-Apps.",
+            "status": "in betrieb",
+            "href": "/features/chatgpt-alternative"
+          },
+          {
+            "id": "SYS-02",
+            "name": "Wissen (RAG)",
+            "desc": "Dokumente hochladen, Laufwerke verbinden, semantisch suchen. MariaDB VECTOR oder Qdrant.",
+            "status": "in betrieb",
+            "href": "/features/documents"
+          },
+          {
+            "id": "SYS-03",
+            "name": "Agenten",
+            "desc": "Missionen mit Wissen, Tools, Freigaben und Telemetrie. Skills laufen auf dem Desktop.",
+            "status": "in betrieb",
+            "href": "/agents"
+          },
+          {
+            "id": "SYS-04",
+            "name": "Chat-Widget",
+            "desc": "Ein Script-Tag. Ihr Wissen auf Ihrer Website, in Ihrer Marke.",
+            "status": "in betrieb",
+            "href": "/solutions/chat-widget"
+          },
+          {
+            "id": "SYS-05",
+            "name": "Kanäle",
+            "desc": "Mail, WhatsApp, Outlook-Add-in, Web, API, Desktop — ein Eingang für den Agenten.",
+            "status": "in betrieb",
+            "href": "/connect"
+          },
+          {
+            "id": "SYS-06",
+            "name": "Memories",
+            "desc": "Langzeitgedächtnis pro Nutzer, vektorindiziert, sichtbar und löschbar.",
+            "status": "in betrieb",
+            "href": "/features/memories"
+          },
+          {
+            "id": "SYS-07",
+            "name": "Modell-Routing",
+            "desc": "Ollama, OpenAI, Anthropic, Groq, Gemini, xAI — pro Aufgabe konfiguriert, jederzeit wechselbar.",
+            "status": "in betrieb",
+            "href": "/features/multi-model"
+          },
+          {
+            "id": "SYS-08",
+            "name": "MCP",
+            "desc": "Server und Client für das Model Context Protocol. Tools einstecken, Wissen bereitstellen.",
+            "status": "in betrieb",
+            "href": "/features/mcp"
+          },
+          {
+            "id": "SYS-09",
+            "name": "Verbindungen",
+            "desc": "Microsoft 365, Nextcloud, Dropbox, WebDAV, CalDAV. Lesen, schreiben, exportieren.",
+            "status": "in betrieb",
+            "href": "/features/connections"
+          },
+          {
+            "id": "SYS-10",
+            "name": "Audit & Compliance",
+            "desc": "Wer hat was gefragt, welches Modell hat geantwortet, was wurde geschrieben. Exportierbar.",
+            "status": "in betrieb",
+            "href": "/features/audit-logs"
+          }
+        ],
+        "sections": [
+          {
+            "num": "01",
+            "title": "Für die, die fragen",
+            "heading": "Einmal fragen. Eine Antwort aus dem eigenen Wissen bekommen.",
+            "text": "Teams nutzen Synaplan wie eine sehr gut informierte Kollegin: Sie kennt das Handbuch, die Verträge und die letzten 200 Tickets — und sagt, woher die Antwort stammt.",
+            "items": [
+              {
+                "label": "Quellen belegt",
+                "text": "Jede Antwort verweist auf das Dokument und die Passage, die verwendet wurden."
+              },
+              {
+                "label": "Jedes Gerät",
+                "text": "Web, iOS, Android, Outlook, Desktop — ein Konto."
+              },
+              {
+                "label": "Jedes Modell",
+                "text": "Lokal für sensible Daten, Cloud für Geschwindigkeit — der Router entscheidet nach Regel."
+              }
+            ]
+          },
+          {
+            "num": "02",
+            "title": "Für die, die es betreiben",
+            "heading": "Betreiben wie jeden anderen Dienst, den Sie besitzen.",
+            "text": "Feature-Module, Konfiguration über Umgebungsvariablen, Migrationen beim Start, Health-Endpunkte, OpenAPI-Vertrag. Keine Überraschungen um 3 Uhr nachts.",
+            "items": [
+              {
+                "label": "Feature-Module",
+                "text": "Optionale Teile (lokale KI, Suche, TTS, Qdrant) sind deklarierte Module — aus heißt nicht vorhanden."
+              },
+              {
+                "label": "Beobachtbar",
+                "text": "Strukturierte Logs, Rate Limits, Quoten pro Nutzer, Audit-Trail."
+              },
+              {
+                "label": "Aktualisierbar",
+                "text": "Getaggte Releases, idempotente Seeder, Doctrine-Migrationen."
+              }
+            ]
+          },
+          {
+            "num": "03",
+            "title": "Für die, die entscheiden",
+            "heading": "Open Source ist das Compliance-Feature.",
+            "text": "Apache-2.0, lesbarer Code, Daten, die das Haus nie verlassen müssen. Erfüllt die Kriterien digitaler Souveränität der deutschen Verwaltung.",
+            "items": [
+              {
+                "label": "Kein Lock-in",
+                "text": "Modelle, Anbieter oder Hosting wechseln, ohne die Plattform zu wechseln."
+              },
+              {
+                "label": "DSGVO by Design",
+                "text": "Selbst in der EU hosten oder unser deutsches Hosting nutzen. Lokale Modelle: null externe Aufrufe."
+              },
+              {
+                "label": "Transparente Preise",
+                "text": "Selbst gehostet für immer kostenlos. Plattform-Pläne ab 19,95 €. Enterprise auf Anfrage."
+              }
+            ]
+          }
+        ],
+        "cta": {
+          "title": "Erst sehen, dann glauben.",
+          "text": "Den Chat ohne Konto ausprobieren oder einen kostenlosen Workspace starten.",
+          "primary": "Chat ausprobieren",
+          "secondary": "Preise"
+        }
+      },
+      "deploy": {
+        "eyebrow": "DEPLOY // SYS-04",
+        "title": "Self-Hosted KI — Docker, Kubernetes oder Deutschland.",
+        "lead": "Die Open-Source-KI-Plattform kommt als Docker-Images und öffentliches Helm-Chart. On-Premise auf Laptop oder Server, Kubernetes im eigenen Cluster oder EU-Hosting in Deutschland. Derselbe Apache-2.0-Code. Kein Enterprise-Fork.",
+        "tiers": [
+          {
+            "id": "T-01",
+            "label": "Laptop",
+            "heading": "docker compose up -d",
+            "text": "Der komplette Entwicklungs-Stack — Backend, Worker, Frontend, MariaDB, Redis, Qdrant, Ollama — in etwa zehn Minuten auf jeder Maschine mit Docker.",
+            "facts": [
+              "~3 GB Standardinstallation, Cloud-KI",
+              "+ lokale KI über das Compose-Profil local-ai",
+              "Linux, macOS (Apple Silicon nativ), Windows/WSL2"
+            ]
+          },
+          {
+            "id": "T-02",
+            "label": "Server",
+            "heading": "Der deploy/-Vertrag",
+            "text": "Ein Linux-Server, vorgebaute Images von ghcr.io, ein Reverse Proxy davor. Migrationen laufen beim Containerstart. Dokumentiert als Vertrag, nicht als Wiki-Seite.",
+            "facts": [
+              "ghcr.io/metadist/synaplan",
+              "Automatisches TLS via Caddy",
+              "Läuft auf 4 vCPU / 8 GB"
+            ]
+          },
+          {
+            "id": "T-03",
+            "label": "Cluster",
+            "heading": "helm install synaplan",
+            "text": "Öffentliches Helm-Chart für Kubernetes: mehrere Web-Replikas, externe MariaDB Galera, Qdrant, Redis, GPU-Worker für lokale Inferenz. Gebaut für Hosting-Anbieter.",
+            "facts": [
+              "oci://ghcr.io/metadist/synaplan-charts",
+              "Galera-sichere Migrationen",
+              "Optionale Triton-/Ollama-GPU-Nodes"
+            ]
+          },
+          {
+            "id": "T-04",
+            "label": "Souveräne Cloud",
+            "heading": "openDesk und EU-Hosting",
+            "text": "Synaplan integriert sich in openDesk und läuft auf europäischer Infrastruktur. Oder Sie sparen sich den Betrieb und nutzen unsere in Deutschland gehostete Plattform.",
+            "facts": [
+              "openDesk-Installer",
+              "web.synaplan.com — gehostet in Deutschland",
+              "synaplan.eu für die öffentliche Verwaltung"
+            ]
+          }
+        ],
+        "requirementsTitle": "Mindestanforderungen",
+        "requirements": [
+          {
+            "label": "Laufzeit",
+            "text": "Docker 24+ mit Compose v2 oder Kubernetes 1.28+"
+          },
+          {
+            "label": "Datenbank",
+            "text": "MariaDB 11.7+ (VECTOR) — mitgeliefert oder externes Galera"
+          },
+          {
+            "label": "Vektoren",
+            "text": "Qdrant (mitgeliefert) oder MariaDB VECTOR"
+          },
+          {
+            "label": "Modelle",
+            "text": "Ollama lokal oder ein beliebiger unterstützter Cloud-API-Schlüssel"
+          }
+        ],
+        "cta": {
+          "title": "Die Doku ist das Handbuch. Kein Marketing.",
+          "text": "Erste Schritte, Produktions-Deployment, Kubernetes, Feature-Module — alles auf docs.synaplan.com.",
+          "primary": "Deployment-Doku öffnen",
+          "secondary": "Helm-Charts auf GitHub"
+        }
+      },
+      "connect": {
+        "eyebrow": "CONNECT // SYS-05",
+        "title": "WhatsApp-, Outlook- und Website-KI-Chatbot. Ein System.",
+        "lead": "Einen DSGVO-konformen KI-Chatbot an WhatsApp Business, Outlook, Ihr Website-Widget, E-Mail, REST-API und MCP anbinden. Microsoft 365 und Nextcloud sitzen um dieselbe RAG-Wissensdatenbank. Eine Open-Source-KI-Plattform.",
+        "channelsTitle": "Eingehende Kanäle",
+        "channels": [
+          {
+            "id": "CH-01",
+            "name": "Outlook-Add-in",
+            "text": "Synamail lebt in Outlook: Threads zusammenfassen, Antworten aus Ihrem Wissen entwerfen, richtig ablegen. Web, Windows, Mac.",
+            "href": "/features/connections"
+          },
+          {
+            "id": "CH-02",
+            "name": "WhatsApp Business",
+            "text": "Eine Geschäftsnummer, beantwortet von einem Agenten, der Ihre FAQ, Öffnungszeiten und Ihr Buchungssystem kennt — mit Übergabe an einen Menschen.",
+            "href": "/solutions/chat-widget"
+          },
+          {
+            "id": "CH-03",
+            "name": "Chat-Widget",
+            "text": "Ein Script-Tag. Ihr Wissen auf Ihrer Website, im Look Ihrer Marke, mit Lead-Erfassung und Freigaben.",
+            "href": "/solutions/chat-widget"
+          },
+          {
+            "id": "CH-04",
+            "name": "Mail",
+            "text": "Postfächer als Agenten-Queues: klassifizieren, antworten, eskalieren. Jede Antwort protokolliert.",
+            "href": "/features/connections"
+          },
+          {
+            "id": "CH-05",
+            "name": "REST-API",
+            "text": "OpenAPI-3-Vertrag plus Anthropic-kompatibles Messages-Gateway — bestehende SDKs auf Ihr eigenes Synaplan richten.",
+            "href": "/solutions/developers"
+          },
+          {
+            "id": "CH-06",
+            "name": "Desktop",
+            "text": "Synaplan Desktop koppelt einen Rechner mit Ihrem Workspace und führt Agent Skills lokal unter einer Ordner-Allowlist aus.",
+            "href": "/agents"
+          }
+        ],
+        "systemsTitle": "Verbundene Systeme",
+        "systems": [
+          {
+            "id": "SY-01",
+            "name": "MCP",
+            "text": "Synaplan ist MCP-Server (Wissen, Memories, Chats bereitstellen) und MCP-Client (jedes MCP-Tool im Agenten nutzen)."
+          },
+          {
+            "id": "SY-02",
+            "name": "Microsoft 365 & Nextcloud",
+            "text": "Dokumente, Kalender und Mails lesen und schreiben. Word, Excel und PowerPoint erzeugen und zurück exportieren."
+          },
+          {
+            "id": "SY-03",
+            "name": "Dropbox · WebDAV · CalDAV",
+            "text": "Dateien und Kalender dort abholen, wo sie sind — ohne vorheriges Migrationsprojekt."
+          },
+          {
+            "id": "SY-04",
+            "name": "ERP / CRM über Plugins",
+            "text": "Unternehmensspezifische Plugins verbinden die Systeme, die Ihr Unternehmen am Laufen halten. Offene Plugin-API."
+          }
+        ],
+        "cta": {
+          "title": "Bringen Sie Ihre eigenen Systeme mit.",
+          "text": "Plugins und die MCP-Integration sind dokumentiert. Oder fragen Sie uns — wir bauen jede Woche Integrationen für Kunden.",
+          "primary": "Integrations-Doku",
+          "secondary": "Mit uns sprechen"
+        }
+      },
+      "agents": {
+        "eyebrow": "AGENTEN // SYS-03",
+        "title": "KI-Agenten mit RAG, Tools und menschlicher Freigabe.",
+        "lead": "Ein Synaplan-KI-Agent empfängt eine Nachricht aus WhatsApp, Outlook oder Ihrem Website-Chatbot, holt sich das Nötige aus der RAG-Wissensdatenbank, schließt mit Ollama oder einem Cloud-Modell, nutzt Tools und MCP-Server, wartet auf menschliche Freigabe und führt aus. Jeder Schritt steht im Audit-Log. Self-hosted.",
+        "pipelineTitle": "Missionsprofil",
+        "sections": [
+          {
+            "num": "01",
+            "title": "Wissen zuerst",
+            "heading": "Agenten lesen Ihre Dokumente, bevor sie den Schnabel öffnen.",
+            "text": "Retrieval-Augmented Generation über hochgeladene Dateien, verbundene Laufwerke und Postfächer. Memories pro Nutzer ergänzen, was die Person bevorzugt. Quellen werden belegt.",
+            "items": [
+              {
+                "label": "Dokumente",
+                "text": "PDF, Office, Mail, Bilder mit OCR — in Abschnitte zerlegt und eingebettet."
+              },
+              {
+                "label": "Memories",
+                "text": "Was der Nutzer Ihnen letzten Monat gesagt hat, pro Nutzer gespeichert, sichtbar und löschbar."
+              },
+              {
+                "label": "Bereiche",
+                "text": "Welcher Agent welchen Ordner lesen darf, ist eine Einstellung, keine Hoffnung."
+              }
+            ]
+          },
+          {
+            "num": "02",
+            "title": "Tools und Skills",
+            "heading": "Payloads: Was der Agent tatsächlich tun darf.",
+            "text": "Tools sind explizit: eingebaute Aktionen, Plugins, MCP-Server und Agent Skills, die über den Desktop-Client auf dem Rechner der Nutzer laufen.",
+            "items": [
+              {
+                "label": "Eingebaut",
+                "text": "Websuche, Dokumentenerzeugung, Kalender, Mail, Dateioperationen."
+              },
+              {
+                "label": "MCP",
+                "text": "Jeder MCP-kompatible Tool-Server. Synaplan spricht das Protokoll in beide Richtungen."
+              },
+              {
+                "label": "Desktop-Skills",
+                "text": "Laufen lokal unter einer Ordner-Allowlist. Es wird niemals eine Shell konstruiert."
+              }
+            ]
+          },
+          {
+            "num": "03",
+            "title": "Mission Control",
+            "heading": "Ein Mensch gibt frei, bevor etwas geschrieben wird.",
+            "text": "Freigabe-Gates sind Teil der Pipeline. Offene Missionen erscheinen dort, wo Menschen ohnehin arbeiten — in Synaplan, in Outlook, auf dem Handy. Freigeben, ablehnen oder bearbeiten und freigeben.",
+            "items": [
+              {
+                "label": "Freigaben",
+                "text": "Pro Tool, pro Agent, pro Betrag — die Regel entscheidet, was einen Menschen braucht."
+              },
+              {
+                "label": "Telemetrie",
+                "text": "Jeder Abruf, jeder Modellaufruf und jede Tool-Ausführung im Audit-Log."
+              },
+              {
+                "label": "Stopp-Knopf",
+                "text": "Einen Agenten aus derselben Zeile abschalten. Die Konsequenz steht in einem Satz."
+              }
+            ]
+          }
+        ],
+        "cta": {
+          "title": "Geben Sie Ihrer KI einen Job.",
+          "text": "In Minuten einen ersten Agenten auf unserer Plattform bauen — oder in der Doku lesen, wie die Pipeline funktioniert.",
+          "primary": "Auf der Plattform starten",
+          "secondary": "Agenten-Doku"
+        }
+      },
+      "source": {
+        "eyebrow": "SOURCE // SYS-00",
+        "title": "Open-Source-KI-Plattform. Apache-2.0. Der ganze Code.",
+        "lead": "Synaplan ist eine vollständig offene KI-Plattform unter Apache-2.0 — Self-Hosted KI, Helm-Charts, Desktop-Client, Outlook-Add-in. Keine Community-Edition neben einer echten. Die echte. Made in Germany.",
+        "reposTitle": "Repositories",
+        "repos": [
+          {
+            "name": "synaplan",
+            "text": "Die Plattform: Backend, Frontend, Widget, Plugins, Docker-Stack.",
+            "href": "https://github.com/metadist/synaplan"
+          },
+          {
+            "name": "synaplan-charts",
+            "text": "Helm-Charts für Kubernetes, inkl. GPU-Inferenz-Deployments.",
+            "href": "https://github.com/metadist/synaplan-charts"
+          },
+          {
+            "name": "synaplan-desktop",
+            "text": "Tauri-Desktop-Client, der Agent Skills lokal ausführt.",
+            "href": "https://github.com/metadist/synaplan-desktop"
+          },
+          {
+            "name": "synaplan-opendesk",
+            "text": "Installer für openDesk + Synaplan auf jedem Kubernetes-Cluster.",
+            "href": "https://github.com/metadist/synaplan-opendesk"
+          }
+        ],
+        "telemetryTitle": "Telemetrie",
+        "principlesTitle": "Warum offen",
+        "principles": [
+          {
+            "label": "Prüfbar",
+            "text": "Ministerien und Kliniken glauben uns nicht aufs Wort. Sie lesen den Code."
+          },
+          {
+            "label": "Portabel",
+            "text": "Images, Chart und Daten zu jedem Anbieter mitnehmen. Oder in den eigenen Keller."
+          },
+          {
+            "label": "Community",
+            "text": "Issues, Pull Requests, Discord. Mitglied der Open Source Business Alliance."
+          },
+          {
+            "label": "Ehrlich",
+            "text": "Was auf der Startseite steht, steht im Repository. Der Papagei prüft das."
+          }
+        ],
+        "cta": {
+          "title": "Stern vergeben. Forken. Betreiben.",
+          "text": "Das Repository ist das Produkt. Die Doku ist das Handbuch. Die souveräne Edition für die öffentliche Verwaltung lebt auf synaplan.eu.",
+          "primary": "Auf GitHub öffnen",
+          "secondary": "Souveräne Edition"
+        }
+      }
+    },
+    "notFound": {
+      "code": "404",
+      "title": "Signal nicht gefunden",
+      "text": "Diese Seite steht nicht im Flugplan. Der Link ist womöglich veraltet oder die Adresse vertippt.",
+      "parrot": "Ich habe überall gesucht. Sogar in /var/log.",
+      "home": "Zurück zu Mission Control",
+      "docs": "Doku durchsuchen"
+    },
+    "error": {
+      "code": "500",
+      "title": "Mission verloren",
+      "text": "Das hätte nicht passieren dürfen. Die Engineers wurden gerufen.",
+      "parrot": "Der Papagei wurde informiert.",
+      "retry": "Erneut versuchen",
+      "home": "Zurück zu Mission Control"
+    }
   }
 }

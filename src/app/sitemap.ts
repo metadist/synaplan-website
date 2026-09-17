@@ -26,6 +26,13 @@ const PATHS: PathConfig[] = [
   { path: "",                                   priority: 1.0,  changeFrequency: "weekly" },
   { path: "/pricing",                           priority: 0.90, changeFrequency: "monthly" },
 
+  // ── Mission Control primary navigation ────────────────────────────────────
+  { path: "/product",                           priority: 0.90, changeFrequency: "monthly" },
+  { path: "/deploy",                            priority: 0.88, changeFrequency: "monthly" },
+  { path: "/connect",                           priority: 0.85, changeFrequency: "monthly" },
+  { path: "/agents",                            priority: 0.88, changeFrequency: "monthly" },
+  { path: "/source",                            priority: 0.80, changeFrequency: "monthly" },
+
   // ── Solutions ──────────────────────────────────────────────────────────────
   { path: "/solutions/chat-widget",             priority: 0.95, changeFrequency: "monthly" },
   { path: "/solutions/companies",               priority: 0.85, changeFrequency: "monthly" },
