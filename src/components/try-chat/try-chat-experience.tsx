@@ -418,35 +418,35 @@ export function TryChatExperience({
             transition={{ duration: 0.45 }}
             className="flex flex-col gap-8"
           >
-            <div className="inline-flex w-fit items-center gap-2 rounded-full bg-soft-accent px-3 py-1.5 text-sm font-semibold text-[#002c92]">
+            <div className="inline-flex w-fit items-center gap-2 rounded-full bg-soft-accent px-3 py-1.5 text-sm font-semibold text-[var(--mc-blue-soft)]">
               <span className="size-2 rounded-full bg-[#002c92]" aria-hidden />
               {t("heroEyebrow")}
             </div>
 
             <div className="space-y-4">
-              <h1 className="text-balance text-4xl font-extrabold tracking-tight text-[#221823] sm:text-5xl lg:text-6xl lg:leading-[1.05]">
+              <h1 className="text-balance text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl lg:leading-[1.05]">
                 {t("heroDisplay")}
               </h1>
-              <p className="text-balance text-2xl font-semibold leading-snug text-[#002c92] sm:text-[1.65rem] lg:text-[1.85rem]">
+              <p className="text-balance text-2xl font-semibold leading-snug text-[var(--mc-blue-soft)] sm:text-[1.65rem] lg:text-[1.85rem]">
                 {t("title")}
               </p>
-              <p className="max-w-xl text-pretty text-lg leading-relaxed text-[#434654]">
+              <p className="max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground">
                 {t("subtitle")}
               </p>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-xl border border-[rgb(196_197_215/0.15)] bg-chat-input-bg p-4 shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
-                <p className="text-sm font-semibold text-[#221823]">
+              <div className="rounded-xl border border-[var(--mc-line-strong)] bg-[var(--mc-ink-3)] p-4">
+                <p className="text-sm font-semibold text-foreground">
                   {t("feature1Title")}
                 </p>
-                <p className="mt-1 text-sm text-[#434654]">{t("feature1Sub")}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{t("feature1Sub")}</p>
               </div>
-              <div className="rounded-xl border border-[rgb(196_197_215/0.15)] bg-chat-input-bg p-4 shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
-                <p className="text-sm font-semibold text-[#221823]">
+              <div className="rounded-xl border border-[var(--mc-line-strong)] bg-[var(--mc-ink-3)] p-4">
+                <p className="text-sm font-semibold text-foreground">
                   {t("feature2Title")}
                 </p>
-                <p className="mt-1 text-sm text-[#434654]">{t("feature2Sub")}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{t("feature2Sub")}</p>
               </div>
             </div>
           </motion.div>
@@ -498,13 +498,13 @@ export function TryChatExperience({
               key={card.title}
               className="rounded-[2rem] border border-[var(--mc-line-strong)] bg-[var(--mc-ink-3)] p-8"
             >
-              <div className="flex size-12 items-center justify-center rounded-2xl bg-soft-accent text-[#002c92]">
+              <div className="flex size-12 items-center justify-center rounded-2xl bg-soft-accent text-[var(--mc-blue-soft)]">
                 <card.icon className="size-5" aria-hidden />
               </div>
-              <h3 className="mt-6 text-xl font-bold text-[#221823]">
+              <h3 className="mt-6 text-xl font-bold text-foreground">
                 {card.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-[#434654]">
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 {card.body}
               </p>
             </div>
@@ -521,17 +521,17 @@ export function TryChatExperience({
         >
           <h2
             id="try-chat-preview-heading"
-            className="text-2xl font-bold tracking-tight text-[#221823] sm:text-3xl"
+            className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl"
           >
             {t("previewSectionTitle")}
           </h2>
-          <p className="mt-4 text-pretty text-base leading-relaxed text-[#434654]">
+          <p className="mt-4 text-pretty text-base leading-relaxed text-muted-foreground">
             {t("previewSectionP1")}
           </p>
-          <p className="mt-3 text-pretty text-base leading-relaxed text-[#434654]">
+          <p className="mt-3 text-pretty text-base leading-relaxed text-muted-foreground">
             {t("previewSectionP2")}
           </p>
-          <p className="mt-6 text-sm font-medium text-[#747686]">
+          <p className="mt-6 text-sm font-medium text-muted-foreground">
             {t("disclaimer")}
           </p>
         </motion.section>
@@ -545,7 +545,7 @@ export function TryChatExperience({
         >
           <h2
             id="try-chat-steps-heading"
-            className="text-center text-2xl font-bold tracking-tight text-[#221823] sm:text-3xl"
+            className="text-center text-2xl font-bold tracking-tight text-foreground sm:text-3xl"
           >
             {t("stepsSectionTitle")}
           </h2>
@@ -571,7 +571,7 @@ export function TryChatExperience({
             ).map((item) => (
               <div
                 key={item.step}
-                className="relative rounded-[2rem] border border-[rgb(196_197_215/0.12)] bg-gradient-to-b from-white to-page-tint/80 p-8 shadow-[0_1px_2px_rgba(0,0,0,0.04)]"
+                className="relative rounded-[2rem] border border-[var(--mc-line-strong)] bg-[var(--mc-ink-3)] p-8"
               >
                 <span
                   className="inline-flex size-10 items-center justify-center rounded-xl bg-[#002c92] text-sm font-bold text-white"
@@ -579,10 +579,10 @@ export function TryChatExperience({
                 >
                   {item.step}
                 </span>
-                <h3 className="mt-5 text-lg font-bold text-[#221823]">
+                <h3 className="mt-5 text-lg font-bold text-foreground">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-[#434654]">
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {item.body}
                 </p>
               </div>
@@ -599,11 +599,11 @@ export function TryChatExperience({
         >
           <h2
             id="try-chat-explore-heading"
-            className="text-center text-2xl font-bold tracking-tight text-[#221823] sm:text-3xl"
+            className="text-center text-2xl font-bold tracking-tight text-foreground sm:text-3xl"
           >
             {t("exploreSectionTitle")}
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-center text-pretty text-base leading-relaxed text-[#434654]">
+          <p className="mx-auto mt-3 max-w-2xl text-center text-pretty text-base leading-relaxed text-muted-foreground">
             {t("exploreSectionLead")}
           </p>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
@@ -611,13 +611,13 @@ export function TryChatExperience({
               href="/solutions/chat-widget"
               className="group flex flex-col rounded-[2rem] border border-[var(--mc-line-strong)] bg-[var(--mc-ink-3)] p-8 transition-[box-shadow,transform] hover:-translate-y-0.5 hover:shadow-md"
             >
-              <h3 className="text-lg font-bold text-[#221823]">
+              <h3 className="text-lg font-bold text-foreground">
                 {t("exploreCard1Title")}
               </h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-[#434654]">
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
                 {t("exploreCard1Body")}
               </p>
-              <span className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-[#002c92]">
+              <span className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-[var(--mc-blue-soft)]">
                 {t("exploreCtaInternal")}
                 <ChevronRight
                   className="size-4 transition-transform group-hover:translate-x-0.5"
@@ -629,13 +629,13 @@ export function TryChatExperience({
               href="/features/memories"
               className="group flex flex-col rounded-[2rem] border border-[var(--mc-line-strong)] bg-[var(--mc-ink-3)] p-8 transition-[box-shadow,transform] hover:-translate-y-0.5 hover:shadow-md"
             >
-              <h3 className="text-lg font-bold text-[#221823]">
+              <h3 className="text-lg font-bold text-foreground">
                 {t("exploreCard2Title")}
               </h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-[#434654]">
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
                 {t("exploreCard2Body")}
               </p>
-              <span className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-[#002c92]">
+              <span className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-[var(--mc-blue-soft)]">
                 {t("exploreCtaInternal")}
                 <ChevronRight
                   className="size-4 transition-transform group-hover:translate-x-0.5"
@@ -649,13 +649,13 @@ export function TryChatExperience({
               rel="noopener noreferrer"
               className="group flex flex-col rounded-[2rem] border border-[var(--mc-line-strong)] bg-[var(--mc-ink-3)] p-8 transition-[box-shadow,transform] hover:-translate-y-0.5 hover:shadow-md"
             >
-              <h3 className="text-lg font-bold text-[#221823]">
+              <h3 className="text-lg font-bold text-foreground">
                 {t("exploreCard3Title")}
               </h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-[#434654]">
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
                 {t("exploreCard3Body")}
               </p>
-              <span className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-[#002c92]">
+              <span className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-[var(--mc-blue-soft)]">
                 {t("exploreCtaDocs")}
                 <ArrowUpRight
                   className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
@@ -670,29 +670,29 @@ export function TryChatExperience({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, delay: 0.32 }}
-          className="mx-auto mt-16 max-w-4xl rounded-[2rem] border border-[rgb(196_197_215/0.15)] bg-gradient-to-br from-soft-accent/50 to-white p-8 text-center sm:p-10"
+          className="mx-auto mt-16 max-w-4xl rounded-[2rem] border border-[var(--mc-line-strong)] bg-[var(--mc-ink-3)] p-8 text-center sm:p-10"
           aria-labelledby="try-chat-trust-heading"
         >
           <h2
             id="try-chat-trust-heading"
-            className="text-xl font-bold text-[#221823] sm:text-2xl"
+            className="text-xl font-bold text-foreground sm:text-2xl"
           >
             {t("trustSectionTitle")}
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-pretty text-sm leading-relaxed text-[#434654] sm:text-base">
+          <p className="mx-auto mt-3 max-w-2xl text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
             {t("trustSectionBody")}
           </p>
           <div
-            className="mt-8 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm text-[#434654]"
+            className="mt-8 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm text-muted-foreground"
             aria-label={t("trustStatsAria")}
           >
             <a
               href={`${LINKS.github}/stargazers`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-baseline gap-1.5 rounded-lg px-1 py-0.5 transition-colors hover:bg-soft-accent/60 hover:text-[#002c92]"
+              className="inline-flex items-baseline gap-1.5 rounded-lg px-1 py-0.5 transition-colors hover:bg-soft-accent/60 hover:text-[var(--mc-blue-soft)]"
             >
-              <span className="text-lg font-bold tabular-nums text-[#221823]">
+              <span className="text-lg font-bold tabular-nums text-foreground">
                 {formatGithubRepoStatNumber(
                   githubRepo?.stars,
                   locale,
@@ -700,16 +700,16 @@ export function TryChatExperience({
               </span>
               <span>{t("trustStatStars")}</span>
             </a>
-            <span className="text-[#747686]" aria-hidden>
+            <span className="text-muted-foreground" aria-hidden>
               —
             </span>
             <a
               href={`${LINKS.github}/forks`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-baseline gap-1.5 rounded-lg px-1 py-0.5 transition-colors hover:bg-soft-accent/60 hover:text-[#002c92]"
+              className="inline-flex items-baseline gap-1.5 rounded-lg px-1 py-0.5 transition-colors hover:bg-soft-accent/60 hover:text-[var(--mc-blue-soft)]"
             >
-              <span className="text-lg font-bold tabular-nums text-[#221823]">
+              <span className="text-lg font-bold tabular-nums text-foreground">
                 {formatGithubRepoStatNumber(
                   githubRepo?.forks,
                   locale,
@@ -717,16 +717,16 @@ export function TryChatExperience({
               </span>
               <span>{t("trustStatForks")}</span>
             </a>
-            <span className="text-[#747686]" aria-hidden>
+            <span className="text-muted-foreground" aria-hidden>
               —
             </span>
             <a
               href={`${LINKS.github}/blob/main/LICENSE`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-baseline gap-1.5 rounded-lg px-1 py-0.5 transition-colors hover:bg-soft-accent/60 hover:text-[#002c92]"
+              className="inline-flex items-baseline gap-1.5 rounded-lg px-1 py-0.5 transition-colors hover:bg-soft-accent/60 hover:text-[var(--mc-blue-soft)]"
             >
-              <span className="text-lg font-bold tabular-nums text-[#221823]">
+              <span className="text-lg font-bold tabular-nums text-foreground">
                 {githubRepo?.licenseLabel ?? "\u2014"}
               </span>
               <span>{t("trustStatLicense")}</span>

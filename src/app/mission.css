@@ -79,6 +79,8 @@
     --color-brand-200: color-mix(in oklab, var(--mc-blue) 34%, var(--mc-ink-2));
     --color-page-tint: var(--mc-ink-2);
     --color-soft-accent: var(--mc-ink-3);
+    --color-chat-input-bg: var(--mc-ink-3);
+    --color-chat-bubble-user: var(--mc-ink-4);
   }
 
   .mc-legacy-article :is(h1, h2, h3) {
@@ -369,10 +371,15 @@
       box-shadow 0.15s ease;
     cursor: pointer;
     white-space: nowrap;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
-  .mc-btn:hover {
-    border-color: var(--mc-text);
-    transform: translateY(-1px);
+  /* Hover lift only on fine pointers — iOS treats :hover as a first tap. */
+  @media (hover: hover) and (pointer: fine) {
+    .mc-btn:hover {
+      border-color: var(--mc-text);
+      transform: translateY(-1px);
+    }
   }
   .mc-btn:active {
     transform: translateY(0);
@@ -934,25 +941,31 @@
     vertical-align: 0.1em;
   }
 
-  /* Mobile drawer */
+  /* Mobile drawer — portaled out of the sticky header. Do not nest
+     position:fixed here: iOS Safari + backdrop-filter on .mc-header
+     makes `inset: 0` fill the 64px header instead of the viewport. */
   .mc-drawer {
     position: fixed;
     inset: 0;
-    z-index: 60;
+    width: 100%;
+    height: 100dvh;
+    max-height: 100dvh;
+    z-index: 80;
     background: var(--mc-ink);
+    color: var(--mc-text);
     display: flex;
     flex-direction: column;
     padding: 1rem clamp(1rem, 4vw, 2.5rem) max(1.5rem, env(safe-area-inset-bottom));
     overflow-y: auto;
-    animation: mc-drawer-in 0.22s ease-out both;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    animation: mc-drawer-in 0.22s ease-out;
   }
   @keyframes mc-drawer-in {
     from {
-      opacity: 0;
       transform: translateY(-6px);
     }
     to {
-      opacity: 1;
       transform: none;
     }
   }
@@ -1244,71 +1257,65 @@
 }
 
 /* Unlayered: leftover classic utilities on the console.
-   Pastel/paper cards + navy ink were the contrast bugs. */
-.mc :is(
-  .bg-brand-50,
-  .bg-brand-100,
-  .bg-emerald-50,
-  .bg-amber-50,
-  .bg-amber-50\/50,
-  .bg-violet-50,
-  .bg-rose-50,
-  .bg-sky-50,
-  .bg-orange-50,
-  .bg-teal-50,
-  .bg-indigo-50,
-  .from-brand-50,
-  .to-brand-100,
-  .to-brand-100\/60,
-  .bg-white\/80,
-  .bg-white\/70,
-  .bg-white\/60,
-  .bg-\[rgb\(255_255_255\/0\.65\)\]
-) {
+   Only named Tailwind classes — escaped arbitrary colors crash Lightning CSS.
+   Skip the cream chat island so bubble copy and the composer stay ink-on-paper. */
+.mc .bg-brand-50:not(.mc-paper-island *),
+.mc .bg-brand-100:not(.mc-paper-island *),
+.mc .bg-emerald-50:not(.mc-paper-island *),
+.mc .bg-amber-50:not(.mc-paper-island *),
+.mc .bg-violet-50:not(.mc-paper-island *),
+.mc .bg-rose-50:not(.mc-paper-island *),
+.mc .bg-sky-50:not(.mc-paper-island *),
+.mc .bg-orange-50:not(.mc-paper-island *),
+.mc .bg-teal-50:not(.mc-paper-island *),
+.mc .bg-indigo-50:not(.mc-paper-island *),
+.mc .bg-page-tint:not(.mc-paper-island *),
+.mc .bg-chat-input-bg:not(.mc-paper-island *),
+.mc .from-brand-50:not(.mc-paper-island *),
+.mc .from-white:not(.mc-paper-island *),
+.mc .to-brand-100:not(.mc-paper-island *),
+.mc .to-white:not(.mc-paper-island *) {
   background-color: var(--mc-ink-3) !important;
   background-image: none !important;
 }
 
-.mc :is(
-  .border-brand-200,
-  .border-emerald-200,
-  .border-amber-200,
-  .border-violet-200,
-  .border-rose-200,
-  .border-sky-200,
-  .border-orange-100,
-  .border-teal-100,
-  .border-indigo-100
-) {
+.mc .bg-page-tint:not(.mc-paper-island *) {
+  background-color: var(--mc-ink) !important;
+}
+
+.mc .border-brand-200:not(.mc-paper-island *),
+.mc .border-emerald-200:not(.mc-paper-island *),
+.mc .border-amber-200:not(.mc-paper-island *),
+.mc .border-violet-200:not(.mc-paper-island *),
+.mc .border-rose-200:not(.mc-paper-island *),
+.mc .border-sky-200:not(.mc-paper-island *) {
   border-color: var(--mc-line-strong) !important;
 }
 
-.mc .bg-page-tint {
-  background-color: var(--mc-ink) !important;
-}
-.mc [class*="to-soft-accent"] {
-  background-image: none !important;
+.mc .text-brand-700:not(.mc-paper-island *),
+.mc .text-brand-600:not(.mc-paper-island *),
+.mc .text-brand-800:not(.mc-paper-island *),
+.mc .text-emerald-700:not(.mc-paper-island *),
+.mc .text-emerald-600:not(.mc-paper-island *),
+.mc .text-amber-700:not(.mc-paper-island *),
+.mc .text-amber-600:not(.mc-paper-island *),
+.mc .text-amber-900:not(.mc-paper-island *),
+.mc .text-violet-700:not(.mc-paper-island *),
+.mc .text-rose-700:not(.mc-paper-island *),
+.mc .text-sky-700:not(.mc-paper-island *) {
+  color: var(--mc-blue-soft) !important;
 }
 
-.mc :is(
-  .text-brand-700,
-  .text-brand-600,
-  .text-brand-800,
-  .text-emerald-700,
-  .text-emerald-600,
-  .text-amber-700,
-  .text-amber-600,
-  .text-amber-800,
-  .text-amber-800\/80,
-  .text-amber-900,
-  .text-amber-900\/80,
-  .text-violet-700,
-  .text-violet-600,
-  .text-rose-700,
-  .text-rose-600,
-  .text-sky-700,
-  .text-sky-600,
-  .text-\[\#002c92\]
-) {
-  color: var(--mc-blue-soft) !important;
+/* Live chat demo stays a cream instrument so bubble copy stays dark. */
+.mc .mc-paper-island {
+  background-color: var(--mc-paper) !important;
+  color: var(--mc-ink-on-cream);
+  --foreground: var(--mc-ink-on-cream);
+  --muted-foreground: var(--mc-muted-on-cream);
+  --background: var(--mc-paper);
+  --card: var(--mc-paper);
+  --color-chat-input-bg: var(--mc-cream);
+  --color-chat-bubble-user: var(--mc-cream-2);
+  --color-soft-accent: var(--mc-cream-2);
+  --color-page-tint: var(--mc-cream);
 }

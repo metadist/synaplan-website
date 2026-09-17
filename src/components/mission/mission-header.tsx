@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { useLocale, useTranslations } from "next-intl";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { LINKS } from "@/lib/constants";
@@ -57,16 +58,38 @@ export function MissionHeader() {
   const t = useTranslations("mission");
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [portalReady, setPortalReady] = useState(false);
 
-  // Lock body scroll while the drawer is open; Escape closes it
+  useEffect(() => {
+    setPortalReady(true);
+  }, []);
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const closeOnDesktop = () => {
+      if (mq.matches) setOpen(false);
+    };
+    mq.addEventListener("change", closeOnDesktop);
+    return () => mq.removeEventListener("change", closeOnDesktop);
+  }, []);
+
+  // Lock scroll while the drawer is open; Escape closes it.
+  // html + body: iOS Safari ignores overflow:hidden on body alone.
   useEffect(() => {
     if (!open) return;
-    const prev = document.body.style.overflow;
+    const prevBody = document.body.style.overflow;
+    const prevHtml = document.documentElement.style.overflow;
     document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
     window.addEventListener("keydown", onKey);
     return () => {
-      document.body.style.overflow = prev;
+      document.body.style.overflow = prevBody;
+      document.documentElement.style.overflow = prevHtml;
       window.removeEventListener("keydown", onKey);
     };
   }, [open]);
@@ -123,7 +146,7 @@ export function MissionHeader() {
           </a>
           <button
             type="button"
-            className="mc-btn mc-btn--sm lg:hidden"
+            className="mc-btn mc-btn--sm touch-manipulation lg:hidden"
             aria-expanded={open}
             aria-controls="mc-drawer"
             onClick={() => setOpen((v) => !v)}
@@ -133,52 +156,61 @@ export function MissionHeader() {
         </div>
       </div>
 
-      {open ? (
-        <div id="mc-drawer" className="mc-drawer lg:hidden" role="dialog" aria-modal="true" aria-label={t("nav.menu")}>
-          <div className="flex h-16 items-center justify-between">
-            <span className="mc-mono text-[0.8rem] tracking-[0.18em] uppercase">{`SYNAPLAN // ${t("brand")}`}</span>
-            <button type="button" className="mc-btn mc-btn--sm" onClick={() => setOpen(false)}>
-              {t("nav.close")}
-            </button>
-          </div>
-          <nav className="mt-4 flex flex-col" aria-label="Primary mobile">
-            {MISSION_NAV.map((item) => (
-              <Link
-                key={item.key}
-                href={item.href}
-                className="mc-nav-link"
-                aria-current={isActive(item.href) ? "page" : undefined}
-                onClick={() => setOpen(false)}
-              >
-                {t(`nav.${item.key}`)}
-                <span aria-hidden>→</span>
-              </Link>
-            ))}
-            <a href={LINKS.docs} target="_blank" rel="noopener noreferrer" className="mc-nav-link">
-              {t("nav.docs")} <span aria-hidden>↗</span>
-            </a>
-            <a href={LINKS.github} target="_blank" rel="noopener noreferrer" className="mc-nav-link" data-parrot-hover="github">
-              {t("nav.github")} <span aria-hidden>↗</span>
-            </a>
-          </nav>
-          <div className="mt-8 flex flex-col gap-4">
-            <p className="mc-label">{t("nav.options")}</p>
-            <div className="flex flex-wrap items-center gap-3">
-              <ModeToggle />
-              <LocaleSwitch />
-              <ParrotSwitch />
-            </div>
-            <a href={LINKS.web} className="mc-btn mc-btn--primary mt-4">
-              {t("nav.launch")}
-            </a>
-            <div className="mc-mono mt-4 flex items-center gap-2 text-[0.625rem] tracking-[0.16em] uppercase text-[var(--mc-text-muted)]">
-              <span>{t("nav.status")}</span>
-              <Lamp tone="green" pulse />
-              <span className="text-[var(--mc-text)]">{t("nav.nominal")}</span>
-            </div>
-          </div>
-        </div>
-      ) : null}
+      {portalReady && open
+        ? createPortal(
+            <div
+              id="mc-drawer"
+              className="mc-drawer lg:hidden"
+              role="dialog"
+              aria-modal="true"
+              aria-label={t("nav.menu")}
+            >
+              <div className="flex h-16 items-center justify-between">
+                <span className="mc-mono text-[0.8rem] tracking-[0.18em] uppercase">{`SYNAPLAN // ${t("brand")}`}</span>
+                <button type="button" className="mc-btn mc-btn--sm touch-manipulation" onClick={() => setOpen(false)}>
+                  {t("nav.close")}
+                </button>
+              </div>
+              <nav className="mt-4 flex flex-col" aria-label="Primary mobile">
+                {MISSION_NAV.map((item) => (
+                  <Link
+                    key={item.key}
+                    href={item.href}
+                    className="mc-nav-link"
+                    aria-current={isActive(item.href) ? "page" : undefined}
+                    onClick={() => setOpen(false)}
+                  >
+                    {t(`nav.${item.key}`)}
+                    <span aria-hidden>→</span>
+                  </Link>
+                ))}
+                <a href={LINKS.docs} target="_blank" rel="noopener noreferrer" className="mc-nav-link">
+                  {t("nav.docs")} <span aria-hidden>↗</span>
+                </a>
+                <a href={LINKS.github} target="_blank" rel="noopener noreferrer" className="mc-nav-link" data-parrot-hover="github">
+                  {t("nav.github")} <span aria-hidden>↗</span>
+                </a>
+              </nav>
+              <div className="mt-8 flex flex-col gap-4">
+                <p className="mc-label">{t("nav.options")}</p>
+                <div className="flex flex-wrap items-center gap-3">
+                  <ModeToggle />
+                  <LocaleSwitch />
+                  <ParrotSwitch />
+                </div>
+                <a href={LINKS.web} className="mc-btn mc-btn--primary mt-4">
+                  {t("nav.launch")}
+                </a>
+                <div className="mc-mono mt-4 flex items-center gap-2 text-[0.625rem] tracking-[0.16em] uppercase text-[var(--mc-text-muted)]">
+                  <span>{t("nav.status")}</span>
+                  <Lamp tone="green" pulse />
+                  <span className="text-[var(--mc-text)]">{t("nav.nominal")}</span>
+                </div>
+              </div>
+            </div>,
+            document.querySelector(".mc") ?? document.body,
+          )
+        : null}
     </header>
   );
 }

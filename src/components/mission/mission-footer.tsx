@@ -29,7 +29,7 @@ export function MissionFooter() {
     {
       title: t("deep"),
       links: [
-        { label: t("features"), href: "/product" },
+        { label: t("features"), href: "/features/memories" },
         { label: t("widget"), href: "/solutions/chat-widget" },
         { label: t("solutions"), href: "/product" },
         { label: t("apps"), href: "/app" },
@@ -83,7 +83,7 @@ export function MissionFooter() {
               <p className="mc-label mb-4">{col.title}</p>
               <ul className="flex flex-col gap-2.5">
                 {col.links.map((link) => (
-                  <li key={link.href}>
+                  <li key={`${link.label}-${link.href}`}>
                     {link.external ? (
                       <a href={link.href} target="_blank" rel="noopener noreferrer" className="text-sm text-[var(--mc-text-muted)] transition-colors hover:text-[var(--mc-text)]">
                         {link.label} <span aria-hidden className="text-[var(--mc-text-faint)]">↗</span>

@@ -46,14 +46,17 @@ export function MissionConsole() {
 
   const [idx, setIdx] = useState(0);
   const [phase, setPhase] = useState<Phase>("received");
-  const [startedAt, setStartedAt] = useState(() => Date.now());
-  const [now, setNow] = useState(() => Date.now());
+  const [startedAt, setStartedAt] = useState(0);
+  const [now, setNow] = useState(0);
   const [stillWaiting, setStillWaiting] = useState(false);
 
   const mission = missions[idx % missions.length];
 
-  // Clock
+  // Clock starts after mount so SSR and the hydration pass both render T+00:00.
   useEffect(() => {
+    const t0 = Date.now();
+    setStartedAt(t0);
+    setNow(t0);
     const id = setInterval(() => setNow(Date.now()), 1000);
     return () => clearInterval(id);
   }, []);

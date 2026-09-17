@@ -68,7 +68,7 @@ export function TryChatDemoChatCard({
   return (
     <div
       className={cn(
-        "relative z-10 flex min-h-0 flex-col overflow-hidden",
+        "mc-paper-island relative z-10 flex min-h-0 flex-col overflow-hidden",
         variant === "embedded" &&
           "max-h-[min(640px,78vh)] rounded-[2rem] border border-white/40 bg-white/70 shadow-[0_25px_50px_-12px_rgba(0,44,146,0.08)] backdrop-blur-[10px]",
         variant === "fullscreenPortal" &&

@@ -5,8 +5,17 @@
  * The server always renders the marketing variant; an inline script applies
  * the stored attribute to <html> before first paint (see `mode-bootstrap.ts`).
  */
-import { useSyncExternalStore } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { MODE_STORAGE_KEY } from "./mode-bootstrap";
+
+/** False on the server and during the hydration pass; true after mount. */
+function useClientReady(): boolean {
+  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    setReady(true);
+  }, []);
+  return ready;
+}
 
 export type MissionMode = "marketing" | "engineer";
 
@@ -63,14 +72,18 @@ function subscribeParrot(callback: () => void) {
   return () => window.removeEventListener(PARROT_EVENT, callback);
 }
 
-/** Current mode; "marketing" during SSR/hydration, real value right after. */
+/** Current mode; "marketing" until after hydration so the toggle markup matches SSR. */
 export function useMissionMode(): MissionMode {
-  return useSyncExternalStore(subscribeMode, readMode, () => "marketing");
+  const ready = useClientReady();
+  const mode = useSyncExternalStore(subscribeMode, readMode, () => "marketing");
+  return ready ? mode : "marketing";
 }
 
-/** Whether the parrot is enabled; `true` during SSR/hydration. */
+/** Whether the parrot is enabled; `true` until after hydration so the bird markup matches SSR. */
 export function useParrotEnabled(): boolean {
-  return useSyncExternalStore(subscribeParrot, readParrotEnabled, () => true);
+  const ready = useClientReady();
+  const on = useSyncExternalStore(subscribeParrot, readParrotEnabled, () => true);
+  return ready ? on : true;
 }
 
 /** Ask the parrot to say a line (key inside `mission.parrot`). */

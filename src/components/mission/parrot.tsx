@@ -28,6 +28,7 @@ export function Parrot() {
   const [line, setLine] = useState<string | null>(null);
   const [typed, setTyped] = useState("");
   const [talking, setTalking] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   const pupilRef = useRef<SVGCircleElement>(null);
   const bodyRef = useRef<HTMLButtonElement>(null);
@@ -177,7 +178,13 @@ export function Parrot() {
     applyParrotEnabled(false);
   }
 
-  if (!enabled) return null;
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Client-only: localStorage may disable the bird. Rendering it on the server
+  // and omitting it on the first client pass trips Next's hydration overlay.
+  if (!mounted || !enabled) return null;
 
   return (
     <div className="mc-parrot" aria-live="polite">
