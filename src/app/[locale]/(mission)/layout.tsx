@@ -16,8 +16,9 @@ const spaceGrotesk = Space_Grotesk({
 
 /**
  * Mission Control chrome: header with system status + mode switch, the
- * parrot, scroll reveals and the footer. Used by the homepage and the primary
- * navigation pages (product / deploy / connect / agents / source).
+ * parrot, scroll reveals and the footer. Used by the homepage, the primary
+ * navigation pages (product / deploy / connect / agents / source) and legal
+ * pages reached from that chrome (imprint, privacy, terms).
  */
 export default async function MissionLayout({
   children,
