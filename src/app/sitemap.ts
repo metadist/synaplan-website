@@ -35,9 +35,6 @@ const PATHS: PathConfig[] = [
 
   // ── Solutions ──────────────────────────────────────────────────────────────
   { path: "/solutions/chat-widget",             priority: 0.95, changeFrequency: "monthly" },
-  { path: "/solutions/companies",               priority: 0.85, changeFrequency: "monthly" },
-  { path: "/solutions/developers",              priority: 0.85, changeFrequency: "monthly" },
-  { path: "/solutions/memories",               priority: 0.75, changeFrequency: "monthly" },
   { path: "/solutions/plugins",                priority: 0.75, changeFrequency: "monthly" },
 
   // ── Chat-Widget sub-pages ─────────────────────────────────────────────────
@@ -45,13 +42,10 @@ const PATHS: PathConfig[] = [
   { path: "/solutions/chat-widget/hospitality", priority: 0.80, changeFrequency: "monthly" },
   { path: "/solutions/chat-widget/customers",   priority: 0.80, changeFrequency: "monthly" },
 
-  // ── Features (new) ────────────────────────────────────────────────────────
-  { path: "/features",                          priority: 0.85, changeFrequency: "monthly" },
+  // ── Features (kept; /features and a few siblings redirect to Mission) ─────
   { path: "/features/multi-model",              priority: 0.82, changeFrequency: "monthly" },
   { path: "/features/audit-logs",               priority: 0.82, changeFrequency: "monthly" },
   { path: "/features/memories",                 priority: 0.78, changeFrequency: "monthly" },
-  { path: "/features/connections",              priority: 0.80, changeFrequency: "monthly" },
-  { path: "/features/mcp",                      priority: 0.78, changeFrequency: "monthly" },
   { path: "/features/documents",                priority: 0.80, changeFrequency: "monthly" },
   // SISTRIX: "chatgpt alternative" / "chatgpt alternative open source" — real search demand
   { path: "/features/chatgpt-alternative",      priority: 0.85, changeFrequency: "monthly" },

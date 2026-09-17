@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
+import { nextConfigLegacyRedirects } from "./src/lib/legacy-redirects";
 
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
@@ -154,6 +155,17 @@ const nextConfig: NextConfig = {
         destination: "/de",
         permanent: true,
       },
+      {
+        source: "/classic",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/de/classic",
+        destination: "/de",
+        permanent: true,
+      },
+      ...nextConfigLegacyRedirects(),
     ];
   },
 };

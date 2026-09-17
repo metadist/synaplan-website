@@ -1863,7 +1863,7 @@
     "memoriesTitle": "KI-Memories migrieren — von einem Modell zum anderen",
     "memoriesDesc": "ChatGPT speichert Memories eingesperrt bei OpenAI. Mit Synaplan sind Ihre Präferenzen, Tonalität, Kontext und Gesprächsverlauf strukturiert und portabel. Wechseln Sie von GPT zu Claude oder einem lokalen Modell — Ihre Memories kommen mit. Kategorisieren Sie sie, prüfen Sie, was die KI weiß, und behalten Sie die Kontrolle über den Kontext, der jede Antwort formt.",
     "memoriesLink": "Mehr über KI-Memories",
-    "memoriesHref": "/solutions/memories",
+    "memoriesHref": "/features/memories",
     "ctaPrimary": "Auf GitHub ansehen",
     "ctaSecondary": "Kostenlos starten"
   },
@@ -2499,14 +2499,14 @@
             "name": "MCP",
             "desc": "Server und Client für das Model Context Protocol. Tools einstecken, Wissen bereitstellen.",
             "status": "in betrieb",
-            "href": "/features/mcp"
+            "href": "/connect"
           },
           {
             "id": "SYS-09",
             "name": "Verbindungen",
             "desc": "Microsoft 365, Nextcloud, Dropbox, WebDAV, CalDAV. Lesen, schreiben, exportieren.",
             "status": "in betrieb",
-            "href": "/features/connections"
+            "href": "/connect"
           },
           {
             "id": "SYS-10",
@@ -2671,7 +2671,7 @@
             "id": "CH-01",
             "name": "Outlook-Add-in",
             "text": "Synamail lebt in Outlook: Threads zusammenfassen, Antworten aus Ihrem Wissen entwerfen, richtig ablegen. Web, Windows, Mac.",
-            "href": "/features/connections"
+            "href": "/connect"
           },
           {
             "id": "CH-02",
@@ -2689,13 +2689,13 @@
             "id": "CH-04",
             "name": "Mail",
             "text": "Postfächer als Agenten-Queues: klassifizieren, antworten, eskalieren. Jede Antwort protokolliert.",
-            "href": "/features/connections"
+            "href": "/connect"
           },
           {
             "id": "CH-05",
             "name": "REST-API",
             "text": "OpenAPI-3-Vertrag plus Anthropic-kompatibles Messages-Gateway — bestehende SDKs auf Ihr eigenes Synaplan richten.",
-            "href": "/solutions/developers"
+            "href": "/source"
           },
           {
             "id": "CH-06",

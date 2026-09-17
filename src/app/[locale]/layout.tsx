@@ -7,7 +7,6 @@ import { notFound } from "next/navigation";
 import { MotionPerformanceProvider } from "@/contexts/motion-performance-context";
 import { buildOrganizationSchema, buildWebSiteSchema } from "@/lib/jsonld";
 import { OG_IMAGE } from "@/lib/seo";
-import { SynaplanWidget } from "@/components/layout/synaplan-widget";
 import "../globals.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -104,14 +103,12 @@ export default async function LocaleLayout({
         suppressHydrationWarning
       >
         {/*
-          Page chrome lives in the route groups:
-          - (mission) → the "Mission Control" site (home + product nav pages)
-          - (site)    → the classic header/footer for deep content pages
+          Public chrome is Mission Control for every route group
+          ((mission) homepage + (site) deep-content pages).
         */}
         <NextIntlClientProvider locale={locale} messages={messages}>
           <MotionPerformanceProvider>{children}</MotionPerformanceProvider>
         </NextIntlClientProvider>
-        <SynaplanWidget />
       </body>
     </html>
   );

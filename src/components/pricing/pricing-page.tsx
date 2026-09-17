@@ -66,8 +66,8 @@ function PlanCard({
       className={cn(
         "relative flex flex-col rounded-2xl border p-6 transition-shadow duration-200",
         recommended
-          ? "border-brand-400 bg-white shadow-lg shadow-brand-100/50 ring-1 ring-brand-400"
-          : "border-[rgb(196_197_215/0.4)] bg-white/70 hover:shadow-md",
+          ? "border-brand-400 bg-[var(--mc-ink-3)] shadow-lg ring-1 ring-brand-400"
+          : "border-[var(--mc-line-strong)] bg-[var(--mc-ink-3)] hover:shadow-md",
       )}
     >
       {recommended && (
@@ -223,7 +223,7 @@ export function PricingPage() {
         <motion.div {...fadeUp} className="grid gap-5 lg:grid-cols-3">
 
           {/* Open Source */}
-          <div className="flex flex-col rounded-2xl border border-[rgb(196_197_215/0.4)] bg-white/80 p-7">
+          <div className="flex flex-col rounded-2xl border border-[var(--mc-line-strong)] bg-[var(--mc-ink-3)] p-7">
             <div className="mb-5 flex size-10 items-center justify-center rounded-xl bg-soft-accent">
               <GithubIcon className="size-5 text-foreground" />
             </div>
@@ -260,7 +260,7 @@ export function PricingPage() {
           </div>
 
           {/* Platform — featured */}
-          <div className="relative flex flex-col rounded-2xl border-2 border-brand-500 bg-white p-7 shadow-xl shadow-brand-100/40 ring-1 ring-brand-500/20">
+          <div className="relative flex flex-col rounded-2xl border-2 border-brand-500 bg-[var(--mc-ink-3)] p-7 shadow-xl ring-1 ring-brand-500/20">
             <div className="absolute -top-3.5 left-7 rounded-full bg-brand-600 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-white shadow">
               Popular
             </div>

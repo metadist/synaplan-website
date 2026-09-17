@@ -2,6 +2,100 @@ import type { ReactNode } from "react";
 import { Link } from "@/i18n/navigation";
 import { Lamp, Reveal, Ruler, SearchTerms, SectionHead } from "./primitives";
 
+export type Crumb = { label: string; href?: string };
+export type CtaLink = { label: string; href: string; external?: boolean; newTab?: boolean };
+
+/** Compact breadcrumb row used on migrated deep-content pages. */
+export function MissionCrumbs({ items }: { items: Crumb[] }) {
+  if (items.length === 0) return null;
+  return (
+    <nav aria-label="Breadcrumb" className="mc-wrap pt-8">
+      <ol className="mc-mono flex flex-wrap items-center gap-2 text-[0.65rem] tracking-[0.14em] uppercase text-[var(--mc-text-faint)]">
+        {items.map((item, i) => (
+          <li key={`${item.label}-${i}`} className="flex items-center gap-2">
+            {i > 0 ? <span aria-hidden>/</span> : null}
+            {item.href ? (
+              <Link href={item.href} className="transition-colors hover:text-[var(--mc-text)]">
+                {item.label}
+              </Link>
+            ) : (
+              <span className="text-[var(--mc-text)]">{item.label}</span>
+            )}
+          </li>
+        ))}
+      </ol>
+    </nav>
+  );
+}
+
+/** Sync launch panel so feature/article shells can stay non-async. */
+export function MissionCta({
+  title,
+  text,
+  primary,
+  secondary,
+}: {
+  title: string;
+  text?: string;
+  primary: CtaLink;
+  secondary?: CtaLink;
+}) {
+  const primaryBtn = primary.external ? (
+    <a
+      href={primary.href}
+      className="mc-btn mc-btn--primary"
+      target={primary.newTab === false ? undefined : "_blank"}
+      rel="noopener noreferrer"
+    >
+      [ {primary.label} ]
+    </a>
+  ) : (
+    <Link href={primary.href} className="mc-btn mc-btn--primary">
+      [ {primary.label} ]
+    </Link>
+  );
+  const secondaryBtn = secondary ? (
+    secondary.external ? (
+      <a
+        href={secondary.href}
+        className="mc-btn"
+        target={secondary.newTab === false ? undefined : "_blank"}
+        rel="noopener noreferrer"
+      >
+        {secondary.label} ↗
+      </a>
+    ) : (
+      <Link href={secondary.href} className="mc-btn">
+        {secondary.label}
+      </Link>
+    )
+  ) : null;
+
+  return (
+    <section className="mc-section relative overflow-hidden">
+      <div className="mc-grid" aria-hidden />
+      <div className="mc-wrap relative">
+        <Reveal className="mc-card mc-frame overflow-hidden p-8 sm:p-12">
+          <div className="grid items-center gap-8 lg:grid-cols-[1.4fr_1fr]">
+            <div>
+              <p className="mc-label flex items-center gap-2">
+                <Lamp tone="green" blink />
+                T-00:00:10
+              </p>
+              <h2 className="mc-display mt-4 text-[clamp(2rem,4.2vw,3.6rem)]">{title}</h2>
+              {text ? <p className="mc-lead mt-4">{text}</p> : null}
+            </div>
+            <div className="flex flex-col gap-3 lg:items-end">
+              {primaryBtn}
+              {secondaryBtn}
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 export type PanelItem = { label: string; text: string };
 export type PanelSection = { num: string; title: string; heading: string; text: string; items: PanelItem[] };
 

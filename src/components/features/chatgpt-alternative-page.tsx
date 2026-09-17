@@ -376,7 +376,7 @@ export function ChatGptAlternativePage({
       )}
 
       {/* SEO content below the chat */}
-      <div className="relative z-10 bg-white">
+      <div className="relative z-10">
         <div className="container-wide section-padding py-16 sm:py-20">
           {/* H1 + intro */}
           <motion.div
@@ -386,10 +386,10 @@ export function ChatGptAlternativePage({
             transition={{ duration: 0.5 }}
             className="mx-auto max-w-3xl text-center"
           >
-            <h1 className="text-3xl font-extrabold tracking-tight text-[#221823] sm:text-4xl lg:text-5xl">
+            <h1 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
               {tc("h1")}
             </h1>
-            <p className="mt-6 text-pretty text-lg leading-relaxed text-[#434654]">
+            <p className="mt-6 text-pretty text-lg leading-relaxed text-muted-foreground">
               {tc("intro")}
             </p>
           </motion.div>
@@ -410,8 +410,8 @@ export function ChatGptAlternativePage({
                 <div className="flex size-11 items-center justify-center rounded-xl bg-soft-accent text-[#002c92]">
                   <f.icon className="size-5" aria-hidden />
                 </div>
-                <h3 className="mt-5 text-lg font-bold text-[#221823]">{f.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-[#434654]">{f.desc}</p>
+                <h3 className="mt-5 text-lg font-bold text-foreground">{f.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.desc}</p>
               </div>
             ))}
           </motion.div>
@@ -453,8 +453,8 @@ export function ChatGptAlternativePage({
                   <card.icon className="size-5" aria-hidden />
                 </div>
                 <div className="flex-1">
-                  <h2 className="text-xl font-bold text-[#221823]">{card.title}</h2>
-                  <p className="mt-3 text-sm leading-relaxed text-[#434654]">{card.desc}</p>
+                  <h2 className="text-xl font-bold text-foreground">{card.title}</h2>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{card.desc}</p>
                   <Link
                     href={card.href}
                     className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-[#002c92] hover:underline"

@@ -496,7 +496,7 @@ export function TryChatExperience({
           {bottomCards.map((card) => (
             <div
               key={card.title}
-              className="rounded-[2rem] border border-[rgb(196_197_215/0.1)] bg-white p-8 shadow-[0_1px_2px_rgba(0,0,0,0.05)]"
+              className="rounded-[2rem] border border-[var(--mc-line-strong)] bg-[var(--mc-ink-3)] p-8"
             >
               <div className="flex size-12 items-center justify-center rounded-2xl bg-soft-accent text-[#002c92]">
                 <card.icon className="size-5" aria-hidden />
@@ -609,7 +609,7 @@ export function TryChatExperience({
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             <Link
               href="/solutions/chat-widget"
-              className="group flex flex-col rounded-[2rem] border border-[rgb(196_197_215/0.12)] bg-white p-8 shadow-[0_1px_2px_rgba(0,0,0,0.05)] transition-[box-shadow,transform] hover:-translate-y-0.5 hover:shadow-md"
+              className="group flex flex-col rounded-[2rem] border border-[var(--mc-line-strong)] bg-[var(--mc-ink-3)] p-8 transition-[box-shadow,transform] hover:-translate-y-0.5 hover:shadow-md"
             >
               <h3 className="text-lg font-bold text-[#221823]">
                 {t("exploreCard1Title")}
@@ -626,8 +626,8 @@ export function TryChatExperience({
               </span>
             </Link>
             <Link
-              href="/solutions/memories"
-              className="group flex flex-col rounded-[2rem] border border-[rgb(196_197_215/0.12)] bg-white p-8 shadow-[0_1px_2px_rgba(0,0,0,0.05)] transition-[box-shadow,transform] hover:-translate-y-0.5 hover:shadow-md"
+              href="/features/memories"
+              className="group flex flex-col rounded-[2rem] border border-[var(--mc-line-strong)] bg-[var(--mc-ink-3)] p-8 transition-[box-shadow,transform] hover:-translate-y-0.5 hover:shadow-md"
             >
               <h3 className="text-lg font-bold text-[#221823]">
                 {t("exploreCard2Title")}
@@ -647,7 +647,7 @@ export function TryChatExperience({
               href={LINKS.docs}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col rounded-[2rem] border border-[rgb(196_197_215/0.12)] bg-white p-8 shadow-[0_1px_2px_rgba(0,0,0,0.05)] transition-[box-shadow,transform] hover:-translate-y-0.5 hover:shadow-md"
+              className="group flex flex-col rounded-[2rem] border border-[var(--mc-line-strong)] bg-[var(--mc-ink-3)] p-8 transition-[box-shadow,transform] hover:-translate-y-0.5 hover:shadow-md"
             >
               <h3 className="text-lg font-bold text-[#221823]">
                 {t("exploreCard3Title")}

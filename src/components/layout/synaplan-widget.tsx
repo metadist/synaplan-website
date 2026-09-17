@@ -1,6 +1,9 @@
 /**
  * Env-var-gated Synaplan chat widget loader.
  *
+ * Not mounted: the Mission Control parrot uses the same lower-right corner,
+ * so the live widget launcher is left off the marketing site.
+ *
  * Renders nothing when SYNAPLAN_WIDGET_ID is unset (open-source default).
  * When set, injects the widget ES module script into the page.
  *

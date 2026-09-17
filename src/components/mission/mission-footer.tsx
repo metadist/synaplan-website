@@ -29,9 +29,9 @@ export function MissionFooter() {
     {
       title: t("deep"),
       links: [
-        { label: t("features"), href: "/features" },
+        { label: t("features"), href: "/product" },
         { label: t("widget"), href: "/solutions/chat-widget" },
-        { label: t("solutions"), href: "/solutions/companies" },
+        { label: t("solutions"), href: "/product" },
         { label: t("apps"), href: "/app" },
         { label: t("tryChat"), href: "/try-chat" },
         { label: t("blog"), href: "/blog" },

@@ -1863,7 +1863,7 @@
     "memoriesTitle": "Migrate Your AI Memories — From One Model to Another",
     "memoriesDesc": "ChatGPT stores memories locked inside OpenAI. With Synaplan, your preferences, tone, context, and conversation history are structured and portable. Switch from GPT to Claude or a local model — your memories come with you. Categorize them, review what the AI knows, and stay in control of the context that shapes every answer.",
     "memoriesLink": "Learn about AI Memories",
-    "memoriesHref": "/solutions/memories",
+    "memoriesHref": "/features/memories",
     "ctaPrimary": "View on GitHub",
     "ctaSecondary": "Start for free"
   },
@@ -2499,14 +2499,14 @@
             "name": "MCP",
             "desc": "Server and client for the Model Context Protocol. Plug tools in, expose your knowledge out.",
             "status": "operational",
-            "href": "/features/mcp"
+            "href": "/connect"
           },
           {
             "id": "SYS-09",
             "name": "Connections",
             "desc": "Microsoft 365, Nextcloud, Dropbox, WebDAV, CalDAV. Read, write, export.",
             "status": "operational",
-            "href": "/features/connections"
+            "href": "/connect"
           },
           {
             "id": "SYS-10",
@@ -2671,7 +2671,7 @@
             "id": "CH-01",
             "name": "Outlook add-in",
             "text": "Synamail lives inside Outlook: summarise threads, draft replies from your knowledge, file to the right place. Web, Windows, Mac.",
-            "href": "/features/connections"
+            "href": "/connect"
           },
           {
             "id": "CH-02",
@@ -2689,13 +2689,13 @@
             "id": "CH-04",
             "name": "Mail",
             "text": "Mailboxes as agent queues: classify, answer, escalate. Every reply logged.",
-            "href": "/features/connections"
+            "href": "/connect"
           },
           {
             "id": "CH-05",
             "name": "REST API",
             "text": "OpenAPI 3 contract plus an Anthropic-compatible Messages gateway — point existing SDKs at your own Synaplan.",
-            "href": "/solutions/developers"
+            "href": "/source"
           },
           {
             "id": "CH-06",

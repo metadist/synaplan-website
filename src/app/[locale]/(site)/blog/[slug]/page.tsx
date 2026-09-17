@@ -183,7 +183,7 @@ export default async function BlogPostPage({ params }: Props) {
         </header>
 
         {/* Content */}
-        <div className="prose prose-neutral dark:prose-invert max-w-none prose-headings:font-semibold prose-a:text-brand-600">
+        <div className="prose prose-invert max-w-none prose-headings:font-semibold prose-a:text-[var(--mc-blue-soft)]">
           <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeHighlight]}>
             {post.content}
           </ReactMarkdown>

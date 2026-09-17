@@ -1,17 +1,17 @@
-import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
+import { MissionChrome } from "@/components/mission/mission-chrome";
 
 /**
- * Classic site chrome — used by the deep content pages (features, solutions,
- * pricing, blog, legal, …). The homepage and the primary navigation pages use
- * the Mission Control chrome in the `(mission)` route group instead.
+ * Deep content routes (features, solutions, pricing, blog, …) use the same
+ * Mission Control chrome as the homepage. The classic white header/footer
+ * is gone.
  */
-export default function SiteLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <>
-      <Header />
-      <main className="flex-1">{children}</main>
-      <Footer />
-    </>
-  );
+export default async function SiteLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  return <MissionChrome locale={locale}>{children}</MissionChrome>;
 }

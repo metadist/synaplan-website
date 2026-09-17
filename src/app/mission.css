@@ -5,7 +5,9 @@
    - 1970s mission-control physicality: monospace labels, numbered panels,
      status lamps, cream instrument panels, technical markings.
    - Modern developer tooling: huge type, restrained glass, SVG motion.
-   Everything is scoped to `.mc` so the classic pages are unaffected.
+   Everything is scoped to `.mc`. Deep-content routes reuse this chrome;
+   leftover article pages inherit remapped semantic tokens so the old
+   white site does not reappear.
    ========================================================================== */
 
 /* Everything lives in the `components` layer so Tailwind utilities
@@ -55,6 +57,53 @@
     min-height: 100dvh;
     display: flex;
     flex-direction: column;
+
+    /* Remap classic-site semantic tokens so leftover article pages
+       (about, solutions, pricing, blog, try-chat) read as console, not paper. */
+    --background: var(--mc-ink);
+    --foreground: var(--mc-text);
+    --card: var(--mc-ink-3);
+    --card-foreground: var(--mc-text);
+    --popover: var(--mc-ink-3);
+    --popover-foreground: var(--mc-text);
+    --muted: var(--mc-ink-3);
+    --muted-foreground: var(--mc-text-muted);
+    --accent: var(--mc-ink-4);
+    --accent-foreground: var(--mc-text);
+    --secondary: var(--mc-ink-3);
+    --secondary-foreground: var(--mc-text);
+    --border: var(--mc-line-strong);
+    --input: var(--mc-line-strong);
+    --color-brand-50: color-mix(in oklab, var(--mc-blue) 16%, var(--mc-ink-3));
+    --color-brand-100: color-mix(in oklab, var(--mc-blue) 22%, var(--mc-ink-3));
+    --color-brand-200: color-mix(in oklab, var(--mc-blue) 34%, var(--mc-ink-2));
+    --color-page-tint: var(--mc-ink-2);
+    --color-soft-accent: var(--mc-ink-3);
+  }
+
+  .mc-legacy-article :is(h1, h2, h3) {
+    font-family: var(--mc-display);
+    letter-spacing: -0.03em;
+  }
+
+  .mc-legacy-article .btn-figma-primary {
+    background: var(--mc-blue);
+    color: #fff;
+  }
+
+  /* Tailwind brand-50/100 are compiled to static lights — force them dark
+     so leftover article cards do not flash paper-white on the console. */
+  .mc :is(.bg-brand-50, .bg-brand-100, .from-brand-50, .to-brand-100\/60, .to-brand-100) {
+    background-color: var(--mc-ink-3);
+    background-image: none;
+  }
+  .mc .border-brand-200 {
+    border-color: var(--mc-line-strong);
+  }
+  .mc .text-brand-700,
+  .mc .text-brand-600,
+  .mc .text-brand-800 {
+    color: var(--mc-blue-soft);
   }
 
   .mc ::selection {
@@ -1192,4 +1241,74 @@
   html[data-motion-profile="reduced"] .mc-scanline {
     display: none;
   }
+}
+
+/* Unlayered: leftover classic utilities on the console.
+   Pastel/paper cards + navy ink were the contrast bugs. */
+.mc :is(
+  .bg-brand-50,
+  .bg-brand-100,
+  .bg-emerald-50,
+  .bg-amber-50,
+  .bg-amber-50\/50,
+  .bg-violet-50,
+  .bg-rose-50,
+  .bg-sky-50,
+  .bg-orange-50,
+  .bg-teal-50,
+  .bg-indigo-50,
+  .from-brand-50,
+  .to-brand-100,
+  .to-brand-100\/60,
+  .bg-white\/80,
+  .bg-white\/70,
+  .bg-white\/60,
+  .bg-\[rgb\(255_255_255\/0\.65\)\]
+) {
+  background-color: var(--mc-ink-3) !important;
+  background-image: none !important;
+}
+
+.mc :is(
+  .border-brand-200,
+  .border-emerald-200,
+  .border-amber-200,
+  .border-violet-200,
+  .border-rose-200,
+  .border-sky-200,
+  .border-orange-100,
+  .border-teal-100,
+  .border-indigo-100
+) {
+  border-color: var(--mc-line-strong) !important;
+}
+
+.mc .bg-page-tint {
+  background-color: var(--mc-ink) !important;
+}
+.mc [class*="to-soft-accent"] {
+  background-image: none !important;
+}
+
+.mc :is(
+  .text-brand-700,
+  .text-brand-600,
+  .text-brand-800,
+  .text-emerald-700,
+  .text-emerald-600,
+  .text-amber-700,
+  .text-amber-600,
+  .text-amber-800,
+  .text-amber-800\/80,
+  .text-amber-900,
+  .text-amber-900\/80,
+  .text-violet-700,
+  .text-violet-600,
+  .text-rose-700,
+  .text-rose-600,
+  .text-sky-700,
+  .text-sky-600,
+  .text-\[\#002c92\]
+) {
+  color: var(--mc-blue-soft) !important;
 }
