@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { redirect } from "@/i18n/navigation";
 import { setRequestLocale } from "next-intl/server";
 
@@ -8,8 +9,9 @@ export async function LegacyRedirect({
 }: {
   params: Promise<{ locale: string }>;
   href: string;
-}) {
+}): Promise<ReactNode> {
   const { locale } = await params;
   setRequestLocale(locale);
   redirect({ href, locale });
+  return null;
 }

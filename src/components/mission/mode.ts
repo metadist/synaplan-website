@@ -75,7 +75,7 @@ function subscribeParrot(callback: () => void) {
 /** Current mode; "marketing" until after hydration so the toggle markup matches SSR. */
 export function useMissionMode(): MissionMode {
   const ready = useClientReady();
-  const mode = useSyncExternalStore(subscribeMode, readMode, () => "marketing");
+  const mode = useSyncExternalStore<MissionMode>(subscribeMode, readMode, () => "marketing");
   return ready ? mode : "marketing";
 }
 
