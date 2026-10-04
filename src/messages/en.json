@@ -2067,7 +2067,7 @@
     },
     "hero": {
       "eyebrow": "SYNAPLAN // MISSION CONTROL",
-      "title": "Open-source AI platform. Put it to work.",
+      "title": "We produce AI freedom.",
       "subtitle": "Self-hosted AI agents, a GDPR-compliant chatbot widget and RAG over your documents — on WhatsApp, Outlook, your website, API and MCP. Run it with Docker or Kubernetes, or host it in Germany. Apache-2.0 ChatGPT alternative.",
       "primary": "Start a mission",
       "secondary": "Read the source",
@@ -2076,6 +2076,7 @@
       "engineerSubtitle": "PHP 8.4 / Symfony backend, Vue 3 frontend, MariaDB VECTOR + Qdrant, gRPC inference, OpenAPI contract, MCP server and client. One `docker compose up -d` away."
     },
     "ticker": [
+      "We produce AI freedom",
       "Apache-2.0 licensed",
       "docker compose up -d",
       "helm install synaplan",
@@ -2411,7 +2412,7 @@
       ]
     },
     "footer": {
-      "tagline": "Open-source AI platform for self-hosted agents, chatbots and RAG.",
+      "tagline": "We produce AI freedom.",
       "product": "Product",
       "deep": "Deep dives",
       "company": "Company",

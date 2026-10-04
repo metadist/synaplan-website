@@ -2067,7 +2067,7 @@
     },
     "hero": {
       "eyebrow": "SYNAPLAN // MISSION CONTROL",
-      "title": "Open-Source-KI-Plattform. Gib ihr einen Job.",
+      "title": "Wir schaffen KI-Freiraum.",
       "subtitle": "Self-hosted KI-Agenten, ein DSGVO-konformes Chatbot-Widget und RAG über Ihre Dokumente — auf WhatsApp, Outlook, Ihrer Website, API und MCP. Mit Docker oder Kubernetes betreiben oder in Deutschland hosten. Apache-2.0 ChatGPT-Alternative.",
       "primary": "Mission starten",
       "secondary": "Quellcode lesen",
@@ -2076,6 +2076,7 @@
       "engineerSubtitle": "PHP 8.4 / Symfony-Backend, Vue-3-Frontend, MariaDB VECTOR + Qdrant, gRPC-Inferenz, OpenAPI-Vertrag, MCP-Server und -Client. Ein `docker compose up -d` entfernt."
     },
     "ticker": [
+      "Wir schaffen KI-Freiraum",
       "Lizenz: Apache-2.0",
       "docker compose up -d",
       "helm install synaplan",
@@ -2411,7 +2412,7 @@
       ]
     },
     "footer": {
-      "tagline": "Open-Source-KI-Plattform für self-hosted Agenten, Chatbots und RAG.",
+      "tagline": "Wir schaffen KI-Freiraum.",
       "product": "Produkt",
       "deep": "Vertiefung",
       "company": "Unternehmen",

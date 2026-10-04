@@ -19,6 +19,9 @@ export const MISSION_NAV = [
   { key: "source", href: "/source" },
 ] as const;
 
+/** Desktop bar stays short. Source stays in the menu and the footer. */
+const DESKTOP_NAV = MISSION_NAV.filter((item) => item.key !== "source");
+
 function LocaleSwitch({ className }: { className?: string }) {
   const locale = useLocale();
   const router = useRouter();
@@ -112,7 +115,7 @@ export function MissionHeader() {
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Primary">
-          {MISSION_NAV.map((item) => (
+          {DESKTOP_NAV.map((item) => (
             <Link key={item.key} href={item.href} className="mc-nav-link" aria-current={isActive(item.href) ? "page" : undefined}>
               {t(`nav.${item.key}`)}
             </Link>
@@ -124,12 +127,7 @@ export function MissionHeader() {
 
         {/* Right cluster */}
         <div className="flex items-center gap-2">
-          <div className="mc-mono hidden items-center gap-2 text-[0.625rem] tracking-[0.16em] uppercase text-[var(--mc-text-muted)] xl:flex" title={`${t("nav.status")}: ${t("nav.nominal")}`}>
-            <span className="text-[var(--mc-text-faint)]">{t("nav.status")}</span>
-            <Lamp tone="green" pulse />
-            <span className="text-[var(--mc-text)]">{t("nav.nominal")}</span>
-          </div>
-          <ModeToggle className="hidden md:block" />
+          <ModeToggle className="hidden lg:block" />
           <LocaleSwitch className="hidden md:inline-flex" />
           <a
             href={LINKS.github}

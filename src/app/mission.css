@@ -916,10 +916,10 @@
   .mc-nav-link {
     font-family: var(--mc-mono);
     font-size: 0.6875rem;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--mc-text-muted);
-    padding: 0.55rem 0.7rem;
+    padding: 0.5rem 0.45rem;
     border-radius: 6px;
     text-decoration: none;
     transition:
@@ -1008,7 +1008,7 @@
     cursor: pointer;
     filter: drop-shadow(0 8px 18px rgba(26, 26, 232, 0.35));
     transform-origin: 50% 90%;
-    animation: mc-parrot-idle 6s ease-in-out infinite;
+    animation: mc-parrot-idle 4.2s ease-in-out infinite;
   }
   @media (min-width: 640px) {
     .mc-parrot-body {
@@ -1032,16 +1032,16 @@
   @keyframes mc-parrot-idle {
     0%,
     100% {
-      transform: translateY(0) rotate(0deg);
+      transform: translate(0, 0) rotate(0deg);
     }
-    30% {
-      transform: translateY(-3px) rotate(-1.5deg);
+    25% {
+      transform: translate(8px, -16px) rotate(-7deg);
     }
-    60% {
-      transform: translateY(0) rotate(1deg);
+    50% {
+      transform: translate(0, -22px) rotate(1deg);
     }
-    80% {
-      transform: translateY(-2px) rotate(0deg);
+    75% {
+      transform: translate(-8px, -8px) rotate(6deg);
     }
   }
   @keyframes mc-parrot-squawk {
