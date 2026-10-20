@@ -39,7 +39,6 @@
     "bookDemo": "Chat on WhatsApp",
     "learnMore": "Learn more",
     "viewOnGithub": "View on GitHub",
-    "madeInGermany": "Made in Germany",
     "gdprCompliant": "GDPR compliant",
     "openSource": "100% Open Source",
     "getStarted": "Get started",
@@ -736,8 +735,7 @@
     "title": "One AI. Every channel. Full control.",
     "subtitle": "Start for free or chat with our AI directly via WhatsApp to get a clear AI roadmap for your organization.",
     "immediately": "Immediately available",
-    "gdpr": "GDPR compliant",
-    "germany": "Made in Germany"
+    "gdpr": "GDPR compliant"
   },
   "footer": {
     "platform": "Platform",
@@ -1398,8 +1396,7 @@
     "ctaBannerTitle": "Ready to put your AI workflows in order?",
     "ctaBannerBody": "Start free and connect your first knowledge source today. Upgrade when your team needs more.",
     "openSource": "100% Open Source",
-    "gdpr": "GDPR compliant",
-    "germany": "Made in Germany"
+    "gdpr": "GDPR compliant"
   },
   "appPage": {
     "metaTitle": "Synaplan App for iPhone and Android",
@@ -1411,7 +1408,6 @@
     "heroLead": "Your chats, documents and AI assistants — on iPhone and Android. Same account, same data. Pick up any conversation where you left it.",
     "sameAccount": "Same account",
     "gdpr": "GDPR compliant",
-    "germany": "Made in Germany",
     "storesTitle": "Download the app",
     "storesLead": "On a computer, scan the QR code with your phone. On a phone, tap the store for your device.",
     "iosTitle": "iPhone and iPad",
@@ -1732,7 +1728,7 @@
     "ctaSecondary": "Test via WhatsApp"
   },
   "aboutPage": {
-    "metaTitle": "About Synaplan — Open-Source AI, Made in Germany",
+    "metaTitle": "About Synaplan — Open-Source AI",
     "metaDescription": "Synaplan is an open-source AI platform built by metadist GmbH in Düsseldorf, Germany. Multi-model routing, RAG, audit logs, and a GDPR-compliant chat widget.",
     "breadcrumbHome": "Home",
     "breadcrumbAbout": "About",
@@ -2020,14 +2016,13 @@
       },
       "source": {
         "title": "Open-Source AI Platform — Apache-2.0, Self-Hosted | Synaplan",
-        "description": "Synaplan is a fully open-source AI platform under Apache-2.0: self-hosted AI, Helm charts, desktop client and Outlook add-in. No community edition — the real product. Made in Germany. Member of the OSBA.",
+        "description": "Synaplan is a fully open-source AI platform under Apache-2.0: self-hosted AI, Helm charts, desktop client and Outlook add-in. No community edition — the real product. Member of the OSBA.",
         "keywords": [
           "open source AI",
           "Apache-2.0",
           "self-hosted AI",
           "GitHub",
-          "digital sovereignty",
-          "Made in Germany"
+          "digital sovereignty"
         ],
         "searchTerms": [
           "Open-source AI",
@@ -2035,8 +2030,7 @@
           "Self-hosted",
           "GitHub",
           "Helm charts",
-          "Digital sovereignty",
-          "Made in Germany"
+          "Digital sovereignty"
         ]
       }
     },
@@ -2311,7 +2305,7 @@
       "num": "06",
       "title": "The source",
       "heading": "Open-source AI platform. Apache-2.0. All of it.",
-      "text": "Platform, Helm charts, desktop client, Outlook add-in — public repositories under Apache-2.0. Self-host it, fork it, audit it. Your data stays where you put it. Made in Germany.",
+      "text": "Platform, Helm charts, desktop client, Outlook add-in — public repositories under Apache-2.0. Self-host it, fork it, audit it. Your data stays where you put it.",
       "stars": "GitHub stars",
       "forks": "Forks",
       "license": "License",
@@ -2812,7 +2806,7 @@
       "source": {
         "eyebrow": "SOURCE // SYS-00",
         "title": "Open-source AI platform. Apache-2.0. All of it.",
-        "lead": "Synaplan is a fully open-source AI platform under Apache-2.0 — self-hosted AI, Helm charts, desktop client, Outlook add-in. Not a community edition next to a real one. The real one. Made in Germany.",
+        "lead": "Synaplan is a fully open-source AI platform under Apache-2.0 — self-hosted AI, Helm charts, desktop client, Outlook add-in. Not a community edition next to a real one. The real one.",
         "reposTitle": "Repositories",
         "repos": [
           {

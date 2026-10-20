@@ -11,7 +11,7 @@ export function CTASection() {
   const t = useTranslations("cta");
   const tc = useTranslations("common");
 
-  const badges = [t("immediately"), t("gdpr"), t("germany")];
+  const badges = [t("immediately"), t("gdpr")];
 
   return (
     <section className="py-20 sm:py-28">

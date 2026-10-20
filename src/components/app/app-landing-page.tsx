@@ -46,7 +46,7 @@ export async function AppLandingPage({ locale }: { locale: string }) {
           {t("heroLead")}
         </p>
         <div className="mt-6 flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
-          {(["sameAccount", "gdpr", "germany"] as const).map((k) => (
+          {(["sameAccount", "gdpr"] as const).map((k) => (
             <div key={k} className="flex items-center gap-2">
               <CheckCircle2 className="size-4 text-brand-600 dark:text-brand-400" />
               <span>{t(k)}</span>

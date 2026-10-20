@@ -67,7 +67,7 @@ export async function CompaniesHubPage({ locale }: { locale: string }) {
           </a>
         </div>
         <div className="mt-6 flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
-          {(["openSource", "gdpr", "germany"] as const).map((k) => (
+          {(["openSource", "gdpr"] as const).map((k) => (
             <div key={k} className="flex items-center gap-2">
               <CheckCircle2 className="size-4 text-[#002c92]" />
               <span>{t(k)}</span>

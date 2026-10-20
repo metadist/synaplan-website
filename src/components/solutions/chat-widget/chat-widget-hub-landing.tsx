@@ -82,10 +82,6 @@ export function ChatWidgetHubLanding() {
                   <Shield className="size-4 text-[#002c92]" />
                   <span>{tc("gdprCompliant")}</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Globe className="size-4 text-[#002c92]" />
-                  <span>{tc("madeInGermany")}</span>
-                </div>
               </div>
               <a
                 href={`${LINKS.docs}?utm_source=site&utm_medium=chat-widget-landing`}
