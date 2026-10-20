@@ -26,7 +26,7 @@ export default async function MissionHomePage({ params }: { params: Promise<{ lo
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const stats = getSynaplanGithubRepoStats();
+  const stats = await getSynaplanGithubRepoStats();
   const tf = await getTranslations({ locale, namespace: "faq" });
   const faqItems = tf.raw("items") as { q: string; a: string }[];
   const tm = await getTranslations({ locale, namespace: "mission.meta.home" });

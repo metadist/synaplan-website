@@ -29,6 +29,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ChatGptAlternativeRoute({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
-  const githubRepo = getSynaplanGithubRepoStats()
+  const githubRepo = await getSynaplanGithubRepoStats()
   return <ChatGptAlternativePage githubRepo={githubRepo} />
 }

@@ -28,7 +28,7 @@ export default async function SourcePage({ params }: { params: Promise<{ locale:
   const tm = await getTranslations({ locale, namespace: "mission.meta.source" });
   const repos = t.raw("repos") as Repo[];
   const principles = t.raw("principles") as Principle[];
-  const stats = getSynaplanGithubRepoStats();
+  const stats = await getSynaplanGithubRepoStats();
 
   return (
     <>

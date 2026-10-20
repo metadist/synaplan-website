@@ -720,7 +720,7 @@
       },
       {
         "q": "Can I self-host Synaplan?",
-        "a": "Yes — that is one of Synaplan's core strengths. A single `docker compose up -d` is all it takes. The standard setup (~9 GB) includes local AI via Ollama; the minimal setup (~5 GB) works with cloud APIs only (Groq, OpenAI). Runs on any standard Linux server."
+        "a": "Yes. Clone the repository, run `make up`, and open http://localhost:5173. The standard install is about 4 GB and uses a cloud model. Local AI (Ollama) is an extra profile and about 5 GB. A local chat model adds about 14 GB."
       },
       {
         "q": "What are Synaplan plugins?",
@@ -1459,16 +1459,16 @@
     "f3Title": "Plugin system",
     "f3Desc": "Extend Synaplan with purpose-built plugins for OpenCloud, WordPress, marketing, and more. Or publish your own under the metadist organisation.",
     "f4Title": "Docker & self-hosting",
-    "f4Desc": "Deploy in minutes with docker compose. Full stack ready out of the box — including local AI inference via Ollama so your data never leaves your infrastructure.",
+    "f4Desc": "Start locally with `make up`. The standard install is about 4 GB and uses a cloud model. Local AI is an optional profile.",
     "f5Title": "Multi-model routing",
     "f5Desc": "Route by cost, latency, or policy. Swap models without touching your integration code — GPT, Claude, Gemini, and any local model work interchangeably.",
     "f6Title": "Vector search",
     "f6Desc": "Qdrant and MariaDB VECTOR for semantic RAG — no external embedding service required. Fine-tune retrieval per knowledge source and use case.",
-    "quickstartTitle": "Up and running in 2 minutes",
+    "quickstartTitle": "Start it locally",
     "quickstartStep1": "Clone the repo",
     "quickstartStep2": "Start all services",
     "quickstartStep3": "Open the app",
-    "quickstartStep3Desc": "Open http://localhost:5173 — full stack ready.",
+    "quickstartStep3Desc": "Open http://localhost:5173. A status page comes up first. The first start takes a few minutes.",
     "pluginsCtaTitle": "Extend Synaplan with plugins",
     "pluginsCtaBody": "Marketing, Synaform 4.x, Synamail, Nextcloud, OpenCloud, ownCloud.online, WordPress — and more on the way. All plugins are open-source and follow the same architecture.",
     "pluginsCtaLink": "Explore plugins →"
@@ -2073,12 +2073,12 @@
       "secondary": "Read the source",
       "note": "Apache-2.0 · Docker · Kubernetes · self-hosted or hosted in Germany",
       "engineerTitle": "Open-source AI platform. Self-hosted. No lock-in.",
-      "engineerSubtitle": "PHP 8.4 / Symfony backend, Vue 3 frontend, MariaDB VECTOR + Qdrant, gRPC inference, OpenAPI contract, MCP server and client. One `docker compose up -d` away."
+      "engineerSubtitle": "PHP 8.4 / Symfony backend, Vue 3 frontend, MariaDB VECTOR + Qdrant, gRPC inference, OpenAPI contract, MCP server and client. One `make up` away."
     },
     "ticker": [
       "We produce AI freedom",
       "Apache-2.0 licensed",
-      "docker compose up -d",
+      "make up",
       "helm install synaplan",
       "Outlook · WhatsApp · Web · API · Desktop",
       "MCP server + client",
@@ -2407,7 +2407,7 @@
         "Nobody ever reads the ticker. You did. Respect.",
         "Try engineer mode. It's in the header. I'll wait.",
         "Apache-2.0. Say it with me.",
-        "docker compose up -d. That's the whole install.",
+        "make up. That's the local install.",
         "Cloud is just someone else's Kubernetes."
       ]
     },
@@ -2594,11 +2594,11 @@
           {
             "id": "T-01",
             "label": "Laptop",
-            "heading": "docker compose up -d",
-            "text": "The complete development stack — backend, worker, frontend, MariaDB, Redis, Qdrant, Ollama — in about ten minutes on any machine with Docker.",
+            "heading": "make up",
+            "text": "The development stack on any machine with Docker. A status page answers on port 5173 within seconds. The first start takes a few minutes.",
             "facts": [
-              "~3 GB standard install, cloud AI",
-              "+ local AI via the local-ai compose profile",
+              "~4 GB standard install, cloud AI",
+              "Local AI about 5 GB; a local chat model adds about 14 GB",
               "Linux, macOS (Apple Silicon native), Windows/WSL2"
             ]
           },
