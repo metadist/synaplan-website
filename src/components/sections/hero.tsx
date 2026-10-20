@@ -75,7 +75,25 @@ export function HeroSection() {
                 </a>
               </div>
 
-              <p className="mt-5 w-full max-w-xl text-center text-sm leading-relaxed text-muted-foreground wrap-break-word lg:text-left">
+              <p className="mt-5 flex w-full max-w-xl flex-wrap items-center justify-center gap-x-4 gap-y-2 text-center text-sm leading-relaxed text-muted-foreground wrap-break-word lg:justify-start lg:text-left">
+                <a
+                  href={LINKS.quickstart}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-[#002c92] underline decoration-[#002c92]/35 underline-offset-4 transition-colors hover:text-[#001f6b] hover:decoration-[#001f6b]/50"
+                >
+                  {t("hero.selfHostCta")}
+                </a>
+                <span aria-hidden>·</span>
+                <a
+                  href={LINKS.demoDocs}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-[#002c92] underline decoration-[#002c92]/35 underline-offset-4 transition-colors hover:text-[#001f6b] hover:decoration-[#001f6b]/50"
+                >
+                  {t("hero.demoDocsCta")}
+                </a>
+                <span aria-hidden>·</span>
                 <Link
                   href="/try-chat"
                   className="font-medium text-[#002c92] underline decoration-[#002c92]/35 underline-offset-4 transition-colors hover:text-[#001f6b] hover:decoration-[#001f6b]/50"
