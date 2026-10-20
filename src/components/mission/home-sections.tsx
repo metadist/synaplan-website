@@ -46,9 +46,12 @@ export async function Hero({ locale }: { locale: string }) {
             <a href={LINKS.web} className="mc-btn mc-btn--primary">
               [ {t("primary")} ]
             </a>
-            <a href={LINKS.github} target="_blank" rel="noopener noreferrer" className="mc-btn" data-parrot-hover="github">
+            <a href={LINKS.quickstart} target="_blank" rel="noopener noreferrer" className="mc-btn" data-parrot-hover="github">
               <GithubIcon className="size-4" />
-              {t("secondary")}
+              {t("selfHostCta")}
+            </a>
+            <a href={LINKS.demoDocs} target="_blank" rel="noopener noreferrer" className="mc-btn">
+              {t("demoDocsCta")} ↗
             </a>
           </div>
           <p className="mc-label mt-6 text-[0.6rem]">{t("note")}</p>
