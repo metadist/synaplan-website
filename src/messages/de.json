@@ -39,7 +39,6 @@
     "bookDemo": "Chat via WhatsApp",
     "learnMore": "Mehr erfahren",
     "viewOnGithub": "Auf GitHub ansehen",
-    "madeInGermany": "Made in Germany",
     "gdprCompliant": "DSGVO-konform",
     "openSource": "100% Open Source",
     "getStarted": "Jetzt starten",
@@ -736,8 +735,7 @@
     "title": "Eine KI. Jeder Kanal. Volle Kontrolle.",
     "subtitle": "Kostenlos starten oder direkt via WhatsApp mit unserer KI chatten — für eine klare KI-Roadmap für Ihr Unternehmen.",
     "immediately": "Sofort verfügbar",
-    "gdpr": "DSGVO-konform",
-    "germany": "Made in Germany"
+    "gdpr": "DSGVO-konform"
   },
   "footer": {
     "platform": "Plattform",
@@ -1398,8 +1396,7 @@
     "ctaBannerTitle": "Bereit, Ihre KI-Workflows in Ordnung zu bringen?",
     "ctaBannerBody": "Starten Sie kostenlos und verbinden Sie noch heute Ihre erste Wissensquelle. Upgraden Sie, wenn Ihr Team mehr benötigt.",
     "openSource": "100% Open Source",
-    "gdpr": "DSGVO-konform",
-    "germany": "Made in Germany"
+    "gdpr": "DSGVO-konform"
   },
   "appPage": {
     "metaTitle": "Synaplan-App für iPhone und Android",
@@ -1411,7 +1408,6 @@
     "heroLead": "Ihre Chats, Dokumente und KI-Assistenten — auf iPhone und Android. Gleiches Konto, gleiche Daten. Setzen Sie jedes Gespräch dort fort, wo Sie aufgehört haben.",
     "sameAccount": "Gleiches Konto",
     "gdpr": "DSGVO-konform",
-    "germany": "Made in Germany",
     "storesTitle": "App herunterladen",
     "storesLead": "Am Computer scannen Sie den QR-Code mit dem Handy. Am Handy tippen Sie auf den Store für Ihr Gerät.",
     "iosTitle": "iPhone und iPad",
@@ -1732,7 +1728,7 @@
     "ctaSecondary": "Test via WhatsApp"
   },
   "aboutPage": {
-    "metaTitle": "Über Synaplan — Open-Source-KI, Made in Germany",
+    "metaTitle": "Über Synaplan — Open-Source-KI",
     "metaDescription": "Synaplan ist eine Open-Source-KI-Plattform der metadist GmbH aus Düsseldorf. Multi-Model-Routing, RAG, Audit-Logs und ein DSGVO-konformes Chat-Widget.",
     "breadcrumbHome": "Startseite",
     "breadcrumbAbout": "Über uns",
@@ -2020,14 +2016,13 @@
       },
       "source": {
         "title": "Open-Source-KI-Plattform — Apache-2.0, Self-Hosted | Synaplan",
-        "description": "Synaplan ist eine vollständig offene KI-Plattform unter Apache-2.0: Self-Hosted KI, Helm-Charts, Desktop-Client und Outlook-Add-in. Keine Community-Edition — das echte Produkt. Made in Germany. Mitglied der OSBA.",
+        "description": "Synaplan ist eine vollständig offene KI-Plattform unter Apache-2.0: Self-Hosted KI, Helm-Charts, Desktop-Client und Outlook-Add-in. Keine Community-Edition — das echte Produkt. Mitglied der OSBA.",
         "keywords": [
           "Open-Source-KI",
           "Apache-2.0",
           "Self-Hosted KI",
           "GitHub",
-          "digitale Souveränität",
-          "Made in Germany"
+          "digitale Souveränität"
         ],
         "searchTerms": [
           "Open-Source-KI",
@@ -2035,8 +2030,7 @@
           "Self-Hosted",
           "GitHub",
           "Helm-Charts",
-          "Digitale Souveränität",
-          "Made in Germany"
+          "Digitale Souveränität"
         ]
       }
     },
@@ -2311,7 +2305,7 @@
       "num": "06",
       "title": "Der Quellcode",
       "heading": "Open-Source-KI-Plattform. Apache-2.0. Der ganze Code.",
-      "text": "Plattform, Helm-Charts, Desktop-Client, Outlook-Add-in — öffentliche Repositories unter Apache-2.0. Self-hosten, forken, prüfen. Ihre Daten bleiben, wo Sie sie hingelegt haben. Made in Germany.",
+      "text": "Plattform, Helm-Charts, Desktop-Client, Outlook-Add-in — öffentliche Repositories unter Apache-2.0. Self-hosten, forken, prüfen. Ihre Daten bleiben, wo Sie sie hingelegt haben.",
       "stars": "GitHub-Sterne",
       "forks": "Forks",
       "license": "Lizenz",
@@ -2812,7 +2806,7 @@
       "source": {
         "eyebrow": "SOURCE // SYS-00",
         "title": "Open-Source-KI-Plattform. Apache-2.0. Der ganze Code.",
-        "lead": "Synaplan ist eine vollständig offene KI-Plattform unter Apache-2.0 — Self-Hosted KI, Helm-Charts, Desktop-Client, Outlook-Add-in. Keine Community-Edition neben einer echten. Die echte. Made in Germany.",
+        "lead": "Synaplan ist eine vollständig offene KI-Plattform unter Apache-2.0 — Self-Hosted KI, Helm-Charts, Desktop-Client, Outlook-Add-in. Keine Community-Edition neben einer echten. Die echte.",
         "reposTitle": "Repositories",
         "repos": [
           {

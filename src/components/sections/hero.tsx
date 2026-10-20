@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { buttonVariants } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { LINKS } from "@/lib/constants";
-import { ArrowRight, ChevronDown, Globe, Shield } from "lucide-react";
+import { ArrowRight, ChevronDown, Shield } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { FloatingOrbs } from "@/components/interactive/floating-orbs";
 import { HeroChatSlot } from "@/components/sections/hero-chat-slot";
@@ -92,10 +92,6 @@ export function HeroSection() {
                 <div className="flex min-w-0 items-center gap-2">
                   <Shield className="size-4 shrink-0 text-[#002c92]" />
                   <span className="wrap-break-word">{t("common.gdprCompliant")}</span>
-                </div>
-                <div className="flex min-w-0 items-center gap-2">
-                  <Globe className="size-4 shrink-0 text-[#002c92]" />
-                  <span className="wrap-break-word">{t("common.madeInGermany")}</span>
                 </div>
               </div>
             </div>
