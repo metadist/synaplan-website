@@ -115,7 +115,7 @@ export async function DevelopersHubPage({ locale }: { locale: string }) {
             </div>
             <div>
               <p className="text-white/40"># {t("quickstartStep2")}</p>
-              <p className="mt-1 text-green-400">docker compose up -d</p>
+              <p className="mt-1 text-green-400">make up</p>
             </div>
             <div>
               <p className="text-white/40"># {t("quickstartStep3")} — {t("quickstartStep3Desc")}</p>

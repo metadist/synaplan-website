@@ -720,7 +720,7 @@
       },
       {
         "q": "Kann ich Synaplan selbst hosten?",
-        "a": "Ja — das ist eine der Kernstärken von Synaplan. Ein einziges `docker compose up -d` genügt. Das Standardsetup (~9 GB) enthält lokale KI via Ollama; das Minimalsetup (~5 GB) funktioniert nur mit Cloud-APIs (Groq, OpenAI). Läuft auf jedem Standard-Linux-Server."
+        "a": "Ja. Repository klonen, `make up` ausführen und http://localhost:5173 öffnen. Die Standardinstallation braucht etwa 4 GB und nutzt ein Cloud-Modell. Lokale KI (Ollama) ist ein extra Profil und etwa 5 GB. Ein lokales Chat-Modell kommt mit etwa 14 GB dazu."
       },
       {
         "q": "Was sind Synaplan-Plugins?",
@@ -1459,16 +1459,16 @@
     "f3Title": "Plugin-System",
     "f3Desc": "Erweitern Sie Synaplan mit Plugins für OpenCloud, WordPress, Marketing und mehr. Oder veröffentlichen Sie eigene Plugins und nehmen Sie sie in die Liste der Synaplan-Plugins auf.",
     "f4Title": "Docker & Self-Hosting",
-    "f4Desc": "In Minuten deployen mit docker compose. Vollständiger Stack sofort einsatzbereit — inklusive lokaler KI-Inferenz über Ollama, damit Ihre Daten Ihre Infrastruktur nie verlassen.",
+    "f4Desc": "Lokal starten mit `make up`. Die Standardinstallation braucht etwa 4 GB und nutzt ein Cloud-Modell. Lokale KI ist ein optionales Profil.",
     "f5Title": "Multi-Model-Routing",
     "f5Desc": "Routing nach Kosten, Latenz oder Richtlinie. Modelle tauschen ohne Änderungen am Integrationscode — GPT, Claude, Gemini und lokale Modelle austauschbar.",
     "f6Title": "Vektorsuche",
     "f6Desc": "Qdrant und MariaDB VECTOR für semantisches RAG — kein externer Embedding-Dienst nötig. Retrieval pro Wissensquelle und Anwendungsfall feinjustierbar.",
-    "quickstartTitle": "In 2 Minuten startklar",
+    "quickstartTitle": "Lokal starten",
     "quickstartStep1": "Repository klonen",
     "quickstartStep2": "Alle Services starten",
     "quickstartStep3": "App öffnen",
-    "quickstartStep3Desc": "http://localhost:5173 öffnen — vollständiger Stack bereit.",
+    "quickstartStep3Desc": "http://localhost:5173 öffnen. Zuerst erscheint eine Statusseite. Der erste Start dauert ein paar Minuten.",
     "pluginsCtaTitle": "Synaplan mit Plugins erweitern",
     "pluginsCtaBody": "Marketing, Synaform 4.x, Synamail, Nextcloud, OpenCloud, ownCloud.online, WordPress — und mehr folgt. Alle Plugins sind quelloffen und folgen derselben Architektur.",
     "pluginsCtaLink": "Plugins erkunden →"
@@ -2073,12 +2073,12 @@
       "secondary": "Quellcode lesen",
       "note": "Apache-2.0 · Docker · Kubernetes · selbst gehostet oder in Deutschland gehostet",
       "engineerTitle": "Open-Source-KI-Plattform. Self-Hosted. Kein Lock-in.",
-      "engineerSubtitle": "PHP 8.4 / Symfony-Backend, Vue-3-Frontend, MariaDB VECTOR + Qdrant, gRPC-Inferenz, OpenAPI-Vertrag, MCP-Server und -Client. Ein `docker compose up -d` entfernt."
+      "engineerSubtitle": "PHP 8.4 / Symfony-Backend, Vue-3-Frontend, MariaDB VECTOR + Qdrant, gRPC-Inferenz, OpenAPI-Vertrag, MCP-Server und -Client. Ein `make up` entfernt."
     },
     "ticker": [
       "Wir schaffen KI-Freiraum",
       "Lizenz: Apache-2.0",
-      "docker compose up -d",
+      "make up",
       "helm install synaplan",
       "Outlook · WhatsApp · Web · API · Desktop",
       "MCP-Server + -Client",
@@ -2407,7 +2407,7 @@
         "Niemand liest den Ticker. Sie schon. Respekt.",
         "Probieren Sie den Engineer-Modus. Oben im Header. Ich warte.",
         "Apache-2.0. Sagen Sie es mit mir.",
-        "docker compose up -d. Das ist die ganze Installation.",
+        "make up. Das ist der lokale Start.",
         "Cloud ist nur das Kubernetes von jemand anderem."
       ]
     },
@@ -2594,11 +2594,11 @@
           {
             "id": "T-01",
             "label": "Laptop",
-            "heading": "docker compose up -d",
-            "text": "Der komplette Entwicklungs-Stack — Backend, Worker, Frontend, MariaDB, Redis, Qdrant, Ollama — in etwa zehn Minuten auf jeder Maschine mit Docker.",
+            "heading": "make up",
+            "text": "Der Entwicklungs-Stack auf jeder Maschine mit Docker. Eine Statusseite antwortet auf Port 5173 in Sekunden. Der erste Start dauert ein paar Minuten.",
             "facts": [
-              "~3 GB Standardinstallation, Cloud-KI",
-              "+ lokale KI über das Compose-Profil local-ai",
+              "~4 GB Standardinstallation, Cloud-KI",
+              "Lokale KI etwa 5 GB; ein lokales Chat-Modell kommt mit etwa 14 GB dazu",
               "Linux, macOS (Apple Silicon nativ), Windows/WSL2"
             ]
           },

@@ -34,6 +34,6 @@ export default async function TryChatPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const githubRepo = getSynaplanGithubRepoStats();
+  const githubRepo = await getSynaplanGithubRepoStats();
   return <TryChatExperience githubRepo={githubRepo} />;
 }
