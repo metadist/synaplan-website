@@ -1,0 +1,25 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "constraints": {
+    "npm": ">=11.18.0 <12"
+  },
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["before 6am on monday"]
+  },
+  "packageRules": [
+    {
+      "description": "One pull request for non-major npm updates, so React, react-dom, Next.js and eslint-config-next move with a single lockfile.",
+      "matchManagers": ["npm"],
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "groupName": "npm non-major dependencies"
+    },
+    {
+      "description": "Prisma packages share a release line.",
+      "matchPackageNames": ["prisma", "@prisma/client", "@prisma/adapter-pg"],
+      "groupName": "prisma",
+      "matchUpdateTypes": ["major"]
+    }
+  ]
+}
