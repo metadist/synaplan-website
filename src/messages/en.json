@@ -2063,11 +2063,27 @@
     },
     "hero": {
       "eyebrow": "SYNAPLAN // MISSION CONTROL",
-      "title": "We produce AI freedom.",
-      "subtitle": "Self-hosted AI agents, a GDPR-compliant chatbot widget and RAG over your documents — on WhatsApp, Outlook, your website, API and MCP. Run it with Docker or Kubernetes, or host it in Germany. Apache-2.0 ChatGPT alternative.",
+      "title": "Install AI freedom.",
+      "subtitle": "No vendor lock-in.",
+      "install": {
+        "docker": "Start Docker Desktop first.",
+        "docs": "Install guide",
+        "copy": "Copy",
+        "copied": "Copied",
+        "targetsLabel": "System",
+        "targets": {
+          "mac": "macOS",
+          "linux": "Linux",
+          "wsl": "WSL"
+        },
+        "hints": {
+          "mac": "Then paste this in Terminal.",
+          "linux": "Then paste this in a terminal. Docker Engine works too.",
+          "wsl": "Turn on WSL integration, then paste this in the Linux shell."
+        }
+      },
       "primary": "Start a mission",
       "secondary": "Read the source",
-      "selfHostCta": "Run it yourself in three minutes",
       "demoDocsCta": "Synaplan Demo docs",
       "note": "Apache-2.0 · Docker · Kubernetes · self-hosted or hosted in Germany",
       "engineerTitle": "Open-source AI platform. Self-hosted. No lock-in.",

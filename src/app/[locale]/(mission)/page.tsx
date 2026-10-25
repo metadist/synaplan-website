@@ -13,7 +13,6 @@ import {
   RunSection,
   SignalsSection,
   SourceSection,
-  Ticker,
 } from "@/components/mission/home-sections";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -56,7 +55,6 @@ export default async function MissionHomePage({ params }: { params: Promise<{ lo
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Hero locale={locale} />
-      <Ticker locale={locale} />
       <SignalsSection locale={locale} />
       <CoreSection locale={locale} />
       <ConnectSection locale={locale} />

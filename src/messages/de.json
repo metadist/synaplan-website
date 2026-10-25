@@ -2063,11 +2063,27 @@
     },
     "hero": {
       "eyebrow": "SYNAPLAN // MISSION CONTROL",
-      "title": "Wir schaffen KI-Freiraum.",
-      "subtitle": "Self-hosted KI-Agenten, ein DSGVO-konformes Chatbot-Widget und RAG über Ihre Dokumente — auf WhatsApp, Outlook, Ihrer Website, API und MCP. Mit Docker oder Kubernetes betreiben oder in Deutschland hosten. Apache-2.0 ChatGPT-Alternative.",
+      "title": "KI-Unabhängigkeit installieren.",
+      "subtitle": "Ohne Vendor-Lock-in.",
+      "install": {
+        "docker": "Zuerst Docker Desktop starten.",
+        "docs": "Installationsanleitung",
+        "copy": "Kopieren",
+        "copied": "Kopiert",
+        "targetsLabel": "System",
+        "targets": {
+          "mac": "macOS",
+          "linux": "Linux",
+          "wsl": "WSL"
+        },
+        "hints": {
+          "mac": "Dann im Terminal einfügen.",
+          "linux": "Dann im Terminal einfügen. Docker Engine geht auch.",
+          "wsl": "WSL-Integration einschalten, dann in die Linux-Shell einfügen."
+        }
+      },
       "primary": "Mission starten",
       "secondary": "Quellcode lesen",
-      "selfHostCta": "In drei Minuten selbst starten",
       "demoDocsCta": "Synaplan-Demo Docs",
       "note": "Apache-2.0 · Docker · Kubernetes · selbst gehostet oder in Deutschland gehostet",
       "engineerTitle": "Open-Source-KI-Plattform. Self-Hosted. Kein Lock-in.",

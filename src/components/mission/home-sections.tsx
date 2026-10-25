@@ -3,12 +3,13 @@ import { Link } from "@/i18n/navigation";
 import { LINKS, USE_CASES } from "@/lib/constants";
 import { formatGithubRepoStatNumber, type SynaplanGithubRepoStats } from "@/lib/github-synaplan-repo";
 import { GithubIcon } from "@/components/icons";
-import { Lamp, Reveal, Ruler, SearchTerms, SectionHead } from "./primitives";
+import { Lamp, Reveal, Ruler, SectionHead } from "./primitives";
 import { MissionConsole } from "./mission-console";
 import { SignalsDiagram } from "./signals-diagram";
 import { Pipeline } from "./pipeline";
 import { Topology } from "./topology";
 import { DeployTabs } from "./deploy-tabs";
+import { QuickInstall } from "./quick-install";
 import { ApiSample, ComposeSample, HelmSample, InspectSample } from "./code-samples";
 
 type Channel = { key: string; label: string; desc: string };
@@ -22,13 +23,11 @@ export type CtaLink = { label: string; href: string; external?: boolean; newTab?
 
 export async function Hero({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: "mission.hero" });
-  const tm = await getTranslations({ locale, namespace: "mission.meta.home" });
-  const terms = tm.raw("searchTerms");
   return (
     <section className="relative overflow-hidden pt-14 pb-16 sm:pt-20 lg:pt-24 lg:pb-24" data-parrot="hello">
       <div className="mc-grid" aria-hidden />
       <div className="mc-wrap relative grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
-        <div>
+        <div className="min-w-0">
           <p className="mc-label flex items-center gap-2">
             <Lamp tone="green" pulse />
             {t("eyebrow")}
@@ -37,18 +36,27 @@ export async function Hero({ locale }: { locale: string }) {
             <span className="mc-marketing">{t("title")}</span>
             <span className="mc-engineer">{t("engineerTitle")}</span>
           </h1>
-          <SearchTerms terms={terms} />
-          <p className="mc-lead mt-6">
-            <span className="mc-marketing">{t("subtitle")}</span>
-            <span className="mc-engineer">{t("engineerSubtitle")}</span>
+          <p className="mt-5">
+            <span className="mc-marketing mc-hero-sub">{t("subtitle")}</span>
+            <span className="mc-engineer mc-lead">{t("engineerSubtitle")}</span>
           </p>
+          <div className="mt-8">
+            <QuickInstall
+              dockerNote={t("install.docker")}
+              docsLabel={t("install.docs")}
+              copyLabel={t("install.copy")}
+              copiedLabel={t("install.copied")}
+              targetsLabel={t("install.targetsLabel")}
+              targets={[
+                { key: "mac", label: t("install.targets.mac"), hint: t("install.hints.mac") },
+                { key: "linux", label: t("install.targets.linux"), hint: t("install.hints.linux") },
+                { key: "wsl", label: t("install.targets.wsl"), hint: t("install.hints.wsl") },
+              ]}
+            />
+          </div>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a href={LINKS.web} className="mc-btn mc-btn--primary">
               [ {t("primary")} ]
-            </a>
-            <a href={LINKS.quickstart} target="_blank" rel="noopener noreferrer" className="mc-btn" data-parrot-hover="github">
-              <GithubIcon className="size-4" />
-              {t("selfHostCta")}
             </a>
             <a href={LINKS.demoDocs} target="_blank" rel="noopener noreferrer" className="mc-btn">
               {t("demoDocsCta")} ↗
@@ -61,26 +69,6 @@ export async function Hero({ locale }: { locale: string }) {
         </div>
       </div>
     </section>
-  );
-}
-
-/* ─── TICKER ─────────────────────────────────────────────────────────────── */
-
-export async function Ticker({ locale }: { locale: string }) {
-  const t = await getTranslations({ locale, namespace: "mission" });
-  const items = t.raw("ticker") as string[];
-  const doubled = [...items, ...items];
-  return (
-    <div className="mc-ticker" aria-hidden>
-      <div className="mc-ticker-track">
-        {doubled.map((item, i) => (
-          <span key={`${item}-${i}`} className="mc-ticker-item">
-            <Lamp tone={i % 3 === 0 ? "green" : i % 3 === 1 ? "blue" : "amber"} />
-            {item}
-          </span>
-        ))}
-      </div>
-    </div>
   );
 }
 
