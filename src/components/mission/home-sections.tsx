@@ -47,10 +47,17 @@ export async function Hero({ locale }: { locale: string }) {
               copyLabel={t("install.copy")}
               copiedLabel={t("install.copied")}
               targetsLabel={t("install.targetsLabel")}
+              k8sBefore={t("install.k8sBefore")}
+              k8sLink={t("install.k8sLink")}
+              k8sAfter={t("install.k8sAfter")}
+              elestioText={t("install.elestio")}
+              elestioLink={t("install.elestioLink")}
               targets={[
-                { key: "mac", label: t("install.targets.mac"), hint: t("install.hints.mac") },
-                { key: "linux", label: t("install.targets.linux"), hint: t("install.hints.linux") },
-                { key: "wsl", label: t("install.targets.wsl"), hint: t("install.hints.wsl") },
+                { key: "mac", label: t("install.targets.mac"), hint: t("install.hints.mac"), mode: "shell" },
+                { key: "linux", label: t("install.targets.linux"), hint: t("install.hints.linux"), mode: "shell" },
+                { key: "wsl", label: t("install.targets.wsl"), hint: t("install.hints.wsl"), mode: "shell" },
+                { key: "k8s", label: t("install.targets.k8s"), hint: "", mode: "k8s" },
+                { key: "elestio", label: t("install.targets.elestio"), hint: "", mode: "elestio" },
               ]}
             />
           </div>

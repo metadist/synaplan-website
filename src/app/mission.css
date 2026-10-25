@@ -816,6 +816,9 @@
     overflow-x: auto;
   }
   .mc-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
     border: 0;
     background: transparent;
     color: var(--mc-text-muted);
@@ -838,6 +841,11 @@
   .mc-tab:focus-visible {
     outline: 2px solid var(--mc-cyan);
     outline-offset: 1px;
+  }
+  .mc-tab-mark {
+    width: 1em;
+    height: 1em;
+    flex: none;
   }
 
   .mc-install-line {
@@ -869,15 +877,41 @@
     white-space: normal;
     color: #f6f3ea;
   }
-  .mc-install-note {
-    margin-top: 0.85rem;
-    max-width: 44rem;
+  .mc-install-prose {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
     font-size: 0.95rem;
+    line-height: 1.45;
+    color: #f6f3ea;
+  }
+  .mc-install-note {
+    margin-top: calc(0.85rem + 10px);
+    margin-bottom: 10px;
+    max-width: 44rem;
+    font-size: calc(0.95rem * 1.2);
     line-height: 1.45;
     color: var(--mc-text);
   }
   .mc-install-note span + span::before {
     content: " ";
+  }
+  .mc-install-docs {
+    white-space: nowrap;
+  }
+  .mc-install-req {
+    color: #fff;
+    font-weight: 700;
+    animation: mc-install-req 2.8s ease-in-out infinite;
+  }
+  @keyframes mc-install-req {
+    0%,
+    100% {
+      text-shadow: 0 0 0 rgba(255, 255, 255, 0);
+    }
+    50% {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.45);
+    }
   }
 
   /* ─── Deployment ladder ─────────────────────────────────────────────────── */
@@ -1249,9 +1283,19 @@
     .mc-lamp--pulse {
       opacity: 1;
     }
+    .mc-install-req {
+      animation: none !important;
+      color: #fff;
+      text-shadow: none;
+    }
     .mc-parrot-eyelid {
       transform: scaleY(0);
     }
+  }
+  html[data-motion-profile="reduced"] .mc-install-req {
+    animation: none;
+    color: #fff;
+    text-shadow: none;
   }
   html[data-motion-profile="reduced"] .mc-packet,
   html[data-motion-profile="reduced"] .mc-topo-packet,

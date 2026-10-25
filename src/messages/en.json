@@ -2074,8 +2074,15 @@
         "targets": {
           "mac": "macOS",
           "linux": "Linux",
-          "wsl": "WSL"
+          "wsl": "WSL",
+          "k8s": "K8s",
+          "elestio": "Elest.io"
         },
+        "k8sBefore": "Helm charts are free on ",
+        "k8sLink": "GitHub",
+        "k8sAfter": ", and are tested with openDesk and hosting integrations.",
+        "elestio": "Elestio hosts Synaplan for you on AWS, Azure, and other clouds. Backups, SSL, updates, and monitoring are included.",
+        "elestioLink": "Hosting on Elestio",
         "hints": {
           "mac": "Then paste this in Terminal.",
           "linux": "Then paste this in a terminal. Docker Engine works too.",
