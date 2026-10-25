@@ -701,7 +701,7 @@
     "items": [
       {
         "q": "Was genau ist Synaplan?",
-        "a": "Synaplan ist eine Open-Source-KI-Plattform auf Basis von PHP 8.3+. Sie verbindet mehrere KI-Modelle (OpenAI, Anthropic, Groq, Gemini, Ollama), ermöglicht das Einbetten eines Chat-Widgets auf jeder Website, durchsucht Dokumente per RAG (Retrieval-Augmented Generation) und lässt sich mit unternehmensspezifischen Plugins erweitern — alles in einer selbst gehosteten Plattform."
+        "a": "Synaplan ist eine Open-Source-KI-Plattform auf Basis von PHP 8.5+. Sie verbindet mehrere KI-Modelle (OpenAI, Anthropic, Groq, Gemini, Ollama), ermöglicht das Einbetten eines Chat-Widgets auf jeder Website, durchsucht Dokumente per RAG (Retrieval-Augmented Generation) und lässt sich mit unternehmensspezifischen Plugins erweitern — alles in einer selbst gehosteten Plattform."
       },
       {
         "q": "Ist Synaplan eine ChatGPT-Alternative?",
@@ -2094,7 +2094,7 @@
       "demoDocsCta": "Synaplan-Demo Docs",
       "note": "Apache-2.0 · Docker · Kubernetes · selbst gehostet oder in Deutschland gehostet",
       "engineerTitle": "Open-Source-KI-Plattform. Self-Hosted. Kein Lock-in.",
-      "engineerSubtitle": "PHP 8.4 / Symfony-Backend, Vue-3-Frontend, MariaDB VECTOR + Qdrant, gRPC-Inferenz, OpenAPI-Vertrag, MCP-Server und -Client. Ein `make up` entfernt."
+      "engineerSubtitle": "PHP 8.5+ / Symfony-Backend, Vue-3-Frontend, MariaDB VECTOR + Qdrant, gRPC-Inferenz, OpenAPI-Vertrag, MCP-Server und -Client. Ein `make up` entfernt."
     },
     "ticker": [
       "Wir schaffen KI-Freiraum",
@@ -2353,7 +2353,7 @@
         },
         {
           "key": "backend",
-          "value": "PHP 8.4 · Symfony · FrankenPHP"
+          "value": "PHP 8.5+ · Symfony · FrankenPHP"
         },
         {
           "key": "frontend",

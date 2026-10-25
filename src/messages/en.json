@@ -701,7 +701,7 @@
     "items": [
       {
         "q": "What exactly is Synaplan?",
-        "a": "Synaplan is an open-source AI platform built on PHP 8.3+. It lets you connect multiple AI models (OpenAI, Anthropic, Groq, Gemini, Ollama), embed a chat widget on any website, search your documents with RAG (retrieval-augmented generation), and extend functionality with business-specific plugins — all in one self-hosted platform."
+        "a": "Synaplan is an open-source AI platform built on PHP 8.5+. It lets you connect multiple AI models (OpenAI, Anthropic, Groq, Gemini, Ollama), embed a chat widget on any website, search your documents with RAG (retrieval-augmented generation), and extend functionality with business-specific plugins — all in one self-hosted platform."
       },
       {
         "q": "Is Synaplan a ChatGPT alternative?",
@@ -2094,7 +2094,7 @@
       "demoDocsCta": "Synaplan Demo docs",
       "note": "Apache-2.0 · Docker · Kubernetes · self-hosted or hosted in Germany",
       "engineerTitle": "Open-source AI platform. Self-hosted. No lock-in.",
-      "engineerSubtitle": "PHP 8.4 / Symfony backend, Vue 3 frontend, MariaDB VECTOR + Qdrant, gRPC inference, OpenAPI contract, MCP server and client. One `make up` away."
+      "engineerSubtitle": "PHP 8.5+ / Symfony backend, Vue 3 frontend, MariaDB VECTOR + Qdrant, gRPC inference, OpenAPI contract, MCP server and client. One `make up` away."
     },
     "ticker": [
       "We produce AI freedom",
@@ -2353,7 +2353,7 @@
         },
         {
           "key": "backend",
-          "value": "PHP 8.4 · Symfony · FrankenPHP"
+          "value": "PHP 8.5+ · Symfony · FrankenPHP"
         },
         {
           "key": "frontend",
