@@ -35,7 +35,7 @@
     "googlePlay": "Google Play (Android)"
   },
   "common": {
-    "startForFree": "Kostenlos starten",
+    "startForFree": "Registrieren",
     "bookDemo": "Chat via WhatsApp",
     "learnMore": "Mehr erfahren",
     "viewOnGithub": "Auf GitHub ansehen",
@@ -46,7 +46,7 @@
   },
   "tryChat": {
     "metaTitle": "Synaplan KI-Chat kostenlos testen — Ohne Anmeldung",
-    "metaDescription": "Synaplan-KI direkt im Browser testen — kein Konto, keine Installation. Multi-Model-Antworten, RAG und mehr ausprobieren. Kostenlos registrieren für vollen Zugang.",
+    "metaDescription": "Synaplan-KI direkt im Browser testen — kein Konto, keine Installation. Multi-Model-Antworten, RAG und mehr ausprobieren. Der volle Workspace ist ein kostenpflichtiger Tarif oder ein Einladungscode.",
     "badge": "Live-Demo",
     "heroEyebrow": "Live-Vorschau",
     "heroDisplay": "Live-Demo",
@@ -73,14 +73,14 @@
     "messagesLeft": "{count, plural, =0 {Keine Nachrichten übrig} one {Noch # Nachricht} other {Noch # Nachrichten}}",
     "messagesUsage": "{sent} von {max} Demo-Nachrichten in diesem Browser",
     "welcome": "Hallo — ich bin der Synaplan-Assistent. Frag mich zu Multi-Model-Routing, RAG auf euren Dokumenten oder zum Chat-Widget. Dein vollständiger Workspace liegt auf web.synaplan.com.",
-    "limitWelcome": "Du hast die kostenlosen Demo-Nachrichten in diesem Browser schon verbraucht. Weiter geht es in der Synaplan Web-App mit vollem Umfang.",
+    "limitWelcome": "Du hast die Demo-Nachrichten in diesem Browser schon verbraucht. Auf web.synaplan.com registrierst du dich mit einem kostenpflichtigen Tarif oder fragst einen Einladungscode an.",
     "notConfigured": "Die Live-Demo ist auf dieser Installation noch nicht konfiguriert. Das Produkt findest du trotzdem auf web.synaplan.com.",
     "limitTitle": "Das war’s für diese Demo",
-    "limitBody": "Weiter geht’s auf web.synaplan.com mit deinem Konto — voller Umfang und unbegrenzter Chat.",
+    "limitBody": "Weiter geht’s auf web.synaplan.com mit einem kostenpflichtigen Tarif oder einem Einladungscode. Den schicken wir Freunden und Partnern auf Anfrage, wenn sie die Plattform testen wollen.",
     "unavailableTitle": "Demo gerade nicht erreichbar",
     "unavailableBody": "Bitte öffne die volle Synaplan-App unter web.synaplan.com — dort chatten mit denselben Modellen und deinem Workspace.",
     "ctaWeb": "web.synaplan.com öffnen",
-    "ctaRegister": "Konto erstellen",
+    "ctaRegister": "Registrieren",
     "backHome": "Zur Startseite",
     "justNow": "Gerade eben",
     "placeholder": "Stelle irgendeine Frage…",
@@ -101,7 +101,7 @@
     "step2Title": "Antworten im Stream",
     "step2Body": "Antworten laufen tokenweise ein — ähnlich wie im In-App-Chat — damit du Latenz und Qualität direkt siehst.",
     "step3Title": "In der App weitermachen",
-    "step3Body": "Wenn das Demo-Limit erreicht ist, geht es auf web.synaplan.com weiter — unbegrenzte Chats, Workspace und Integrationen.",
+    "step3Body": "Wenn das Demo-Limit erreicht ist, geht es auf web.synaplan.com weiter. Ein Konto dort ist ein kostenpflichtiger Tarif oder ein Einladungscode, den wir auf Anfrage schicken.",
     "exploreSectionTitle": "Mehr als dieser Chat",
     "exploreSectionLead": "Diese Seiten vertiefen, was ein kurzer Chat nur andeuten kann — passend zur Informationsarchitektur von synaplan.com.",
     "exploreCard1Title": "Chat-Widget für die Website",
@@ -123,7 +123,7 @@
     "fullscreenEnter": "Vollbild",
     "fullscreenExit": "Vollbild beenden",
     "fullscreenDemoTitle": "Nur in der Web-App",
-    "fullscreenDemoBody": "Diese Funktion gibt es in dieser Browser-Demo nicht. Registriere dich auf web.synaplan.com für den vollen Workspace.",
+    "fullscreenDemoBody": "Diese Funktion gibt es in dieser Browser-Demo nicht. Auf web.synaplan.com registrierst du dich mit einem kostenpflichtigen Tarif oder fragst einen Einladungscode an.",
     "fullscreenDemoCta": "web.synaplan.com öffnen",
     "fullscreenDemoDismiss": "Schließen",
     "fsChromeAria": "Demo-Navigation (Vorschau)",
@@ -153,7 +153,7 @@
     "status": "Online",
     "statusDone": "Bereit",
     "placeholder": "Nachricht eingeben…",
-    "inputCta": "Kostenlos starten",
+    "inputCta": "Registrieren",
     "bot0": "Hallo! Ich bin Ihr Synaplan-Assistent. Ich unterstütze Teams bei Multi-Model-Routing, RAG auf eigenen Dokumenten und lückenlosen Audit-Logs — alles auf einer Open-Source-Plattform, die Sie einsehen und selbst hosten können.",
     "user0": "Können wir GPT und Claude im selben Workspace nutzen, ohne fünf verschiedene Oberflächen zu jonglieren?",
     "bot1": "Ja. Routen Sie Prompts zu OpenAI, Anthropic, Google, Meta, Mistral und mehr über eine API und ein UI. Wechseln Sie pro Anfrage oder Workflow — ohne Vendor Lock-in, mit einer gemeinsamen Kosten- und Nutzungsübersicht.",
@@ -162,7 +162,7 @@
     "user2": "Wir prüfen auch das Website-Widget — wie schnell können wir live gehen?",
     "bot3": "Viele Teams binden das Chat-Widget innerhalb eines Tages ein: Snippet oder WordPress-Plugin, Branding anpassen und denselben Richtlinien und Modellen wie intern ausliefern.",
     "user3": "Letzte Frage: Wie testen wir das ohne großes Risiko?",
-    "bot4": "Starten Sie mit der kostenlosen Stufe, um Modelle und Flows zu erkunden, und skalieren Sie bei Bedarf. Testen Sie die KI jederzeit via WhatsApp — auch für Security und Einkauf.",
+    "bot4": "Registrieren Sie sich mit einem kostenpflichtigen Tarif, oder fragen Sie einen Einladungscode an, wenn Sie als Freund oder Partner testen möchten. Die KI können Sie auch jederzeit via WhatsApp prüfen — auch für Security und Einkauf.",
     "ctaTryChat": "KI-Chat ausprobieren · ohne Login"
   },
   "platformPreview": {
@@ -655,7 +655,7 @@
     "faq2Q": "Sind Steuern im Preis enthalten?",
     "faq2A": "Die hier gezeigten Preise verstehen sich ohne MwSt. oder lokale Umsatzsteuer. Beim Checkout bzw. auf der Rechnung wird der passende Satz für Land und Unternehmensstatus ausgewiesen.",
     "faq3Q": "Gibt es eine kostenlose Testphase?",
-    "faq3A": "Sie koennen Synaplan ueber die Open-Source-Version testen oder den Dev-Server unter web.synaplan.com ausprobieren. Fuer Teams mit Security- oder Einkaufs-Reviews empfehlen wir eine Demo.",
+    "faq3A": "Die Open-Source-Ausgabe können Sie kostenlos selbst hosten. Auf web.synaplan.com registrieren Sie sich mit einem kostenpflichtigen Tarif. Freunde und Partner können einen Einladungscode anfragen, um die Plattform zu testen. Für Security- oder Einkaufs-Reviews chatten Sie mit uns via WhatsApp.",
     "faq4Q": "Was, wenn wir über Business hinauswachsen?",
     "faq4A": "Für hohe Volumina oder regulierte Umgebungen gibt es Enterprise-Vereinbarungen: individuelle SLAs, Onboarding und Kapazitätsplanung. Sprechen Sie uns an.",
     "faq5Q": "Was kostet die Enterprise-Installation?",
@@ -735,7 +735,7 @@
   },
   "cta": {
     "title": "Eine KI. Jeder Kanal. Volle Kontrolle.",
-    "subtitle": "Kostenlos starten oder direkt via WhatsApp mit unserer KI chatten — für eine klare KI-Roadmap für Ihr Unternehmen.",
+    "subtitle": "Registrieren Sie sich mit einem kostenpflichtigen Tarif oder einem Einladungscode, oder chatten Sie via WhatsApp mit unserer KI — für eine klare KI-Roadmap.",
     "immediately": "Sofort verfügbar",
     "gdpr": "DSGVO-konform"
   },
@@ -797,7 +797,7 @@
       "faq4Q": "Wo starte ich?",
       "faq4A": "Dokumentation zu Snippet und WordPress-Plugin lesen oder direkt via WhatsApp testen — für IT und Marketing gemeinsam.",
       "bottomCtaTitle": "Direkt auf Ihrer Seite testen?",
-      "bottomCtaLead": "Kostenlos starten oder kurz via WhatsApp testen — Security und Branding im Blick.",
+      "bottomCtaLead": "Mit einem Tarif oder Einladungscode starten, oder kurz via WhatsApp testen — Security und Branding im Blick.",
       "landingHeroBadge": "Website-KI · conversionstark",
       "landingStatsTitle": "Schnelle UX, klare Governance",
       "landingStatsSubtitle": "Passend zu unseren SEO-Zielen: schlankes UI, wenig Layout-Sprung, EU-taugliche Datenführung.",
@@ -837,7 +837,7 @@
       "pricingHighlight": "Tarife ab 19,95 €/Monat fürs Website-Widget — skalieren wenn Traffic wächst.",
       "demoCaption": "Interaktive Vorschau — Demo-Skript, keine Live-Daten.",
       "midCtaTitle": "Jetzt ausprobieren",
-      "midCtaLead": "Synaplan kostenlos testen oder direkt via WhatsApp ausprobieren — Einbindung, Ihre Wissensquellen und die Einstellungen für Ihr Website-Widget."
+      "midCtaLead": "Mit einem Tarif oder Einladungscode starten oder direkt via WhatsApp ausprobieren — Einbindung, Ihre Wissensquellen und die Einstellungen für Ihr Website-Widget."
     },
     "trades": {
       "metaTitle": "KI-Chatbot für Handwerk & Gewerbe — Kundenservice-KI",
@@ -869,7 +869,7 @@
       "benefit3Title": "Schneller testen",
       "benefit3Desc": "Texte und Mappings in Synaplan ändern — ohne zweite Bot-Plattform neu deployen.",
       "bottomCtaTitle": "Widget für Handwerk starten",
-      "bottomCtaLead": "Kostenlos testen, Seiten anbinden, dann via WhatsApp ausprobieren — Disposition und Marketing im Blick."
+      "bottomCtaLead": "Mit einem Tarif oder Einladungscode starten, Seiten anbinden, dann via WhatsApp ausprobieren — Disposition und Marketing im Blick."
     },
     "hospitality": {
       "metaTitle": "KI-Chatbot für Hotels & Hospitality",
@@ -901,7 +901,7 @@
       "benefit3Title": "Ein Angebot auf einer Seite",
       "benefit3Desc": "Verlinken Sie von Ihrer Website — Gäste sehen Nutzen und Demo in einem Ablauf.",
       "bottomCtaTitle": "Hospitality-KI auf der Website",
-      "bottomCtaLead": "Synaplan kostenlos testen, offizielle Seiten anbinden — Pro-Connectoren bei Bedarf nachziehen."
+      "bottomCtaLead": "Mit einem Tarif oder Einladungscode starten, offizielle Seiten anbinden — Pro-Connectoren bei Bedarf nachziehen."
     },
     "customers": {
       "metaTitle": "KI-Chatbot Kundenbeispiele — Echte Einsätze",
@@ -1103,7 +1103,7 @@
     "pageSubtitle": "Die Bedingungen für die Nutzung des gehosteten Synaplan-Dienstes unter synaplan.com und der offiziellen Synaplan-Apps. Synaplan ist Open-Source-Software und unter der Apache-Lizenz 2.0 lizenziert.",
     "badge": "Apache-2.0 Open Source",
     "breadcrumbHome": "Startseite",
-    "lastUpdated": "Zuletzt aktualisiert: 16. Juli 2026",
+    "lastUpdated": "Zuletzt aktualisiert: 25. Oktober 2026",
     "linkPrivacy": "Zur Datenschutzerklärung",
     "linkImprint": "Zum Impressum",
     "sections": [
@@ -1146,7 +1146,7 @@
       {
         "title": "Abonnements und Zahlungen",
         "body": [
-          "Synaplan bietet eine kostenlose Stufe sowie optionale kostenpflichtige Abonnements, die zusätzliche Nutzung und Funktionen freischalten.",
+          "Auf web.synaplan.com ist ein Konto ein kostenpflichtiger Tarif oder ein Einladungscode, den wir Freunden und Partnern auf Anfrage ausstellen, wenn sie die Plattform testen möchten. Die Open-Source-Software bleibt unter der Apache-Lizenz 2.0 kostenlos selbst zu hosten. Kostenpflichtige Abonnements schalten die Nutzung und Funktionen des gewählten Tarifs frei.",
           "In den mobilen Apps werden Abonnements über Ihr App-Store-Konto verkauft und abgerechnet und dort verwaltet oder gekündigt. Im Web werden Abonnements über unsere Website abgewickelt. Der jeweils geltende Preis, Steuern und Abrechnungsbedingungen werden Ihnen vor dem Kauf angezeigt."
         ]
       },
@@ -1376,7 +1376,7 @@
     "badge": "Für Unternehmen",
     "heroTitle": "KI für Unternehmen — eine Plattform, volle Kontrolle",
     "heroLead": "Synaplan bündelt alle KI-Modelle Ihres Unternehmens unter einem Dach: Audit-Protokolle, Kostenlimits, DSGVO-konformes EU-Hosting und eine Wissensdatenbank, die aus Ihren eigenen Dokumenten antwortet.",
-    "ctaPrimary": "Kostenlos starten",
+    "ctaPrimary": "Registrieren",
     "ctaSecondary": "Test via WhatsApp",
     "featuresTitle": "Alles, was Ihr Team braucht — nichts, was Ihre Compliance-Abteilung hasst",
     "f1Title": "Alle Modelle, eine Oberfläche",
@@ -1396,7 +1396,7 @@
     "sovereignBody": "Verwaltungen und regulierte Organisationen in der EU und der Schweiz erhalten eine eigene, souveränitätsorientierte Edition — Hosting in EU/CH, Open Source und Daten, die Ihre Rechtshoheit nie verlassen.",
     "sovereignCta": "synaplan EU/CH entdecken",
     "ctaBannerTitle": "Bereit, Ihre KI-Workflows in Ordnung zu bringen?",
-    "ctaBannerBody": "Starten Sie kostenlos und verbinden Sie noch heute Ihre erste Wissensquelle. Upgraden Sie, wenn Ihr Team mehr benötigt.",
+    "ctaBannerBody": "Registrieren Sie sich mit einem kostenpflichtigen Tarif oder fragen Sie einen Einladungscode an, und verbinden Sie noch heute Ihre erste Wissensquelle.",
     "openSource": "100% Open Source",
     "gdpr": "DSGVO-konform"
   },
@@ -1448,7 +1448,7 @@
     "heroLead": "Synaplan ist vollständig quelloffen. Self-Hosting, REST-API, eigene Plugins oder als KI-Backbone für Ihr Produkt — Apache 2.0, kein Lock-in.",
     "ctaPrimary": "Auf GitHub ansehen",
     "ctaSecondary": "Dokumentation lesen",
-    "ctaTertiary": "Kostenlos starten",
+    "ctaTertiary": "Registrieren",
     "featuresTitle": "Gebaut für Entwickler",
     "f1Title": "100% Open Source",
     "f1Desc": "Forken, prüfen und beitragen. Apache-2.0-Lizenz — kein Lock-in, keine Black Box. Der vollständige Stack (PHP-Backend, Vue.js-Frontend, MariaDB, Qdrant) ist auf GitHub.",
@@ -1863,7 +1863,7 @@
     "memoriesLink": "Mehr über KI-Memories",
     "memoriesHref": "/features/memories",
     "ctaPrimary": "Auf GitHub ansehen",
-    "ctaSecondary": "Kostenlos starten"
+    "ctaSecondary": "Registrieren"
   },
   "newsPage": {
     "metaTitle": "News — Blog, Releases & Community",
@@ -2294,7 +2294,7 @@
           "desc": "openDesk, EU-Hosting, Ihre Schlüssel"
         }
       ],
-      "cloudText": "Nichts zu installieren: web.synaplan.com läuft mit demselben Open-Source-Code, gehostet in Deutschland. Kostenlos starten, upgraden, wenn nötig.",
+      "cloudText": "Nichts zu installieren: web.synaplan.com läuft mit demselben Open-Source-Code, gehostet in Deutschland. Registrieren Sie sich mit einem kostenpflichtigen Tarif oder fragen Sie einen Einladungscode an.",
       "cloudCta": "Plattform öffnen",
       "docs": "Deployment-Doku"
     },
@@ -2579,7 +2579,7 @@
         ],
         "cta": {
           "title": "Erst sehen, dann glauben.",
-          "text": "Den Chat ohne Konto ausprobieren oder einen kostenlosen Workspace starten.",
+          "text": "Den Chat ohne Konto ausprobieren oder sich mit einem Tarif oder Einladungscode registrieren.",
           "primary": "Chat ausprobieren",
           "secondary": "Preise"
         }

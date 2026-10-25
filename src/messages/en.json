@@ -35,7 +35,7 @@
     "googlePlay": "Google Play (Android)"
   },
   "common": {
-    "startForFree": "Start for free",
+    "startForFree": "Sign up",
     "bookDemo": "Chat on WhatsApp",
     "learnMore": "Learn more",
     "viewOnGithub": "View on GitHub",
@@ -46,7 +46,7 @@
   },
   "tryChat": {
     "metaTitle": "Try Synaplan AI Chat Free — No Login Required",
-    "metaDescription": "Chat with Synaplan’s AI right in your browser — no account, no install. Test multi-model responses, RAG, and more. Register free for full access.",
+    "metaDescription": "Chat with Synaplan’s AI right in your browser — no account, no install. Test multi-model responses, RAG, and more. The full workspace is a paid plan or an invitation code.",
     "badge": "Live demo",
     "heroEyebrow": "Live preview",
     "heroDisplay": "Live demo",
@@ -73,14 +73,14 @@
     "messagesLeft": "{count, plural, =0 {No messages left} one {# message left} other {# messages left}}",
     "messagesUsage": "{sent} of {max} demo messages in this browser",
     "welcome": "Hi — I’m Synaplan’s assistant. Ask about multi-model routing, RAG on your documents, or the chat widget. Your full workspace is on web.synaplan.com.",
-    "limitWelcome": "You have already used the free demo messages from this browser. Continue in the Synaplan web app for unlimited conversations.",
+    "limitWelcome": "You have already used the demo messages from this browser. On web.synaplan.com, sign up with a paid plan, or ask us for an invitation code.",
     "notConfigured": "The live demo is not configured on this deployment yet. You can still explore the product on web.synaplan.com.",
     "limitTitle": "That’s all for this demo",
-    "limitBody": "Continue on web.synaplan.com with your account — unlimited chats and your full workspace.",
+    "limitBody": "Continue on web.synaplan.com with a paid plan, or ask us for an invitation code. We send those to friends and partners who want to try the platform.",
     "unavailableTitle": "We can’t reach the demo right now",
     "unavailableBody": "Open the full Synaplan app at web.synaplan.com to chat with the same models and your workspace.",
     "ctaWeb": "Open web.synaplan.com",
-    "ctaRegister": "Create an account",
+    "ctaRegister": "Sign up",
     "backHome": "Back to homepage",
     "justNow": "Just now",
     "placeholder": "Ask anything…",
@@ -101,7 +101,7 @@
     "step2Title": "Streamed answers",
     "step2Body": "Replies arrive token by token — similar to the in-app chat — so you see latency and quality in real time.",
     "step3Title": "Continue in the app",
-    "step3Body": "When the demo limit is reached, open web.synaplan.com for unlimited chats, your workspace, and integrations.",
+    "step3Body": "When the demo limit is reached, continue on web.synaplan.com. An account there is a paid plan, or an invitation code we send on request.",
     "exploreSectionTitle": "Explore beyond this chat",
     "exploreSectionLead": "These pages go deeper than a short conversation can cover — aligned with how we structure the product story on synaplan.com.",
     "exploreCard1Title": "Website chat widget",
@@ -123,7 +123,7 @@
     "fullscreenEnter": "Fullscreen",
     "fullscreenExit": "Exit fullscreen",
     "fullscreenDemoTitle": "Full app only",
-    "fullscreenDemoBody": "This control is not available in the browser demo. Create a free account on web.synaplan.com for the full workspace.",
+    "fullscreenDemoBody": "This control is not available in the browser demo. On web.synaplan.com, sign up with a paid plan, or ask us for an invitation code.",
     "fullscreenDemoCta": "Open web.synaplan.com",
     "fullscreenDemoDismiss": "Dismiss",
     "fsChromeAria": "Demo navigation (preview)",
@@ -153,7 +153,7 @@
     "status": "Online",
     "statusDone": "Ready",
     "placeholder": "Type your message…",
-    "inputCta": "Start for free",
+    "inputCta": "Sign up",
     "bot0": "Hi! I'm your Synaplan assistant. I help teams run multi-model routing, RAG on their own documents, and full audit trails — all in one open-source platform you can inspect and self-host.",
     "user0": "Can we use GPT and Claude in the same workspace without juggling five different dashboards?",
     "bot1": "Yes. Route prompts to OpenAI, Anthropic, Google, Meta, Mistral, and more from a single API and UI. Switch models per request or per workflow — no vendor lock-in, and you keep one cost and usage view.",
@@ -162,7 +162,7 @@
     "user2": "We're also looking at the website widget — how fast can we go live?",
     "bot3": "Many teams embed the chat widget in a day: add the snippet or WordPress plugin, style it to your brand, and route traffic through the same policies and models as your internal apps.",
     "user3": "Last question: how do we try it without a huge commitment?",
-    "bot4": "Start with the free tier to explore models and flows, then scale when you're ready. Test it via WhatsApp anytime if you want to see the AI in action for your security and procurement checklist.",
+    "bot4": "Sign up with a paid plan, or ask for an invitation code if you are a friend or partner and want to try it. You can also test the AI via WhatsApp for a security and procurement checklist.",
     "ctaTryChat": "Try the AI chat · no login needed"
   },
   "platformPreview": {
@@ -655,7 +655,7 @@
     "faq2Q": "Are taxes included in the price?",
     "faq2A": "Prices on this page are shown without VAT or local sales tax. The checkout or invoice step applies the correct rate for your country and business status.",
     "faq3Q": "Is there a free trial?",
-    "faq3A": "You can explore Synaplan on our free tier to validate workflows before committing to a paid plan. For teams with procurement or security reviews, book a demo and we’ll walk through your checklist.",
+    "faq3A": "The open-source edition is free to self-host. On web.synaplan.com you sign up with a paid plan. Friends and partners can ask us for an invitation code to try the platform. For a procurement or security review, chat with us on WhatsApp and we’ll walk through your checklist.",
     "faq4Q": "What if we outgrow Business?",
     "faq4A": "For high-volume or regulated environments we offer enterprise-style agreements: custom SLAs, dedicated onboarding, and capacity planning. Contact us and we’ll shape something that fits.",
     "faq5Q": "How is the Enterprise pricing determined?",
@@ -735,7 +735,7 @@
   },
   "cta": {
     "title": "One AI. Every channel. Full control.",
-    "subtitle": "Start for free or chat with our AI directly via WhatsApp to get a clear AI roadmap for your organization.",
+    "subtitle": "Sign up with a paid plan or an invitation code, or chat with our AI on WhatsApp for a clear AI roadmap.",
     "immediately": "Immediately available",
     "gdpr": "GDPR compliant"
   },
@@ -797,7 +797,7 @@
       "faq4Q": "Where do I start?",
       "faq4A": "Open the docs for the embed snippet and WordPress plugin, or test it directly via WhatsApp with your IT and marketing stakeholders.",
       "bottomCtaTitle": "Ready to try it on your site?",
-      "bottomCtaLead": "Start free, or test it via WhatsApp to align security and branding.",
+      "bottomCtaLead": "Sign up with a paid plan or an invitation code, or test it via WhatsApp to align security and branding.",
       "landingHeroBadge": "Website AI · Lead-ready",
       "landingStatsTitle": "Fast experiences, serious governance",
       "landingStatsSubtitle": "Aligned with our technical SEO goals: responsive UI, minimal layout shift, and EU-friendly data handling.",
@@ -837,7 +837,7 @@
       "pricingHighlight": "Plans from €19.95/mo for website widgets — scale when traffic grows.",
       "demoCaption": "Interactive preview — scripted demo, not live data.",
       "midCtaTitle": "Try it",
-      "midCtaLead": "Start free or try it via WhatsApp — we cover embed, your knowledge sources, and settings for your website widget."
+      "midCtaLead": "Sign up with a paid plan or an invitation code, or try it via WhatsApp — we cover embed, your knowledge sources, and settings for your website widget."
     },
     "trades": {
       "metaTitle": "AI Chatbot for Trades & Crafts — Customer Service AI",
@@ -869,7 +869,7 @@
       "benefit3Title": "Faster experiments",
       "benefit3Desc": "Change copy and mappings in Synaplan — no redeploy of a separate bot platform.",
       "bottomCtaTitle": "Launch a trades-ready widget",
-      "bottomCtaLead": "Start free, connect your pages, then try it via WhatsApp to align dispatch and marketing."
+      "bottomCtaLead": "Sign up with a paid plan or an invitation code, connect your pages, then try it via WhatsApp to align dispatch and marketing."
     },
     "hospitality": {
       "metaTitle": "AI Chatbot for Hotels & Hospitality",
@@ -901,7 +901,7 @@
       "benefit3Title": "One page for your offer",
       "benefit3Desc": "Link from your site so guests see the story and demo in one flow.",
       "bottomCtaTitle": "Add hospitality AI to your site",
-      "bottomCtaLead": "Try Synaplan free, connect your official pages, then scale with Pro connectors when needed."
+      "bottomCtaLead": "Sign up with a paid plan or an invitation code, connect your official pages, then add Pro connectors when you need them."
     },
     "customers": {
       "metaTitle": "AI Chatbot Customer Stories — Real Deployments",
@@ -1103,7 +1103,7 @@
     "pageSubtitle": "The terms for using the Synaplan hosted service at synaplan.com and the official Synaplan mobile apps. Synaplan is open-source software, licensed under the Apache License 2.0.",
     "badge": "Apache-2.0 Open Source",
     "breadcrumbHome": "Home",
-    "lastUpdated": "Last updated: 16 July 2026",
+    "lastUpdated": "Last updated: 25 October 2026",
     "linkPrivacy": "View Privacy Policy",
     "linkImprint": "View Imprint",
     "sections": [
@@ -1146,7 +1146,7 @@
       {
         "title": "Subscriptions and payments",
         "body": [
-          "Synaplan offers a free tier and optional paid subscriptions that unlock additional usage and features.",
+          "On web.synaplan.com an account is a paid plan, or an invitation code we issue on request to friends and partners who want to try the platform. The open-source software remains free to self-host under the Apache License 2.0. Paid subscriptions unlock the usage and features of the plan you choose.",
           "In the mobile apps, subscriptions are sold and billed through your app store account and are managed or cancelled there. On the web, subscriptions are handled through our website. The applicable price, taxes and billing terms are shown to you at the point of purchase."
         ]
       },
@@ -1376,7 +1376,7 @@
     "badge": "For Companies",
     "heroTitle": "AI for companies — one platform, full control",
     "heroLead": "Synaplan puts every AI model your business uses under one roof: audit trails, cost limits, GDPR-compliant EU hosting, and a knowledge base that answers from your own documents.",
-    "ctaPrimary": "Start for free",
+    "ctaPrimary": "Sign up",
     "ctaSecondary": "Test via WhatsApp",
     "featuresTitle": "Everything your team needs — nothing your compliance team hates",
     "f1Title": "All models, one interface",
@@ -1396,7 +1396,7 @@
     "sovereignBody": "Public administrations and regulated organizations in the EU and Switzerland get a dedicated, sovereignty-first edition — EU/CH hosting, open source, and data that never leaves your jurisdiction.",
     "sovereignCta": "Discover synaplan EU/CH",
     "ctaBannerTitle": "Ready to put your AI workflows in order?",
-    "ctaBannerBody": "Start free and connect your first knowledge source today. Upgrade when your team needs more.",
+    "ctaBannerBody": "Sign up with a paid plan, or ask for an invitation code, and connect your first knowledge source today.",
     "openSource": "100% Open Source",
     "gdpr": "GDPR compliant"
   },
@@ -1448,7 +1448,7 @@
     "heroLead": "Synaplan is fully open-source. Self-host it, connect via REST API, build custom plugins, or use it as the AI backbone for your own product — Apache 2.0, no lock-in.",
     "ctaPrimary": "View on GitHub",
     "ctaSecondary": "Read the docs",
-    "ctaTertiary": "Start for free",
+    "ctaTertiary": "Sign up",
     "featuresTitle": "Built for builders",
     "f1Title": "100% open source",
     "f1Desc": "Fork, inspect, and contribute. Apache 2.0 licence — no lock-in, no black box. The full stack (PHP backend, Vue.js frontend, MariaDB, Qdrant) is on GitHub.",
@@ -1863,7 +1863,7 @@
     "memoriesLink": "Learn about AI Memories",
     "memoriesHref": "/features/memories",
     "ctaPrimary": "View on GitHub",
-    "ctaSecondary": "Start for free"
+    "ctaSecondary": "Sign up"
   },
   "newsPage": {
     "metaTitle": "News — Blog, Releases & Community",
@@ -2294,7 +2294,7 @@
           "desc": "openDesk, EU hosting, your keys"
         }
       ],
-      "cloudText": "Nothing to install: web.synaplan.com runs the same open-source code, hosted in Germany. Start free, upgrade when you need to.",
+      "cloudText": "Nothing to install: web.synaplan.com runs the same open-source code, hosted in Germany. Sign up with a paid plan, or ask for an invitation code.",
       "cloudCta": "Open the platform",
       "docs": "Deployment docs"
     },
@@ -2579,7 +2579,7 @@
         ],
         "cta": {
           "title": "See it before you believe it.",
-          "text": "Try the chat without an account, or start a free workspace.",
+          "text": "Try the chat without an account, or sign up with a paid plan or an invitation code.",
           "primary": "Try the chat",
           "secondary": "Pricing"
         }
