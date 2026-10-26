@@ -1,5 +1,5 @@
 export const LINKS = {
-  app: "https://app.synaplan.com/index.php/register",
+  register: "https://web.synaplan.com/register",
   web: "https://web.synaplan.com/",
   sovereignEU: "https://www.synaplan.eu/",
   github: "https://github.com/metadist/synaplan",
@@ -15,6 +15,11 @@ export const LINKS = {
   contact: "mailto:info@metadist.de",
   osba: "https://osb-alliance.de/",
 } as const;
+
+/** Register page on the hosted platform with the plan preselected. */
+export function registerUrl(plan: "pro" | "team" | "business"): string {
+  return `${LINKS.register}?plan=${plan.toUpperCase()}`;
+}
 
 export const STORE_LINKS = {
   appStore: {
