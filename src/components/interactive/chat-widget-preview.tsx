@@ -214,7 +214,7 @@ export function ChatWidgetPreview() {
 
         <div className="shrink-0 border-t border-[rgb(196_197_215/0.1)] bg-chat-input-bg p-4 dark:border-zinc-800 dark:bg-zinc-900/50">
           <a
-            href={LINKS.web}
+            href={LINKS.register}
             aria-label={t("inputCta")}
             title={t("inputCta")}
             className="flex items-center justify-between gap-3 rounded-xl border border-[rgb(196_197_215/0.2)] bg-white px-4 py-2.5 transition-colors hover:border-[#002c92]/40 hover:bg-[#002c92]/[0.03] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#002c92]/35 dark:border-zinc-700 dark:bg-zinc-800 dark:hover:border-[#4f74e3]/50 dark:hover:bg-zinc-700/60"

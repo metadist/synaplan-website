@@ -53,7 +53,7 @@ export async function CompaniesHubPage({ locale }: { locale: string }) {
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a
-            href={LINKS.web}
+            href={LINKS.register}
             className="btn-figma-primary inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl border-0 px-8 text-base font-medium text-white shadow-[0_14px_40px_-12px_rgb(0_44_146/0.35)] sm:w-auto"
           >
             {t("ctaPrimary")}
