@@ -219,7 +219,7 @@ export function Header() {
                 </div>
               </div>
               <a
-                href={LINKS.web}
+                href={LINKS.register}
                 className={cn(
                   buttonVariants({ size: "sm" }),
                   "btn-figma-primary rounded-lg border-0 px-5 text-white shadow-none hover:opacity-95"
@@ -334,7 +334,7 @@ export function Header() {
                   </div>
                   <div className="flex flex-col gap-2 pt-4 border-t border-border">
                     <a
-                      href={LINKS.web}
+                      href={LINKS.register}
                       className={cn(buttonVariants(), "w-full")}
                     >
                       {t("common.startForFree")}

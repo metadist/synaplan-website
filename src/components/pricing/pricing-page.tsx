@@ -4,7 +4,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
 import { buttonVariants } from "@/components/ui/button";
-import { LINKS } from "@/lib/constants";
+import { LINKS, registerUrl } from "@/lib/constants";
 import { GithubIcon } from "@/components/icons";
 import { cn } from "@/lib/utils";
 import {
@@ -47,6 +47,7 @@ function Feature({ text, light = false }: { text: string; light?: boolean }) {
 
 // ─── Plan card (Platform sub-tiers) ─────────────────────────────────────────
 function PlanCard({
+  id,
   name,
   tagline,
   price,
@@ -54,6 +55,7 @@ function PlanCard({
   recommended,
   cta,
 }: {
+  id: "pro" | "team" | "business";
   name: string;
   tagline: string;
   price: string;
@@ -95,7 +97,7 @@ function PlanCard({
       </ul>
 
       <a
-        href={LINKS.web}
+        href={registerUrl(id)}
         target="_blank"
         rel="noopener noreferrer"
         className={cn(
