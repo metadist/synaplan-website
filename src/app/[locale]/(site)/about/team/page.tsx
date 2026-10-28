@@ -4,6 +4,7 @@ import { SolutionArticleShell } from "@/components/solutions/solution-article-sh
 import { alternateLanguageUrls, canonicalUrl, OG_IMAGE } from "@/lib/seo";
 import { buildBreadcrumbSchema, SITE_URL } from "@/lib/jsonld";
 import { LinkedInIcon } from "@/components/icons";
+import { OliverUsEmailLink } from "@/components/oliver-us-email";
 import { LINKS } from "@/lib/constants";
 import { ExternalLink, ArrowUpRight } from "lucide-react";
 
@@ -111,18 +112,19 @@ const TEAM_CH: TeamMember[] = [
   },
 ];
 
+const OLIVER_US = {
+  name: "Oliver Biewald",
+  linkedin: "https://www.linkedin.com/in/oli-b-0057362a/",
+  initials: "OB",
+  color: "bg-cyan-600",
+};
+
 const ADVISORS: Advisor[] = [
   {
     name: "Claudia",
     linkedin: "https://www.linkedin.com/in/claudianemat/",
     initials: "C",
     color: "bg-indigo-600",
-  },
-  {
-    name: "Oliver",
-    linkedin: "https://www.linkedin.com/in/oli-b-0057362a/",
-    initials: "O",
-    color: "bg-cyan-600",
   },
   {
     name: "André",
@@ -216,6 +218,19 @@ export default async function TeamPage({
         { name: t("breadcrumbTeam"), url: pageUrl },
       ]),
       ...personSchemas,
+      {
+        "@type": "Person",
+        name: OLIVER_US.name,
+        jobTitle: t("usRole"),
+        description: t("usSub"),
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Westwood",
+          addressRegion: "NJ",
+          addressCountry: "US",
+        },
+        sameAs: [OLIVER_US.linkedin],
+      },
     ],
   };
 
@@ -265,11 +280,47 @@ export default async function TeamPage({
           </div>
         </section>
 
+        {/* United States — independent representative, not a subsidiary */}
+        <section className="mt-12">
+          <h2 className="mb-6 text-xl font-bold text-foreground">{t("usTitle")}</h2>
+          <div className="rounded-2xl border border-border bg-background p-6 sm:p-8">
+            <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
+              <span
+                className={`flex size-16 shrink-0 items-center justify-center rounded-2xl text-xl font-bold text-white ${OLIVER_US.color}`}
+              >
+                {OLIVER_US.initials}
+              </span>
+              <div className="min-w-0">
+                <h3 className="text-lg font-semibold text-foreground">{OLIVER_US.name}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">{t("usRole")}</p>
+                <p className="mt-0.5 text-xs text-muted-foreground">{t("usLocation")}</p>
+                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">{t("usSub")}</p>
+                <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2">
+                  <OliverUsEmailLink
+                    label={t("usEmailLabel")}
+                    className="text-sm font-medium text-brand-700 underline-offset-4 transition-colors hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring dark:text-brand-300"
+                  />
+                  <a
+                    href={OLIVER_US.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={t("usLinkedInLabel")}
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-700 underline-offset-4 transition-colors hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring dark:text-brand-300"
+                  >
+                    <LinkedInIcon className="size-3.5" />
+                    LinkedIn
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Board of Advisors */}
         <section className="mt-16">
           <h2 className="mb-2 text-xl font-bold text-foreground">{t("advisorsTitle")}</h2>
           <p className="mb-6 text-sm text-muted-foreground">{t("advisorsSub")}</p>
-          <div className="grid gap-5 sm:grid-cols-3">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {ADVISORS.map((advisor) => (
               <a
                 key={advisor.name}
