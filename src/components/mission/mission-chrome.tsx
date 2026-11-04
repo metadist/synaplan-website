@@ -1,5 +1,6 @@
 import { Space_Grotesk } from "next/font/google";
 import { getTranslations } from "next-intl/server";
+import { CookieNotice } from "@/components/consent/cookie-notice";
 import { MissionHeader } from "@/components/mission/mission-header";
 import { MissionFooter } from "@/components/mission/mission-footer";
 import { Parrot } from "@/components/mission/parrot";
@@ -38,6 +39,7 @@ export async function MissionChrome({
         {children}
       </main>
       <MissionFooter />
+      <CookieNotice />
       <Parrot />
       <RevealController />
     </div>

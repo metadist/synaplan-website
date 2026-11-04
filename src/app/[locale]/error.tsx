@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { CookieNotice } from "@/components/consent/cookie-notice";
 import { ParrotGlyph } from "@/components/mission/parrot-glyph";
 import { Lamp } from "@/components/mission/primitives";
 import "../mission.css";
@@ -43,6 +44,7 @@ export default function LocaleError({ error, reset }: { error: Error & { digest?
           <ParrotGlyph still className="h-24 w-20 opacity-90" />
         </div>
       </main>
+      <CookieNotice />
     </div>
   );
 }

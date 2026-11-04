@@ -1,6 +1,7 @@
 import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { LINKS } from "@/lib/constants";
+import { CookieNotice } from "@/components/consent/cookie-notice";
 import { ParrotGlyph } from "@/components/mission/parrot-glyph";
 import { Lamp } from "@/components/mission/primitives";
 import "../mission.css";
@@ -38,6 +39,7 @@ export default async function NotFound() {
           <ParrotGlyph still className="h-24 w-20 opacity-90" />
         </div>
       </main>
+      <CookieNotice />
     </div>
   );
 }
