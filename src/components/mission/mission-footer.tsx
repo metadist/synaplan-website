@@ -1,6 +1,6 @@
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { LINKS } from "@/lib/constants";
+import { LINKS, trustCenterUrl } from "@/lib/constants";
 import { OsbaMemberBadge } from "@/components/brand/osba-member-badge";
 import { CookieSettingsButton } from "@/components/consent/cookie-settings-button";
 import { ParrotGlyph } from "./parrot-glyph";
@@ -13,6 +13,7 @@ type FooterLink = { label: string; href: string; external?: boolean };
 export function MissionFooter() {
   const t = useTranslations("mission.footer");
   const tn = useTranslations("mission.nav");
+  const locale = useLocale();
   const year = new Date().getFullYear();
 
   const columns: { title: string; links: FooterLink[] }[] = [
@@ -57,6 +58,7 @@ export function MissionFooter() {
         { label: t("imprint"), href: "/imprint" },
         { label: t("privacy"), href: "/privacy-policy" },
         { label: t("terms"), href: "/terms" },
+        { label: t("trust"), href: trustCenterUrl(locale), external: true },
       ],
     },
   ];

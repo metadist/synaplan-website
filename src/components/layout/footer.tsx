@@ -1,6 +1,6 @@
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { LINKS } from "@/lib/constants";
+import { LINKS, trustCenterUrl } from "@/lib/constants";
 import { StoreBadges } from "@/components/brand/store-badges";
 import { GithubIcon, LinkedInIcon } from "@/components/icons";
 import { OsbaMemberBadge } from "@/components/brand/osba-member-badge";
@@ -9,6 +9,7 @@ import { SynaplanLogo } from "@/components/brand/synaplan-logo";
 export function Footer() {
   const t = useTranslations("footer");
   const tn = useTranslations("nav");
+  const locale = useLocale();
   const year = new Date().getFullYear();
 
   const columns = [
@@ -53,6 +54,7 @@ export function Footer() {
         { label: t("imprint"), href: "/imprint" },
         { label: t("privacy"), href: "/privacy-policy" },
         { label: t("terms"), href: "/terms" },
+        { label: t("trust"), href: trustCenterUrl(locale), external: true },
       ],
     },
   ];
