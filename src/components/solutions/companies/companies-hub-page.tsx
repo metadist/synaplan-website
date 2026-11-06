@@ -1,6 +1,6 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { SolutionArticleShell } from "@/components/solutions/solution-article-shell";
-import { LINKS, USE_CASES } from "@/lib/constants";
+import { LINKS, USE_CASES, trustCenterUrl } from "@/lib/constants";
 import {
   ArrowRight,
   BookOpen,
@@ -140,6 +140,12 @@ export async function CompaniesHubPage({ locale }: { locale: string }) {
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               {t("sovereignBody")}
             </p>
+            <a
+              href={trustCenterUrl(locale)}
+              className="mt-3 inline-flex min-h-11 items-center text-sm font-semibold text-[#002c92] underline underline-offset-4"
+            >
+              {t("trustCta")}
+            </a>
           </div>
           <a
             href={LINKS.sovereignEU}

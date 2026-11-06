@@ -27,6 +27,13 @@ export const STORE_LINKS = {
   },
 } as const;
 
+/** Trust center on the sovereignty site. German has no URL prefix there. */
+export function trustCenterUrl(locale: string): string {
+  return locale === "de"
+    ? "https://www.synaplan.eu/trust"
+    : "https://www.synaplan.eu/en/trust";
+}
+
 export function storeLinksFor(locale: string) {
   const lang = locale.startsWith("de") ? "de" : "en";
   return {
