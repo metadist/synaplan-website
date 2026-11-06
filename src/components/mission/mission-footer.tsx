@@ -2,6 +2,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { LINKS, trustCenterUrl } from "@/lib/constants";
 import { OsbaMemberBadge } from "@/components/brand/osba-member-badge";
+import { CookieSettingsButton } from "@/components/consent/cookie-settings-button";
 import { ParrotGlyph } from "./parrot-glyph";
 import { Lamp, Ruler } from "./primitives";
 import { ParrotSwitch } from "./mission-header";
@@ -97,6 +98,11 @@ export function MissionFooter() {
                     )}
                   </li>
                 ))}
+                {col.title === t("legal") ? (
+                  <li>
+                    <CookieSettingsButton label={t("cookies")} />
+                  </li>
+                ) : null}
               </ul>
             </div>
           ))}

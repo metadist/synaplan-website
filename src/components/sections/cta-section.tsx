@@ -45,7 +45,7 @@ export function CTASection() {
 
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <a
-                href={LINKS.web}
+                href={LINKS.register}
                 className={cn(
                   buttonVariants({ size: "lg" }),
                   "gap-2 border-transparent bg-white px-8 text-base font-semibold text-brand-700 shadow-xl shadow-black/10 hover:bg-white/95 hover:shadow-2xl"

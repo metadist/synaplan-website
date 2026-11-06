@@ -35,7 +35,7 @@
     "googlePlay": "Google Play (Android)"
   },
   "common": {
-    "startForFree": "Kostenlos starten",
+    "startForFree": "Registrieren",
     "bookDemo": "Chat via WhatsApp",
     "learnMore": "Mehr erfahren",
     "viewOnGithub": "Auf GitHub ansehen",
@@ -46,7 +46,7 @@
   },
   "tryChat": {
     "metaTitle": "Synaplan KI-Chat kostenlos testen — Ohne Anmeldung",
-    "metaDescription": "Synaplan-KI direkt im Browser testen — kein Konto, keine Installation. Multi-Model-Antworten, RAG und mehr ausprobieren. Kostenlos registrieren für vollen Zugang.",
+    "metaDescription": "Synaplan-KI direkt im Browser testen — kein Konto, keine Installation. Multi-Model-Antworten, RAG und mehr ausprobieren. Der volle Workspace ist ein kostenpflichtiger Tarif oder ein Einladungscode.",
     "badge": "Live-Demo",
     "heroEyebrow": "Live-Vorschau",
     "heroDisplay": "Live-Demo",
@@ -73,14 +73,14 @@
     "messagesLeft": "{count, plural, =0 {Keine Nachrichten übrig} one {Noch # Nachricht} other {Noch # Nachrichten}}",
     "messagesUsage": "{sent} von {max} Demo-Nachrichten in diesem Browser",
     "welcome": "Hallo — ich bin der Synaplan-Assistent. Frag mich zu Multi-Model-Routing, RAG auf euren Dokumenten oder zum Chat-Widget. Dein vollständiger Workspace liegt auf web.synaplan.com.",
-    "limitWelcome": "Du hast die kostenlosen Demo-Nachrichten in diesem Browser schon verbraucht. Weiter geht es in der Synaplan Web-App mit vollem Umfang.",
+    "limitWelcome": "Du hast die Demo-Nachrichten in diesem Browser schon verbraucht. Auf web.synaplan.com registrierst du dich mit einem kostenpflichtigen Tarif oder fragst einen Einladungscode an.",
     "notConfigured": "Die Live-Demo ist auf dieser Installation noch nicht konfiguriert. Das Produkt findest du trotzdem auf web.synaplan.com.",
     "limitTitle": "Das war’s für diese Demo",
-    "limitBody": "Weiter geht’s auf web.synaplan.com mit deinem Konto — voller Umfang und unbegrenzter Chat.",
+    "limitBody": "Weiter geht’s auf web.synaplan.com mit einem kostenpflichtigen Tarif oder einem Einladungscode. Den schicken wir Freunden und Partnern auf Anfrage, wenn sie die Plattform testen wollen.",
     "unavailableTitle": "Demo gerade nicht erreichbar",
     "unavailableBody": "Bitte öffne die volle Synaplan-App unter web.synaplan.com — dort chatten mit denselben Modellen und deinem Workspace.",
     "ctaWeb": "web.synaplan.com öffnen",
-    "ctaRegister": "Konto erstellen",
+    "ctaRegister": "Registrieren",
     "backHome": "Zur Startseite",
     "justNow": "Gerade eben",
     "placeholder": "Stelle irgendeine Frage…",
@@ -101,7 +101,7 @@
     "step2Title": "Antworten im Stream",
     "step2Body": "Antworten laufen tokenweise ein — ähnlich wie im In-App-Chat — damit du Latenz und Qualität direkt siehst.",
     "step3Title": "In der App weitermachen",
-    "step3Body": "Wenn das Demo-Limit erreicht ist, geht es auf web.synaplan.com weiter — unbegrenzte Chats, Workspace und Integrationen.",
+    "step3Body": "Wenn das Demo-Limit erreicht ist, geht es auf web.synaplan.com weiter. Ein Konto dort ist ein kostenpflichtiger Tarif oder ein Einladungscode, den wir auf Anfrage schicken.",
     "exploreSectionTitle": "Mehr als dieser Chat",
     "exploreSectionLead": "Diese Seiten vertiefen, was ein kurzer Chat nur andeuten kann — passend zur Informationsarchitektur von synaplan.com.",
     "exploreCard1Title": "Chat-Widget für die Website",
@@ -123,7 +123,7 @@
     "fullscreenEnter": "Vollbild",
     "fullscreenExit": "Vollbild beenden",
     "fullscreenDemoTitle": "Nur in der Web-App",
-    "fullscreenDemoBody": "Diese Funktion gibt es in dieser Browser-Demo nicht. Registriere dich auf web.synaplan.com für den vollen Workspace.",
+    "fullscreenDemoBody": "Diese Funktion gibt es in dieser Browser-Demo nicht. Auf web.synaplan.com registrierst du dich mit einem kostenpflichtigen Tarif oder fragst einen Einladungscode an.",
     "fullscreenDemoCta": "web.synaplan.com öffnen",
     "fullscreenDemoDismiss": "Schließen",
     "fsChromeAria": "Demo-Navigation (Vorschau)",
@@ -153,7 +153,7 @@
     "status": "Online",
     "statusDone": "Bereit",
     "placeholder": "Nachricht eingeben…",
-    "inputCta": "Kostenlos starten",
+    "inputCta": "Registrieren",
     "bot0": "Hallo! Ich bin Ihr Synaplan-Assistent. Ich unterstütze Teams bei Multi-Model-Routing, RAG auf eigenen Dokumenten und lückenlosen Audit-Logs — alles auf einer Open-Source-Plattform, die Sie einsehen und selbst hosten können.",
     "user0": "Können wir GPT und Claude im selben Workspace nutzen, ohne fünf verschiedene Oberflächen zu jonglieren?",
     "bot1": "Ja. Routen Sie Prompts zu OpenAI, Anthropic, Google, Meta, Mistral und mehr über eine API und ein UI. Wechseln Sie pro Anfrage oder Workflow — ohne Vendor Lock-in, mit einer gemeinsamen Kosten- und Nutzungsübersicht.",
@@ -162,7 +162,7 @@
     "user2": "Wir prüfen auch das Website-Widget — wie schnell können wir live gehen?",
     "bot3": "Viele Teams binden das Chat-Widget innerhalb eines Tages ein: Snippet oder WordPress-Plugin, Branding anpassen und denselben Richtlinien und Modellen wie intern ausliefern.",
     "user3": "Letzte Frage: Wie testen wir das ohne großes Risiko?",
-    "bot4": "Starten Sie mit der kostenlosen Stufe, um Modelle und Flows zu erkunden, und skalieren Sie bei Bedarf. Testen Sie die KI jederzeit via WhatsApp — auch für Security und Einkauf.",
+    "bot4": "Registrieren Sie sich mit einem kostenpflichtigen Tarif, oder fragen Sie einen Einladungscode an, wenn Sie als Freund oder Partner testen möchten. Die KI können Sie auch jederzeit via WhatsApp prüfen — auch für Security und Einkauf.",
     "ctaTryChat": "KI-Chat ausprobieren · ohne Login"
   },
   "platformPreview": {
@@ -655,7 +655,7 @@
     "faq2Q": "Sind Steuern im Preis enthalten?",
     "faq2A": "Die hier gezeigten Preise verstehen sich ohne MwSt. oder lokale Umsatzsteuer. Beim Checkout bzw. auf der Rechnung wird der passende Satz für Land und Unternehmensstatus ausgewiesen.",
     "faq3Q": "Gibt es eine kostenlose Testphase?",
-    "faq3A": "Sie koennen Synaplan ueber die Open-Source-Version testen oder den Dev-Server unter web.synaplan.com ausprobieren. Fuer Teams mit Security- oder Einkaufs-Reviews empfehlen wir eine Demo.",
+    "faq3A": "Die Open-Source-Ausgabe können Sie kostenlos selbst hosten. Auf web.synaplan.com registrieren Sie sich mit einem kostenpflichtigen Tarif. Freunde und Partner können einen Einladungscode anfragen, um die Plattform zu testen. Für Security- oder Einkaufs-Reviews chatten Sie mit uns via WhatsApp.",
     "faq4Q": "Was, wenn wir über Business hinauswachsen?",
     "faq4A": "Für hohe Volumina oder regulierte Umgebungen gibt es Enterprise-Vereinbarungen: individuelle SLAs, Onboarding und Kapazitätsplanung. Sprechen Sie uns an.",
     "faq5Q": "Was kostet die Enterprise-Installation?",
@@ -701,7 +701,7 @@
     "items": [
       {
         "q": "Was genau ist Synaplan?",
-        "a": "Synaplan ist eine Open-Source-KI-Plattform auf Basis von PHP 8.3+. Sie verbindet mehrere KI-Modelle (OpenAI, Anthropic, Groq, Gemini, Ollama), ermöglicht das Einbetten eines Chat-Widgets auf jeder Website, durchsucht Dokumente per RAG (Retrieval-Augmented Generation) und lässt sich mit unternehmensspezifischen Plugins erweitern — alles in einer selbst gehosteten Plattform."
+        "a": "Synaplan ist eine Open-Source-KI-Plattform auf Basis von PHP 8.5+. Sie verbindet mehrere KI-Modelle (OpenAI, Anthropic, Groq, Gemini, Ollama), ermöglicht das Einbetten eines Chat-Widgets auf jeder Website, durchsucht Dokumente per RAG (Retrieval-Augmented Generation) und lässt sich mit unternehmensspezifischen Plugins erweitern — alles in einer selbst gehosteten Plattform."
       },
       {
         "q": "Ist Synaplan eine ChatGPT-Alternative?",
@@ -735,7 +735,7 @@
   },
   "cta": {
     "title": "Eine KI. Jeder Kanal. Volle Kontrolle.",
-    "subtitle": "Kostenlos starten oder direkt via WhatsApp mit unserer KI chatten — für eine klare KI-Roadmap für Ihr Unternehmen.",
+    "subtitle": "Registrieren Sie sich mit einem kostenpflichtigen Tarif oder einem Einladungscode, oder chatten Sie via WhatsApp mit unserer KI — für eine klare KI-Roadmap.",
     "immediately": "Sofort verfügbar",
     "gdpr": "DSGVO-konform"
   },
@@ -798,7 +798,7 @@
       "faq4Q": "Wo starte ich?",
       "faq4A": "Dokumentation zu Snippet und WordPress-Plugin lesen oder direkt via WhatsApp testen — für IT und Marketing gemeinsam.",
       "bottomCtaTitle": "Direkt auf Ihrer Seite testen?",
-      "bottomCtaLead": "Kostenlos starten oder kurz via WhatsApp testen — Security und Branding im Blick.",
+      "bottomCtaLead": "Mit einem Tarif oder Einladungscode starten, oder kurz via WhatsApp testen — Security und Branding im Blick.",
       "landingHeroBadge": "Website-KI · conversionstark",
       "landingStatsTitle": "Schnelle UX, klare Governance",
       "landingStatsSubtitle": "Passend zu unseren SEO-Zielen: schlankes UI, wenig Layout-Sprung, EU-taugliche Datenführung.",
@@ -838,7 +838,7 @@
       "pricingHighlight": "Tarife ab 19,95 €/Monat fürs Website-Widget — skalieren wenn Traffic wächst.",
       "demoCaption": "Interaktive Vorschau — Demo-Skript, keine Live-Daten.",
       "midCtaTitle": "Jetzt ausprobieren",
-      "midCtaLead": "Synaplan kostenlos testen oder direkt via WhatsApp ausprobieren — Einbindung, Ihre Wissensquellen und die Einstellungen für Ihr Website-Widget."
+      "midCtaLead": "Mit einem Tarif oder Einladungscode starten oder direkt via WhatsApp ausprobieren — Einbindung, Ihre Wissensquellen und die Einstellungen für Ihr Website-Widget."
     },
     "trades": {
       "metaTitle": "KI-Chatbot für Handwerk & Gewerbe — Kundenservice-KI",
@@ -870,7 +870,7 @@
       "benefit3Title": "Schneller testen",
       "benefit3Desc": "Texte und Mappings in Synaplan ändern — ohne zweite Bot-Plattform neu deployen.",
       "bottomCtaTitle": "Widget für Handwerk starten",
-      "bottomCtaLead": "Kostenlos testen, Seiten anbinden, dann via WhatsApp ausprobieren — Disposition und Marketing im Blick."
+      "bottomCtaLead": "Mit einem Tarif oder Einladungscode starten, Seiten anbinden, dann via WhatsApp ausprobieren — Disposition und Marketing im Blick."
     },
     "hospitality": {
       "metaTitle": "KI-Chatbot für Hotels & Hospitality",
@@ -902,7 +902,7 @@
       "benefit3Title": "Ein Angebot auf einer Seite",
       "benefit3Desc": "Verlinken Sie von Ihrer Website — Gäste sehen Nutzen und Demo in einem Ablauf.",
       "bottomCtaTitle": "Hospitality-KI auf der Website",
-      "bottomCtaLead": "Synaplan kostenlos testen, offizielle Seiten anbinden — Pro-Connectoren bei Bedarf nachziehen."
+      "bottomCtaLead": "Mit einem Tarif oder Einladungscode starten, offizielle Seiten anbinden — Pro-Connectoren bei Bedarf nachziehen."
     },
     "customers": {
       "metaTitle": "KI-Chatbot Kundenbeispiele — Echte Einsätze",
@@ -980,12 +980,20 @@
       }
     }
   },
+  "cookieNotice": {
+    "title": "Optionale Analyse",
+    "body": "Wir nutzen Google Analytics, um zu sehen, welche Seiten verwendet werden. Das Skript und seine Cookies werden nur geladen, wenn Sie zustimmen — sonst wird nichts für die Analyse gespeichert.",
+    "privacy": "Datenschutzerklärung",
+    "decline": "Ablehnen",
+    "accept": "Zustimmen",
+    "close": "Schließen"
+  },
   "privacyPolicy": {
     "metaTitle": "Datenschutzerklärung — Synaplan",
     "metaDescription": "Informationen zur Verarbeitung Ihrer personenbezogenen Daten auf synaplan.com gemäß DSGVO.",
     "pageTitle": "Datenschutzerklärung",
     "pageSubtitle": "Transparente Informationen über die Verarbeitung Ihrer personenbezogenen Daten auf synaplan.com.",
-    "lastUpdated": "Stand: April 2026",
+    "lastUpdated": "Stand: 4. November 2026",
     "tocTitle": "Inhaltsverzeichnis",
     "legalBasis": "Rechtsgrundlage",
     "purposeLabel": "Zweck",
@@ -1004,16 +1012,16 @@
     "s2Body": "Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst und behandeln Ihre personenbezogenen Daten vertraulich sowie entsprechend den gesetzlichen Datenschutzvorschriften und dieser Datenschutzerklärung. Die Nutzung unserer Website ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben. Wir weisen darauf hin, dass die Datenübertragung im Internet Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.",
     "s3Title": "3. Datenerfassung auf dieser Website",
     "s3CookiesTitle": "Cookies",
-    "s3CookiesBody": "Unsere Website verwendet Cookies. Cookies sind kleine Textdateien, die auf Ihrem Endgerät gespeichert werden. Sie können Cookies in den Einstellungen Ihres Browsers oder über unser Cookie-Banner jederzeit verwalten und einzelne Kategorien aktivieren oder deaktivieren.",
+    "s3CookiesBody": "Cookies sind kleine Textdateien auf Ihrem Endgerät. Analyse-Cookies sind freiwillig: Sie werden erst gesetzt, nachdem Sie im Hinweis zugestimmt haben. Sie können diese Entscheidung jederzeit über die Cookie-Einstellungen in der Fußzeile oder in Ihrem Browser ändern. Den Hinweis zu ignorieren gilt nicht als Einwilligung.",
     "s3NecessaryTitle": "Notwendige Cookies",
     "s3NecessaryBody": "Diese Cookies sind für die Grundfunktionen der Website erforderlich (Session-Verwaltung, Sicherheit, Spracheinstellungen). Ohne diese Cookies kann die Website nicht ordnungsgemäß funktionieren.",
     "s3NecessaryLegal": "Art. 6 Abs. 1 lit. f DSGVO",
     "s3AnalyticsTitle": "Analyse-Cookies",
-    "s3AnalyticsBody": "Diese Cookies helfen uns zu verstehen, wie Besucher mit der Website interagieren, indem Informationen anonym gesammelt und gemeldet werden. Dies ermöglicht es uns, das Nutzererlebnis kontinuierlich zu verbessern.",
+    "s3AnalyticsBody": "Google-Analytics-Cookies (_ga und _ga_…) werden erst gesetzt, nachdem Sie im Hinweis zugestimmt haben. Sie helfen uns zu sehen, welche Seiten genutzt werden. Lehnen Sie ab oder antworten Sie nicht, wird das Analyse-Skript nicht geladen und es werden keine Analyse-Cookies gespeichert.",
     "s3AnalyticsLegal": "Art. 6 Abs. 1 lit. a DSGVO (Einwilligung)",
     "s3MarketingTitle": "Marketing-Cookies",
-    "s3MarketingBody": "Diese Cookies werden verwendet, um Besuchern relevante Inhalte und Marketing-Kampagnen anzubieten. Sie verfolgen Besucher über Websites hinweg und sammeln Informationen, um angepasste Inhalte bereitzustellen.",
-    "s3MarketingLegal": "Art. 6 Abs. 1 lit. a DSGVO (Einwilligung)",
+    "s3MarketingBody": "Diese Website setzt keine Marketing-Cookies und nutzt Analyse-Daten nicht für Werbung.",
+    "s3MarketingLegal": "Auf dieser Website nicht eingesetzt",
     "s3LogsTitle": "Server-Log-Dateien",
     "s3LogsBody": "Der Provider der Seiten erhebt und speichert automatisch Informationen in Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt. Dies sind: IP-Adresse, Datum und Uhrzeit der Anfrage, aufgerufene Seite, Zugriffsstatus/HTTP-Statuscode, übertragene Datenmenge, Referrer, Browser und Betriebssystem.",
     "s3LogsLegal": "Art. 6 Abs. 1 lit. f DSGVO",
@@ -1039,11 +1047,11 @@
     "s6Legal": "Art. 6 Abs. 1 lit. f DSGVO",
     "s6Dpa": "Vereinbarung nach Art. 28 DSGVO",
     "s6Transfer": "Cloudflare verarbeitet Daten auch auf Servern in den USA. Die Datenübermittlung erfolgt auf Grundlage der Standardvertragsklauseln der EU-Kommission sowie des EU-U.S. Data Privacy Framework (DPF).",
-    "s7Title": "7. Cloudflare Zaraz – Serverseitige Analyse",
-    "s7Body": "Diese Website nutzt Cloudflare Zaraz, ein serverseitiges Tag-Management-System auf der Cloudflare-Edge-Infrastruktur. Analyse-Skripte werden nicht direkt in Ihrem Browser geladen, sondern serverseitig verarbeitet, wodurch kein direkter Kontakt zwischen Ihrem Browser und Drittanbieter-Servern hergestellt wird. Dies bietet erhöhten Datenschutz und verbesserte Website-Performance.",
-    "s7Measures": "Folgende Datenschutzmaßnahmen sind aktiv: IP-Adressen werden vor der Übermittlung gekürzt (IP-Anonymisierung). User-Agent-Strings werden bereinigt. Die Verarbeitung erfolgt auf EU-Servern von Cloudflare. Google Consent Mode v2 ist aktiviert – personenbezogene Daten werden erst nach Ihrer ausdrücklichen Einwilligung verarbeitet.",
-    "s7Legal": "Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Sie können Ihre Einwilligung jederzeit in den Cookie-Einstellungen widerrufen. Ohne Einwilligung werden keine Analyse-Daten erhoben.",
-    "s7Transfer": "Durch die serverseitige Verarbeitung über Cloudflare Zaraz wird der direkte Datentransfer von Ihrem Browser in die USA vermieden.",
+    "s7Title": "7. Google Analytics",
+    "s7Body": "Wenn Sie im Cookie-Hinweis zustimmen, laden wir Google Analytics 4 in Ihrem Browser (Mess-ID G-0D8L6ESEFT) von Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Bis zu Ihrer Zustimmung wird das Skript nicht geladen, es geht keine Anfrage an Google und es werden keine Analyse-Cookies gesetzt. Google Analytics erfasst, welche Seiten genutzt werden, zusammen mit Browser, Gerät, ungefährer Region und Referrer, damit wir die Website verbessern können. Wir nutzen es nicht für Werbung.",
+    "s7Measures": "Das Tag wird erst eingefügt, nachdem Sie auf Zustimmen klicken. Speicher für Werbung und Personalisierung bleibt aus, Google-Signale ebenfalls. Google Analytics 4 speichert nicht Ihre vollständige IP-Adresse. Die Cookies (_ga und _ga_…) gelten bis zu zwei Jahre. Ihre Entscheidung liegt nur in diesem Browser für 180 Tage und ist selbst kein Tracking-Cookie; danach fragen wir erneut. Über die Cookie-Einstellungen in der Fußzeile widerrufen Sie die Einwilligung, beenden die weitere Messung und löschen bereits gesetzte Analyse-Cookies.",
+    "s7Legal": "Art. 6 Abs. 1 lit. a DSGVO und für das Speichern von Informationen auf Ihrem Endgerät § 25 Abs. 1 TDDDG (Einwilligung). Sie können die Einwilligung jederzeit über die Cookie-Einstellungen widerrufen. Ohne Einwilligung werden keine Analyse-Daten erhoben.",
+    "s7Transfer": "Google LLC in den USA kann diese Daten ebenfalls verarbeiten. Die Übermittlung stützt sich auf die Standardvertragsklauseln der EU-Kommission und, soweit anwendbar, auf das EU-U.S. Data Privacy Framework. Weitere Informationen: https://policies.google.com/privacy",
     "s8Title": "8. Datenspeicherung und Löschung",
     "s8Body": "Wir speichern personenbezogene Daten nur so lange, wie es für den jeweiligen Zweck erforderlich ist oder gesetzliche Aufbewahrungsfristen dies vorschreiben. Nach Ablauf der Speicherfristen werden Ihre Daten automatisch gelöscht, sofern keine gesetzlichen Aufbewahrungspflichten (z. B. steuerrechtliche Aufbewahrungsfristen von 6 bzw. 10 Jahren) entgegenstehen.",
     "s8TypeLabel": "Datenart",
@@ -1052,8 +1060,8 @@
     "s8Dur1": "7 Tage",
     "s8Row2": "Terminbuchungen (Calendly)",
     "s8Dur2": "Gemäß Calendly-Datenschutzrichtlinie",
-    "s8Row3": "Cookie-Einwilligungen",
-    "s8Dur3": "6 Monate",
+    "s8Row3": "Entscheidung zur Analyse (nur in diesem Browser gespeichert, kein Cookie)",
+    "s8Dur3": "180 Tage",
     "s9Title": "9. Ihre Rechte als betroffene Person",
     "s9Body": "Sie haben gemäß DSGVO folgende Rechte bezüglich Ihrer personenbezogenen Daten:",
     "s9R1": "Auskunft (Art. 15 DSGVO)",
@@ -1104,7 +1112,7 @@
     "pageSubtitle": "Die Bedingungen für die Nutzung des gehosteten Synaplan-Dienstes unter synaplan.com und der offiziellen Synaplan-Apps. Synaplan ist Open-Source-Software und unter der Apache-Lizenz 2.0 lizenziert.",
     "badge": "Apache-2.0 Open Source",
     "breadcrumbHome": "Startseite",
-    "lastUpdated": "Zuletzt aktualisiert: 16. Juli 2026",
+    "lastUpdated": "Zuletzt aktualisiert: 25. Oktober 2026",
     "linkPrivacy": "Zur Datenschutzerklärung",
     "linkImprint": "Zum Impressum",
     "sections": [
@@ -1147,7 +1155,7 @@
       {
         "title": "Abonnements und Zahlungen",
         "body": [
-          "Synaplan bietet eine kostenlose Stufe sowie optionale kostenpflichtige Abonnements, die zusätzliche Nutzung und Funktionen freischalten.",
+          "Auf web.synaplan.com ist ein Konto ein kostenpflichtiger Tarif oder ein Einladungscode, den wir Freunden und Partnern auf Anfrage ausstellen, wenn sie die Plattform testen möchten. Die Open-Source-Software bleibt unter der Apache-Lizenz 2.0 kostenlos selbst zu hosten. Kostenpflichtige Abonnements schalten die Nutzung und Funktionen des gewählten Tarifs frei.",
           "In den mobilen Apps werden Abonnements über Ihr App-Store-Konto verkauft und abgerechnet und dort verwaltet oder gekündigt. Im Web werden Abonnements über unsere Website abgewickelt. Der jeweils geltende Preis, Steuern und Abrechnungsbedingungen werden Ihnen vor dem Kauf angezeigt."
         ]
       },
@@ -1261,6 +1269,11 @@
     "officeCity": "40212 Düsseldorf",
     "officeCountry": "Deutschland",
     "officeMapsCta": "Auf der Karte zeigen",
+    "usRepTitle": "Vereinigte Staaten",
+    "usRepRole": "Repräsentant für die USA",
+    "usRepLocation": "Westwood, New Jersey",
+    "usRepBody": "Oliver Biewald vertritt die Synaplan-Aktivitäten in den USA, unterstützt von Open-Source-Entwicklern aus den gesamten Vereinigten Staaten.",
+    "usRepEmailLabel": "E-Mail an Oliver Biewald",
     "officeImprintCta": "Firmendaten im Impressum",
     "privacyTitle": "Was mit Ihren Daten passiert",
     "privacyBody": "Wir verwenden Ihre Angaben ausschließlich zur Bearbeitung Ihrer Anfrage — kein Newsletter, keine Weitergabe an Dritte. Alle Details stehen in unserer Datenschutzerklärung.",
@@ -1377,7 +1390,7 @@
     "badge": "Für Unternehmen",
     "heroTitle": "KI für Unternehmen — eine Plattform, volle Kontrolle",
     "heroLead": "Synaplan bündelt alle KI-Modelle Ihres Unternehmens unter einem Dach: Audit-Protokolle, Kostenlimits, DSGVO-konformes EU-Hosting und eine Wissensdatenbank, die aus Ihren eigenen Dokumenten antwortet.",
-    "ctaPrimary": "Kostenlos starten",
+    "ctaPrimary": "Registrieren",
     "ctaSecondary": "Test via WhatsApp",
     "featuresTitle": "Alles, was Ihr Team braucht — nichts, was Ihre Compliance-Abteilung hasst",
     "f1Title": "Alle Modelle, eine Oberfläche",
@@ -1398,7 +1411,7 @@
     "sovereignCta": "synaplan EU/CH entdecken",
     "trustCta": "Vertrauen: AVV, Schutz, Unterauftragnehmer",
     "ctaBannerTitle": "Bereit, Ihre KI-Workflows in Ordnung zu bringen?",
-    "ctaBannerBody": "Starten Sie kostenlos und verbinden Sie noch heute Ihre erste Wissensquelle. Upgraden Sie, wenn Ihr Team mehr benötigt.",
+    "ctaBannerBody": "Registrieren Sie sich mit einem kostenpflichtigen Tarif oder fragen Sie einen Einladungscode an, und verbinden Sie noch heute Ihre erste Wissensquelle.",
     "openSource": "100% Open Source",
     "gdpr": "DSGVO-konform"
   },
@@ -1450,7 +1463,7 @@
     "heroLead": "Synaplan ist vollständig quelloffen. Self-Hosting, REST-API, eigene Plugins oder als KI-Backbone für Ihr Produkt — Apache 2.0, kein Lock-in.",
     "ctaPrimary": "Auf GitHub ansehen",
     "ctaSecondary": "Dokumentation lesen",
-    "ctaTertiary": "Kostenlos starten",
+    "ctaTertiary": "Registrieren",
     "featuresTitle": "Gebaut für Entwickler",
     "f1Title": "100% Open Source",
     "f1Desc": "Forken, prüfen und beitragen. Apache-2.0-Lizenz — kein Lock-in, keine Black Box. Der vollständige Stack (PHP-Backend, Vue.js-Frontend, MariaDB, Qdrant) ist auf GitHub.",
@@ -1752,18 +1765,24 @@
     "ctaPartners": "Unsere Partner"
   },
   "teamPage": {
-    "metaTitle": "Das Synaplan-Team — KI-Ingenieure in Deutschland & der Schweiz",
-    "metaDescription": "Die Menschen hinter Synaplan: KI-Ingenieure, Designer und Open-Source-Spezialisten aus Düsseldorf und Basel entwickeln Enterprise-KI-Infrastruktur.",
+    "metaTitle": "Das Synaplan-Team — Deutschland, Schweiz und USA",
+    "metaDescription": "Die Menschen hinter Synaplan: KI-Ingenieure und Designer in Düsseldorf und Basel, und Oliver Biewald, der unsere Arbeit in den USA vertritt — unterstützt von Open-Source-Entwicklern aus dem ganzen Land.",
     "breadcrumbHome": "Startseite",
     "breadcrumbAbout": "Über uns",
     "breadcrumbTeam": "Team",
     "badge": "Das Team",
     "heroTitle": "Die Menschen hinter Synaplan",
-    "heroLead": "Synaplan wird von der metadist GmbH in Düsseldorf entwickelt — sie hält das geistige Eigentum, verwaltet EU-Deployments und leitet die Entwicklung. Unsere 100%-Tochtergesellschaft Synaplan Schweiz GmbH bei Basel erweitert unsere Präsenz in den Schweizer Markt.",
+    "heroLead": "Synaplan wird von der metadist GmbH in Düsseldorf entwickelt — sie hält das geistige Eigentum, verwaltet EU-Deployments und leitet die Entwicklung. Unsere 100%-Tochtergesellschaft Synaplan Schweiz GmbH bei Basel erweitert unsere Präsenz in den Schweizer Markt. In den USA ist Oliver Biewald unser Repräsentant.",
     "deTitle": "metadist GmbH — Düsseldorf, Deutschland",
     "deSub": "Die Muttergesellschaft hinter Synaplan. Hält das IP, verwaltet EU-Deployments und leitet die Entwicklung.",
     "chTitle": "Synaplan Schweiz GmbH — Basel, Schweiz",
     "chSub": "100%-Tochtergesellschaft der metadist GmbH. Schweizer Markt, DACH-Deployments und lokale Compliance.",
+    "usTitle": "Vereinigte Staaten",
+    "usRole": "Repräsentant für die USA",
+    "usLocation": "Westwood, New Jersey",
+    "usSub": "Oliver Biewald vertritt die Synaplan-Aktivitäten in den USA, unterstützt von Open-Source-Entwicklern aus den gesamten Vereinigten Staaten.",
+    "usEmailLabel": "E-Mail an Oliver Biewald",
+    "usLinkedInLabel": "Oliver Biewald auf LinkedIn",
     "advisorsTitle": "Beirat",
     "advisorsSub": "Branchenführer, die uns zu Strategie, Technologie und Wachstum beraten.",
     "techPartnersTitle": "Technologiepartner",
@@ -1865,7 +1884,7 @@
     "memoriesLink": "Mehr über KI-Memories",
     "memoriesHref": "/features/memories",
     "ctaPrimary": "Auf GitHub ansehen",
-    "ctaSecondary": "Kostenlos starten"
+    "ctaSecondary": "Registrieren"
   },
   "newsPage": {
     "metaTitle": "News — Blog, Releases & Community",
@@ -2065,15 +2084,38 @@
     },
     "hero": {
       "eyebrow": "SYNAPLAN // MISSION CONTROL",
-      "title": "Wir schaffen KI-Freiraum.",
-      "subtitle": "Self-hosted KI-Agenten, ein DSGVO-konformes Chatbot-Widget und RAG über Ihre Dokumente — auf WhatsApp, Outlook, Ihrer Website, API und MCP. Mit Docker oder Kubernetes betreiben oder in Deutschland hosten. Apache-2.0 ChatGPT-Alternative.",
+      "title": "KI-Unabhängigkeit installieren.",
+      "subtitle": "Ohne Vendor-Lock-in.",
+      "install": {
+        "docker": "Zuerst Docker Desktop starten.",
+        "docs": "Installationsanleitung",
+        "copy": "Kopieren",
+        "copied": "Kopiert",
+        "targetsLabel": "System",
+        "targets": {
+          "mac": "macOS",
+          "linux": "Linux",
+          "wsl": "WSL",
+          "k8s": "K8s",
+          "elestio": "Elest.io"
+        },
+        "k8sBefore": "Helm-Charts gibt es kostenlos auf ",
+        "k8sLink": "GitHub",
+        "k8sAfter": ". Getestet sind sie zum Beispiel mit openDesk und Hosting-Integrationen.",
+        "elestio": "Elestio hostet Synaplan für Sie, unter anderem auf AWS, Azure und weiteren Clouds. Backups, SSL, Updates und Monitoring sind inklusive.",
+        "elestioLink": "Hosting bei Elestio",
+        "hints": {
+          "mac": "Dann im Terminal einfügen.",
+          "linux": "Dann im Terminal einfügen. Docker Engine geht auch.",
+          "wsl": "WSL-Integration einschalten, dann in die Linux-Shell einfügen."
+        }
+      },
       "primary": "Mission starten",
       "secondary": "Quellcode lesen",
-      "selfHostCta": "In drei Minuten selbst starten",
       "demoDocsCta": "Synaplan-Demo Docs",
       "note": "Apache-2.0 · Docker · Kubernetes · selbst gehostet oder in Deutschland gehostet",
       "engineerTitle": "Open-Source-KI-Plattform. Self-Hosted. Kein Lock-in.",
-      "engineerSubtitle": "PHP 8.4 / Symfony-Backend, Vue-3-Frontend, MariaDB VECTOR + Qdrant, gRPC-Inferenz, OpenAPI-Vertrag, MCP-Server und -Client. Ein `make up` entfernt."
+      "engineerSubtitle": "PHP 8.5+ / Symfony-Backend, Vue-3-Frontend, MariaDB VECTOR + Qdrant, gRPC-Inferenz, OpenAPI-Vertrag, MCP-Server und -Client. Ein `make up` entfernt."
     },
     "ticker": [
       "Wir schaffen KI-Freiraum",
@@ -2296,7 +2338,7 @@
           "desc": "openDesk, EU-Hosting, Ihre Schlüssel"
         }
       ],
-      "cloudText": "Nichts zu installieren: web.synaplan.com läuft mit demselben Open-Source-Code, gehostet in Deutschland. Kostenlos starten, upgraden, wenn nötig.",
+      "cloudText": "Nichts zu installieren: web.synaplan.com läuft mit demselben Open-Source-Code, gehostet in Deutschland. Registrieren Sie sich mit einem kostenpflichtigen Tarif oder fragen Sie einen Einladungscode an.",
       "cloudCta": "Plattform öffnen",
       "docs": "Deployment-Doku"
     },
@@ -2332,7 +2374,7 @@
         },
         {
           "key": "backend",
-          "value": "PHP 8.4 · Symfony · FrankenPHP"
+          "value": "PHP 8.5+ · Symfony · FrankenPHP"
         },
         {
           "key": "frontend",
@@ -2432,6 +2474,7 @@
       "privacy": "Datenschutz",
       "terms": "Nutzungsbedingungen",
       "trust": "Vertrauen & Nachweise",
+      "cookies": "Cookie-Einstellungen",
       "sovereign": "Souveräne Edition (EU/CH)",
       "docs": "Dokumentation",
       "discord": "Discord",
@@ -2582,7 +2625,7 @@
         ],
         "cta": {
           "title": "Erst sehen, dann glauben.",
-          "text": "Den Chat ohne Konto ausprobieren oder einen kostenlosen Workspace starten.",
+          "text": "Den Chat ohne Konto ausprobieren oder sich mit einem Tarif oder Einladungscode registrieren.",
           "primary": "Chat ausprobieren",
           "secondary": "Preise"
         }

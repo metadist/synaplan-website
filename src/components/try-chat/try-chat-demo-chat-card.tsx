@@ -253,7 +253,7 @@ export function TryChatDemoChatCard({
               <ArrowUpRight className="size-4" />
             </a>
             <a
-              href={LINKS.app}
+              href={LINKS.register}
               className={cn(
                 buttonVariants({ variant: "outline", size: "lg" }),
                 "rounded-xl",

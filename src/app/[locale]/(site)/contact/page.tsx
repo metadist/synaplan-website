@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { DiscordIcon, GithubIcon, WhatsAppIcon } from "@/components/icons";
+import { OliverUsEmailLink } from "@/components/oliver-us-email";
 import { LINKS } from "@/lib/constants";
 import { alternateLanguageUrls, canonicalUrl, OG_IMAGE } from "@/lib/seo";
 import { buildBreadcrumbSchema, PUBLISHER, SITE_URL } from "@/lib/jsonld";
@@ -67,7 +68,7 @@ function ChannelCard({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-col rounded-2xl border border-[rgb(196_197_215/0.35)] bg-white/80 p-6 transition-shadow hover:shadow-md">
+    <div className="mc-paper-island flex flex-col rounded-2xl border border-[rgb(196_197_215/0.35)] bg-white/80 p-6 transition-shadow hover:shadow-md">
       <span className="mb-4 flex size-10 items-center justify-center rounded-xl bg-brand-50">
         <Icon className="size-4.5 text-brand-700" />
       </span>
@@ -277,7 +278,7 @@ export default async function ContactPage({
               {topics.map((topic) => (
                 <div
                   key={topic.title}
-                  className="flex flex-col rounded-2xl border border-[rgb(196_197_215/0.35)] bg-white/80 p-6"
+                  className="mc-paper-island flex flex-col rounded-2xl border border-[rgb(196_197_215/0.35)] bg-white/80 p-6"
                 >
                   <div className="mb-4 flex items-center gap-3">
                     <span className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-brand-50">
@@ -321,9 +322,9 @@ export default async function ContactPage({
             </div>
           </section>
 
-          {/* Office + privacy */}
-          <section aria-labelledby="contact-office" className="mt-14 grid gap-5 sm:grid-cols-2">
-            <div className="rounded-2xl border border-[rgb(196_197_215/0.35)] bg-white/80 p-6">
+          {/* Office, US representative, privacy */}
+          <section className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mc-paper-island rounded-2xl border border-[rgb(196_197_215/0.35)] bg-white/80 p-6">
               <div className="mb-4 flex items-center gap-3">
                 <span className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-brand-50">
                   <MapPin className="size-4 text-brand-700" aria-hidden />
@@ -361,7 +362,27 @@ export default async function ContactPage({
               </div>
             </div>
 
-            <div className="rounded-2xl border border-[rgb(196_197_215/0.35)] bg-white/80 p-6">
+            <div className="mc-paper-island rounded-2xl border border-[rgb(196_197_215/0.35)] bg-white/80 p-6">
+              <div className="mb-4 flex items-center gap-3">
+                <span className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-brand-50">
+                  <MapPin className="size-4 text-brand-700" aria-hidden />
+                </span>
+                <h2 className="text-base font-semibold text-foreground">{t("usRepTitle")}</h2>
+              </div>
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                <span className="font-medium text-foreground">Oliver Biewald</span>
+                {" · "}
+                {t("usRepRole")}
+                <br />
+                {t("usRepLocation")}
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{t("usRepBody")}</p>
+              <div className="mt-4">
+                <OliverUsEmailLink label={t("usRepEmailLabel")} className={actionClass} />
+              </div>
+            </div>
+
+            <div className="mc-paper-island rounded-2xl border border-[rgb(196_197_215/0.35)] bg-white/80 p-6">
               <div className="mb-4 flex items-center gap-3">
                 <span className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-brand-50">
                   <ShieldCheck className="size-4 text-brand-700" aria-hidden />

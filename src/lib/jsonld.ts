@@ -277,7 +277,7 @@ export function buildHowToSchema(locale: string) {
             "@type": "HowToStep",
             position: 1,
             name: "Konto erstellen",
-            text: "Registriere dich kostenlos auf web.synaplan.com oder lade die Open-Source-Version von GitHub herunter und starte sie per Docker.",
+            text: "Registriere dich auf web.synaplan.com mit einem kostenpflichtigen Tarif oder einem Einladungscode, oder lade die Open-Source-Version von GitHub herunter und starte sie per Docker.",
             url: "https://web.synaplan.com",
           },
           {
@@ -300,7 +300,7 @@ export function buildHowToSchema(locale: string) {
             "@type": "HowToStep",
             position: 1,
             name: "Create an account",
-            text: "Sign up for free at web.synaplan.com or download the open-source version from GitHub and run it via Docker.",
+            text: "Sign up at web.synaplan.com with a paid plan or an invitation code, or download the open-source version from GitHub and run it via Docker.",
             url: "https://web.synaplan.com",
           },
           {
@@ -364,7 +364,7 @@ export function buildPricingFaqSchema(locale: string) {
         },
         {
           q: "Gibt es eine kostenlose Testphase?",
-          a: "Ja. Du kannst Synaplan kostenlos testen — entweder über die Self-Hosted Open-Source-Version oder über eine Demo-Anfrage für die Cloud-Plattform.",
+          a: "Die Open-Source-Version kannst du kostenlos selbst hosten. Auf web.synaplan.com registrierst du dich mit einem kostenpflichtigen Tarif. Freunde und Partner können einen Einladungscode anfragen, um die Plattform zu testen.",
         },
         {
           q: "Was kostet die Enterprise-Lösung?",
@@ -386,7 +386,7 @@ export function buildPricingFaqSchema(locale: string) {
         },
         {
           q: "Is there a free trial?",
-          a: "Yes. You can try Synaplan for free — either via the self-hosted open-source version or by requesting a demo of the cloud platform.",
+          a: "The open-source version is free to self-host. On web.synaplan.com you sign up with a paid plan. Friends and partners can ask for an invitation code to try the platform.",
         },
         {
           q: "How much does the Enterprise solution cost?",

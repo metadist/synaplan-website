@@ -35,7 +35,7 @@
     "googlePlay": "Google Play (Android)"
   },
   "common": {
-    "startForFree": "Start for free",
+    "startForFree": "Sign up",
     "bookDemo": "Chat on WhatsApp",
     "learnMore": "Learn more",
     "viewOnGithub": "View on GitHub",
@@ -46,7 +46,7 @@
   },
   "tryChat": {
     "metaTitle": "Try Synaplan AI Chat Free — No Login Required",
-    "metaDescription": "Chat with Synaplan’s AI right in your browser — no account, no install. Test multi-model responses, RAG, and more. Register free for full access.",
+    "metaDescription": "Chat with Synaplan’s AI right in your browser — no account, no install. Test multi-model responses, RAG, and more. The full workspace is a paid plan or an invitation code.",
     "badge": "Live demo",
     "heroEyebrow": "Live preview",
     "heroDisplay": "Live demo",
@@ -73,14 +73,14 @@
     "messagesLeft": "{count, plural, =0 {No messages left} one {# message left} other {# messages left}}",
     "messagesUsage": "{sent} of {max} demo messages in this browser",
     "welcome": "Hi — I’m Synaplan’s assistant. Ask about multi-model routing, RAG on your documents, or the chat widget. Your full workspace is on web.synaplan.com.",
-    "limitWelcome": "You have already used the free demo messages from this browser. Continue in the Synaplan web app for unlimited conversations.",
+    "limitWelcome": "You have already used the demo messages from this browser. On web.synaplan.com, sign up with a paid plan, or ask us for an invitation code.",
     "notConfigured": "The live demo is not configured on this deployment yet. You can still explore the product on web.synaplan.com.",
     "limitTitle": "That’s all for this demo",
-    "limitBody": "Continue on web.synaplan.com with your account — unlimited chats and your full workspace.",
+    "limitBody": "Continue on web.synaplan.com with a paid plan, or ask us for an invitation code. We send those to friends and partners who want to try the platform.",
     "unavailableTitle": "We can’t reach the demo right now",
     "unavailableBody": "Open the full Synaplan app at web.synaplan.com to chat with the same models and your workspace.",
     "ctaWeb": "Open web.synaplan.com",
-    "ctaRegister": "Create an account",
+    "ctaRegister": "Sign up",
     "backHome": "Back to homepage",
     "justNow": "Just now",
     "placeholder": "Ask anything…",
@@ -101,7 +101,7 @@
     "step2Title": "Streamed answers",
     "step2Body": "Replies arrive token by token — similar to the in-app chat — so you see latency and quality in real time.",
     "step3Title": "Continue in the app",
-    "step3Body": "When the demo limit is reached, open web.synaplan.com for unlimited chats, your workspace, and integrations.",
+    "step3Body": "When the demo limit is reached, continue on web.synaplan.com. An account there is a paid plan, or an invitation code we send on request.",
     "exploreSectionTitle": "Explore beyond this chat",
     "exploreSectionLead": "These pages go deeper than a short conversation can cover — aligned with how we structure the product story on synaplan.com.",
     "exploreCard1Title": "Website chat widget",
@@ -123,7 +123,7 @@
     "fullscreenEnter": "Fullscreen",
     "fullscreenExit": "Exit fullscreen",
     "fullscreenDemoTitle": "Full app only",
-    "fullscreenDemoBody": "This control is not available in the browser demo. Create a free account on web.synaplan.com for the full workspace.",
+    "fullscreenDemoBody": "This control is not available in the browser demo. On web.synaplan.com, sign up with a paid plan, or ask us for an invitation code.",
     "fullscreenDemoCta": "Open web.synaplan.com",
     "fullscreenDemoDismiss": "Dismiss",
     "fsChromeAria": "Demo navigation (preview)",
@@ -153,7 +153,7 @@
     "status": "Online",
     "statusDone": "Ready",
     "placeholder": "Type your message…",
-    "inputCta": "Start for free",
+    "inputCta": "Sign up",
     "bot0": "Hi! I'm your Synaplan assistant. I help teams run multi-model routing, RAG on their own documents, and full audit trails — all in one open-source platform you can inspect and self-host.",
     "user0": "Can we use GPT and Claude in the same workspace without juggling five different dashboards?",
     "bot1": "Yes. Route prompts to OpenAI, Anthropic, Google, Meta, Mistral, and more from a single API and UI. Switch models per request or per workflow — no vendor lock-in, and you keep one cost and usage view.",
@@ -162,7 +162,7 @@
     "user2": "We're also looking at the website widget — how fast can we go live?",
     "bot3": "Many teams embed the chat widget in a day: add the snippet or WordPress plugin, style it to your brand, and route traffic through the same policies and models as your internal apps.",
     "user3": "Last question: how do we try it without a huge commitment?",
-    "bot4": "Start with the free tier to explore models and flows, then scale when you're ready. Test it via WhatsApp anytime if you want to see the AI in action for your security and procurement checklist.",
+    "bot4": "Sign up with a paid plan, or ask for an invitation code if you are a friend or partner and want to try it. You can also test the AI via WhatsApp for a security and procurement checklist.",
     "ctaTryChat": "Try the AI chat · no login needed"
   },
   "platformPreview": {
@@ -655,7 +655,7 @@
     "faq2Q": "Are taxes included in the price?",
     "faq2A": "Prices on this page are shown without VAT or local sales tax. The checkout or invoice step applies the correct rate for your country and business status.",
     "faq3Q": "Is there a free trial?",
-    "faq3A": "You can explore Synaplan on our free tier to validate workflows before committing to a paid plan. For teams with procurement or security reviews, book a demo and we’ll walk through your checklist.",
+    "faq3A": "The open-source edition is free to self-host. On web.synaplan.com you sign up with a paid plan. Friends and partners can ask us for an invitation code to try the platform. For a procurement or security review, chat with us on WhatsApp and we’ll walk through your checklist.",
     "faq4Q": "What if we outgrow Business?",
     "faq4A": "For high-volume or regulated environments we offer enterprise-style agreements: custom SLAs, dedicated onboarding, and capacity planning. Contact us and we’ll shape something that fits.",
     "faq5Q": "How is the Enterprise pricing determined?",
@@ -701,7 +701,7 @@
     "items": [
       {
         "q": "What exactly is Synaplan?",
-        "a": "Synaplan is an open-source AI platform built on PHP 8.3+. It lets you connect multiple AI models (OpenAI, Anthropic, Groq, Gemini, Ollama), embed a chat widget on any website, search your documents with RAG (retrieval-augmented generation), and extend functionality with business-specific plugins — all in one self-hosted platform."
+        "a": "Synaplan is an open-source AI platform built on PHP 8.5+. It lets you connect multiple AI models (OpenAI, Anthropic, Groq, Gemini, Ollama), embed a chat widget on any website, search your documents with RAG (retrieval-augmented generation), and extend functionality with business-specific plugins — all in one self-hosted platform."
       },
       {
         "q": "Is Synaplan a ChatGPT alternative?",
@@ -735,7 +735,7 @@
   },
   "cta": {
     "title": "One AI. Every channel. Full control.",
-    "subtitle": "Start for free or chat with our AI directly via WhatsApp to get a clear AI roadmap for your organization.",
+    "subtitle": "Sign up with a paid plan or an invitation code, or chat with our AI on WhatsApp for a clear AI roadmap.",
     "immediately": "Immediately available",
     "gdpr": "GDPR compliant"
   },
@@ -798,7 +798,7 @@
       "faq4Q": "Where do I start?",
       "faq4A": "Open the docs for the embed snippet and WordPress plugin, or test it directly via WhatsApp with your IT and marketing stakeholders.",
       "bottomCtaTitle": "Ready to try it on your site?",
-      "bottomCtaLead": "Start free, or test it via WhatsApp to align security and branding.",
+      "bottomCtaLead": "Sign up with a paid plan or an invitation code, or test it via WhatsApp to align security and branding.",
       "landingHeroBadge": "Website AI · Lead-ready",
       "landingStatsTitle": "Fast experiences, serious governance",
       "landingStatsSubtitle": "Aligned with our technical SEO goals: responsive UI, minimal layout shift, and EU-friendly data handling.",
@@ -838,7 +838,7 @@
       "pricingHighlight": "Plans from €19.95/mo for website widgets — scale when traffic grows.",
       "demoCaption": "Interactive preview — scripted demo, not live data.",
       "midCtaTitle": "Try it",
-      "midCtaLead": "Start free or try it via WhatsApp — we cover embed, your knowledge sources, and settings for your website widget."
+      "midCtaLead": "Sign up with a paid plan or an invitation code, or try it via WhatsApp — we cover embed, your knowledge sources, and settings for your website widget."
     },
     "trades": {
       "metaTitle": "AI Chatbot for Trades & Crafts — Customer Service AI",
@@ -870,7 +870,7 @@
       "benefit3Title": "Faster experiments",
       "benefit3Desc": "Change copy and mappings in Synaplan — no redeploy of a separate bot platform.",
       "bottomCtaTitle": "Launch a trades-ready widget",
-      "bottomCtaLead": "Start free, connect your pages, then try it via WhatsApp to align dispatch and marketing."
+      "bottomCtaLead": "Sign up with a paid plan or an invitation code, connect your pages, then try it via WhatsApp to align dispatch and marketing."
     },
     "hospitality": {
       "metaTitle": "AI Chatbot for Hotels & Hospitality",
@@ -902,7 +902,7 @@
       "benefit3Title": "One page for your offer",
       "benefit3Desc": "Link from your site so guests see the story and demo in one flow.",
       "bottomCtaTitle": "Add hospitality AI to your site",
-      "bottomCtaLead": "Try Synaplan free, connect your official pages, then scale with Pro connectors when needed."
+      "bottomCtaLead": "Sign up with a paid plan or an invitation code, connect your official pages, then add Pro connectors when you need them."
     },
     "customers": {
       "metaTitle": "AI Chatbot Customer Stories — Real Deployments",
@@ -980,12 +980,20 @@
       }
     }
   },
+  "cookieNotice": {
+    "title": "Optional analytics",
+    "body": "We use Google Analytics to see which pages are used. The script and its cookies load only if you agree — otherwise nothing is stored for analytics.",
+    "privacy": "Privacy policy",
+    "decline": "Decline",
+    "accept": "Agree",
+    "close": "Close"
+  },
   "privacyPolicy": {
     "metaTitle": "Privacy Policy — Synaplan",
     "metaDescription": "Information on the processing of your personal data on synaplan.com in accordance with GDPR.",
     "pageTitle": "Privacy Policy",
     "pageSubtitle": "Transparent information on the processing of your personal data on synaplan.com.",
-    "lastUpdated": "Last updated: April 2026",
+    "lastUpdated": "Last updated: 4 November 2026",
     "tocTitle": "Table of Contents",
     "legalBasis": "Legal basis",
     "purposeLabel": "Purpose",
@@ -1004,16 +1012,16 @@
     "s2Body": "We take the protection of your personal data very seriously and treat it in accordance with applicable data protection laws and this privacy policy. In general, you can use our website without providing personal data. Where personal data is collected on our pages, this is always on a voluntary basis. This data will not be passed on to third parties without your explicit consent. We draw your attention to the fact that data transmission over the internet may have security gaps. Complete protection against access by third parties is not possible.",
     "s3Title": "3. Data collection on this website",
     "s3CookiesTitle": "Cookies",
-    "s3CookiesBody": "Our website uses cookies. Cookies are small text files stored on your device. You can manage cookies via your browser settings or our cookie banner at any time and enable or disable individual categories.",
+    "s3CookiesBody": "Cookies are small text files stored on your device. Analytics cookies are optional: they are set only after you agree in the cookie notice. You can change that choice at any time via Cookie settings in the footer, or through your browser. Ignoring the notice does not count as consent.",
     "s3NecessaryTitle": "Necessary cookies",
     "s3NecessaryBody": "These cookies are required for the basic functions of the website (session management, security, language settings). Without these cookies the website cannot function properly.",
     "s3NecessaryLegal": "Art. 6(1)(f) GDPR",
     "s3AnalyticsTitle": "Analytics cookies",
-    "s3AnalyticsBody": "These cookies help us understand how visitors interact with the website by collecting and reporting information anonymously, allowing us to continuously improve the user experience.",
+    "s3AnalyticsBody": "Google Analytics cookies (_ga and _ga_…) are set only after you agree in the cookie notice. They help us see which pages are used. If you decline or do not answer, the analytics script is not loaded and no analytics cookies are stored.",
     "s3AnalyticsLegal": "Art. 6(1)(a) GDPR (consent)",
     "s3MarketingTitle": "Marketing cookies",
-    "s3MarketingBody": "These cookies are used to offer visitors relevant content and marketing campaigns. They track visitors across websites and collect information to provide tailored content.",
-    "s3MarketingLegal": "Art. 6(1)(a) GDPR (consent)",
+    "s3MarketingBody": "This website does not set marketing cookies and does not use analytics data for advertising.",
+    "s3MarketingLegal": "Not used on this website",
     "s3LogsTitle": "Server log files",
     "s3LogsBody": "The website provider automatically collects and stores information in server log files that your browser transmits to us. This includes: IP address, date and time of the request, page accessed, access status/HTTP status code, data volume transferred, referring website, browser and operating system.",
     "s3LogsLegal": "Art. 6(1)(f) GDPR",
@@ -1039,11 +1047,11 @@
     "s6Legal": "Art. 6(1)(f) GDPR",
     "s6Dpa": "Data processing agreement pursuant to Art. 28 GDPR",
     "s6Transfer": "Cloudflare also processes data on servers in the USA. The transfer is based on the EU Commission's Standard Contractual Clauses and the EU-U.S. Data Privacy Framework (DPF).",
-    "s7Title": "7. Cloudflare Zaraz – Server-side Analytics",
-    "s7Body": "This website uses Cloudflare Zaraz, a server-side tag management system running on Cloudflare's edge infrastructure. Analytics scripts are not loaded directly in your browser but processed server-side, preventing direct contact between your browser and third-party servers. This provides enhanced privacy and improved website performance.",
-    "s7Measures": "Active privacy measures: IP addresses are truncated before transmission (IP anonymisation). User-agent strings are sanitised. Processing takes place on Cloudflare's EU servers. Google Consent Mode v2 is enabled — personal data is only processed after you have given your explicit consent.",
-    "s7Legal": "Art. 6(1)(a) GDPR (consent). You can withdraw your consent at any time in the cookie settings. Without consent, no analytics data is collected.",
-    "s7Transfer": "Server-side processing via Cloudflare Zaraz prevents the direct transfer of data from your browser to US servers.",
+    "s7Title": "7. Google Analytics",
+    "s7Body": "If you agree in the cookie notice, we load Google Analytics 4 in your browser (measurement ID G-0D8L6ESEFT) from Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland. Until you agree, the script is not loaded, no request is sent to Google, and no analytics cookies are set. Google Analytics records which pages are used, together with browser, device, approximate region and referrer, so we can improve the site. We do not use it for advertising.",
+    "s7Measures": "The tag is added only after you click Agree. Advertising and personalisation storage stay off, and Google signals stay off. Google Analytics 4 does not store your full IP address. The cookies it sets (_ga and _ga_…) last up to two years. Your yes or no is kept only in this browser for 180 days and is not itself a tracking cookie; after that we ask again. You can withdraw consent from Cookie settings in the footer. That stops further measurement and deletes analytics cookies already set.",
+    "s7Legal": "Art. 6(1)(a) GDPR and, for storing information on your device, Section 25(1) TDDDG (consent). You can withdraw consent at any time via Cookie settings. Without consent, no analytics data is collected.",
+    "s7Transfer": "Google LLC in the United States may also process this data. Transfers rely on the EU Commission's Standard Contractual Clauses and, where applicable, the EU-U.S. Data Privacy Framework. Further information: https://policies.google.com/privacy",
     "s8Title": "8. Data retention and deletion",
     "s8Body": "We store personal data only for as long as necessary for the respective purpose or as required by statutory retention obligations. After the retention period expires, your data is automatically deleted unless statutory retention obligations (e.g. tax retention periods of 6 or 10 years) apply.",
     "s8TypeLabel": "Data type",
@@ -1052,8 +1060,8 @@
     "s8Dur1": "7 days",
     "s8Row2": "Demo bookings (Calendly)",
     "s8Dur2": "Per Calendly privacy policy",
-    "s8Row3": "Cookie consents",
-    "s8Dur3": "6 months",
+    "s8Row3": "Analytics consent choice (stored in this browser only, not a cookie)",
+    "s8Dur3": "180 days",
     "s9Title": "9. Your rights as a data subject",
     "s9Body": "Under GDPR you have the following rights regarding your personal data:",
     "s9R1": "Right of access (Art. 15 GDPR)",
@@ -1104,7 +1112,7 @@
     "pageSubtitle": "The terms for using the Synaplan hosted service at synaplan.com and the official Synaplan mobile apps. Synaplan is open-source software, licensed under the Apache License 2.0.",
     "badge": "Apache-2.0 Open Source",
     "breadcrumbHome": "Home",
-    "lastUpdated": "Last updated: 16 July 2026",
+    "lastUpdated": "Last updated: 25 October 2026",
     "linkPrivacy": "View Privacy Policy",
     "linkImprint": "View Imprint",
     "sections": [
@@ -1147,7 +1155,7 @@
       {
         "title": "Subscriptions and payments",
         "body": [
-          "Synaplan offers a free tier and optional paid subscriptions that unlock additional usage and features.",
+          "On web.synaplan.com an account is a paid plan, or an invitation code we issue on request to friends and partners who want to try the platform. The open-source software remains free to self-host under the Apache License 2.0. Paid subscriptions unlock the usage and features of the plan you choose.",
           "In the mobile apps, subscriptions are sold and billed through your app store account and are managed or cancelled there. On the web, subscriptions are handled through our website. The applicable price, taxes and billing terms are shown to you at the point of purchase."
         ]
       },
@@ -1261,6 +1269,11 @@
     "officeCity": "40212 Düsseldorf",
     "officeCountry": "Germany",
     "officeMapsCta": "Show on the map",
+    "usRepTitle": "United States",
+    "usRepRole": "US Representative",
+    "usRepLocation": "Westwood, New Jersey",
+    "usRepBody": "Oliver Biewald represents Synaplan’s activities in the United States, supported by open-source developers from across the country.",
+    "usRepEmailLabel": "Email Oliver Biewald",
     "officeImprintCta": "Company details in the imprint",
     "privacyTitle": "What happens to your data",
     "privacyBody": "We use the information you send us solely to process your request — no newsletter, no third-party sharing. Full details are in our privacy policy.",
@@ -1377,7 +1390,7 @@
     "badge": "For Companies",
     "heroTitle": "AI for companies — one platform, full control",
     "heroLead": "Synaplan puts every AI model your business uses under one roof: audit trails, cost limits, GDPR-compliant EU hosting, and a knowledge base that answers from your own documents.",
-    "ctaPrimary": "Start for free",
+    "ctaPrimary": "Sign up",
     "ctaSecondary": "Test via WhatsApp",
     "featuresTitle": "Everything your team needs — nothing your compliance team hates",
     "f1Title": "All models, one interface",
@@ -1398,7 +1411,7 @@
     "sovereignCta": "Discover synaplan EU/CH",
     "trustCta": "Trust center: DPA, safeguards, subprocessors",
     "ctaBannerTitle": "Ready to put your AI workflows in order?",
-    "ctaBannerBody": "Start free and connect your first knowledge source today. Upgrade when your team needs more.",
+    "ctaBannerBody": "Sign up with a paid plan, or ask for an invitation code, and connect your first knowledge source today.",
     "openSource": "100% Open Source",
     "gdpr": "GDPR compliant"
   },
@@ -1450,7 +1463,7 @@
     "heroLead": "Synaplan is fully open-source. Self-host it, connect via REST API, build custom plugins, or use it as the AI backbone for your own product — Apache 2.0, no lock-in.",
     "ctaPrimary": "View on GitHub",
     "ctaSecondary": "Read the docs",
-    "ctaTertiary": "Start for free",
+    "ctaTertiary": "Sign up",
     "featuresTitle": "Built for builders",
     "f1Title": "100% open source",
     "f1Desc": "Fork, inspect, and contribute. Apache 2.0 licence — no lock-in, no black box. The full stack (PHP backend, Vue.js frontend, MariaDB, Qdrant) is on GitHub.",
@@ -1752,18 +1765,24 @@
     "ctaPartners": "Our partners"
   },
   "teamPage": {
-    "metaTitle": "Meet the Synaplan Team — AI Engineers in Germany & Switzerland",
-    "metaDescription": "The people behind Synaplan: AI engineers, designers, and open-source specialists from Düsseldorf and Basel building enterprise AI infrastructure.",
+    "metaTitle": "Meet the Synaplan Team — Germany, Switzerland & the US",
+    "metaDescription": "The people behind Synaplan: AI engineers and designers in Düsseldorf and Basel, and Oliver Biewald, who represents our work in the United States with open-source developers from across the country.",
     "breadcrumbHome": "Home",
     "breadcrumbAbout": "About",
     "breadcrumbTeam": "Team",
     "badge": "The team",
     "heroTitle": "The people behind Synaplan",
-    "heroLead": "Synaplan is developed by metadist GmbH in Düsseldorf, which holds the IP, manages EU deployments, and leads development. Our 100% subsidiary Synaplan Schweiz GmbH near Basel extends our reach into the Swiss market.",
+    "heroLead": "Synaplan is developed by metadist GmbH in Düsseldorf, which holds the IP, manages EU deployments, and leads development. Our 100% subsidiary Synaplan Schweiz GmbH near Basel extends our reach into the Swiss market. In the United States, Oliver Biewald is our representative.",
     "deTitle": "metadist GmbH — Düsseldorf, Germany",
     "deSub": "The parent company behind Synaplan. Holds the IP, manages EU deployments, and leads development.",
     "chTitle": "Synaplan Schweiz GmbH — Basel, Switzerland",
     "chSub": "100% subsidiary of metadist GmbH. Swiss market, DACH deployments, and local compliance.",
+    "usTitle": "United States",
+    "usRole": "US Representative",
+    "usLocation": "Westwood, New Jersey",
+    "usSub": "Oliver Biewald represents Synaplan’s activities in the United States, supported by open-source developers from across the country.",
+    "usEmailLabel": "Email Oliver Biewald",
+    "usLinkedInLabel": "Oliver Biewald on LinkedIn",
     "advisorsTitle": "Board of Advisors",
     "advisorsSub": "Industry leaders who advise us on strategy, technology, and growth.",
     "techPartnersTitle": "Technology Partners",
@@ -1865,7 +1884,7 @@
     "memoriesLink": "Learn about AI Memories",
     "memoriesHref": "/features/memories",
     "ctaPrimary": "View on GitHub",
-    "ctaSecondary": "Start for free"
+    "ctaSecondary": "Sign up"
   },
   "newsPage": {
     "metaTitle": "News — Blog, Releases & Community",
@@ -2065,15 +2084,38 @@
     },
     "hero": {
       "eyebrow": "SYNAPLAN // MISSION CONTROL",
-      "title": "We produce AI freedom.",
-      "subtitle": "Self-hosted AI agents, a GDPR-compliant chatbot widget and RAG over your documents — on WhatsApp, Outlook, your website, API and MCP. Run it with Docker or Kubernetes, or host it in Germany. Apache-2.0 ChatGPT alternative.",
+      "title": "Install AI freedom.",
+      "subtitle": "No vendor lock-in.",
+      "install": {
+        "docker": "Start Docker Desktop first.",
+        "docs": "Install guide",
+        "copy": "Copy",
+        "copied": "Copied",
+        "targetsLabel": "System",
+        "targets": {
+          "mac": "macOS",
+          "linux": "Linux",
+          "wsl": "WSL",
+          "k8s": "K8s",
+          "elestio": "Elest.io"
+        },
+        "k8sBefore": "Helm charts are free on ",
+        "k8sLink": "GitHub",
+        "k8sAfter": ", and are tested with openDesk and hosting integrations.",
+        "elestio": "Elestio hosts Synaplan for you on AWS, Azure, and other clouds. Backups, SSL, updates, and monitoring are included.",
+        "elestioLink": "Hosting on Elestio",
+        "hints": {
+          "mac": "Then paste this in Terminal.",
+          "linux": "Then paste this in a terminal. Docker Engine works too.",
+          "wsl": "Turn on WSL integration, then paste this in the Linux shell."
+        }
+      },
       "primary": "Start a mission",
       "secondary": "Read the source",
-      "selfHostCta": "Run it yourself in three minutes",
       "demoDocsCta": "Synaplan Demo docs",
       "note": "Apache-2.0 · Docker · Kubernetes · self-hosted or hosted in Germany",
       "engineerTitle": "Open-source AI platform. Self-hosted. No lock-in.",
-      "engineerSubtitle": "PHP 8.4 / Symfony backend, Vue 3 frontend, MariaDB VECTOR + Qdrant, gRPC inference, OpenAPI contract, MCP server and client. One `make up` away."
+      "engineerSubtitle": "PHP 8.5+ / Symfony backend, Vue 3 frontend, MariaDB VECTOR + Qdrant, gRPC inference, OpenAPI contract, MCP server and client. One `make up` away."
     },
     "ticker": [
       "We produce AI freedom",
@@ -2296,7 +2338,7 @@
           "desc": "openDesk, EU hosting, your keys"
         }
       ],
-      "cloudText": "Nothing to install: web.synaplan.com runs the same open-source code, hosted in Germany. Start free, upgrade when you need to.",
+      "cloudText": "Nothing to install: web.synaplan.com runs the same open-source code, hosted in Germany. Sign up with a paid plan, or ask for an invitation code.",
       "cloudCta": "Open the platform",
       "docs": "Deployment docs"
     },
@@ -2332,7 +2374,7 @@
         },
         {
           "key": "backend",
-          "value": "PHP 8.4 · Symfony · FrankenPHP"
+          "value": "PHP 8.5+ · Symfony · FrankenPHP"
         },
         {
           "key": "frontend",
@@ -2432,6 +2474,7 @@
       "privacy": "Privacy policy",
       "terms": "Terms of use",
       "trust": "Trust center",
+      "cookies": "Cookie settings",
       "sovereign": "Sovereign edition (EU/CH)",
       "docs": "Documentation",
       "discord": "Discord",
@@ -2582,7 +2625,7 @@
         ],
         "cta": {
           "title": "See it before you believe it.",
-          "text": "Try the chat without an account, or start a free workspace.",
+          "text": "Try the chat without an account, or sign up with a paid plan or an invitation code.",
           "primary": "Try the chat",
           "secondary": "Pricing"
         }
