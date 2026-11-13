@@ -2114,7 +2114,7 @@
       "secondary": "Pricing",
       "demoDocsCta": "Synaplan Demo docs",
       "note": "Apache-2.0 · no licence fee · in the cloud or on your own servers",
-      "engineerTitle": "Open-source AI platform. Self-hosted. No lock-in.",
+      "engineerTitle": "Open-source AI platform. Self-hosted. Own the flow.",
       "engineerSubtitle": "PHP 8.5+ / Symfony backend, Vue 3 frontend, MariaDB VECTOR + Qdrant, gRPC inference, OpenAPI contract, MCP server and client. One `make up` away.",
       "engineerNote": "Apache-2.0 · Docker · Kubernetes · self-hosted or hosted in Germany"
     },
