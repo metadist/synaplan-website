@@ -10,6 +10,7 @@ import {
   FlightLogSection,
   Hero,
   LaunchCta,
+  PlainSection,
   RunSection,
   SignalsSection,
   SourceSection,
@@ -55,6 +56,7 @@ export default async function MissionHomePage({ params }: { params: Promise<{ lo
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Hero locale={locale} />
+      <PlainSection locale={locale} />
       <SignalsSection locale={locale} />
       <CoreSection locale={locale} />
       <ConnectSection locale={locale} />

@@ -37,43 +37,51 @@ export async function Hero({ locale }: { locale: string }) {
             <span className="mc-engineer">{t("engineerTitle")}</span>
           </h1>
           <p className="mt-5">
-            <span className="mc-marketing mc-hero-sub">{t("subtitle")}</span>
+            <span className="mc-marketing mc-lead">{t("subtitle")}</span>
             <span className="mc-engineer mc-lead">{t("engineerSubtitle")}</span>
           </p>
-          <div className="mt-8">
-            <QuickInstall
-              dockerNote={t("install.docker")}
-              docsLabel={t("install.docs")}
-              copyLabel={t("install.copy")}
-              copiedLabel={t("install.copied")}
-              targetsLabel={t("install.targetsLabel")}
-              k8sBefore={t("install.k8sBefore")}
-              k8sLink={t("install.k8sLink")}
-              k8sAfter={t("install.k8sAfter")}
-              elestioText={t("install.elestio")}
-              elestioLink={t("install.elestioLink")}
-              targets={[
-                { key: "mac", label: t("install.targets.mac"), hint: t("install.hints.mac"), mode: "shell" },
-                { key: "linux", label: t("install.targets.linux"), hint: t("install.hints.linux"), mode: "shell" },
-                { key: "wsl", label: t("install.targets.wsl"), hint: t("install.hints.wsl"), mode: "shell" },
-                { key: "k8s", label: t("install.targets.k8s"), hint: "", mode: "k8s" },
-                { key: "elestio", label: t("install.targets.elestio"), hint: "", mode: "elestio" },
-              ]}
-            />
-          </div>
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <a href={LINKS.web} className="mc-btn mc-btn--primary">
+            <Link href="/try-chat" className="mc-btn mc-btn--primary">
               [ {t("primary")} ]
-            </a>
-            <a href={LINKS.demoDocs} target="_blank" rel="noopener noreferrer" className="mc-btn">
-              {t("demoDocsCta")} ↗
-            </a>
+            </Link>
+            <Link href="/pricing" className="mc-btn">
+              {t("secondary")}
+            </Link>
           </div>
-          <p className="mc-label mt-6 text-[0.6rem]">{t("note")}</p>
+          <p className="mc-label mt-6 text-[0.6rem]">
+            <span className="mc-marketing">{t("note")}</span>
+            <span className="mc-engineer">{t("engineerNote")}</span>
+          </p>
         </div>
         <div className="relative">
           <MissionConsole />
         </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── WHAT YOU GET ──────────────────────────────────────────────────────── */
+
+type PlainPoint = { title: string; text: string };
+
+export async function PlainSection({ locale }: { locale: string }) {
+  const t = await getTranslations({ locale, namespace: "mission.plain" });
+  const points = t.raw("points") as PlainPoint[];
+  return (
+    <section id="plain" className="mc-section mc-marketing">
+      <div className="mc-wrap">
+        <Reveal>
+          <h2 className="mc-display max-w-4xl text-[clamp(1.9rem,3.6vw,3rem)]">{t("heading")}</h2>
+        </Reveal>
+        <ul className="mt-10 grid gap-3 sm:grid-cols-2">
+          {points.map((point, i) => (
+            <Reveal key={point.title} as="li" delay={i * 60} className="mc-card">
+              <p className="mc-mono text-[0.8rem] tracking-[0.08em] uppercase">{point.title}</p>
+              <p className="mt-2 text-[0.95rem] leading-relaxed text-[var(--mc-text-muted)]">{point.text}</p>
+            </Reveal>
+          ))}
+        </ul>
       </div>
     </section>
   );
@@ -177,6 +185,7 @@ export async function ConnectSection({ locale }: { locale: string }) {
 
 export async function RunSection({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: "mission.run" });
+  const install = await getTranslations({ locale, namespace: "mission.hero" });
   const ladder = t.raw("ladder") as LadderStep[];
   return (
     <section id="run" className="mc-section" data-parrot="run">
@@ -186,6 +195,27 @@ export async function RunSection({ locale }: { locale: string }) {
         <Reveal>
           <h2 className="mc-display max-w-4xl text-[clamp(1.9rem,3.6vw,3rem)]">{t("heading")}</h2>
           <p className="mc-lead mt-5 mc-marketing">{t("text")}</p>
+        </Reveal>
+        <Reveal delay={80} className="mt-8 max-w-xl">
+          <QuickInstall
+            dockerNote={install("install.docker")}
+            docsLabel={install("install.docs")}
+            copyLabel={install("install.copy")}
+            copiedLabel={install("install.copied")}
+            targetsLabel={install("install.targetsLabel")}
+            k8sBefore={install("install.k8sBefore")}
+            k8sLink={install("install.k8sLink")}
+            k8sAfter={install("install.k8sAfter")}
+            elestioText={install("install.elestio")}
+            elestioLink={install("install.elestioLink")}
+            targets={[
+              { key: "mac", label: install("install.targets.mac"), hint: install("install.hints.mac"), mode: "shell" },
+              { key: "linux", label: install("install.targets.linux"), hint: install("install.hints.linux"), mode: "shell" },
+              { key: "wsl", label: install("install.targets.wsl"), hint: install("install.hints.wsl"), mode: "shell" },
+              { key: "k8s", label: install("install.targets.k8s"), hint: "", mode: "k8s" },
+              { key: "elestio", label: install("install.targets.elestio"), hint: "", mode: "elestio" },
+            ]}
+          />
         </Reveal>
         <Reveal delay={100} className="mt-10">
           <DeployTabs

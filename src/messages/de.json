@@ -1918,8 +1918,8 @@
   "mission": {
     "meta": {
       "home": {
-        "title": "Synaplan — Open-Source-KI-Plattform | Self-Hosted Agenten & Chatbot",
-        "description": "Open-Source-KI-Plattform für Unternehmen: self-hosted KI-Agenten, DSGVO-konformes Chatbot-Widget, RAG-Wissensdatenbank, WhatsApp- und Outlook-KI, MCP, Multi-Model-Routing. Docker, Kubernetes oder Hosting in Deutschland. Apache-2.0 ChatGPT-Alternative.",
+        "title": "Synaplan — Own the flow.",
+        "description": "Die offene KI, die aus den eigenen Unterlagen antwortet, mit Quelle, Modellwahl und sichtbarem Preis. Dieselbe Antwort im Chat, auf der Website, in der Mail, auf WhatsApp und Telegram.",
         "keywords": [
           "Open-Source-KI-Plattform",
           "Self-Hosted KI",
@@ -1949,8 +1949,8 @@
         ]
       },
       "product": {
-        "title": "KI-Plattform: Chat, RAG, Agenten, Widget & MCP | Synaplan",
-        "description": "Funktionen der Synaplan-KI-Plattform: Multi-Model-Chat, RAG-Wissensdatenbank, KI-Agenten, einbettbares Chatbot-Widget, WhatsApp- und Outlook-Kanäle, Memories, MCP, Microsoft-365-Verbindungen und DSGVO-Audit-Logs. Open Source, self-hosted.",
+        "title": "Die offene KI für die eigenen Unterlagen | Synaplan",
+        "description": "Synaplan antwortet aus Ihren Unterlagen, mit Quelle, Modellwahl und sichtbarem Preis. In der Cloud oder auf eigenen Servern. Apache-2.0, ohne Lizenzgebühr.",
         "keywords": [
           "KI-Plattform",
           "RAG",
@@ -1995,8 +1995,8 @@
         ]
       },
       "connect": {
-        "title": "WhatsApp-, Outlook- & Website-KI-Chatbot | Synaplan",
-        "description": "DSGVO-konformen KI-Chatbot an WhatsApp Business, Outlook, Website-Widget, E-Mail, REST-API, MCP, Microsoft 365 und Nextcloud anbinden. Eine Open-Source-KI-Plattform für jeden Kanal.",
+        "title": "Dieselbe Antwort auf Website, Mail, WhatsApp und Telegram | Synaplan",
+        "description": "Der Assistent ist derselbe, egal wo die Frage ankommt. Outlook ist ein Zusatz im Mailprogramm. Die Dateien können in OpenCloud, Nextcloud, Dropbox oder ownCloud.online bleiben.",
         "keywords": [
           "WhatsApp-KI",
           "Outlook-KI",
@@ -2017,8 +2017,8 @@
         ]
       },
       "agents": {
-        "title": "KI-Agenten mit RAG, Tools & menschlicher Freigabe | Synaplan",
-        "description": "Open-Source-KI-Agenten, die in Ihrer RAG-Wissensdatenbank suchen, Tools und MCP-Server aufrufen und auf menschliche Freigabe warten, bevor sie schreiben. Lokales Ollama oder Cloud-Modelle. Vollständiges Audit-Log. Self-hosted.",
+        "title": "Werkzeuge, mehrere Schritte, Freigabe | Synaplan",
+        "description": "Der Assistent liest die Unterlagen, kann Werkzeuge nutzen und eine Aufgabe in mehreren Schritten erledigen. Eine Mail oder eine Änderung geht erst hinaus, wenn ein Mensch sie freigibt.",
         "keywords": [
           "KI-Agenten",
           "RAG-Agenten",
@@ -2061,9 +2061,9 @@
     "skip": "Zum Inhalt springen",
     "nav": {
       "product": "Produkt",
-      "deploy": "Deploy",
+      "deploy": "Selbst betreiben",
       "connect": "Connect",
-      "agents": "Agenten",
+      "agents": "Assistenten",
       "source": "Source",
       "docs": "Docs",
       "status": "Systemstatus",
@@ -2083,9 +2083,9 @@
       "classic": "Klassische Startseite"
     },
     "hero": {
-      "eyebrow": "SYNAPLAN // MISSION CONTROL",
-      "title": "KI-Unabhängigkeit installieren.",
-      "subtitle": "Ohne Vendor-Lock-in.",
+      "eyebrow": "SYNAPLAN",
+      "title": "Own the flow.",
+      "subtitle": "Die offene KI, die aus den eigenen Unterlagen antwortet — mit Quelle, Modellwahl und sichtbarem Preis.",
       "install": {
         "docker": "Zuerst Docker Desktop starten.",
         "docs": "Installationsanleitung",
@@ -2110,12 +2110,34 @@
           "wsl": "WSL-Integration einschalten, dann in die Linux-Shell einfügen."
         }
       },
-      "primary": "Mission starten",
-      "secondary": "Quellcode lesen",
+      "primary": "Chat ausprobieren",
+      "secondary": "Preise",
       "demoDocsCta": "Synaplan-Demo Docs",
-      "note": "Apache-2.0 · Docker · Kubernetes · selbst gehostet oder in Deutschland gehostet",
+      "note": "Apache-2.0 · ohne Lizenzgebühr · in der Cloud oder auf eigenen Servern",
       "engineerTitle": "Open-Source-KI-Plattform. Self-Hosted. Kein Lock-in.",
-      "engineerSubtitle": "PHP 8.5+ / Symfony-Backend, Vue-3-Frontend, MariaDB VECTOR + Qdrant, gRPC-Inferenz, OpenAPI-Vertrag, MCP-Server und -Client. Ein `make up` entfernt."
+      "engineerSubtitle": "PHP 8.5+ / Symfony-Backend, Vue-3-Frontend, MariaDB VECTOR + Qdrant, gRPC-Inferenz, OpenAPI-Vertrag, MCP-Server und -Client. Ein `make up` entfernt.",
+      "engineerNote": "Apache-2.0 · Docker · Kubernetes · selbst gehostet oder in Deutschland gehostet"
+    },
+    "plain": {
+      "heading": "Was Sie davon haben.",
+      "points": [
+        {
+          "title": "Dateien bleiben",
+          "text": "OpenCloud, Nextcloud, Dropbox und ownCloud.online sind angebunden. Nichts muss umziehen."
+        },
+        {
+          "title": "Preis auf einen Klick",
+          "text": "Ein Klick zeigt das Modell, die Tokens und was geschickt wurde."
+        },
+        {
+          "title": "Sie wählen das Modell",
+          "text": "Die großen US-Modelle, Mistral aus Europa, Ollama auf dem eigenen Server, deutsche GPUs über TrustedTokens. „Erneut mit …“ stellt dieselbe Frage an ein anderes Modell."
+        },
+        {
+          "title": "Dieselbe Antwort",
+          "text": "Im Chat, auf der Website, in der Mail, auf WhatsApp und Telegram. Der Code ist Apache-2.0 und ohne Lizenzgebühr nutzbar, in der Cloud oder auf eigenen Servern."
+        }
+      ]
     },
     "ticker": [
       "Wir schaffen KI-Freiraum",
@@ -2199,48 +2221,48 @@
     },
     "signals": {
       "num": "01",
-      "title": "Eingehende Signale",
-      "heading": "WhatsApp, Outlook, Mail und Website — eine KI für jeden Kanal.",
-      "text": "Ein DSGVO-konformer KI-Chatbot und dieselben Agenten auf WhatsApp Business, Outlook, Ihrem Website-Widget, Desktop und der API. Jede Nachricht trifft auf dieselbe RAG-Wissensdatenbank und dieselben Regeln — egal, woher sie kommt.",
-      "core": "Agent-Kern",
+      "title": "Dieselbe Antwort",
+      "heading": "Im Chat, auf der Website, in der Mail, auf WhatsApp und Telegram.",
+      "text": "Eine Frage, eine Wissensbasis, ein Preis. Der Assistent ist derselbe, egal wo sie ankommt.",
+      "core": "Assistent",
       "channels": [
         {
           "key": "mail",
           "label": "Mail",
-          "desc": "Postfächer werden zu Agenten-Queues."
+          "desc": "Dieselbe Antwort in der Mail."
         },
         {
           "key": "whatsapp",
           "label": "WhatsApp",
-          "desc": "Geschäftsnummer, in Sekunden beantwortet."
+          "desc": "Dieselbe Antwort auf WhatsApp."
         },
         {
           "key": "web",
           "label": "Web",
-          "desc": "Ein Script-Tag. Das Widget auf jeder Website."
+          "desc": "Dieselbe Antwort auf Ihrer Website."
         },
         {
           "key": "api",
           "label": "API",
-          "desc": "REST + OpenAPI. Anthropic-kompatibles Gateway."
+          "desc": "Für eigene Anbindungen."
         },
         {
           "key": "outlook",
           "label": "Outlook",
-          "desc": "Add-in direkt im Mailprogramm."
+          "desc": "Zusatz im Mailprogramm: zusammenfassen und entwerfen."
         },
         {
           "key": "desktop",
           "label": "Desktop",
-          "desc": "Nativer Client führt Skills lokal aus."
+          "desc": "Programm für den Schreibtisch."
         }
       ]
     },
     "core": {
       "num": "02",
-      "title": "Agent-Kern",
-      "heading": "KI-Agenten mit RAG, Tools — und einem Menschen, wo es zählt.",
-      "text": "Ein Synaplan-KI-Agent ist kein Chatfenster mit System-Prompt. Er ist eine Pipeline: RAG über Ihre Dokumente, Multi-Model-Routing, Tools und MCP, ein Freigabe-Gate und ein Audit-Log für jeden Schritt.",
+      "title": "Der Assistent",
+      "heading": "Er liest die Unterlagen und zeigt, was die Antwort kostet.",
+      "text": "Ein Klick zeigt Modell, Tokens und was geschickt wurde. Ein anderes Modell wählen Sie mit „Erneut mit …“. Eine Mail oder eine Änderung geht erst hinaus, wenn ein Mensch sie freigibt.",
       "steps": [
         {
           "key": "understand",
@@ -2250,7 +2272,7 @@
         {
           "key": "retrieve",
           "label": "abrufen",
-          "desc": "RAG über Ihre Dokumente und Memories."
+          "desc": "Die Stelle in Ihren Dokumenten finden."
         },
         {
           "key": "reason",
@@ -2259,13 +2281,13 @@
         },
         {
           "key": "tool",
-          "label": "tool",
-          "desc": "ERP, Kalender, Mail, MCP-Server."
+          "label": "werkzeug",
+          "desc": "Kalender, Mail, die Systeme, die Sie schon haben."
         },
         {
           "key": "approval",
           "label": "freigabe",
-          "desc": "Ein Mensch bestätigt, bevor geschrieben wird."
+          "desc": "Ein Mensch sagt ja, bevor eine Mail oder eine Änderung hinausgeht."
         },
         {
           "key": "execute",
@@ -2276,27 +2298,27 @@
       "facts": [
         {
           "label": "Wissen",
-          "value": "RAG über Dokumente, Mails und Dateien — MariaDB VECTOR oder Qdrant"
+          "value": "Antworten aus Ihren Dokumenten, mit der Quelle daneben."
         },
         {
           "label": "Modelle",
-          "value": "Ollama, OpenAI, Anthropic, Groq, Gemini, xAI — pro Aufgabe geroutet"
+          "value": "US-Modelle, Mistral, Ollama auf dem eigenen Server, TrustedTokens."
         },
         {
-          "label": "Tools",
-          "value": "Eingebaute Tools, Plugins, MCP-Server, Desktop-Skills"
+          "label": "Werkzeuge",
+          "value": "Für die Schritte, die vor der Antwort liegen."
         },
         {
           "label": "Kontrolle",
-          "value": "Freigaben, Audit-Log, Memories pro Nutzer, Rate Limits"
+          "value": "Freigabe, bevor etwas hinausgeht. Der Preis bleibt sichtbar."
         }
       ]
     },
     "connect": {
       "num": "03",
-      "title": "Alles verbinden",
-      "heading": "Eine Topologie, nicht nur ein Chatbot.",
-      "text": "Die Open-Source-KI-Plattform sitzt zwischen WhatsApp, Outlook, Ihrem Website-Chatbot, Microsoft 365, Nextcloud und MCP. Kanäle kommen herein, die RAG-Wissensdatenbank und Tools docken am Kern an, jedes Paket wird protokolliert.",
+      "title": "Dateien bleiben",
+      "heading": "Die Unterlagen bleiben, wo sie sind.",
+      "text": "OpenCloud, Nextcloud, Dropbox und ownCloud.online sind angebunden. Die KI zieht daneben ein. Nichts muss umziehen.",
       "hint": "Knoten berühren oder anklicken, um den Datenverkehr zu verfolgen.",
       "nodes": {
         "synaplan": "Der Kern. Agenten, Wissen, Routing, Freigaben, Audit.",
@@ -2312,9 +2334,9 @@
     },
     "run": {
       "num": "04",
-      "title": "Überall lauffähig",
-      "heading": "Self-Hosted KI: Heute Docker, morgen Kubernetes.",
-      "text": "Die gesamte Open-Source-KI-Plattform ist dockerisiert und unter Apache-2.0 lizenziert. Auf dem Laptop starten, auf einen On-Premise-Server umziehen, mit dem öffentlichen Helm-Chart auf Kubernetes skalieren — oder von uns in Deutschland hosten lassen.",
+      "title": "Selbst betreiben",
+      "heading": "In der Cloud, oder auf Ihren eigenen Servern.",
+      "text": "Dieselbe Software, unter Apache-2.0, ohne Lizenzgebühr. Wer sie selbst startet, findet den Befehl hier.",
       "tabs": {
         "compose": "Docker Compose",
         "helm": "Kubernetes",
@@ -2454,7 +2476,7 @@
       ]
     },
     "footer": {
-      "tagline": "Wir schaffen KI-Freiraum.",
+      "tagline": "Own the flow.",
       "product": "Produkt",
       "deep": "Vertiefung",
       "company": "Unternehmen",
@@ -2485,10 +2507,10 @@
     },
     "pages": {
       "product": {
-        "eyebrow": "PRODUKT // SYS-01",
-        "title": "Open-Source-KI-Plattform: Chat, RAG, Agenten und Widget.",
-        "lead": "Synaplan ist die self-hosted KI-Plattform unter Ihren Agenten: Multi-Model-Chat, RAG-Wissensdatenbank, Tools, WhatsApp- und Outlook-Kanäle, MCP und DSGVO-Audit — auf der Infrastruktur Ihrer Wahl. Hier ist das Inventar.",
-        "inventoryTitle": "Systeminventar",
+        "eyebrow": "DAS PRODUKT",
+        "title": "Die offene KI für die eigenen Unterlagen.",
+        "lead": "Synaplan antwortet aus Ihren Unterlagen, mit Quelle, Modellwahl und sichtbarem Preis. In der Cloud oder auf eigenen Servern. Der Code steht unter Apache-2.0 und bleibt ohne Lizenzgebühr nutzbar.",
+        "inventoryTitle": "Das Inventar",
         "inventory": [
           {
             "id": "SYS-01",
@@ -2499,15 +2521,15 @@
           },
           {
             "id": "SYS-02",
-            "name": "Wissen (RAG)",
-            "desc": "Dokumente hochladen, Laufwerke verbinden, semantisch suchen. MariaDB VECTOR oder Qdrant.",
+            "name": "Wissen",
+            "desc": "Dokumente hochladen oder eine Ablage verbinden. Die Antwort nennt die Stelle.",
             "status": "in betrieb",
             "href": "/features/documents"
           },
           {
             "id": "SYS-03",
-            "name": "Agenten",
-            "desc": "Missionen mit Wissen, Tools, Freigaben und Telemetrie. Skills laufen auf dem Desktop.",
+            "name": "Assistenten",
+            "desc": "Werkzeuge, mehrere Schritte, und eine Freigabe, bevor eine Mail oder eine Änderung hinausgeht.",
             "status": "in betrieb",
             "href": "/agents"
           },
@@ -2521,7 +2543,7 @@
           {
             "id": "SYS-05",
             "name": "Kanäle",
-            "desc": "Mail, WhatsApp, Outlook-Add-in, Web, API, Desktop — ein Eingang für den Agenten.",
+            "desc": "Mail, WhatsApp, Outlook-Zusatz, Web und Desktop. Dieselbe Antwort, wo die Frage ankommt.",
             "status": "in betrieb",
             "href": "/connect"
           },
@@ -2565,60 +2587,68 @@
           {
             "num": "01",
             "title": "Für die, die fragen",
-            "heading": "Einmal fragen. Eine Antwort aus dem eigenen Wissen bekommen.",
-            "text": "Teams nutzen Synaplan wie eine sehr gut informierte Kollegin: Sie kennt das Handbuch, die Verträge und die letzten 200 Tickets — und sagt, woher die Antwort stammt.",
+            "heading": "Einmal fragen. Die Antwort kommt aus den eigenen Unterlagen.",
+            "text": "Ein Beispiel. Die Frage ist auf Englisch, das Angebot ein deutsches PDF. Der Assistent liest die Stelle, die entscheidet, und legt die Quelle daneben. Die Datei bleibt in der Ablage.",
             "items": [
               {
-                "label": "Quellen belegt",
-                "text": "Jede Antwort verweist auf das Dokument und die Passage, die verwendet wurden."
+                "label": "Quelle daneben",
+                "text": "Jede Antwort nennt das Dokument und die Stelle."
               },
               {
-                "label": "Jedes Gerät",
-                "text": "Web, iOS, Android, Outlook, Desktop — ein Konto."
+                "label": "Preis auf einen Klick",
+                "text": "Modell, Tokens und was geschickt wurde. Im Beispiel liegt das unter einem Cent."
               },
               {
-                "label": "Jedes Modell",
-                "text": "Lokal für sensible Daten, Cloud für Geschwindigkeit — der Router entscheidet nach Regel."
+                "label": "Modellwahl",
+                "text": "Die großen US-Modelle, Mistral aus Europa, Ollama auf dem eigenen Server, deutsche GPUs über TrustedTokens. „Erneut mit …“ stellt dieselbe Frage an ein anderes Modell."
+              },
+              {
+                "label": "Dateien bleiben",
+                "text": "OpenCloud, Nextcloud, Dropbox und ownCloud.online. Nichts muss umziehen."
               }
             ]
           },
           {
             "num": "02",
-            "title": "Für die, die es betreiben",
-            "heading": "Betreiben wie jeden anderen Dienst, den Sie besitzen.",
-            "text": "Feature-Module, Konfiguration über Umgebungsvariablen, Migrationen beim Start, Health-Endpunkte, OpenAPI-Vertrag. Keine Überraschungen um 3 Uhr nachts.",
+            "title": "Für die, die mehr tun",
+            "heading": "Werkzeuge, mehrere Schritte, und eine Freigabe, bevor etwas hinausgeht.",
+            "text": "Der Assistent kann Werkzeuge nutzen und eine Aufgabe in mehreren Schritten erledigen. Eine Mail oder eine Änderung geht erst hinaus, wenn ein Mensch sie freigibt.",
             "items": [
               {
-                "label": "Feature-Module",
-                "text": "Optionale Teile (lokale KI, Suche, TTS, Qdrant) sind deklarierte Module — aus heißt nicht vorhanden."
+                "label": "Werkzeuge",
+                "text": "Anbindung an die Systeme, die Sie schon haben."
               },
               {
-                "label": "Beobachtbar",
-                "text": "Strukturierte Logs, Rate Limits, Quoten pro Nutzer, Audit-Trail."
+                "label": "Mehrere Schritte",
+                "text": "Der Assistent liest, sucht und kommt zur Stelle, die entscheidet."
               },
               {
-                "label": "Aktualisierbar",
-                "text": "Getaggte Releases, idempotente Seeder, Doctrine-Migrationen."
+                "label": "Freigabe",
+                "text": "Nach außen erst, wenn ein Mensch ja sagt."
+              },
+              {
+                "label": "Dieselbe Antwort",
+                "text": "Im Chat, auf der Website, in der Mail, auf WhatsApp und Telegram."
               }
             ]
           },
           {
             "num": "03",
             "title": "Für die, die entscheiden",
-            "heading": "Open Source ist das Compliance-Feature.",
-            "text": "Apache-2.0, lesbarer Code, Daten, die das Haus nie verlassen müssen. Erfüllt die Kriterien digitaler Souveränität der deutschen Verwaltung.",
+            "heading": "Der Code gehört Ihnen. Der Betrieb auch, wenn Sie wollen.",
+            "text": "Apache-2.0, lesbar, ohne Lizenzgebühr. Sie nutzen Synaplan in der Cloud oder auf eigenen Servern.",
             "items": [
               {
-                "label": "Kein Lock-in",
-                "text": "Modelle, Anbieter oder Hosting wechseln, ohne die Plattform zu wechseln."
+                "label": "Keine Lizenzgebühr",
+                "text": "Der Code ist Apache-2.0 und bleibt nutzbar, auch selbst betrieben."
               },
               {
-                "label": "DSGVO by Design",
-                "text": "Selbst in der EU hosten oder unser deutsches Hosting nutzen. Lokale Modelle: null externe Aufrufe."
+                "label": "Cloud oder eigene Server",
+                "text": "Dieselbe Software. Sie wählen, wer sie betreibt."
               },
               {
-                "label": "Transparente Preise",
-                "text": "Selbst gehostet für immer kostenlos. Plattform-Pläne ab 19,95 €. Enterprise auf Anfrage."
+                "label": "Sitz und Nutzung",
+                "text": "Plattform-Pläne ab 19,95 € im Monat. Die Nutzung der Modelle steht extra auf der Antwort."
               }
             ]
           }
@@ -2707,9 +2737,9 @@
         }
       },
       "connect": {
-        "eyebrow": "CONNECT // SYS-05",
-        "title": "WhatsApp-, Outlook- und Website-KI-Chatbot. Ein System.",
-        "lead": "Einen DSGVO-konformen KI-Chatbot an WhatsApp Business, Outlook, Ihr Website-Widget, E-Mail, REST-API und MCP anbinden. Microsoft 365 und Nextcloud sitzen um dieselbe RAG-Wissensdatenbank. Eine Open-Source-KI-Plattform.",
+        "eyebrow": "KANÄLE",
+        "title": "Dieselbe Antwort auf Website, in der Mail, auf WhatsApp und Telegram.",
+        "lead": "Der Assistent ist derselbe, egal wo die Frage ankommt. Outlook ist ein Zusatz im Mailprogramm. Die Dateien können in OpenCloud, Nextcloud, Dropbox oder ownCloud.online bleiben.",
         "channelsTitle": "Eingehende Kanäle",
         "channels": [
           {
@@ -2780,9 +2810,9 @@
         }
       },
       "agents": {
-        "eyebrow": "AGENTEN // SYS-03",
-        "title": "KI-Agenten mit RAG, Tools und menschlicher Freigabe.",
-        "lead": "Ein Synaplan-KI-Agent empfängt eine Nachricht aus WhatsApp, Outlook oder Ihrem Website-Chatbot, holt sich das Nötige aus der RAG-Wissensdatenbank, schließt mit Ollama oder einem Cloud-Modell, nutzt Tools und MCP-Server, wartet auf menschliche Freigabe und führt aus. Jeder Schritt steht im Audit-Log. Self-hosted.",
+        "eyebrow": "ASSISTENTEN",
+        "title": "Werkzeuge, mehrere Schritte, und eine Freigabe, bevor etwas hinausgeht.",
+        "lead": "Der Assistent liest die Unterlagen, kann Werkzeuge nutzen und eine Aufgabe in mehreren Schritten erledigen. Eine Mail oder eine Änderung geht erst hinaus, wenn ein Mensch sie freigibt.",
         "pipelineTitle": "Missionsprofil",
         "sections": [
           {
