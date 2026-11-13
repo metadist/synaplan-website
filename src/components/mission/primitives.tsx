@@ -9,7 +9,7 @@ export function SectionHead({
   className,
 }: {
   num: string;
-  title: string;
+  title: ReactNode;
   tag?: string;
   className?: string;
 }) {

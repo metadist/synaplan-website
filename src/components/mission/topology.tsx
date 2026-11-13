@@ -107,11 +107,22 @@ function Diagram({
   );
 }
 
+type BoxLabels = Record<(typeof NODE_KEYS)[number], string>;
+
+function labeled(layout: DiagramLayout, labels: BoxLabels): DiagramLayout {
+  return {
+    ...layout,
+    nodes: layout.nodes.map((node) => ({ ...node, label: labels[node.key as keyof BoxLabels] ?? node.label })),
+  };
+}
+
 /** Interactive topology: hover / tap a node, packets follow. Auto-tours when idle. */
 export function Topology() {
   const t = useTranslations("mission.connect");
   const [active, setActive] = useState<NodeKey>("synaplan");
   const lastInteraction = useRef(0);
+  const boxes = t.raw("boxes") as BoxLabels;
+  const engineerBoxes = t.raw("engineerBoxes") as BoxLabels;
 
   const tour = useMemo<NodeKey[]>(() => ["synaplan", ...NODE_KEYS], []);
 
@@ -128,20 +139,33 @@ export function Topology() {
     setActive(key as NodeKey);
   };
 
-  return (
-    <div className="mc-card mc-frame p-3 sm:p-5">
-      <Diagram layout={DESKTOP} active={active} onActivate={onActivate} className="hidden w-full md:block" />
-      <Diagram layout={MOBILE} active={active} onActivate={onActivate} className="mx-auto w-full max-w-[26rem] md:hidden" />
+  const caption = (labels: BoxLabels, nodesKey: "nodes" | "engineerNodes") => (
+    <>
       <div className="mt-3 flex min-h-[3.25rem] items-start gap-3 border-t border-[var(--mc-line)] pt-3">
         <span className="mc-chip shrink-0">
           <span className="mc-lamp mc-lamp--blue" aria-hidden />
-          {active === "synaplan" ? "Synaplan" : LABELS[active]}
+          {active === "synaplan" ? "Synaplan" : labels[active]}
         </span>
         <p className="mc-mono text-[0.78rem] leading-relaxed text-[var(--mc-text-muted)]" aria-live="polite">
-          {t(`nodes.${active}`)}
+          {(t.raw(nodesKey) as Record<string, string>)[active]}
         </p>
       </div>
       <p className="mc-label mt-3 text-[0.6rem]">{t("hint")}</p>
+    </>
+  );
+
+  return (
+    <div className="mc-card mc-frame p-3 sm:p-5">
+      <div className="mc-marketing">
+        <Diagram layout={labeled(DESKTOP, boxes)} active={active} onActivate={onActivate} className="hidden w-full md:block" />
+        <Diagram layout={labeled(MOBILE, boxes)} active={active} onActivate={onActivate} className="mx-auto w-full max-w-[26rem] md:hidden" />
+        {caption(boxes, "nodes")}
+      </div>
+      <div className="mc-engineer">
+        <Diagram layout={labeled(DESKTOP, engineerBoxes)} active={active} onActivate={onActivate} className="hidden w-full md:block" />
+        <Diagram layout={labeled(MOBILE, engineerBoxes)} active={active} onActivate={onActivate} className="mx-auto w-full max-w-[26rem] md:hidden" />
+        {caption(engineerBoxes, "engineerNodes")}
+      </div>
     </div>
   );
 }

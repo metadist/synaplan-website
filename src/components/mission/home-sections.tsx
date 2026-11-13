@@ -95,11 +95,24 @@ export async function SignalsSection({ locale }: { locale: string }) {
   return (
     <section id="signals" className="mc-section" data-parrot="signals">
       <div className="mc-wrap">
-        <SectionHead num={t("num")} title={t("title")} tag="CH-01…06" />
+        <SectionHead
+          num={t("num")}
+          title={
+            <>
+              <span className="mc-marketing">{t("title")}</span>
+              <span className="mc-engineer">{t("engineerTitle")}</span>
+            </>
+          }
+          tag="CH-01…06"
+        />
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <Reveal>
-            <h2 className="mc-display text-[clamp(1.9rem,3.6vw,3rem)]">{t("heading")}</h2>
+            <h2 className="mc-display text-[clamp(1.9rem,3.6vw,3rem)]">
+              <span className="mc-marketing">{t("heading")}</span>
+              <span className="mc-engineer">{t("engineerHeading")}</span>
+            </h2>
             <p className="mc-lead mt-5 mc-marketing">{t("text")}</p>
+            <p className="mc-lead mt-5 mc-engineer">{t("engineerText")}</p>
             <ul className="mt-8 grid gap-3 sm:grid-cols-2">
               {channels.map((c, i) => (
                 <Reveal key={c.key} as="li" delay={i * 60} className="mc-card mc-card-tight">
@@ -132,10 +145,23 @@ export async function CoreSection({ locale }: { locale: string }) {
     <section id="core" className="mc-section mc-panel-light" data-parrot="core">
       <div className="mc-grid" aria-hidden />
       <div className="mc-wrap relative">
-        <SectionHead num={t("num")} title={t("title")} tag="SYS-03" />
+        <SectionHead
+          num={t("num")}
+          title={
+            <>
+              <span className="mc-marketing">{t("title")}</span>
+              <span className="mc-engineer">{t("engineerTitle")}</span>
+            </>
+          }
+          tag="SYS-03"
+        />
         <Reveal>
-          <h2 className="mc-display max-w-4xl text-[clamp(1.9rem,3.6vw,3rem)]">{t("heading")}</h2>
+          <h2 className="mc-display max-w-4xl text-[clamp(1.9rem,3.6vw,3rem)]">
+            <span className="mc-marketing">{t("heading")}</span>
+            <span className="mc-engineer">{t("engineerHeading")}</span>
+          </h2>
           <p className="mc-lead mt-5 mc-marketing">{t("text")}</p>
+          <p className="mc-lead mt-5 mc-engineer">{t("engineerText")}</p>
         </Reveal>
         <Reveal delay={100} className="mt-10">
           <Pipeline steps={steps} />
@@ -163,13 +189,27 @@ export async function ConnectSection({ locale }: { locale: string }) {
   return (
     <section id="connect" className="mc-section" data-parrot="connect">
       <div className="mc-wrap">
-        <SectionHead num={t("num")} title={t("title")} tag="TOPO-01" />
+        <SectionHead
+          num={t("num")}
+          title={
+            <>
+              <span className="mc-marketing">{t("title")}</span>
+              <span className="mc-engineer">{t("engineerTitle")}</span>
+            </>
+          }
+          tag="TOPO-01"
+        />
         <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <Reveal>
-            <h2 className="mc-display text-[clamp(1.9rem,3.6vw,3rem)]">{t("heading")}</h2>
+            <h2 className="mc-display text-[clamp(1.9rem,3.6vw,3rem)]">
+              <span className="mc-marketing">{t("heading")}</span>
+              <span className="mc-engineer">{t("engineerHeading")}</span>
+            </h2>
             <p className="mc-lead mt-5 mc-marketing">{t("text")}</p>
+            <p className="mc-lead mt-5 mc-engineer">{t("engineerText")}</p>
             <Link href="/connect" className="mc-btn mt-8">
-              {t("title")} →
+              <span className="mc-marketing">{t("title")} →</span>
+              <span className="mc-engineer">{t("engineerTitle")} →</span>
             </Link>
           </Reveal>
           <Reveal delay={120}>
@@ -191,10 +231,23 @@ export async function RunSection({ locale }: { locale: string }) {
     <section id="run" className="mc-section" data-parrot="run">
       <div className="mc-grid" aria-hidden />
       <div className="mc-wrap relative">
-        <SectionHead num={t("num")} title={t("title")} tag="DEPLOY" />
+        <SectionHead
+          num={t("num")}
+          title={
+            <>
+              <span className="mc-marketing">{t("title")}</span>
+              <span className="mc-engineer">{t("engineerTitle")}</span>
+            </>
+          }
+          tag="DEPLOY"
+        />
         <Reveal>
-          <h2 className="mc-display max-w-4xl text-[clamp(1.9rem,3.6vw,3rem)]">{t("heading")}</h2>
+          <h2 className="mc-display max-w-4xl text-[clamp(1.9rem,3.6vw,3rem)]">
+            <span className="mc-marketing">{t("heading")}</span>
+            <span className="mc-engineer">{t("engineerHeading")}</span>
+          </h2>
           <p className="mc-lead mt-5 mc-marketing">{t("text")}</p>
+          <p className="mc-lead mt-5 mc-engineer">{t("engineerText")}</p>
         </Reveal>
         <Reveal delay={80} className="mt-8 max-w-xl">
           <QuickInstall
@@ -346,38 +399,61 @@ export async function SourceSection({ locale, stats }: { locale: string; stats: 
 
 /* ─── 07 BRIEFING (FAQ) ─────────────────────────────────────────────────── */
 
+function FaqList({ items }: { items: { q: string; a: string }[] }) {
+  return (
+    <div className="divide-y divide-[var(--mc-line-on-cream)] border-y border-[var(--mc-line-on-cream)]">
+      {items.map((item, i) => (
+        <details key={item.q} className="group py-4">
+          <summary className="flex cursor-pointer list-none items-start gap-4 text-left [&::-webkit-details-marker]:hidden">
+            <span className="mc-section-num mt-1.5 shrink-0">Q-{String(i + 1).padStart(2, "0")}</span>
+            <span className="flex-1 text-[1.02rem] font-medium leading-snug">{item.q}</span>
+            <span aria-hidden className="mc-mono mt-1 text-[var(--mc-muted-on-cream)] transition-transform group-open:rotate-45">
+              +
+            </span>
+          </summary>
+          <p className="mt-3 pl-[3.2rem] text-[0.92rem] leading-relaxed text-[var(--mc-muted-on-cream)]">{item.a}</p>
+        </details>
+      ))}
+    </div>
+  );
+}
+
 export async function BriefingSection({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: "mission.faq" });
   const tf = await getTranslations({ locale, namespace: "faq" });
   const items = tf.raw("items") as { q: string; a: string }[];
+  const engineerItems = t.raw("engineerItems") as { q: string; a: string }[];
   return (
-    <section id="briefing" className="mc-section mc-panel-light mc-marketing">
-      <div className="mc-wrap grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
-        <div>
-          <SectionHead num={t("num")} title={t("title")} />
-          <Reveal>
-            <h2 className="mc-display text-[clamp(1.9rem,3.6vw,3rem)]">{tf("title")}</h2>
-            <p className="mc-lead mt-5">{tf("subtitle")}</p>
+    <>
+      <section id="briefing" className="mc-section mc-panel-light mc-marketing">
+        <div className="mc-wrap grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
+          <div>
+            <SectionHead num={t("num")} title={t("title")} />
+            <Reveal>
+              <h2 className="mc-display text-[clamp(1.9rem,3.6vw,3rem)]">{tf("title")}</h2>
+              <p className="mc-lead mt-5">{tf("subtitle")}</p>
+            </Reveal>
+          </div>
+          <Reveal delay={100}>
+            <FaqList items={items} />
           </Reveal>
         </div>
-        <Reveal delay={100}>
-          <div className="divide-y divide-[var(--mc-line-on-cream)] border-y border-[var(--mc-line-on-cream)]">
-            {items.map((item, i) => (
-              <details key={item.q} className="group py-4">
-                <summary className="flex cursor-pointer list-none items-start gap-4 text-left [&::-webkit-details-marker]:hidden">
-                  <span className="mc-section-num mt-1.5 shrink-0">Q-{String(i + 1).padStart(2, "0")}</span>
-                  <span className="flex-1 text-[1.02rem] font-medium leading-snug">{item.q}</span>
-                  <span aria-hidden className="mc-mono mt-1 text-[var(--mc-muted-on-cream)] transition-transform group-open:rotate-45">
-                    +
-                  </span>
-                </summary>
-                <p className="mt-3 pl-[3.2rem] text-[0.92rem] leading-relaxed text-[var(--mc-muted-on-cream)]">{item.a}</p>
-              </details>
-            ))}
+      </section>
+      <section className="mc-section mc-panel-light mc-engineer">
+        <div className="mc-wrap grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
+          <div>
+            <SectionHead num={t("num")} title={t("engineerTitle")} />
+            <Reveal>
+              <h2 className="mc-display text-[clamp(1.9rem,3.6vw,3rem)]">{t("engineerHeading")}</h2>
+              <p className="mc-lead mt-5">{t("engineerSubtitle")}</p>
+            </Reveal>
           </div>
-        </Reveal>
-      </div>
-    </section>
+          <Reveal delay={100}>
+            <FaqList items={engineerItems} />
+          </Reveal>
+        </div>
+      </section>
+    </>
   );
 }
 
@@ -399,6 +475,22 @@ export async function LaunchCta({
   const t = await getTranslations({ locale, namespace: "mission.cta" });
   const p = primary ?? { label: t("primary"), href: LINKS.web, external: true };
   const s = secondary ?? { label: t("secondary"), href: "/contact" };
+  const split = title === undefined && text === undefined && primary === undefined && secondary === undefined;
+  const button = (link: CtaLink, primaryButton: boolean) =>
+    link.external ? (
+      <a href={link.href} className={primaryButton ? "mc-btn mc-btn--primary" : "mc-btn"} target={link.newTab ? "_blank" : undefined} rel="noopener noreferrer">
+        {primaryButton ? "[ " : ""}
+        {link.label}
+        {primaryButton ? " ]" : ""}
+        {!primaryButton && link.newTab ? " ↗" : ""}
+      </a>
+    ) : (
+      <Link href={link.href} className={primaryButton ? "mc-btn mc-btn--primary" : "mc-btn"}>
+        {primaryButton ? "[ " : ""}
+        {link.label}
+        {primaryButton ? " ]" : ""}
+      </Link>
+    );
   return (
     <section className="mc-section relative overflow-hidden">
       <div className="mc-grid" aria-hidden />
@@ -410,29 +502,47 @@ export async function LaunchCta({
                 <Lamp tone="green" blink />
                 T-00:00:10
               </p>
-              <h2 className="mc-display mt-4 text-[clamp(2rem,4.2vw,3.6rem)]">{title ?? t("title")}</h2>
-              <p className="mc-lead mt-4">{text ?? t("text")}</p>
-            </div>
-            <div className="flex flex-col gap-3 lg:items-end">
-              {p.external ? (
-                <a href={p.href} className="mc-btn mc-btn--primary" target={p.newTab ? "_blank" : undefined} rel="noopener noreferrer">
-                  [ {p.label} ]
-                </a>
+              {split ? (
+                <>
+                  <h2 className="mc-display mt-4 text-[clamp(2rem,4.2vw,3.6rem)]">
+                    <span className="mc-marketing">{t("title")}</span>
+                    <span className="mc-engineer">{t("engineerTitle")}</span>
+                  </h2>
+                  <p className="mc-lead mt-4 mc-marketing">{t("text")}</p>
+                  <p className="mc-lead mt-4 mc-engineer">{t("engineerText")}</p>
+                </>
               ) : (
-                <Link href={p.href} className="mc-btn mc-btn--primary">
-                  [ {p.label} ]
-                </Link>
-              )}
-              {s.external ? (
-                <a href={s.href} className="mc-btn" target={s.newTab ? "_blank" : undefined} rel="noopener noreferrer">
-                  {s.label} {s.newTab ? "↗" : ""}
-                </a>
-              ) : (
-                <Link href={s.href} className="mc-btn">
-                  {s.label}
-                </Link>
+                <>
+                  <h2 className="mc-display mt-4 text-[clamp(2rem,4.2vw,3.6rem)]">{title ?? t("title")}</h2>
+                  <p className="mc-lead mt-4">{text ?? t("text")}</p>
+                </>
               )}
             </div>
+            {split ? (
+              <>
+                <div className="mc-marketing">
+                  <div className="flex flex-col gap-3 lg:items-end">
+                    <Link href="/try-chat" className="mc-btn mc-btn--primary">
+                      [ {t("marketingPrimary")} ]
+                    </Link>
+                    <Link href="/contact" className="mc-btn">
+                      {t("marketingSecondary")}
+                    </Link>
+                  </div>
+                </div>
+                <div className="mc-engineer">
+                  <div className="flex flex-col gap-3 lg:items-end">
+                    {button(p, true)}
+                    {button(s, false)}
+                  </div>
+                </div>
+              </>
+            ) : (
+              <div className="flex flex-col gap-3 lg:items-end">
+                {button(p, true)}
+                {button(s, false)}
+              </div>
+            )}
           </div>
         </Reveal>
       </div>
