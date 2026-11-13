@@ -697,39 +697,39 @@
   "faq": {
     "label": "FAQ",
     "title": "Häufig gestellte Fragen",
-    "subtitle": "Alles, was Sie über Synaplan wissen müssen — von der Installation bis zur DSGVO-Konformität.",
+    "subtitle": "Die kurzen Antworten.",
     "items": [
       {
         "q": "Was genau ist Synaplan?",
-        "a": "Synaplan ist eine Open-Source-KI-Plattform auf Basis von PHP 8.5+. Sie verbindet mehrere KI-Modelle (OpenAI, Anthropic, Groq, Gemini, Ollama), ermöglicht das Einbetten eines Chat-Widgets auf jeder Website, durchsucht Dokumente per RAG (Retrieval-Augmented Generation) und lässt sich mit unternehmensspezifischen Plugins erweitern — alles in einer selbst gehosteten Plattform."
+        "a": "Die offene KI, die aus Ihren Unterlagen antwortet, mit Quelle, Modellwahl und sichtbarem Preis. Dieselbe Antwort im Chat, auf der Website, in der Mail, auf WhatsApp und Telegram. In der Cloud oder auf eigenen Servern."
       },
       {
         "q": "Ist Synaplan eine ChatGPT-Alternative?",
-        "a": "Ja. Im Gegensatz zu ChatGPT läuft Synaplan auf Ihrer eigenen Infrastruktur, unterstützt gleichzeitig mehrere KI-Modelle, ist vollständig Open Source und hält alle Daten unter Ihrer Kontrolle. Sie sind nicht von einem einzelnen Anbieter abhängig und können Modelle jederzeit wechseln."
+        "a": "Ja. Sie wählen das Modell, die Dateien bleiben bei Ihnen, und der Code ist Apache-2.0. Sie hängen nicht an einem Anbieter."
       },
       {
         "q": "Ist Synaplan DSGVO-konform?",
-        "a": "Absolut. Synaplan kann vollständig innerhalb Deutschlands oder der EU selbst gehostet werden — Ihre Daten verlassen niemals Ihre Server. Mit lokalen Modellen über Ollama werden keinerlei externe API-Aufrufe getätigt. Das macht Synaplan zu einer der wenigen KI-Plattformen, die vollständig DSGVO-konform betrieben werden kann."
+        "a": "Sie können Synaplan in Deutschland oder der EU betreiben. Mit einem Modell auf dem eigenen Server verlässt die Frage das Haus nicht."
       },
       {
         "q": "Wie füge ich das Chat-Widget zu meiner Website hinzu?",
-        "a": "Sie betten einen kleinen JavaScript-Schnipsel in Ihre Website ein — ähnlich wie Google Analytics oder ein Live-Chat-Script. Das Widget verbindet sich mit Ihrer Synaplan-Instanz, nutzt Ihre eigene Wissensdatenbank (hochgeladene Dokumente, FAQs etc.) und lässt sich an Ihr Corporate Design anpassen. Die Einrichtung dauert weniger als 10 Minuten."
+        "a": "Ein kleines Stück Code auf Ihrer Website. Der Assistent antwortet aus Ihren Seiten und Dokumenten, im Look Ihrer Marke."
       },
       {
         "q": "Welche KI-Modelle unterstützt Synaplan?",
-        "a": "Synaplan unterstützt OpenAI (GPT-5.5, GPT-5.5 Pro), Anthropic (Claude Opus 4.8), Google Gemini, Groq (ultraschnelle Inferenz) und Ollama für lokale, selbst gehostete Modelle. Sie können verschiedene Modelle für verschiedene Anwendungsfälle zuweisen oder das Routing automatisch steuern lassen."
+        "a": "Die großen US-Modelle, Mistral aus Europa, Ollama auf dem eigenen Server und deutsche GPUs über TrustedTokens. „Erneut mit …“ stellt dieselbe Frage an ein anderes Modell."
       },
       {
         "q": "Kann ich Synaplan selbst hosten?",
-        "a": "Ja. Repository klonen, `make up` ausführen und http://localhost:5173 öffnen. Die Standardinstallation braucht etwa 4 GB und nutzt ein Cloud-Modell. Lokale KI (Ollama) ist ein extra Profil und etwa 5 GB. Ein lokales Chat-Modell kommt mit etwa 14 GB dazu."
+        "a": "Ja. Dieselbe Software, ohne Lizenzgebühr. Der Startbefehl steht auf dieser Seite unter „Selbst betreiben“."
       },
       {
         "q": "Was sind Synaplan-Plugins?",
-        "a": "Plugins sind unternehmensspezifische KI-Erweiterungen, die Synaplan mit Ihren bestehenden Geschäftsprozessen verbinden. Beispiele sind SortX (KI-gestütztes Dateimanagement), Marketing-Automatisierung und Dokumenten-Workflows. Sie können vorhandene Plugins nutzen oder ein maßgeschneidertes Plugin in Auftrag geben."
+        "a": "Erweiterungen, die den Assistenten mit Ihren Abläufen verbinden, zum Beispiel beim Sortieren von Dateien oder beim Verarbeiten von Dokumenten."
       },
       {
         "q": "Für welche Branchen und Unternehmensgrößen eignet sich Synaplan?",
-        "a": "Synaplan wird von KMUs und Großunternehmen in verschiedenen Branchen eingesetzt, darunter Gastgewerbe, Handwerk & Gewerbe, Gesundheitswesen und Technologie. Website-Betreiber nutzen das Chat-Widget für den Kundenservice, größere Organisationen die gesamte Plattform für internes Wissensmanagement, Dokumentenverarbeitung, WhatsApp-Integration und E-Mail-Automatisierung."
+        "a": "Gastgewerbe, Handwerk, Pflege, Industrie. Kleine Teams und große. Das Chat-Widget für die Website, der Assistent für Mail und WhatsApp."
       }
     ]
   },
@@ -2062,9 +2062,9 @@
     "nav": {
       "product": "Produkt",
       "deploy": "Selbst betreiben",
-      "connect": "Connect",
+      "connect": "Kanäle",
       "agents": "Assistenten",
-      "source": "Source",
+      "source": "Quellcode",
       "docs": "Docs",
       "status": "Systemstatus",
       "nominal": "Nominal",
@@ -2222,8 +2222,11 @@
     "signals": {
       "num": "01",
       "title": "Dieselbe Antwort",
+      "engineerTitle": "Eingehende Signale",
       "heading": "Im Chat, auf der Website, in der Mail, auf WhatsApp und Telegram.",
+      "engineerHeading": "WhatsApp, Outlook, Mail und Website — eine KI für jeden Kanal.",
       "text": "Eine Frage, eine Wissensbasis, ein Preis. Der Assistent ist derselbe, egal wo sie ankommt.",
+      "engineerText": "Ein DSGVO-konformer KI-Chatbot und dieselben Agenten auf WhatsApp Business, Outlook, Ihrem Website-Widget, Desktop und der API. Jede Nachricht trifft auf dieselbe RAG-Wissensdatenbank und dieselben Regeln — egal, woher sie kommt.",
       "core": "Assistent",
       "channels": [
         {
@@ -2261,8 +2264,11 @@
     "core": {
       "num": "02",
       "title": "Der Assistent",
+      "engineerTitle": "Agent-Kern",
       "heading": "Er liest die Unterlagen und zeigt, was die Antwort kostet.",
+      "engineerHeading": "KI-Agenten mit RAG, Tools — und einem Menschen, wo es zählt.",
       "text": "Ein Klick zeigt Modell, Tokens und was geschickt wurde. Ein anderes Modell wählen Sie mit „Erneut mit …“. Eine Mail oder eine Änderung geht erst hinaus, wenn ein Mensch sie freigibt.",
+      "engineerText": "Ein Synaplan-KI-Agent ist kein Chatfenster mit System-Prompt. Er ist eine Pipeline: RAG über Ihre Dokumente, Multi-Model-Routing, Tools und MCP, ein Freigabe-Gate und ein Audit-Log für jeden Schritt.",
       "steps": [
         {
           "key": "understand",
@@ -2317,10 +2323,44 @@
     "connect": {
       "num": "03",
       "title": "Dateien bleiben",
+      "engineerTitle": "Alles verbinden",
       "heading": "Die Unterlagen bleiben, wo sie sind.",
+      "engineerHeading": "Eine Topologie, nicht nur ein Chatbot.",
       "text": "OpenCloud, Nextcloud, Dropbox und ownCloud.online sind angebunden. Die KI zieht daneben ein. Nichts muss umziehen.",
+      "engineerText": "Die Open-Source-KI-Plattform sitzt zwischen WhatsApp, Outlook, Ihrem Website-Chatbot, Microsoft 365, Nextcloud und MCP. Kanäle kommen herein, die RAG-Wissensdatenbank und Tools docken am Kern an, jedes Paket wird protokolliert.",
       "hint": "Knoten berühren oder anklicken, um den Datenverkehr zu verfolgen.",
+      "boxes": {
+        "outlook": "Outlook",
+        "whatsapp": "WhatsApp",
+        "web": "Web",
+        "desktop": "Desktop",
+        "erp": "ERP / CRM",
+        "mcp": "Werkzeuge",
+        "m365": "Ablage",
+        "models": "Modelle"
+      },
+      "engineerBoxes": {
+        "outlook": "Outlook",
+        "whatsapp": "WhatsApp",
+        "web": "Web",
+        "desktop": "Desktop",
+        "erp": "ERP / CRM",
+        "mcp": "MCP",
+        "m365": "M365 · Nextcloud",
+        "models": "Models"
+      },
       "nodes": {
+        "synaplan": "Der Assistent. Eine Antwort, mit Quelle und Preis.",
+        "outlook": "Zusatz im Mailprogramm: zusammenfassen und entwerfen.",
+        "whatsapp": "Dieselbe Antwort auf WhatsApp.",
+        "web": "Dieselbe Antwort auf Ihrer Website.",
+        "desktop": "Programm für den Schreibtisch.",
+        "erp": "Anbindung an die Systeme, die Sie schon haben.",
+        "mcp": "Werkzeuge, die der Assistent benutzen kann.",
+        "m365": "Die Dateien bleiben in der Ablage, die Sie schon nutzen.",
+        "models": "Sie wählen das Modell: US-Modelle, Mistral, Ollama, TrustedTokens."
+      },
+      "engineerNodes": {
         "synaplan": "Der Kern. Agenten, Wissen, Routing, Freigaben, Audit.",
         "outlook": "Outlook-Add-in: zusammenfassen, entwerfen, ablegen — direkt im Mailprogramm.",
         "whatsapp": "WhatsApp Business: eine Nummer, beantwortet von Ihrem Agenten.",
@@ -2335,8 +2375,11 @@
     "run": {
       "num": "04",
       "title": "Selbst betreiben",
+      "engineerTitle": "Überall lauffähig",
       "heading": "In der Cloud, oder auf Ihren eigenen Servern.",
+      "engineerHeading": "Self-Hosted KI: Heute Docker, morgen Kubernetes.",
       "text": "Dieselbe Software, unter Apache-2.0, ohne Lizenzgebühr. Wer sie selbst startet, findet den Befehl hier.",
+      "engineerText": "Die gesamte Open-Source-KI-Plattform ist dockerisiert und unter Apache-2.0 lizenziert. Auf dem Laptop starten, auf einen On-Premise-Server umziehen, mit dem öffentlichen Helm-Chart auf Kubernetes skalieren — oder von uns in Deutschland hosten lassen.",
       "tabs": {
         "compose": "Docker Compose",
         "helm": "Kubernetes",
@@ -2442,11 +2485,52 @@
     },
     "faq": {
       "num": "07",
-      "title": "Briefing"
+      "title": "Fragen",
+      "engineerTitle": "Briefing",
+      "engineerHeading": "Häufig gestellte Fragen",
+      "engineerSubtitle": "Alles, was Sie über Synaplan wissen müssen — von der Installation bis zur DSGVO-Konformität.",
+      "engineerItems": [
+        {
+          "q": "Was genau ist Synaplan?",
+          "a": "Synaplan ist eine Open-Source-KI-Plattform auf Basis von PHP 8.5+. Sie verbindet mehrere KI-Modelle (OpenAI, Anthropic, Groq, Gemini, Ollama), ermöglicht das Einbetten eines Chat-Widgets auf jeder Website, durchsucht Dokumente per RAG (Retrieval-Augmented Generation) und lässt sich mit unternehmensspezifischen Plugins erweitern — alles in einer selbst gehosteten Plattform."
+        },
+        {
+          "q": "Ist Synaplan eine ChatGPT-Alternative?",
+          "a": "Ja. Im Gegensatz zu ChatGPT läuft Synaplan auf Ihrer eigenen Infrastruktur, unterstützt gleichzeitig mehrere KI-Modelle, ist vollständig Open Source und hält alle Daten unter Ihrer Kontrolle. Sie sind nicht von einem einzelnen Anbieter abhängig und können Modelle jederzeit wechseln."
+        },
+        {
+          "q": "Ist Synaplan DSGVO-konform?",
+          "a": "Absolut. Synaplan kann vollständig innerhalb Deutschlands oder der EU selbst gehostet werden — Ihre Daten verlassen niemals Ihre Server. Mit lokalen Modellen über Ollama werden keinerlei externe API-Aufrufe getätigt. Das macht Synaplan zu einer der wenigen KI-Plattformen, die vollständig DSGVO-konform betrieben werden kann."
+        },
+        {
+          "q": "Wie füge ich das Chat-Widget zu meiner Website hinzu?",
+          "a": "Sie betten einen kleinen JavaScript-Schnipsel in Ihre Website ein — ähnlich wie Google Analytics oder ein Live-Chat-Script. Das Widget verbindet sich mit Ihrer Synaplan-Instanz, nutzt Ihre eigene Wissensdatenbank (hochgeladene Dokumente, FAQs etc.) und lässt sich an Ihr Corporate Design anpassen. Die Einrichtung dauert weniger als 10 Minuten."
+        },
+        {
+          "q": "Welche KI-Modelle unterstützt Synaplan?",
+          "a": "Synaplan unterstützt OpenAI (GPT-5.5, GPT-5.5 Pro), Anthropic (Claude Opus 4.8), Google Gemini, Groq (ultraschnelle Inferenz) und Ollama für lokale, selbst gehostete Modelle. Sie können verschiedene Modelle für verschiedene Anwendungsfälle zuweisen oder das Routing automatisch steuern lassen."
+        },
+        {
+          "q": "Kann ich Synaplan selbst hosten?",
+          "a": "Ja. Repository klonen, `make up` ausführen und http://localhost:5173 öffnen. Die Standardinstallation braucht etwa 4 GB und nutzt ein Cloud-Modell. Lokale KI (Ollama) ist ein extra Profil und etwa 5 GB. Ein lokales Chat-Modell kommt mit etwa 14 GB dazu."
+        },
+        {
+          "q": "Was sind Synaplan-Plugins?",
+          "a": "Plugins sind unternehmensspezifische KI-Erweiterungen, die Synaplan mit Ihren bestehenden Geschäftsprozessen verbinden. Beispiele sind SortX (KI-gestütztes Dateimanagement), Marketing-Automatisierung und Dokumenten-Workflows. Sie können vorhandene Plugins nutzen oder ein maßgeschneidertes Plugin in Auftrag geben."
+        },
+        {
+          "q": "Für welche Branchen und Unternehmensgrößen eignet sich Synaplan?",
+          "a": "Synaplan wird von KMUs und Großunternehmen in verschiedenen Branchen eingesetzt, darunter Gastgewerbe, Handwerk & Gewerbe, Gesundheitswesen und Technologie. Website-Betreiber nutzen das Chat-Widget für den Kundenservice, größere Organisationen die gesamte Plattform für internes Wissensmanagement, Dokumentenverarbeitung, WhatsApp-Integration und E-Mail-Automatisierung."
+        }
+      ]
     },
     "cta": {
       "title": "Bereit zum Start?",
-      "text": "Die Open-Source-KI-Plattform in zwei Minuten starten — oder self-hosten mit Docker auf Ihrer. Chatbot, Agenten, RAG — Ihre Infrastruktur, Ihre Regeln.",
+      "engineerTitle": "Bereit zum Start?",
+      "text": "Probieren Sie den Chat ohne Anmeldung. Dieselbe Antwort aus Ihren Unterlagen, auf der Website, in der Mail, auf WhatsApp und Telegram.",
+      "engineerText": "Die Open-Source-KI-Plattform in zwei Minuten starten — oder self-hosten mit Docker auf Ihrer. Chatbot, Agenten, RAG — Ihre Infrastruktur, Ihre Regeln.",
+      "marketingPrimary": "Chat ausprobieren",
+      "marketingSecondary": "Mit uns sprechen",
       "primary": "Auf web.synaplan.com starten",
       "secondary": "Mit einem Engineer sprechen"
     },

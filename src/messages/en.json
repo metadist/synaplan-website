@@ -697,39 +697,39 @@
   "faq": {
     "label": "FAQ",
     "title": "Frequently asked questions",
-    "subtitle": "Everything you need to know about Synaplan — from setup to GDPR compliance.",
+    "subtitle": "The short answers.",
     "items": [
       {
         "q": "What exactly is Synaplan?",
-        "a": "Synaplan is an open-source AI platform built on PHP 8.5+. It lets you connect multiple AI models (OpenAI, Anthropic, Groq, Gemini, Ollama), embed a chat widget on any website, search your documents with RAG (retrieval-augmented generation), and extend functionality with business-specific plugins — all in one self-hosted platform."
+        "a": "The open AI that answers from your own documents, with the source, a choice of model, and a visible price. The same answer in the chat, on your website, by email, on WhatsApp and Telegram. In the cloud or on your own servers."
       },
       {
         "q": "Is Synaplan a ChatGPT alternative?",
-        "a": "Yes. Unlike ChatGPT, Synaplan runs on your own infrastructure, supports multiple AI models simultaneously, is fully open source, and keeps all data within your control. You are not dependent on a single provider and can switch models at any time."
+        "a": "Yes. You choose the model, the files stay with you, and the code is Apache-2.0. You are not tied to one provider."
       },
       {
         "q": "Is Synaplan GDPR-compliant?",
-        "a": "Absolutely. Synaplan can be self-hosted entirely within Germany or the EU — your data never leaves your servers. With local models via Ollama, no external API calls are made at all. This makes Synaplan one of the few AI platforms that can be operated in full GDPR compliance."
+        "a": "You can run Synaplan in Germany or the EU. With a model on your own server, the question does not leave the building."
       },
       {
         "q": "How do I add the chat widget to my website?",
-        "a": "You embed a small JavaScript snippet into your website — just like a Google Analytics or live chat script. The widget connects to your Synaplan instance, uses your custom knowledge base (uploaded documents, FAQs, etc.), and can be styled to match your brand. Setup takes less than 10 minutes."
+        "a": "A small piece of code on your website. The assistant answers from your pages and documents, in your brand."
       },
       {
         "q": "Which AI models does Synaplan support?",
-        "a": "Synaplan supports OpenAI (GPT-5.5, GPT-5.5 Pro), Anthropic (Claude Opus 4.8), Google Gemini, Groq (ultra-fast inference), and Ollama for local self-hosted models. You can assign different models to different use cases or let the platform route automatically."
+        "a": "The big US models, Mistral from Europe, Ollama on your own server, and German GPUs through TrustedTokens. “Again with…” asks the same question of another model."
       },
       {
         "q": "Can I self-host Synaplan?",
-        "a": "Yes. Clone the repository, run `make up`, and open http://localhost:5173. The standard install is about 4 GB and uses a cloud model. Local AI (Ollama) is an extra profile and about 5 GB. A local chat model adds about 14 GB."
+        "a": "Yes. The same software, with no licence fee. The start command is on this page, under Self-host."
       },
       {
         "q": "What are Synaplan plugins?",
-        "a": "Plugins are company-specific AI extensions that connect Synaplan to your existing business processes. Examples include SortX (AI-powered file management), marketing automation, and document workflows. You can use existing plugins or commission a custom plugin tailored to your company."
+        "a": "Extensions that connect the assistant to the way you already work, for example sorting files or handling documents."
       },
       {
         "q": "Which industries and company sizes is Synaplan suited for?",
-        "a": "Synaplan is used by SMBs and enterprises across industries including hospitality, trades & crafts, healthcare, and technology. Website operators use the chat widget for customer service, while larger organizations use the full platform for internal knowledge management, document processing, WhatsApp integration, and email automation."
+        "a": "Hospitality, trades, care, industry. Small teams and large ones. The chat widget for the website, the assistant for email and WhatsApp."
       }
     ]
   },
@@ -2062,9 +2062,9 @@
     "nav": {
       "product": "Product",
       "deploy": "Self-host",
-      "connect": "Connect",
+      "connect": "Channels",
       "agents": "Assistants",
-      "source": "Source",
+      "source": "Source code",
       "docs": "Docs",
       "status": "System status",
       "nominal": "Nominal",
@@ -2222,8 +2222,11 @@
     "signals": {
       "num": "01",
       "title": "The same answer",
+      "engineerTitle": "Incoming signals",
       "heading": "In the chat, on your website, by email, on WhatsApp and Telegram.",
+      "engineerHeading": "WhatsApp, Outlook, mail and website — one AI for every channel.",
       "text": "One question, one knowledge base, one price. The assistant is the same wherever the question arrives.",
+      "engineerText": "A GDPR-compliant AI chatbot and the same agents on WhatsApp Business, Outlook, your website widget, desktop and the API. Every message meets the same RAG knowledge base and the same rules — no matter where it came from.",
       "core": "Assistant",
       "channels": [
         {
@@ -2261,8 +2264,11 @@
     "core": {
       "num": "02",
       "title": "The assistant",
+      "engineerTitle": "Agent core",
       "heading": "It reads the documents and shows what the answer costs.",
+      "engineerHeading": "AI agents with RAG, tools — and a human where it matters.",
       "text": "One click shows the model, the tokens, and what was sent. “Again with…” asks the same question of another model. An email or a change goes out only after a person approves it.",
+      "engineerText": "A Synaplan AI agent is not a chat window with a system prompt. It is a pipeline: RAG over your documents, multi-model routing, tools and MCP, a human approval gate and an audit log for every step.",
       "steps": [
         {
           "key": "understand",
@@ -2317,10 +2323,44 @@
     "connect": {
       "num": "03",
       "title": "Files stay put",
+      "engineerTitle": "Connect everything",
       "heading": "The documents stay where they are.",
+      "engineerHeading": "A topology, not just a chatbot.",
       "text": "OpenCloud, Nextcloud, Dropbox and ownCloud.online are connected. The AI moves in beside them. Nothing has to move.",
+      "engineerText": "The open-source AI platform sits between WhatsApp, Outlook, your website chatbot, Microsoft 365, Nextcloud and MCP. Channels come in, the RAG knowledge base and tools connect around it, every packet is logged.",
       "hint": "Hover or tap a node to follow the traffic.",
+      "boxes": {
+        "outlook": "Outlook",
+        "whatsapp": "WhatsApp",
+        "web": "Web",
+        "desktop": "Desktop",
+        "erp": "ERP / CRM",
+        "mcp": "Tools",
+        "m365": "Files",
+        "models": "Models"
+      },
+      "engineerBoxes": {
+        "outlook": "Outlook",
+        "whatsapp": "WhatsApp",
+        "web": "Web",
+        "desktop": "Desktop",
+        "erp": "ERP / CRM",
+        "mcp": "MCP",
+        "m365": "M365 · Nextcloud",
+        "models": "Models"
+      },
       "nodes": {
+        "synaplan": "The assistant. One answer, with the source and the price.",
+        "outlook": "An add-in in the mail program: summarise and draft.",
+        "whatsapp": "The same answer on WhatsApp.",
+        "web": "The same answer on your website.",
+        "desktop": "A program for the desk.",
+        "erp": "A connection to the systems you already have.",
+        "mcp": "Tools the assistant can use.",
+        "m365": "The files stay in the store you already use.",
+        "models": "You choose the model: US models, Mistral, Ollama, TrustedTokens."
+      },
+      "engineerNodes": {
         "synaplan": "The core. Agents, knowledge, routing, approvals, audit.",
         "outlook": "Outlook add-in: summarise, draft, file — inside the mail client.",
         "whatsapp": "WhatsApp Business: one number, answered by your agent.",
@@ -2335,8 +2375,11 @@
     "run": {
       "num": "04",
       "title": "Self-host",
+      "engineerTitle": "Run it anywhere",
       "heading": "In the cloud, or on your own servers.",
+      "engineerHeading": "Self-hosted AI: Docker today, Kubernetes tomorrow.",
       "text": "The same software, under Apache-2.0, with no licence fee. If you want to start it yourself, the command is here.",
+      "engineerText": "The whole open-source AI platform is Dockerised and Apache-2.0 licensed. Start on a laptop, move to an on-premise server, scale on Kubernetes with the public Helm chart — or let us host it in Germany.",
       "tabs": {
         "compose": "Docker Compose",
         "helm": "Kubernetes",
@@ -2442,11 +2485,52 @@
     },
     "faq": {
       "num": "07",
-      "title": "Briefing"
+      "title": "Questions",
+      "engineerTitle": "Briefing",
+      "engineerHeading": "Frequently asked questions",
+      "engineerSubtitle": "Everything you need to know about Synaplan — from setup to GDPR compliance.",
+      "engineerItems": [
+        {
+          "q": "What exactly is Synaplan?",
+          "a": "Synaplan is an open-source AI platform built on PHP 8.5+. It lets you connect multiple AI models (OpenAI, Anthropic, Groq, Gemini, Ollama), embed a chat widget on any website, search your documents with RAG (retrieval-augmented generation), and extend functionality with business-specific plugins — all in one self-hosted platform."
+        },
+        {
+          "q": "Is Synaplan a ChatGPT alternative?",
+          "a": "Yes. Unlike ChatGPT, Synaplan runs on your own infrastructure, supports multiple AI models simultaneously, is fully open source, and keeps all data within your control. You are not dependent on a single provider and can switch models at any time."
+        },
+        {
+          "q": "Is Synaplan GDPR-compliant?",
+          "a": "Absolutely. Synaplan can be self-hosted entirely within Germany or the EU — your data never leaves your servers. With local models via Ollama, no external API calls are made at all. This makes Synaplan one of the few AI platforms that can be operated in full GDPR compliance."
+        },
+        {
+          "q": "How do I add the chat widget to my website?",
+          "a": "You embed a small JavaScript snippet into your website — just like a Google Analytics or live chat script. The widget connects to your Synaplan instance, uses your custom knowledge base (uploaded documents, FAQs, etc.), and can be styled to match your brand. Setup takes less than 10 minutes."
+        },
+        {
+          "q": "Which AI models does Synaplan support?",
+          "a": "Synaplan supports OpenAI (GPT-5.5, GPT-5.5 Pro), Anthropic (Claude Opus 4.8), Google Gemini, Groq (ultra-fast inference), and Ollama for local self-hosted models. You can assign different models to different use cases or let the platform route automatically."
+        },
+        {
+          "q": "Can I self-host Synaplan?",
+          "a": "Yes. Clone the repository, run `make up`, and open http://localhost:5173. The standard install is about 4 GB and uses a cloud model. Local AI (Ollama) is an extra profile and about 5 GB. A local chat model adds about 14 GB."
+        },
+        {
+          "q": "What are Synaplan plugins?",
+          "a": "Plugins are company-specific AI extensions that connect Synaplan to your existing business processes. Examples include SortX (AI-powered file management), marketing automation, and document workflows. You can use existing plugins or commission a custom plugin tailored to your company."
+        },
+        {
+          "q": "Which industries and company sizes is Synaplan suited for?",
+          "a": "Synaplan is used by SMBs and enterprises across industries including hospitality, trades & crafts, healthcare, and technology. Website operators use the chat widget for customer service, while larger organizations use the full platform for internal knowledge management, document processing, WhatsApp integration, and email automation."
+        }
+      ]
     },
     "cta": {
-      "title": "Ready for launch?",
-      "text": "Start the open-source AI platform in two minutes, or self-host it with Docker on yours. Chatbot, agents, RAG — your infrastructure, your rules.",
+      "title": "Ready to start?",
+      "engineerTitle": "Ready for launch?",
+      "text": "Try the chat without an account. The same answer from your own documents, on your website, by email, on WhatsApp and Telegram.",
+      "engineerText": "Start the open-source AI platform in two minutes, or self-host it with Docker on yours. Chatbot, agents, RAG — your infrastructure, your rules.",
+      "marketingPrimary": "Try the chat",
+      "marketingSecondary": "Talk to us",
       "primary": "Start on web.synaplan.com",
       "secondary": "Talk to an engineer"
     },
