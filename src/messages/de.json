@@ -2114,7 +2114,7 @@
       "secondary": "Preise",
       "demoDocsCta": "Synaplan-Demo Docs",
       "note": "Apache-2.0 · ohne Lizenzgebühr · in der Cloud oder auf eigenen Servern",
-      "engineerTitle": "Open-Source-KI-Plattform. Self-Hosted. Kein Lock-in.",
+      "engineerTitle": "Open-Source-KI-Plattform. Self-Hosted. Own the flow.",
       "engineerSubtitle": "PHP 8.5+ / Symfony-Backend, Vue-3-Frontend, MariaDB VECTOR + Qdrant, gRPC-Inferenz, OpenAPI-Vertrag, MCP-Server und -Client. Ein `make up` entfernt.",
       "engineerNote": "Apache-2.0 · Docker · Kubernetes · selbst gehostet oder in Deutschland gehostet"
     },
