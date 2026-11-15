@@ -38,6 +38,7 @@ const csp = [
     "https://synaplan.com",
     "https://www.synaplan.com",
     "https://web.synaplan.com",
+    "wss://web.synaplan.com",
     "https://cdn.jsdelivr.net",
     "https://cloudflareinsights.com",
     "https://www.google-analytics.com",

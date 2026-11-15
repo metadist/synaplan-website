@@ -11,6 +11,7 @@ import { Topology } from "./topology";
 import { DeployTabs } from "./deploy-tabs";
 import { QuickInstall } from "./quick-install";
 import { ApiSample, ComposeSample, HelmSample, InspectSample } from "./code-samples";
+import { TryChatButton } from "@/components/try-chat/try-chat-button";
 
 type Channel = { key: string; label: string; desc: string };
 type Step = { key: string; label: string; desc: string };
@@ -36,14 +37,13 @@ export async function Hero({ locale }: { locale: string }) {
             <span className="mc-marketing">{t("title")}</span>
             <span className="mc-engineer">{t("engineerTitle")}</span>
           </h1>
+          <p className="mc-hero-sub mt-4">{t("tagline")}</p>
           <p className="mt-5">
             <span className="mc-marketing mc-lead">{t("subtitle")}</span>
             <span className="mc-engineer mc-lead">{t("engineerSubtitle")}</span>
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Link href="/try-chat" className="mc-btn mc-btn--primary">
-              [ {t("primary")} ]
-            </Link>
+            <TryChatButton className="mc-btn mc-btn--primary">[ {t("primary")} ]</TryChatButton>
             <Link href="/pricing" className="mc-btn">
               {t("secondary")}
             </Link>
@@ -476,8 +476,20 @@ export async function LaunchCta({
   const p = primary ?? { label: t("primary"), href: LINKS.web, external: true };
   const s = secondary ?? { label: t("secondary"), href: "/contact" };
   const split = title === undefined && text === undefined && primary === undefined && secondary === undefined;
-  const button = (link: CtaLink, primaryButton: boolean) =>
-    link.external ? (
+  const button = (link: CtaLink, primaryButton: boolean) => {
+    const className = primaryButton ? "mc-btn mc-btn--primary" : "mc-btn";
+    const label = (
+      <>
+        {primaryButton ? "[ " : ""}
+        {link.label}
+        {primaryButton ? " ]" : ""}
+        {!primaryButton && link.newTab ? " ↗" : ""}
+      </>
+    );
+    if (link.href === "/try-chat") {
+      return <TryChatButton className={className}>{label}</TryChatButton>;
+    }
+    return link.external ? (
       <a href={link.href} className={primaryButton ? "mc-btn mc-btn--primary" : "mc-btn"} target={link.newTab ? "_blank" : undefined} rel="noopener noreferrer">
         {primaryButton ? "[ " : ""}
         {link.label}
@@ -485,12 +497,11 @@ export async function LaunchCta({
         {!primaryButton && link.newTab ? " ↗" : ""}
       </a>
     ) : (
-      <Link href={link.href} className={primaryButton ? "mc-btn mc-btn--primary" : "mc-btn"}>
-        {primaryButton ? "[ " : ""}
-        {link.label}
-        {primaryButton ? " ]" : ""}
+      <Link href={link.href} className={className}>
+        {label}
       </Link>
     );
+  };
   return (
     <section className="mc-section relative overflow-hidden">
       <div className="mc-grid" aria-hidden />
@@ -522,9 +533,7 @@ export async function LaunchCta({
               <>
                 <div className="mc-marketing">
                   <div className="flex flex-col gap-3 lg:items-end">
-                    <Link href="/try-chat" className="mc-btn mc-btn--primary">
-                      [ {t("marketingPrimary")} ]
-                    </Link>
+                    <TryChatButton className="mc-btn mc-btn--primary">[ {t("marketingPrimary")} ]</TryChatButton>
                     <Link href="/contact" className="mc-btn">
                       {t("marketingSecondary")}
                     </Link>

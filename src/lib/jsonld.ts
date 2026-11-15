@@ -97,8 +97,8 @@ export function buildSoftwareAppSchema(locale: string) {
     inLanguage: ["de-DE", "en-US"],
     description:
       locale === "de"
-        ? "Open-Source-KI-Plattform mit Chat-Widget, RAG-Dokumentensuche und Multi-Model-Routing. DSGVO-konform, selbst gehostet."
-        : "Open-source AI platform with chat widget, RAG document search, and multi-model routing. GDPR-compliant, self-hosted.",
+        ? "Own the flow. Offene KI-Plattform: die Dateien bleiben, das Modell wählen Sie, der Preis steht auf der Antwort. DSGVO-konform, selbst gehostet."
+        : "Own the flow. Open AI platform: the files stay put, you choose the model, and the price is on the answer. GDPR-compliant, self-hosted.",
     featureList: [
       "Multi-model AI routing (OpenAI, Anthropic, Groq, Gemini, Ollama)",
       "Embeddable chat widget for any website",

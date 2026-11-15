@@ -25,6 +25,7 @@ import {
   TryChatDemoChatCard,
   type DemoStatusPayload,
 } from "@/components/try-chat/try-chat-demo-chat-card";
+import { TryChatButton } from "@/components/try-chat/try-chat-button";
 import {
   TryChatFullscreenDemoToast,
   TryChatFullscreenModeBar,
@@ -462,24 +463,13 @@ export function TryChatExperience({
               aria-hidden
               className="pointer-events-none absolute -right-10 -top-10 z-0 hidden size-24 rotate-12 rounded-2xl border border-white/50 bg-gradient-to-br from-white to-soft-accent shadow-xl sm:block"
             />
-            <TryChatDemoChatCard
-              variant="embedded"
-              isFullscreen={false}
-              onEnterFullscreen={() => setIsFullscreen(true)}
-              status={status}
-              rows={rows}
-              streaming={streaming}
-              disabled={disabled}
-              showEndPanel={showEndPanel}
-              limitReached={limitReached}
-              apiUnavailable={apiUnavailable}
-              input={input}
-              setInput={setInput}
-              send={send}
-              messagesScrollRef={messagesScrollRef}
-              textareaRef={textareaRef}
-              quickChips={quickChips}
-            />
+            <div className="mc-card relative z-10 p-8">
+              <h2 className="text-xl font-semibold text-[var(--mc-text)]">{t("widgetPanelTitle")}</h2>
+              <p className="mt-3 text-sm leading-relaxed text-[var(--mc-text-muted)]">{t("widgetPanelBody")}</p>
+              <TryChatButton autoOpen className="mc-btn mc-btn--primary mt-6">
+                {t("widgetOpen")}
+              </TryChatButton>
+            </div>
           </motion.div>
         </div>
         )}

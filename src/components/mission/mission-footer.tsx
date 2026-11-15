@@ -7,6 +7,7 @@ import { ParrotGlyph } from "./parrot-glyph";
 import { Lamp, Ruler } from "./primitives";
 import { ParrotSwitch } from "./mission-header";
 import { ModeToggle } from "./mode-toggle";
+import { TryChatButton } from "@/components/try-chat/try-chat-button";
 
 type FooterLink = { label: string; href: string; external?: boolean };
 
@@ -91,6 +92,10 @@ export function MissionFooter() {
                       <a href={link.href} target="_blank" rel="noopener noreferrer" className="text-sm text-[var(--mc-text-muted)] transition-colors hover:text-[var(--mc-text)]">
                         {link.label} <span aria-hidden className="text-[var(--mc-text-faint)]">↗</span>
                       </a>
+                    ) : link.href === "/try-chat" ? (
+                      <TryChatButton className="border-0 bg-transparent p-0 text-left font-[inherit] text-sm normal-case tracking-normal text-[var(--mc-text-muted)] transition-colors hover:text-[var(--mc-text)]">
+                        {link.label}
+                      </TryChatButton>
                     ) : (
                       <Link href={link.href} className="text-sm text-[var(--mc-text-muted)] transition-colors hover:text-[var(--mc-text)]">
                         {link.label}

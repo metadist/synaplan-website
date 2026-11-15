@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "Synaplan — Open-Source AI Platform for Companies",
-    "description": "Open-source AI platform with multi-model routing, GDPR compliance, and an AI chatbot widget. Connect OpenAI, Claude, Gemini & Ollama. Self-hosted via Docker.",
-    "homeTitle": "Synaplan — The Open-Source AI Communication Platform",
-    "homeDescription": "One AI across every channel — WhatsApp, email, Outlook, website, API, MCP, and now iOS & Android. Connect every AI model to every business process. Open source, GDPR-compliant, self-hosted."
+    "title": "Synaplan — Own the flow.",
+    "description": "Own the flow. AI on your files: offers, customer answers, and contracts. Choose the model, see the cost, and keep the same answer on your website, by email, and on WhatsApp.",
+    "homeTitle": "Synaplan — Own the flow.",
+    "homeDescription": "Own the flow. AI on your files: offers, customer answers, and contracts. Choose the model, see the cost, and keep the same answer on your website, by email, and on WhatsApp."
   },
   "nav": {
     "solutions": "Solutions",
@@ -82,6 +82,13 @@
     "ctaWeb": "Open web.synaplan.com",
     "ctaRegister": "Sign up",
     "backHome": "Back to homepage",
+    "widgetOpen": "Open the chat",
+    "widgetPanelTitle": "The support chat",
+    "widgetPanelBody": "This opens the Synaplan website widget. No account, and the same assistant that answers on synaplan.com.",
+    "widgetBlockedTitle": "This address cannot open the chat yet",
+    "widgetBlockedBody": "Try the chat uses the website widget. synaplan.com can open it. Add this address to the widget’s allowed sites, then try again.",
+    "widgetFailedBody": "The support chat did not load. Try again in a moment.",
+    "widgetBlockedClose": "Close",
     "justNow": "Just now",
     "placeholder": "Ask anything…",
     "placeholderLimit": "Demo limit reached — continue on web.synaplan.com",
@@ -297,10 +304,10 @@
     "ctaButton": "Learn more about the chat widget"
   },
   "hero": {
-    "badge": "The Open-Source AI Communication Platform",
-    "title": "One AI.",
-    "titleHighlight": "Every channel. Full control.",
-    "description": "Synaplan connects every AI model to every business process and every communication channel — WhatsApp, email, Outlook, website, API, MCP, and now iOS & Android. One knowledge base. One platform. Fully open source.",
+    "badge": "Open AI for your own work",
+    "title": "Your files.",
+    "titleHighlight": "Your model. Your cost.",
+    "description": "Synaplan helps teams draft offers, answer customers, and read contracts from the documents they already have. You choose the model, you see what an answer costs, and the same assistant works on the website, in email, on WhatsApp, and in the apps.",
     "trustedBy": "Trusted by innovative companies",
     "scrollDown": "Scroll to the next section",
     "tryChatCta": "Try a quick AI chat on this page — no login",
@@ -701,7 +708,7 @@
     "items": [
       {
         "q": "What exactly is Synaplan?",
-        "a": "The open AI that answers from your own documents, with the source, a choice of model, and a visible price. The same answer in the chat, on your website, by email, on WhatsApp and Telegram. In the cloud or on your own servers."
+        "a": "Own the flow. The open AI for the work your teams already do: offers, customer answers, contracts, and a search through the company documents. The files stay put. You choose the model and see the price. The same assistant in the chat, on your website, by email, on WhatsApp and Telegram — in the cloud or on your own servers."
       },
       {
         "q": "Is Synaplan a ChatGPT alternative?",
@@ -1466,7 +1473,7 @@
     "ctaTertiary": "Sign up",
     "featuresTitle": "Built for builders",
     "f1Title": "100% open source",
-    "f1Desc": "Fork, inspect, and contribute. Apache 2.0 licence — no lock-in, no black box. The full stack (PHP backend, Vue.js frontend, MariaDB, Qdrant) is on GitHub.",
+    "f1Desc": "Read it, run it, and take it with you. Apache 2.0. The whole platform is public on GitHub. The screen is a separate Vue.js app; Go services and a Rust desktop client sit beside the PHP application server.",
     "f2Title": "REST API",
     "f2Desc": "Every function exposed as an API endpoint. Build your own UI, automate workflows, or integrate Synaplan into existing tools — documented at docs.synaplan.com.",
     "f3Title": "Plugin system",
@@ -1919,8 +1926,9 @@
     "meta": {
       "home": {
         "title": "Synaplan — Own the flow.",
-        "description": "The open AI that answers from your own documents, with the source, a choice of model, and a visible price. The same answer in the chat, on your website, by email, on WhatsApp and Telegram.",
+        "description": "Own the flow. AI on your own files and the work around them: offers, customer answers, contracts. Choose the model, see the cost, and keep the same answer in the chat, on your website, by email, on WhatsApp and Telegram.",
         "keywords": [
+          "Own the flow",
           "open source AI platform",
           "self-hosted AI",
           "AI agents",
@@ -1936,6 +1944,7 @@
           "on-premise AI"
         ],
         "searchTerms": [
+          "Own the flow",
           "Open-source AI platform",
           "Self-hosted AI",
           "AI agents",
@@ -2084,8 +2093,9 @@
     },
     "hero": {
       "eyebrow": "SYNAPLAN",
-      "title": "Own the flow.",
-      "subtitle": "The open AI that answers from your own documents — with the source, a choice of model, and a visible price.",
+      "title": "AI on your data, files and processes.",
+      "tagline": "Own the flow.",
+      "subtitle": "Offers, customer answers, contracts — with the model you choose and the cost in view.",
       "install": {
         "docker": "Start Docker Desktop first.",
         "docs": "Install guide",
@@ -2114,28 +2124,28 @@
       "secondary": "Pricing",
       "demoDocsCta": "Synaplan Demo docs",
       "note": "Apache-2.0 · no licence fee · in the cloud or on your own servers",
-      "engineerTitle": "Open-source AI platform. Self-hosted. Own the flow.",
-      "engineerSubtitle": "PHP 8.5+ / Symfony backend, Vue 3 frontend, MariaDB VECTOR + Qdrant, gRPC inference, OpenAPI contract, MCP server and client. One `make up` away.",
-      "engineerNote": "Apache-2.0 · Docker · Kubernetes · self-hosted or hosted in Germany"
+      "engineerTitle": "One platform for the work, the files, and the model.",
+      "engineerSubtitle": "Your documents, the model you choose, and the tools you already run. The screen is its own application. Services and the desktop client stand beside it. Your servers, or hosted in Germany.",
+      "engineerNote": "Apache-2.0 · your servers or hosted in Germany"
     },
     "plain": {
-      "heading": "What you get.",
+      "heading": "What your teams get.",
       "points": [
         {
-          "title": "Files stay put",
-          "text": "OpenCloud, Nextcloud, Dropbox and ownCloud.online are connected. Nothing has to move."
+          "title": "The work, from your files",
+          "text": "Offers from the price list, answers for customers, a reading of the contract, a search across the folder. The documents stay where they are."
         },
         {
-          "title": "The price is one click",
-          "text": "One click shows the model, the tokens, and what was sent."
+          "title": "The model you choose",
+          "text": "The large US models, Mistral from Europe, a model on your own server, or German GPUs. Ask the same question again with another model."
         },
         {
-          "title": "You choose the model",
-          "text": "The big US models, Mistral from Europe, Ollama on your own server, German GPUs through TrustedTokens. “Again with…” asks the same question of another model."
+          "title": "The cost, on the answer",
+          "text": "One click shows the model, what was sent, and what it cost. You decide what an answer may cost."
         },
         {
-          "title": "The same answer",
-          "text": "In the chat, on your website, by email, on WhatsApp and Telegram. The code is Apache-2.0 and free of a licence fee, in the cloud or on your own servers."
+          "title": "A platform you can take with you",
+          "text": "Open source, with no licence fee. In the cloud or on your own servers. The same answer in the chat, on your website, by email, on WhatsApp and Telegram."
         }
       ]
     },
@@ -2322,11 +2332,11 @@
     },
     "connect": {
       "num": "03",
-      "title": "Files stay put",
+      "title": "Own the flow",
       "engineerTitle": "Connect everything",
-      "heading": "The documents stay where they are.",
+      "heading": "Files stay put.",
       "engineerHeading": "A topology, not just a chatbot.",
-      "text": "OpenCloud, Nextcloud, Dropbox and ownCloud.online are connected. The AI moves in beside them. Nothing has to move.",
+      "text": "That is the flow. OpenCloud, Nextcloud, Dropbox and ownCloud.online stay where they are. The AI moves in beside them. Nothing has to move.",
       "engineerText": "The open-source AI platform sits between WhatsApp, Outlook, your website chatbot, Microsoft 365, Nextcloud and MCP. Channels come in, the RAG knowledge base and tools connect around it, every packet is logged.",
       "hint": "Hover or tap a node to follow the traffic.",
       "boxes": {
@@ -2438,18 +2448,6 @@
           "value": "docker / kubernetes / managed"
         },
         {
-          "key": "backend",
-          "value": "PHP 8.5+ · Symfony · FrankenPHP"
-        },
-        {
-          "key": "frontend",
-          "value": "Vue 3 · TypeScript · Vite"
-        },
-        {
-          "key": "vectors",
-          "value": "MariaDB VECTOR · Qdrant"
-        },
-        {
           "key": "models",
           "value": "local (ollama) / cloud (6 providers)"
         },
@@ -2462,6 +2460,10 @@
           "value": "enabled · human approvals"
         },
         {
+          "key": "channels",
+          "value": "mail · whatsapp · web · outlook · desktop · api"
+        },
+        {
           "key": "mcp",
           "value": "server + client"
         },
@@ -2470,8 +2472,24 @@
           "value": "openapi 3 · anthropic-compatible gateway"
         },
         {
-          "key": "channels",
-          "value": "mail · whatsapp · web · outlook · desktop · api"
+          "key": "vectors",
+          "value": "MariaDB VECTOR · Qdrant"
+        },
+        {
+          "key": "frontend",
+          "value": "Vue 3 · TypeScript · separate app"
+        },
+        {
+          "key": "services",
+          "value": "Go"
+        },
+        {
+          "key": "clients",
+          "value": "Rust"
+        },
+        {
+          "key": "backend",
+          "value": "PHP · Symfony"
         },
         {
           "key": "lock-in",
@@ -2492,7 +2510,7 @@
       "engineerItems": [
         {
           "q": "What exactly is Synaplan?",
-          "a": "Synaplan is an open-source AI platform built on PHP 8.5+. It lets you connect multiple AI models (OpenAI, Anthropic, Groq, Gemini, Ollama), embed a chat widget on any website, search your documents with RAG (retrieval-augmented generation), and extend functionality with business-specific plugins — all in one self-hosted platform."
+          "a": "An open AI platform for the work teams already do. It drafts from the price list, answers customers, and reads contracts and invoices, with the source beside the answer. You choose the model, including one on your own server, and you see the cost. The same assistant sits on your website, in email, on WhatsApp and Telegram. You run it yourself, or use the hosted platform."
         },
         {
           "q": "Is Synaplan a ChatGPT alternative?",
@@ -2521,6 +2539,10 @@
         {
           "q": "Which industries and company sizes is Synaplan suited for?",
           "a": "Synaplan is used by SMBs and enterprises across industries including hospitality, trades & crafts, healthcare, and technology. Website operators use the chat widget for customer service, while larger organizations use the full platform for internal knowledge management, document processing, WhatsApp integration, and email automation."
+        },
+        {
+          "q": "Which languages is it written in?",
+          "a": "Several. The screen is a separate Vue.js application. Go services sit beside the core. The desktop client is Rust. PHP and Symfony run the application server. The platform is what you use; the languages are how it is built."
         }
       ]
     },
@@ -2975,7 +2997,7 @@
         "repos": [
           {
             "name": "synaplan",
-            "text": "The platform: backend, frontend, widget, plugins, Docker stack.",
+            "text": "The product people use: chat, knowledge, and channels. The screen is a separate Vue.js app.",
             "href": "https://github.com/metadist/synaplan"
           },
           {
@@ -2985,7 +3007,7 @@
           },
           {
             "name": "synaplan-desktop",
-            "text": "Tauri desktop client that runs Agent Skills locally.",
+            "text": "Desktop client in Rust. It runs local skills on the person's own computer.",
             "href": "https://github.com/metadist/synaplan-desktop"
           },
           {

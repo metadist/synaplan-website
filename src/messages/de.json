@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "Synaplan — KI-Plattform für Unternehmen | Open Source",
-    "description": "Open-Source-KI-Plattform mit Multi-Model-Routing, DSGVO-Konformität und KI-Chatbot-Widget. OpenAI, Claude, Gemini & Ollama verbinden. Self-hosted via Docker.",
-    "homeTitle": "Synaplan — Die Open-Source-Plattform für KI-Kommunikation",
-    "homeDescription": "Eine KI über jeden Kanal — WhatsApp, E-Mail, Outlook, Website, API, MCP und jetzt iOS & Android. Jedes KI-Modell mit jedem Geschäftsprozess verbinden. Open Source, DSGVO-konform, self-hosted."
+    "title": "Synaplan — Own the flow.",
+    "description": "Own the flow. KI auf Ihren Dateien: Angebote, Kundenantworten und Verträge. Modell wählen, Kosten sehen und dieselbe Antwort auf der Website, in der Mail und auf WhatsApp.",
+    "homeTitle": "Synaplan — Own the flow.",
+    "homeDescription": "Own the flow. KI auf Ihren Dateien: Angebote, Kundenantworten und Verträge. Modell wählen, Kosten sehen und dieselbe Antwort auf der Website, in der Mail und auf WhatsApp."
   },
   "nav": {
     "solutions": "Lösungen",
@@ -82,6 +82,13 @@
     "ctaWeb": "web.synaplan.com öffnen",
     "ctaRegister": "Registrieren",
     "backHome": "Zur Startseite",
+    "widgetOpen": "Chat öffnen",
+    "widgetPanelTitle": "Der Support-Chat",
+    "widgetPanelBody": "Hier öffnet sich das Website-Widget von Synaplan. Ohne Konto, mit demselben Assistenten wie auf synaplan.com.",
+    "widgetBlockedTitle": "Diese Adresse kann den Chat noch nicht öffnen",
+    "widgetBlockedBody": "„Chat ausprobieren“ nutzt das Website-Widget. synaplan.com darf es öffnen. Nimm diese Adresse in die erlaubten Seiten des Widgets auf und versuch es erneut.",
+    "widgetFailedBody": "Der Support-Chat hat nicht geladen. Versuch es gleich noch einmal.",
+    "widgetBlockedClose": "Schließen",
     "justNow": "Gerade eben",
     "placeholder": "Stelle irgendeine Frage…",
     "placeholderLimit": "Demo-Limit erreicht — weiter auf web.synaplan.com",
@@ -297,10 +304,10 @@
     "ctaButton": "Mehr zum Chat-Widget erfahren"
   },
   "hero": {
-    "badge": "Die Open-Source-Plattform für KI-Kommunikation",
-    "title": "Eine KI.",
-    "titleHighlight": "Jeder Kanal. Volle Kontrolle.",
-    "description": "Synaplan verbindet jedes KI-Modell mit jedem Geschäftsprozess und jedem Kommunikationskanal — WhatsApp, E-Mail, Outlook, Website, API, MCP und jetzt iOS & Android. Eine Wissensbasis. Eine Plattform. Vollständig Open Source.",
+    "badge": "Offene KI für die eigene Arbeit",
+    "title": "Ihre Dateien.",
+    "titleHighlight": "Ihr Modell. Ihre Kosten.",
+    "description": "Synaplan hilft Teams, Angebote zu entwerfen, Kunden zu antworten und Verträge aus den Dokumenten zu lesen, die schon da sind. Sie wählen das Modell, Sie sehen, was eine Antwort kostet, und derselbe Assistent arbeitet auf der Website, in der Mail, auf WhatsApp und in den Apps.",
     "trustedBy": "Vertraut von innovativen Unternehmen",
     "scrollDown": "Zur nächsten Sektion scrollen",
     "tryChatCta": "Kurz den KI-Chat auf dieser Seite ausprobieren — ohne Login",
@@ -701,7 +708,7 @@
     "items": [
       {
         "q": "Was genau ist Synaplan?",
-        "a": "Die offene KI, die aus Ihren Unterlagen antwortet, mit Quelle, Modellwahl und sichtbarem Preis. Dieselbe Antwort im Chat, auf der Website, in der Mail, auf WhatsApp und Telegram. In der Cloud oder auf eigenen Servern."
+        "a": "Own the flow. Die offene KI für die Arbeit, die Ihre Teams schon tun: Angebote, Kundenantworten, Verträge und die Suche in den Firmendokumenten. Die Dateien bleiben. Die Antwort nennt ihre Quelle. Sie wählen das Modell und sehen den Preis. Derselbe Assistent im Chat, auf der Website, in der Mail, auf WhatsApp und Telegram — in der Cloud oder auf eigenen Servern."
       },
       {
         "q": "Ist Synaplan eine ChatGPT-Alternative?",
@@ -1466,7 +1473,7 @@
     "ctaTertiary": "Registrieren",
     "featuresTitle": "Gebaut für Entwickler",
     "f1Title": "100% Open Source",
-    "f1Desc": "Forken, prüfen und beitragen. Apache-2.0-Lizenz — kein Lock-in, keine Black Box. Der vollständige Stack (PHP-Backend, Vue.js-Frontend, MariaDB, Qdrant) ist auf GitHub.",
+    "f1Desc": "Lesen, selbst betreiben und mitnehmen. Apache 2.0. Die ganze Plattform liegt öffentlich auf GitHub. Die Oberfläche ist eine eigene Vue.js-App; Go-Dienste und ein Rust-Desktop-Client stehen neben dem PHP-Anwendungsserver.",
     "f2Title": "REST API",
     "f2Desc": "Jede Funktion als API-Endpunkt. Eigene Oberfläche bauen, Workflows automatisieren oder Synaplan in bestehende Tools integrieren — dokumentiert auf docs.synaplan.com.",
     "f3Title": "Plugin-System",
@@ -1919,8 +1926,9 @@
     "meta": {
       "home": {
         "title": "Synaplan — Own the flow.",
-        "description": "Die offene KI, die aus den eigenen Unterlagen antwortet, mit Quelle, Modellwahl und sichtbarem Preis. Dieselbe Antwort im Chat, auf der Website, in der Mail, auf WhatsApp und Telegram.",
+        "description": "Own the flow. KI auf den eigenen Dateien und der Arbeit drumherum: Angebote, Kundenantworten, Verträge. Modell wählen, Kosten sehen und dieselbe Antwort im Chat, auf der Website, in der Mail, auf WhatsApp und Telegram.",
         "keywords": [
+          "Own the flow",
           "Open-Source-KI-Plattform",
           "Self-Hosted KI",
           "KI-Agenten",
@@ -1936,6 +1944,7 @@
           "On-Premise KI"
         ],
         "searchTerms": [
+          "Own the flow",
           "Open-Source-KI-Plattform",
           "Self-Hosted KI",
           "KI-Agenten",
@@ -2084,8 +2093,9 @@
     },
     "hero": {
       "eyebrow": "SYNAPLAN",
-      "title": "Own the flow.",
-      "subtitle": "Die offene KI, die aus den eigenen Unterlagen antwortet — mit Quelle, Modellwahl und sichtbarem Preis.",
+      "title": "KI auf Ihren Daten, Dateien und Abläufen.",
+      "tagline": "Own the flow.",
+      "subtitle": "Angebote, Kundenantworten, Verträge — mit dem Modell Ihrer Wahl und den Kosten im Blick.",
       "install": {
         "docker": "Zuerst Docker Desktop starten.",
         "docs": "Installationsanleitung",
@@ -2114,28 +2124,28 @@
       "secondary": "Preise",
       "demoDocsCta": "Synaplan-Demo Docs",
       "note": "Apache-2.0 · ohne Lizenzgebühr · in der Cloud oder auf eigenen Servern",
-      "engineerTitle": "Open-Source-KI-Plattform. Self-Hosted. Own the flow.",
-      "engineerSubtitle": "PHP 8.5+ / Symfony-Backend, Vue-3-Frontend, MariaDB VECTOR + Qdrant, gRPC-Inferenz, OpenAPI-Vertrag, MCP-Server und -Client. Ein `make up` entfernt.",
-      "engineerNote": "Apache-2.0 · Docker · Kubernetes · selbst gehostet oder in Deutschland gehostet"
+      "engineerTitle": "Eine Plattform für die Arbeit, die Dateien und das Modell.",
+      "engineerSubtitle": "Ihre Dokumente, das Modell Ihrer Wahl und die Werkzeuge, die Sie schon betreiben. Die Oberfläche ist eine eigene Anwendung. Dienste und der Desktop-Client stehen daneben. Ihre Server oder bei uns in Deutschland gehostet.",
+      "engineerNote": "Apache-2.0 · Ihre Server oder in Deutschland gehostet"
     },
     "plain": {
-      "heading": "Was Sie davon haben.",
+      "heading": "Was Ihre Teams davon haben.",
       "points": [
         {
-          "title": "Dateien bleiben",
-          "text": "OpenCloud, Nextcloud, Dropbox und ownCloud.online sind angebunden. Nichts muss umziehen."
+          "title": "Die Arbeit aus den eigenen Dateien",
+          "text": "Angebote aus der Preisliste, Antworten für Kunden, das Lesen des Vertrags, die Suche im Ordner. Die Dokumente bleiben, wo sie sind."
         },
         {
-          "title": "Preis auf einen Klick",
-          "text": "Ein Klick zeigt das Modell, die Tokens und was geschickt wurde."
+          "title": "Das Modell, das Sie wählen",
+          "text": "Die großen US-Modelle, Mistral aus Europa, ein Modell auf dem eigenen Server oder deutsche GPUs. Dieselbe Frage noch einmal, an ein anderes Modell."
         },
         {
-          "title": "Sie wählen das Modell",
-          "text": "Die großen US-Modelle, Mistral aus Europa, Ollama auf dem eigenen Server, deutsche GPUs über TrustedTokens. „Erneut mit …“ stellt dieselbe Frage an ein anderes Modell."
+          "title": "Die Kosten auf der Antwort",
+          "text": "Ein Klick zeigt das Modell, was geschickt wurde und was es gekostet hat. Sie entscheiden, was eine Antwort kosten darf."
         },
         {
-          "title": "Dieselbe Antwort",
-          "text": "Im Chat, auf der Website, in der Mail, auf WhatsApp und Telegram. Der Code ist Apache-2.0 und ohne Lizenzgebühr nutzbar, in der Cloud oder auf eigenen Servern."
+          "title": "Eine Plattform zum Mitnehmen",
+          "text": "Open Source, ohne Lizenzgebühr. In der Cloud oder auf eigenen Servern. Dieselbe Antwort im Chat, auf der Website, in der Mail, auf WhatsApp und Telegram."
         }
       ]
     },
@@ -2322,11 +2332,11 @@
     },
     "connect": {
       "num": "03",
-      "title": "Dateien bleiben",
+      "title": "Own the flow",
       "engineerTitle": "Alles verbinden",
-      "heading": "Die Unterlagen bleiben, wo sie sind.",
+      "heading": "Dateien bleiben.",
       "engineerHeading": "Eine Topologie, nicht nur ein Chatbot.",
-      "text": "OpenCloud, Nextcloud, Dropbox und ownCloud.online sind angebunden. Die KI zieht daneben ein. Nichts muss umziehen.",
+      "text": "Das ist der Flow. OpenCloud, Nextcloud, Dropbox und ownCloud.online bleiben, wo sie sind. Die KI zieht daneben ein. Nichts muss umziehen.",
       "engineerText": "Die Open-Source-KI-Plattform sitzt zwischen WhatsApp, Outlook, Ihrem Website-Chatbot, Microsoft 365, Nextcloud und MCP. Kanäle kommen herein, die RAG-Wissensdatenbank und Tools docken am Kern an, jedes Paket wird protokolliert.",
       "hint": "Knoten berühren oder anklicken, um den Datenverkehr zu verfolgen.",
       "boxes": {
@@ -2438,18 +2448,6 @@
           "value": "docker / kubernetes / gehostet"
         },
         {
-          "key": "backend",
-          "value": "PHP 8.5+ · Symfony · FrankenPHP"
-        },
-        {
-          "key": "frontend",
-          "value": "Vue 3 · TypeScript · Vite"
-        },
-        {
-          "key": "vectors",
-          "value": "MariaDB VECTOR · Qdrant"
-        },
-        {
           "key": "models",
           "value": "lokal (ollama) / cloud (6 anbieter)"
         },
@@ -2462,6 +2460,10 @@
           "value": "aktiv · menschliche freigaben"
         },
         {
+          "key": "channels",
+          "value": "mail · whatsapp · web · outlook · desktop · api"
+        },
+        {
           "key": "mcp",
           "value": "server + client"
         },
@@ -2470,8 +2472,24 @@
           "value": "openapi 3 · anthropic-kompatibles gateway"
         },
         {
-          "key": "channels",
-          "value": "mail · whatsapp · web · outlook · desktop · api"
+          "key": "vectors",
+          "value": "MariaDB VECTOR · Qdrant"
+        },
+        {
+          "key": "frontend",
+          "value": "Vue 3 · TypeScript · eigene App"
+        },
+        {
+          "key": "services",
+          "value": "Go"
+        },
+        {
+          "key": "clients",
+          "value": "Rust"
+        },
+        {
+          "key": "backend",
+          "value": "PHP · Symfony"
         },
         {
           "key": "lock-in",
@@ -2492,7 +2510,7 @@
       "engineerItems": [
         {
           "q": "Was genau ist Synaplan?",
-          "a": "Synaplan ist eine Open-Source-KI-Plattform auf Basis von PHP 8.5+. Sie verbindet mehrere KI-Modelle (OpenAI, Anthropic, Groq, Gemini, Ollama), ermöglicht das Einbetten eines Chat-Widgets auf jeder Website, durchsucht Dokumente per RAG (Retrieval-Augmented Generation) und lässt sich mit unternehmensspezifischen Plugins erweitern — alles in einer selbst gehosteten Plattform."
+          "a": "Eine offene KI-Plattform für die Arbeit, die Teams schon tun. Sie entwirft aus der Preisliste, antwortet Kunden und liest Verträge und Rechnungen, mit der Quelle neben der Antwort. Sie wählen das Modell, auch eines auf dem eigenen Server, und Sie sehen die Kosten. Derselbe Assistent sitzt auf der Website, in der Mail, auf WhatsApp und Telegram. Sie betreiben ihn selbst oder nutzen die gehostete Plattform."
         },
         {
           "q": "Ist Synaplan eine ChatGPT-Alternative?",
@@ -2521,6 +2539,10 @@
         {
           "q": "Für welche Branchen und Unternehmensgrößen eignet sich Synaplan?",
           "a": "Synaplan wird von KMUs und Großunternehmen in verschiedenen Branchen eingesetzt, darunter Gastgewerbe, Handwerk & Gewerbe, Gesundheitswesen und Technologie. Website-Betreiber nutzen das Chat-Widget für den Kundenservice, größere Organisationen die gesamte Plattform für internes Wissensmanagement, Dokumentenverarbeitung, WhatsApp-Integration und E-Mail-Automatisierung."
+        },
+        {
+          "q": "In welchen Sprachen ist es geschrieben?",
+          "a": "In mehreren. Die Oberfläche ist eine eigene Vue.js-Anwendung. Go-Dienste stehen neben dem Kern. Der Desktop-Client ist Rust. PHP und Symfony betreiben den Anwendungsserver. Die Plattform ist das, was Sie nutzen; die Sprachen sind die Art, wie sie gebaut ist."
         }
       ]
     },
@@ -2975,7 +2997,7 @@
         "repos": [
           {
             "name": "synaplan",
-            "text": "Die Plattform: Backend, Frontend, Widget, Plugins, Docker-Stack.",
+            "text": "Das Produkt, das Menschen nutzen: Chat, Wissen und Kanäle. Die Oberfläche ist eine eigene Vue.js-App.",
             "href": "https://github.com/metadist/synaplan"
           },
           {
@@ -2985,7 +3007,7 @@
           },
           {
             "name": "synaplan-desktop",
-            "text": "Tauri-Desktop-Client, der Agent Skills lokal ausführt.",
+            "text": "Desktop-Client in Rust. Er führt lokale Fähigkeiten auf dem eigenen Computer aus.",
             "href": "https://github.com/metadist/synaplan-desktop"
           },
           {
