@@ -123,7 +123,7 @@ export function MissionConsole() {
       </div>
 
       <div className="mc-terminal-body whitespace-normal!">
-        <dl className="mc-mono text-[0.78rem]">
+        <dl className="mc-mono text-[0.9375rem]">
           <div className="mc-console-row"><dt>{t("labels.inbound")}</dt><dd>{mission.inbound}</dd></div>
           <div className="mc-console-row"><dt>{t("labels.agent")}</dt><dd className="text-[var(--mc-cyan)]">{mission.agent}</dd></div>
           <div className="mc-console-row"><dt>{t("labels.knowledge")}</dt><dd>{mission.knowledge}</dd></div>
@@ -132,12 +132,12 @@ export function MissionConsole() {
           <div className="mc-console-row"><dt>{t("labels.node")}</dt><dd>{mission.node}</dd></div>
         </dl>
 
-        <div className="my-3 flex items-center gap-2 border-y border-[var(--mc-line)] py-2 text-[0.6875rem] uppercase tracking-[0.16em] text-[var(--mc-amber)]">
+        <div className="my-3 flex items-center gap-2 border-y border-[var(--mc-line)] py-2 text-[0.875rem] font-semibold uppercase tracking-[0.08em] text-[var(--mc-amber)]">
           <Lamp tone="amber" blink={phase === "waiting"} />
           {t("approvalRequired")}
         </div>
 
-        <ol className="mc-mono text-[0.78rem]" aria-label="Mission steps">
+        <ol className="mc-mono text-[0.9375rem]" aria-label="Mission steps">
           <li className="mc-step mc-line-in" data-state={stateOf("received")}>
             <span aria-hidden>{glyph(stateOf("received"))}</span> {t("steps.received")}
           </li>
@@ -188,7 +188,7 @@ export function MissionConsole() {
           >
             [ {phase === "approved" || phase === "complete" ? t("approved") : t("approve")} ]
           </button>
-          <span className="mc-mono text-[0.625rem] uppercase tracking-[0.14em] text-[var(--mc-text-faint)]">{t("hint")}</span>
+          <span className="text-[0.875rem] text-[var(--mc-text-muted)]">{t("hint")}</span>
         </div>
       </div>
     </div>

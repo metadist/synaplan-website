@@ -728,7 +728,7 @@
       },
       {
         "q": "Can I self-host Synaplan?",
-        "a": "Yes. The same software, with no licence fee. The start command is on this page, under Self-host."
+        "a": "Yes. The same software, with no licence fee. The start command is on this page, under Install."
       },
       {
         "q": "What are Synaplan plugins?",
@@ -1982,8 +1982,8 @@
         ]
       },
       "deploy": {
-        "title": "Self-Hosted AI: Docker, Kubernetes & On-Premise | Synaplan",
-        "description": "Self-host the Synaplan open-source AI platform with Docker Compose, deploy on Kubernetes with the public Helm chart, or use on-premise / EU hosting in Germany. Same Apache-2.0 code on a laptop, a server or a cluster.",
+        "title": "Install Synaplan with Docker or Kubernetes | Synaplan",
+        "description": "Install Synaplan with Docker on a laptop or one server, or with Kubernetes if you already have a cluster. Or use the copy we host in Germany. Same program, no licence fee.",
         "keywords": [
           "self-hosted AI",
           "on-premise AI",
@@ -2070,7 +2070,7 @@
     "skip": "Skip to content",
     "nav": {
       "product": "Product",
-      "deploy": "Self-host",
+      "deploy": "Install",
       "connect": "Channels",
       "agents": "Assistants",
       "source": "Source code",
@@ -2093,7 +2093,7 @@
     },
     "hero": {
       "eyebrow": "SYNAPLAN",
-      "title": "AI on your data, files and processes.",
+      "title": "Your own AI, on your files.",
       "tagline": "Own the flow.",
       "subtitle": "Offers, customer answers, contracts — with the model you choose and the cost in view.",
       "install": {
@@ -2332,7 +2332,7 @@
     },
     "connect": {
       "num": "03",
-      "title": "Own the flow",
+      "title": "Your files",
       "engineerTitle": "Connect everything",
       "heading": "Files stay put.",
       "engineerHeading": "A topology, not just a chatbot.",
@@ -2384,11 +2384,11 @@
     },
     "run": {
       "num": "04",
-      "title": "Self-host",
+      "title": "Install",
       "engineerTitle": "Run it anywhere",
-      "heading": "In the cloud, or on your own servers.",
+      "heading": "Install it with Docker or Kubernetes.",
       "engineerHeading": "Self-hosted AI: Docker today, Kubernetes tomorrow.",
-      "text": "The same software, under Apache-2.0, with no licence fee. If you want to start it yourself, the command is here.",
+      "text": "The simple way. Docker runs it on a laptop or one server. Kubernetes runs it when you already have a cluster. The same program, with no licence fee. The command is below.",
       "engineerText": "The whole open-source AI platform is Dockerised and Apache-2.0 licensed. Start on a laptop, move to an on-premise server, scale on Kubernetes with the public Helm chart — or let us host it in Germany.",
       "tabs": {
         "compose": "Docker Compose",
@@ -2398,36 +2398,36 @@
       "ladder": [
         {
           "label": "Laptop",
-          "desc": "docker compose, ten minutes"
+          "desc": "Docker on your computer. About ten minutes."
         },
         {
           "label": "Server",
-          "desc": "one Linux box, the deploy/ contract"
+          "desc": "One Linux computer, at your office or in a data center."
         },
         {
           "label": "Cluster",
-          "desc": "Helm chart, Galera, Qdrant"
+          "desc": "Kubernetes, when one computer is not enough."
         },
         {
-          "label": "Sovereign cloud",
-          "desc": "openDesk, EU hosting, your keys"
+          "label": "Hosted",
+          "desc": "We run it for you, in Germany."
         }
       ],
       "cloudText": "Nothing to install: web.synaplan.com runs the same open-source code, hosted in Germany. Sign up with a paid plan, or ask for an invitation code.",
       "cloudCta": "Open the platform",
-      "docs": "Deployment docs"
+      "docs": "Install guide"
     },
     "log": {
       "num": "05",
-      "title": "Flight log",
-      "heading": "Missions already flown.",
+      "title": "Customers",
+      "heading": "Teams already using it.",
       "text": "Public institutions, hospitality, care services, industry. Small teams and large ones. Same platform.",
       "status": "Operational"
     },
     "source": {
       "num": "06",
       "title": "The source",
-      "heading": "Open-source AI platform. Apache-2.0. All of it.",
+      "heading": "The source code is public. The licence is Apache-2.0.",
       "text": "Platform, Helm charts, desktop client, Outlook add-in — public repositories under Apache-2.0. Self-host it, fork it, audit it. Your data stays where you put it.",
       "stars": "GitHub stars",
       "forks": "Forks",
@@ -2575,9 +2575,9 @@
         "I am not a chatbot. I am a flight engineer.",
         "Fun fact: I run on-prem too.",
         "Nobody ever reads the ticker. You did. Respect.",
-        "Try engineer mode. It's in the header. I'll wait.",
+        "The install command is on this page. Start with Docker.",
         "Apache-2.0. Say it with me.",
-        "make up. That's the local install.",
+        "Docker is the simple way to install it on your computer.",
         "Cloud is just someone else's Kubernetes."
       ]
     },
@@ -2767,15 +2767,15 @@
         }
       },
       "deploy": {
-        "eyebrow": "DEPLOY // SYS-04",
-        "title": "Self-hosted AI — Docker, Kubernetes or Germany.",
-        "lead": "The open-source AI platform ships as Docker images and a public Helm chart. On-premise on a laptop or a server, Kubernetes in your cluster, or EU hosting in Germany. Same Apache-2.0 code. No enterprise fork.",
+        "eyebrow": "INSTALL",
+        "title": "Install it with Docker or Kubernetes.",
+        "lead": "The simple way. Docker runs Synaplan on a laptop or on one server. Kubernetes runs it when you already have a cluster. If you do not want to install anything, we host the same program in Germany.",
         "tiers": [
           {
             "id": "T-01",
             "label": "Laptop",
-            "heading": "make up",
-            "text": "The development stack on any machine with Docker. A status page answers on port 5173 within seconds. The first start takes a few minutes.",
+            "heading": "Start on your own computer.",
+            "text": "Install Docker, then run one command. Synaplan opens in your browser. The first start takes a few minutes.",
             "facts": [
               "~4 GB standard install, cloud AI",
               "Local AI about 5 GB; a local chat model adds about 14 GB",
@@ -2785,8 +2785,8 @@
           {
             "id": "T-02",
             "label": "Server",
-            "heading": "The deploy/ contract",
-            "text": "One Linux server, pre-built images from ghcr.io, a reverse proxy in front. Migrations run on container start. Documented as a contract, not a wiki page.",
+            "heading": "Run it on one Linux server.",
+            "text": "One Linux computer, ready-made images, and a web address in front. The program updates itself when it starts.",
             "facts": [
               "ghcr.io/metadist/synaplan",
               "Automatic TLS via Caddy",
@@ -2796,8 +2796,8 @@
           {
             "id": "T-03",
             "label": "Cluster",
-            "heading": "helm install synaplan",
-            "text": "Public Helm chart for Kubernetes: multiple web replicas, external MariaDB Galera, Qdrant, Redis, GPU workers for local inference. Built for hosting providers.",
+            "heading": "Run it on a Kubernetes cluster.",
+            "text": "For more than one server. Several copies of the website, a database, and room for a model that stays on your own machines.",
             "facts": [
               "oci://ghcr.io/metadist/synaplan-charts",
               "Galera-safe migrations",
@@ -2806,9 +2806,9 @@
           },
           {
             "id": "T-04",
-            "label": "Sovereign cloud",
-            "heading": "openDesk and EU hosting",
-            "text": "Synaplan integrates with openDesk and runs on European infrastructure. Or skip the ops entirely and use our platform hosted in Germany.",
+            "label": "Hosted",
+            "heading": "Or let us host it in Germany.",
+            "text": "Nothing to install. web.synaplan.com runs the same program, in Germany. Public offices can also use synaplan.eu.",
             "facts": [
               "openDesk installer",
               "web.synaplan.com — hosted in Germany",
@@ -2836,9 +2836,9 @@
           }
         ],
         "cta": {
-          "title": "The docs are the manual. Not marketing.",
-          "text": "Getting started, production deployment, Kubernetes, feature modules — all on docs.synaplan.com.",
-          "primary": "Open deployment docs",
+          "title": "The install guide is written out.",
+          "text": "First start, a real server, Kubernetes, and the extra parts — all on docs.synaplan.com.",
+          "primary": "Open the install guide",
           "secondary": "Helm charts on GitHub"
         }
       },
@@ -2990,9 +2990,9 @@
         }
       },
       "source": {
-        "eyebrow": "SOURCE // SYS-00",
-        "title": "Open-source AI platform. Apache-2.0. All of it.",
-        "lead": "Synaplan is a fully open-source AI platform under Apache-2.0 — self-hosted AI, Helm charts, desktop client, Outlook add-in. Not a community edition next to a real one. The real one.",
+        "eyebrow": "QUELLCODE",
+        "title": "The source code is public.",
+        "lead": "You can read it, install it, and run it yourself. The licence is Apache-2.0, so there is no fee for the program.",
         "reposTitle": "Repositories",
         "repos": [
           {

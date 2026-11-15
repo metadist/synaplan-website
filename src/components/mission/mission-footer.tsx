@@ -6,7 +6,6 @@ import { CookieSettingsButton } from "@/components/consent/cookie-settings-butto
 import { ParrotGlyph } from "./parrot-glyph";
 import { Lamp, Ruler } from "./primitives";
 import { ParrotSwitch } from "./mission-header";
-import { ModeToggle } from "./mode-toggle";
 import { TryChatButton } from "@/components/try-chat/try-chat-button";
 
 type FooterLink = { label: string; href: string; external?: boolean };
@@ -71,11 +70,10 @@ export function MissionFooter() {
           <div className="max-w-xs sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3">
               <ParrotGlyph still className="h-10 w-9" />
-              <span className="mc-mono text-[0.8rem] tracking-[0.18em] uppercase">SYNAPLAN</span>
+              <span className="mc-brand-name">Synaplan</span>
             </div>
-            <p className="mt-4 text-sm leading-relaxed text-[var(--mc-text-muted)]">{t("tagline")}</p>
+            <p className="mt-3 text-base leading-relaxed">{t("tagline")}</p>
             <div className="mt-6 flex flex-wrap items-center gap-3">
-              <ModeToggle />
               <ParrotSwitch />
             </div>
             <div className="mt-6">
@@ -89,15 +87,15 @@ export function MissionFooter() {
                 {col.links.map((link) => (
                   <li key={`${link.label}-${link.href}`}>
                     {link.external ? (
-                      <a href={link.href} target="_blank" rel="noopener noreferrer" className="text-sm text-[var(--mc-text-muted)] transition-colors hover:text-[var(--mc-text)]">
+                      <a href={link.href} target="_blank" rel="noopener noreferrer" className="text-base text-[var(--mc-text)] transition-colors hover:text-[var(--mc-text)]">
                         {link.label} <span aria-hidden className="text-[var(--mc-text-faint)]">↗</span>
                       </a>
                     ) : link.href === "/try-chat" ? (
-                      <TryChatButton className="border-0 bg-transparent p-0 text-left font-[inherit] text-sm normal-case tracking-normal text-[var(--mc-text-muted)] transition-colors hover:text-[var(--mc-text)]">
+                      <TryChatButton className="border-0 bg-transparent p-0 text-left font-[inherit] text-base normal-case tracking-normal text-[var(--mc-text)] transition-colors hover:text-[var(--mc-text)]">
                         {link.label}
                       </TryChatButton>
                     ) : (
-                      <Link href={link.href} className="text-sm text-[var(--mc-text-muted)] transition-colors hover:text-[var(--mc-text)]">
+                      <Link href={link.href} className="text-base text-[var(--mc-text)] transition-colors hover:text-[var(--mc-text)]">
                         {link.label}
                       </Link>
                     )}
@@ -115,7 +113,7 @@ export function MissionFooter() {
 
         <div className="mt-12">
           <Ruler left="SYS-000" center="DE-DUS · 51.2277° N 6.7735° E" right={`T+${year - 2024}Y`} />
-          <div className="mc-mono mt-4 flex flex-col gap-3 text-[0.625rem] tracking-[0.14em] uppercase text-[var(--mc-text-faint)] sm:flex-row sm:items-center sm:justify-between">
+          <div className="mt-4 flex flex-col gap-3 text-sm sm:flex-row sm:items-center sm:justify-between">
             <span>{t("copyright", { year })}</span>
             <span className="flex items-center gap-2">
               <Lamp tone="green" pulse />

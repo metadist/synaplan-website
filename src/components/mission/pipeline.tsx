@@ -21,11 +21,11 @@ export function Pipeline({ steps }: { steps: Step[] }) {
         <li key={s.key} className="mc-pipe-step" data-active={i === active ? "true" : "false"} onPointerEnter={() => setActive(i)}>
           <div className="flex items-center gap-2">
             <span className="mc-lamp" aria-hidden />
-            <span className="mc-mono text-[0.6875rem] tracking-[0.14em] uppercase">
+            <span className="text-base font-semibold">
               {String(i + 1).padStart(2, "0")} {s.label}
             </span>
           </div>
-          <p className="mt-2 text-[0.8rem] leading-snug text-[var(--mc-muted-on-cream)]">{s.desc}</p>
+          <p className="mt-2 text-[1.0625rem] leading-snug">{s.desc}</p>
           {i < steps.length - 1 ? (
             <span aria-hidden className="mc-mono absolute -right-3 top-1/2 hidden -translate-y-1/2 text-[var(--mc-muted-on-cream)] lg:block">
               →

@@ -10,7 +10,7 @@ import { Pipeline } from "./pipeline";
 import { Topology } from "./topology";
 import { DeployTabs } from "./deploy-tabs";
 import { QuickInstall } from "./quick-install";
-import { ApiSample, ComposeSample, HelmSample, InspectSample } from "./code-samples";
+import { ComposeSample, HelmSample, InspectSample } from "./code-samples";
 import { TryChatButton } from "@/components/try-chat/try-chat-button";
 
 type Channel = { key: string; label: string; desc: string };
@@ -33,25 +33,16 @@ export async function Hero({ locale }: { locale: string }) {
             <Lamp tone="green" pulse />
             {t("eyebrow")}
           </p>
-          <h1 className="mc-display mt-6 text-[clamp(2.6rem,6.2vw,5.4rem)]">
-            <span className="mc-marketing">{t("title")}</span>
-            <span className="mc-engineer">{t("engineerTitle")}</span>
-          </h1>
-          <p className="mc-hero-sub mt-4">{t("tagline")}</p>
-          <p className="mt-5">
-            <span className="mc-marketing mc-lead">{t("subtitle")}</span>
-            <span className="mc-engineer mc-lead">{t("engineerSubtitle")}</span>
-          </p>
+          <h1 className="mc-display mt-6">{t("tagline")}</h1>
+          <p className="mc-display mt-3 text-[clamp(1.35rem,2.2vw,1.85rem)] leading-snug font-semibold">{t("title")}</p>
+          <p className="mc-lead mt-5">{t("subtitle")}</p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <TryChatButton className="mc-btn mc-btn--primary">[ {t("primary")} ]</TryChatButton>
             <Link href="/pricing" className="mc-btn">
               {t("secondary")}
             </Link>
           </div>
-          <p className="mc-label mt-6 text-[0.6rem]">
-            <span className="mc-marketing">{t("note")}</span>
-            <span className="mc-engineer">{t("engineerNote")}</span>
-          </p>
+          <p className="mc-label mt-6">{t("note")}</p>
         </div>
         <div className="relative">
           <MissionConsole />
@@ -77,8 +68,8 @@ export async function PlainSection({ locale }: { locale: string }) {
         <ul className="mt-10 grid gap-3 sm:grid-cols-2">
           {points.map((point, i) => (
             <Reveal key={point.title} as="li" delay={i * 60} className="mc-card">
-              <p className="mc-mono text-[0.8rem] tracking-[0.08em] uppercase">{point.title}</p>
-              <p className="mt-2 text-[0.95rem] leading-relaxed text-[var(--mc-text-muted)]">{point.text}</p>
+              <p className="text-base font-semibold">{point.title}</p>
+              <p className="mt-2 text-[1.0625rem] leading-relaxed">{point.text}</p>
             </Reveal>
           ))}
         </ul>
@@ -95,32 +86,19 @@ export async function SignalsSection({ locale }: { locale: string }) {
   return (
     <section id="signals" className="mc-section" data-parrot="signals">
       <div className="mc-wrap">
-        <SectionHead
-          num={t("num")}
-          title={
-            <>
-              <span className="mc-marketing">{t("title")}</span>
-              <span className="mc-engineer">{t("engineerTitle")}</span>
-            </>
-          }
-          tag="CH-01…06"
-        />
+        <SectionHead num={t("num")} title={t("title")} tag="CH-01…06" />
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <Reveal>
-            <h2 className="mc-display text-[clamp(1.9rem,3.6vw,3rem)]">
-              <span className="mc-marketing">{t("heading")}</span>
-              <span className="mc-engineer">{t("engineerHeading")}</span>
-            </h2>
-            <p className="mc-lead mt-5 mc-marketing">{t("text")}</p>
-            <p className="mc-lead mt-5 mc-engineer">{t("engineerText")}</p>
+            <h2 className="mc-display">{t("heading")}</h2>
+            <p className="mc-lead mt-5">{t("text")}</p>
             <ul className="mt-8 grid gap-3 sm:grid-cols-2">
               {channels.map((c, i) => (
                 <Reveal key={c.key} as="li" delay={i * 60} className="mc-card mc-card-tight">
                   <div className="flex items-center gap-2">
                     <Lamp tone="green" />
-                    <span className="mc-mono text-[0.75rem] tracking-[0.14em] uppercase">{c.label}</span>
+                    <span className="text-base font-semibold">{c.label}</span>
                   </div>
-                  <p className="mt-1.5 text-[0.8rem] leading-snug text-[var(--mc-text-muted)]">{c.desc}</p>
+                  <p className="mt-1.5 text-[1.0625rem] leading-snug">{c.desc}</p>
                 </Reveal>
               ))}
             </ul>
@@ -145,23 +123,10 @@ export async function CoreSection({ locale }: { locale: string }) {
     <section id="core" className="mc-section mc-panel-light" data-parrot="core">
       <div className="mc-grid" aria-hidden />
       <div className="mc-wrap relative">
-        <SectionHead
-          num={t("num")}
-          title={
-            <>
-              <span className="mc-marketing">{t("title")}</span>
-              <span className="mc-engineer">{t("engineerTitle")}</span>
-            </>
-          }
-          tag="SYS-03"
-        />
+        <SectionHead num={t("num")} title={t("title")} tag="SYS-03" />
         <Reveal>
-          <h2 className="mc-display max-w-4xl text-[clamp(1.9rem,3.6vw,3rem)]">
-            <span className="mc-marketing">{t("heading")}</span>
-            <span className="mc-engineer">{t("engineerHeading")}</span>
-          </h2>
-          <p className="mc-lead mt-5 mc-marketing">{t("text")}</p>
-          <p className="mc-lead mt-5 mc-engineer">{t("engineerText")}</p>
+          <h2 className="mc-display max-w-4xl">{t("heading")}</h2>
+          <p className="mc-lead mt-5">{t("text")}</p>
         </Reveal>
         <Reveal delay={100} className="mt-10">
           <Pipeline steps={steps} />
@@ -170,13 +135,10 @@ export async function CoreSection({ locale }: { locale: string }) {
           {facts.map((f) => (
             <div key={f.label} className="mc-card mc-card-tight">
               <p className="mc-label">{f.label}</p>
-              <p className="mt-2 text-[0.85rem] leading-snug">{f.value}</p>
+              <p className="mt-2 text-[1.0625rem] leading-snug">{f.value}</p>
             </div>
           ))}
         </Reveal>
-        <div className="mc-engineer mt-8">
-          <ApiSample />
-        </div>
       </div>
     </section>
   );
@@ -189,27 +151,13 @@ export async function ConnectSection({ locale }: { locale: string }) {
   return (
     <section id="connect" className="mc-section" data-parrot="connect">
       <div className="mc-wrap">
-        <SectionHead
-          num={t("num")}
-          title={
-            <>
-              <span className="mc-marketing">{t("title")}</span>
-              <span className="mc-engineer">{t("engineerTitle")}</span>
-            </>
-          }
-          tag="TOPO-01"
-        />
+        <SectionHead num={t("num")} title={t("title")} tag="TOPO-01" />
         <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <Reveal>
-            <h2 className="mc-display text-[clamp(1.9rem,3.6vw,3rem)]">
-              <span className="mc-marketing">{t("heading")}</span>
-              <span className="mc-engineer">{t("engineerHeading")}</span>
-            </h2>
-            <p className="mc-lead mt-5 mc-marketing">{t("text")}</p>
-            <p className="mc-lead mt-5 mc-engineer">{t("engineerText")}</p>
+            <h2 className="mc-display">{t("heading")}</h2>
+            <p className="mc-lead mt-5">{t("text")}</p>
             <Link href="/connect" className="mc-btn mt-8">
-              <span className="mc-marketing">{t("title")} →</span>
-              <span className="mc-engineer">{t("engineerTitle")} →</span>
+              {t("title")} →
             </Link>
           </Reveal>
           <Reveal delay={120}>
@@ -231,23 +179,10 @@ export async function RunSection({ locale }: { locale: string }) {
     <section id="run" className="mc-section" data-parrot="run">
       <div className="mc-grid" aria-hidden />
       <div className="mc-wrap relative">
-        <SectionHead
-          num={t("num")}
-          title={
-            <>
-              <span className="mc-marketing">{t("title")}</span>
-              <span className="mc-engineer">{t("engineerTitle")}</span>
-            </>
-          }
-          tag="DEPLOY"
-        />
+        <SectionHead num={t("num")} title={t("title")} tag="DEPLOY" />
         <Reveal>
-          <h2 className="mc-display max-w-4xl text-[clamp(1.9rem,3.6vw,3rem)]">
-            <span className="mc-marketing">{t("heading")}</span>
-            <span className="mc-engineer">{t("engineerHeading")}</span>
-          </h2>
-          <p className="mc-lead mt-5 mc-marketing">{t("text")}</p>
-          <p className="mc-lead mt-5 mc-engineer">{t("engineerText")}</p>
+          <h2 className="mc-display max-w-4xl">{t("heading")}</h2>
+          <p className="mc-lead mt-5">{t("text")}</p>
         </Reveal>
         <Reveal delay={80} className="mt-8 max-w-xl">
           <QuickInstall
@@ -280,7 +215,7 @@ export async function RunSection({ locale }: { locale: string }) {
                 label: t("tabs.cloud"),
                 panel: (
                   <div className="mc-card flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                    <p className="max-w-xl text-[0.95rem] leading-relaxed text-[var(--mc-text-muted)]">{t("cloudText")}</p>
+                    <p className="max-w-xl text-[1.0625rem] leading-relaxed">{t("cloudText")}</p>
                     <a href={LINKS.web} className="mc-btn mc-btn--primary shrink-0">
                       {t("cloudCta")}
                     </a>
@@ -295,8 +230,8 @@ export async function RunSection({ locale }: { locale: string }) {
             {ladder.map((s, i) => (
               <li key={s.label} className="mc-ladder-step">
                 <p className="mc-label">{String(i + 1).padStart(2, "0")}</p>
-                <p className="mc-mono mt-1 text-[0.85rem] tracking-[0.06em] uppercase">{s.label}</p>
-                <p className="mt-1 text-[0.8rem] text-[var(--mc-text-muted)]">{s.desc}</p>
+                <p className="mt-1 text-base font-semibold">{s.label}</p>
+                <p className="mt-1 text-[1.0625rem] leading-snug">{s.desc}</p>
               </li>
             ))}
           </ol>
@@ -324,8 +259,8 @@ export async function FlightLogSection({ locale }: { locale: string }) {
       <div className="mc-wrap">
         <SectionHead num={t("num")} title={t("title")} tag="LOG" />
         <Reveal>
-          <h2 className="mc-display text-[clamp(1.9rem,3.6vw,3rem)]">{t("heading")}</h2>
-          <p className="mc-lead mt-5 mc-marketing">{t("text")}</p>
+          <h2 className="mc-display">{t("heading")}</h2>
+          <p className="mc-lead mt-5">{t("text")}</p>
         </Reveal>
         <ol className="mt-10 grid gap-3 md:grid-cols-2">
           {USE_CASES.map((u, i) => (
@@ -337,9 +272,9 @@ export async function FlightLogSection({ locale }: { locale: string }) {
                   {t("status")}
                 </span>
               </div>
-              <p className="mc-mono mt-3 text-[0.8rem] tracking-[0.08em] uppercase">{u.company}</p>
-              <p className="mt-2 text-[1.05rem] leading-snug">“{isDE ? u.quoteDE : u.quote}”</p>
-              <p className="mt-2 text-[0.85rem] text-[var(--mc-muted-on-cream)]">{isDE ? u.descriptionDE : u.description}</p>
+              <p className="mt-3 text-base font-semibold">{u.company}</p>
+              <p className="mt-2 text-[1.125rem] leading-snug">“{isDE ? u.quoteDE : u.quote}”</p>
+              <p className="mt-2 text-[1.0625rem] leading-relaxed">{isDE ? u.descriptionDE : u.description}</p>
             </Reveal>
           ))}
         </ol>
@@ -360,8 +295,8 @@ export async function SourceSection({ locale, stats }: { locale: string; stats: 
         <div>
           <SectionHead num={t("num")} title={t("title")} tag="Apache-2.0" />
           <Reveal>
-            <h2 className="mc-display text-[clamp(1.9rem,3.6vw,3rem)]">{t("heading")}</h2>
-            <p className="mc-lead mt-5 mc-marketing">{t("text")}</p>
+            <h2 className="mc-display">{t("heading")}</h2>
+            <p className="mc-lead mt-5">{t("text")}</p>
           </Reveal>
           <Reveal delay={80} className="mt-8 grid grid-cols-3 gap-3">
             <div className="mc-card mc-card-tight">
@@ -379,7 +314,7 @@ export async function SourceSection({ locale, stats }: { locale: string; stats: 
           </Reveal>
           <Reveal delay={140} className="mt-6 flex flex-wrap gap-3">
             <a href={LINKS.github} target="_blank" rel="noopener noreferrer" className="mc-btn mc-btn--primary" data-parrot-hover="github">
-              <GithubIcon className="size-4" /> {t("cta")}
+              <GithubIcon className="size-5" /> {t("cta")}
             </a>
             <a href={LINKS.docs} target="_blank" rel="noopener noreferrer" className="mc-btn">
               {t("docs")} ↗
@@ -406,12 +341,12 @@ function FaqList({ items }: { items: { q: string; a: string }[] }) {
         <details key={item.q} className="group py-4">
           <summary className="flex cursor-pointer list-none items-start gap-4 text-left [&::-webkit-details-marker]:hidden">
             <span className="mc-section-num mt-1.5 shrink-0">Q-{String(i + 1).padStart(2, "0")}</span>
-            <span className="flex-1 text-[1.02rem] font-medium leading-snug">{item.q}</span>
+            <span className="flex-1 text-[1.125rem] font-semibold leading-snug">{item.q}</span>
             <span aria-hidden className="mc-mono mt-1 text-[var(--mc-muted-on-cream)] transition-transform group-open:rotate-45">
               +
             </span>
           </summary>
-          <p className="mt-3 pl-[3.2rem] text-[0.92rem] leading-relaxed text-[var(--mc-muted-on-cream)]">{item.a}</p>
+          <p className="mt-3 pl-[3.2rem] text-[1.0625rem] leading-relaxed">{item.a}</p>
         </details>
       ))}
     </div>
@@ -422,34 +357,19 @@ export async function BriefingSection({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: "mission.faq" });
   const tf = await getTranslations({ locale, namespace: "faq" });
   const items = tf.raw("items") as { q: string; a: string }[];
-  const engineerItems = t.raw("engineerItems") as { q: string; a: string }[];
   return (
     <>
-      <section id="briefing" className="mc-section mc-panel-light mc-marketing">
+      <section id="briefing" className="mc-section mc-panel-light">
         <div className="mc-wrap grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
           <div>
             <SectionHead num={t("num")} title={t("title")} />
             <Reveal>
-              <h2 className="mc-display text-[clamp(1.9rem,3.6vw,3rem)]">{tf("title")}</h2>
+              <h2 className="mc-display">{tf("title")}</h2>
               <p className="mc-lead mt-5">{tf("subtitle")}</p>
             </Reveal>
           </div>
           <Reveal delay={100}>
             <FaqList items={items} />
-          </Reveal>
-        </div>
-      </section>
-      <section className="mc-section mc-panel-light mc-engineer">
-        <div className="mc-wrap grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
-          <div>
-            <SectionHead num={t("num")} title={t("engineerTitle")} />
-            <Reveal>
-              <h2 className="mc-display text-[clamp(1.9rem,3.6vw,3rem)]">{t("engineerHeading")}</h2>
-              <p className="mc-lead mt-5">{t("engineerSubtitle")}</p>
-            </Reveal>
-          </div>
-          <Reveal delay={100}>
-            <FaqList items={engineerItems} />
           </Reveal>
         </div>
       </section>
@@ -503,7 +423,7 @@ export async function LaunchCta({
     );
   };
   return (
-    <section className="mc-section relative overflow-hidden">
+    <section className="mc-section mc-inverse relative overflow-hidden">
       <div className="mc-grid" aria-hidden />
       <div className="mc-wrap relative">
         <Reveal className="mc-card mc-frame overflow-hidden p-8 sm:p-12">
@@ -515,37 +435,23 @@ export async function LaunchCta({
               </p>
               {split ? (
                 <>
-                  <h2 className="mc-display mt-4 text-[clamp(2rem,4.2vw,3.6rem)]">
-                    <span className="mc-marketing">{t("title")}</span>
-                    <span className="mc-engineer">{t("engineerTitle")}</span>
-                  </h2>
-                  <p className="mc-lead mt-4 mc-marketing">{t("text")}</p>
-                  <p className="mc-lead mt-4 mc-engineer">{t("engineerText")}</p>
+                  <h2 className="mc-display mt-4">{t("title")}</h2>
+                  <p className="mc-lead mt-4">{t("text")}</p>
                 </>
               ) : (
                 <>
-                  <h2 className="mc-display mt-4 text-[clamp(2rem,4.2vw,3.6rem)]">{title ?? t("title")}</h2>
+                  <h2 className="mc-display mt-4">{title ?? t("title")}</h2>
                   <p className="mc-lead mt-4">{text ?? t("text")}</p>
                 </>
               )}
             </div>
             {split ? (
-              <>
-                <div className="mc-marketing">
-                  <div className="flex flex-col gap-3 lg:items-end">
-                    <TryChatButton className="mc-btn mc-btn--primary">[ {t("marketingPrimary")} ]</TryChatButton>
-                    <Link href="/contact" className="mc-btn">
-                      {t("marketingSecondary")}
-                    </Link>
-                  </div>
-                </div>
-                <div className="mc-engineer">
-                  <div className="flex flex-col gap-3 lg:items-end">
-                    {button(p, true)}
-                    {button(s, false)}
-                  </div>
-                </div>
-              </>
+              <div className="flex flex-col gap-3 lg:items-end">
+                <TryChatButton className="mc-btn mc-btn--primary">[ {t("marketingPrimary")} ]</TryChatButton>
+                <Link href="/contact" className="mc-btn">
+                  {t("marketingSecondary")}
+                </Link>
+              </div>
             ) : (
               <div className="flex flex-col gap-3 lg:items-end">
                 {button(p, true)}

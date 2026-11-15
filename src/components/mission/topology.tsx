@@ -122,7 +122,6 @@ export function Topology() {
   const [active, setActive] = useState<NodeKey>("synaplan");
   const lastInteraction = useRef(0);
   const boxes = t.raw("boxes") as BoxLabels;
-  const engineerBoxes = t.raw("engineerBoxes") as BoxLabels;
 
   const tour = useMemo<NodeKey[]>(() => ["synaplan", ...NODE_KEYS], []);
 
@@ -139,33 +138,26 @@ export function Topology() {
     setActive(key as NodeKey);
   };
 
-  const caption = (labels: BoxLabels, nodesKey: "nodes" | "engineerNodes") => (
+  const caption = (
     <>
       <div className="mt-3 flex min-h-[3.25rem] items-start gap-3 border-t border-[var(--mc-line)] pt-3">
         <span className="mc-chip shrink-0">
           <span className="mc-lamp mc-lamp--blue" aria-hidden />
-          {active === "synaplan" ? "Synaplan" : labels[active]}
+          {active === "synaplan" ? "Synaplan" : boxes[active]}
         </span>
-        <p className="mc-mono text-[0.78rem] leading-relaxed text-[var(--mc-text-muted)]" aria-live="polite">
-          {(t.raw(nodesKey) as Record<string, string>)[active]}
+        <p className="text-base leading-relaxed" aria-live="polite">
+          {(t.raw("nodes") as Record<string, string>)[active]}
         </p>
       </div>
-      <p className="mc-label mt-3 text-[0.6rem]">{t("hint")}</p>
+      <p className="mc-label mt-3">{t("hint")}</p>
     </>
   );
 
   return (
     <div className="mc-card mc-frame p-3 sm:p-5">
-      <div className="mc-marketing">
-        <Diagram layout={labeled(DESKTOP, boxes)} active={active} onActivate={onActivate} className="hidden w-full md:block" />
-        <Diagram layout={labeled(MOBILE, boxes)} active={active} onActivate={onActivate} className="mx-auto w-full max-w-[26rem] md:hidden" />
-        {caption(boxes, "nodes")}
-      </div>
-      <div className="mc-engineer">
-        <Diagram layout={labeled(DESKTOP, engineerBoxes)} active={active} onActivate={onActivate} className="hidden w-full md:block" />
-        <Diagram layout={labeled(MOBILE, engineerBoxes)} active={active} onActivate={onActivate} className="mx-auto w-full max-w-[26rem] md:hidden" />
-        {caption(engineerBoxes, "engineerNodes")}
-      </div>
+      <Diagram layout={labeled(DESKTOP, boxes)} active={active} onActivate={onActivate} className="hidden w-full md:block" />
+      <Diagram layout={labeled(MOBILE, boxes)} active={active} onActivate={onActivate} className="mx-auto w-full max-w-[26rem] md:hidden" />
+      {caption}
     </div>
   );
 }

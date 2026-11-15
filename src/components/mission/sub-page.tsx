@@ -10,7 +10,7 @@ export function MissionCrumbs({ items }: { items: Crumb[] }) {
   if (items.length === 0) return null;
   return (
     <nav aria-label="Breadcrumb" className="mc-wrap pt-8">
-      <ol className="mc-mono flex flex-wrap items-center gap-2 text-[0.65rem] tracking-[0.14em] uppercase text-[var(--mc-text-faint)]">
+      <ol className="flex flex-wrap items-center gap-2 text-base">
         {items.map((item, i) => (
           <li key={`${item.label}-${i}`} className="flex items-center gap-2">
             {i > 0 ? <span aria-hidden>/</span> : null}
@@ -72,7 +72,7 @@ export function MissionCta({
   ) : null;
 
   return (
-    <section className="mc-section relative overflow-hidden">
+    <section className="mc-section mc-inverse relative overflow-hidden">
       <div className="mc-grid" aria-hidden />
       <div className="mc-wrap relative">
         <Reveal className="mc-card mc-frame overflow-hidden p-8 sm:p-12">
@@ -82,7 +82,7 @@ export function MissionCta({
                 <Lamp tone="green" blink />
                 T-00:00:10
               </p>
-              <h2 className="mc-display mt-4 text-[clamp(2rem,4.2vw,3.6rem)]">{title}</h2>
+              <h2 className="mc-display mt-4">{title}</h2>
               {text ? <p className="mc-lead mt-4">{text}</p> : null}
             </div>
             <div className="flex flex-col gap-3 lg:items-end">
@@ -122,7 +122,7 @@ export function PageHero({
             <Lamp tone="green" pulse />
             {eyebrow}
           </p>
-          <h1 className="mc-display mt-6 max-w-4xl text-[clamp(2.2rem,5vw,4.2rem)]">{title}</h1>
+          <h1 className="mc-display mt-6 max-w-4xl">{title}</h1>
           {terms ? <SearchTerms terms={terms} /> : null}
           <p className="mc-lead mt-6 max-w-2xl">{lead}</p>
         </div>
@@ -140,7 +140,7 @@ export function FeaturePanel({ section, light = false, tag, children }: { sectio
         <SectionHead num={section.num} title={section.title} tag={tag} />
         <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-start">
           <Reveal>
-            <h2 className="mc-display text-[clamp(1.8rem,3.2vw,2.7rem)]">{section.heading}</h2>
+            <h2 className="mc-display">{section.heading}</h2>
             <p className="mc-lead mt-5">{section.text}</p>
           </Reveal>
           <Reveal delay={100}>
@@ -149,9 +149,9 @@ export function FeaturePanel({ section, light = false, tag, children }: { sectio
                 <li key={item.label} className="mc-card mc-card-tight">
                   <div className="flex items-center gap-2">
                     <span className="mc-section-num">{String(i + 1).padStart(2, "0")}</span>
-                    <p className="mc-mono text-[0.75rem] tracking-[0.14em] uppercase">{item.label}</p>
+                    <p className="text-base font-semibold">{item.label}</p>
                   </div>
-                  <p className={`mt-2 text-[0.9rem] leading-relaxed ${light ? "text-[var(--mc-muted-on-cream)]" : "text-[var(--mc-text-muted)]"}`}>{item.text}</p>
+                  <p className="mt-2 text-[1.0625rem] leading-relaxed">{item.text}</p>
                 </li>
               ))}
             </ul>
@@ -195,9 +195,9 @@ export function IdCardGrid({
                     </span>
                   ) : null}
                 </div>
-                <p className="mc-mono mt-3 text-[0.85rem] tracking-[0.06em] uppercase">{c.name}</p>
-                <p className={`mt-2 text-[0.88rem] leading-relaxed ${light ? "text-[var(--mc-muted-on-cream)]" : "text-[var(--mc-text-muted)]"}`}>{c.text}</p>
-                {c.href ? <p className="mc-label mt-3 text-[0.6rem]">{c.external ? "↗" : "→"}</p> : null}
+                <p className="mt-3 text-base font-semibold">{c.name}</p>
+                <p className="mt-2 text-[1.0625rem] leading-relaxed">{c.text}</p>
+                {c.href ? <p className="mc-label mt-3">{c.external ? "↗" : "→"}</p> : null}
               </>
             );
             return (

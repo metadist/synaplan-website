@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { ParrotGlyph } from "./parrot-glyph";
-import { MODE_EVENT, PARROT_SAY_EVENT, applyParrotEnabled, useParrotEnabled } from "./mode";
+import { PARROT_SAY_EVENT, applyParrotEnabled, useParrotEnabled } from "./mode";
 
 const HELLO_DELAY_MS = 2400;
 const TYPE_INTERVAL_MS = 22;
@@ -19,7 +19,6 @@ const PUPIL_MAX_OFFSET = 0.55;
  *  - `[data-parrot="<key>"]` sections entering the viewport (once each)
  *  - `[data-parrot-hover="<key>"]` elements on pointer-over (once each)
  *  - `mc:parrot-say` custom events (e.g. approving the demo mission)
- *  - mode switches (`mc:mode`)
  *  - clicking the bird (random idle line)
  */
 export function Parrot() {
@@ -76,15 +75,9 @@ export function Parrot() {
       const key = (e as CustomEvent<string>).detail;
       if (t.has(key)) say(t(key));
     };
-    const onMode = (e: Event) => {
-      const mode = (e as CustomEvent<string>).detail;
-      say(t(mode === "engineer" ? "engineerOn" : "engineerOff"));
-    };
     window.addEventListener(PARROT_SAY_EVENT, onSay);
-    window.addEventListener(MODE_EVENT, onMode);
     return () => {
       window.removeEventListener(PARROT_SAY_EVENT, onSay);
-      window.removeEventListener(MODE_EVENT, onMode);
     };
   }, [say, t]);
 

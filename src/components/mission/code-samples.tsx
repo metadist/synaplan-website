@@ -46,7 +46,7 @@ export function HelmSample() {
 export function InspectSample({ title, rows }: { title: string; rows: { key: string; value: string }[] }) {
   const width = Math.max(...rows.map((r) => r.key.length)) + 2;
   return (
-    <Terminal title="engineer mode">
+    <Terminal title="included">
       <span className="mc-tok-dim">$ </span>
       <span className="mc-tok-cmd">{title}</span>
       {"\n\n"}

@@ -8,7 +8,7 @@ export function CookieSettingsButton({ label }: { label: string }) {
     <button
       type="button"
       data-testid="cookie-settings"
-      className="text-left text-sm text-[var(--mc-text-muted)] transition-colors hover:text-[var(--mc-text)]"
+      className="text-left text-base text-[var(--mc-text)] transition-colors hover:text-[var(--mc-text)]"
       onClick={openConsentNotice}
     >
       {label}

@@ -7,7 +7,6 @@ import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { LINKS } from "@/lib/constants";
 import { GithubIcon } from "@/components/icons";
 import { ParrotGlyph } from "./parrot-glyph";
-import { ModeToggle } from "./mode-toggle";
 import { Lamp } from "./primitives";
 import { applyParrotEnabled, useParrotEnabled } from "./mode";
 
@@ -101,15 +100,13 @@ export function MissionHeader() {
 
   return (
     <header className="mc-header">
-      <div className="mc-wrap flex h-16 items-center justify-between gap-4">
+      <div className="mc-wrap flex min-h-16 items-center justify-between gap-3 py-2">
         {/* Brand */}
-        <Link href="/" className="flex items-center gap-3 no-underline" aria-label="Synaplan — Mission Control">
-          <ParrotGlyph still color="var(--mc-text)" className="h-8 w-7" />
-          <span className="mc-mono whitespace-nowrap text-[0.8rem] tracking-[0.18em] uppercase">
-            <span className="text-[var(--mc-text)]">SYNAPLAN</span>
-            <span className="hidden text-[var(--mc-text-faint)] sm:inline xl:hidden">{" //"}</span>
-            <span className="hidden text-[var(--mc-text-faint)] min-[1400px]:inline">{" // "}</span>
-            <span className="hidden text-[var(--mc-text-muted)] min-[1400px]:inline">{t("brand")}</span>
+        <Link href="/" className="flex items-center gap-2.5 no-underline" aria-label="Synaplan — Own the flow">
+          <ParrotGlyph still color="var(--mc-text)" className="h-8 w-7 shrink-0" />
+          <span className="mc-brand">
+            <span className="mc-brand-name">Synaplan</span>
+            <span className="mc-brand-motto">{t("footer.tagline").replace(/\.$/, "")}</span>
           </span>
         </Link>
 
@@ -127,7 +124,6 @@ export function MissionHeader() {
 
         {/* Right cluster */}
         <div className="flex items-center gap-2">
-          <ModeToggle className="hidden lg:block" />
           <LocaleSwitch className="hidden md:inline-flex" />
           <a
             href={LINKS.github}
@@ -137,7 +133,7 @@ export function MissionHeader() {
             aria-label={t("nav.github")}
             data-parrot-hover="github"
           >
-            <GithubIcon className="size-4" />
+            <GithubIcon className="size-[1.1rem]" />
           </a>
           <a href={LINKS.web} className="mc-btn mc-btn--primary mc-btn--sm hidden sm:inline-flex">
             {t("nav.launch")}
@@ -164,7 +160,10 @@ export function MissionHeader() {
               aria-label={t("nav.menu")}
             >
               <div className="flex h-16 items-center justify-between">
-                <span className="mc-mono text-[0.8rem] tracking-[0.18em] uppercase">{`SYNAPLAN // ${t("brand")}`}</span>
+                <span className="mc-brand">
+                  <span className="mc-brand-name">Synaplan</span>
+                  <span className="mc-brand-motto">{t("footer.tagline").replace(/\.$/, "")}</span>
+                </span>
                 <button type="button" className="mc-btn mc-btn--sm touch-manipulation" onClick={() => setOpen(false)}>
                   {t("nav.close")}
                 </button>
@@ -192,14 +191,13 @@ export function MissionHeader() {
               <div className="mt-8 flex flex-col gap-4">
                 <p className="mc-label">{t("nav.options")}</p>
                 <div className="flex flex-wrap items-center gap-3">
-                  <ModeToggle />
                   <LocaleSwitch />
                   <ParrotSwitch />
                 </div>
                 <a href={LINKS.web} className="mc-btn mc-btn--primary mt-4">
                   {t("nav.launch")}
                 </a>
-                <div className="mc-mono mt-4 flex items-center gap-2 text-[0.625rem] tracking-[0.16em] uppercase text-[var(--mc-text-muted)]">
+                <div className="mt-4 flex items-center gap-2 text-sm">
                   <span>{t("nav.status")}</span>
                   <Lamp tone="green" pulse />
                   <span className="text-[var(--mc-text)]">{t("nav.nominal")}</span>

@@ -728,7 +728,7 @@
       },
       {
         "q": "Kann ich Synaplan selbst hosten?",
-        "a": "Ja. Dieselbe Software, ohne Lizenzgebühr. Der Startbefehl steht auf dieser Seite unter „Selbst betreiben“."
+        "a": "Ja. Dieselbe Software, ohne Lizenzgebühr. Der Startbefehl steht auf dieser Seite unter „Installieren“."
       },
       {
         "q": "Was sind Synaplan-Plugins?",
@@ -1982,8 +1982,8 @@
         ]
       },
       "deploy": {
-        "title": "Self-Hosted KI: Docker, Kubernetes & On-Premise | Synaplan",
-        "description": "Die Open-Source-KI-Plattform Synaplan selbst hosten: Docker Compose, Kubernetes mit öffentlichem Helm-Chart, On-Premise oder EU-Hosting in Deutschland. Derselbe Apache-2.0-Code auf Laptop, Server oder Cluster.",
+        "title": "Synaplan mit Docker oder Kubernetes installieren | Synaplan",
+        "description": "Synaplan mit Docker auf einem Laptop oder einem Server installieren, oder mit Kubernetes, wenn Sie schon ein Cluster haben. Oder die Fassung nutzen, die wir in Deutschland betreiben. Dasselbe Programm, ohne Lizenzgebühr.",
         "keywords": [
           "Self-Hosted KI",
           "On-Premise KI",
@@ -2070,7 +2070,7 @@
     "skip": "Zum Inhalt springen",
     "nav": {
       "product": "Produkt",
-      "deploy": "Selbst betreiben",
+      "deploy": "Installieren",
       "connect": "Kanäle",
       "agents": "Assistenten",
       "source": "Quellcode",
@@ -2093,7 +2093,7 @@
     },
     "hero": {
       "eyebrow": "SYNAPLAN",
-      "title": "KI auf Ihren Daten, Dateien und Abläufen.",
+      "title": "Ihre eigene KI, auf Ihren Dateien.",
       "tagline": "Own the flow.",
       "subtitle": "Angebote, Kundenantworten, Verträge — mit dem Modell Ihrer Wahl und den Kosten im Blick.",
       "install": {
@@ -2332,7 +2332,7 @@
     },
     "connect": {
       "num": "03",
-      "title": "Own the flow",
+      "title": "Ihre Dateien",
       "engineerTitle": "Alles verbinden",
       "heading": "Dateien bleiben.",
       "engineerHeading": "Eine Topologie, nicht nur ein Chatbot.",
@@ -2384,11 +2384,11 @@
     },
     "run": {
       "num": "04",
-      "title": "Selbst betreiben",
+      "title": "Installieren",
       "engineerTitle": "Überall lauffähig",
-      "heading": "In der Cloud, oder auf Ihren eigenen Servern.",
+      "heading": "Mit Docker oder Kubernetes installieren.",
       "engineerHeading": "Self-Hosted KI: Heute Docker, morgen Kubernetes.",
-      "text": "Dieselbe Software, unter Apache-2.0, ohne Lizenzgebühr. Wer sie selbst startet, findet den Befehl hier.",
+      "text": "Der einfache Weg. Docker startet es auf einem Laptop oder einem Server. Kubernetes startet es, wenn Sie schon ein Cluster haben. Dasselbe Programm, ohne Lizenzgebühr. Der Befehl steht unten.",
       "engineerText": "Die gesamte Open-Source-KI-Plattform ist dockerisiert und unter Apache-2.0 lizenziert. Auf dem Laptop starten, auf einen On-Premise-Server umziehen, mit dem öffentlichen Helm-Chart auf Kubernetes skalieren — oder von uns in Deutschland hosten lassen.",
       "tabs": {
         "compose": "Docker Compose",
@@ -2398,36 +2398,36 @@
       "ladder": [
         {
           "label": "Laptop",
-          "desc": "docker compose, zehn Minuten"
+          "desc": "Docker auf Ihrem Rechner. Etwa zehn Minuten."
         },
         {
           "label": "Server",
-          "desc": "eine Linux-Maschine, der deploy/-Vertrag"
+          "desc": "Ein Linux-Rechner bei Ihnen oder im Rechenzentrum."
         },
         {
           "label": "Cluster",
-          "desc": "Helm-Chart, Galera, Qdrant"
+          "desc": "Kubernetes, wenn ein Rechner nicht reicht."
         },
         {
-          "label": "Souveräne Cloud",
-          "desc": "openDesk, EU-Hosting, Ihre Schlüssel"
+          "label": "Gehostet",
+          "desc": "Wir betreiben es für Sie, in Deutschland."
         }
       ],
       "cloudText": "Nichts zu installieren: web.synaplan.com läuft mit demselben Open-Source-Code, gehostet in Deutschland. Registrieren Sie sich mit einem kostenpflichtigen Tarif oder fragen Sie einen Einladungscode an.",
       "cloudCta": "Plattform öffnen",
-      "docs": "Deployment-Doku"
+      "docs": "Installationsanleitung"
     },
     "log": {
       "num": "05",
-      "title": "Flugbuch",
-      "heading": "Bereits geflogene Missionen.",
+      "title": "Kunden",
+      "heading": "Teams, die es schon nutzen.",
       "text": "Öffentliche Einrichtungen, Gastgewerbe, Pflege, Industrie. Kleine Teams und große. Dieselbe Plattform.",
       "status": "In Betrieb"
     },
     "source": {
       "num": "06",
       "title": "Der Quellcode",
-      "heading": "Open-Source-KI-Plattform. Apache-2.0. Der ganze Code.",
+      "heading": "Der Quellcode ist öffentlich. Die Lizenz ist Apache-2.0.",
       "text": "Plattform, Helm-Charts, Desktop-Client, Outlook-Add-in — öffentliche Repositories unter Apache-2.0. Self-hosten, forken, prüfen. Ihre Daten bleiben, wo Sie sie hingelegt haben.",
       "stars": "GitHub-Sterne",
       "forks": "Forks",
@@ -2575,9 +2575,9 @@
         "Ich bin kein Chatbot. Ich bin Flugingenieur.",
         "Fun Fact: Ich laufe auch on-prem.",
         "Niemand liest den Ticker. Sie schon. Respekt.",
-        "Probieren Sie den Engineer-Modus. Oben im Header. Ich warte.",
+        "Der Installationsbefehl steht auf dieser Seite. Zuerst Docker.",
         "Apache-2.0. Sagen Sie es mit mir.",
-        "make up. Das ist der lokale Start.",
+        "Docker ist der einfache Weg, es auf dem eigenen Rechner zu installieren.",
         "Cloud ist nur das Kubernetes von jemand anderem."
       ]
     },
@@ -2767,15 +2767,15 @@
         }
       },
       "deploy": {
-        "eyebrow": "DEPLOY // SYS-04",
-        "title": "Self-Hosted KI — Docker, Kubernetes oder Deutschland.",
-        "lead": "Die Open-Source-KI-Plattform kommt als Docker-Images und öffentliches Helm-Chart. On-Premise auf Laptop oder Server, Kubernetes im eigenen Cluster oder EU-Hosting in Deutschland. Derselbe Apache-2.0-Code. Kein Enterprise-Fork.",
+        "eyebrow": "INSTALLATION",
+        "title": "Mit Docker oder Kubernetes installieren.",
+        "lead": "Der einfache Weg. Docker startet Synaplan auf einem Laptop oder auf einem Server. Kubernetes startet es, wenn Sie schon ein Cluster haben. Wenn Sie nichts installieren möchten, betreiben wir dasselbe Programm in Deutschland.",
         "tiers": [
           {
             "id": "T-01",
             "label": "Laptop",
-            "heading": "make up",
-            "text": "Der Entwicklungs-Stack auf jeder Maschine mit Docker. Eine Statusseite antwortet auf Port 5173 in Sekunden. Der erste Start dauert ein paar Minuten.",
+            "heading": "Auf dem eigenen Rechner starten.",
+            "text": "Docker installieren, dann einen Befehl ausführen. Synaplan öffnet sich im Browser. Der erste Start dauert ein paar Minuten.",
             "facts": [
               "~4 GB Standardinstallation, Cloud-KI",
               "Lokale KI etwa 5 GB; ein lokales Chat-Modell kommt mit etwa 14 GB dazu",
@@ -2785,8 +2785,8 @@
           {
             "id": "T-02",
             "label": "Server",
-            "heading": "Der deploy/-Vertrag",
-            "text": "Ein Linux-Server, vorgebaute Images von ghcr.io, ein Reverse Proxy davor. Migrationen laufen beim Containerstart. Dokumentiert als Vertrag, nicht als Wiki-Seite.",
+            "heading": "Auf einem Linux-Server betreiben.",
+            "text": "Ein Linux-Rechner, fertige Programmpakete und eine Webadresse davor. Das Programm aktualisiert sich beim Start.",
             "facts": [
               "ghcr.io/metadist/synaplan",
               "Automatisches TLS via Caddy",
@@ -2796,8 +2796,8 @@
           {
             "id": "T-03",
             "label": "Cluster",
-            "heading": "helm install synaplan",
-            "text": "Öffentliches Helm-Chart für Kubernetes: mehrere Web-Replikas, externe MariaDB Galera, Qdrant, Redis, GPU-Worker für lokale Inferenz. Gebaut für Hosting-Anbieter.",
+            "heading": "Auf einem Kubernetes-Cluster betreiben.",
+            "text": "Für mehr als einen Server. Mehrere Kopien der Website, eine Datenbank, und Platz für ein Modell, das auf Ihren eigenen Rechnern bleibt.",
             "facts": [
               "oci://ghcr.io/metadist/synaplan-charts",
               "Galera-sichere Migrationen",
@@ -2806,9 +2806,9 @@
           },
           {
             "id": "T-04",
-            "label": "Souveräne Cloud",
-            "heading": "openDesk und EU-Hosting",
-            "text": "Synaplan integriert sich in openDesk und läuft auf europäischer Infrastruktur. Oder Sie sparen sich den Betrieb und nutzen unsere in Deutschland gehostete Plattform.",
+            "label": "Gehostet",
+            "heading": "Oder wir hosten es in Deutschland.",
+            "text": "Nichts zu installieren. web.synaplan.com betreibt dasselbe Programm, in Deutschland. Behörden können auch synaplan.eu nutzen.",
             "facts": [
               "openDesk-Installer",
               "web.synaplan.com — gehostet in Deutschland",
@@ -2836,9 +2836,9 @@
           }
         ],
         "cta": {
-          "title": "Die Doku ist das Handbuch. Kein Marketing.",
-          "text": "Erste Schritte, Produktions-Deployment, Kubernetes, Feature-Module — alles auf docs.synaplan.com.",
-          "primary": "Deployment-Doku öffnen",
+          "title": "Die Installationsanleitung ist ausgeschrieben.",
+          "text": "Erster Start, ein echter Server, Kubernetes und die Zusatzteile — alles auf docs.synaplan.com.",
+          "primary": "Installationsanleitung öffnen",
           "secondary": "Helm-Charts auf GitHub"
         }
       },
@@ -2990,9 +2990,9 @@
         }
       },
       "source": {
-        "eyebrow": "SOURCE // SYS-00",
-        "title": "Open-Source-KI-Plattform. Apache-2.0. Der ganze Code.",
-        "lead": "Synaplan ist eine vollständig offene KI-Plattform unter Apache-2.0 — Self-Hosted KI, Helm-Charts, Desktop-Client, Outlook-Add-in. Keine Community-Edition neben einer echten. Die echte.",
+        "eyebrow": "QUELLCODE",
+        "title": "Der Quellcode ist öffentlich.",
+        "lead": "Sie können ihn lesen, installieren und selbst betreiben. Die Lizenz ist Apache-2.0, das Programm kostet keine Lizenzgebühr.",
         "reposTitle": "Repositories",
         "repos": [
           {

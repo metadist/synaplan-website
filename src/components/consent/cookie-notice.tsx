@@ -80,7 +80,7 @@ export function CookieNotice() {
         <p id="cookie-notice-title" className="mc-label">
           {t("title")}
         </p>
-        <p id="cookie-notice-body" className="mt-1.5 text-sm leading-relaxed text-[var(--mc-text-muted)]">
+        <p id="cookie-notice-body" className="mt-1.5 text-base leading-relaxed">
           {t("body")}{" "}
           <Link
             href="/privacy-policy"

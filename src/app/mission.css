@@ -1,49 +1,47 @@
 /* =============================================================================
-   SYNAPLAN // MISSION CONTROL — design system
+   SYNAPLAN — site chrome
    -----------------------------------------------------------------------------
-   Two eras deliberately mixed:
-   - 1970s mission-control physicality: monospace labels, numbered panels,
-     status lamps, cream instrument panels, technical markings.
-   - Modern developer tooling: huge type, restrained glass, SVG motion.
-   Everything is scoped to `.mc`. Deep-content routes reuse this chrome;
-   leftover article pages inherit remapped semantic tokens so the old
-   white site does not reappear.
+   One surface: off-white page, near-black type, white cards.
+   `.mc-inverse` is the LED-black exception (closing band).
+   Code samples stay black so the commands stay readable.
+   Everything is scoped to `.mc`.
    ========================================================================== */
 
 /* Everything lives in the `components` layer so Tailwind utilities
    (`hidden`, `md:block`, …) can still override any mission rule. */
 @layer components {
   .mc {
-    /* Console (dark) */
-    --mc-ink: #0a0d14;
-    --mc-ink-2: #10141d;
-    --mc-ink-3: #171c28;
-    --mc-ink-4: #222937;
-    --mc-line: rgba(232, 228, 216, 0.1);
-    --mc-line-strong: rgba(232, 228, 216, 0.22);
-    --mc-text: #ece8dc;
-    --mc-text-muted: rgba(236, 232, 220, 0.66);
-    --mc-text-faint: rgba(236, 232, 220, 0.4);
+    /* Page (off-white) and type (near-black). Names kept so existing
+       utilities still point at a surface or a fill. */
+    --mc-ink: #efefef;
+    --mc-ink-2: #efefef;
+    --mc-ink-3: #ffffff;
+    --mc-ink-4: #f3f3f3;
+    --mc-line: rgba(17, 17, 17, 0.12);
+    --mc-line-strong: rgba(17, 17, 17, 0.22);
+    --mc-text: #111111;
+    --mc-text-muted: #3a3a3a;
+    --mc-text-faint: #454545;
 
-    /* Instrument panel (cream) */
-    --mc-cream: #f2ecdd;
-    --mc-cream-2: #e8e0cc;
-    --mc-cream-3: #dcd2ba;
-    --mc-paper: #faf7ef;
-    --mc-ink-on-cream: #14181f;
-    --mc-muted-on-cream: rgba(20, 24, 31, 0.66);
-    --mc-line-on-cream: rgba(20, 24, 31, 0.14);
+    /* Same family — sections do not switch to a second palette. */
+    --mc-cream: #efefef;
+    --mc-cream-2: #e6e6e6;
+    --mc-cream-3: #dedede;
+    --mc-paper: #ffffff;
+    --mc-ink-on-cream: #111111;
+    --mc-muted-on-cream: #3a3a3a;
+    --mc-line-on-cream: rgba(17, 17, 17, 0.14);
 
-    /* Brand */
-    --mc-blue: #1a1ae8; /* logo blue */
+    /* Brand. Soft/cyan stay dark enough for small labels on #efefef. */
+    --mc-blue: #1a1ae8;
     --mc-blue-deep: #002c92;
-    --mc-blue-soft: #6e7cff;
-    --mc-cyan: #6fe3ff;
+    --mc-blue-soft: #1a1ae8;
+    --mc-cyan: #003fad;
 
     /* Lamps */
-    --mc-green: #35d07f;
-    --mc-amber: #ffb224;
-    --mc-red: #ff5c5c;
+    --mc-green: #0f8f4d;
+    --mc-amber: #9a6400;
+    --mc-red: #c42323;
 
     --mc-radius: 14px;
     --mc-radius-sm: 8px;
@@ -58,29 +56,28 @@
     display: flex;
     flex-direction: column;
 
-    /* Remap classic-site semantic tokens so leftover article pages
-       (about, solutions, pricing, blog, try-chat) read as console, not paper. */
-    --background: var(--mc-ink);
-    --foreground: var(--mc-text);
-    --card: var(--mc-ink-3);
-    --card-foreground: var(--mc-text);
-    --popover: var(--mc-ink-3);
-    --popover-foreground: var(--mc-text);
-    --muted: var(--mc-ink-3);
-    --muted-foreground: var(--mc-text-muted);
-    --accent: var(--mc-ink-4);
-    --accent-foreground: var(--mc-text);
-    --secondary: var(--mc-ink-3);
-    --secondary-foreground: var(--mc-text);
-    --border: var(--mc-line-strong);
-    --input: var(--mc-line-strong);
-    --color-brand-50: color-mix(in oklab, var(--mc-blue) 16%, var(--mc-ink-3));
-    --color-brand-100: color-mix(in oklab, var(--mc-blue) 22%, var(--mc-ink-3));
-    --color-brand-200: color-mix(in oklab, var(--mc-blue) 34%, var(--mc-ink-2));
-    --color-page-tint: var(--mc-ink-2);
-    --color-soft-accent: var(--mc-ink-3);
-    --color-chat-input-bg: var(--mc-ink-3);
-    --color-chat-bubble-user: var(--mc-ink-4);
+    /* Article pages (about, pricing, blog) share this light surface. */
+    --background: #efefef;
+    --foreground: #111111;
+    --card: #ffffff;
+    --card-foreground: #111111;
+    --popover: #ffffff;
+    --popover-foreground: #111111;
+    --muted: #e6e6e6;
+    --muted-foreground: #3a3a3a;
+    --accent: #e6e6e6;
+    --accent-foreground: #111111;
+    --secondary: #e6e6e6;
+    --secondary-foreground: #111111;
+    --border: rgba(17, 17, 17, 0.16);
+    --input: rgba(17, 17, 17, 0.2);
+    --color-brand-50: #f4f5ff;
+    --color-brand-100: #e7e9ff;
+    --color-brand-200: #d0d4ff;
+    --color-page-tint: #efefef;
+    --color-soft-accent: #e8e8e8;
+    --color-chat-input-bg: #ffffff;
+    --color-chat-bubble-user: #e4e4e4;
   }
 
   .mc-legacy-article :is(h1, h2, h3) {
@@ -91,21 +88,6 @@
   .mc-legacy-article .btn-figma-primary {
     background: var(--mc-blue);
     color: #fff;
-  }
-
-  /* Tailwind brand-50/100 are compiled to static lights — force them dark
-     so leftover article cards do not flash paper-white on the console. */
-  .mc :is(.bg-brand-50, .bg-brand-100, .from-brand-50, .to-brand-100\/60, .to-brand-100) {
-    background-color: var(--mc-ink-3);
-    background-image: none;
-  }
-  .mc .border-brand-200 {
-    border-color: var(--mc-line-strong);
-  }
-  .mc .text-brand-700,
-  .mc .text-brand-600,
-  .mc .text-brand-800 {
-    color: var(--mc-blue-soft);
   }
 
   .mc ::selection {
@@ -130,8 +112,9 @@
 
   .mc-label {
     font-family: var(--mc-mono);
-    font-size: 0.6875rem;
-    letter-spacing: 0.18em;
+    font-size: 0.875rem;
+    font-weight: 650;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--mc-text-muted);
   }
@@ -141,10 +124,10 @@
   }
 
   .mc-lead {
-    font-size: clamp(1.05rem, 1.5vw, 1.25rem);
-    line-height: 1.55;
-    color: var(--mc-text-muted);
-    max-width: 40rem;
+    font-size: clamp(1.125rem, 1.3vw, 1.25rem);
+    line-height: 1.6;
+    color: #222222;
+    max-width: 42rem;
   }
 
   .mc-hero-sub {
@@ -159,7 +142,7 @@
   }
 
   .mc-panel-light .mc-lead {
-    color: var(--mc-muted-on-cream);
+    color: #222222;
   }
 
   .mc-terms {
@@ -174,8 +157,9 @@
 
   .mc-term {
     font-family: var(--mc-mono);
-    font-size: 0.625rem;
-    letter-spacing: 0.12em;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--mc-text);
     border: 1px solid var(--mc-line);
@@ -185,15 +169,15 @@
   }
 
   .mc-panel-light .mc-term {
-    color: var(--mc-ink);
-    border-color: color-mix(in oklab, var(--mc-ink) 18%, transparent);
+    color: var(--mc-ink-on-cream);
+    border-color: var(--mc-line-on-cream);
   }
 
   /* ─── Surfaces ───────────────────────────────────────────────────────────── */
 
   .mc-section {
     position: relative;
-    padding-block: clamp(4rem, 9vw, 8rem);
+    padding-block: clamp(3rem, 6vw, 5rem);
     border-top: 1px solid var(--mc-line);
   }
 
@@ -239,14 +223,14 @@
   .mc-card {
     position: relative;
     border: 1px solid var(--mc-line);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.01));
+    background: #ffffff;
     border-radius: var(--mc-radius);
     padding: 1.25rem;
   }
 
   .mc-panel-light .mc-card {
     border-color: var(--mc-line-on-cream);
-    background: rgba(255, 255, 255, 0.55);
+    background: #ffffff;
   }
 
   .mc-card-tight {
@@ -289,8 +273,9 @@
   }
   .mc-section-num {
     font-family: var(--mc-mono);
-    font-size: 0.75rem;
-    letter-spacing: 0.18em;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
     color: var(--mc-blue-soft);
   }
   .mc-panel-light .mc-section-num {
@@ -311,8 +296,8 @@
 
   .mc-lamp {
     display: inline-block;
-    width: 0.5rem;
-    height: 0.5rem;
+    width: 0.75rem;
+    height: 0.75rem;
     border-radius: 999px;
     background: var(--mc-text-faint);
     box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.05) inset;
@@ -364,8 +349,9 @@
     justify-content: center;
     gap: 0.5rem;
     font-family: var(--mc-mono);
-    font-size: 0.8125rem;
-    letter-spacing: 0.08em;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
     border-radius: 10px;
     padding: 0.9rem 1.25rem;
@@ -422,9 +408,9 @@
     border-color: var(--mc-blue);
   }
   .mc-btn--sm {
-    padding: 0.55rem 0.85rem;
-    min-height: 2.25rem;
-    font-size: 0.75rem;
+    padding: 0.65rem 0.95rem;
+    min-height: 2.75rem;
+    font-size: 0.9375rem;
   }
   .mc-btn--approve {
     animation: mc-approve-glow 1.4s ease-in-out infinite;
@@ -445,20 +431,21 @@
     align-items: center;
     gap: 0.4rem;
     font-family: var(--mc-mono);
-    font-size: 0.6875rem;
-    letter-spacing: 0.1em;
+    font-size: 0.875rem;
+    font-weight: 650;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
     padding: 0.3rem 0.6rem;
     border-radius: 6px;
     border: 1px solid var(--mc-line);
     color: var(--mc-text-muted);
-    background: rgba(255, 255, 255, 0.03);
+    background: #ffffff;
     white-space: nowrap;
   }
   .mc-panel-light .mc-chip {
     border-color: var(--mc-line-on-cream);
     color: var(--mc-muted-on-cream);
-    background: rgba(255, 255, 255, 0.5);
+    background: #ffffff;
   }
 
   /* ─── Links ─────────────────────────────────────────────────────────────── */
@@ -478,12 +465,21 @@
 
   .mc-terminal {
     font-family: var(--mc-mono);
-    font-size: 0.8125rem;
+    font-size: 0.9375rem;
     line-height: 1.7;
     border-radius: var(--mc-radius);
-    border: 1px solid var(--mc-line);
-    background: #070910;
-    color: var(--mc-text);
+    border: 1px solid #222;
+    background: #000;
+    color: #f4f4f4;
+    --mc-text: #f4f4f4;
+    --mc-text-muted: #d0d0d0;
+    --mc-text-faint: #a3a3a3;
+    --mc-line: rgba(255, 255, 255, 0.16);
+    --mc-line-strong: rgba(255, 255, 255, 0.28);
+    --mc-blue-soft: #b7c2ff;
+    --mc-green: #3dde8a;
+    --mc-amber: #ffc14d;
+    --mc-cyan: #9adfff;
     overflow: hidden;
   }
   .mc-terminal-bar {
@@ -493,7 +489,7 @@
     padding: 0.6rem 0.9rem;
     border-bottom: 1px solid var(--mc-line);
     background: rgba(255, 255, 255, 0.025);
-    font-size: 0.6875rem;
+    font-size: 0.8125rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--mc-text-muted);
@@ -537,24 +533,7 @@
     }
   }
 
-  /* ─── Marketing / Engineer mode ─────────────────────────────────────────── */
-  /* Both variants are server-rendered; the mode only toggles visibility.
-     The attribute is set on <html> before paint by an inline script. */
-
-  .mc-engineer {
-    display: none;
-  }
-  html[data-mc-mode="engineer"] .mc-marketing {
-    display: none;
-  }
-  html[data-mc-mode="engineer"] .mc-engineer {
-    display: block;
-  }
-  html[data-mc-mode="engineer"] .mc-engineer-flex {
-    display: flex;
-  }
-
-  /* Mode switch */
+  /* Locale switch (and any leftover segmented control). */
   .mc-switch {
     display: inline-flex;
     align-items: center;
@@ -562,10 +541,11 @@
     border-radius: 8px;
     padding: 2px;
     font-family: var(--mc-mono);
-    font-size: 0.625rem;
-    letter-spacing: 0.12em;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    background: rgba(255, 255, 255, 0.03);
+    background: #ffffff;
   }
   .mc-switch button {
     border: 0;
@@ -580,12 +560,8 @@
     white-space: nowrap;
   }
   .mc-switch button[aria-pressed="true"] {
-    background: var(--mc-text);
-    color: var(--mc-ink);
-  }
-  html[data-mc-mode="engineer"] .mc-switch button[data-mode="engineer"] {
-    background: var(--mc-blue);
-    color: #fff;
+    background: #111111;
+    color: #f4f4f4;
   }
   .mc-switch button:focus-visible {
     outline: 2px solid var(--mc-cyan);
@@ -663,16 +639,7 @@
     }
   }
   .mc-scanline {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background: repeating-linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.025) 0 1px,
-      transparent 1px 3px
-    );
-    mix-blend-mode: overlay;
-    opacity: 0.6;
+    display: none;
   }
 
   /* ─── Signals: packets flowing into the core ────────────────────────────── */
@@ -766,7 +733,7 @@
   .mc-topo-node text {
     fill: var(--mc-text);
     font-family: var(--mc-mono);
-    font-size: 11px;
+    font-size: 13px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     pointer-events: none;
@@ -811,7 +778,7 @@
     border: 1px solid var(--mc-line);
     border-radius: 10px;
     padding: 3px;
-    background: rgba(255, 255, 255, 0.02);
+    background: #ffffff;
     max-width: 100%;
     overflow-x: auto;
   }
@@ -823,8 +790,9 @@
     background: transparent;
     color: var(--mc-text-muted);
     font-family: var(--mc-mono);
-    font-size: 0.6875rem;
-    letter-spacing: 0.12em;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
     padding: 0.5rem 0.8rem;
     border-radius: 7px;
@@ -835,8 +803,8 @@
       color 0.15s ease;
   }
   .mc-tab[aria-selected="true"] {
-    background: var(--mc-text);
-    color: var(--mc-ink);
+    background: #111111;
+    color: #f4f4f4;
   }
   .mc-tab:focus-visible {
     outline: 2px solid var(--mc-cyan);
@@ -856,7 +824,11 @@
     max-width: 44rem;
     border: 1px solid var(--mc-line-strong);
     border-radius: 12px;
-    background: #05070c;
+    background: #000000;
+    color: #f4f4f4;
+    --mc-text: #f4f4f4;
+    --mc-text-faint: #c8c8c8;
+    --mc-line-strong: rgba(255, 255, 255, 0.28);
     padding: 0.85rem 0.85rem 0.85rem 1.15rem;
   }
   @media (max-width: 720px) {
@@ -881,7 +853,7 @@
     flex: 1;
     min-width: 0;
     margin: 0;
-    font-size: 0.95rem;
+    font-size: 1.0625rem;
     line-height: 1.45;
     color: #f6f3ea;
   }
@@ -900,18 +872,8 @@
     white-space: nowrap;
   }
   .mc-install-req {
-    color: #fff;
+    color: #111111;
     font-weight: 700;
-    animation: mc-install-req 2.8s ease-in-out infinite;
-  }
-  @keyframes mc-install-req {
-    0%,
-    100% {
-      text-shadow: 0 0 0 rgba(255, 255, 255, 0);
-    }
-    50% {
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.45);
-    }
   }
 
   /* ─── Deployment ladder ─────────────────────────────────────────────────── */
@@ -931,7 +893,7 @@
     border: 1px solid var(--mc-line);
     border-radius: var(--mc-radius-sm);
     padding: 0.9rem;
-    background: rgba(255, 255, 255, 0.02);
+    background: #ffffff;
   }
   .mc-ladder-step::after {
     content: "→";
@@ -959,17 +921,18 @@
     top: 0;
     z-index: 50;
     border-bottom: 1px solid var(--mc-line);
-    background: rgba(10, 13, 20, 0.78);
+    background: rgba(239, 239, 239, 0.92);
     backdrop-filter: blur(14px) saturate(140%);
     -webkit-backdrop-filter: blur(14px) saturate(140%);
   }
   .mc-nav-link {
     font-family: var(--mc-mono);
-    font-size: 0.6875rem;
-    letter-spacing: 0.12em;
+    font-size: 1.0925rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
     text-transform: uppercase;
     color: var(--mc-text-muted);
-    padding: 0.5rem 0.45rem;
+    padding: 0.45rem 0.55rem;
     border-radius: 6px;
     text-decoration: none;
     transition:
@@ -977,9 +940,33 @@
       background-color 0.15s ease;
     white-space: nowrap;
   }
+  .mc-brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1;
+  }
+  .mc-brand-name {
+    font-family: var(--mc-mono);
+    font-size: 1.0925rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    line-height: 1;
+    color: var(--mc-text);
+  }
+  .mc-brand-motto {
+    margin-top: 0.15rem;
+    font-size: 0.55rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    text-transform: lowercase;
+    color: var(--mc-text-muted);
+  }
   .mc-nav-link:hover {
     color: var(--mc-text);
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(17, 17, 17, 0.06);
   }
   .mc-nav-link[aria-current="page"] {
     color: var(--mc-text);
@@ -987,7 +974,7 @@
   .mc-nav-link[aria-current="page"]::before {
     content: "● ";
     color: var(--mc-green);
-    font-size: 0.5rem;
+    font-size: 0.7rem;
     vertical-align: 0.1em;
   }
 
@@ -1020,8 +1007,9 @@
     }
   }
   .mc-drawer .mc-nav-link {
-    font-size: 1.1rem;
-    letter-spacing: 0.14em;
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
     padding: 1rem 0;
     border-bottom: 1px solid var(--mc-line);
     border-radius: 0;
@@ -1128,12 +1116,12 @@
     position: relative;
     max-width: min(20rem, calc(100vw - 2rem));
     border: 1px solid var(--mc-line-strong);
-    background: rgba(16, 20, 29, 0.96);
-    color: var(--mc-text);
+    background: #ffffff;
+    color: #111111;
     border-radius: 12px 12px 4px 12px;
     padding: 0.7rem 0.85rem;
     font-family: var(--mc-mono);
-    font-size: 0.75rem;
+    font-size: 1rem;
     line-height: 1.5;
     box-shadow: 0 16px 40px -18px rgba(0, 0, 0, 0.8);
     animation: mc-bubble-in 0.25s cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -1150,7 +1138,7 @@
     bottom: -6px;
     width: 10px;
     height: 10px;
-    background: rgba(16, 20, 29, 0.96);
+    background: #ffffff;
     border-right: 1px solid var(--mc-line-strong);
     border-bottom: 1px solid var(--mc-line-strong);
     transform: rotate(45deg);
@@ -1244,7 +1232,7 @@
     display: flex;
     justify-content: space-between;
     font-family: var(--mc-mono);
-    font-size: 0.5625rem;
+    font-size: 0.8125rem;
     letter-spacing: 0.14em;
     color: var(--mc-text-faint);
     text-transform: uppercase;
@@ -1284,18 +1272,14 @@
       opacity: 1;
     }
     .mc-install-req {
-      animation: none !important;
-      color: #fff;
-      text-shadow: none;
+      color: #111111;
     }
     .mc-parrot-eyelid {
       transform: scaleY(0);
     }
   }
   html[data-motion-profile="reduced"] .mc-install-req {
-    animation: none;
-    color: #fff;
-    text-shadow: none;
+    color: #111111;
   }
   html[data-motion-profile="reduced"] .mc-packet,
   html[data-motion-profile="reduced"] .mc-topo-packet,
@@ -1309,6 +1293,46 @@
   html[data-motion-profile="reduced"] .mc-glitch::after,
   html[data-motion-profile="reduced"] .mc-scanline {
     display: none;
+  }
+
+  /* LED black. One closing band, white type, no second palette. */
+  .mc-inverse {
+    background: #000000;
+    color: #f4f4f4;
+    border-top-color: #000000;
+    --mc-text: #f4f4f4;
+    --mc-text-muted: #d6d6d6;
+    --mc-text-faint: #bdbdbd;
+    --mc-line: rgba(255, 255, 255, 0.16);
+    --mc-line-strong: rgba(255, 255, 255, 0.32);
+    --mc-ink-on-cream: #f4f4f4;
+    --mc-muted-on-cream: #d6d6d6;
+    --mc-line-on-cream: rgba(255, 255, 255, 0.24);
+    --mc-blue-soft: #c5cdff;
+    --mc-cyan: #9adfff;
+  }
+  .mc-inverse .mc-lead,
+  .mc-inverse .mc-label {
+    color: #d6d6d6;
+  }
+  .mc-inverse .mc-card,
+  .mc-inverse .mc-frame {
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+  }
+  .mc-inverse .mc-btn:not(.mc-btn--primary) {
+    color: #f4f4f4;
+    border-color: rgba(255, 255, 255, 0.55);
+  }
+  .mc-inverse .mc-btn:not(.mc-btn--primary):hover {
+    border-color: #ffffff;
+    color: #ffffff;
+  }
+  .mc-inverse .mc-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
   }
 }
 
@@ -1348,21 +1372,7 @@
   border-color: var(--mc-line-strong) !important;
 }
 
-.mc .text-brand-700:not(.mc-paper-island *),
-.mc .text-brand-600:not(.mc-paper-island *),
-.mc .text-brand-800:not(.mc-paper-island *),
-.mc .text-emerald-700:not(.mc-paper-island *),
-.mc .text-emerald-600:not(.mc-paper-island *),
-.mc .text-amber-700:not(.mc-paper-island *),
-.mc .text-amber-600:not(.mc-paper-island *),
-.mc .text-amber-900:not(.mc-paper-island *),
-.mc .text-violet-700:not(.mc-paper-island *),
-.mc .text-rose-700:not(.mc-paper-island *),
-.mc .text-sky-700:not(.mc-paper-island *) {
-  color: var(--mc-blue-soft) !important;
-}
-
-/* Live chat demo stays a cream instrument so bubble copy stays dark. */
+/* Live chat demo stays paper so bubble copy stays dark. */
 .mc .mc-paper-island {
   background-color: var(--mc-paper) !important;
   color: var(--mc-ink-on-cream);
@@ -1374,4 +1384,33 @@
   --color-chat-bubble-user: var(--mc-cream-2);
   --color-soft-accent: var(--mc-cream-2);
   --color-page-tint: var(--mc-cream);
+}
+
+/* Headlines stay short on the page, not only in the copy. */
+.mc h1.mc-display {
+  font-size: clamp(2rem, 3.6vw, 3.15rem);
+  line-height: 1.08;
+}
+.mc h2.mc-display {
+  font-size: clamp(1.6rem, 2.5vw, 2.15rem);
+  line-height: 1.12;
+}
+
+/* Reading floor for older visitors. Utilities below 16px are lifted.
+   The logo motto and the header menu keep their own sizes. */
+.mc .text-xs {
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+.mc .text-sm {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.mc .size-3 {
+  width: 1rem;
+  height: 1rem;
+}
+.mc .size-4 {
+  width: 1.25rem;
+  height: 1.25rem;
 }
