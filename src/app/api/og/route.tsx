@@ -6,11 +6,11 @@ export const runtime = "edge";
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const title = searchParams.get("title") ?? "Synaplan";
-  const description = searchParams.get("description") ?? "Open-Source AI Platform";
+  const description = searchParams.get("description") ?? "Own the flow.";
   const locale = searchParams.get("locale") ?? "en";
 
   const isDE = locale === "de";
-  const tagline = isDE ? "KI-Plattform · Open Source · DSGVO" : "AI Platform · Open Source · GDPR";
+  const tagline = "Own the flow.";
 
   return new ImageResponse(
     (

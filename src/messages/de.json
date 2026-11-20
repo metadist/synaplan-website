@@ -1925,8 +1925,8 @@
   "mission": {
     "meta": {
       "home": {
-        "title": "Synaplan — Own the flow.",
-        "description": "Own the flow. KI auf den eigenen Dateien und der Arbeit drumherum: Angebote, Kundenantworten, Verträge. Modell wählen, Kosten sehen und dieselbe Antwort im Chat, auf der Website, in der Mail, auf WhatsApp und Telegram.",
+        "title": "Open-Source-KI für eigene Dokumente | Synaplan",
+        "description": "Open-Source-KI auf den eigenen Dateien und der Arbeit drumherum: Angebote, Kundenantworten, Verträge. Modell wählen, Kosten sehen und dieselbe Antwort im Chat, auf der Website, in der Mail, auf WhatsApp und Telegram.",
         "keywords": [
           "Own the flow",
           "Open-Source-KI-Plattform",
@@ -1958,8 +1958,8 @@
         ]
       },
       "product": {
-        "title": "Die offene KI für die eigenen Unterlagen | Synaplan",
-        "description": "Synaplan antwortet aus Ihren Unterlagen, mit Quelle, Modellwahl und sichtbarem Preis. In der Cloud oder auf eigenen Servern. Apache-2.0, ohne Lizenzgebühr.",
+        "title": "KI-Plattform für eigene Dokumente | Synaplan",
+        "description": "KI-Plattform, die aus den eigenen Unterlagen antwortet, mit Quelle, Modellwahl und sichtbarem Preis. In der Cloud oder auf eigenen Servern. Apache-2.0, ohne Lizenzgebühr.",
         "keywords": [
           "KI-Plattform",
           "RAG",
@@ -2004,8 +2004,8 @@
         ]
       },
       "connect": {
-        "title": "Dieselbe Antwort auf Website, Mail, WhatsApp und Telegram | Synaplan",
-        "description": "Der Assistent ist derselbe, egal wo die Frage ankommt. Outlook ist ein Zusatz im Mailprogramm. Die Dateien können in OpenCloud, Nextcloud, Dropbox oder ownCloud.online bleiben.",
+        "title": "KI für WhatsApp, Outlook und Website | Synaplan",
+        "description": "KI für WhatsApp, Outlook und die Website: dieselbe Antwort, egal wo die Frage ankommt. Outlook ist ein Zusatz im Mailprogramm. Die Dateien können in OpenCloud, Nextcloud, Dropbox oder ownCloud.online bleiben.",
         "keywords": [
           "WhatsApp-KI",
           "Outlook-KI",
@@ -2026,8 +2026,8 @@
         ]
       },
       "agents": {
-        "title": "Werkzeuge, mehrere Schritte, Freigabe | Synaplan",
-        "description": "Der Assistent liest die Unterlagen, kann Werkzeuge nutzen und eine Aufgabe in mehreren Schritten erledigen. Eine Mail oder eine Änderung geht erst hinaus, wenn ein Mensch sie freigibt.",
+        "title": "KI-Agenten mit Freigabe | Synaplan",
+        "description": "KI-Agenten lesen die Unterlagen, nutzen Werkzeuge und erledigen eine Aufgabe in mehreren Schritten. Eine Mail oder eine Änderung geht erst hinaus, wenn ein Mensch sie freigibt.",
         "keywords": [
           "KI-Agenten",
           "RAG-Agenten",
@@ -2095,7 +2095,7 @@
       "eyebrow": "SYNAPLAN",
       "title": "Ihre eigene KI, auf Ihren Dateien.",
       "tagline": "Own the flow.",
-      "subtitle": "Angebote, Kundenantworten, Verträge — mit dem Modell Ihrer Wahl und den Kosten im Blick.",
+      "subtitle": "Open-Source-KI für die eigenen Unterlagen — Angebote, Kundenantworten, Verträge, mit dem Modell Ihrer Wahl und den Kosten im Blick.",
       "install": {
         "docker": "Zuerst Docker Desktop starten.",
         "docs": "Installationsanleitung",

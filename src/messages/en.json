@@ -1925,8 +1925,8 @@
   "mission": {
     "meta": {
       "home": {
-        "title": "Synaplan — Own the flow.",
-        "description": "Own the flow. AI on your own files and the work around them: offers, customer answers, contracts. Choose the model, see the cost, and keep the same answer in the chat, on your website, by email, on WhatsApp and Telegram.",
+        "title": "Open-source AI for your own documents | Synaplan",
+        "description": "Open-source AI on your own files and the work around them: offers, customer answers, contracts. Choose the model, see the cost, and keep the same answer in the chat, on your website, by email, on WhatsApp and Telegram.",
         "keywords": [
           "Own the flow",
           "open source AI platform",
@@ -1958,8 +1958,8 @@
         ]
       },
       "product": {
-        "title": "The open AI for your own documents | Synaplan",
-        "description": "Synaplan answers from your documents, with the source, a choice of model, and a visible price. In the cloud or on your own servers. Apache-2.0, no licence fee.",
+        "title": "AI platform for your own documents | Synaplan",
+        "description": "AI platform that answers from your own documents, with the source, a choice of model, and a visible price. In the cloud or on your own servers. Apache-2.0, no licence fee.",
         "keywords": [
           "AI platform",
           "RAG",
@@ -2004,8 +2004,8 @@
         ]
       },
       "connect": {
-        "title": "The same answer on your website, by email, on WhatsApp and Telegram | Synaplan",
-        "description": "The assistant is the same wherever the question arrives. Outlook is an add-in in the mail program. The files can stay in OpenCloud, Nextcloud, Dropbox or ownCloud.online.",
+        "title": "AI for WhatsApp, Outlook and your website | Synaplan",
+        "description": "AI for WhatsApp, Outlook and your website: the same answer wherever the question arrives. Outlook is an add-in in the mail program. The files can stay in OpenCloud, Nextcloud, Dropbox or ownCloud.online.",
         "keywords": [
           "WhatsApp AI",
           "Outlook AI",
@@ -2026,8 +2026,8 @@
         ]
       },
       "agents": {
-        "title": "Tools, several steps, and an approval | Synaplan",
-        "description": "The assistant reads the documents, can use tools, and works through a task in several steps. An email or a change goes out only after a person approves it.",
+        "title": "AI agents with approval | Synaplan",
+        "description": "AI agents read the documents, use tools, and work through a task in several steps. An email or a change goes out only after a person approves it.",
         "keywords": [
           "AI agents",
           "RAG agents",
@@ -2095,7 +2095,7 @@
       "eyebrow": "SYNAPLAN",
       "title": "Your own AI, on your files.",
       "tagline": "Own the flow.",
-      "subtitle": "Offers, customer answers, contracts — with the model you choose and the cost in view.",
+      "subtitle": "Open-source AI for your own documents — offers, customer answers, contracts, with the model you choose and the cost in view.",
       "install": {
         "docker": "Start Docker Desktop first.",
         "docs": "Install guide",
