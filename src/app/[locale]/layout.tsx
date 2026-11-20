@@ -36,7 +36,7 @@ export async function generateMetadata({
   return {
     title: {
       default: t("title"),
-      template: `%s | Synaplan`,
+      template: `%s | Synaplan — Own the flow.`,
     },
     description: t("description"),
     // metadataBase ensures relative URLs in page-level metadata resolve to the

@@ -26,10 +26,19 @@ export const PUBLISHER = {
   url: "https://metadist.de",
   sameAs: [
     "https://www.synaplan.com",
+    "https://docs.synaplan.com",
+    "https://github.com/metadist/synaplan",
     "https://github.com/metadist",
     "https://www.linkedin.com/company/metadist",
     "https://www.wikidata.org/wiki/Q131736023",
   ],
+  brand: {
+    "@type": "Brand",
+    "@id": `${SITE_URL}/#brand`,
+    name: "Synaplan",
+    slogan: "Own the flow.",
+    url: SITE_URL,
+  },
   logo: {
     "@type": "ImageObject",
     url: `${SITE_URL}/logo.png`,
@@ -72,9 +81,16 @@ export function buildWebSiteSchema(locale: string) {
     "@type": "WebSite",
     "@id": `${SITE_URL}/#website`,
     name: "Synaplan",
+    alternateName: "Own the flow",
+    slogan: "Own the flow.",
     url: locale === "de" ? `${SITE_URL}/de` : SITE_URL,
     inLanguage: locale === "de" ? "de-DE" : "en-US",
     publisher: { "@id": "https://metadist.de/#organization" },
+    sameAs: [
+      "https://github.com/metadist/synaplan",
+      "https://docs.synaplan.com",
+      "https://web.synaplan.com",
+    ],
   };
 }
 
@@ -88,8 +104,16 @@ export function buildSoftwareAppSchema(locale: string) {
     "@type": "SoftwareApplication",
     "@id": `${SITE_URL}/#software`,
     name: "Synaplan",
+    alternateName: "Own the flow",
+    slogan: "Own the flow.",
+    brand: { "@id": `${SITE_URL}/#brand` },
     url: SITE_URL,
-    sameAs: [stores.appStore, stores.playStore],
+    sameAs: [
+      stores.appStore,
+      stores.playStore,
+      "https://github.com/metadist/synaplan",
+      "https://docs.synaplan.com",
+    ],
     applicationCategory: "BusinessApplication",
     applicationSubCategory: "AI Platform",
     operatingSystem: "Web, iOS, Android, self-hosted via Docker",

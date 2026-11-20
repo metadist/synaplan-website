@@ -95,7 +95,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
       entries.push({
         url,
-        lastModified: new Date(),
         changeFrequency,
         priority,
         alternates: { languages: alternates },

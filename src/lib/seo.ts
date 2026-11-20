@@ -16,7 +16,7 @@ export const OG_IMAGE = {
   width: 1200,
   height: 630,
   type: "image/png",
-  alt: "Synaplan — Open-Source AI Platform for businesses. Multi-model routing, GDPR-compliant, self-hosted.",
+  alt: "Synaplan — Own the flow.",
 };
 
 /** hreflang-style alternate URLs for `alternates.languages`. */
